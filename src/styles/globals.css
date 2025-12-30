@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 10 10 11;
+    --foreground: 250 250 250;
+    --accent: 139 92 246;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply min-h-screen bg-background text-foreground;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-border-light transition-colors hover:bg-foreground-subtle;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-accent-primary/30 text-foreground;
+  }
+}
+
+@layer components {
+  /* Glass effect */
+  .glass {
+    @apply border border-border/50 bg-background-secondary/80 backdrop-blur-xl;
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl;
+  }
+
+  /* Gradient border */
+  .gradient-border {
+    @apply relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl p-[1px];
+    background: linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.5) 0%,
+      rgba(139, 92, 246, 0.1) 50%,
+      rgba(139, 92, 246, 0.5) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Shimmer effect */
+  .shimmer {
+    @apply animate-shimmer relative overflow-hidden bg-gradient-to-r from-transparent via-white/10 to-transparent;
+    background-size: 200% 100%;
+  }
+
+  /* Glow effects */
+  .glow {
+    @apply shadow-glow transition-shadow duration-300 hover:shadow-glow-lg;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  }
+
+  /* NFT Card */
+  .nft-card {
+    @apply relative overflow-hidden rounded-2xl border border-border bg-background-card transition-all duration-300;
+  }
+
+  .nft-card:hover {
+    @apply -translate-y-1 border-border-accent shadow-card-hover;
+  }
+
+  .nft-card-image {
+    @apply relative aspect-square overflow-hidden;
+  }
+
+  .nft-card-image img {
+    @apply h-full w-full object-cover transition-transform duration-500;
+  }
+
+  .nft-card:hover .nft-card-image img {
+    @apply scale-110;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent-primary px-6 py-3 font-medium text-white transition-all duration-300 hover:bg-accent-secondary hover:shadow-glow-sm focus:outline-none focus:ring-2 focus:ring-accent-primary/50 focus:ring-offset-2 focus:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background-secondary px-6 py-3 font-medium text-foreground transition-all duration-300 hover:border-border-light hover:bg-background-hover focus:outline-none focus:ring-2 focus:ring-accent-primary/50 focus:ring-offset-2 focus:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-medium text-foreground-muted transition-all duration-300 hover:bg-background-hover hover:text-foreground focus:outline-none focus:ring-2 focus:ring-accent-primary/50 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full rounded-xl border border-border bg-background-secondary px-4 py-3 text-foreground placeholder:text-foreground-subtle transition-all duration-200 focus:border-accent-primary focus:outline-none focus:ring-2 focus:ring-accent-primary/20;
+  }
+
+  .input-error {
+    @apply border-error focus:border-error focus:ring-error/20;
+  }
+
+  /* Labels */
+  .label {
+    @apply mb-2 block text-sm font-medium text-foreground-muted;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-accent-primary/20 text-accent-secondary;
+  }
+
+  .badge-success {
+    @apply badge bg-success/20 text-success;
+  }
+
+  .badge-warning {
+    @apply badge bg-warning/20 text-warning;
+  }
+
+  .badge-error {
+    @apply badge bg-error/20 text-error;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Page header */
+  .page-header {
+    @apply mb-8 space-y-2;
+  }
+
+  .page-title {
+    @apply text-3xl font-bold tracking-tight sm:text-4xl;
+  }
+
+  .page-description {
+    @apply text-lg text-foreground-muted;
+  }
+}
+
+@layer utilities {
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-primary via-accent-secondary to-accent-tertiary bg-clip-text text-transparent;
+  }
+
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Aspect ratios */
+  .aspect-nft {
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Animation delays */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  /* Line clamp */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
