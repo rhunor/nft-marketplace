@@ -10,7 +10,6 @@ import {
   X,
   Search,
   Wallet,
- 
   LogOut,
   Upload,
   LayoutDashboard,
@@ -23,6 +22,7 @@ import { Button, Avatar } from '@/components/ui';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/explore', label: 'Explore' },
+  { href: '/about', label: 'About' },
   { href: '/help', label: 'Help' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -43,10 +43,12 @@ export function Header() {
       <div className="section-container">
         <div className="flex h-16 items-center justify-between gap-4 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-primary">
-              <span className="text-xl font-bold text-white">F</span>
-            </div>
+          <Link href="/" className="flex items-center gap-3">
+            <img 
+              src="/images/logo.svg" 
+              alt="Foundation Exclusive" 
+              className="h-8 w-auto invert"
+            />
             <span className="hidden text-xl font-bold sm:inline-block">
               Foundation<span className="text-accent-primary">Exclusive</span>
             </span>

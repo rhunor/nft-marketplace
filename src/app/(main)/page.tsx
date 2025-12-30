@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Sparkles, Shield, Zap, Users } from 'lucide-react';
-import { Button } from '@/components/ui';
-import { NFTCarousel, NFTGrid } from '@/components/nft';
-import { sampleNFTs, topSellers } from '@/lib/db/seed-data';
-import { NFT_CATEGORIES } from '@/lib/utils';
+import { ArrowRight, Shield, Gem, Users, Award } from 'lucide-react';
+import { Button, Avatar, Card } from '@/components/ui';
+import { sampleCollections } from '@/lib/db/seed-data';
+import { formatETH, NFT_CATEGORIES } from '@/lib/utils';
 
 export default function HomePage() {
   return (
@@ -22,42 +21,43 @@ export default function HomePage() {
             {/* Hero Content */}
             <div className="max-w-2xl">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-2 text-sm text-accent-secondary">
-                <Sparkles className="h-4 w-4" />
-                <span>The future of digital ownership</span>
+                <Gem className="h-4 w-4" />
+                <span>An Extension of Foundation</span>
               </div>
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-                Discover, Collect & Trade{' '}
-                <span className="text-gradient">Extraordinary</span> NFTs
+                Discover{' '}
+                <span className="text-gradient">Exclusive</span> NFT Collections
               </h1>
               <p className="mt-6 text-lg text-foreground-muted sm:text-xl">
-                The premier marketplace for unique digital assets. Join
-                thousands of creators and collectors in the NFT revolution.
+                Foundation Exclusive is the premier destination for high-value NFT 
+                collectors. Join an exclusive community where exceptional digital 
+                art finds its rightful collectors.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/explore">
                   <Button size="lg" rightIcon={<ArrowRight className="h-5 w-5" />}>
-                    Explore NFTs
+                    Explore Collections
                   </Button>
                 </Link>
-                <Link href="/register">
+                <Link href="/about">
                   <Button variant="secondary" size="lg">
-                    Start Creating
+                    Learn More
                   </Button>
                 </Link>
               </div>
 
-              {/* Stats */}
+              {/* Stats - Reduced numbers for exclusivity */}
               <div className="mt-12 grid grid-cols-3 gap-8">
                 <div>
-                  <p className="text-3xl font-bold text-accent-primary">50K+</p>
-                  <p className="text-sm text-foreground-muted">NFTs Created</p>
+                  <p className="text-3xl font-bold text-accent-primary">150+</p>
+                  <p className="text-sm text-foreground-muted">Curated Collections</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-accent-primary">12K+</p>
-                  <p className="text-sm text-foreground-muted">Artists</p>
+                  <p className="text-3xl font-bold text-accent-primary">50+</p>
+                  <p className="text-sm text-foreground-muted">Elite Artists</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-accent-primary">$10M+</p>
+                  <p className="text-3xl font-bold text-accent-primary">$45M+</p>
                   <p className="text-sm text-foreground-muted">Total Volume</p>
                 </div>
               </div>
@@ -69,8 +69,8 @@ export default function HomePage() {
                 <div className="space-y-4">
                   <div className="animate-float overflow-hidden rounded-2xl shadow-glow">
                     <Image
-                      src={sampleNFTs[0]?.mediaUrl || ''}
-                      alt="Featured NFT 1"
+                      src={sampleCollections[0]?.coverImage || ''}
+                      alt="Featured Collection 1"
                       width={300}
                       height={300}
                       className="h-full w-full object-cover"
@@ -78,8 +78,8 @@ export default function HomePage() {
                   </div>
                   <div className="animation-delay-400 animate-float overflow-hidden rounded-2xl shadow-card">
                     <Image
-                      src={sampleNFTs[1]?.mediaUrl || ''}
-                      alt="Featured NFT 2"
+                      src={sampleCollections[1]?.coverImage || ''}
+                      alt="Featured Collection 2"
                       width={300}
                       height={200}
                       className="h-full w-full object-cover"
@@ -89,8 +89,8 @@ export default function HomePage() {
                 <div className="mt-8 space-y-4">
                   <div className="animation-delay-200 animate-float overflow-hidden rounded-2xl shadow-card">
                     <Image
-                      src={sampleNFTs[2]?.mediaUrl || ''}
-                      alt="Featured NFT 3"
+                      src={sampleCollections[2]?.coverImage || ''}
+                      alt="Featured Collection 3"
                       width={300}
                       height={200}
                       className="h-full w-full object-cover"
@@ -98,8 +98,8 @@ export default function HomePage() {
                   </div>
                   <div className="animation-delay-600 animate-float overflow-hidden rounded-2xl shadow-glow">
                     <Image
-                      src={sampleNFTs[3]?.mediaUrl || ''}
-                      alt="Featured NFT 4"
+                      src={sampleCollections[3]?.coverImage || ''}
+                      alt="Featured Collection 4"
                       width={300}
                       height={300}
                       className="h-full w-full object-cover"
@@ -112,24 +112,100 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Top Sellers Carousel */}
+      {/* Featured Collections */}
       <section className="py-16">
         <div className="section-container">
-          <NFTCarousel
-            nfts={topSellers}
-            title="Top Sellers"
-            subtitle="Discover the most popular NFTs on our platform"
-          />
+          <div className="mb-8 flex items-end justify-between">
+            <div>
+              <h2 className="text-2xl font-bold sm:text-3xl">Featured Collections</h2>
+              <p className="mt-2 text-foreground-muted">
+                Hand-picked collections from our exclusive artists
+              </p>
+            </div>
+            <Link href="/explore">
+              <Button variant="ghost" rightIcon={<ArrowRight className="h-4 w-4" />}>
+                View All
+              </Button>
+            </Link>
+          </div>
+          
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {sampleCollections.slice(0, 3).map((collection) => (
+              <Link key={collection.id} href={`/collection/${collection.id}`}>
+                <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={collection.coverImage}
+                      alt={collection.name}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-xl font-bold text-white">{collection.name}</h3>
+                      <p className="mt-1 text-sm text-white/80 line-clamp-1">
+                        {collection.totalItems} items
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Avatar
+                          src={collection.creatorAvatar}
+                          alt={collection.creatorName}
+                          fallback={collection.creatorName}
+                          size="sm"
+                        />
+                        <span className="text-sm text-foreground-muted">
+                          @{collection.creatorUsername}
+                        </span>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-xs text-foreground-muted">Floor</p>
+                        <p className="font-bold text-accent-primary">
+                          {formatETH(collection.floorPrice)}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section Brief */}
+      <section className="bg-background-secondary py-16">
+        <div className="section-container">
+          <div className="mx-auto max-w-3xl text-center">
+            <Gem className="mx-auto h-12 w-12 text-accent-primary" />
+            <h2 className="mt-6 text-2xl font-bold sm:text-3xl">
+              The Exclusive Community
+            </h2>
+            <p className="mt-4 text-foreground-muted">
+              Foundation Exclusive is an extension of Foundation, created for serious 
+              collectors who understand the true value of exceptional digital art. 
+              Our curated platform ensures every piece meets the highest standards 
+              of quality and authenticity.
+            </p>
+            <Link href="/about">
+              <Button className="mt-6" variant="secondary">
+                Learn About Us
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Categories */}
-      <section className="bg-background-secondary py-16">
+      <section className="py-16">
         <div className="section-container">
           <div className="mb-8 text-center">
             <h2 className="text-2xl font-bold sm:text-3xl">Browse by Category</h2>
             <p className="mt-2 text-foreground-muted">
-              Explore NFTs across different categories
+              Explore collections across different categories
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
@@ -147,33 +223,73 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* New Arrivals */}
-      <section className="py-16">
+      {/* More Collections */}
+      <section className="bg-background-secondary py-16">
         <div className="section-container">
           <div className="mb-8 flex items-end justify-between">
             <div>
-              <h2 className="text-2xl font-bold sm:text-3xl">New Arrivals</h2>
+              <h2 className="text-2xl font-bold sm:text-3xl">More Collections</h2>
               <p className="mt-2 text-foreground-muted">
-                Fresh NFTs just listed on the marketplace
+                Discover more exclusive collections
               </p>
             </div>
-            <Link href="/explore?sortBy=createdAt&sortOrder=desc">
+            <Link href="/explore">
               <Button variant="ghost" rightIcon={<ArrowRight className="h-4 w-4" />}>
                 View All
               </Button>
             </Link>
           </div>
-          <NFTGrid nfts={sampleNFTs.slice(0, 6)} columns={3} />
+          
+          <div className="grid gap-6 sm:grid-cols-2">
+            {sampleCollections.slice(3, 5).map((collection) => (
+              <Link key={collection.id} href={`/collection/${collection.id}`}>
+                <Card className="group flex overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <div className="relative aspect-square w-1/3 overflow-hidden">
+                    <Image
+                      src={collection.coverImage}
+                      alt={collection.name}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col justify-between p-4">
+                    <div>
+                      <h3 className="font-bold">{collection.name}</h3>
+                      <p className="mt-1 text-sm text-foreground-muted line-clamp-2">
+                        {collection.description}
+                      </p>
+                    </div>
+                    <div className="mt-3 flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Avatar
+                          src={collection.creatorAvatar}
+                          alt={collection.creatorName}
+                          fallback={collection.creatorName}
+                          size="xs"
+                        />
+                        <span className="text-xs text-foreground-muted">
+                          @{collection.creatorUsername}
+                        </span>
+                      </div>
+                      <p className="font-bold text-accent-primary">
+                        {formatETH(collection.floorPrice)}
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="bg-background-secondary py-16">
+      <section className="py-16">
         <div className="section-container">
           <div className="mb-12 text-center">
-            <h2 className="text-2xl font-bold sm:text-3xl">Why Choose FoundationExclusive?</h2>
+            <h2 className="text-2xl font-bold sm:text-3xl">Why Choose Foundation Exclusive?</h2>
             <p className="mt-2 text-foreground-muted">
-              The most trusted platform for NFT trading
+              The most trusted platform for premium NFT collectors
             </p>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -181,36 +297,36 @@ export default function HomePage() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent-primary/20">
                 <Shield className="h-6 w-6 text-accent-primary" />
               </div>
-              <h3 className="mb-2 text-lg font-semibold">Secure Platform</h3>
+              <h3 className="mb-2 text-lg font-semibold">Verified Authenticity</h3>
               <p className="text-sm text-foreground-muted">
-                Industry-leading security measures to protect your assets
+                Every piece undergoes rigorous verification for authenticity
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-background-card p-6">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent-primary/20">
-                <Zap className="h-6 w-6 text-accent-primary" />
+                <Gem className="h-6 w-6 text-accent-primary" />
               </div>
-              <h3 className="mb-2 text-lg font-semibold">Fast Transactions</h3>
+              <h3 className="mb-2 text-lg font-semibold">Premium Quality</h3>
               <p className="text-sm text-foreground-muted">
-                Lightning-fast trades with minimal fees
+                Curated collections from world-class digital artists
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-background-card p-6">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent-primary/20">
                 <Users className="h-6 w-6 text-accent-primary" />
               </div>
-              <h3 className="mb-2 text-lg font-semibold">Growing Community</h3>
+              <h3 className="mb-2 text-lg font-semibold">Exclusive Community</h3>
               <p className="text-sm text-foreground-muted">
-                Join thousands of creators and collectors worldwide
+                Join a selective network of serious collectors
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-background-card p-6">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent-primary/20">
-                <Sparkles className="h-6 w-6 text-accent-primary" />
+                <Award className="h-6 w-6 text-accent-primary" />
               </div>
-              <h3 className="mb-2 text-lg font-semibold">Premium Quality</h3>
+              <h3 className="mb-2 text-lg font-semibold">Investment Grade</h3>
               <p className="text-sm text-foreground-muted">
-                Curated collections from top digital artists
+                NFTs priced to reflect their true market value
               </p>
             </div>
           </div>
@@ -223,11 +339,12 @@ export default function HomePage() {
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-accent-primary to-accent-secondary p-8 sm:p-12">
             <div className="relative z-10 max-w-2xl">
               <h2 className="text-3xl font-bold text-white sm:text-4xl">
-                Ready to Start Your NFT Journey?
+                Ready to Join the Exclusive?
               </h2>
               <p className="mt-4 text-lg text-white/80">
-                Create an account today and start collecting, creating, and
-                trading unique digital assets.
+                Become a member of Foundation Exclusive and gain access to 
+                premium collections, exclusive drops, and a community of 
+                like-minded collectors.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/register">
@@ -235,7 +352,7 @@ export default function HomePage() {
                     size="lg"
                     className="bg-white text-accent-primary hover:bg-white/90"
                   >
-                    Get Started Free
+                    Become a Member
                   </Button>
                 </Link>
                 <Link href="/explore">
@@ -244,7 +361,7 @@ export default function HomePage() {
                     size="lg"
                     className="border-white/30 text-white hover:bg-white/10"
                   >
-                    Explore Marketplace
+                    Explore Collections
                   </Button>
                 </Link>
               </div>

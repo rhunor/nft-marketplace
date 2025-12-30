@@ -2,20 +2,21 @@
 
 import { useState, useEffect, useCallback, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
 import { Search, SlidersHorizontal, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Button, Select, Badge } from '@/components/ui';
-import { NFTGrid } from '@/components/nft';
-import { sampleNFTs, type SampleNFT } from '@/lib/db/seed-data';
-import { NFT_CATEGORIES, getCategoryLabel, debounce } from '@/lib/utils';
+import { Button, Select, Badge, Avatar, Card } from '@/components/ui';
+import { sampleCollections, type SampleNFTCollection } from '@/lib/db/seed-data';
+import { NFT_CATEGORIES, getCategoryLabel, debounce, formatETH } from '@/lib/utils';
 
 const sortOptions = [
-  { value: 'createdAt-desc', label: 'Newest First' },
-  { value: 'createdAt-asc', label: 'Oldest First' },
-  { value: 'price-asc', label: 'Price: Low to High' },
-  { value: 'price-desc', label: 'Price: High to Low' },
-  { value: 'views-desc', label: 'Most Viewed' },
-  { value: 'likes-desc', label: 'Most Liked' },
+  { value: 'volume-desc', label: 'Highest Volume' },
+  { value: 'volume-asc', label: 'Lowest Volume' },
+  { value: 'floor-asc', label: 'Floor: Low to High' },
+  { value: 'floor-desc', label: 'Floor: High to Low' },
+  { value: 'items-desc', label: 'Most Items' },
+  { value: 'items-asc', label: 'Fewest Items' },
 ];
 
 function ExploreContent() {
@@ -27,56 +28,52 @@ function ExploreContent() {
     searchParams.get('category') || ''
   );
   const [sortBy, setSortBy] = useState(
-    `${searchParams.get('sortBy') || 'createdAt'}-${searchParams.get('sortOrder') || 'desc'}`
+    searchParams.get('sort') || 'volume-desc'
   );
   const [showFilters, setShowFilters] = useState(false);
-  const [filteredNFTs, setFilteredNFTs] = useState<SampleNFT[]>(sampleNFTs);
+  const [filteredCollections, setFilteredCollections] = useState<SampleNFTCollection[]>(sampleCollections);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Filter and sort NFTs
-  const filterNFTs = useCallback(() => {
+  // Filter and sort collections
+  const filterCollections = useCallback(() => {
     setIsLoading(true);
-    let result = [...sampleNFTs];
+    let result = [...sampleCollections];
 
     // Search filter
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       result = result.filter(
-        (nft) =>
-          nft.title.toLowerCase().includes(query) ||
-          nft.description.toLowerCase().includes(query) ||
-          nft.creatorName.toLowerCase().includes(query) ||
-          nft.tags.some((tag) => tag.toLowerCase().includes(query))
+        (collection) =>
+          collection.name.toLowerCase().includes(query) ||
+          collection.description.toLowerCase().includes(query) ||
+          collection.creatorName.toLowerCase().includes(query)
       );
     }
 
     // Category filter
     if (selectedCategory) {
-      result = result.filter((nft) => nft.category === selectedCategory);
+      result = result.filter((collection) => collection.category === selectedCategory);
     }
 
     // Sorting
     const [sortField, sortOrder] = sortBy.split('-');
     result.sort((a, b) => {
-      let aVal: number | string = 0;
-      let bVal: number | string = 0;
+      let aVal = 0;
+      let bVal = 0;
 
       switch (sortField) {
-        case 'price':
-          aVal = a.price;
-          bVal = b.price;
+        case 'floor':
+          aVal = a.floorPrice;
+          bVal = b.floorPrice;
           break;
-        case 'views':
-          aVal = a.views;
-          bVal = b.views;
+        case 'items':
+          aVal = a.totalItems;
+          bVal = b.totalItems;
           break;
-        case 'likes':
-          aVal = a.likes;
-          bVal = b.likes;
-          break;
+        case 'volume':
         default:
-          aVal = a.id;
-          bVal = b.id;
+          aVal = a.totalVolume;
+          bVal = b.totalVolume;
       }
 
       if (sortOrder === 'asc') {
@@ -87,7 +84,7 @@ function ExploreContent() {
 
     // Simulate loading
     setTimeout(() => {
-      setFilteredNFTs(result);
+      setFilteredCollections(result);
       setIsLoading(false);
     }, 300);
   }, [searchQuery, selectedCategory, sortBy]);
@@ -107,8 +104,8 @@ function ExploreContent() {
   );
 
   useEffect(() => {
-    filterNFTs();
-  }, [filterNFTs]);
+    filterCollections();
+  }, [filterCollections]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -130,17 +127,15 @@ function ExploreContent() {
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
     setSortBy(value);
-    const [field, order] = value.split('-');
     const params = new URLSearchParams(searchParams.toString());
-    params.set('sortBy', field || 'createdAt');
-    params.set('sortOrder', order || 'desc');
+    params.set('sort', value);
     router.push(`/explore?${params.toString()}`, { scroll: false });
   };
 
   const clearFilters = () => {
     setSearchQuery('');
     setSelectedCategory('');
-    setSortBy('createdAt-desc');
+    setSortBy('volume-desc');
     router.push('/explore', { scroll: false });
   };
 
@@ -151,9 +146,9 @@ function ExploreContent() {
       <div className="section-container">
         {/* Page Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold sm:text-4xl">Explore NFTs</h1>
+          <h1 className="text-3xl font-bold sm:text-4xl">Explore Collections</h1>
           <p className="mt-2 text-foreground-muted">
-            Discover unique digital collectibles from creators around the world
+            Discover exclusive NFT collections from world-class digital artists
           </p>
         </div>
 
@@ -166,7 +161,7 @@ function ExploreContent() {
               type="text"
               value={searchQuery}
               onChange={handleSearchChange}
-              placeholder="Search by name, creator, or tags..."
+              placeholder="Search collections or creators..."
               className="w-full rounded-xl border border-border bg-background-secondary py-3 pl-10 pr-4 text-sm placeholder:text-foreground-subtle focus:border-accent-primary focus:outline-none focus:ring-2 focus:ring-accent-primary/20"
             />
             {searchQuery && (
@@ -219,12 +214,13 @@ function ExploreContent() {
                     }`}
                   >
                     All Categories
-                    <span className="text-foreground-subtle">{sampleNFTs.length}</span>
+                    <span className="text-foreground-subtle">{sampleCollections.length}</span>
                   </button>
                   {NFT_CATEGORIES.map((category) => {
-                    const count = sampleNFTs.filter(
-                      (nft) => nft.category === category.value
+                    const count = sampleCollections.filter(
+                      (c) => c.category === category.value
                     ).length;
+                    if (count === 0) return null;
                     return (
                       <button
                         key={category.value}
@@ -278,27 +274,33 @@ function ExploreContent() {
                     >
                       All
                     </Badge>
-                    {NFT_CATEGORIES.map((category) => (
-                      <Badge
-                        key={category.value}
-                        variant={
-                          selectedCategory === category.value
-                            ? 'primary'
-                            : 'default'
-                        }
-                        className="cursor-pointer"
-                        onClick={() => handleCategoryChange(category.value)}
-                      >
-                        {category.icon} {category.label}
-                      </Badge>
-                    ))}
+                    {NFT_CATEGORIES.map((category) => {
+                      const count = sampleCollections.filter(
+                        (c) => c.category === category.value
+                      ).length;
+                      if (count === 0) return null;
+                      return (
+                        <Badge
+                          key={category.value}
+                          variant={
+                            selectedCategory === category.value
+                              ? 'primary'
+                              : 'default'
+                          }
+                          className="cursor-pointer"
+                          onClick={() => handleCategoryChange(category.value)}
+                        >
+                          {category.icon} {category.label}
+                        </Badge>
+                      );
+                    })}
                   </div>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* NFT Grid */}
+          {/* Collections Grid */}
           <div className="flex-1">
             {/* Active filters display */}
             {hasActiveFilters && (
@@ -330,16 +332,97 @@ function ExploreContent() {
 
             {/* Results count */}
             <p className="mb-6 text-sm text-foreground-muted">
-              Showing {filteredNFTs.length} results
+              Showing {filteredCollections.length} collection{filteredCollections.length !== 1 ? 's' : ''}
             </p>
 
-            {/* NFT Grid */}
-            <NFTGrid
-              nfts={filteredNFTs}
-              isLoading={isLoading}
-              emptyMessage="No NFTs found matching your criteria"
-              columns={3}
-            />
+            {/* Collections Grid */}
+            {isLoading ? (
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                  <div
+                    key={i}
+                    className="animate-pulse rounded-2xl border border-border bg-background-card"
+                  >
+                    <div className="aspect-[4/3] bg-background-hover" />
+                    <div className="p-4">
+                      <div className="h-6 w-3/4 rounded bg-background-hover" />
+                      <div className="mt-2 h-4 w-1/2 rounded bg-background-hover" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : filteredCollections.length > 0 ? (
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+                {filteredCollections.map((collection) => (
+                  <Link key={collection.id} href={`/collection/${collection.id}`}>
+                    <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <Image
+                          src={collection.coverImage}
+                          alt={collection.name}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <h3 className="text-xl font-bold text-white">{collection.name}</h3>
+                          <p className="mt-1 text-sm text-white/80 line-clamp-1">
+                            {collection.totalItems} items
+                          </p>
+                        </div>
+                        <Badge
+                          variant="default"
+                          className="absolute right-3 top-3 bg-black/50 text-white"
+                        >
+                          {getCategoryLabel(collection.category)}
+                        </Badge>
+                      </div>
+                      <div className="p-4">
+                        <p className="text-sm text-foreground-muted line-clamp-2 mb-3">
+                          {collection.description}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <Avatar
+                              src={collection.creatorAvatar}
+                              alt={collection.creatorName}
+                              fallback={collection.creatorName}
+                              size="sm"
+                            />
+                            <span className="text-sm text-foreground-muted">
+                              @{collection.creatorUsername}
+                            </span>
+                          </div>
+                          <div className="text-right">
+                            <p className="text-xs text-foreground-muted">Floor</p>
+                            <p className="font-bold text-accent-primary">
+                              {formatETH(collection.floorPrice)}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="mt-3 pt-3 border-t border-border flex justify-between text-sm">
+                          <div>
+                            <span className="text-foreground-muted">Volume: </span>
+                            <span className="font-medium">{formatETH(collection.totalVolume)}</span>
+                          </div>
+                          <div>
+                            <span className="text-foreground-muted">Items: </span>
+                            <span className="font-medium">{collection.totalItems}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="py-12 text-center">
+                <p className="text-lg text-foreground-muted">No collections found matching your criteria</p>
+                <Button onClick={clearFilters} className="mt-4">
+                  Clear Filters
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </div>
