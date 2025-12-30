@@ -1,6 +1,8 @@
 import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import Google from 'next-auth/providers/google';
+import connectDB from '@/lib/db/connection';
+import User from '@/lib/db/models/User';
 import type { NextAuthConfig } from 'next-auth';
 
 const authConfig: NextAuthConfig = {
@@ -21,32 +23,33 @@ const authConfig: NextAuthConfig = {
           throw new Error('Email and password are required');
         }
 
-        // Dynamic imports (safe for Edge runtime)
-        const connectDB = (await import('@/lib/db/connection')).default;
-        const User = (await import('@/lib/db/models/User')).default;
+        try {
+          await connectDB();
 
-        await connectDB();
+          const user = await User.findOne({ email: credentials.email }).select('+password');
 
-        const user = await User.findOne({ email: credentials.email }).select('+password');
+          if (!user) {
+            throw new Error('Invalid email or password');
+          }
 
-        if (!user) {
-          throw new Error('Invalid email or password');
+          // Plain text string comparison (passwords are stored as plain strings)
+          if (user.password !== credentials.password) {
+            throw new Error('Invalid email or password');
+          }
+
+          return {
+            id: user._id.toString(),
+            email: user.email,
+            name: user.name,
+            username: user.username,
+            role: user.role,
+            walletBalance: user.walletBalance,
+            avatar: user.avatar,
+          };
+        } catch (error) {
+          console.error('Auth error:', error);
+          throw error;
         }
-
-        // Plain text comparison (passwords are now stored as strings)
-        if (user.password !== credentials.password) {
-          throw new Error('Invalid email or password');
-        }
-
-        return {
-          id: user._id.toString(),
-          email: user.email,
-          name: user.name,
-          username: user.username,
-          role: user.role,
-          walletBalance: user.walletBalance,
-          avatar: user.avatar,
-        };
       },
     }),
   ],
@@ -58,6 +61,7 @@ const authConfig: NextAuthConfig = {
     strategy: 'jwt',
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
+  trustHost: true,
   callbacks: {
     async jwt({ token, user, trigger, session }) {
       if (user) {
@@ -95,9 +99,6 @@ const authConfig: NextAuthConfig = {
       // Handle Google OAuth sign-in
       if (account?.provider === 'google') {
         try {
-          const connectDB = (await import('@/lib/db/connection')).default;
-          const User = (await import('@/lib/db/models/User')).default;
-
           await connectDB();
 
           const existingUser = await User.findOne({ email: user.email });
@@ -112,7 +113,7 @@ const authConfig: NextAuthConfig = {
               email: user.email,
               username,
               name: user.name || username,
-              // Store a random plain-text password (never used for login via Google)
+              // Store a random plain-text string as password (never used for Google login)
               password: crypto.randomUUID(),
               avatar: user.image || '',
               role: 'user',
@@ -141,9 +142,4 @@ const authConfig: NextAuthConfig = {
   debug: process.env.NODE_ENV === 'development',
 };
 
-const nextAuth = NextAuth(authConfig);
-
-export const handlers = nextAuth.handlers;
-export const auth = nextAuth.auth;
-export const signIn = nextAuth.signIn;
-export const signOut = nextAuth.signOut;
+export const { handlers, auth, signIn, signOut } = NextAuth(authConfig);
