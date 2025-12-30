@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcryptjs';
-import { config } from 'dotenv';
 
+
+import { config } from 'dotenv';
 // Load environment variables
 config();
 
@@ -154,10 +154,10 @@ async function seed() {
     console.log('Creating users...');
     const createdUsers = [];
     for (const userData of sampleUsers) {
-      const hashedPassword = await bcrypt.hash(userData.password, 12);
+      
       const user = await User.create({
         ...userData,
-        password: hashedPassword,
+       
       });
       createdUsers.push(user);
       console.log(`  Created user: ${user.email}`);

@@ -84,7 +84,7 @@ export function LoginForm() {
       <div className="mb-8 text-center">
         <h1 className="text-2xl font-bold">Welcome Back</h1>
         <p className="mt-2 text-foreground-muted">
-          Sign in to continue to NFTMarket
+          Sign in to continue to FoundationExclusive
         </p>
       </div>
 

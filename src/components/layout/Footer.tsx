@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Twitter, Github, MessageCircle, Mail } from 'lucide-react';
+// import { Twitter, MessageCircle, Mail } from 'lucide-react';
+import {siX, siGmail,siTelegram} from 'simple-icons';
+import type { SimpleIcon } from 'simple-icons';
 
 const footerLinks = {
   marketplace: [
@@ -23,11 +25,26 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { icon: MessageCircle, href: 'https://discord.com', label: 'Discord' },
-  { icon: Mail, href: 'mailto:hello@foundationexclusive.com', label: 'Email' },
+  { icon: siX, href: 'https://x.com/foundation', label: 'Twitter' },
+  { icon: siTelegram, href: 'https://telegram.com', label: 'Telegram' },
+  { icon: siGmail, href: 'mailto:hello@foundationexclusive.com', label: 'Email' },
 ];
+
+// Simple reusable component to render SimpleIcon as SVG
+function IconComponent({ icon, className }: { icon: SimpleIcon; className?: string }) {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      fill={`#${icon.hex}`}
+    >
+      <title>{icon.title}</title>
+      <path d={icon.path} />
+    </svg>
+  );
+}
 
 export function Footer() {
   return (
@@ -62,7 +79,7 @@ export function Footer() {
                   className="rounded-lg p-2 text-foreground-subtle transition-colors hover:bg-background-hover hover:text-foreground"
                   aria-label={social.label}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <IconComponent icon={social.icon} className="h-5 w-5" />
                 </a>
               ))}
             </div>

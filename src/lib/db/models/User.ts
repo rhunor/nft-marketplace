@@ -1,6 +1,5 @@
 import mongoose, { Schema } from 'mongoose';
 import type { Model } from 'mongoose';
-import bcrypt from 'bcryptjs';
 import type { IUserDocument } from '@/types';
 
 const UserSchema = new Schema<IUserDocument>(
@@ -29,7 +28,7 @@ const UserSchema = new Schema<IUserDocument>(
       type: String,
       required: [true, 'Password is required'],
       minlength: [8, 'Password must be at least 8 characters'],
-      select: false,
+      select: false, // Password is not returned by default in queries
     },
     name: {
       type: String,
@@ -62,40 +61,20 @@ const UserSchema = new Schema<IUserDocument>(
   }
 );
 
-// Hash password before saving
-UserSchema.pre('save', async function (next) {
-  if (!this.isModified('password')) {
-    return next();
-  }
-
-  try {
-    const salt = await bcrypt.genSalt(12);
-    this.password = await bcrypt.hash(this.password, salt);
-    next();
-  } catch (error) {
-    next(error as Error);
-  }
-});
-
-// Compare password method
-UserSchema.methods.comparePassword = async function (
-  candidatePassword: string
-): Promise<boolean> {
-  return bcrypt.compare(candidatePassword, this.password);
-};
-
-// Static method to find user by credentials
+// Static method to find a user by email and password (plain text comparison)
+// This replaces the bcrypt-based findByCredentials
 UserSchema.statics.findByCredentials = async function (
   email: string,
   password: string
 ): Promise<IUserDocument | null> {
   const user = await this.findOne({ email }).select('+password');
+
   if (!user) {
     return null;
   }
 
-  const isMatch = await user.comparePassword(password);
-  if (!isMatch) {
+  // Direct plain-text comparison (no hashing)
+  if (user.password !== password) {
     return null;
   }
 
@@ -103,8 +82,8 @@ UserSchema.statics.findByCredentials = async function (
 };
 
 // Safe model getter that works in Edge runtime
-const User: Model<IUserDocument> = 
-  (mongoose.models?.User as Model<IUserDocument>) || 
+const User: Model<IUserDocument> =
+  (mongoose.models?.User as Model<IUserDocument>) ||
   mongoose.model<IUserDocument>('User', UserSchema);
 
 export default User;

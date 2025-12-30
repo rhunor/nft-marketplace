@@ -105,7 +105,7 @@ export function RegisterForm() {
       <div className="mb-8 text-center">
         <h1 className="text-2xl font-bold">Create Account</h1>
         <p className="mt-2 text-foreground-muted">
-          Join NFTMarket and start collecting
+          Join FoundationExclusive and start collecting
         </p>
       </div>
 

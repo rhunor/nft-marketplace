@@ -21,8 +21,7 @@ const authConfig: NextAuthConfig = {
           throw new Error('Email and password are required');
         }
 
-        // Dynamic import to avoid Edge Runtime issues
-        const bcrypt = (await import('bcryptjs')).default;
+        // Dynamic imports (safe for Edge runtime)
         const connectDB = (await import('@/lib/db/connection')).default;
         const User = (await import('@/lib/db/models/User')).default;
 
@@ -34,12 +33,8 @@ const authConfig: NextAuthConfig = {
           throw new Error('Invalid email or password');
         }
 
-        const isPasswordValid = await bcrypt.compare(
-          credentials.password as string,
-          user.password
-        );
-
-        if (!isPasswordValid) {
+        // Plain text comparison (passwords are now stored as strings)
+        if (user.password !== credentials.password) {
           throw new Error('Invalid email or password');
         }
 
@@ -75,7 +70,7 @@ const authConfig: NextAuthConfig = {
         token.avatar = user.avatar;
       }
 
-      // Handle session updates
+      // Handle manual session updates
       if (trigger === 'update' && session) {
         token.walletBalance = session.walletBalance ?? token.walletBalance;
         token.name = session.name ?? token.name;
@@ -97,11 +92,9 @@ const authConfig: NextAuthConfig = {
       return session;
     },
     async signIn({ user, account }) {
-      // Handle Google OAuth sign in
+      // Handle Google OAuth sign-in
       if (account?.provider === 'google') {
         try {
-          // Dynamic import to avoid Edge Runtime issues
-          const bcrypt = (await import('bcryptjs')).default;
           const connectDB = (await import('@/lib/db/connection')).default;
           const User = (await import('@/lib/db/models/User')).default;
 
@@ -111,14 +104,16 @@ const authConfig: NextAuthConfig = {
 
           if (!existingUser) {
             // Create new user from Google account
-            const username = user.email?.split('@')[0]?.replace(/[^a-zA-Z0-9_]/g, '_') || 
+            const username =
+              user.email?.split('@')[0]?.replace(/[^a-zA-Z0-9_]/g, '_') ||
               `user_${Date.now()}`;
-            
+
             const newUser = await User.create({
               email: user.email,
               username,
               name: user.name || username,
-              password: await bcrypt.hash(crypto.randomUUID(), 12),
+              // Store a random plain-text password (never used for login via Google)
+              password: crypto.randomUUID(),
               avatar: user.image || '',
               role: 'user',
               walletBalance: 0,
