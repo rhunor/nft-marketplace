@@ -26,8 +26,8 @@ const footerLinks = {
 
 const socialLinks = [
   { icon: siX, href: 'https://x.com/foundation', label: 'Twitter' },
-  { icon: siTelegram, href: 'https://telegram.com', label: 'Telegram' },
-  { icon: siGmail, href: 'mailto:hello@foundationexclusive.com', label: 'Email' },
+  { icon: siTelegram, href: 'https://t.me/foundationexclusive', label: 'Telegram' },
+  { icon: siGmail, href: 'mailto:foundationexclusivenft@gmail.com', label: 'Email' },
 ];
 
 // Simple reusable component to render SimpleIcon as SVG

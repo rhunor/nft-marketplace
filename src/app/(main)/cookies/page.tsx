@@ -232,10 +232,10 @@ export default function CookiesPage() {
               <p className="mt-2">
                 <strong>Email:</strong>{' '}
                 <a
-                  href="mailto:privacy@foundationexclusive.com"
+                  href="mailto:foundationexclusivenft@gmail.com"
                   className="text-accent-primary hover:underline"
                 >
-                  privacy@foundationexclusive.com
+                  foundationexclusivenft@gmail.com
                 </a>
               </p>
             </section>

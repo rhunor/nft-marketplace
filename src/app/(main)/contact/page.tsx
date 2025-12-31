@@ -116,7 +116,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="mt-1 text-foreground-muted">support@FoundationExclusive.com</p>
+                  <p className="mt-1 text-foreground-muted">foundationexclusivenft@gmail.com</p>
                   <p className="text-sm text-foreground-subtle">
                     For general inquiries
                   </p>

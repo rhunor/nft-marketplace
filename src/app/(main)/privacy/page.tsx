@@ -165,7 +165,7 @@ export default function PrivacyPage() {
                   href="mailto:privacy@foundationexclusive.com"
                   className="text-accent-primary hover:underline"
                 >
-                  privacy@foundationexclusive.com
+                  foundationexclusivenft@gmail.com
                 </a>
               </p>
             </section>
