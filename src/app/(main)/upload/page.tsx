@@ -15,7 +15,8 @@ import {
 } from 'lucide-react';
 import { Button, Input, Textarea, Select, Card, Notification } from '@/components/ui';
 import { nftSchema, type NFTInput } from '@/lib/validations';
-import { NFT_CATEGORIES, formatETH, calculateUploadFee, getMediaType, formatFileSize } from '@/lib/utils';
+import { NFT_CATEGORIES, formatETH, getMediaType, formatFileSize } from '@/lib/utils';
+import { useEthPrice } from '@/contexts/EthPriceContext';
 
 const categoryOptions = NFT_CATEGORIES.map((cat) => ({
   value: cat.value,
@@ -38,6 +39,7 @@ const ALL_ACCEPTED_TYPES = [
 export default function UploadPage() {
   const router = useRouter();
   const { data: session, update: updateSession } = useSession();
+  const { ethPrice, formatEthToUsd } = useEthPrice();
 
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
@@ -57,7 +59,8 @@ export default function UploadPage() {
     message?: string;
   } | null>(null);
 
-  const uploadFee = calculateUploadFee();
+  // Calculate upload fee based on live ETH price ($200 worth of ETH)
+  const uploadFee = 200 / ethPrice;
   const hasInsufficientBalance = (session?.user.walletBalance || 0) < uploadFee;
 
   const handleFileChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -262,7 +265,7 @@ export default function UploadPage() {
               <div>
                 <p className="font-medium text-warning">Insufficient Balance</p>
                 <p className="mt-1 text-sm text-foreground-muted">
-                  You need at least {formatETH(uploadFee)} (≈$200) to create an NFT.
+                  You need at least {formatETH(uploadFee)} ({formatEthToUsd(uploadFee)}) to create an NFT.
                   Your current balance is {formatETH(session?.user.walletBalance || 0)}.
                 </p>
                 <Button
@@ -444,12 +447,12 @@ export default function UploadPage() {
             <div className="space-y-3">
               <div className="flex justify-between">
                 <span className="text-foreground-muted">Upload Fee</span>
-                <span className="font-medium">{formatETH(uploadFee)} (≈$200)</span>
+                <span className="font-medium">{formatETH(uploadFee)} ({formatEthToUsd(uploadFee)})</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-foreground-muted">Your Balance</span>
                 <span className="font-medium">
-                  {formatETH(session?.user.walletBalance || 0)}
+                  {formatETH(session?.user.walletBalance || 0)} ({formatEthToUsd(session?.user.walletBalance || 0)})
                 </span>
               </div>
               <div className="border-t border-border pt-3">

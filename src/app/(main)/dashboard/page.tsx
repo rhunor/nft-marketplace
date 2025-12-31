@@ -1,4 +1,3 @@
-//src/app/(main)/dashboard/page.tsx
 'use client';
 
 import { useState } from 'react';
@@ -14,11 +13,13 @@ import {
 } from 'lucide-react';
 import { Button, Card, Avatar, Badge, Loading } from '@/components/ui';
 import { NFTGrid } from '@/components/nft';
-import { formatETH, ethToUSD } from '@/lib/utils';
+import { formatETH } from '@/lib/utils';
 import { sampleNFTs } from '@/lib/db/seed-data';
+import { useEthPrice } from '@/contexts/EthPriceContext';
 
 export default function DashboardPage() {
   const { data: session, status } = useSession();
+  const { formatEthToUsd } = useEthPrice();
   const [activeTab, setActiveTab] = useState<'owned' | 'created'>('owned');
 
   if (status === 'loading') {
@@ -37,7 +38,7 @@ export default function DashboardPage() {
     {
       label: 'Wallet Balance',
       value: formatETH(session.user.walletBalance),
-      subValue: ethToUSD(session.user.walletBalance),
+      subValue: formatEthToUsd(session.user.walletBalance),
       icon: Wallet,
       color: 'text-accent-primary',
     },

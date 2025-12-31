@@ -18,12 +18,14 @@ import {
 import { Button, Avatar, Badge, Card, Loading, Modal, Notification } from '@/components/ui';
 import { NFTCarousel } from '@/components/nft';
 import { sampleNFTs, type SampleNFT } from '@/lib/db/seed-data';
-import { formatETH, ethToUSD, getCategoryLabel, formatNumber } from '@/lib/utils';
+import { formatETH, getCategoryLabel, formatNumber } from '@/lib/utils';
+import { useEthPrice } from '@/contexts/EthPriceContext';
 
 export default function NFTDetailPage() {
   const params = useParams();
   const router = useRouter();
   const { data: session } = useSession();
+  const { formatEthToUsd } = useEthPrice();
   const [nft, setNft] = useState<SampleNFT | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isLiked, setIsLiked] = useState(false);
@@ -226,7 +228,7 @@ export default function NFTDetailPage() {
                     {formatETH(nft.price)}
                   </p>
                   <p className="text-sm text-foreground-subtle">
-                    ≈ {ethToUSD(nft.price)}
+                    ≈ {formatEthToUsd(nft.price)}
                   </p>
                 </div>
                 <Button onClick={handleBuy} size="lg">

@@ -76,7 +76,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-lg p-2 text-foreground-subtle transition-colors hover:bg-background-hover hover:text-foreground"
+                  className="rounded-lg p-2 text-foreground-subtle invert transition-colors hover:bg-background-hover hover:text-foreground"
                   aria-label={social.label}
                 >
                   <IconComponent icon={social.icon} className="h-5 w-5" />

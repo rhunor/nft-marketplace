@@ -2,15 +2,17 @@
 
 import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
-import { Copy, Check, Clock, AlertCircle, Wallet } from 'lucide-react';
+import { Copy, Check, Clock, AlertCircle, Wallet, RefreshCw } from 'lucide-react';
 import QRCode from 'qrcode';
 import { Button, Card, Input, Badge, Notification } from '@/components/ui';
-import { formatETH, ethToUSD } from '@/lib/utils';
+import { formatETH } from '@/lib/utils';
+import { useEthPrice } from '@/contexts/EthPriceContext';
 
 const ETH_DEPOSIT_ADDRESS = process.env.NEXT_PUBLIC_ETH_ADDRESS || '0x9D5f4DFEFDFc77B8ec36E980BDBE1a2900a4aC20';
 
 export default function FundPage() {
   const { data: session } = useSession();
+  const { ethPrice, formatEthToUsd, isLoading: priceLoading, refreshPrice } = useEthPrice();
   const [amount, setAmount] = useState('0.1');
   const [copied, setCopied] = useState(false);
   const [qrCodeUrl, setQrCodeUrl] = useState<string>('');
@@ -87,11 +89,23 @@ export default function FundPage() {
                 {formatETH(session?.user.walletBalance || 0)}
               </p>
               <p className="text-sm text-foreground-subtle">
-                ≈ {ethToUSD(session?.user.walletBalance || 0)}
+                ≈ {formatEthToUsd(session?.user.walletBalance || 0)}
               </p>
             </div>
-            <div className="rounded-xl bg-accent-primary/20 p-4">
-              <Wallet className="h-8 w-8 text-accent-primary" />
+            <div className="flex flex-col items-end gap-2">
+              <div className="rounded-xl bg-accent-primary/20 p-4">
+                <Wallet className="h-8 w-8 text-accent-primary" />
+              </div>
+              <div className="flex items-center gap-1 text-xs text-foreground-subtle">
+                <span>1 ETH = ${ethPrice.toLocaleString()}</span>
+                <button 
+                  onClick={refreshPrice}
+                  className="p-1 hover:text-foreground transition-colors"
+                  title="Refresh price"
+                >
+                  <RefreshCw className={`h-3 w-3 ${priceLoading ? 'animate-spin' : ''}`} />
+                </button>
+              </div>
             </div>
           </div>
         </Card>
@@ -121,7 +135,7 @@ export default function FundPage() {
             min="0.01"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            hint={`≈ ${ethToUSD(parseFloat(amount) || 0)}`}
+            hint={`≈ ${formatEthToUsd(parseFloat(amount) || 0)}`}
           />
         </Card>
 

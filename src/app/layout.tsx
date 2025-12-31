@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk, Inter } from 'next/font/google';
 import { AuthProvider } from '@/components/auth';
+import { EthPriceProvider } from '@/contexts/EthPriceContext';
 import '@/styles/globals.css';
 
 const spaceGrotesk = Space_Grotesk({
@@ -17,36 +18,39 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'FoundationExclusive - Discover, Collect & Trade NFTs',
-    template: '%s | FoundationExclusive',
+    default: 'Foundation Exclusive - Premium NFT Collections',
+    template: '%s | Foundation Exclusive',
   },
   description:
-    'The premier destination for discovering, collecting, and trading unique digital assets. Join thousands of creators and collectors in the NFT revolution.',
+    'An extension of Foundation - the premier destination for high-value NFT collectors and creators. Join our exclusive community of discerning collectors.',
   keywords: [
     'NFT',
-    'marketplace',
+    'Foundation',
+    'exclusive',
     'digital art',
     'collectibles',
-    'crypto',
+    'premium NFT',
+    'crypto art',
     'blockchain',
     'ethereum',
+    'high-value NFT',
   ],
-  authors: [{ name: 'FoundationExclusive' }],
-  creator: 'FoundationExclusive',
+  authors: [{ name: 'Foundation Exclusive' }],
+  creator: 'Foundation Exclusive',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: process.env.NEXT_PUBLIC_APP_URL,
-    title: 'FoundationExclusive - Discover, Collect & Trade NFTs',
+    title: 'Foundation Exclusive - Premium NFT Collections',
     description:
-      'The premier destination for discovering, collecting, and trading unique digital assets.',
-    siteName: 'FoundationExclusive',
+      'An extension of Foundation - the premier destination for high-value NFT collectors and creators.',
+    siteName: 'Foundation Exclusive',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FoundationExclusive - Discover, Collect & Trade NFTs',
+    title: 'Foundation Exclusive - Premium NFT Collections',
     description:
-      'The premier destination for discovering, collecting, and trading unique digital assets.',
+      'An extension of Foundation - the premier destination for high-value NFT collectors and creators.',
   },
   robots: {
     index: true,
@@ -74,9 +78,11 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <AuthProvider>
-          <div className="relative flex min-h-screen flex-col">
-            {children}
-          </div>
+          <EthPriceProvider>
+            <div className="relative flex min-h-screen flex-col">
+              {children}
+            </div>
+          </EthPriceProvider>
         </AuthProvider>
       </body>
     </html>

@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { cn, formatETH } from '@/lib/utils';
 import { Button, Avatar } from '@/components/ui';
+import { useEthPrice } from '@/contexts/EthPriceContext';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -30,6 +31,7 @@ const navLinks = [
 export function Header() {
   const pathname = usePathname();
   const { data: session, status } = useSession();
+  const { formatEthToUsd } = useEthPrice();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
@@ -91,7 +93,7 @@ export function Header() {
             ) : session ? (
               <>
                 {/* Wallet Balance */}
-                <div className="hidden items-center gap-2 rounded-xl border border-border bg-background-secondary px-3 py-2 sm:flex">
+                <div className="hidden items-center gap-2 rounded-xl border border-border bg-background-secondary px-3 py-2 sm:flex" title={formatEthToUsd(session.user.walletBalance)}>
                   <Wallet className="h-4 w-4 text-accent-primary" />
                   <span className="text-sm font-medium">
                     {formatETH(session.user.walletBalance)}

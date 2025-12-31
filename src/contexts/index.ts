@@ -1,0 +1,1 @@
+export { EthPriceProvider, useEthPrice } from './EthPriceContext';

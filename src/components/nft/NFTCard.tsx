@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { Heart, Eye, Play, Volume2 } from 'lucide-react';
 import { cn, formatETH, formatNumber, getCategoryLabel } from '@/lib/utils';
 import { Avatar, Badge } from '@/components/ui';
+import { useEthPrice } from '@/contexts';
 import type { SampleNFT } from '@/lib/db/seed-data';
 
 interface NFTCardProps {
@@ -17,6 +18,7 @@ interface NFTCardProps {
 export function NFTCard({ nft, index = 0 }: NFTCardProps) {
   const [isLiked, setIsLiked] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const { formatEthToUsd } = useEthPrice();
 
   const handleLike = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -112,6 +114,9 @@ export function NFTCard({ nft, index = 0 }: NFTCardProps) {
                 <p className="text-xs text-foreground-subtle">Current Price</p>
                 <p className="text-lg font-bold text-accent-primary">
                   {formatETH(nft.price)}
+                </p>
+                <p className="text-xs text-foreground-subtle">
+                  {formatEthToUsd(nft.price)}
                 </p>
               </div>
               <div className="flex items-center gap-3 text-foreground-subtle">
