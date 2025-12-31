@@ -1,73 +1,74 @@
+import NextAuth from 'next-auth';
+import { authConfig } from '@/auth.config';
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-import { getToken } from 'next-auth/jwt';
 
-// Routes that require authentication
+const { auth } = NextAuth(authConfig);
+
+// Protected routes that require authentication
 const protectedRoutes = ['/dashboard', '/upload', '/fund'];
 
-// Routes only accessible to admins
+// Admin-only routes
 const adminRoutes = ['/admin'];
 
-// Routes only accessible to non-authenticated users
+// Auth routes (redirect if already logged in)
 const authRoutes = ['/login', '/register'];
 
-export async function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+export default auth((req) => {
+  const { nextUrl } = req;
+  const isLoggedIn = !!req.auth;
+  const isAdmin = req.auth?.user?.role === 'admin';
 
-  // Get token using next-auth/jwt (works in Edge Runtime)
-  const token = await getToken({
-    req: request,
-    secret: process.env.AUTH_SECRET,
-  });
+  console.log('[Middleware] Path:', nextUrl.pathname, 'isLoggedIn:', isLoggedIn, 'user:', req.auth?.user?.email);
 
-  const isAuthenticated = !!token;
-  const isAdmin = token?.role === 'admin';
-
-  // Check if the route is protected
+  // Check if current path matches any protected route
   const isProtectedRoute = protectedRoutes.some((route) =>
-    pathname.startsWith(route)
+    nextUrl.pathname.startsWith(route)
   );
 
-  // Check if the route is admin-only
+  // Check if current path is an admin route
   const isAdminRoute = adminRoutes.some((route) =>
-    pathname.startsWith(route)
+    nextUrl.pathname.startsWith(route)
   );
 
-  // Check if the route is for non-authenticated users
+  // Check if current path is an auth route
   const isAuthRoute = authRoutes.some((route) =>
-    pathname.startsWith(route)
+    nextUrl.pathname.startsWith(route)
   );
 
-  // Redirect non-authenticated users from protected routes
-  if (isProtectedRoute && !isAuthenticated) {
-    const loginUrl = new URL('/login', request.url);
-    loginUrl.searchParams.set('callbackUrl', pathname);
-    return NextResponse.redirect(loginUrl);
+  // Redirect to login if trying to access protected route without auth
+  if (isProtectedRoute && !isLoggedIn) {
+    console.log('[Middleware] Redirecting to login - protected route without auth');
+    const callbackUrl = encodeURIComponent(nextUrl.pathname + nextUrl.search);
+    return NextResponse.redirect(
+      new URL(`/login?callbackUrl=${callbackUrl}`, nextUrl)
+    );
   }
 
-  // Redirect non-admin users from admin routes
-  if (isAdminRoute && !isAdmin) {
-    return NextResponse.redirect(new URL('/', request.url));
+  // Redirect to 404 or home if trying to access admin route without admin role
+  if (isAdminRoute && (!isLoggedIn || !isAdmin)) {
+    console.log('[Middleware] Redirecting to home - admin route without admin role');
+    return NextResponse.redirect(new URL('/', nextUrl));
   }
 
-  // Redirect authenticated users from auth routes
-  if (isAuthRoute && isAuthenticated) {
-    return NextResponse.redirect(new URL('/dashboard', request.url));
+  // Redirect to dashboard if trying to access auth routes while logged in
+  if (isAuthRoute && isLoggedIn) {
+    console.log('[Middleware] Redirecting to dashboard - already logged in');
+    return NextResponse.redirect(new URL('/dashboard', nextUrl));
   }
 
   return NextResponse.next();
-}
+});
 
 export const config = {
   matcher: [
     /*
      * Match all request paths except:
-     * - api (API routes)
+     * - api routes
      * - _next/static (static files)
      * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public folder
+     * - favicon.ico
+     * - public files
      */
-    '/((?!api|_next/static|_next/image|favicon.ico|public).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|images|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
 };

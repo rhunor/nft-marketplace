@@ -1,11 +1,8 @@
 import type { Document, Types } from 'mongoose';
 
-// ============================================
-// Database Document Interfaces (Mongoose)
-// ============================================
-
 // User Types
 export interface IUser {
+  _id?: Types.ObjectId;
   email: string;
   username: string;
   password: string;
@@ -13,78 +10,46 @@ export interface IUser {
   avatar?: string;
   bio?: string;
   role: 'user' | 'admin';
-  walletBalance: number;
-  createdAt?: Date;
-  updatedAt?: Date;
+  walletBalance: number; // in ETH
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface IUserDocument extends IUser, Document {
   _id: Types.ObjectId;
-  comparePassword(candidatePassword: string): Promise<boolean>;
 }
 
+export type SafeUser = Omit<IUser, 'password' | '_id'> & {
+  _id: string;
+};
+
 // NFT Types
-export type NFTCategory = 'digital-art' | 'photography' | 'games' | 'music' | 'video' | 'collectibles';
+export type NFTCategory = 'new' | 'photography' | 'digital-art' | 'games' | 'music' | 'video';
 
 export interface INFT {
+  _id?: Types.ObjectId;
   title: string;
   description: string;
   mediaUrl: string;
   mediaType: 'image' | 'video' | 'audio' | 'other';
   thumbnailUrl?: string;
-  price: number;
-  category: string;
+  price: number; // in ETH
+  category: NFTCategory;
   tags: string[];
-  creator: Types.ObjectId;
-  owner: Types.ObjectId;
+  creator: Types.ObjectId | IUser;
+  owner: Types.ObjectId | IUser;
   likes: Types.ObjectId[];
   views: number;
   isListed: boolean;
-  createdAt?: Date;
-  updatedAt?: Date;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface INFTDocument extends INFT, Document {
   _id: Types.ObjectId;
-  toggleLike(userId: string): Promise<boolean>;
-  incrementViews(): Promise<void>;
 }
 
-// Transaction Types
-export interface ITransaction {
-  type: 'deposit' | 'purchase' | 'upload_fee' | 'withdrawal';
-  user: Types.ObjectId;
-  amount: number;
-  status: 'pending' | 'completed' | 'failed';
-  nft?: Types.ObjectId;
-  metadata?: Record<string, unknown>;
-  createdAt?: Date;
-  updatedAt?: Date;
-}
-
-export interface ITransactionDocument extends ITransaction, Document {
-  _id: Types.ObjectId;
-}
-
-// ============================================
-// API Response Types (Frontend/Serialized)
-// ============================================
-
-// Safe user type for API responses (without password)
-export interface SafeUser {
-  _id: string;
-  email: string;
-  username: string;
-  name: string;
-  avatar?: string;
-  bio?: string;
-  role: 'user' | 'admin';
-  walletBalance: number;
-  createdAt?: string;
-  updatedAt?: string;
-}
-
-// NFT with populated user data for API responses
+// NFT with populated user data (serialized for API responses)
 export interface NFTWithUser {
   _id: string;
   title: string;
@@ -93,34 +58,35 @@ export interface NFTWithUser {
   mediaType: 'image' | 'video' | 'audio' | 'other';
   thumbnailUrl?: string;
   price: number;
-  category: string;
+  category: NFTCategory;
   tags: string[];
   creator: SafeUser;
   owner: SafeUser;
   likes: string[];
   views: number;
   isListed: boolean;
-  createdAt?: string;
-  updatedAt?: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-// Transaction with populated data for API responses
-export interface TransactionWithDetails {
-  _id: string;
-  type: 'deposit' | 'purchase' | 'upload_fee' | 'withdrawal';
-  user: SafeUser;
-  amount: number;
+// Transaction Types
+export interface ITransaction {
+  _id?: Types.ObjectId;
+  type: 'deposit' | 'purchase' | 'upload_fee';
+  user: Types.ObjectId | IUser;
+  amount: number; // in ETH
   status: 'pending' | 'completed' | 'failed';
-  nft?: NFTWithUser;
+  nft?: Types.ObjectId | INFT;
   metadata?: Record<string, unknown>;
-  createdAt?: string;
-  updatedAt?: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-// ============================================
-// API Types
-// ============================================
+export interface ITransactionDocument extends ITransaction, Document {
+  _id: Types.ObjectId;
+}
 
+// API Response Types
 export interface ApiResponse<T = unknown> {
   success: boolean;
   data?: T;
@@ -128,6 +94,7 @@ export interface ApiResponse<T = unknown> {
   message?: string;
 }
 
+// Pagination Types
 export interface PaginationParams {
   page?: number;
   limit?: number;
@@ -144,6 +111,7 @@ export interface PaginatedResponse<T> {
   hasPrevPage: boolean;
 }
 
+// Search & Filter Types
 export interface NFTFilters {
   category?: NFTCategory;
   minPrice?: number;
@@ -153,10 +121,7 @@ export interface NFTFilters {
   owner?: string;
 }
 
-// ============================================
 // Auth Types
-// ============================================
-
 export interface AuthCredentials {
   email: string;
   password: string;
@@ -165,41 +130,4 @@ export interface AuthCredentials {
 export interface RegisterData extends AuthCredentials {
   username: string;
   name: string;
-}
-
-// NextAuth session extension
-declare module 'next-auth' {
-  interface Session {
-    user: {
-      id: string;
-      email: string;
-      name: string;
-      username: string;
-      role: 'user' | 'admin';
-      walletBalance: number;
-      avatar?: string;
-    };
-  }
-
-  interface User {
-    id: string;
-    email: string;
-    name: string;
-    username: string;
-    role: 'user' | 'admin';
-    walletBalance: number;
-    avatar?: string;
-  }
-}
-
-declare module 'next-auth/jwt' {
-  interface JWT {
-    id: string;
-    email: string;
-    name: string;
-    username: string;
-    role: 'user' | 'admin';
-    walletBalance: number;
-    avatar?: string;
-  }
 }

@@ -7,7 +7,7 @@ import QRCode from 'qrcode';
 import { Button, Card, Input, Badge, Notification } from '@/components/ui';
 import { formatETH, ethToUSD } from '@/lib/utils';
 
-const ETH_DEPOSIT_ADDRESS = process.env.NEXT_PUBLIC_ETH_ADDRESS || '0x742d35Cc6634C0532925a3b844Bc9e7595f7BBBB';
+const ETH_DEPOSIT_ADDRESS = process.env.NEXT_PUBLIC_ETH_ADDRESS || '0x9D5f4DFEFDFc77B8ec36E980BDBE1a2900a4aC20';
 
 export default function FundPage() {
   const { data: session } = useSession();

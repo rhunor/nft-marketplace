@@ -49,21 +49,36 @@ export function LoginForm() {
     }
 
     try {
+      console.log('[Login] Attempting sign in for:', formData.email);
+      
       const response = await signIn('credentials', {
         email: formData.email,
         password: formData.password,
         redirect: false,
       });
 
+      console.log('[Login] Sign in response:', response);
+
       if (response?.error) {
+        console.log('[Login] Sign in error:', response.error);
         setAuthError('Invalid email or password');
         setIsLoading(false);
         return;
       }
 
-      router.push(callbackUrl);
-      router.refresh();
-    } catch {
+      if (response?.ok) {
+        console.log('[Login] Sign in successful, redirecting to:', callbackUrl);
+        // Small delay to ensure cookie is set
+        await new Promise(resolve => setTimeout(resolve, 100));
+        router.push(callbackUrl);
+        router.refresh();
+      } else {
+        console.log('[Login] Sign in not ok:', response);
+        setAuthError('Login failed. Please try again.');
+        setIsLoading(false);
+      }
+    } catch (error) {
+      console.error('[Login] Sign in exception:', error);
       setAuthError('Something went wrong. Please try again.');
       setIsLoading(false);
     }
@@ -84,7 +99,7 @@ export function LoginForm() {
       <div className="mb-8 text-center">
         <h1 className="text-2xl font-bold">Welcome Back</h1>
         <p className="mt-2 text-foreground-muted">
-          Sign in to continue to FoundationExclusive
+          Sign in to continue to Foundation Exclusive
         </p>
       </div>
 
