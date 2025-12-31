@@ -1,5 +1,5 @@
 import NextAuth from 'next-auth';
-import { authConfig } from '@/auth.config';
+import { authConfig } from './auth.config';
 import { NextResponse } from 'next/server';
 
 const { auth } = NextAuth(authConfig);
@@ -16,9 +16,14 @@ const authRoutes = ['/login', '/register'];
 export default auth((req) => {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
-  const isAdmin = req.auth?.user?.role === 'admin';
+  const userRole = req.auth?.user?.role;
+  const isAdmin = userRole === 'admin';
 
-  console.log('[Middleware] Path:', nextUrl.pathname, 'isLoggedIn:', isLoggedIn, 'user:', req.auth?.user?.email);
+  console.log('[Middleware] Path:', nextUrl.pathname);
+  console.log('[Middleware] isLoggedIn:', isLoggedIn);
+  console.log('[Middleware] User:', req.auth?.user?.email);
+  console.log('[Middleware] Role:', userRole);
+  console.log('[Middleware] isAdmin:', isAdmin);
 
   // Check if current path matches any protected route
   const isProtectedRoute = protectedRoutes.some((route) =>
@@ -44,10 +49,18 @@ export default auth((req) => {
     );
   }
 
-  // Redirect to 404 or home if trying to access admin route without admin role
-  if (isAdminRoute && (!isLoggedIn || !isAdmin)) {
-    console.log('[Middleware] Redirecting to home - admin route without admin role');
-    return NextResponse.redirect(new URL('/', nextUrl));
+  // Redirect to home if trying to access admin route without admin role
+  if (isAdminRoute) {
+    console.log('[Middleware] Admin route detected');
+    if (!isLoggedIn) {
+      console.log('[Middleware] Redirecting - not logged in');
+      return NextResponse.redirect(new URL('/login', nextUrl));
+    }
+    if (!isAdmin) {
+      console.log('[Middleware] Redirecting - not admin, role is:', userRole);
+      return NextResponse.redirect(new URL('/', nextUrl));
+    }
+    console.log('[Middleware] Admin access granted');
   }
 
   // Redirect to dashboard if trying to access auth routes while logged in

@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
-import { Search, Plus, Edit2, Shield, ShieldOff } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Search, Plus,Edit } from 'lucide-react';
 import { Button, Input, Card, Avatar, Badge, Modal, Notification } from '@/components/ui';
 import { formatETH, formatDate } from '@/lib/utils';
 
@@ -10,7 +10,6 @@ interface User {
   email: string;
   username: string;
   name: string;
-  avatar: string;
   role: 'user' | 'admin';
   walletBalance: number;
   createdAt: string;
@@ -21,16 +20,14 @@ export default function AdminUsersPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
-  const [showEditModal, setShowEditModal] = useState(false);
   const [balanceAmount, setBalanceAmount] = useState('');
-  const [balanceOperation, setBalanceOperation] = useState<'add' | 'set'>('add');
   const [notification, setNotification] = useState<{
     type: 'success' | 'error';
     title: string;
     message?: string;
   } | null>(null);
 
-  const fetchUsers = useCallback(async () => {
+  const fetchUsers = async () => {
     try {
       const response = await fetch(`/api/admin/users?search=${search}`);
       const data = await response.json();
@@ -42,13 +39,13 @@ export default function AdminUsersPage() {
     } finally {
       setIsLoading(false);
     }
-  }, [search]);
+  };
 
   useEffect(() => {
     fetchUsers();
-  }, [fetchUsers]);
+  }, [search]);
 
-  const updateBalance = async () => {
+  const updateUserBalance = async (operation: 'add' | 'set') => {
     if (!selectedUser || !balanceAmount) return;
 
     try {
@@ -58,7 +55,7 @@ export default function AdminUsersPage() {
         body: JSON.stringify({
           userId: selectedUser._id,
           walletBalance: {
-            operation: balanceOperation,
+            operation,
             amount: parseFloat(balanceAmount),
           },
         }),
@@ -66,18 +63,17 @@ export default function AdminUsersPage() {
 
       const data = await response.json();
 
-      if (data.success) {
+      if (data.success && data.data) {
         setNotification({
           type: 'success',
           title: 'Balance Updated',
-          message: `New balance: ${formatETH(data.data.user.walletBalance)}`,
+          message: `User balance ${operation === 'add' ? 'increased' : 'set'} to ${formatETH(data.data.walletBalance)}`,
         });
-        setShowEditModal(false);
         setSelectedUser(null);
         setBalanceAmount('');
         fetchUsers();
       } else {
-        throw new Error(data.error);
+        throw new Error(data.error || 'Update failed');
       }
     } catch (error) {
       setNotification({
@@ -88,20 +84,13 @@ export default function AdminUsersPage() {
     }
   };
 
-  const toggleRole = async (user: User) => {
-    const newRole = user.role === 'admin' ? 'user' : 'admin';
-    const confirmMessage = newRole === 'admin' 
-      ? `Promote ${user.name} to admin?`
-      : `Remove admin privileges from ${user.name}?`;
-    
-    if (!confirm(confirmMessage)) return;
-
+  const updateUserRole = async (userId: string, newRole: 'user' | 'admin') => {
     try {
       const response = await fetch('/api/admin/users', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          userId: user._id,
+          userId,
           role: newRole,
         }),
       });
@@ -112,7 +101,7 @@ export default function AdminUsersPage() {
         setNotification({
           type: 'success',
           title: 'Role Updated',
-          message: `${user.name} is now ${newRole === 'admin' ? 'an admin' : 'a regular user'}`,
+          message: `User role changed to ${newRole}`,
         });
         fetchUsers();
       } else {
@@ -132,7 +121,7 @@ export default function AdminUsersPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold">User Management</h1>
         <p className="mt-2 text-foreground-muted">
-          Manage users and their account balances
+          Manage users and their wallet balances
         </p>
       </div>
 
@@ -150,8 +139,8 @@ export default function AdminUsersPage() {
       <Card className="overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead>
-              <tr className="border-b border-border bg-background-hover">
+            <thead className="border-b border-border bg-background-secondary">
+              <tr>
                 <th className="px-6 py-4 text-left text-sm font-medium text-foreground-muted">
                   User
                 </th>
@@ -177,12 +166,7 @@ export default function AdminUsersPage() {
                 <tr key={user._id} className="hover:bg-background-hover">
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
-                      <Avatar
-                        src={user.avatar}
-                        alt={user.name}
-                        fallback={user.name}
-                        size="sm"
-                      />
+                      <Avatar fallback={user.name} size="sm" />
                       <div>
                         <p className="font-medium">{user.name}</p>
                         <p className="text-sm text-foreground-muted">
@@ -191,16 +175,18 @@ export default function AdminUsersPage() {
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-foreground-muted">{user.email}</td>
+                  <td className="px-6 py-4 text-sm">{user.email}</td>
                   <td className="px-6 py-4">
                     <Badge variant={user.role === 'admin' ? 'primary' : 'default'}>
                       {user.role}
                     </Badge>
                   </td>
-                  <td className="px-6 py-4 font-medium">
-                    {formatETH(user.walletBalance)}
+                  <td className="px-6 py-4">
+                    <span className="font-medium text-accent-primary">
+                      {formatETH(user.walletBalance)}
+                    </span>
                   </td>
-                  <td className="px-6 py-4 text-foreground-muted">
+                  <td className="px-6 py-4 text-sm text-foreground-muted">
                     {formatDate(user.createdAt)}
                   </td>
                   <td className="px-6 py-4">
@@ -208,23 +194,17 @@ export default function AdminUsersPage() {
                       <Button
                         variant="ghost"
                         size="sm"
-                        onClick={() => {
-                          setSelectedUser(user);
-                          setShowEditModal(true);
-                        }}
-                        leftIcon={<Edit2 className="h-4 w-4" />}
+                        onClick={() => setSelectedUser(user)}
                       >
-                        Edit
+                        <Edit className="h-4 w-4" />
                       </Button>
                       <Button
                         variant="ghost"
                         size="sm"
-                        onClick={() => toggleRole(user)}
-                        leftIcon={
-                          user.role === 'admin' ? (
-                            <ShieldOff className="h-4 w-4" />
-                          ) : (
-                            <Shield className="h-4 w-4" />
+                        onClick={() =>
+                          updateUserRole(
+                            user._id,
+                            user.role === 'admin' ? 'user' : 'admin'
                           )
                         }
                       >
@@ -239,91 +219,59 @@ export default function AdminUsersPage() {
         </div>
 
         {users.length === 0 && !isLoading && (
-          <div className="py-12 text-center text-foreground-muted">
+          <div className="p-8 text-center text-foreground-muted">
             No users found
           </div>
         )}
       </Card>
 
-      {/* Edit Modal */}
+      {/* Edit Balance Modal */}
       <Modal
-        isOpen={showEditModal}
+        isOpen={!!selectedUser}
         onClose={() => {
-          setShowEditModal(false);
           setSelectedUser(null);
           setBalanceAmount('');
         }}
-        title="Edit User Balance"
+        title="Update User Balance"
       >
         {selectedUser && (
           <div className="space-y-4">
-            <div className="flex items-center gap-4 rounded-xl border border-border p-4">
-              <Avatar
-                src={selectedUser.avatar}
-                alt={selectedUser.name}
-                fallback={selectedUser.name}
-              />
+            <div className="flex items-center gap-3 rounded-xl border border-border p-4">
+              <Avatar fallback={selectedUser.name} size="md" />
               <div>
                 <p className="font-medium">{selectedUser.name}</p>
                 <p className="text-sm text-foreground-muted">
-                  Current balance: {formatETH(selectedUser.walletBalance)}
+                  @{selectedUser.username}
+                </p>
+                <p className="text-sm text-accent-primary">
+                  Current: {formatETH(selectedUser.walletBalance)}
                 </p>
               </div>
             </div>
 
-            <div>
-              <label className="mb-2 block text-sm font-medium">Operation</label>
-              <div className="flex gap-2">
-                <Button
-                  variant={balanceOperation === 'add' ? 'primary' : 'secondary'}
-                  onClick={() => setBalanceOperation('add')}
-                  leftIcon={<Plus className="h-4 w-4" />}
-                  className="flex-1"
-                >
-                  Add to Balance
-                </Button>
-                <Button
-                  variant={balanceOperation === 'set' ? 'primary' : 'secondary'}
-                  onClick={() => setBalanceOperation('set')}
-                  className="flex-1"
-                >
-                  Set Balance
-                </Button>
-              </div>
-            </div>
-
-            <div>
-              <label className="mb-2 block text-sm font-medium">
-                Amount (ETH)
-              </label>
-              <Input
-                type="number"
-                value={balanceAmount}
-                onChange={(e) => setBalanceAmount(e.target.value)}
-                placeholder="0.00"
-                step="0.01"
-                min="0"
-              />
-            </div>
+            <Input
+              label="Amount (ETH)"
+              type="number"
+              step="0.01"
+              value={balanceAmount}
+              onChange={(e) => setBalanceAmount(e.target.value)}
+              placeholder="0.1"
+            />
 
             <div className="flex gap-3">
               <Button
                 variant="secondary"
                 className="flex-1"
-                onClick={() => {
-                  setShowEditModal(false);
-                  setSelectedUser(null);
-                  setBalanceAmount('');
-                }}
+                onClick={() => updateUserBalance('add')}
+                leftIcon={<Plus className="h-4 w-4" />}
               >
-                Cancel
+                Add to Balance
               </Button>
               <Button
                 className="flex-1"
-                onClick={updateBalance}
-                disabled={!balanceAmount}
+                onClick={() => updateUserBalance('set')}
               >
-                Update Balance
+                Set Balance
               </Button>
             </div>
           </div>

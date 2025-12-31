@@ -3,7 +3,7 @@ import { auth } from '@/auth';
 import connectDB from '@/lib/db/connection';
 import { NFT, User } from '@/lib/db/models';
 import { nftSchema } from '@/lib/validations';
-import { uploadToS3, validateFile } from '@/lib/utils/s3';
+import { uploadToCloudinary, validateFile } from '@/lib/cloudinary';
 import { calculateUploadFee, getMediaType } from '@/lib/utils';
 
 // GET - List NFTs with filters
@@ -18,13 +18,15 @@ export async function GET(request: Request) {
     const sortOrder = searchParams.get('sortOrder') || 'desc';
     const creator = searchParams.get('creator');
     const owner = searchParams.get('owner');
+    const minPrice = searchParams.get('minPrice');
+    const maxPrice = searchParams.get('maxPrice');
 
     await connectDB();
 
     // Build query
     const query: Record<string, unknown> = { isListed: true };
 
-    if (category) {
+    if (category && category !== 'all') {
       query.category = category;
     }
 
@@ -36,8 +38,24 @@ export async function GET(request: Request) {
       query.owner = owner;
     }
 
+    // Price range filter
+    if (minPrice || maxPrice) {
+      query.price = {};
+      if (minPrice) {
+        (query.price as Record<string, number>).$gte = parseFloat(minPrice);
+      }
+      if (maxPrice) {
+        (query.price as Record<string, number>).$lte = parseFloat(maxPrice);
+      }
+    }
+
+    // Text search
     if (search) {
-      query.$text = { $search: search };
+      query.$or = [
+        { title: { $regex: search, $options: 'i' } },
+        { description: { $regex: search, $options: 'i' } },
+        { tags: { $in: [new RegExp(search, 'i')] } },
+      ];
     }
 
     // Build sort
@@ -150,8 +168,8 @@ export async function POST(request: Request) {
       );
     }
 
-    // Upload to S3
-    const uploadResult = await uploadToS3(file);
+    // Upload to Cloudinary
+    const uploadResult = await uploadToCloudinary(file, 'nft-uploads');
     if (!uploadResult.success) {
       return NextResponse.json(
         { error: uploadResult.error || 'Failed to upload file' },
@@ -165,6 +183,8 @@ export async function POST(request: Request) {
       description,
       mediaUrl: uploadResult.url,
       mediaType: getMediaType(file.name),
+      thumbnailUrl: uploadResult.thumbnailUrl || uploadResult.url,
+      cloudinaryPublicId: uploadResult.publicId,
       price,
       category,
       tags,

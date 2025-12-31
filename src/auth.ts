@@ -38,13 +38,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             throw new Error('Invalid email or password');
           }
 
-          // Plain text comparison — passwords are now stored as plain strings
+          // Plain text comparison — passwords are stored as plain strings
           if (user.password !== credentials.password) {
             console.log('[Auth] Invalid password');
             throw new Error('Invalid email or password');
           }
 
-          console.log('[Auth] User authenticated successfully:', user.email);
+          console.log('[Auth] User authenticated successfully:', user.email, 'Role:', user.role);
 
           return {
             id: user._id.toString(),
@@ -64,40 +64,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   ],
   callbacks: {
     ...authConfig.callbacks,
-    async jwt({ token, user, trigger, session }) {
-      console.log('[Auth] JWT callback - trigger:', trigger, 'hasUser:', !!user);
-
-      if (user) {
-        token.id = user.id;
-        token.email = user.email || '';
-        token.name = user.name || '';
-        token.username = user.username;
-        token.role = user.role;
-        token.walletBalance = user.walletBalance;
-        token.avatar = user.avatar;
-      }
-      // Handle session updates
-      if (trigger === 'update' && session) {
-        token.walletBalance = session.walletBalance ?? token.walletBalance;
-        token.name = session.name ?? token.name;
-        token.avatar = session.avatar ?? token.avatar;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      console.log('[Auth] Session callback - hasToken:', !!token);
-
-      if (token && session.user) {
-        session.user.id = (token.id as string) || '';
-        session.user.email = (token.email as string) || '';
-        session.user.name = (token.name as string) || '';
-        session.user.username = (token.username as string) || '';
-        session.user.role = (token.role as 'user' | 'admin') || 'user';
-        session.user.walletBalance = (token.walletBalance as number) || 0;
-        session.user.avatar = (token.avatar as string) || '';
-      }
-      return session;
-    },
     async signIn({ user, account }) {
       console.log('[Auth] SignIn callback - provider:', account?.provider);
 
@@ -116,7 +82,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
               email: user.email,
               username,
               name: user.name || username,
-              // Random plain-text string (never used for Google login)
+              // Random plain-text string as password (never used for Google login)
               password: crypto.randomUUID(),
               avatar: user.image || '',
               role: 'user',

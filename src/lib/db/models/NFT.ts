@@ -1,4 +1,4 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Schema, Types } from 'mongoose';
 import type { Model } from 'mongoose';
 import type { INFTDocument } from '@/types';
 
@@ -13,6 +13,7 @@ const NFTSchema = new Schema<INFTDocument>(
     description: {
       type: String,
       required: [true, 'Description is required'],
+      trim: true,
       maxlength: [2000, 'Description cannot exceed 2000 characters'],
     },
     mediaUrl: {
@@ -22,9 +23,13 @@ const NFTSchema = new Schema<INFTDocument>(
     mediaType: {
       type: String,
       enum: ['image', 'video', 'audio', 'other'],
-      default: 'image',
+      required: true,
     },
     thumbnailUrl: {
+      type: String,
+      default: '',
+    },
+    cloudinaryPublicId: {
       type: String,
       default: '',
     },
@@ -35,8 +40,8 @@ const NFTSchema = new Schema<INFTDocument>(
     },
     category: {
       type: String,
+      enum: ['new', 'photography', 'digital-art', 'games', 'music', 'video', 'collectibles'],
       required: [true, 'Category is required'],
-      enum: ['digital-art', 'photography', 'music', 'video', 'games', 'collectibles'],
     },
     tags: {
       type: [String],
@@ -45,7 +50,7 @@ const NFTSchema = new Schema<INFTDocument>(
         validator: function (v: string[]) {
           return v.length <= 10;
         },
-        message: 'Maximum 10 tags allowed',
+        message: 'Cannot have more than 10 tags',
       },
     },
     creator: {
@@ -67,6 +72,7 @@ const NFTSchema = new Schema<INFTDocument>(
     views: {
       type: Number,
       default: 0,
+      min: 0,
     },
     isListed: {
       type: Boolean,
@@ -78,32 +84,46 @@ const NFTSchema = new Schema<INFTDocument>(
   }
 );
 
+// Indexes for efficient queries
+NFTSchema.index({ title: 'text', description: 'text', tags: 'text' });
+NFTSchema.index({ category: 1 });
+NFTSchema.index({ price: 1 });
+NFTSchema.index({ creator: 1 });
+NFTSchema.index({ owner: 1 });
+NFTSchema.index({ createdAt: -1 });
+NFTSchema.index({ views: -1 });
+NFTSchema.index({ isListed: 1 });
+
 // Virtual for like count
 NFTSchema.virtual('likeCount').get(function () {
   return this.likes?.length || 0;
 });
 
-// Method to toggle like
-NFTSchema.methods.toggleLike = async function (userId: string): Promise<boolean> {
-  const index = this.likes.indexOf(userId);
+// Instance method to toggle like
+NFTSchema.methods.toggleLike = async function (userId: Types.ObjectId | string) {
+  const userIdStr = typeof userId === 'string' ? userId : userId.toString();
+  const index = this.likes.findIndex(
+    (like: Types.ObjectId) => like.toString() === userIdStr
+  );
   if (index === -1) {
-    this.likes.push(userId);
+    this.likes.push(new Types.ObjectId(userIdStr));
   } else {
     this.likes.splice(index, 1);
   }
-  await this.save();
-  return index === -1;
+  return this.save();
 };
 
-// Method to increment views
-NFTSchema.methods.incrementViews = async function (): Promise<void> {
+// Instance method to increment views
+NFTSchema.methods.incrementViews = async function () {
   this.views += 1;
-  await this.save();
+  return this.save();
 };
 
-// Safe model getter that works in Edge runtime
-const NFT: Model<INFTDocument> = 
-  (mongoose.models?.NFT as Model<INFTDocument>) || 
-  mongoose.model<INFTDocument>('NFT', NFTSchema);
+// Ensure virtuals are included when converting to JSON/Object
+NFTSchema.set('toJSON', { virtuals: true });
+NFTSchema.set('toObject', { virtuals: true });
+
+const NFT: Model<INFTDocument> =
+  mongoose.models.NFT || mongoose.model<INFTDocument>('NFT', NFTSchema);
 
 export default NFT;

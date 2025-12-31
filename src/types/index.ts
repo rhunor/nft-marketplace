@@ -33,6 +33,7 @@ export interface INFT {
   mediaUrl: string;
   mediaType: 'image' | 'video' | 'audio' | 'other';
   thumbnailUrl?: string;
+  cloudinaryPublicId?: string;
   price: number; // in ETH
   category: NFTCategory;
   tags: string[];

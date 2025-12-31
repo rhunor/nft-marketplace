@@ -16,7 +16,7 @@ import {
 import { Button, Input, Textarea, Select, Card, Notification } from '@/components/ui';
 import { nftSchema, type NFTInput } from '@/lib/validations';
 import { NFT_CATEGORIES, formatETH, getMediaType, formatFileSize } from '@/lib/utils';
-import { useEthPrice } from '@/contexts/EthPriceContext';
+import { useEthPrice } from '@/contexts';
 
 const categoryOptions = NFT_CATEGORIES.map((cat) => ({
   value: cat.value,
@@ -50,6 +50,7 @@ export default function UploadPage() {
     category: 'digital-art',
     tags: [],
   });
+  const [priceInput, setPriceInput] = useState('0.1'); // Separate state for price input string
   const [tagInput, setTagInput] = useState('');
   const [errors, setErrors] = useState<Partial<Record<keyof NFTInput, string>>>({});
   const [isLoading, setIsLoading] = useState(false);
@@ -124,11 +125,35 @@ export default function UploadPage() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: name === 'price' ? parseFloat(value) || 0 : value,
-    }));
+    
+    // Handle price input separately for better UX
+    if (name === 'price') {
+      // Allow empty string or valid number input
+      setPriceInput(value);
+      const numValue = parseFloat(value);
+      setFormData((prev) => ({
+        ...prev,
+        price: isNaN(numValue) ? 0 : numValue,
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
     setErrors((prev) => ({ ...prev, [name]: '' }));
+  };
+
+  // Handle price input blur to format properly
+  const handlePriceBlur = () => {
+    const numValue = parseFloat(priceInput);
+    if (isNaN(numValue) || numValue <= 0) {
+      setPriceInput('');
+      setFormData((prev) => ({ ...prev, price: 0 }));
+    } else {
+      // Format to remove unnecessary trailing zeros but keep precision
+      setPriceInput(numValue.toString());
+    }
   };
 
   const addTag = () => {
@@ -167,6 +192,12 @@ export default function UploadPage() {
         title: 'Insufficient Balance',
         message: `You need at least ${formatETH(uploadFee)} to upload an NFT. Please fund your account.`,
       });
+      return;
+    }
+
+    // Validate price is a positive number
+    if (!formData.price || formData.price <= 0) {
+      setErrors((prev) => ({ ...prev, price: 'Price must be greater than 0' }));
       return;
     }
 
@@ -379,10 +410,11 @@ export default function UploadPage() {
                   label="Price (ETH)"
                   name="price"
                   type="number"
-                  step="0.0001"
-                  min="0.0001"
-                  value={formData.price}
+                  step="any"
+                  min="0"
+                  value={priceInput}
                   onChange={handleInputChange}
+                  onBlur={handlePriceBlur}
                   error={errors.price}
                   placeholder="0.1"
                 />

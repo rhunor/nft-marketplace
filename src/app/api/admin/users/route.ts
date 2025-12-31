@@ -71,7 +71,7 @@ export async function PATCH(request: Request) {
     }
 
     const body = await request.json();
-    const { userId, walletBalance, role, operation } = body;
+    const { userId, walletBalance, role } = body;
 
     if (!userId) {
       return NextResponse.json(
@@ -90,12 +90,30 @@ export async function PATCH(request: Request) {
       );
     }
 
-    // Update balance
+    // Update balance - handle both object format and direct number
     if (walletBalance !== undefined) {
-      if (operation === 'add') {
-        user.walletBalance += walletBalance;
+      if (typeof walletBalance === 'object' && walletBalance !== null) {
+        // Handle object format: { operation: 'add' | 'set', amount: number }
+        const { operation, amount } = walletBalance as { operation: string; amount: number };
+        const numAmount = parseFloat(String(amount)) || 0;
+        
+        if (operation === 'add') {
+          user.walletBalance = (user.walletBalance || 0) + numAmount;
+        } else if (operation === 'subtract') {
+          user.walletBalance = Math.max(0, (user.walletBalance || 0) - numAmount);
+        } else {
+          // 'set' or default
+          user.walletBalance = numAmount;
+        }
       } else {
-        user.walletBalance = walletBalance;
+        // Handle direct number format
+        const numBalance = parseFloat(String(walletBalance)) || 0;
+        user.walletBalance = numBalance;
+      }
+      
+      // Ensure balance is never negative
+      if (user.walletBalance < 0) {
+        user.walletBalance = 0;
       }
     }
 
