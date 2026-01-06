@@ -1,8 +1,37 @@
 import mongoose, { Schema, Types } from 'mongoose';
 import type { Model } from 'mongoose';
-import type { INFTDocument } from '@/types';
 
-const NFTSchema = new Schema<INFTDocument>(
+// Define the NFT interface directly here to avoid TypeScript conflicts with Document.collection
+interface INFTSchema {
+  title: string;
+  description: string;
+  mediaUrl: string;
+  mediaType: 'image' | 'video' | 'audio' | 'other';
+  thumbnailUrl?: string;
+  cloudinaryPublicId?: string;
+  price: number;
+  category: string;
+  tags: string[];
+  creator: Types.ObjectId;
+  owner: Types.ObjectId;
+  nftCollection?: Types.ObjectId | null;
+  likes: Types.ObjectId[];
+  views: number;
+  isListed: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+// Methods interface
+interface INFTMethods {
+  toggleLike(userId: Types.ObjectId | string): Promise<INFTSchema>;
+  incrementViews(): Promise<INFTSchema>;
+}
+
+// Model type
+type NFTModel = Model<INFTSchema, object, INFTMethods>;
+
+const NFTSchema = new Schema<INFTSchema, NFTModel, INFTMethods>(
   {
     title: {
       type: String,
@@ -63,6 +92,11 @@ const NFTSchema = new Schema<INFTDocument>(
       ref: 'User',
       required: true,
     },
+    nftCollection: {
+      type: Schema.Types.ObjectId,
+      ref: 'Collection',
+      default: null,
+    },
     likes: [
       {
         type: Schema.Types.ObjectId,
@@ -90,6 +124,7 @@ NFTSchema.index({ category: 1 });
 NFTSchema.index({ price: 1 });
 NFTSchema.index({ creator: 1 });
 NFTSchema.index({ owner: 1 });
+NFTSchema.index({ nftCollection: 1 });
 NFTSchema.index({ createdAt: -1 });
 NFTSchema.index({ views: -1 });
 NFTSchema.index({ isListed: 1 });
@@ -123,7 +158,7 @@ NFTSchema.methods.incrementViews = async function () {
 NFTSchema.set('toJSON', { virtuals: true });
 NFTSchema.set('toObject', { virtuals: true });
 
-const NFT: Model<INFTDocument> =
-  mongoose.models.NFT || mongoose.model<INFTDocument>('NFT', NFTSchema);
+const NFT: NFTModel =
+  (mongoose.models.NFT as NFTModel) || mongoose.model<INFTSchema, NFTModel>('NFT', NFTSchema);
 
 export default NFT;

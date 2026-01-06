@@ -42,6 +42,7 @@ export const authConfig: NextAuthConfig = {
     },
     // These callbacks are needed for the middleware to access user role
     async jwt({ token, user, trigger, session }) {
+      // Initial sign in
       if (user) {
         token.id = user.id;
         token.email = user.email || '';
@@ -52,11 +53,26 @@ export const authConfig: NextAuthConfig = {
         token.avatar = user.avatar;
       }
 
-      // Handle session updates
+      // Handle session updates from client
+      // The session parameter contains the data passed to update()
       if (trigger === 'update' && session) {
-        token.walletBalance = session.walletBalance ?? token.walletBalance;
-        token.name = session.name ?? token.name;
-        token.avatar = session.avatar ?? token.avatar;
+        // Update token with new values from session
+        if (session.walletBalance !== undefined) {
+          token.walletBalance = session.walletBalance;
+        }
+        if (session.name !== undefined) {
+          token.name = session.name;
+        }
+        if (session.avatar !== undefined) {
+          token.avatar = session.avatar;
+        }
+        if (session.role !== undefined) {
+          token.role = session.role;
+        }
+        // Flag to indicate a refresh is needed
+        if (session.refresh === true) {
+          token.needsRefresh = true;
+        }
       }
 
       return token;

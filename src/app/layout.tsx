@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk, Inter } from 'next/font/google';
 import { AuthProvider } from '@/components/auth';
-import { EthPriceProvider } from '@/contexts/EthPriceContext';
+import { EthPriceProvider, SessionRefreshProvider } from '@/contexts';
 import '@/styles/globals.css';
 
 const spaceGrotesk = Space_Grotesk({
@@ -78,11 +78,13 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <AuthProvider>
-          <EthPriceProvider>
-            <div className="relative flex min-h-screen flex-col">
-              {children}
-            </div>
-          </EthPriceProvider>
+          <SessionRefreshProvider>
+            <EthPriceProvider>
+              <div className="relative flex min-h-screen flex-col">
+                {children}
+              </div>
+            </EthPriceProvider>
+          </SessionRefreshProvider>
         </AuthProvider>
       </body>
     </html>

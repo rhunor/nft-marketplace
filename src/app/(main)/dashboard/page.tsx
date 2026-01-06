@@ -13,17 +13,20 @@ import {
   ArrowUpRight,
   Heart,
   Eye,
-  Sparkles,
+  ArrowDownToLine,
+  AlertTriangle,
+  CheckCircle,
+  Clock,
 } from 'lucide-react';
-import { Button, Card, Avatar, Badge, Loading } from '@/components/ui';
-import { NFTGrid } from '@/components/nft';
-import { sampleNFTs } from '@/lib/db/seed-data';
+import { Button, Card, Avatar, Badge, Loading, Modal, Input, Notification } from '@/components/ui';
 import { formatETH, getCategoryLabel } from '@/lib/utils';
 import { useEthPrice } from '@/contexts';
 import type { NFTWithUser, PaginatedResponse } from '@/types';
 
+const WITHDRAWAL_FEE_PERCENT = 10;
+
 export default function DashboardPage() {
-  const { data: session, status } = useSession();
+  const { data: session, status, update: updateSession } = useSession();
   const { formatEthToUsd } = useEthPrice();
   const [activeTab, setActiveTab] = useState<'owned' | 'created' | 'listed'>('owned');
   const [dbNFTs, setDbNFTs] = useState<NFTWithUser[]>([]);
@@ -35,9 +38,23 @@ export default function DashboardPage() {
     totalValue: 0,
   });
 
-  // Sample NFTs for the user (simulated ownership)
-  const sampleOwnedNFTs = sampleNFTs.slice(0, 3);
-  const sampleCreatedNFTs = sampleNFTs.slice(3, 5);
+  // Withdraw modal state
+  const [showWithdrawModal, setShowWithdrawModal] = useState(false);
+  const [withdrawStep, setWithdrawStep] = useState<'form' | 'confirm' | 'processing' | 'success'>('form');
+  const [walletAddress, setWalletAddress] = useState('');
+  const [withdrawAmount, setWithdrawAmount] = useState('');
+  const [withdrawError, setWithdrawError] = useState('');
+  const [withdrawResult, setWithdrawResult] = useState<{
+    transactionId: string;
+    netAmount: number;
+    feeAmount: number;
+    newBalance: number;
+  } | null>(null);
+  const [notification, setNotification] = useState<{
+    type: 'success' | 'error' | 'warning' | 'info';
+    title: string;
+    message?: string;
+  } | null>(null);
 
   // Fetch user's real NFTs from database
   const fetchNFTs = useCallback(async (type: string) => {
@@ -45,7 +62,9 @@ export default function DashboardPage() {
     
     setIsLoading(true);
     try {
-      const response = await fetch(`/api/users/me/nfts?type=${type}&limit=12`);
+      const response = await fetch(`/api/users/me/nfts?type=${type}&limit=12&_t=${Date.now()}`, {
+        cache: 'no-store',
+      });
       const data = await response.json();
       
       if (data.success) {
@@ -64,7 +83,9 @@ export default function DashboardPage() {
     if (!session?.user) return;
     
     try {
-      const response = await fetch('/api/users/me');
+      const response = await fetch(`/api/users/me?_t=${Date.now()}`, {
+        cache: 'no-store',
+      });
       const data = await response.json();
       
       if (data.success) {
@@ -88,6 +109,119 @@ export default function DashboardPage() {
     fetchNFTs(activeTab);
   }, [activeTab, fetchNFTs]);
 
+  // Withdraw functions
+  const resetWithdrawModal = () => {
+    setWithdrawStep('form');
+    setWalletAddress('');
+    setWithdrawAmount('');
+    setWithdrawError('');
+    setWithdrawResult(null);
+  };
+
+  const openWithdrawModal = () => {
+    resetWithdrawModal();
+    setShowWithdrawModal(true);
+  };
+
+  const closeWithdrawModal = () => {
+    setShowWithdrawModal(false);
+    resetWithdrawModal();
+  };
+
+  const calculateWithdrawDetails = () => {
+    const amount = parseFloat(withdrawAmount) || 0;
+    const fee = amount * (WITHDRAWAL_FEE_PERCENT / 100);
+    const netAmount = amount - fee;
+    return { amount, fee, netAmount };
+  };
+
+  const validateWithdraw = (): boolean => {
+    setWithdrawError('');
+
+    // Validate wallet address
+    if (!walletAddress || !/^0x[a-fA-F0-9]{40}$/.test(walletAddress)) {
+      setWithdrawError('Please enter a valid Ethereum wallet address (0x...)');
+      return false;
+    }
+
+    // Validate amount
+    const amount = parseFloat(withdrawAmount);
+    if (isNaN(amount) || amount <= 0) {
+      setWithdrawError('Please enter a valid withdrawal amount');
+      return false;
+    }
+
+    // Minimum withdrawal
+    if (amount < 0.01) {
+      setWithdrawError('Minimum withdrawal amount is 0.01 ETH');
+      return false;
+    }
+
+    // Check balance
+    if (amount > (session?.user?.walletBalance || 0)) {
+      setWithdrawError('Insufficient balance');
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleWithdrawSubmit = () => {
+    if (validateWithdraw()) {
+      setWithdrawStep('confirm');
+    }
+  };
+
+  const processWithdrawal = async () => {
+    setWithdrawStep('processing');
+    setWithdrawError('');
+
+    try {
+      const response = await fetch('/api/users/withdraw', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          walletAddress,
+          amount: parseFloat(withdrawAmount),
+        }),
+      });
+
+      // Check if response is JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        throw new Error('Server error. Please try again later.');
+      }
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Withdrawal failed');
+      }
+
+      if (!data.success || !data.data) {
+        throw new Error('Invalid response from server');
+      }
+
+      // Update session with new balance
+      await updateSession({
+        walletBalance: data.data.newBalance,
+      });
+
+      setWithdrawResult({
+        transactionId: data.data.transactionId,
+        netAmount: data.data.netAmount,
+        feeAmount: data.data.feeAmount,
+        newBalance: data.data.newBalance,
+      });
+
+      setWithdrawStep('success');
+    } catch (error) {
+      console.error('Withdrawal error:', error);
+      setWithdrawError(error instanceof Error ? error.message : 'Withdrawal failed. Please try again.');
+      setWithdrawStep('confirm');
+    }
+  };
+
   if (status === 'loading') {
     return <Loading text="Loading dashboard..." />;
   }
@@ -95,14 +229,6 @@ export default function DashboardPage() {
   if (!session) {
     return null; // Middleware will redirect
   }
-
-  // Combine stats: real database stats + sample stats
-  const combinedStats = {
-    owned: stats.owned + sampleOwnedNFTs.length,
-    created: stats.created + sampleCreatedNFTs.length,
-    listed: stats.listed,
-    totalValue: stats.totalValue + sampleOwnedNFTs.reduce((sum, nft) => sum + nft.price, 0),
-  };
 
   const statCards = [
     {
@@ -114,36 +240,24 @@ export default function DashboardPage() {
     },
     {
       label: 'NFTs Owned',
-      value: combinedStats.owned.toString(),
+      value: stats.owned.toString(),
       icon: ImageIcon,
       color: 'text-success',
     },
     {
       label: 'NFTs Created',
-      value: combinedStats.created.toString(),
+      value: stats.created.toString(),
       icon: Upload,
       color: 'text-warning',
     },
     {
       label: 'Total Value',
-      value: formatETH(combinedStats.totalValue),
-      subValue: formatEthToUsd(combinedStats.totalValue),
+      value: formatETH(stats.totalValue),
+      subValue: formatEthToUsd(stats.totalValue),
       icon: TrendingUp,
       color: 'text-accent-secondary',
     },
   ];
-
-  // Get the sample NFTs to display based on active tab
-  const getSampleNFTs = () => {
-    if (activeTab === 'owned') {
-      return sampleOwnedNFTs;
-    } else if (activeTab === 'created') {
-      return sampleCreatedNFTs;
-    }
-    return [];
-  };
-
-  const displaySampleNFTs = getSampleNFTs();
 
   return (
     <div className="py-8">
@@ -208,7 +322,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Quick Actions */}
-        <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Link href="/explore">
             <Card
               hover
@@ -260,6 +374,22 @@ export default function DashboardPage() {
               <ArrowUpRight className="h-5 w-5 text-foreground-subtle" />
             </Card>
           </Link>
+          <Card
+            hover
+            className="flex cursor-pointer items-center gap-4 p-6 transition-all hover:border-accent-primary"
+            onClick={openWithdrawModal}
+          >
+            <div className="rounded-xl bg-error/20 p-3">
+              <ArrowDownToLine className="h-6 w-6 text-error" />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-semibold">Withdraw Funds</h3>
+              <p className="text-sm text-foreground-muted">
+                Transfer to your wallet
+              </p>
+            </div>
+            <ArrowUpRight className="h-5 w-5 text-foreground-subtle" />
+          </Card>
         </div>
 
         {/* NFT Tabs */}
@@ -272,7 +402,7 @@ export default function DashboardPage() {
                 : 'border-transparent text-foreground-muted hover:text-foreground'
             }`}
           >
-            Owned ({combinedStats.owned})
+            Owned ({stats.owned})
           </button>
           <button
             onClick={() => setActiveTab('created')}
@@ -282,7 +412,7 @@ export default function DashboardPage() {
                 : 'border-transparent text-foreground-muted hover:text-foreground'
             }`}
           >
-            Created ({combinedStats.created})
+            Created ({stats.created})
           </button>
           <button
             onClick={() => setActiveTab('listed')}
@@ -296,88 +426,7 @@ export default function DashboardPage() {
           </button>
         </div>
 
-        {/* Your Uploads Section (from database) */}
-        {dbNFTs.length > 0 && (
-          <div className="mb-8">
-            <div className="mb-4 flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-primary/20">
-                <Sparkles className="h-4 w-4 text-accent-primary" />
-              </div>
-              <h3 className="font-semibold">Your Uploads</h3>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {dbNFTs.map((nft) => (
-                <Link key={nft._id} href={`/nft/${nft._id}`}>
-                  <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
-                    <div className="relative aspect-square overflow-hidden">
-                      <Image
-                        src={nft.thumbnailUrl || nft.mediaUrl}
-                        alt={nft.title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                      
-                      <Badge
-                        variant="default"
-                        className="absolute left-3 top-3 bg-black/50 text-white"
-                      >
-                        {getCategoryLabel(nft.category)}
-                      </Badge>
-
-                      <Badge
-                        variant="primary"
-                        className="absolute right-3 top-3"
-                      >
-                        Your Upload
-                      </Badge>
-
-                      {!nft.isListed && (
-                        <Badge
-                          variant="default"
-                          className="absolute left-3 bottom-3 bg-foreground-muted/80 text-white"
-                        >
-                          Not Listed
-                        </Badge>
-                      )}
-
-                      <div className="absolute bottom-3 right-3 flex items-center gap-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        <span className="flex items-center gap-1 text-sm text-white">
-                          <Heart className="h-4 w-4" />
-                          {nft.likes?.length || 0}
-                        </span>
-                        <span className="flex items-center gap-1 text-sm text-white">
-                          <Eye className="h-4 w-4" />
-                          {nft.views}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="p-4">
-                      <h3 className="line-clamp-1 text-lg font-semibold transition-colors group-hover:text-accent-primary">
-                        {nft.title}
-                      </h3>
-                      
-                      <div className="mt-4 flex items-center justify-between">
-                        <div>
-                          <p className="text-xs text-foreground-subtle">Price</p>
-                          <p className="text-lg font-bold text-accent-primary">
-                            {formatETH(nft.price)}
-                          </p>
-                          <p className="text-xs text-foreground-subtle">
-                            {formatEthToUsd(nft.price)}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Sample NFTs Grid (Collection style) */}
+        {/* NFTs Display */}
         {isLoading ? (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3].map((i) => (
@@ -393,16 +442,79 @@ export default function DashboardPage() {
               </div>
             ))}
           </div>
-        ) : displaySampleNFTs.length > 0 ? (
-          <>
-            {activeTab !== 'listed' && (
-              <div className="mb-4">
-                <h3 className="font-semibold text-foreground-muted">From Collections</h3>
-              </div>
-            )}
-            <NFTGrid nfts={displaySampleNFTs} columns={3} />
-          </>
-        ) : dbNFTs.length === 0 ? (
+        ) : dbNFTs.length > 0 ? (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {dbNFTs.map((nft) => (
+              <Link key={nft._id} href={`/nft/${nft._id}`}>
+                <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <div className="relative aspect-square overflow-hidden">
+                    <Image
+                      src={nft.thumbnailUrl || nft.mediaUrl}
+                      alt={nft.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    
+                    <Badge
+                      variant="default"
+                      className="absolute left-3 top-3 bg-black/50 text-white"
+                    >
+                      {getCategoryLabel(nft.category)}
+                    </Badge>
+
+                    {activeTab === 'created' && (
+                      <Badge
+                        variant="primary"
+                        className="absolute right-3 top-3"
+                      >
+                        Created
+                      </Badge>
+                    )}
+
+                    {!nft.isListed && (
+                      <Badge
+                        variant="default"
+                        className="absolute left-3 bottom-3 bg-foreground-muted/80 text-white"
+                      >
+                        Not Listed
+                      </Badge>
+                    )}
+
+                    <div className="absolute bottom-3 right-3 flex items-center gap-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <span className="flex items-center gap-1 text-sm text-white">
+                        <Heart className="h-4 w-4" />
+                        {nft.likes?.length || 0}
+                      </span>
+                      <span className="flex items-center gap-1 text-sm text-white">
+                        <Eye className="h-4 w-4" />
+                        {nft.views}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-4">
+                    <h3 className="line-clamp-1 text-lg font-semibold transition-colors group-hover:text-accent-primary">
+                      {nft.title}
+                    </h3>
+                    
+                    <div className="mt-4 flex items-center justify-between">
+                      <div>
+                        <p className="text-xs text-foreground-subtle">Price</p>
+                        <p className="text-lg font-bold text-accent-primary">
+                          {formatETH(nft.price)}
+                        </p>
+                        <p className="text-xs text-foreground-subtle">
+                          {formatEthToUsd(nft.price)}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        ) : (
           <Card className="flex flex-col items-center justify-center p-12 text-center">
             {activeTab === 'owned' ? (
               <>
@@ -436,8 +548,236 @@ export default function DashboardPage() {
               </>
             )}
           </Card>
-        ) : null}
+        )}
       </div>
+
+      {/* Withdraw Modal */}
+      <Modal
+        isOpen={showWithdrawModal}
+        onClose={closeWithdrawModal}
+        title={
+          withdrawStep === 'success'
+            ? 'Withdrawal Successful'
+            : withdrawStep === 'processing'
+            ? 'Processing Withdrawal'
+            : 'Withdraw Funds'
+        }
+      >
+        {withdrawStep === 'form' && (
+          <div className="space-y-4 sm:space-y-6">
+            {/* Disclaimer */}
+            <div className="flex gap-2 sm:gap-3 rounded-xl border border-warning/30 bg-warning/10 p-3 sm:p-4">
+              <AlertTriangle className="h-5 w-5 shrink-0 text-warning" />
+              <div className="text-xs sm:text-sm">
+                <p className="font-medium text-warning">Withdrawal Fee Notice</p>
+                <p className="mt-1 text-foreground-muted">
+                  A <span className="font-semibold text-warning">{WITHDRAWAL_FEE_PERCENT}% fee</span> will be deducted from your withdrawal amount.
+                </p>
+              </div>
+            </div>
+
+            {/* Balance Display */}
+            <div className="rounded-xl border border-border bg-background-secondary p-3 sm:p-4">
+              <p className="text-xs sm:text-sm text-foreground-muted">Available Balance</p>
+              <p className="mt-1 text-xl sm:text-2xl font-bold text-accent-primary">
+                {formatETH(session?.user?.walletBalance || 0)}
+              </p>
+              <p className="text-xs sm:text-sm text-foreground-subtle">
+                ≈ {formatEthToUsd(session?.user?.walletBalance || 0)}
+              </p>
+            </div>
+
+            {/* Wallet Address Input */}
+            <Input
+              label="Wallet Address"
+              value={walletAddress}
+              onChange={(e) => setWalletAddress(e.target.value)}
+              placeholder="0x..."
+              hint="Enter your Ethereum wallet address"
+            />
+
+            {/* Amount Input */}
+            <div>
+              <Input
+                label="Amount (ETH)"
+                type="number"
+                step="any"
+                min="0.01"
+                value={withdrawAmount}
+                onChange={(e) => setWithdrawAmount(e.target.value)}
+                placeholder="0.1"
+              />
+              <button
+                type="button"
+                className="mt-2 text-xs sm:text-sm text-accent-primary hover:underline"
+                onClick={() => setWithdrawAmount(String(session?.user?.walletBalance || 0))}
+              >
+                Withdraw Max
+              </button>
+            </div>
+
+            {/* Fee Preview */}
+            {withdrawAmount && parseFloat(withdrawAmount) > 0 && (
+              <div className="rounded-xl border border-border bg-background-hover p-3 sm:p-4 space-y-2">
+                <div className="flex justify-between text-xs sm:text-sm">
+                  <span className="text-foreground-muted">Withdrawal Amount</span>
+                  <span>{formatETH(parseFloat(withdrawAmount))}</span>
+                </div>
+                <div className="flex justify-between text-xs sm:text-sm">
+                  <span className="text-foreground-muted">Fee ({WITHDRAWAL_FEE_PERCENT}%)</span>
+                  <span className="text-error">-{formatETH(calculateWithdrawDetails().fee)}</span>
+                </div>
+                <div className="border-t border-border pt-2 flex justify-between text-sm sm:text-base font-medium">
+                  <span>You&apos;ll Receive</span>
+                  <span className="text-success">{formatETH(calculateWithdrawDetails().netAmount)}</span>
+                </div>
+              </div>
+            )}
+
+            {/* Error */}
+            {withdrawError && (
+              <p className="text-xs sm:text-sm text-error">{withdrawError}</p>
+            )}
+
+            {/* Submit Button */}
+            <Button
+              className="w-full"
+              onClick={handleWithdrawSubmit}
+              disabled={!walletAddress || !withdrawAmount}
+            >
+              Continue
+            </Button>
+          </div>
+        )}
+
+        {withdrawStep === 'confirm' && (
+          <div className="space-y-4 sm:space-y-6">
+            {/* Summary */}
+            <div className="rounded-xl border border-border bg-background-secondary p-3 sm:p-4 space-y-3 sm:space-y-4">
+              <div>
+                <p className="text-xs sm:text-sm text-foreground-muted">Sending to</p>
+                <p className="mt-1 font-mono text-xs sm:text-sm break-all">{walletAddress}</p>
+              </div>
+              <div className="border-t border-border pt-3 sm:pt-4 space-y-2">
+                <div className="flex justify-between text-sm">
+                  <span className="text-foreground-muted">Amount</span>
+                  <span className="font-medium">{formatETH(parseFloat(withdrawAmount))}</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-foreground-muted">Fee ({WITHDRAWAL_FEE_PERCENT}%)</span>
+                  <span className="text-error">-{formatETH(calculateWithdrawDetails().fee)}</span>
+                </div>
+                <div className="flex justify-between text-base sm:text-lg font-bold">
+                  <span>You&apos;ll Receive</span>
+                  <span className="text-success">{formatETH(calculateWithdrawDetails().netAmount)}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Warning */}
+            <div className="flex gap-2 sm:gap-3 rounded-xl border border-border bg-background-hover p-3 sm:p-4">
+              <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-foreground-muted" />
+              <p className="text-xs sm:text-sm text-foreground-muted">
+                Please verify the wallet address is correct. Transactions cannot be reversed.
+              </p>
+            </div>
+
+            {/* Error */}
+            {withdrawError && (
+              <p className="text-xs sm:text-sm text-error">{withdrawError}</p>
+            )}
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+              <Button
+                variant="secondary"
+                className="w-full sm:flex-1"
+                onClick={() => setWithdrawStep('form')}
+              >
+                Back
+              </Button>
+              <Button
+                className="w-full sm:flex-1"
+                onClick={processWithdrawal}
+              >
+                Confirm Withdrawal
+              </Button>
+            </div>
+          </div>
+        )}
+
+        {withdrawStep === 'processing' && (
+          <div className="py-6 sm:py-8 text-center">
+            <div className="mx-auto mb-4 h-12 w-12 sm:h-16 sm:w-16 animate-spin rounded-full border-4 border-accent-primary border-t-transparent" />
+            <h3 className="text-base sm:text-lg font-semibold">Processing Withdrawal</h3>
+            <p className="mt-2 text-sm text-foreground-muted">
+              Please wait while we process your transaction...
+            </p>
+          </div>
+        )}
+
+        {withdrawStep === 'success' && withdrawResult && (
+          <div className="space-y-4 sm:space-y-6">
+            {/* Success Icon */}
+            <div className="text-center">
+              <div className="mx-auto mb-3 sm:mb-4 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-success/20">
+                <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8 text-success" />
+              </div>
+              <h3 className="text-base sm:text-lg font-semibold">Withdrawal Submitted!</h3>
+              <p className="mt-1 sm:mt-2 text-sm text-foreground-muted">
+                Your funds are on the way to your wallet
+              </p>
+            </div>
+
+            {/* Transaction Details */}
+            <div className="rounded-xl border border-border bg-background-secondary p-3 sm:p-4 space-y-2 sm:space-y-3">
+              <div className="flex justify-between text-xs sm:text-sm">
+                <span className="text-foreground-muted">Transaction ID</span>
+                <span className="font-mono text-xs truncate ml-2 max-w-[120px] sm:max-w-none">{withdrawResult.transactionId}</span>
+              </div>
+              <div className="flex justify-between text-xs sm:text-sm">
+                <span className="text-foreground-muted">Amount Sent</span>
+                <span className="font-medium text-success">
+                  {formatETH(withdrawResult.netAmount)}
+                </span>
+              </div>
+              <div className="flex justify-between text-xs sm:text-sm">
+                <span className="text-foreground-muted">Fee Deducted</span>
+                <span>{formatETH(withdrawResult.feeAmount)}</span>
+              </div>
+              <div className="flex justify-between text-xs sm:text-sm">
+                <span className="text-foreground-muted">New Balance</span>
+                <span className="font-medium">{formatETH(withdrawResult.newBalance)}</span>
+              </div>
+            </div>
+
+            {/* Estimated Time */}
+            <div className="flex items-center gap-2 sm:gap-3 rounded-xl border border-border bg-background-hover p-3 sm:p-4">
+              <Clock className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-foreground-muted" />
+              <div>
+                <p className="text-sm font-medium">Estimated Processing Time</p>
+                <p className="text-xs sm:text-sm text-foreground-muted">24-48 hours</p>
+              </div>
+            </div>
+
+            {/* Close Button */}
+            <Button className="w-full" onClick={closeWithdrawModal}>
+              Done
+            </Button>
+          </div>
+        )}
+      </Modal>
+
+      {/* Notification */}
+      {notification && (
+        <Notification
+          type={notification.type}
+          title={notification.title}
+          message={notification.message}
+          isVisible={!!notification}
+          onClose={() => setNotification(null)}
+        />
+      )}
     </div>
   );
 }

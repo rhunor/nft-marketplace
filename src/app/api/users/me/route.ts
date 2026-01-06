@@ -28,7 +28,7 @@ export async function GET() {
       );
     }
 
-    // Get NFT stats
+    // Get NFT stats - query using the user's ObjectId
     const [createdCount, ownedCount, listedCount] = await Promise.all([
       NFT.countDocuments({ creator: user._id }),
       NFT.countDocuments({ owner: user._id }),
@@ -39,7 +39,8 @@ export async function GET() {
     const ownedNFTs = await NFT.find({ owner: user._id }).select('price').lean();
     const totalValue = ownedNFTs.reduce((sum, nft) => sum + nft.price, 0);
 
-    return NextResponse.json({
+    // Create response with no-cache headers
+    const response = NextResponse.json({
       success: true,
       data: {
         user: {
@@ -61,6 +62,12 @@ export async function GET() {
         },
       },
     });
+
+    // Prevent caching
+    response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate');
+    response.headers.set('Pragma', 'no-cache');
+    
+    return response;
   } catch (error) {
     console.error('Profile fetch error:', error);
     return NextResponse.json(

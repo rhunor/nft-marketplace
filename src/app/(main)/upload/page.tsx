@@ -12,11 +12,29 @@ import {
   Music,
   FileQuestion,
   AlertCircle,
+  Plus,
+  Trash2,
+  Layers,
+  ImagePlus,
+  CheckCircle,
 } from 'lucide-react';
-import { Button, Input, Textarea, Select, Card, Notification } from '@/components/ui';
+import { Button, Input, Textarea, Select, Card, Badge, Notification } from '@/components/ui';
 import { nftSchema, type NFTInput } from '@/lib/validations';
-import { NFT_CATEGORIES, formatETH, getMediaType, formatFileSize } from '@/lib/utils';
+import { NFT_CATEGORIES, formatETH, formatFileSize } from '@/lib/utils';
 import { useEthPrice } from '@/contexts';
+import type { NFTCategory } from '@/types';
+
+type UploadMode = 'single' | 'collection';
+
+interface CollectionItem {
+  id: string;
+  title: string;
+  description: string;
+  price: string;
+  tags: string[];
+  file: File | null;
+  preview: string | null;
+}
 
 const categoryOptions = NFT_CATEGORIES.map((cat) => ({
   value: cat.value,
@@ -36,11 +54,25 @@ const ALL_ACCEPTED_TYPES = [
   ...ACCEPTED_FILE_TYPES.audio,
 ];
 
+const generateId = () => `item_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+const getMediaIcon = (type: string | undefined) => {
+  if (!type) return <FileQuestion className="h-6 w-6 sm:h-8 sm:w-8" />;
+  if (type.startsWith('image/')) return <ImageIcon className="h-6 w-6 sm:h-8 sm:w-8" />;
+  if (type.startsWith('video/')) return <Video className="h-6 w-6 sm:h-8 sm:w-8" />;
+  if (type.startsWith('audio/')) return <Music className="h-6 w-6 sm:h-8 sm:w-8" />;
+  return <FileQuestion className="h-6 w-6 sm:h-8 sm:w-8" />;
+};
+
 export default function UploadPage() {
   const router = useRouter();
   const { data: session, update: updateSession } = useSession();
   const { ethPrice, formatEthToUsd } = useEthPrice();
 
+  // Upload mode
+  const [mode, setMode] = useState<UploadMode>('single');
+
+  // Single upload state
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [formData, setFormData] = useState<NFTInput>({
@@ -50,9 +82,21 @@ export default function UploadPage() {
     category: 'digital-art',
     tags: [],
   });
-  const [priceInput, setPriceInput] = useState('0.1'); // Separate state for price input string
+  const [priceInput, setPriceInput] = useState('0.1');
   const [tagInput, setTagInput] = useState('');
   const [errors, setErrors] = useState<Partial<Record<keyof NFTInput, string>>>({});
+
+  // Collection upload state
+  const [collectionName, setCollectionName] = useState('');
+  const [collectionDescription, setCollectionDescription] = useState('');
+  const [collectionCategory, setCollectionCategory] = useState<NFTCategory>('digital-art');
+  const [collectionItems, setCollectionItems] = useState<CollectionItem[]>([
+    { id: generateId(), title: '', description: '', price: '0.1', tags: [], file: null, preview: null },
+    { id: generateId(), title: '', description: '', price: '0.1', tags: [], file: null, preview: null },
+  ]);
+  const [collectionErrors, setCollectionErrors] = useState<Record<string, string>>({});
+
+  // Common state
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState<{
     type: 'success' | 'error' | 'warning';
@@ -60,37 +104,31 @@ export default function UploadPage() {
     message?: string;
   } | null>(null);
 
-  // Calculate upload fee based on live ETH price ($200 worth of ETH)
-  const uploadFee = 200 / ethPrice;
-  const hasInsufficientBalance = (session?.user.walletBalance || 0) < uploadFee;
+  // Calculate fees
+  const singleUploadFee = 200 / ethPrice;
+  const collectionBaseFee = 0.05;
+  const perItemFee = 0.01;
+  const collectionUploadFee = collectionBaseFee + perItemFee * collectionItems.length;
+  const currentFee = mode === 'single' ? singleUploadFee : collectionUploadFee;
+  const hasInsufficientBalance = (session?.user.walletBalance || 0) < currentFee;
 
+  // Single upload handlers
   const handleFileChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
     if (!selectedFile) return;
 
-    // Validate file type
     if (!ALL_ACCEPTED_TYPES.includes(selectedFile.type)) {
-      setNotification({
-        type: 'error',
-        title: 'Invalid file type',
-        message: 'Please upload an image, video, or audio file.',
-      });
+      setNotification({ type: 'error', title: 'Invalid file type', message: 'Please upload an image, video, or audio file.' });
       return;
     }
 
-    // Validate file size (100MB max)
     if (selectedFile.size > 100 * 1024 * 1024) {
-      setNotification({
-        type: 'error',
-        title: 'File too large',
-        message: 'Maximum file size is 100MB.',
-      });
+      setNotification({ type: 'error', title: 'File too large', message: 'Maximum file size is 100MB.' });
       return;
     }
 
     setFile(selectedFile);
 
-    // Create preview for images and videos
     if (selectedFile.type.startsWith('image/') || selectedFile.type.startsWith('video/')) {
       const reader = new FileReader();
       reader.onload = () => setPreview(reader.result as string);
@@ -100,58 +138,36 @@ export default function UploadPage() {
     }
   }, []);
 
-  const handleDrop = useCallback(
-    (e: React.DragEvent) => {
-      e.preventDefault();
-      const droppedFile = e.dataTransfer.files[0];
-      if (droppedFile) {
-        const input = document.createElement('input');
-        input.type = 'file';
-        const dataTransfer = new DataTransfer();
-        dataTransfer.items.add(droppedFile);
-        input.files = dataTransfer.files;
-        handleFileChange({ target: input } as unknown as React.ChangeEvent<HTMLInputElement>);
-      }
-    },
-    [handleFileChange]
-  );
+  const handleDrop = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    const droppedFile = e.dataTransfer.files[0];
+    if (droppedFile) {
+      const input = document.createElement('input');
+      input.type = 'file';
+      const dataTransfer = new DataTransfer();
+      dataTransfer.items.add(droppedFile);
+      input.files = dataTransfer.files;
+      handleFileChange({ target: input } as unknown as React.ChangeEvent<HTMLInputElement>);
+    }
+  }, [handleFileChange]);
 
-  const removeFile = () => {
-    setFile(null);
-    setPreview(null);
-  };
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    
-    // Handle price input separately for better UX
     if (name === 'price') {
-      // Allow empty string or valid number input
       setPriceInput(value);
-      const numValue = parseFloat(value);
-      setFormData((prev) => ({
-        ...prev,
-        price: isNaN(numValue) ? 0 : numValue,
-      }));
+      setFormData((prev) => ({ ...prev, price: parseFloat(value) || 0 }));
     } else {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
     setErrors((prev) => ({ ...prev, [name]: '' }));
   };
 
-  // Handle price input blur to format properly
   const handlePriceBlur = () => {
     const numValue = parseFloat(priceInput);
     if (isNaN(numValue) || numValue <= 0) {
       setPriceInput('');
       setFormData((prev) => ({ ...prev, price: 0 }));
     } else {
-      // Format to remove unnecessary trailing zeros but keep precision
       setPriceInput(numValue.toString());
     }
   };
@@ -159,56 +175,82 @@ export default function UploadPage() {
   const addTag = () => {
     const tag = tagInput.trim().toLowerCase();
     if (tag && !formData.tags.includes(tag) && formData.tags.length < 10) {
-      setFormData((prev) => ({
-        ...prev,
-        tags: [...prev.tags, tag],
-      }));
+      setFormData((prev) => ({ ...prev, tags: [...prev.tags, tag] }));
       setTagInput('');
     }
   };
 
-  const removeTag = (tagToRemove: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      tags: prev.tags.filter((tag) => tag !== tagToRemove),
-    }));
+  // Collection handlers
+  const addCollectionItem = () => {
+    if (collectionItems.length >= 20) {
+      setNotification({ type: 'warning', title: 'Maximum reached', message: 'A collection can have at most 20 items.' });
+      return;
+    }
+    setCollectionItems((prev) => [...prev, { id: generateId(), title: '', description: '', price: '0.1', tags: [], file: null, preview: null }]);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const removeCollectionItem = (id: string) => {
+    if (collectionItems.length <= 2) {
+      setNotification({ type: 'warning', title: 'Minimum required', message: 'A collection must have at least 2 items.' });
+      return;
+    }
+    setCollectionItems((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const updateCollectionItem = (id: string, field: string, value: string | string[] | File | null) => {
+    setCollectionItems((prev) => prev.map((item) => (item.id === id ? { ...item, [field]: value } : item)));
+    setCollectionErrors((prev) => ({ ...prev, [`item_${id}_${field}`]: '' }));
+  };
+
+  const handleCollectionFileChange = (id: string, e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.target.files?.[0];
+    if (!selectedFile) return;
+
+    if (!ALL_ACCEPTED_TYPES.includes(selectedFile.type)) {
+      setNotification({ type: 'error', title: 'Invalid file type' });
+      return;
+    }
+
+    if (selectedFile.size > 100 * 1024 * 1024) {
+      setNotification({ type: 'error', title: 'File too large', message: 'Maximum 100MB.' });
+      return;
+    }
+
+    updateCollectionItem(id, 'file', selectedFile);
+
+    if (selectedFile.type.startsWith('image/') || selectedFile.type.startsWith('video/')) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setCollectionItems((prev) => prev.map((item) => (item.id === id ? { ...item, preview: reader.result as string } : item)));
+      };
+      reader.readAsDataURL(selectedFile);
+    }
+  };
+
+  // Submit handlers
+  const handleSingleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!file) {
-      setNotification({
-        type: 'error',
-        title: 'No file selected',
-        message: 'Please upload an image, video, or audio file.',
-      });
+      setNotification({ type: 'error', title: 'No file selected' });
       return;
     }
 
     if (hasInsufficientBalance) {
-      setNotification({
-        type: 'warning',
-        title: 'Insufficient Balance',
-        message: `You need at least ${formatETH(uploadFee)} to upload an NFT. Please fund your account.`,
-      });
+      setNotification({ type: 'warning', title: 'Insufficient Balance', message: `Need ${formatETH(currentFee)} to upload.` });
       return;
     }
 
-    // Validate price is a positive number
     if (!formData.price || formData.price <= 0) {
       setErrors((prev) => ({ ...prev, price: 'Price must be greater than 0' }));
       return;
     }
 
-    // Validate form
     const result = nftSchema.safeParse(formData);
     if (!result.success) {
       const fieldErrors: Partial<Record<keyof NFTInput, string>> = {};
       result.error.errors.forEach((err) => {
-        if (err.path[0]) {
-          fieldErrors[err.path[0] as keyof NFTInput] = err.message;
-        }
+        if (err.path[0]) fieldErrors[err.path[0] as keyof NFTInput] = err.message;
       });
       setErrors(fieldErrors);
       return;
@@ -217,7 +259,6 @@ export default function UploadPage() {
     setIsLoading(true);
 
     try {
-      // Create FormData for file upload
       const uploadData = new FormData();
       uploadData.append('file', file);
       uploadData.append('title', formData.title);
@@ -226,313 +267,322 @@ export default function UploadPage() {
       uploadData.append('category', formData.category);
       uploadData.append('tags', JSON.stringify(formData.tags));
 
-      const response = await fetch('/api/nfts', {
-        method: 'POST',
-        body: uploadData,
-      });
-
+      const response = await fetch('/api/nfts', { method: 'POST', body: uploadData });
       const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to upload NFT');
-      }
+      if (!response.ok) throw new Error(data.error || 'Failed to upload');
 
-      // Update session with new balance
-      await updateSession({
-        walletBalance: session!.user.walletBalance - uploadFee,
-      });
-
-      setNotification({
-        type: 'success',
-        title: 'NFT Created Successfully!',
-        message: 'Your NFT has been minted and is now available on the marketplace.',
-      });
-
-      // Redirect to the new NFT page
-      setTimeout(() => {
-        router.push(`/nft/${data.data._id}`);
-      }, 2000);
+      await updateSession({ walletBalance: data.data.newBalance });
+      setNotification({ type: 'success', title: 'NFT Created!' });
+      setTimeout(() => router.push(`/nft/${data.data.nft._id}`), 1500);
     } catch (error) {
-      setNotification({
-        type: 'error',
-        title: 'Upload Failed',
-        message: error instanceof Error ? error.message : 'Something went wrong',
-      });
+      setNotification({ type: 'error', title: 'Upload Failed', message: error instanceof Error ? error.message : 'Something went wrong' });
     } finally {
       setIsLoading(false);
     }
   };
 
-  const getMediaIcon = () => {
-    if (!file) return FileQuestion;
-    const type = getMediaType(file.name);
-    switch (type) {
-      case 'video':
-        return Video;
-      case 'audio':
-        return Music;
-      default:
-        return ImageIcon;
+  const handleCollectionSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const newErrors: Record<string, string> = {};
+    if (!collectionName.trim()) newErrors.collectionName = 'Required';
+    if (!collectionDescription.trim()) newErrors.collectionDescription = 'Required';
+
+    let hasItemErrors = false;
+    collectionItems.forEach((item) => {
+      if (!item.file) { newErrors[`item_${item.id}_file`] = 'Required'; hasItemErrors = true; }
+      if (!item.title.trim()) { newErrors[`item_${item.id}_title`] = 'Required'; hasItemErrors = true; }
+      if (!item.description.trim()) { newErrors[`item_${item.id}_description`] = 'Required'; hasItemErrors = true; }
+      const price = parseFloat(item.price);
+      if (isNaN(price) || price <= 0) { newErrors[`item_${item.id}_price`] = 'Required'; hasItemErrors = true; }
+    });
+
+    if (Object.keys(newErrors).length > 0) {
+      setCollectionErrors(newErrors);
+      if (hasItemErrors) setNotification({ type: 'error', title: 'Please fill all required fields' });
+      return;
+    }
+
+    if (hasInsufficientBalance) {
+      setNotification({ type: 'warning', title: 'Insufficient Balance', message: `Need ${formatETH(currentFee)} to create collection.` });
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const formDataObj = new FormData();
+      formDataObj.append('name', collectionName.trim());
+      formDataObj.append('description', collectionDescription.trim());
+      formDataObj.append('category', collectionCategory);
+
+      const itemsData = collectionItems.map((item) => ({
+        title: item.title.trim(),
+        description: item.description.trim(),
+        price: parseFloat(item.price),
+        tags: item.tags,
+      }));
+      formDataObj.append('items', JSON.stringify(itemsData));
+
+      collectionItems.forEach((item, index) => {
+        if (item.file) formDataObj.append(`file_${index}`, item.file);
+      });
+
+      const response = await fetch('/api/collections', { method: 'POST', body: formDataObj });
+      const data = await response.json();
+
+      if (!response.ok) throw new Error(data.error || 'Failed to create collection');
+
+      await updateSession({ walletBalance: data.data.newBalance });
+      setNotification({ type: 'success', title: 'Collection Created!', message: `${data.data.uploadedCount} items uploaded.` });
+      setTimeout(() => router.push(`/collection/${data.data.collection._id}`), 1500);
+    } catch (error) {
+      setNotification({ type: 'error', title: 'Upload Failed', message: error instanceof Error ? error.message : 'Something went wrong' });
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const MediaIcon = getMediaIcon();
+  if (!session) return null;
 
   return (
-    <div className="py-8">
+    <div className="py-6 sm:py-8">
       <div className="section-container max-w-4xl">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold">Create NFT</h1>
-          <p className="mt-2 text-foreground-muted">
-            Upload your digital artwork and mint it as an NFT
-          </p>
+        {/* Header */}
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-2xl font-bold sm:text-4xl">Create NFT</h1>
+          <p className="mt-2 text-sm sm:text-base text-foreground-muted">Upload your digital artwork</p>
         </div>
 
-        {/* Balance Warning */}
-        {hasInsufficientBalance && (
-          <Card className="mb-6 border-warning/50 bg-warning/10 p-4">
-            <div className="flex items-start gap-3">
-              <AlertCircle className="h-5 w-5 text-warning" />
-              <div>
-                <p className="font-medium text-warning">Insufficient Balance</p>
-                <p className="mt-1 text-sm text-foreground-muted">
-                  You need at least {formatETH(uploadFee)} ({formatEthToUsd(uploadFee)}) to create an NFT.
-                  Your current balance is {formatETH(session?.user.walletBalance || 0)}.
-                </p>
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  className="mt-3"
-                  onClick={() => router.push('/fund')}
-                >
-                  Fund Account
-                </Button>
-              </div>
+        {/* Mode Selection */}
+        <div className="mb-6 sm:mb-8 grid gap-3 sm:gap-4 grid-cols-2">
+          <button
+            type="button"
+            onClick={() => setMode('single')}
+            className={`relative flex flex-col sm:flex-row items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl border-2 p-4 sm:p-6 transition-all ${
+              mode === 'single' ? 'border-accent-primary bg-accent-primary/10' : 'border-border hover:border-accent-primary/50'
+            }`}
+          >
+            <div className={`rounded-lg sm:rounded-xl p-2 sm:p-3 ${mode === 'single' ? 'bg-accent-primary/20' : 'bg-background-hover'}`}>
+              <ImagePlus className={`h-5 w-5 sm:h-6 sm:w-6 ${mode === 'single' ? 'text-accent-primary' : 'text-foreground-muted'}`} />
             </div>
-          </Card>
-        )}
+            <div className="text-center sm:text-left">
+              <h3 className="text-sm sm:text-base font-semibold">Single NFT</h3>
+              <p className="text-xs sm:text-sm text-foreground-muted hidden sm:block">Upload one artwork</p>
+            </div>
+            {mode === 'single' && <CheckCircle className="absolute right-2 top-2 sm:right-4 sm:top-4 h-4 w-4 sm:h-5 sm:w-5 text-accent-primary" />}
+          </button>
 
-        <form onSubmit={handleSubmit} className="space-y-8">
-          {/* File Upload */}
-          <Card className="p-6">
-            <h2 className="mb-4 text-lg font-semibold">Upload File</h2>
-            {!file ? (
-              <div
-                className="relative cursor-pointer rounded-xl border-2 border-dashed border-border bg-background-secondary p-12 text-center transition-colors hover:border-accent-primary"
-                onDrop={handleDrop}
-                onDragOver={(e) => e.preventDefault()}
-              >
-                <input
-                  type="file"
-                  accept={ALL_ACCEPTED_TYPES.join(',')}
-                  onChange={handleFileChange}
-                  className="absolute inset-0 cursor-pointer opacity-0"
-                />
-                <Upload className="mx-auto h-12 w-12 text-foreground-subtle" />
-                <p className="mt-4 text-lg font-medium">
-                  Drag and drop or click to upload
+          <button
+            type="button"
+            onClick={() => setMode('collection')}
+            className={`relative flex flex-col sm:flex-row items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl border-2 p-4 sm:p-6 transition-all ${
+              mode === 'collection' ? 'border-accent-primary bg-accent-primary/10' : 'border-border hover:border-accent-primary/50'
+            }`}
+          >
+            <div className={`rounded-lg sm:rounded-xl p-2 sm:p-3 ${mode === 'collection' ? 'bg-accent-primary/20' : 'bg-background-hover'}`}>
+              <Layers className={`h-5 w-5 sm:h-6 sm:w-6 ${mode === 'collection' ? 'text-accent-primary' : 'text-foreground-muted'}`} />
+            </div>
+            <div className="text-center sm:text-left">
+              <h3 className="text-sm sm:text-base font-semibold">Collection</h3>
+              <p className="text-xs sm:text-sm text-foreground-muted hidden sm:block">2-20 items at once</p>
+            </div>
+            {mode === 'collection' && <CheckCircle className="absolute right-2 top-2 sm:right-4 sm:top-4 h-4 w-4 sm:h-5 sm:w-5 text-accent-primary" />}
+          </button>
+        </div>
+
+        {/* Fee Card */}
+        <Card className="mb-6 sm:mb-8 p-3 sm:p-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-xs sm:text-sm text-foreground-muted">Upload Fee</p>
+              <p className="text-lg sm:text-xl font-bold text-accent-primary">
+                {formatETH(currentFee)}
+                <span className="ml-2 text-xs sm:text-sm font-normal text-foreground-subtle">≈ {formatEthToUsd(currentFee)}</span>
+              </p>
+              {mode === 'collection' && (
+                <p className="text-xs text-foreground-subtle">
+                  {formatETH(collectionBaseFee)} base + {formatETH(perItemFee)}/item × {collectionItems.length}
                 </p>
-                <p className="mt-2 text-sm text-foreground-muted">
-                  Supported: JPG, PNG, GIF, WEBP, MP4, WEBM, MP3, WAV (Max 100MB)
-                </p>
-              </div>
-            ) : (
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={removeFile}
-                  className="absolute -right-2 -top-2 z-10 rounded-full bg-error p-1 text-white transition-colors hover:bg-error-muted"
-                >
-                  <X className="h-4 w-4" />
-                </button>
-                <div className="flex items-center gap-4 rounded-xl border border-border bg-background-secondary p-4">
-                  {preview ? (
-                    <div className="relative h-32 w-32 overflow-hidden rounded-lg">
-                      {file.type.startsWith('video/') ? (
-                        <video
-                          src={preview}
-                          className="h-full w-full object-cover"
-                        />
-                      ) : (
-                        <Image
-                          src={preview}
-                          alt="Preview"
-                          fill
-                          className="object-cover"
-                        />
-                      )}
-                    </div>
+              )}
+            </div>
+            <div className="sm:text-right">
+              <p className="text-xs sm:text-sm text-foreground-muted">Your Balance</p>
+              <p className={`text-base sm:text-lg font-semibold ${hasInsufficientBalance ? 'text-error' : 'text-success'}`}>
+                {formatETH(session.user.walletBalance)}
+              </p>
+            </div>
+          </div>
+          {hasInsufficientBalance && (
+            <div className="mt-3 flex items-center gap-2 rounded-lg bg-error/10 p-2 sm:p-3 text-xs sm:text-sm text-error">
+              <AlertCircle className="h-4 w-4 shrink-0" />
+              <span>Insufficient balance. Please fund your account.</span>
+            </div>
+          )}
+        </Card>
+
+        {/* Single Upload Form */}
+        {mode === 'single' && (
+          <form onSubmit={handleSingleSubmit}>
+            <Card className="p-4 sm:p-6">
+              <div className="space-y-4 sm:space-y-6">
+                {/* File Upload */}
+                <div>
+                  <label className="mb-2 block text-sm font-medium">Media File *</label>
+                  {!file ? (
+                    <label
+                      onDrop={handleDrop}
+                      onDragOver={(e) => e.preventDefault()}
+                      className="flex cursor-pointer flex-col items-center justify-center rounded-xl sm:rounded-2xl border-2 border-dashed border-border bg-background-hover p-6 sm:p-8 transition-colors hover:border-accent-primary"
+                    >
+                      <Upload className="mb-3 sm:mb-4 h-10 w-10 sm:h-12 sm:w-12 text-foreground-subtle" />
+                      <p className="mb-1 sm:mb-2 text-center text-sm sm:text-base font-medium">Drag and drop or click to upload</p>
+                      <p className="text-center text-xs sm:text-sm text-foreground-muted">JPG, PNG, GIF, MP4, MP3 (Max 100MB)</p>
+                      <input type="file" accept={ALL_ACCEPTED_TYPES.join(',')} onChange={handleFileChange} className="hidden" />
+                    </label>
                   ) : (
-                    <div className="flex h-32 w-32 items-center justify-center rounded-lg bg-background-hover">
-                      <MediaIcon className="h-12 w-12 text-foreground-subtle" />
+                    <div className="relative rounded-xl border border-border bg-background-hover p-3 sm:p-4">
+                      <div className="flex items-center gap-3 sm:gap-4">
+                        {preview ? (
+                          <div className="relative h-16 w-16 sm:h-20 sm:w-20 overflow-hidden rounded-lg sm:rounded-xl shrink-0">
+                            {file.type.startsWith('video/') ? (
+                              <video src={preview} className="h-full w-full object-cover" />
+                            ) : (
+                              <Image src={preview} alt="Preview" fill className="object-cover" />
+                            )}
+                          </div>
+                        ) : (
+                          <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-lg sm:rounded-xl bg-background-secondary shrink-0">
+                            {getMediaIcon(file.type)}
+                          </div>
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <p className="font-medium text-sm sm:text-base truncate">{file.name}</p>
+                          <p className="text-xs sm:text-sm text-foreground-muted">{formatFileSize(file.size)}</p>
+                        </div>
+                        <button type="button" onClick={() => { setFile(null); setPreview(null); }} className="rounded-lg p-2 hover:bg-error/10 hover:text-error">
+                          <X className="h-5 w-5" />
+                        </button>
+                      </div>
                     </div>
                   )}
-                  <div>
-                    <p className="font-medium">{file.name}</p>
-                    <p className="text-sm text-foreground-muted">
-                      {formatFileSize(file.size)}
-                    </p>
-                    <p className="text-sm capitalize text-foreground-subtle">
-                      {getMediaType(file.name)}
-                    </p>
+                </div>
+
+                <Input label="Title *" name="title" value={formData.title} onChange={handleInputChange} error={errors.title} placeholder="NFT title" maxLength={100} />
+                <Textarea label="Description *" name="description" value={formData.description} onChange={handleInputChange} error={errors.description} placeholder="Describe your NFT..." maxLength={2000} />
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Input label="Price (ETH) *" name="price" type="number" step="any" min="0" value={priceInput} onChange={handleInputChange} onBlur={handlePriceBlur} error={errors.price} placeholder="0.1" />
+                  <Select label="Category *" name="category" value={formData.category} onChange={handleInputChange} options={categoryOptions} />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium">Tags (up to 10)</label>
+                  <div className="flex gap-2">
+                    <Input value={tagInput} onChange={(e) => setTagInput(e.target.value)} placeholder="Add tag" onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addTag(); } }} />
+                    <Button type="button" variant="secondary" onClick={addTag}>Add</Button>
                   </div>
+                  {formData.tags.length > 0 && (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {formData.tags.map((tag) => (
+                        <Badge key={tag} variant="default" className="gap-1 pl-3">
+                          {tag}
+                          <button type="button" onClick={() => setFormData((p) => ({ ...p, tags: p.tags.filter((t) => t !== tag) }))} className="ml-1 rounded-full p-0.5 hover:bg-background-hover">
+                            <X className="h-3 w-3" />
+                          </button>
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
                 </div>
+
+                <Button type="submit" className="w-full" disabled={isLoading || hasInsufficientBalance} leftIcon={isLoading ? undefined : <Upload className="h-5 w-5" />}>
+                  {isLoading ? 'Uploading...' : 'Create NFT'}
+                </Button>
               </div>
-            )}
-          </Card>
+            </Card>
+          </form>
+        )}
 
-          {/* NFT Details */}
-          <Card className="p-6">
-            <h2 className="mb-4 text-lg font-semibold">NFT Details</h2>
-            <div className="space-y-5">
-              <Input
-                label="Title"
-                name="title"
-                value={formData.title}
-                onChange={handleInputChange}
-                error={errors.title}
-                placeholder="Enter NFT title"
-                maxLength={100}
-              />
-
-              <Textarea
-                label="Description"
-                name="description"
-                value={formData.description}
-                onChange={handleInputChange}
-                error={errors.description}
-                placeholder="Describe your NFT..."
-                maxLength={2000}
-              />
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Input
-                  label="Price (ETH)"
-                  name="price"
-                  type="number"
-                  step="any"
-                  min="0"
-                  value={priceInput}
-                  onChange={handleInputChange}
-                  onBlur={handlePriceBlur}
-                  error={errors.price}
-                  placeholder="0.1"
-                />
-
-                <Select
-                  label="Category"
-                  name="category"
-                  value={formData.category}
-                  onChange={handleInputChange}
-                  error={errors.category}
-                  options={categoryOptions}
-                />
+        {/* Collection Upload Form */}
+        {mode === 'collection' && (
+          <form onSubmit={handleCollectionSubmit}>
+            <Card className="mb-4 sm:mb-6 p-4 sm:p-6">
+              <h2 className="mb-4 text-base sm:text-lg font-semibold">Collection Details</h2>
+              <div className="space-y-4">
+                <Input label="Collection Name *" value={collectionName} onChange={(e) => { setCollectionName(e.target.value); setCollectionErrors((p) => ({ ...p, collectionName: '' })); }} error={collectionErrors.collectionName} placeholder="My Collection" maxLength={100} />
+                <Textarea label="Description *" value={collectionDescription} onChange={(e) => { setCollectionDescription(e.target.value); setCollectionErrors((p) => ({ ...p, collectionDescription: '' })); }} error={collectionErrors.collectionDescription} placeholder="Describe your collection..." maxLength={2000} />
+                <Select label="Category *" value={collectionCategory} onChange={(e) => setCollectionCategory(e.target.value as NFTCategory)} options={categoryOptions} />
               </div>
+            </Card>
 
-              {/* Tags */}
-              <div>
-                <label className="mb-2 block text-sm font-medium text-foreground-muted">
-                  Tags (up to 10)
-                </label>
-                <div className="flex gap-2">
-                  <Input
-                    value={tagInput}
-                    onChange={(e) => setTagInput(e.target.value)}
-                    placeholder="Add a tag"
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter') {
-                        e.preventDefault();
-                        addTag();
-                      }
-                    }}
-                  />
-                  <Button type="button" variant="secondary" onClick={addTag}>
-                    Add
-                  </Button>
-                </div>
-                {formData.tags.length > 0 && (
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {formData.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="flex items-center gap-1 rounded-full bg-accent-primary/20 px-3 py-1 text-sm text-accent-secondary"
-                      >
-                        {tag}
-                        <button
-                          type="button"
-                          onClick={() => removeTag(tag)}
-                          className="hover:text-error"
-                        >
-                          <X className="h-3 w-3" />
-                        </button>
-                      </span>
-                    ))}
+            <div className="mb-3 sm:mb-4 flex items-center justify-between">
+              <h2 className="text-base sm:text-lg font-semibold">Items ({collectionItems.length})</h2>
+              <Button type="button" variant="secondary" size="sm" onClick={addCollectionItem} leftIcon={<Plus className="h-4 w-4" />} disabled={collectionItems.length >= 20}>
+                Add
+              </Button>
+            </div>
+
+            <div className="space-y-3 sm:space-y-4">
+              {collectionItems.map((item, index) => (
+                <Card key={item.id} className="p-3 sm:p-4">
+                  <div className="mb-3 flex items-center justify-between">
+                    <h3 className="text-sm font-medium">Item {index + 1}</h3>
+                    <button type="button" onClick={() => removeCollectionItem(item.id)} className="rounded-lg p-1.5 text-foreground-subtle hover:bg-error/10 hover:text-error" disabled={collectionItems.length <= 2}>
+                      <Trash2 className="h-4 w-4" />
+                    </button>
                   </div>
-                )}
-              </div>
-            </div>
-          </Card>
 
-          {/* Fee Summary */}
-          <Card className="p-6">
-            <h2 className="mb-4 text-lg font-semibold">Fee Summary</h2>
-            <div className="space-y-3">
-              <div className="flex justify-between">
-                <span className="text-foreground-muted">Upload Fee</span>
-                <span className="font-medium">{formatETH(uploadFee)} ({formatEthToUsd(uploadFee)})</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-foreground-muted">Your Balance</span>
-                <span className="font-medium">
-                  {formatETH(session?.user.walletBalance || 0)} ({formatEthToUsd(session?.user.walletBalance || 0)})
-                </span>
-              </div>
-              <div className="border-t border-border pt-3">
-                <div className="flex justify-between">
-                  <span className="font-medium">Remaining After Upload</span>
-                  <span
-                    className={`font-bold ${
-                      hasInsufficientBalance ? 'text-error' : 'text-success'
-                    }`}
-                  >
-                    {formatETH(
-                      Math.max(0, (session?.user.walletBalance || 0) - uploadFee)
-                    )}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </Card>
+                  {/* File */}
+                  {!item.file ? (
+                    <label className="mb-3 flex cursor-pointer items-center justify-center rounded-xl border-2 border-dashed border-border bg-background-hover p-4 transition-colors hover:border-accent-primary">
+                      <div className="text-center">
+                        <Upload className="mx-auto mb-2 h-6 w-6 text-foreground-subtle" />
+                        <p className="text-xs sm:text-sm">Click to upload</p>
+                      </div>
+                      <input type="file" accept={ALL_ACCEPTED_TYPES.join(',')} onChange={(e) => handleCollectionFileChange(item.id, e)} className="hidden" />
+                    </label>
+                  ) : (
+                    <div className="mb-3 flex items-center gap-3 rounded-xl border border-border bg-background-hover p-2 sm:p-3">
+                      {item.preview ? (
+                        <div className="relative h-12 w-12 sm:h-14 sm:w-14 overflow-hidden rounded-lg shrink-0">
+                          <Image src={item.preview} alt="Preview" fill className="object-cover" />
+                        </div>
+                      ) : (
+                        <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-lg bg-background-secondary shrink-0">
+                          {getMediaIcon(item.file.type)}
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs sm:text-sm font-medium truncate">{item.file.name}</p>
+                        <p className="text-xs text-foreground-muted">{formatFileSize(item.file.size)}</p>
+                      </div>
+                      <button type="button" onClick={() => updateCollectionItem(item.id, 'file', null)} className="p-1.5 hover:text-error">
+                        <X className="h-4 w-4" />
+                      </button>
+                    </div>
+                  )}
+                  {collectionErrors[`item_${item.id}_file`] && <p className="mb-2 text-xs text-error">{collectionErrors[`item_${item.id}_file`]}</p>}
 
-          {/* Submit Button */}
-          <div className="flex justify-end gap-4">
-            <Button
-              type="button"
-              variant="secondary"
-              onClick={() => router.back()}
-            >
-              Cancel
+                  <div className="space-y-3">
+                    <Input label="Title *" value={item.title} onChange={(e) => updateCollectionItem(item.id, 'title', e.target.value)} error={collectionErrors[`item_${item.id}_title`]} placeholder="Item title" maxLength={100} />
+                    <Textarea label="Description *" value={item.description} onChange={(e) => updateCollectionItem(item.id, 'description', e.target.value)} error={collectionErrors[`item_${item.id}_description`]} placeholder="Description..." maxLength={500} />
+                    <Input label="Price (ETH) *" type="number" step="any" min="0" value={item.price} onChange={(e) => updateCollectionItem(item.id, 'price', e.target.value)} error={collectionErrors[`item_${item.id}_price`]} placeholder="0.1" />
+                  </div>
+                </Card>
+              ))}
+            </div>
+
+            <Button type="submit" className="mt-6 w-full" disabled={isLoading || hasInsufficientBalance} leftIcon={isLoading ? undefined : <Upload className="h-5 w-5" />}>
+              {isLoading ? 'Creating Collection...' : `Create Collection (${collectionItems.length} items)`}
             </Button>
-            <Button
-              type="submit"
-              isLoading={isLoading}
-              disabled={!file || hasInsufficientBalance}
-            >
-              Create NFT
-            </Button>
-          </div>
-        </form>
+          </form>
+        )}
       </div>
 
-      {/* Notification */}
       {notification && (
-        <Notification
-          type={notification.type}
-          title={notification.title}
-          message={notification.message}
-          isVisible={!!notification}
-          onClose={() => setNotification(null)}
-        />
+        <Notification type={notification.type} title={notification.title} message={notification.message} isVisible={!!notification} onClose={() => setNotification(null)} />
       )}
     </div>
   );

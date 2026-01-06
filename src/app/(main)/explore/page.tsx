@@ -10,7 +10,7 @@ import { Button, Select, Badge, Avatar, Card, Loading } from '@/components/ui';
 import { sampleCollections, sampleNFTs} from '@/lib/db/seed-data';
 import { NFT_CATEGORIES, getCategoryLabel, debounce, formatETH } from '@/lib/utils';
 import { useEthPrice } from '@/contexts';
-import type { NFTWithUser } from '@/types';
+import type { NFTWithUser, CollectionWithCreator } from '@/types';
 
 const sortOptions = [
   { value: 'volume-desc', label: 'Highest Volume' },
@@ -31,30 +31,40 @@ function ExploreContent() {
   const [showFilters, setShowFilters] = useState(false);
   const [viewMode, setViewMode] = useState<'collections' | 'items'>('collections');
   const [dbNFTs, setDbNFTs] = useState<NFTWithUser[]>([]);
+  const [dbCollections, setDbCollections] = useState<CollectionWithCreator[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Fetch new NFTs from database
-  const fetchNFTs = useCallback(async () => {
+  // Fetch database data
+  const fetchData = useCallback(async () => {
     setIsLoading(true);
     try {
-      const params = new URLSearchParams();
-      params.set('limit', '50');
-
+      // Fetch NFTs
+      const nftParams = new URLSearchParams();
+      nftParams.set('limit', '50');
       if (searchQuery && viewMode === 'items') {
-        params.set('q', searchQuery);
+        nftParams.set('q', searchQuery);
       }
       if (selectedCategory) {
-        params.set('category', selectedCategory);
+        nftParams.set('category', selectedCategory);
       }
 
-      const response = await fetch(`/api/nfts?${params.toString()}`);
-      const data = await response.json();
+      const [nftResponse, collectionResponse] = await Promise.all([
+        fetch(`/api/nfts?${nftParams.toString()}`),
+        fetch(`/api/collections?limit=50${selectedCategory ? `&category=${selectedCategory}` : ''}`),
+      ]);
 
-      if (data.success) {
-        setDbNFTs(data.data.items);
+      const nftData = await nftResponse.json();
+      const collectionData = await collectionResponse.json();
+
+      if (nftData.success) {
+        setDbNFTs(nftData.data.items);
+      }
+
+      if (collectionData.success) {
+        setDbCollections(collectionData.data.items || []);
       }
     } catch (error) {
-      console.error('Failed to fetch NFTs:', error);
+      console.error('Failed to fetch data:', error);
     } finally {
       setIsLoading(false);
     }
@@ -75,12 +85,32 @@ function ExploreContent() {
   );
 
   useEffect(() => {
-    fetchNFTs();
-  }, [fetchNFTs]);
+    fetchData();
+  }, [fetchData]);
 
-  // Filter and sort collections
+  // Filter and sort collections (combine sample and database collections)
   const filteredCollections = useMemo(() => {
-    let collections = [...sampleCollections];
+    // Convert database collections to a compatible format
+    const dbCollectionsFormatted = dbCollections.map((c) => ({
+      id: c._id,
+      name: c.name,
+      description: c.description,
+      coverImage: c.coverImage,
+      creatorName: c.creator.name,
+      creatorUsername: c.creator.username,
+      creatorAvatar: c.creator.avatar || '',
+      totalItems: c.totalItems || 0,
+      floorPrice: c.floorPrice,
+      totalVolume: c.totalVolume,
+      category: c.category,
+      isFromDatabase: true,
+    }));
+
+    // Combine sample collections with database collections
+    let collections = [
+      ...dbCollectionsFormatted,
+      ...sampleCollections.map((c) => ({ ...c, isFromDatabase: false })),
+    ];
 
     // Filter by search query
     if (searchQuery) {
@@ -129,7 +159,7 @@ function ExploreContent() {
     });
 
     return collections;
-  }, [searchQuery, selectedCategory, sortBy]);
+  }, [searchQuery, selectedCategory, sortBy, dbCollections]);
 
   // Filter sample NFTs for items view
   const filteredNFTs = useMemo(() => {
@@ -284,7 +314,16 @@ function ExploreContent() {
               <div className="mt-4 text-center">
                 <Button
                   variant="secondary"
-                  onClick={() => setViewMode('items')}
+                  onClick={() => {
+                    setViewMode('items');
+                    // Scroll to results section after a short delay
+                    setTimeout(() => {
+                      const resultsSection = document.getElementById('results-section');
+                      if (resultsSection) {
+                        resultsSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }, 100);
+                  }}
                 >
                   View All New Uploads ({dbNFTs.length})
                 </Button>
@@ -481,7 +520,7 @@ function ExploreContent() {
             )}
 
             {/* Results count */}
-            <p className="mb-6 text-sm text-foreground-muted">
+            <p id="results-section" className="mb-6 text-sm text-foreground-muted">
               {viewMode === 'collections' 
                 ? `Showing ${filteredCollections.length} collection${filteredCollections.length !== 1 ? 's' : ''}`
                 : `Showing ${filteredNFTs.length + dbNFTs.length} NFT${filteredNFTs.length + dbNFTs.length !== 1 ? 's' : ''}`
@@ -530,6 +569,14 @@ function ExploreContent() {
                             >
                               {getCategoryLabel(collection.category)}
                             </Badge>
+                            {'isFromDatabase' in collection && collection.isFromDatabase && (
+                              <Badge
+                                variant="primary"
+                                className="absolute right-3 top-3"
+                              >
+                                New
+                              </Badge>
+                            )}
                             <div className="absolute bottom-4 left-4 right-4">
                               <h3 className="text-xl font-bold text-white">
                                 {collection.name}

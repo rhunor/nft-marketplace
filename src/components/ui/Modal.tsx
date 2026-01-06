@@ -60,56 +60,60 @@ export function Modal({
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 overflow-y-auto">
           {/* Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
             onClick={closeOnOverlayClick ? onClose : undefined}
           />
 
-          {/* Modal content */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ duration: 0.2 }}
-            className={cn(
-              'relative w-full rounded-2xl border border-border bg-background-secondary p-6 shadow-xl',
-              sizes[size],
-              className
-            )}
-          >
-            {/* Header */}
-            {(title || showCloseButton) && (
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  {title && (
-                    <h2 className="text-xl font-semibold">{title}</h2>
-                  )}
-                  {description && (
-                    <p className="mt-1 text-sm text-foreground-muted">
-                      {description}
-                    </p>
+          {/* Modal container - allows scrolling */}
+          <div className="flex min-h-full items-center justify-center p-4 sm:p-6">
+            {/* Modal content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.2 }}
+              className={cn(
+                'relative w-full rounded-2xl border border-border bg-background-secondary p-4 sm:p-6 shadow-xl my-4 sm:my-8 max-h-[90vh] overflow-y-auto',
+                sizes[size],
+                className
+              )}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              {(title || showCloseButton) && (
+                <div className="mb-4 flex items-start justify-between gap-4 sticky top-0 bg-background-secondary pb-2 -mt-1 pt-1">
+                  <div className="flex-1 min-w-0">
+                    {title && (
+                      <h2 className="text-lg sm:text-xl font-semibold truncate">{title}</h2>
+                    )}
+                    {description && (
+                      <p className="mt-1 text-sm text-foreground-muted">
+                        {description}
+                      </p>
+                    )}
+                  </div>
+                  {showCloseButton && (
+                    <button
+                      onClick={onClose}
+                      className="shrink-0 rounded-lg p-1.5 text-foreground-subtle transition-colors hover:bg-background-hover hover:text-foreground"
+                    >
+                      <X className="h-5 w-5" />
+                    </button>
                   )}
                 </div>
-                {showCloseButton && (
-                  <button
-                    onClick={onClose}
-                    className="rounded-lg p-1 text-foreground-subtle transition-colors hover:bg-background-hover hover:text-foreground"
-                  >
-                    <X className="h-5 w-5" />
-                  </button>
-                )}
-              </div>
-            )}
+              )}
 
-            {/* Content */}
-            {children}
-          </motion.div>
+              {/* Content */}
+              {children}
+            </motion.div>
+          </div>
         </div>
       )}
     </AnimatePresence>

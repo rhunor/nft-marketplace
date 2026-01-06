@@ -1,4 +1,4 @@
-import type { Document, Types } from 'mongoose';
+import type { Types } from 'mongoose';
 
 // User Types
 export interface IUser {
@@ -15,16 +15,15 @@ export interface IUser {
   updatedAt: Date;
 }
 
-export interface IUserDocument extends IUser, Document {
-  _id: Types.ObjectId;
-}
+// For Mongoose documents, use HydratedDocument<IUser> instead of extending Document
+export type IUserDocument = IUser & { _id: Types.ObjectId };
 
 export type SafeUser = Omit<IUser, 'password' | '_id'> & {
   _id: string;
 };
 
 // NFT Types
-export type NFTCategory = 'new' | 'photography' | 'digital-art' | 'games' | 'music' | 'video';
+export type NFTCategory = 'new' | 'photography' | 'digital-art' | 'games' | 'music' | 'video' | 'collectibles';
 
 export interface INFT {
   _id?: Types.ObjectId;
@@ -39,6 +38,7 @@ export interface INFT {
   tags: string[];
   creator: Types.ObjectId | IUser;
   owner: Types.ObjectId | IUser;
+  nftCollection?: Types.ObjectId | null; // renamed to avoid conflict with mongoose reserved 'collection'
   likes: Types.ObjectId[];
   views: number;
   isListed: boolean;
@@ -46,9 +46,8 @@ export interface INFT {
   updatedAt: Date;
 }
 
-export interface INFTDocument extends INFT, Document {
-  _id: Types.ObjectId;
-}
+// For Mongoose documents, use HydratedDocument<INFT> instead of extending Document
+export type INFTDocument = INFT & { _id: Types.ObjectId };
 
 // NFT with populated user data (serialized for API responses)
 export interface NFTWithUser {
@@ -63,6 +62,7 @@ export interface NFTWithUser {
   tags: string[];
   creator: SafeUser;
   owner: SafeUser;
+  nftCollection?: string | null;
   likes: string[];
   views: number;
   isListed: boolean;
@@ -70,10 +70,47 @@ export interface NFTWithUser {
   updatedAt: Date;
 }
 
+// Collection Types
+export interface ICollection {
+  _id?: Types.ObjectId;
+  name: string;
+  description: string;
+  coverImage: string;
+  coverImagePublicId?: string;
+  category: NFTCategory;
+  creator: Types.ObjectId | IUser;
+  nfts: Types.ObjectId[];
+  floorPrice: number;
+  totalVolume: number;
+  isPublished: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+// For Mongoose documents, use HydratedDocument<ICollection> instead of extending Document
+export type ICollectionDocument = ICollection & { _id: Types.ObjectId };
+
+// Collection with populated creator (serialized for API responses)
+export interface CollectionWithCreator {
+  _id: string;
+  name: string;
+  description: string;
+  coverImage: string;
+  category: NFTCategory;
+  creator: SafeUser;
+  nfts: NFTWithUser[];
+  floorPrice: number;
+  totalVolume: number;
+  totalItems: number;
+  isPublished: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 // Transaction Types
 export interface ITransaction {
   _id?: Types.ObjectId;
-  type: 'deposit' | 'purchase' | 'upload_fee';
+  type: 'deposit' | 'purchase' | 'upload_fee' | 'withdrawal';
   user: Types.ObjectId | IUser;
   amount: number; // in ETH
   status: 'pending' | 'completed' | 'failed';
@@ -83,9 +120,8 @@ export interface ITransaction {
   updatedAt: Date;
 }
 
-export interface ITransactionDocument extends ITransaction, Document {
-  _id: Types.ObjectId;
-}
+// For Mongoose documents, use HydratedDocument<ITransaction> instead of extending Document
+export type ITransactionDocument = ITransaction & { _id: Types.ObjectId };
 
 // API Response Types
 export interface ApiResponse<T = unknown> {
@@ -131,4 +167,18 @@ export interface AuthCredentials {
 export interface RegisterData extends AuthCredentials {
   username: string;
   name: string;
+}
+
+// Upload Types
+export interface CollectionUploadData {
+  name: string;
+  description: string;
+  category: NFTCategory;
+  items: {
+    title: string;
+    description: string;
+    price: number;
+    tags: string[];
+    file: File;
+  }[];
 }
