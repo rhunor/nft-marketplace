@@ -16,13 +16,16 @@ const inter = Inter({
   display: 'swap',
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://foundationexclusive.com';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Foundation Exclusive - Premium NFT Collections',
     template: '%s | Foundation Exclusive',
   },
   description:
-    'An extension of Foundation - the premier destination for high-value NFT collectors and creators. Join our exclusive community of discerning collectors.',
+    'The premier destination for high-value NFT collectors and creators. Discover, create, and collect exclusive digital art and collectibles.',
   keywords: [
     'NFT',
     'Foundation',
@@ -34,23 +37,29 @@ export const metadata: Metadata = {
     'blockchain',
     'ethereum',
     'high-value NFT',
+    'NFT marketplace',
+    'buy NFT',
+    'sell NFT',
+    'mint NFT',
   ],
   authors: [{ name: 'Foundation Exclusive' }],
   creator: 'Foundation Exclusive',
+  publisher: 'Foundation Exclusive',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: process.env.NEXT_PUBLIC_APP_URL,
+    url: siteUrl,
     title: 'Foundation Exclusive - Premium NFT Collections',
     description:
-      'An extension of Foundation - the premier destination for high-value NFT collectors and creators.',
+      'The premier destination for high-value NFT collectors and creators. Discover, create, and collect exclusive digital art.',
     siteName: 'Foundation Exclusive',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Foundation Exclusive - Premium NFT Collections',
     description:
-      'An extension of Foundation - the premier destination for high-value NFT collectors and creators.',
+      'The premier destination for high-value NFT collectors and creators. Discover, create, and collect exclusive digital art.',
+    creator: '@foundationexcl',
   },
   robots: {
     index: true,
@@ -62,6 +71,11 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  verification: {
+    // Add your verification codes here if needed
+    // google: 'your-google-verification-code',
+    // yandex: 'your-yandex-verification-code',
   },
 };
 
