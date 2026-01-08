@@ -6,8 +6,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Search, SlidersHorizontal, X, Heart, Eye, Grid, LayoutGrid, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Button, Select, Badge, Avatar, Card, Loading } from '@/components/ui';
-import { sampleCollections, sampleNFTs} from '@/lib/db/seed-data';
+import { Button, Select, Badge, Avatar, Card, Loading, NFTImage } from '@/components/ui';
+import { sampleCollections, sampleNFTs } from '@/lib/db/seed-data';
 import { NFT_CATEGORIES, getCategoryLabel, debounce, formatETH } from '@/lib/utils';
 import { useEthPrice } from '@/contexts';
 import type { NFTWithUser, CollectionWithCreator } from '@/types';
@@ -161,7 +161,7 @@ function ExploreContent() {
     return collections;
   }, [searchQuery, selectedCategory, sortBy, dbCollections]);
 
-  // Filter sample NFTs for items view
+  // Filter sample NFTs for items view and remove duplicates by image URL
   const filteredNFTs = useMemo(() => {
     let nfts = [...sampleNFTs];
 
@@ -179,6 +179,18 @@ function ExploreContent() {
     if (selectedCategory) {
       nfts = nfts.filter((nft) => nft.category === selectedCategory);
     }
+
+    // Deduplicate by image URL - keep only first occurrence of each image
+    const seenImages = new Set<string>();
+    nfts = nfts.filter((nft) => {
+      // Safely get imageKey with fallback to full URL
+      const imageKey = nft.mediaUrl?.split('?')[0] ?? nft.mediaUrl ?? '';
+      if (!imageKey || seenImages.has(imageKey)) {
+        return false;
+      }
+      seenImages.add(imageKey);
+      return true;
+    });
 
     return nfts;
   }, [searchQuery, selectedCategory]);
@@ -706,10 +718,9 @@ function ExploreContent() {
                     <Link href={`/nft/${nft.id}`}>
                       <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
                         <div className="relative aspect-square overflow-hidden">
-                          <Image
+                          <NFTImage
                             src={nft.mediaUrl}
                             alt={nft.title}
-                            fill
                             className="object-cover transition-transform duration-300 group-hover:scale-110"
                           />
                           <div className="absolute bottom-3 left-3 flex items-center gap-2 opacity-0 transition-opacity group-hover:opacity-100">

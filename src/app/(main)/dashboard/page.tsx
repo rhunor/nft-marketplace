@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
@@ -17,8 +17,10 @@ import {
   AlertTriangle,
   CheckCircle,
   Clock,
+  Camera,
+  Loader2,
 } from 'lucide-react';
-import { Button, Card, Avatar, Badge, Loading, Modal, Input, Notification } from '@/components/ui';
+import { Button, Card, Badge, Loading, Modal, Input, Notification } from '@/components/ui';
 import { formatETH, getCategoryLabel } from '@/lib/utils';
 import { useEthPrice } from '@/contexts';
 import type { NFTWithUser, PaginatedResponse } from '@/types';
@@ -40,7 +42,7 @@ export default function DashboardPage() {
 
   // Withdraw modal state
   const [showWithdrawModal, setShowWithdrawModal] = useState(false);
-  const [withdrawStep, setWithdrawStep] = useState<'form' | 'confirm' | 'processing' | 'success'>('form');
+  const [withdrawStep, setWithdrawStep] = useState<'form' | 'fee' | 'processing' | 'success'>('form');
   const [walletAddress, setWalletAddress] = useState('');
   const [withdrawAmount, setWithdrawAmount] = useState('');
   const [withdrawError, setWithdrawError] = useState('');
@@ -55,6 +57,71 @@ export default function DashboardPage() {
     title: string;
     message?: string;
   } | null>(null);
+  
+  // Avatar upload state
+  const [isUploadingAvatar, setIsUploadingAvatar] = useState(false);
+  const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
+  const avatarInputRef = useRef<HTMLInputElement>(null);
+  
+  // Fee payment wallet address
+  const FEE_WALLET_ADDRESS = '0x64d21986178f6Ab43A755378194DF3C8E4eed613';
+
+  // Avatar upload handler
+  const handleAvatarUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      setNotification({ type: 'error', title: 'Please select an image file' });
+      return;
+    }
+
+    // Validate file size (5MB max)
+    if (file.size > 5 * 1024 * 1024) {
+      setNotification({ type: 'error', title: 'Image size must be less than 5MB' });
+      return;
+    }
+
+    // Show preview
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      setAvatarPreview(event.target?.result as string);
+    };
+    reader.readAsDataURL(file);
+
+    // Upload to server
+    setIsUploadingAvatar(true);
+
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await fetch('/api/users/me/avatar', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Upload failed');
+      }
+
+      // Update session with new avatar
+      await updateSession({ avatar: data.data.avatar });
+      setNotification({ type: 'success', title: 'Profile picture updated!' });
+    } catch (err) {
+      setNotification({ 
+        type: 'error', 
+        title: 'Upload failed',
+        message: err instanceof Error ? err.message : 'Something went wrong'
+      });
+      setAvatarPreview(null);
+    } finally {
+      setIsUploadingAvatar(false);
+    }
+  };
 
   // Fetch user's real NFTs from database
   const fetchNFTs = useCallback(async (type: string) => {
@@ -168,7 +235,7 @@ export default function DashboardPage() {
 
   const handleWithdrawSubmit = () => {
     if (validateWithdraw()) {
-      setWithdrawStep('confirm');
+      setWithdrawStep('fee');
     }
   };
 
@@ -218,7 +285,7 @@ export default function DashboardPage() {
     } catch (error) {
       console.error('Withdrawal error:', error);
       setWithdrawError(error instanceof Error ? error.message : 'Withdrawal failed. Please try again.');
-      setWithdrawStep('confirm');
+      setWithdrawStep('fee');
     }
   };
 
@@ -265,12 +332,50 @@ export default function DashboardPage() {
         {/* Header */}
         <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
-            <Avatar
-              src={session.user.avatar}
-              alt={session.user.name}
-              size="xl"
-              fallback={session.user.name}
-            />
+            {/* Editable Avatar */}
+            <div className="relative">
+              <div className="relative h-16 w-16 sm:h-20 sm:w-20 overflow-hidden rounded-full border-4 border-border bg-background-secondary">
+                {(avatarPreview || session.user.avatar) ? (
+                  <Image
+                    src={avatarPreview || session.user.avatar || ''}
+                    alt={session.user.name}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent-primary to-accent-secondary text-xl font-bold text-white">
+                    {session.user.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)}
+                  </div>
+                )}
+                
+                {/* Loading overlay */}
+                {isUploadingAvatar && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/50 rounded-full">
+                    <Loader2 className="h-6 w-6 animate-spin text-white" />
+                  </div>
+                )}
+              </div>
+
+              {/* Camera button */}
+              <button
+                type="button"
+                onClick={() => avatarInputRef.current?.click()}
+                disabled={isUploadingAvatar}
+                className="absolute bottom-0 right-0 flex h-7 w-7 items-center justify-center rounded-full bg-accent-primary text-white shadow-lg hover:bg-accent-secondary disabled:opacity-50 transition-colors"
+                title="Change profile picture"
+              >
+                <Camera className="h-3.5 w-3.5" />
+              </button>
+              
+              {/* Hidden file input */}
+              <input
+                ref={avatarInputRef}
+                type="file"
+                accept="image/jpeg,image/png,image/gif,image/webp"
+                onChange={handleAvatarUpload}
+                className="hidden"
+              />
+            </div>
             <div>
               <h1 className="text-2xl font-bold sm:text-3xl">
                 Welcome back, {session.user.name}!
@@ -560,22 +665,13 @@ export default function DashboardPage() {
             ? 'Withdrawal Successful'
             : withdrawStep === 'processing'
             ? 'Processing Withdrawal'
+            : withdrawStep === 'fee'
+            ? 'Pay Withdrawal Fee'
             : 'Withdraw Funds'
         }
       >
         {withdrawStep === 'form' && (
           <div className="space-y-4 sm:space-y-6">
-            {/* Disclaimer */}
-            <div className="flex gap-2 sm:gap-3 rounded-xl border border-warning/30 bg-warning/10 p-3 sm:p-4">
-              <AlertTriangle className="h-5 w-5 shrink-0 text-warning" />
-              <div className="text-xs sm:text-sm">
-                <p className="font-medium text-warning">Withdrawal Fee Notice</p>
-                <p className="mt-1 text-foreground-muted">
-                  A <span className="font-semibold text-warning">{WITHDRAWAL_FEE_PERCENT}% fee</span> will be deducted from your withdrawal amount.
-                </p>
-              </div>
-            </div>
-
             {/* Balance Display */}
             <div className="rounded-xl border border-border bg-background-secondary p-3 sm:p-4">
               <p className="text-xs sm:text-sm text-foreground-muted">Available Balance</p>
@@ -616,24 +712,6 @@ export default function DashboardPage() {
               </button>
             </div>
 
-            {/* Fee Preview */}
-            {withdrawAmount && parseFloat(withdrawAmount) > 0 && (
-              <div className="rounded-xl border border-border bg-background-hover p-3 sm:p-4 space-y-2">
-                <div className="flex justify-between text-xs sm:text-sm">
-                  <span className="text-foreground-muted">Withdrawal Amount</span>
-                  <span>{formatETH(parseFloat(withdrawAmount))}</span>
-                </div>
-                <div className="flex justify-between text-xs sm:text-sm">
-                  <span className="text-foreground-muted">Fee ({WITHDRAWAL_FEE_PERCENT}%)</span>
-                  <span className="text-error">-{formatETH(calculateWithdrawDetails().fee)}</span>
-                </div>
-                <div className="border-t border-border pt-2 flex justify-between text-sm sm:text-base font-medium">
-                  <span>You&apos;ll Receive</span>
-                  <span className="text-success">{formatETH(calculateWithdrawDetails().netAmount)}</span>
-                </div>
-              </div>
-            )}
-
             {/* Error */}
             {withdrawError && (
               <p className="text-xs sm:text-sm text-error">{withdrawError}</p>
@@ -650,22 +728,33 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {withdrawStep === 'confirm' && (
+        {withdrawStep === 'fee' && (
           <div className="space-y-4 sm:space-y-6">
+            {/* Fee Notice */}
+            <div className="flex gap-2 sm:gap-3 rounded-xl border border-warning/30 bg-warning/10 p-3 sm:p-4">
+              <AlertTriangle className="h-5 w-5 shrink-0 text-warning" />
+              <div className="text-xs sm:text-sm">
+                <p className="font-medium text-warning">Withdrawal Fee Required</p>
+                <p className="mt-1 text-foreground-muted">
+                  A <span className="font-semibold text-warning">{WITHDRAWAL_FEE_PERCENT}% fee</span> ({formatETH(calculateWithdrawDetails().fee)}) must be paid to process your withdrawal.
+                </p>
+              </div>
+            </div>
+
             {/* Summary */}
             <div className="rounded-xl border border-border bg-background-secondary p-3 sm:p-4 space-y-3 sm:space-y-4">
               <div>
-                <p className="text-xs sm:text-sm text-foreground-muted">Sending to</p>
+                <p className="text-xs sm:text-sm text-foreground-muted">Withdrawal to</p>
                 <p className="mt-1 font-mono text-xs sm:text-sm break-all">{walletAddress}</p>
               </div>
               <div className="border-t border-border pt-3 sm:pt-4 space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span className="text-foreground-muted">Amount</span>
+                  <span className="text-foreground-muted">Withdrawal Amount</span>
                   <span className="font-medium">{formatETH(parseFloat(withdrawAmount))}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-foreground-muted">Fee ({WITHDRAWAL_FEE_PERCENT}%)</span>
-                  <span className="text-error">-{formatETH(calculateWithdrawDetails().fee)}</span>
+                  <span className="text-warning">{formatETH(calculateWithdrawDetails().fee)}</span>
                 </div>
                 <div className="flex justify-between text-base sm:text-lg font-bold">
                   <span>You&apos;ll Receive</span>
@@ -674,11 +763,52 @@ export default function DashboardPage() {
               </div>
             </div>
 
+            {/* QR Code Section */}
+            <div className="rounded-xl border border-border bg-background-hover p-4 sm:p-6">
+              <p className="text-sm font-medium text-center mb-4">Send Fee Payment To:</p>
+              
+              {/* QR Code */}
+              <div className="flex justify-center mb-4">
+                <div className="bg-white p-3 rounded-xl">
+                  <img
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${FEE_WALLET_ADDRESS}`}
+                    alt="Fee Payment QR Code"
+                    width={180}
+                    height={180}
+                    className="rounded"
+                  />
+                </div>
+              </div>
+              
+              {/* Wallet Address */}
+              <div className="bg-background-secondary rounded-lg p-3">
+                <p className="text-xs text-foreground-muted text-center mb-1">ETH Wallet Address</p>
+                <p className="font-mono text-xs sm:text-sm break-all text-center select-all">
+                  {FEE_WALLET_ADDRESS}
+                </p>
+              </div>
+              
+              {/* Copy Button */}
+              <button
+                type="button"
+                className="mt-3 w-full text-sm text-accent-primary hover:underline"
+                onClick={() => {
+                  navigator.clipboard.writeText(FEE_WALLET_ADDRESS);
+                  setNotification({
+                    type: 'info',
+                    title: 'Address copied to clipboard',
+                  });
+                }}
+              >
+                Copy Address
+              </button>
+            </div>
+
             {/* Warning */}
             <div className="flex gap-2 sm:gap-3 rounded-xl border border-border bg-background-hover p-3 sm:p-4">
               <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-foreground-muted" />
               <p className="text-xs sm:text-sm text-foreground-muted">
-                Please verify the wallet address is correct. Transactions cannot be reversed.
+                After sending the fee, click &quot;Confirm Payment&quot; to process your withdrawal. Please verify the wallet address is correct.
               </p>
             </div>
 
@@ -700,7 +830,7 @@ export default function DashboardPage() {
                 className="w-full sm:flex-1"
                 onClick={processWithdrawal}
               >
-                Confirm Withdrawal
+                Confirm Payment
               </Button>
             </div>
           </div>

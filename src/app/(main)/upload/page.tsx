@@ -90,6 +90,7 @@ export default function UploadPage() {
   const [collectionName, setCollectionName] = useState('');
   const [collectionDescription, setCollectionDescription] = useState('');
   const [collectionCategory, setCollectionCategory] = useState<NFTCategory>('digital-art');
+  const [collectionPrice, setCollectionPrice] = useState('0.5'); // Single price for entire collection
   const [collectionItems, setCollectionItems] = useState<CollectionItem[]>([
     { id: generateId(), title: '', description: '', price: '0.1', tags: [], file: null, preview: null },
     { id: generateId(), title: '', description: '', price: '0.1', tags: [], file: null, preview: null },
@@ -246,14 +247,20 @@ export default function UploadPage() {
       return;
     }
 
-    const result = nftSchema.safeParse(formData);
+    // Auto-fill description with title for validation
+    const dataForValidation = {
+      ...formData,
+      description: formData.title || 'NFT Description',
+    };
+
+    const result = nftSchema.safeParse(dataForValidation);
     if (!result.success) {
       const fieldErrors: Partial<Record<keyof NFTInput, string>> = {};
       result.error.errors.forEach((err) => {
-        if (err.path[0]) fieldErrors[err.path[0] as keyof NFTInput] = err.message;
+        if (err.path[0] && err.path[0] !== 'description') fieldErrors[err.path[0] as keyof NFTInput] = err.message;
       });
       setErrors(fieldErrors);
-      return;
+      if (Object.keys(fieldErrors).length > 0) return;
     }
 
     setIsLoading(true);
@@ -262,7 +269,7 @@ export default function UploadPage() {
       const uploadData = new FormData();
       uploadData.append('file', file);
       uploadData.append('title', formData.title);
-      uploadData.append('description', formData.description);
+      uploadData.append('description', formData.title); // Use title as description
       uploadData.append('price', formData.price.toString());
       uploadData.append('category', formData.category);
       uploadData.append('tags', JSON.stringify(formData.tags));
@@ -288,14 +295,18 @@ export default function UploadPage() {
     const newErrors: Record<string, string> = {};
     if (!collectionName.trim()) newErrors.collectionName = 'Required';
     if (!collectionDescription.trim()) newErrors.collectionDescription = 'Required';
+    
+    // Validate collection price
+    const price = parseFloat(collectionPrice);
+    if (isNaN(price) || price <= 0) {
+      newErrors.collectionPrice = 'Collection price must be greater than 0';
+    }
 
     let hasItemErrors = false;
     collectionItems.forEach((item) => {
       if (!item.file) { newErrors[`item_${item.id}_file`] = 'Required'; hasItemErrors = true; }
       if (!item.title.trim()) { newErrors[`item_${item.id}_title`] = 'Required'; hasItemErrors = true; }
-      if (!item.description.trim()) { newErrors[`item_${item.id}_description`] = 'Required'; hasItemErrors = true; }
-      const price = parseFloat(item.price);
-      if (isNaN(price) || price <= 0) { newErrors[`item_${item.id}_price`] = 'Required'; hasItemErrors = true; }
+      // Description is now optional for collection items
     });
 
     if (Object.keys(newErrors).length > 0) {
@@ -316,11 +327,15 @@ export default function UploadPage() {
       formDataObj.append('name', collectionName.trim());
       formDataObj.append('description', collectionDescription.trim());
       formDataObj.append('category', collectionCategory);
+      formDataObj.append('collectionPrice', collectionPrice); // Add collection price
 
+      // Calculate price per item based on collection price
+      const pricePerItem = parseFloat(collectionPrice) / collectionItems.length;
+      
       const itemsData = collectionItems.map((item) => ({
         title: item.title.trim(),
-        description: item.description.trim(),
-        price: parseFloat(item.price),
+        description: item.title.trim(), // Use title as description
+        price: pricePerItem, // Use calculated price per item
         tags: item.tags,
       }));
       formDataObj.append('items', JSON.stringify(itemsData));
@@ -470,7 +485,6 @@ export default function UploadPage() {
                 </div>
 
                 <Input label="Title *" name="title" value={formData.title} onChange={handleInputChange} error={errors.title} placeholder="NFT title" maxLength={100} />
-                <Textarea label="Description *" name="description" value={formData.description} onChange={handleInputChange} error={errors.description} placeholder="Describe your NFT..." maxLength={2000} />
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Input label="Price (ETH) *" name="price" type="number" step="any" min="0" value={priceInput} onChange={handleInputChange} onBlur={handlePriceBlur} error={errors.price} placeholder="0.1" />
@@ -513,7 +527,20 @@ export default function UploadPage() {
               <div className="space-y-4">
                 <Input label="Collection Name *" value={collectionName} onChange={(e) => { setCollectionName(e.target.value); setCollectionErrors((p) => ({ ...p, collectionName: '' })); }} error={collectionErrors.collectionName} placeholder="My Collection" maxLength={100} />
                 <Textarea label="Description *" value={collectionDescription} onChange={(e) => { setCollectionDescription(e.target.value); setCollectionErrors((p) => ({ ...p, collectionDescription: '' })); }} error={collectionErrors.collectionDescription} placeholder="Describe your collection..." maxLength={2000} />
-                <Select label="Category *" value={collectionCategory} onChange={(e) => setCollectionCategory(e.target.value as NFTCategory)} options={categoryOptions} />
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Select label="Category *" value={collectionCategory} onChange={(e) => setCollectionCategory(e.target.value as NFTCategory)} options={categoryOptions} />
+                  <Input 
+                    label="Collection Price (ETH) *" 
+                    type="number" 
+                    step="any" 
+                    min="0.01" 
+                    value={collectionPrice} 
+                    onChange={(e) => { setCollectionPrice(e.target.value); setCollectionErrors((p) => ({ ...p, collectionPrice: '' })); }} 
+                    error={collectionErrors.collectionPrice} 
+                    placeholder="0.5"
+                    hint={`Price per item: ${formatETH(parseFloat(collectionPrice || '0') / Math.max(collectionItems.length, 1))}`}
+                  />
+                </div>
               </div>
             </Card>
 
@@ -567,8 +594,6 @@ export default function UploadPage() {
 
                   <div className="space-y-3">
                     <Input label="Title *" value={item.title} onChange={(e) => updateCollectionItem(item.id, 'title', e.target.value)} error={collectionErrors[`item_${item.id}_title`]} placeholder="Item title" maxLength={100} />
-                    <Textarea label="Description *" value={item.description} onChange={(e) => updateCollectionItem(item.id, 'description', e.target.value)} error={collectionErrors[`item_${item.id}_description`]} placeholder="Description..." maxLength={500} />
-                    <Input label="Price (ETH) *" type="number" step="any" min="0" value={item.price} onChange={(e) => updateCollectionItem(item.id, 'price', e.target.value)} error={collectionErrors[`item_${item.id}_price`]} placeholder="0.1" />
                   </div>
                 </Card>
               ))}

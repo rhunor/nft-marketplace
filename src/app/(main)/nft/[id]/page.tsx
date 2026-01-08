@@ -204,23 +204,53 @@ export default function NFTDetailPage() {
   const handleShare = async () => {
     const title = isDbNft ? dbNft?.title : sampleNft?.title;
     const description = isDbNft ? dbNft?.description : sampleNft?.description;
+    const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
     
-    if (navigator.share) {
+    // Check if Web Share API is supported and available
+    if (typeof navigator !== 'undefined' && navigator.share) {
       try {
         await navigator.share({
-          title,
-          text: description,
-          url: window.location.href,
+          title: title || 'NFT',
+          text: description || '',
+          url: shareUrl,
         });
-      } catch {
-        // User cancelled or error
+        return;
+      } catch (err) {
+        // If user cancelled sharing, don't show error
+        if (err instanceof Error && err.name === 'AbortError') {
+          return;
+        }
+        // Fall through to clipboard fallback
       }
-    } else {
-      // Fallback: copy to clipboard
-      navigator.clipboard.writeText(window.location.href);
+    }
+    
+    // Fallback: copy to clipboard
+    try {
+      if (typeof navigator !== 'undefined' && navigator.clipboard) {
+        await navigator.clipboard.writeText(shareUrl);
+        setNotification({
+          type: 'info',
+          title: 'Link copied to clipboard!',
+        });
+      } else {
+        // Final fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = shareUrl;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        setNotification({
+          type: 'info',
+          title: 'Link copied to clipboard!',
+        });
+      }
+    } catch {
       setNotification({
-        type: 'info',
-        title: 'Link copied to clipboard!',
+        type: 'error',
+        title: 'Failed to copy link',
       });
     }
   };

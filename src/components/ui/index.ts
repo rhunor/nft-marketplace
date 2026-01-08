@@ -7,3 +7,5 @@ export * from './Badge';
 export * from './Avatar';
 export * from './Loading';
 export * from './Modal';
+export * from './ProfilePictureUpload';
+export * from './NFTImage';

@@ -1,21 +1,23 @@
 import { NextResponse } from 'next/server';
 import connectDB from '@/lib/db/connection';
 import User from '@/lib/db/models/User';
-import { registerSchema } from '@/lib/validations';
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
+    const { email, username, name, password, phoneNumber } = body;
 
-    // Validate input
-    const result = registerSchema.safeParse({
-      ...body,
-      confirmPassword: body.password, // Skip confirm check in API
-    });
-
-    if (!result.success) {
+    // Basic validation
+    if (!email || !username || !name || !password) {
       return NextResponse.json(
-        { error: result.error.errors[0]?.message || 'Invalid input' },
+        { error: 'All fields are required' },
+        { status: 400 }
+      );
+    }
+
+    if (password.length < 8) {
+      return NextResponse.json(
+        { error: 'Password must be at least 8 characters' },
         { status: 400 }
       );
     }
@@ -23,7 +25,7 @@ export async function POST(request: Request) {
     await connectDB();
 
     // Check if email already exists
-    const existingEmail = await User.findOne({ email: body.email.toLowerCase() });
+    const existingEmail = await User.findOne({ email: email.toLowerCase() });
     if (existingEmail) {
       return NextResponse.json(
         { error: 'Email already registered' },
@@ -32,7 +34,7 @@ export async function POST(request: Request) {
     }
 
     // Check if username already exists
-    const existingUsername = await User.findOne({ username: body.username.toLowerCase() });
+    const existingUsername = await User.findOne({ username: username.toLowerCase() });
     if (existingUsername) {
       return NextResponse.json(
         { error: 'Username already taken' },
@@ -42,10 +44,11 @@ export async function POST(request: Request) {
 
     // Create user
     const user = await User.create({
-      email: body.email.toLowerCase(),
-      username: body.username.toLowerCase(),
-      name: body.name,
-      password: body.password,
+      email: email.toLowerCase(),
+      username: username.toLowerCase(),
+      name,
+      password,
+      phoneNumber: phoneNumber || '',
       role: 'user',
       walletBalance: 0,
     });

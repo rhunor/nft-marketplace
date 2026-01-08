@@ -108,6 +108,8 @@ export async function POST(request: Request) {
     const description = formData.get('description') as string;
     const category = formData.get('category') as NFTCategory;
     const coverImageFile = formData.get('coverImage') as File | null;
+    const collectionPriceStr = formData.get('collectionPrice') as string | null;
+    const collectionPrice = collectionPriceStr ? parseFloat(collectionPriceStr) : 0;
 
     // NFT items data (JSON string)
     const itemsJson = formData.get('items') as string;
@@ -238,6 +240,7 @@ export async function POST(request: Request) {
       category,
       creator: user._id,
       nfts: [],
+      collectionPrice: collectionPrice || Math.min(...items.map((item) => item.price)) * items.length,
       floorPrice: Math.min(...items.map((item) => item.price)),
       totalVolume: 0,
       isPublished: true,

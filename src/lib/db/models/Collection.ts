@@ -11,6 +11,7 @@ interface ICollectionSchema {
   category: NFTCategory;
   creator: Types.ObjectId;
   nfts: Types.ObjectId[];
+  collectionPrice: number; // Price for the entire collection
   floorPrice: number;
   totalVolume: number;
   isPublished: boolean;
@@ -60,6 +61,11 @@ const CollectionSchema = new Schema<ICollectionSchema, CollectionModel, ICollect
       type: Schema.Types.ObjectId,
       ref: 'NFT',
     }],
+    collectionPrice: {
+      type: Number,
+      default: 0,
+      min: [0, 'Collection price cannot be negative'],
+    },
     floorPrice: {
       type: Number,
       default: 0,

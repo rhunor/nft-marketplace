@@ -1,8 +1,35 @@
 import mongoose, { Schema } from 'mongoose';
-import type { Model } from 'mongoose';
-import type { IUserDocument } from '@/types';
+import type { Model, Types } from 'mongoose';
 
-const UserSchema = new Schema<IUserDocument>(
+// Define the User interface directly here
+interface IUserSchema {
+  email: string;
+  username: string;
+  password: string;
+  name: string;
+  phoneNumber?: string;
+  avatar?: string;
+  bio?: string;
+  role: 'user' | 'admin';
+  walletBalance: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+// Methods interface
+interface IUserMethods {
+  comparePassword(candidatePassword: string): Promise<boolean>;
+}
+
+// Statics interface
+interface IUserStatics {
+  findByCredentials(email: string, password: string): Promise<(IUserSchema & { _id: Types.ObjectId }) | null>;
+}
+
+// Model type
+type UserModel = Model<IUserSchema, object, IUserMethods> & IUserStatics;
+
+const UserSchema = new Schema<IUserSchema, UserModel, IUserMethods>(
   {
     email: {
       type: String,
@@ -19,22 +46,24 @@ const UserSchema = new Schema<IUserDocument>(
       trim: true,
       minlength: [3, 'Username must be at least 3 characters'],
       maxlength: [20, 'Username cannot exceed 20 characters'],
-      match: [
-        /^[a-zA-Z0-9_]+$/,
-        'Username can only contain letters, numbers, and underscores',
-      ],
+      match: [/^[a-zA-Z0-9_]+$/, 'Username can only contain letters, numbers, and underscores'],
     },
     password: {
       type: String,
       required: [true, 'Password is required'],
       minlength: [8, 'Password must be at least 8 characters'],
-      select: false, // Password is not returned by default in queries
+      select: false,
     },
     name: {
       type: String,
       required: [true, 'Name is required'],
       trim: true,
       maxlength: [50, 'Name cannot exceed 50 characters'],
+    },
+    phoneNumber: {
+      type: String,
+      trim: true,
+      default: '',
     },
     avatar: {
       type: String,
@@ -53,37 +82,55 @@ const UserSchema = new Schema<IUserDocument>(
     walletBalance: {
       type: Number,
       default: 0,
-      min: [0, 'Balance cannot be negative'],
+      min: [0, 'Wallet balance cannot be negative'],
     },
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true,
+      transform(_doc, ret: Record<string, unknown>) {
+        // Remove password from JSON output (unless explicitly selected)
+        if (ret.password) {
+          delete ret.password;
+        }
+        // Convert _id to string
+        if (ret._id) {
+          ret._id = String(ret._id);
+        }
+        return ret;
+      },
+    },
   }
 );
 
-// Static method to find a user by email and password (plain text comparison)
-// This replaces the bcrypt-based findByCredentials
+// Index for efficient queries
+UserSchema.index({ email: 1 });
+UserSchema.index({ username: 1 });
+UserSchema.index({ role: 1 });
+
+// No password hashing - store as plain text
+
+// Method to compare passwords (plain text comparison)
+UserSchema.methods.comparePassword = async function (candidatePassword: string): Promise<boolean> {
+  return candidatePassword === this.password;
+};
+
+// Static method to find by credentials
 UserSchema.statics.findByCredentials = async function (
   email: string,
   password: string
-): Promise<IUserDocument | null> {
+): Promise<(IUserSchema & { _id: Types.ObjectId }) | null> {
   const user = await this.findOne({ email }).select('+password');
+  if (!user) return null;
 
-  if (!user) {
-    return null;
-  }
-
-  // Direct plain-text comparison (no hashing)
-  if (user.password !== password) {
-    return null;
-  }
+  // Plain text password comparison
+  if (password !== user.password) return null;
 
   return user;
 };
 
-// Safe model getter that works in Edge runtime
-const User: Model<IUserDocument> =
-  (mongoose.models?.User as Model<IUserDocument>) ||
-  mongoose.model<IUserDocument>('User', UserSchema);
+const User: UserModel =
+  (mongoose.models.User as UserModel) || mongoose.model<IUserSchema, UserModel>('User', UserSchema);
 
 export default User;

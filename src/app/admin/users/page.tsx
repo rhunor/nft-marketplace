@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search, Plus,Edit } from 'lucide-react';
+import { Search, Plus, Edit, Eye, EyeOff } from 'lucide-react';
 import { Button, Input, Card, Avatar, Badge, Modal, Notification } from '@/components/ui';
 import { formatETH, formatDate } from '@/lib/utils';
 
@@ -10,6 +10,8 @@ interface User {
   email: string;
   username: string;
   name: string;
+  phoneNumber?: string;
+  password?: string;
   role: 'user' | 'admin';
   walletBalance: number;
   createdAt: string;
@@ -21,6 +23,7 @@ export default function AdminUsersPage() {
   const [search, setSearch] = useState('');
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [balanceAmount, setBalanceAmount] = useState('');
+  const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
   const [notification, setNotification] = useState<{
     type: 'success' | 'error';
     title: string;
@@ -43,7 +46,15 @@ export default function AdminUsersPage() {
 
   useEffect(() => {
     fetchUsers();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
+
+  const togglePasswordVisibility = (userId: string) => {
+    setShowPasswords(prev => ({
+      ...prev,
+      [userId]: !prev[userId]
+    }));
+  };
 
   const updateUserBalance = async (operation: 'add' | 'set') => {
     if (!selectedUser || !balanceAmount) return;
@@ -141,22 +152,28 @@ export default function AdminUsersPage() {
           <table className="w-full">
             <thead className="border-b border-border bg-background-secondary">
               <tr>
-                <th className="px-6 py-4 text-left text-sm font-medium text-foreground-muted">
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
                   User
                 </th>
-                <th className="px-6 py-4 text-left text-sm font-medium text-foreground-muted">
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
                   Email
                 </th>
-                <th className="px-6 py-4 text-left text-sm font-medium text-foreground-muted">
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
+                  Phone
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
+                  Password
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
                   Role
                 </th>
-                <th className="px-6 py-4 text-left text-sm font-medium text-foreground-muted">
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
                   Balance
                 </th>
-                <th className="px-6 py-4 text-left text-sm font-medium text-foreground-muted">
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
                   Joined
                 </th>
-                <th className="px-6 py-4 text-right text-sm font-medium text-foreground-muted">
+                <th className="px-4 py-4 text-right text-sm font-medium text-foreground-muted">
                   Actions
                 </th>
               </tr>
@@ -164,7 +181,7 @@ export default function AdminUsersPage() {
             <tbody className="divide-y divide-border">
               {users.map((user) => (
                 <tr key={user._id} className="hover:bg-background-hover">
-                  <td className="px-6 py-4">
+                  <td className="px-4 py-4">
                     <div className="flex items-center gap-3">
                       <Avatar fallback={user.name} size="sm" />
                       <div>
@@ -175,21 +192,42 @@ export default function AdminUsersPage() {
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-sm">{user.email}</td>
-                  <td className="px-6 py-4">
+                  <td className="px-4 py-4 text-sm">{user.email}</td>
+                  <td className="px-4 py-4 text-sm">{user.phoneNumber || '-'}</td>
+                  <td className="px-4 py-4">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-xs">
+                        {showPasswords[user._id] 
+                          ? (user.password || 'N/A') 
+                          : '••••••••'}
+                      </span>
+                      <button
+                        onClick={() => togglePasswordVisibility(user._id)}
+                        className="p-1 text-foreground-muted hover:text-foreground rounded transition-colors"
+                        title={showPasswords[user._id] ? 'Hide password' : 'Show password'}
+                      >
+                        {showPasswords[user._id] ? (
+                          <EyeOff className="h-4 w-4" />
+                        ) : (
+                          <Eye className="h-4 w-4" />
+                        )}
+                      </button>
+                    </div>
+                  </td>
+                  <td className="px-4 py-4">
                     <Badge variant={user.role === 'admin' ? 'primary' : 'default'}>
                       {user.role}
                     </Badge>
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-4 py-4">
                     <span className="font-medium text-accent-primary">
                       {formatETH(user.walletBalance)}
                     </span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-foreground-muted">
+                  <td className="px-4 py-4 text-sm text-foreground-muted">
                     {formatDate(user.createdAt)}
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-4 py-4">
                     <div className="flex justify-end gap-2">
                       <Button
                         variant="ghost"
@@ -243,6 +281,14 @@ export default function AdminUsersPage() {
                 <p className="text-sm text-foreground-muted">
                   @{selectedUser.username}
                 </p>
+                <p className="text-sm text-foreground-muted">
+                  {selectedUser.email}
+                </p>
+                {selectedUser.phoneNumber && (
+                  <p className="text-sm text-foreground-muted">
+                    {selectedUser.phoneNumber}
+                  </p>
+                )}
                 <p className="text-sm text-accent-primary">
                   Current: {formatETH(selectedUser.walletBalance)}
                 </p>

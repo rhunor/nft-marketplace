@@ -60,25 +60,25 @@ const helpTopics = [
     icon: Wallet,
     title: 'Wallet & Balance',
     description: 'Learn how to fund your account and manage your ETH balance',
-    href: '#funding',
+    href: '/dashboard',
   },
   {
     icon: Upload,
     title: 'Creating NFTs',
     description: 'Step-by-step guide to minting your first NFT',
-    href: '#creating',
+    href: '/upload',
   },
   {
     icon: ShoppingCart,
     title: 'Buying NFTs',
     description: 'How to browse, purchase, and collect NFTs',
-    href: '#buying',
+    href: '/explore',
   },
   {
     icon: Shield,
     title: 'Security',
     description: 'Keeping your account and assets safe',
-    href: '#security',
+    href: '/contact',
   },
 ];
 
@@ -90,14 +90,14 @@ export default function HelpPage() {
         <div className="mb-12 text-center">
           <h1 className="text-3xl font-bold sm:text-4xl">Help Center</h1>
           <p className="mt-4 text-lg text-foreground-muted">
-            Everything you need to know about using FoundationExclusive
+            Everything you need to know about using Foundation Exclusive
           </p>
         </div>
 
         {/* Quick Links */}
         <div className="mb-12 grid gap-4 sm:grid-cols-2">
           {helpTopics.map((topic) => (
-            <a key={topic.title} href={topic.href}>
+            <Link key={topic.title} href={topic.href}>
               <Card hover className="flex items-center gap-4 p-6">
                 <div className="rounded-xl bg-accent-primary/20 p-3">
                   <topic.icon className="h-6 w-6 text-accent-primary" />
@@ -110,7 +110,7 @@ export default function HelpPage() {
                 </div>
                 <ChevronRight className="h-5 w-5 text-foreground-subtle" />
               </Card>
-            </a>
+            </Link>
           ))}
         </div>
 

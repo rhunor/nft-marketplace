@@ -29,23 +29,28 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           console.log('[Auth] Missing credentials');
           throw new Error('Email and password are required');
         }
+
         try {
           await connectDB();
           console.log('[Auth] Connected to DB, looking for user:', credentials.email);
+
           const user = await User.findOne({ email: credentials.email }).select('+password');
+
           if (!user) {
             console.log('[Auth] User not found');
             throw new Error('Invalid email or password');
           }
 
-          // Plain text comparison — passwords are stored as plain strings
-          if (user.password !== credentials.password) {
+          // Plain text password comparison
+          const isPasswordValid = credentials.password === user.password;
+
+          if (!isPasswordValid) {
             console.log('[Auth] Invalid password');
             throw new Error('Invalid email or password');
           }
 
           console.log('[Auth] User authenticated successfully:', user.email, 'Role:', user.role);
-
+          
           return {
             id: user._id.toString(),
             email: user.email,
@@ -66,28 +71,29 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     ...authConfig.callbacks,
     async signIn({ user, account }) {
       console.log('[Auth] SignIn callback - provider:', account?.provider);
-
+      
       // Handle Google OAuth sign in
       if (account?.provider === 'google') {
         try {
           await connectDB();
+
           const existingUser = await User.findOne({ email: user.email });
+
           if (!existingUser) {
             // Create new user from Google account
-            const username =
-              user.email?.split('@')[0]?.replace(/[^a-zA-Z0-9_]/g, '_') ||
+            const username = user.email?.split('@')[0]?.replace(/[^a-zA-Z0-9_]/g, '_') || 
               `user_${Date.now()}`;
-
+            
             const newUser = await User.create({
               email: user.email,
               username,
               name: user.name || username,
-              // Random plain-text string as password (never used for Google login)
-              password: crypto.randomUUID(),
+              password: crypto.randomUUID(), // Random password (plain text)
               avatar: user.image || '',
               role: 'user',
               walletBalance: 0,
             });
+
             user.id = newUser._id.toString();
             user.username = newUser.username;
             user.role = newUser.role as 'user' | 'admin';
