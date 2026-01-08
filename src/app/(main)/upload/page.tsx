@@ -105,11 +105,11 @@ export default function UploadPage() {
     message?: string;
   } | null>(null);
 
-  // Calculate fees
-  const singleUploadFee = 200 / ethPrice;
-  const collectionBaseFee = 0.05;
-  const perItemFee = 0.01;
-  const collectionUploadFee = collectionBaseFee + perItemFee * collectionItems.length;
+  // Calculate fees - $200 per photo for both single and collection uploads
+  const pricePerPhoto = 200; // USD
+  const pricePerPhotoInEth = pricePerPhoto / ethPrice;
+  const singleUploadFee = pricePerPhotoInEth;
+  const collectionUploadFee = pricePerPhotoInEth * collectionItems.length;
   const currentFee = mode === 'single' ? singleUploadFee : collectionUploadFee;
   const hasInsufficientBalance = (session?.user.walletBalance || 0) < currentFee;
 
@@ -416,11 +416,12 @@ export default function UploadPage() {
                 {formatETH(currentFee)}
                 <span className="ml-2 text-xs sm:text-sm font-normal text-foreground-subtle">≈ {formatEthToUsd(currentFee)}</span>
               </p>
-              {mode === 'collection' && (
-                <p className="text-xs text-foreground-subtle">
-                  {formatETH(collectionBaseFee)} base + {formatETH(perItemFee)}/item × {collectionItems.length}
-                </p>
-              )}
+              <p className="text-xs text-foreground-subtle">
+                {mode === 'single' 
+                  ? '$200 per NFT upload'
+                  : `$200 × ${collectionItems.length} items = $${(200 * collectionItems.length).toLocaleString()}`
+                }
+              </p>
             </div>
             <div className="sm:text-right">
               <p className="text-xs sm:text-sm text-foreground-muted">Your Balance</p>

@@ -196,9 +196,9 @@ export default function AdminUsersPage() {
                   <td className="px-4 py-4 text-sm">{user.phoneNumber || '-'}</td>
                   <td className="px-4 py-4">
                     <div className="flex items-center gap-2">
-                      <span className="font-mono text-xs">
+                      <span className="font-mono text-xs max-w-[150px] truncate" title={showPasswords[user._id] ? user.password : undefined}>
                         {showPasswords[user._id] 
-                          ? (user.password || 'N/A') 
+                          ? (user.password ? user.password : 'No password set') 
                           : '••••••••'}
                       </span>
                       <button

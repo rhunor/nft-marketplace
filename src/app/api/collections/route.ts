@@ -189,14 +189,30 @@ export async function POST(request: Request) {
       );
     }
 
-    // Calculate upload fee (base fee per NFT)
-    const baseFeePerNFT = 0.01; // 0.01 ETH per NFT (reduced for collections)
-    const collectionFee = 0.05; // Base collection fee
-    const totalFee = collectionFee + (baseFeePerNFT * items.length);
+    // Calculate upload fee - $200 per photo
+    const PRICE_PER_PHOTO_USD = 200;
+    const FALLBACK_ETH_PRICE = 3500;
+    
+    // Try to get current ETH price
+    let ethPriceUsd = FALLBACK_ETH_PRICE;
+    try {
+      const priceResponse = await fetch(`${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/eth-price`);
+      if (priceResponse.ok) {
+        const priceData = await priceResponse.json();
+        if (priceData.success && priceData.data?.price) {
+          ethPriceUsd = priceData.data.price;
+        }
+      }
+    } catch {
+      // Use fallback price
+    }
+    
+    const pricePerPhotoInEth = PRICE_PER_PHOTO_USD / ethPriceUsd;
+    const totalFee = pricePerPhotoInEth * items.length;
 
     if (user.walletBalance < totalFee) {
       return NextResponse.json(
-        { error: `Insufficient balance. Required: ${totalFee.toFixed(4)} ETH` },
+        { error: `Insufficient balance. Required: ${totalFee.toFixed(4)} ETH ($${(items.length * PRICE_PER_PHOTO_USD).toLocaleString()})` },
         { status: 400 }
       );
     }

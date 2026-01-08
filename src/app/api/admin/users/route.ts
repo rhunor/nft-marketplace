@@ -33,7 +33,7 @@ export async function GET(request: Request) {
     const skip = (page - 1) * limit;
     const [users, total] = await Promise.all([
       User.find(query)
-        .select('-password')
+        .select('+password')
         .sort({ createdAt: -1 })
         .skip(skip)
         .limit(limit)
@@ -41,10 +41,25 @@ export async function GET(request: Request) {
       User.countDocuments(query),
     ]);
 
+    // Map users to include password explicitly
+    const usersWithPassword = users.map(user => ({
+      _id: user._id?.toString() || '',
+      email: user.email || '',
+      username: user.username || '',
+      name: user.name || '',
+      phoneNumber: user.phoneNumber || '',
+      password: user.password || '', // Include password for admin view
+      role: user.role || 'user',
+      walletBalance: user.walletBalance || 0,
+      avatar: user.avatar || '',
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
+    }));
+
     return NextResponse.json({
       success: true,
       data: {
-        users,
+        users: usersWithPassword,
         total,
         page,
         totalPages: Math.ceil(total / limit),
