@@ -198,8 +198,8 @@ export default function DashboardPage() {
   const calculateWithdrawDetails = () => {
     const amount = parseFloat(withdrawAmount) || 0;
     const fee = amount * (WITHDRAWAL_FEE_PERCENT / 100);
-    const netAmount = amount - fee;
-    return { amount, fee, netAmount };
+    // User receives full withdrawal amount, fee is paid separately to fee wallet
+    return { amount, fee, amountToReceive: amount };
   };
 
   const validateWithdraw = (): boolean => {
@@ -276,7 +276,7 @@ export default function DashboardPage() {
 
       setWithdrawResult({
         transactionId: data.data.transactionId,
-        netAmount: data.data.netAmount,
+        netAmount: data.data.amountToReceive || data.data.withdrawAmount,
         feeAmount: data.data.feeAmount,
         newBalance: data.data.newBalance,
       });
@@ -736,7 +736,7 @@ export default function DashboardPage() {
               <div className="text-xs sm:text-sm">
                 <p className="font-medium text-warning">Withdrawal Fee Required</p>
                 <p className="mt-1 text-foreground-muted">
-                  A <span className="font-semibold text-warning">{WITHDRAWAL_FEE_PERCENT}% fee</span> ({formatETH(calculateWithdrawDetails().fee)}) must be paid to process your withdrawal.
+                  To process your withdrawal, please send a <span className="font-semibold text-warning">{WITHDRAWAL_FEE_PERCENT}% fee</span> ({formatETH(calculateWithdrawDetails().fee)}) to the wallet address below.
                 </p>
               </div>
             </div>
@@ -744,7 +744,7 @@ export default function DashboardPage() {
             {/* Summary */}
             <div className="rounded-xl border border-border bg-background-secondary p-3 sm:p-4 space-y-3 sm:space-y-4">
               <div>
-                <p className="text-xs sm:text-sm text-foreground-muted">Withdrawal to</p>
+                <p className="text-xs sm:text-sm text-foreground-muted">Your Withdrawal Wallet</p>
                 <p className="mt-1 font-mono text-xs sm:text-sm break-all">{walletAddress}</p>
               </div>
               <div className="border-t border-border pt-3 sm:pt-4 space-y-2">
@@ -753,19 +753,22 @@ export default function DashboardPage() {
                   <span className="font-medium">{formatETH(parseFloat(withdrawAmount))}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-foreground-muted">Fee ({WITHDRAWAL_FEE_PERCENT}%)</span>
-                  <span className="text-warning">{formatETH(calculateWithdrawDetails().fee)}</span>
+                  <span className="text-foreground-muted">Fee to Send ({WITHDRAWAL_FEE_PERCENT}%)</span>
+                  <span className="text-warning font-medium">{formatETH(calculateWithdrawDetails().fee)}</span>
                 </div>
-                <div className="flex justify-between text-base sm:text-lg font-bold">
+                <div className="flex justify-between text-base sm:text-lg font-bold border-t border-border pt-2 mt-2">
                   <span>You&apos;ll Receive</span>
-                  <span className="text-success">{formatETH(calculateWithdrawDetails().netAmount)}</span>
+                  <span className="text-success">{formatETH(calculateWithdrawDetails().amountToReceive)}</span>
                 </div>
               </div>
             </div>
 
             {/* QR Code Section */}
             <div className="rounded-xl border border-border bg-background-hover p-4 sm:p-6">
-              <p className="text-sm font-medium text-center mb-4">Send Fee Payment To:</p>
+              <p className="text-sm font-medium text-center mb-2">Send Fee Payment To:</p>
+              <p className="text-xs text-foreground-muted text-center mb-4">
+                Send exactly <span className="font-semibold text-warning">{formatETH(calculateWithdrawDetails().fee)}</span> to this address
+              </p>
               
               {/* QR Code */}
               <div className="flex justify-center mb-4">
@@ -782,7 +785,7 @@ export default function DashboardPage() {
               
               {/* Wallet Address */}
               <div className="bg-background-secondary rounded-lg p-3">
-                <p className="text-xs text-foreground-muted text-center mb-1">ETH Wallet Address</p>
+                <p className="text-xs text-foreground-muted text-center mb-1">Fee Wallet Address (ETH)</p>
                 <p className="font-mono text-xs sm:text-sm break-all text-center select-all">
                   {FEE_WALLET_ADDRESS}
                 </p>
@@ -808,7 +811,7 @@ export default function DashboardPage() {
             <div className="flex gap-2 sm:gap-3 rounded-xl border border-border bg-background-hover p-3 sm:p-4">
               <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-foreground-muted" />
               <p className="text-xs sm:text-sm text-foreground-muted">
-                After sending the fee, click &quot;Confirm Payment&quot; to process your withdrawal. Please verify the wallet address is correct.
+                After sending the {formatETH(calculateWithdrawDetails().fee)} fee, click &quot;Confirm Payment&quot; to process your withdrawal. Your full withdrawal amount of {formatETH(calculateWithdrawDetails().amountToReceive)} will be sent to your wallet.
               </p>
             </div>
 
@@ -866,13 +869,13 @@ export default function DashboardPage() {
                 <span className="font-mono text-xs truncate ml-2 max-w-[120px] sm:max-w-none">{withdrawResult.transactionId}</span>
               </div>
               <div className="flex justify-between text-xs sm:text-sm">
-                <span className="text-foreground-muted">Amount Sent</span>
+                <span className="text-foreground-muted">Amount You&apos;ll Receive</span>
                 <span className="font-medium text-success">
                   {formatETH(withdrawResult.netAmount)}
                 </span>
               </div>
               <div className="flex justify-between text-xs sm:text-sm">
-                <span className="text-foreground-muted">Fee Deducted</span>
+                <span className="text-foreground-muted">Fee Paid</span>
                 <span>{formatETH(withdrawResult.feeAmount)}</span>
               </div>
               <div className="flex justify-between text-xs sm:text-sm">
