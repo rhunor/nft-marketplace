@@ -8,7 +8,7 @@ import { useSession, signOut } from 'next-auth/react';
 import {
   Menu,
   X,
-  Search,
+ 
   Wallet,
   LogOut,
   Upload,
@@ -75,7 +75,7 @@ export function Header() {
           </nav>
 
           {/* Search Bar - Desktop */}
-          <div className="hidden flex-1 max-w-md lg:block">
+          {/* <div className="hidden flex-1 max-w-md lg:block">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-foreground-subtle" />
               <input
@@ -84,7 +84,7 @@ export function Header() {
                 className="w-full rounded-xl border border-border bg-background-secondary py-2 pl-10 pr-4 text-sm placeholder:text-foreground-subtle focus:border-accent-primary focus:outline-none focus:ring-2 focus:ring-accent-primary/20"
               />
             </div>
-          </div>
+          </div> */}
 
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
@@ -239,14 +239,14 @@ export function Header() {
           >
             <div className="section-container py-4">
               {/* Mobile Search */}
-              <div className="relative mb-4">
+              {/* <div className="relative mb-4">
                 <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-foreground-subtle" />
                 <input
                   type="text"
                   placeholder="Search NFTs, creators..."
                   className="w-full rounded-xl border border-border bg-background-secondary py-2.5 pl-10 pr-4 text-sm placeholder:text-foreground-subtle focus:border-accent-primary focus:outline-none"
                 />
-              </div>
+              </div> */}
 
               {/* Mobile Nav Links */}
               <nav className="flex flex-col gap-1">
