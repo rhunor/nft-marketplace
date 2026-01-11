@@ -55,7 +55,7 @@ const creators = [
 
 // Owner data
 const owners = [
-  { ownerName: 'Elena Voss', ownerUsername: 'elenavoss', ownerAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80' },
+  { ownerName: 'Elena Voss', ownerUsername: 'marydonovan', ownerAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80' },
   { ownerName: 'James Wilson', ownerUsername: 'jameswilson', ownerAvatar: 'https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80' },
   { ownerName: 'Alex Turner', ownerUsername: 'alexturner', ownerAvatar: 'https://images.unsplash.com/photo-1599566150163-29194dcabd36?w=100&q=80' },
   { ownerName: 'Nathan Park', ownerUsername: 'nathanpark', ownerAvatar: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100&q=80' },
@@ -205,8 +205,8 @@ export const sampleCollections: SampleNFTCollection[] = [
     category: 'photography',
     items: [
       { id: '22', title: 'Fibonacci Bloom', description: 'Sunflower spiral perfection.', mediaUrl: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80', mediaType: 'image', price: 5.5, category: 'photography', tags: ['fibonacci', 'nature'], ...getCreator(6), ...getOwner(1), likes: 987, views: 5432, collectionId: 'collection-7' },
-      { id: '23', title: 'Crystal Formation', description: 'Ice crystals under microscope.', mediaUrl: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80', mediaType: 'image', price: 7.0, category: 'photography', tags: ['crystal', 'ice'], ...getCreator(6), ...getOwner(2), likes: 1234, views: 6789, collectionId: 'collection-7' },
-      { id: '24', title: 'Leaf Veins', description: 'Intricate network of life.', mediaUrl: 'https://images.unsplash.com/photo-1516571748831-5d81767b788d?w=800&q=80', mediaType: 'image', price: 6.5, category: 'photography', tags: ['leaf', 'macro'], ...getCreator(6), ...getOwner(3), likes: 1456, views: 7890, collectionId: 'collection-7' },
+      { id: '23', title: 'Crystal Formation', description: 'Ice crystals under microscope.', mediaUrl: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80', mediaType: 'image', price: 7.0, category: 'photography', tags: ['crystal', 'ice'], ...getCreator(6), ...getOwner(1), likes: 1234, views: 6789, collectionId: 'collection-7' },
+      { id: '24', title: 'Leaf Veins', description: 'Intricate network of life.', mediaUrl: 'https://images.unsplash.com/photo-1516571748831-5d81767b788d?w=800&q=80', mediaType: 'image', price: 6.5, category: 'photography', tags: ['leaf', 'macro'], ...getCreator(6), ...getOwner(1), likes: 1456, views: 7890, collectionId: 'collection-7' },
     ],
   },
   // Collection 8: Digital Portraits
