@@ -5,7 +5,32 @@ import User from '@/lib/db/models/User';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { email, username, name, password, phoneNumber } = body;
+    const { email, username, name, password, phoneNumber, captchaToken } = body;
+
+    // Verify reCAPTCHA if secret key is configured
+    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+    if (recaptchaSecret && recaptchaSecret !== 'your-recaptcha-secret-key') {
+      if (!captchaToken) {
+        return NextResponse.json(
+          { error: 'CAPTCHA verification is required' },
+          { status: 400 }
+        );
+      }
+
+      const captchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `secret=${recaptchaSecret}&response=${captchaToken}`,
+      });
+      const captchaData = await captchaResponse.json();
+
+      if (!captchaData.success) {
+        return NextResponse.json(
+          { error: 'CAPTCHA verification failed. Please try again.' },
+          { status: 400 }
+        );
+      }
+    }
 
     // Basic validation
     if (!email || !username || !name || !password) {

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Search, ArrowRightLeft, Trash2, ExternalLink } from 'lucide-react';
+import { Search, ArrowRightLeft, Trash2, ExternalLink, DollarSign, ListPlus, ListX } from 'lucide-react';
 import { Button, Input, Card, Badge, Modal, Select, Notification } from '@/components/ui';
 import { formatETH, formatDate, getCategoryLabel } from '@/lib/utils';
 
@@ -33,6 +33,8 @@ export default function AdminNFTsPage() {
   const [selectedNFT, setSelectedNFT] = useState<NFT | null>(null);
   const [newOwnerId, setNewOwnerId] = useState('');
   const [showTransferModal, setShowTransferModal] = useState(false);
+  const [showPriceModal, setShowPriceModal] = useState(false);
+  const [editPrice, setEditPrice] = useState('');
   const [notification, setNotification] = useState<{
     type: 'success' | 'error';
     title: string;
@@ -104,6 +106,58 @@ export default function AdminNFTsPage() {
         title: 'Transfer Failed',
         message: error instanceof Error ? error.message : 'Something went wrong',
       });
+    }
+  };
+
+  const updateNFTPrice = async () => {
+    if (!selectedNFT || !editPrice) return;
+    const price = parseFloat(editPrice);
+    if (isNaN(price) || price <= 0) {
+      setNotification({ type: 'error', title: 'Please enter a valid price' });
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/nfts/${selectedNFT._id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ price }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setNotification({ type: 'success', title: 'Price Updated', message: `New price: ${price} ETH` });
+        setShowPriceModal(false);
+        setSelectedNFT(null);
+        setEditPrice('');
+        fetchNFTs();
+      } else {
+        throw new Error(data.error);
+      }
+    } catch (error) {
+      setNotification({ type: 'error', title: 'Update Failed', message: error instanceof Error ? error.message : 'Something went wrong' });
+    }
+  };
+
+  const toggleListing = async (nft: NFT) => {
+    try {
+      const response = await fetch(`/api/nfts/${nft._id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ isListed: !nft.isListed }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setNotification({
+          type: 'success',
+          title: nft.isListed ? 'NFT Unlisted' : 'NFT Listed',
+          message: nft.isListed ? 'NFT removed from marketplace' : 'NFT is now listed on the marketplace',
+        });
+        fetchNFTs();
+      } else {
+        throw new Error(data.error);
+      }
+    } catch (error) {
+      setNotification({ type: 'error', title: 'Update Failed', message: error instanceof Error ? error.message : 'Something went wrong' });
     }
   };
 
@@ -197,7 +251,7 @@ export default function AdminNFTsPage() {
                 <span>{nft.views} views</span>
                 <span>{formatDate(nft.createdAt)}</span>
               </div>
-              <div className="mt-4 flex gap-2">
+              <div className="mt-4 flex flex-wrap gap-2">
                 <Button
                   variant="secondary"
                   size="sm"
@@ -209,6 +263,27 @@ export default function AdminNFTsPage() {
                   leftIcon={<ArrowRightLeft className="h-4 w-4" />}
                 >
                   Transfer
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  className="flex-1"
+                  onClick={() => {
+                    setSelectedNFT(nft);
+                    setEditPrice(String(nft.price));
+                    setShowPriceModal(true);
+                  }}
+                  leftIcon={<DollarSign className="h-4 w-4" />}
+                >
+                  Price
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => toggleListing(nft)}
+                  title={nft.isListed ? 'Unlist NFT' : 'List NFT'}
+                >
+                  {nft.isListed ? <ListX className="h-4 w-4 text-warning" /> : <ListPlus className="h-4 w-4 text-success" />}
                 </Button>
                 <Button
                   variant="ghost"
@@ -293,6 +368,69 @@ export default function AdminNFTsPage() {
                 disabled={!newOwnerId}
               >
                 Transfer Ownership
+              </Button>
+            </div>
+          </div>
+        )}
+      </Modal>
+
+      {/* Price Edit Modal */}
+      <Modal
+        isOpen={showPriceModal}
+        onClose={() => {
+          setShowPriceModal(false);
+          setSelectedNFT(null);
+          setEditPrice('');
+        }}
+        title="Change NFT Price"
+      >
+        {selectedNFT && (
+          <div className="space-y-4">
+            <div className="flex items-center gap-4 rounded-xl border border-border p-4">
+              <div className="relative h-16 w-16 overflow-hidden rounded-lg">
+                <Image
+                  src={selectedNFT.mediaUrl}
+                  alt={selectedNFT.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <p className="font-medium">{selectedNFT.title}</p>
+                <p className="text-sm text-foreground-muted">
+                  Current price: {formatETH(selectedNFT.price)}
+                </p>
+              </div>
+            </div>
+
+            <Input
+              label="New Price (ETH)"
+              type="number"
+              step="any"
+              min="0.001"
+              value={editPrice}
+              onChange={(e) => setEditPrice(e.target.value)}
+              placeholder="0.1"
+            />
+
+            <div className="flex gap-3">
+              <Button
+                variant="secondary"
+                className="flex-1"
+                onClick={() => {
+                  setShowPriceModal(false);
+                  setSelectedNFT(null);
+                  setEditPrice('');
+                }}
+              >
+                Cancel
+              </Button>
+              <Button
+                className="flex-1"
+                onClick={updateNFTPrice}
+                disabled={!editPrice}
+              >
+                Update Price
               </Button>
             </div>
           </div>

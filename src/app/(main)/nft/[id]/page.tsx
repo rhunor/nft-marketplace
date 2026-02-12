@@ -17,8 +17,11 @@ import {
   Play,
   Volume2,
   AlertCircle,
+  DollarSign,
+  ListPlus,
+  ListX,
 } from 'lucide-react';
-import { Button, Avatar, Badge, Card, Loading, Modal, Notification } from '@/components/ui';
+import { Button, Avatar, Badge, Card, Loading, Modal, Input, Notification } from '@/components/ui';
 import { NFTCarousel } from '@/components/nft';
 import { sampleNFTs, type SampleNFT } from '@/lib/db/seed-data';
 import { formatETH, getCategoryLabel, formatNumber, formatDate } from '@/lib/utils';
@@ -47,6 +50,9 @@ export default function NFTDetailPage() {
   const [likeCount, setLikeCount] = useState(0);
   const [showBuyModal, setShowBuyModal] = useState(false);
   const [isPurchasing, setIsPurchasing] = useState(false);
+  const [showManageModal, setShowManageModal] = useState(false);
+  const [managePrice, setManagePrice] = useState('');
+  const [isUpdating, setIsUpdating] = useState(false);
   const [notification, setNotification] = useState<{
     type: 'success' | 'error' | 'info' | 'warning';
     title: string;
@@ -252,6 +258,88 @@ export default function NFTDetailPage() {
         type: 'error',
         title: 'Failed to copy link',
       });
+    }
+  };
+
+  const openManageModal = () => {
+    if (dbNft) {
+      setManagePrice(String(dbNft.price));
+    }
+    setShowManageModal(true);
+  };
+
+  const handleListNFT = async () => {
+    if (!isDbNft) return;
+    setIsUpdating(true);
+    try {
+      const price = parseFloat(managePrice);
+      if (isNaN(price) || price <= 0) {
+        setNotification({ type: 'error', title: 'Please enter a valid price' });
+        setIsUpdating(false);
+        return;
+      }
+      const response = await fetch(`/api/nfts/${nftId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ isListed: true, price }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Failed to list NFT');
+      setShowManageModal(false);
+      setNotification({ type: 'success', title: 'NFT Listed!', message: 'Your NFT is now available on the marketplace.' });
+      await fetchNFT();
+    } catch (err) {
+      setNotification({ type: 'error', title: 'Failed to list NFT', message: err instanceof Error ? err.message : 'Something went wrong' });
+    } finally {
+      setIsUpdating(false);
+    }
+  };
+
+  const handleUnlistNFT = async () => {
+    if (!isDbNft) return;
+    setIsUpdating(true);
+    try {
+      const response = await fetch(`/api/nfts/${nftId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ isListed: false }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Failed to unlist NFT');
+      setShowManageModal(false);
+      setNotification({ type: 'success', title: 'NFT Unlisted', message: 'Your NFT has been removed from the marketplace.' });
+      await fetchNFT();
+    } catch (err) {
+      setNotification({ type: 'error', title: 'Failed to unlist NFT', message: err instanceof Error ? err.message : 'Something went wrong' });
+    } finally {
+      setIsUpdating(false);
+    }
+  };
+
+  const handleUpdatePrice = async () => {
+    if (!isDbNft) return;
+    setIsUpdating(true);
+    try {
+      const price = parseFloat(managePrice);
+      if (isNaN(price) || price <= 0) {
+        setNotification({ type: 'error', title: 'Please enter a valid price' });
+        setIsUpdating(false);
+        return;
+      }
+      const response = await fetch(`/api/nfts/${nftId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ price }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Failed to update price');
+      setShowManageModal(false);
+      setNotification({ type: 'success', title: 'Price Updated!', message: `New price: ${price} ETH` });
+      await fetchNFT();
+    } catch (err) {
+      setNotification({ type: 'error', title: 'Failed to update price', message: err instanceof Error ? err.message : 'Something went wrong' });
+    } finally {
+      setIsUpdating(false);
     }
   };
 
@@ -503,18 +591,18 @@ export default function NFTDetailPage() {
                         Insufficient balance
                       </p>
                     )}
-                    <Button 
-                      onClick={handleBuy} 
-                      size="lg" 
+                    <Button
+                      onClick={handleBuy}
+                      size="lg"
                       disabled={!canBuy || !!hasInsufficientBalance}
                     >
                       Buy Now
                     </Button>
                   </div>
                 )}
-                {isOwner && nft.isListed && nft.isFromDatabase && (
-                  <Button variant="secondary" size="lg" onClick={() => router.push(`/nft/${nft.id}/edit`)}>
-                    Edit Listing
+                {isOwner && nft.isFromDatabase && (
+                  <Button variant="secondary" size="lg" onClick={openManageModal}>
+                    Manage NFT
                   </Button>
                 )}
               </div>
@@ -685,6 +773,88 @@ export default function NFTDetailPage() {
               Confirm Purchase
             </Button>
           </div>
+        </div>
+      </Modal>
+
+      {/* Manage NFT Modal */}
+      <Modal
+        isOpen={showManageModal}
+        onClose={() => !isUpdating && setShowManageModal(false)}
+        title="Manage NFT"
+      >
+        <div className="space-y-4">
+          {/* NFT Preview */}
+          <div className="flex items-center gap-4 rounded-xl border border-border p-4">
+            <div className="relative h-16 w-16 overflow-hidden rounded-lg">
+              <Image
+                src={nft.mediaUrl}
+                alt={nft.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="font-semibold">{nft.title}</h3>
+              <p className="text-sm text-foreground-muted">
+                Status: {nft.isListed ? 'Listed' : 'Not Listed'}
+              </p>
+            </div>
+          </div>
+
+          {/* Price Input */}
+          <Input
+            label="Price (ETH)"
+            type="number"
+            step="any"
+            min="0.001"
+            value={managePrice}
+            onChange={(e) => setManagePrice(e.target.value)}
+            placeholder="0.1"
+            leftIcon={<DollarSign className="h-4 w-4" />}
+          />
+
+          {/* Action Buttons */}
+          <div className="space-y-2">
+            {!nft.isListed ? (
+              <Button
+                className="w-full"
+                onClick={handleListNFT}
+                isLoading={isUpdating}
+                leftIcon={<ListPlus className="h-4 w-4" />}
+              >
+                List for Sale
+              </Button>
+            ) : (
+              <>
+                <Button
+                  className="w-full"
+                  onClick={handleUpdatePrice}
+                  isLoading={isUpdating}
+                  leftIcon={<DollarSign className="h-4 w-4" />}
+                >
+                  Update Price
+                </Button>
+                <Button
+                  variant="secondary"
+                  className="w-full"
+                  onClick={handleUnlistNFT}
+                  isLoading={isUpdating}
+                  leftIcon={<ListX className="h-4 w-4" />}
+                >
+                  Unlist from Marketplace
+                </Button>
+              </>
+            )}
+          </div>
+
+          <Button
+            variant="ghost"
+            className="w-full"
+            onClick={() => setShowManageModal(false)}
+            disabled={isUpdating}
+          >
+            Cancel
+          </Button>
         </div>
       </Modal>
 

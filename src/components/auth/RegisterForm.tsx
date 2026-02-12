@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { Mail, Lock, Eye, EyeOff, User, AtSign, Phone, ChevronDown } from 'lucide-react';
 import { Button, Input, Card } from '@/components/ui';
 
@@ -88,6 +89,10 @@ export function RegisterForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [authError, setAuthError] = useState('');
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -142,6 +147,10 @@ export function RegisterForm() {
       newErrors.confirmPassword = 'Passwords do not match';
     }
 
+    if (recaptchaSiteKey && !captchaToken) {
+      newErrors.email = 'Please complete the CAPTCHA verification';
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -168,6 +177,7 @@ export function RegisterForm() {
           name: formData.name,
           phoneNumber: fullPhoneNumber,
           password: formData.password,
+          captchaToken,
         }),
       });
 
@@ -193,6 +203,8 @@ export function RegisterForm() {
       }
     } catch {
       setAuthError('Something went wrong. Please try again.');
+      recaptchaRef.current?.reset();
+      setCaptchaToken(null);
       setIsLoading(false);
     }
   };
@@ -343,6 +355,18 @@ export function RegisterForm() {
           leftIcon={<Lock className="h-4 w-4" />}
           autoComplete="new-password"
         />
+
+        {recaptchaSiteKey && (
+          <div className="flex justify-center">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={recaptchaSiteKey}
+              onChange={(token) => setCaptchaToken(token)}
+              onExpired={() => setCaptchaToken(null)}
+              theme="dark"
+            />
+          </div>
+        )}
 
         <div className="pt-2">
           <Button type="submit" className="w-full" isLoading={isLoading}>
