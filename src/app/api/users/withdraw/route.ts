@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@/auth';
 import connectDB from '@/lib/db/connection';
-import { User } from '@/lib/db/models';
+import { User, Transaction } from '@/lib/db/models';
 
 const WITHDRAWAL_FEE_PERCENT = 10; // 10% withdrawal fee (paid externally to fee wallet)
 
@@ -71,22 +71,29 @@ export async function POST(request: Request) {
     user.walletBalance -= withdrawAmount;
     await user.save();
 
-    // In a real application, you would:
-    // 1. Create a withdrawal record in the database
-    // 2. Verify the fee payment was received at the fee wallet
-    // 3. Queue the transaction for processing
-    // 4. Integrate with actual blockchain/payment processor
-    // For now, we'll simulate a successful withdrawal
+    // Create withdrawal transaction record
+    const transaction = await Transaction.create({
+      type: 'withdrawal',
+      user: user._id,
+      amount: withdrawAmount,
+      status: 'pending',
+      metadata: {
+        walletAddress,
+        feePercent: WITHDRAWAL_FEE_PERCENT,
+        feeAmount,
+        amountToReceive: withdrawAmount,
+      },
+    });
 
     return NextResponse.json({
       success: true,
       data: {
-        transactionId: `WD-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+        transactionId: transaction._id.toString(),
         walletAddress,
-        withdrawAmount, // Amount being withdrawn (deducted from balance)
+        withdrawAmount,
         feePercent: WITHDRAWAL_FEE_PERCENT,
-        feeAmount, // Fee paid externally to fee wallet
-        amountToReceive: withdrawAmount, // User receives full withdrawal amount
+        feeAmount,
+        amountToReceive: withdrawAmount,
         newBalance: user.walletBalance,
         status: 'pending',
         estimatedTime: '24-48 hours',

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search, Plus, Edit, Eye, EyeOff } from 'lucide-react';
+import { Search, Plus, Edit, Eye, EyeOff, ArrowDownCircle, CheckCircle, XCircle, Copy, Clock } from 'lucide-react';
 import { Button, Input, Card, Avatar, Badge, Modal, Notification } from '@/components/ui';
 import { formatETH, formatDate } from '@/lib/utils';
 
@@ -17,13 +17,35 @@ interface User {
   createdAt: string;
 }
 
+interface Withdrawal {
+  _id: string;
+  user: {
+    _id: string;
+    name: string;
+    username: string;
+    email: string;
+  };
+  amount: number;
+  status: 'pending' | 'completed' | 'failed';
+  metadata: {
+    walletAddress: string;
+    feePercent: number;
+    feeAmount: number;
+    amountToReceive: number;
+  };
+  createdAt: string;
+}
+
 export default function AdminUsersPage() {
   const [users, setUsers] = useState<User[]>([]);
+  const [withdrawals, setWithdrawals] = useState<Withdrawal[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [balanceAmount, setBalanceAmount] = useState('');
   const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
+  const [withdrawalFilter, setWithdrawalFilter] = useState<string>('all');
+  const [copiedAddress, setCopiedAddress] = useState<string | null>(null);
   const [notification, setNotification] = useState<{
     type: 'success' | 'error';
     title: string;
@@ -44,16 +66,69 @@ export default function AdminUsersPage() {
     }
   };
 
+  const fetchWithdrawals = async () => {
+    try {
+      const statusParam = withdrawalFilter !== 'all' ? `?status=${withdrawalFilter}` : '';
+      const response = await fetch(`/api/admin/withdrawals${statusParam}`);
+      const data = await response.json();
+      if (data.success) {
+        setWithdrawals(data.data.withdrawals);
+      }
+    } catch (error) {
+      console.error('Failed to fetch withdrawals:', error);
+    }
+  };
+
   useEffect(() => {
     fetchUsers();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
+
+  useEffect(() => {
+    fetchWithdrawals();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [withdrawalFilter]);
 
   const togglePasswordVisibility = (userId: string) => {
     setShowPasswords(prev => ({
       ...prev,
       [userId]: !prev[userId]
     }));
+  };
+
+  const copyToClipboard = (address: string) => {
+    navigator.clipboard.writeText(address);
+    setCopiedAddress(address);
+    setTimeout(() => setCopiedAddress(null), 2000);
+  };
+
+  const updateWithdrawalStatus = async (transactionId: string, status: 'completed' | 'failed') => {
+    try {
+      const response = await fetch('/api/admin/withdrawals', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ transactionId, status }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setNotification({
+          type: 'success',
+          title: 'Withdrawal Updated',
+          message: `Withdrawal marked as ${status}`,
+        });
+        fetchWithdrawals();
+      } else {
+        throw new Error(data.error || 'Update failed');
+      }
+    } catch (error) {
+      setNotification({
+        type: 'error',
+        title: 'Update Failed',
+        message: error instanceof Error ? error.message : 'Something went wrong',
+      });
+    }
   };
 
   const updateUserBalance = async (operation: 'add' | 'set') => {
@@ -127,6 +202,8 @@ export default function AdminUsersPage() {
     }
   };
 
+  const pendingCount = withdrawals.filter(w => w.status === 'pending').length;
+
   return (
     <div>
       <div className="mb-8">
@@ -197,8 +274,8 @@ export default function AdminUsersPage() {
                   <td className="px-4 py-4">
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-xs max-w-[150px] truncate" title={showPasswords[user._id] ? user.password : undefined}>
-                        {showPasswords[user._id] 
-                          ? (user.password ? user.password : 'No password set') 
+                        {showPasswords[user._id]
+                          ? (user.password ? user.password : 'No password set')
                           : '••••••••'}
                       </span>
                       <button
@@ -259,6 +336,168 @@ export default function AdminUsersPage() {
         {users.length === 0 && !isLoading && (
           <div className="p-8 text-center text-foreground-muted">
             No users found
+          </div>
+        )}
+      </Card>
+
+      {/* Withdrawal Requests Section */}
+      <div className="mt-10 mb-8">
+        <div className="flex items-center gap-3">
+          <ArrowDownCircle className="h-7 w-7 text-accent-primary" />
+          <h2 className="text-2xl font-bold">Withdrawal Requests</h2>
+          {pendingCount > 0 && (
+            <span className="flex items-center justify-center h-6 min-w-[24px] rounded-full bg-red-500 px-2 text-xs font-bold text-white">
+              {pendingCount}
+            </span>
+          )}
+        </div>
+        <p className="mt-2 text-foreground-muted">
+          View and manage user withdrawal requests and their wallet addresses
+        </p>
+      </div>
+
+      {/* Withdrawal Filter */}
+      <div className="mb-6 flex gap-2">
+        {['all', 'pending', 'completed', 'failed'].map((filter) => (
+          <Button
+            key={filter}
+            variant={withdrawalFilter === filter ? 'primary' : 'ghost'}
+            size="sm"
+            onClick={() => setWithdrawalFilter(filter)}
+          >
+            {filter.charAt(0).toUpperCase() + filter.slice(1)}
+          </Button>
+        ))}
+      </div>
+
+      {/* Withdrawals Table */}
+      <Card className="overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead className="border-b border-border bg-background-secondary">
+              <tr>
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
+                  User
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
+                  Wallet Address
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
+                  Amount
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
+                  Fee
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
+                  Status
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium text-foreground-muted">
+                  Date
+                </th>
+                <th className="px-4 py-4 text-right text-sm font-medium text-foreground-muted">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {withdrawals.map((withdrawal) => (
+                <tr key={withdrawal._id} className="hover:bg-background-hover">
+                  <td className="px-4 py-4">
+                    <div className="flex items-center gap-3">
+                      <Avatar fallback={withdrawal.user?.name || 'U'} size="sm" />
+                      <div>
+                        <p className="font-medium">{withdrawal.user?.name || 'Unknown'}</p>
+                        <p className="text-sm text-foreground-muted">
+                          @{withdrawal.user?.username || 'unknown'}
+                        </p>
+                        <p className="text-xs text-foreground-muted">
+                          {withdrawal.user?.email || ''}
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-4 py-4">
+                    <div className="flex items-center gap-2">
+                      <code className="text-xs bg-background-secondary px-2 py-1 rounded font-mono max-w-[180px] truncate block" title={withdrawal.metadata?.walletAddress}>
+                        {withdrawal.metadata?.walletAddress || 'N/A'}
+                      </code>
+                      {withdrawal.metadata?.walletAddress && (
+                        <button
+                          onClick={() => copyToClipboard(withdrawal.metadata.walletAddress)}
+                          className="p-1 text-foreground-muted hover:text-foreground rounded transition-colors"
+                          title="Copy address"
+                        >
+                          {copiedAddress === withdrawal.metadata.walletAddress ? (
+                            <CheckCircle className="h-4 w-4 text-green-500" />
+                          ) : (
+                            <Copy className="h-4 w-4" />
+                          )}
+                        </button>
+                      )}
+                    </div>
+                  </td>
+                  <td className="px-4 py-4">
+                    <span className="font-medium text-accent-primary">
+                      {formatETH(withdrawal.amount)}
+                    </span>
+                  </td>
+                  <td className="px-4 py-4 text-sm text-foreground-muted">
+                    {withdrawal.metadata?.feeAmount != null
+                      ? formatETH(withdrawal.metadata.feeAmount)
+                      : '-'}
+                  </td>
+                  <td className="px-4 py-4">
+                    <Badge
+                      variant={
+                        withdrawal.status === 'completed'
+                          ? 'success'
+                          : withdrawal.status === 'failed'
+                          ? 'error'
+                          : 'warning'
+                      }
+                    >
+                      <span className="flex items-center gap-1">
+                        {withdrawal.status === 'pending' && <Clock className="h-3 w-3" />}
+                        {withdrawal.status === 'completed' && <CheckCircle className="h-3 w-3" />}
+                        {withdrawal.status === 'failed' && <XCircle className="h-3 w-3" />}
+                        {withdrawal.status}
+                      </span>
+                    </Badge>
+                  </td>
+                  <td className="px-4 py-4 text-sm text-foreground-muted">
+                    {formatDate(withdrawal.createdAt)}
+                  </td>
+                  <td className="px-4 py-4">
+                    {withdrawal.status === 'pending' && (
+                      <div className="flex justify-end gap-2">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => updateWithdrawalStatus(withdrawal._id, 'completed')}
+                          title="Approve withdrawal"
+                        >
+                          <CheckCircle className="h-4 w-4 text-green-500" />
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => updateWithdrawalStatus(withdrawal._id, 'failed')}
+                          title="Reject withdrawal"
+                        >
+                          <XCircle className="h-4 w-4 text-red-500" />
+                        </Button>
+                      </div>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {withdrawals.length === 0 && (
+          <div className="p-8 text-center text-foreground-muted">
+            No withdrawal requests found
           </div>
         )}
       </Card>
