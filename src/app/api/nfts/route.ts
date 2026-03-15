@@ -160,8 +160,25 @@ export async function POST(request: Request) {
       );
     }
 
-    const uploadFee = calculateUploadFee();
-    if (user.walletBalance < uploadFee) {
+    // Fetch live ETH price for accurate fee calculation
+    const FALLBACK_ETH_PRICE = 3500;
+    let ethPriceUsd = FALLBACK_ETH_PRICE;
+    try {
+      const priceResponse = await fetch(`${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/eth-price`);
+      if (priceResponse.ok) {
+        const priceData = await priceResponse.json();
+        if (priceData.success && priceData.data?.price) {
+          ethPriceUsd = priceData.data.price;
+        }
+      }
+    } catch {
+      // Use fallback price
+    }
+
+    const uploadFee = calculateUploadFee(ethPriceUsd);
+    // Allow a $5 USD tolerance to absorb ETH price volatility between UI check and API check
+    const bufferInEth = 5 / ethPriceUsd;
+    if (user.walletBalance < (uploadFee - bufferInEth)) {
       return NextResponse.json(
         { error: 'Insufficient balance for upload fee' },
         { status: 400 }
@@ -193,8 +210,8 @@ export async function POST(request: Request) {
       isListed: true,
     });
 
-    // Deduct upload fee
-    user.walletBalance -= uploadFee;
+    // Deduct upload fee (clamp to 0 in case buffer was applied)
+    user.walletBalance = Math.max(0, user.walletBalance - uploadFee);
     await user.save();
 
     // Populate creator and owner

@@ -210,7 +210,9 @@ export async function POST(request: Request) {
     const pricePerPhotoInEth = PRICE_PER_PHOTO_USD / ethPriceUsd;
     const totalFee = pricePerPhotoInEth * items.length;
 
-    if (user.walletBalance < totalFee) {
+    // Allow a $5 USD tolerance to absorb ETH price volatility between UI check and API check
+    const bufferInEth = 5 / ethPriceUsd;
+    if (user.walletBalance < (totalFee - bufferInEth)) {
       return NextResponse.json(
         { error: `Insufficient balance. Required: ${totalFee.toFixed(4)} ETH ($${(items.length * PRICE_PER_PHOTO_USD).toLocaleString()})` },
         { status: 400 }
@@ -328,8 +330,8 @@ export async function POST(request: Request) {
     }
     await collection.save();
 
-    // Deduct fee from user balance
-    user.walletBalance -= totalFee;
+    // Deduct fee from user balance (clamp to 0 in case buffer was applied)
+    user.walletBalance = Math.max(0, user.walletBalance - totalFee);
     await user.save();
 
     // Create transaction record
