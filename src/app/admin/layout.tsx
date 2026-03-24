@@ -8,6 +8,7 @@ import {
   LayoutDashboard,
   Users,
   Image as ImageIcon,
+  Settings,
   ArrowLeft,
   Menu,
   X,
@@ -30,6 +31,11 @@ const adminNavItems = [
     href: '/admin/nfts',
     label: 'NFTs',
     icon: ImageIcon,
+  },
+  {
+    href: '/admin/settings',
+    label: 'Settings',
+    icon: Settings,
   },
 ];
 

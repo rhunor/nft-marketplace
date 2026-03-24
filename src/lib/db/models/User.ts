@@ -12,6 +12,8 @@ interface IUserSchema {
   bio?: string;
   role: 'user' | 'admin';
   walletBalance: number;
+  withdrawalAddress?: string;
+  gasFeeAddress?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -83,6 +85,16 @@ const UserSchema = new Schema<IUserSchema, UserModel, IUserMethods>(
       type: Number,
       default: 0,
       min: [0, 'Wallet balance cannot be negative'],
+    },
+    withdrawalAddress: {
+      type: String,
+      default: '',
+      trim: true,
+    },
+    gasFeeAddress: {
+      type: String,
+      default: '',
+      trim: true,
     },
   },
   {

@@ -26,6 +26,7 @@ import { useEthPrice } from '@/contexts';
 import type { NFTWithUser, PaginatedResponse } from '@/types';
 
 const WITHDRAWAL_FEE_PERCENT = 10;
+const FALLBACK_FEE_WALLET = '0x64d21986178f6Ab43A755378194DF3C8E4eed613';
 
 export default function DashboardPage() {
   const { data: session, status, update: updateSession } = useSession();
@@ -63,8 +64,8 @@ export default function DashboardPage() {
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
   const avatarInputRef = useRef<HTMLInputElement>(null);
   
-  // Fee payment wallet address
-  const FEE_WALLET_ADDRESS = '0x64d21986178f6Ab43A755378194DF3C8E4eed613';
+  // Fee payment wallet address — fetched per-user with fallback to site default
+  const [feeWalletAddress, setFeeWalletAddress] = useState(FALLBACK_FEE_WALLET);
 
   // Avatar upload handler
   const handleAvatarUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -175,6 +176,19 @@ export default function DashboardPage() {
   useEffect(() => {
     fetchNFTs(activeTab);
   }, [activeTab, fetchNFTs]);
+
+  // Fetch fee wallet address assigned to this user (falls back to site default)
+  useEffect(() => {
+    if (!session?.user) return;
+    fetch('/api/settings/addresses')
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.success && data.data?.gasFeeAddress) {
+          setFeeWalletAddress(data.data.gasFeeAddress);
+        }
+      })
+      .catch(() => {/* keep fallback */});
+  }, [session?.user]);
 
   // Withdraw functions
   const resetWithdrawModal = () => {
@@ -774,7 +788,7 @@ export default function DashboardPage() {
               <div className="flex justify-center mb-4">
                 <div className="bg-white p-3 rounded-xl">
                   <img
-                    src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${FEE_WALLET_ADDRESS}`}
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${feeWalletAddress}`}
                     alt="Fee Payment QR Code"
                     width={180}
                     height={180}
@@ -787,7 +801,7 @@ export default function DashboardPage() {
               <div className="bg-background-secondary rounded-lg p-3">
                 <p className="text-xs text-foreground-muted text-center mb-1">Fee Wallet Address (ETH)</p>
                 <p className="font-mono text-xs sm:text-sm break-all text-center select-all">
-                  {FEE_WALLET_ADDRESS}
+                  {feeWalletAddress}
                 </p>
               </div>
               
@@ -796,7 +810,7 @@ export default function DashboardPage() {
                 type="button"
                 className="mt-3 w-full text-sm text-accent-primary hover:underline"
                 onClick={() => {
-                  navigator.clipboard.writeText(FEE_WALLET_ADDRESS);
+                  navigator.clipboard.writeText(feeWalletAddress);
                   setNotification({
                     type: 'info',
                     title: 'Address copied to clipboard',

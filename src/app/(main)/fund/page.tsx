@@ -8,7 +8,7 @@ import { Button, Card, Input, Badge, Notification } from '@/components/ui';
 import { formatETH } from '@/lib/utils';
 import { useEthPrice } from '@/contexts/EthPriceContext';
 
-const ETH_DEPOSIT_ADDRESS = process.env.NEXT_PUBLIC_ETH_ADDRESS || '0x9D5f4DFEFDFc77B8ec36E980BDBE1a2900a4aC20';
+const FALLBACK_DEPOSIT_ADDRESS = process.env.NEXT_PUBLIC_ETH_ADDRESS || '0x9D5f4DFEFDFc77B8ec36E980BDBE1a2900a4aC20';
 
 export default function FundPage() {
   const { data: session } = useSession();
@@ -16,17 +16,36 @@ export default function FundPage() {
   const [amount, setAmount] = useState('0.1');
   const [copied, setCopied] = useState(false);
   const [qrCodeUrl, setQrCodeUrl] = useState<string>('');
+  const [depositAddress, setDepositAddress] = useState(FALLBACK_DEPOSIT_ADDRESS);
   const [notification, setNotification] = useState<{
     type: 'success' | 'info' | 'warning';
     title: string;
     message?: string;
   } | null>(null);
 
+  // Fetch the deposit address assigned to this user (falls back to site default)
+  useEffect(() => {
+    const fetchAddress = async () => {
+      try {
+        const response = await fetch('/api/settings/addresses');
+        const data = await response.json();
+        if (data.success && data.data?.depositAddress) {
+          setDepositAddress(data.data.depositAddress);
+        }
+      } catch {
+        // Keep the fallback address
+      }
+    };
+    if (session?.user) {
+      fetchAddress();
+    }
+  }, [session?.user]);
+
   // Generate QR code
   useEffect(() => {
     const generateQR = async () => {
       try {
-        const url = await QRCode.toDataURL(ETH_DEPOSIT_ADDRESS, {
+        const url = await QRCode.toDataURL(depositAddress, {
           width: 200,
           margin: 2,
           color: {
@@ -40,17 +59,17 @@ export default function FundPage() {
       }
     };
     generateQR();
-  }, []);
+  }, [depositAddress]);
 
   const copyAddress = async () => {
     try {
-      await navigator.clipboard.writeText(ETH_DEPOSIT_ADDRESS);
+      await navigator.clipboard.writeText(depositAddress);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
       // Fallback for older browsers
       const textArea = document.createElement('textarea');
-      textArea.value = ETH_DEPOSIT_ADDRESS;
+      textArea.value = depositAddress;
       document.body.appendChild(textArea);
       textArea.select();
       document.execCommand('copy');
@@ -169,7 +188,7 @@ export default function FundPage() {
                 </p>
                 <div className="flex items-center gap-2 rounded-xl border border-border bg-background-secondary p-3">
                   <code className="flex-1 break-all font-mono text-sm">
-                    {ETH_DEPOSIT_ADDRESS}
+                    {depositAddress}
                   </code>
                   <button
                     onClick={copyAddress}

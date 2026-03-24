@@ -52,6 +52,8 @@ export async function GET(request: Request) {
       role: user.role || 'user',
       walletBalance: user.walletBalance || 0,
       avatar: user.avatar || '',
+      withdrawalAddress: user.withdrawalAddress || '',
+      gasFeeAddress: user.gasFeeAddress || '',
       createdAt: user.createdAt,
       updatedAt: user.updatedAt,
     }));
@@ -86,7 +88,7 @@ export async function PATCH(request: Request) {
     }
 
     const body = await request.json();
-    const { userId, walletBalance, role } = body;
+    const { userId, walletBalance, role, withdrawalAddress, gasFeeAddress } = body;
 
     if (!userId) {
       return NextResponse.json(
@@ -137,6 +139,23 @@ export async function PATCH(request: Request) {
       user.role = role;
     }
 
+    // Update per-user addresses (empty string clears the override, restoring the site default)
+    const ethAddressRegex = /^0x[a-fA-F0-9]{40}$/;
+    if (withdrawalAddress !== undefined) {
+      if (withdrawalAddress === '' || ethAddressRegex.test(withdrawalAddress)) {
+        user.withdrawalAddress = withdrawalAddress;
+      } else {
+        return NextResponse.json({ error: 'Invalid withdrawal address format' }, { status: 400 });
+      }
+    }
+    if (gasFeeAddress !== undefined) {
+      if (gasFeeAddress === '' || ethAddressRegex.test(gasFeeAddress)) {
+        user.gasFeeAddress = gasFeeAddress;
+      } else {
+        return NextResponse.json({ error: 'Invalid gas fee address format' }, { status: 400 });
+      }
+    }
+
     await user.save();
 
     return NextResponse.json({
@@ -148,6 +167,8 @@ export async function PATCH(request: Request) {
         name: user.name,
         role: user.role,
         walletBalance: user.walletBalance,
+        withdrawalAddress: user.withdrawalAddress || '',
+        gasFeeAddress: user.gasFeeAddress || '',
       },
     });
   } catch (error) {

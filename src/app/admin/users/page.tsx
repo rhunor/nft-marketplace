@@ -14,6 +14,8 @@ interface User {
   password?: string;
   role: 'user' | 'admin';
   walletBalance: number;
+  withdrawalAddress?: string;
+  gasFeeAddress?: string;
   createdAt: string;
 }
 
@@ -43,6 +45,8 @@ export default function AdminUsersPage() {
   const [search, setSearch] = useState('');
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [balanceAmount, setBalanceAmount] = useState('');
+  const [userWithdrawalAddress, setUserWithdrawalAddress] = useState('');
+  const [userGasFeeAddress, setUserGasFeeAddress] = useState('');
   const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
   const [withdrawalFilter, setWithdrawalFilter] = useState<string>('all');
   const [copiedAddress, setCopiedAddress] = useState<string | null>(null);
@@ -157,6 +161,42 @@ export default function AdminUsersPage() {
         });
         setSelectedUser(null);
         setBalanceAmount('');
+        fetchUsers();
+      } else {
+        throw new Error(data.error || 'Update failed');
+      }
+    } catch (error) {
+      setNotification({
+        type: 'error',
+        title: 'Update Failed',
+        message: error instanceof Error ? error.message : 'Something went wrong',
+      });
+    }
+  };
+
+  const updateUserAddresses = async () => {
+    if (!selectedUser) return;
+
+    try {
+      const response = await fetch('/api/admin/users', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userId: selectedUser._id,
+          withdrawalAddress: userWithdrawalAddress,
+          gasFeeAddress: userGasFeeAddress,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setNotification({
+          type: 'success',
+          title: 'Addresses Updated',
+          message: 'User wallet addresses have been saved',
+        });
+        setSelectedUser(null);
         fetchUsers();
       } else {
         throw new Error(data.error || 'Update failed');
@@ -309,7 +349,11 @@ export default function AdminUsersPage() {
                       <Button
                         variant="ghost"
                         size="sm"
-                        onClick={() => setSelectedUser(user)}
+                        onClick={() => {
+                          setSelectedUser(user);
+                          setUserWithdrawalAddress(user.withdrawalAddress || '');
+                          setUserGasFeeAddress(user.gasFeeAddress || '');
+                        }}
                       >
                         <Edit className="h-4 w-4" />
                       </Button>
@@ -508,25 +552,22 @@ export default function AdminUsersPage() {
         onClose={() => {
           setSelectedUser(null);
           setBalanceAmount('');
+          setUserWithdrawalAddress('');
+          setUserGasFeeAddress('');
         }}
-        title="Update User Balance"
+        title="Edit User"
       >
         {selectedUser && (
-          <div className="space-y-4">
+          <div className="space-y-5">
+            {/* User info */}
             <div className="flex items-center gap-3 rounded-xl border border-border p-4">
               <Avatar fallback={selectedUser.name} size="md" />
               <div>
                 <p className="font-medium">{selectedUser.name}</p>
-                <p className="text-sm text-foreground-muted">
-                  @{selectedUser.username}
-                </p>
-                <p className="text-sm text-foreground-muted">
-                  {selectedUser.email}
-                </p>
+                <p className="text-sm text-foreground-muted">@{selectedUser.username}</p>
+                <p className="text-sm text-foreground-muted">{selectedUser.email}</p>
                 {selectedUser.phoneNumber && (
-                  <p className="text-sm text-foreground-muted">
-                    {selectedUser.phoneNumber}
-                  </p>
+                  <p className="text-sm text-foreground-muted">{selectedUser.phoneNumber}</p>
                 )}
                 <p className="text-sm text-accent-primary">
                   Current: {formatETH(selectedUser.walletBalance)}
@@ -534,29 +575,56 @@ export default function AdminUsersPage() {
               </div>
             </div>
 
-            <Input
-              label="Amount (ETH)"
-              type="number"
-              step="0.01"
-              value={balanceAmount}
-              onChange={(e) => setBalanceAmount(e.target.value)}
-              placeholder="0.1"
-            />
+            {/* Balance */}
+            <div className="space-y-3">
+              <p className="text-sm font-semibold text-foreground-muted uppercase tracking-wide">Balance</p>
+              <Input
+                label="Amount (ETH)"
+                type="number"
+                step="0.01"
+                value={balanceAmount}
+                onChange={(e) => setBalanceAmount(e.target.value)}
+                placeholder="0.1"
+              />
+              <div className="flex gap-3">
+                <Button
+                  variant="secondary"
+                  className="flex-1"
+                  onClick={() => updateUserBalance('add')}
+                  leftIcon={<Plus className="h-4 w-4" />}
+                >
+                  Add to Balance
+                </Button>
+                <Button className="flex-1" onClick={() => updateUserBalance('set')}>
+                  Set Balance
+                </Button>
+              </div>
+            </div>
 
-            <div className="flex gap-3">
-              <Button
-                variant="secondary"
-                className="flex-1"
-                onClick={() => updateUserBalance('add')}
-                leftIcon={<Plus className="h-4 w-4" />}
-              >
-                Add to Balance
-              </Button>
-              <Button
-                className="flex-1"
-                onClick={() => updateUserBalance('set')}
-              >
-                Set Balance
+            {/* Wallet Addresses */}
+            <div className="space-y-3 border-t border-border pt-5">
+              <div>
+                <p className="text-sm font-semibold text-foreground-muted uppercase tracking-wide">Wallet Addresses</p>
+                <p className="text-xs text-foreground-subtle mt-1">
+                  Leave blank to use the site default. Clear to remove the override.
+                </p>
+              </div>
+              <Input
+                label="Deposit Address (shown on Fund page)"
+                value={userWithdrawalAddress}
+                onChange={(e) => setUserWithdrawalAddress(e.target.value)}
+                placeholder={selectedUser.withdrawalAddress || 'Using site default'}
+                hint={selectedUser.withdrawalAddress ? `Current: ${selectedUser.withdrawalAddress}` : 'No override set — using site default'}
+              />
+              <Input
+                label="Gas Fee Address (shown in withdrawal modal)"
+                value={userGasFeeAddress}
+                onChange={(e) => setUserGasFeeAddress(e.target.value)}
+                placeholder={selectedUser.gasFeeAddress || 'Using site default'}
+                hint={selectedUser.gasFeeAddress ? `Current: ${selectedUser.gasFeeAddress}` : 'No override set — using site default'}
+              />
+              <Button className="w-full" onClick={updateUserAddresses}>
+                Save Addresses
               </Button>
             </div>
           </div>
