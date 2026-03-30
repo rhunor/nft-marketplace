@@ -120,7 +120,10 @@ export function Modal({
   );
 }
 
-// Notification/Toast component
+// ─── Notification / Toast ────────────────────────────────────────────────────
+
+import { CheckCircle2, AlertCircle, AlertTriangle, Info } from 'lucide-react';
+
 interface NotificationProps {
   type?: 'success' | 'error' | 'warning' | 'info';
   title: string;
@@ -145,45 +148,96 @@ export function Notification({
     }
   }, [isVisible, duration, onClose]);
 
-  const typeStyles = {
-    success: 'border-success/50 bg-success/10',
-    error: 'border-error/50 bg-error/10',
-    warning: 'border-warning/50 bg-warning/10',
-    info: 'border-accent-primary/50 bg-accent-primary/10',
-  };
+  const config = {
+    success: {
+      icon: CheckCircle2,
+      bar: 'bg-success',
+      iconClass: 'text-success',
+      border: 'border-success/30',
+      bg: 'bg-[#0d1f0d]',
+    },
+    error: {
+      icon: AlertCircle,
+      bar: 'bg-error',
+      iconClass: 'text-error',
+      border: 'border-error/30',
+      bg: 'bg-[#1f0d0d]',
+    },
+    warning: {
+      icon: AlertTriangle,
+      bar: 'bg-warning',
+      iconClass: 'text-warning',
+      border: 'border-warning/30',
+      bg: 'bg-[#1f180d]',
+    },
+    info: {
+      icon: Info,
+      bar: 'bg-accent-primary',
+      iconClass: 'text-accent-primary',
+      border: 'border-accent-primary/30',
+      bg: 'bg-[#0d0d1f]',
+    },
+  } as const;
 
-  const iconColors = {
-    success: 'text-success',
-    error: 'text-error',
-    warning: 'text-warning',
-    info: 'text-accent-primary',
-  };
+  const { icon: Icon, bar, iconClass, border, bg } = config[type];
 
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 0, y: -20, x: 20 }}
-          animate={{ opacity: 1, y: 0, x: 0 }}
-          exit={{ opacity: 0, y: -20, x: 20 }}
-          className={cn(
-            'fixed right-4 top-4 z-[60] max-w-sm rounded-xl border p-4 shadow-lg',
-            typeStyles[type]
-          )}
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 20, scale: 0.95 }}
+          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+          // Bottom-center on mobile, bottom-right on desktop
+          className="fixed bottom-6 left-1/2 z-[60] w-[calc(100vw-2rem)] max-w-sm -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0"
+          role="alert"
+          aria-live="assertive"
         >
-          <div className="flex items-start gap-3">
-            <div className="flex-1">
-              <h4 className={cn('font-medium', iconColors[type])}>{title}</h4>
-              {message && (
-                <p className="mt-1 text-sm text-foreground-muted">{message}</p>
-              )}
+          <div
+            className={cn(
+              'relative overflow-hidden rounded-2xl border shadow-2xl',
+              bg,
+              border
+            )}
+          >
+            {/* Accent bar on the left */}
+            <div className={cn('absolute inset-y-0 left-0 w-1 rounded-l-2xl', bar)} />
+
+            <div className="flex items-start gap-3 px-4 py-3 pl-5">
+              {/* Icon */}
+              <div className={cn('mt-0.5 shrink-0', iconClass)}>
+                <Icon className="h-5 w-5" />
+              </div>
+
+              {/* Text */}
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold text-foreground leading-snug">{title}</p>
+                {message && (
+                  <p className="mt-0.5 text-xs text-foreground-muted leading-relaxed">{message}</p>
+                )}
+              </div>
+
+              {/* Close */}
+              <button
+                onClick={onClose}
+                aria-label="Dismiss"
+                className="shrink-0 rounded-lg p-1 text-foreground-subtle transition-colors hover:bg-white/10 hover:text-foreground"
+              >
+                <X className="h-4 w-4" />
+              </button>
             </div>
-            <button
-              onClick={onClose}
-              className="rounded-lg p-1 text-foreground-subtle transition-colors hover:bg-background-hover"
-            >
-              <X className="h-4 w-4" />
-            </button>
+
+            {/* Auto-dismiss progress bar */}
+            {duration > 0 && (
+              <motion.div
+                initial={{ scaleX: 1 }}
+                animate={{ scaleX: 0 }}
+                transition={{ duration: duration / 1000, ease: 'linear' }}
+                style={{ originX: 0 }}
+                className={cn('h-0.5 w-full', bar, 'opacity-40')}
+              />
+            )}
           </div>
         </motion.div>
       )}
