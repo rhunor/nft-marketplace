@@ -24,7 +24,8 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     serverActions: {
-      bodySizeLimit: '10mb',
+      // Applies to both Server Actions and Route Handlers (Next.js 14.2+)
+      bodySizeLimit: '50mb',
     },
   },
 };

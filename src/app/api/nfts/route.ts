@@ -109,13 +109,27 @@ export async function POST(request: Request) {
       );
     }
 
-    const formData = await request.formData();
+    let formData: FormData;
+    try {
+      formData = await request.formData();
+    } catch {
+      return NextResponse.json(
+        { error: 'Your file is too large. Please use a smaller file and try again.' },
+        { status: 413 }
+      );
+    }
+
     const file = formData.get('file') as File;
     const title = formData.get('title') as string;
     const description = formData.get('description') as string;
     const price = parseFloat(formData.get('price') as string);
     const category = formData.get('category') as string;
-    const tags = JSON.parse(formData.get('tags') as string || '[]');
+    let tags: string[] = [];
+    try {
+      tags = JSON.parse(formData.get('tags') as string || '[]') as string[];
+    } catch {
+      tags = [];
+    }
 
     // Validate file
     if (!file) {

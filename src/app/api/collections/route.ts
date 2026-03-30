@@ -101,7 +101,15 @@ export async function POST(request: Request) {
       );
     }
 
-    const formData = await request.formData();
+    let formData: FormData;
+    try {
+      formData = await request.formData();
+    } catch {
+      return NextResponse.json(
+        { error: 'One or more files are too large. Please use smaller files and try again.' },
+        { status: 413 }
+      );
+    }
 
     // Collection data
     const name = formData.get('name') as string;

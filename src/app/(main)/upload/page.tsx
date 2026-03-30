@@ -54,7 +54,46 @@ const ALL_ACCEPTED_TYPES = [
   ...ACCEPTED_FILE_TYPES.audio,
 ];
 
-const generateId = () => `item_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+const generateId = () => `item_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
+
+// Translate raw API / network errors into plain-English user messages
+function friendlyError(status: number, rawMessage?: string): string {
+  if (status === 413) return 'Your file is too large. Please use a smaller file and try again.';
+  if (status === 401) return 'You need to be logged in to upload. Please refresh the page and try again.';
+  if (status === 404) return 'Your account could not be found. Please try logging out and back in.';
+  if (rawMessage) {
+    if (/insufficient balance/i.test(rawMessage)) return 'Your balance is too low. Please add funds and try again.';
+    if (/invalid.*price/i.test(rawMessage) || /price/i.test(rawMessage)) return 'Please enter a valid price (numbers only, e.g. 0.5).';
+    if (/invalid.*title/i.test(rawMessage) || /title/i.test(rawMessage)) return 'Your title is too long or contains unsupported characters. Please shorten it and try again.';
+    if (/file.*required/i.test(rawMessage)) return 'Please select a file to upload.';
+    if (/invalid.*category/i.test(rawMessage)) return 'Please choose a valid category.';
+    if (/failed to upload/i.test(rawMessage)) return 'We could not process your file. Please try a different image or a smaller file.';
+    if (/invalid input/i.test(rawMessage)) return 'Some fields have invalid values. Please check your title, price, and tags.';
+  }
+  return 'Something went wrong. Please try again.';
+}
+
+// Safely read an API response — handles non-JSON bodies (like plain-text 413 errors)
+async function safeReadResponse(response: Response): Promise<{ ok: boolean; errorMsg: string; data?: Record<string, unknown> }> {
+  if (!response.ok) {
+    const contentType = response.headers.get('content-type') || '';
+    if (contentType.includes('application/json')) {
+      try {
+        const body = await response.json() as { error?: string };
+        return { ok: false, errorMsg: friendlyError(response.status, body.error) };
+      } catch {
+        return { ok: false, errorMsg: friendlyError(response.status) };
+      }
+    }
+    return { ok: false, errorMsg: friendlyError(response.status) };
+  }
+  try {
+    const data = await response.json() as Record<string, unknown>;
+    return { ok: true, errorMsg: '', data };
+  } catch {
+    return { ok: false, errorMsg: 'Received an unexpected response. Please try again.' };
+  }
+}
 
 const getMediaIcon = (type: string | undefined) => {
   if (!type) return <FileQuestion className="h-6 w-6 sm:h-8 sm:w-8" />;
@@ -174,7 +213,8 @@ export default function UploadPage() {
   };
 
   const addTag = () => {
-    const tag = tagInput.trim().toLowerCase();
+    // Strip anything that isn't a letter, digit, hyphen, or space, then collapse spaces
+    const tag = tagInput.trim().toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, ' ');
     if (tag && !formData.tags.includes(tag) && formData.tags.length < 10) {
       setFormData((prev) => ({ ...prev, tags: [...prev.tags, tag] }));
       setTagInput('');
@@ -268,22 +308,27 @@ export default function UploadPage() {
     try {
       const uploadData = new FormData();
       uploadData.append('file', file);
-      uploadData.append('title', formData.title);
-      uploadData.append('description', formData.title); // Use title as description
+      uploadData.append('title', formData.title.trim());
+      uploadData.append('description', formData.title.trim());
       uploadData.append('price', formData.price.toString());
       uploadData.append('category', formData.category);
       uploadData.append('tags', JSON.stringify(formData.tags));
 
       const response = await fetch('/api/nfts', { method: 'POST', body: uploadData });
-      const data = await response.json();
+      const { ok, errorMsg, data } = await safeReadResponse(response);
 
-      if (!response.ok) throw new Error(data.error || 'Failed to upload');
+      if (!ok) throw new Error(errorMsg);
 
-      await updateSession({ walletBalance: data.data.newBalance });
-      setNotification({ type: 'success', title: 'NFT Created!' });
-      setTimeout(() => router.push(`/nft/${data.data.nft._id}`), 1500);
+      const nftData = data as { data?: { nft?: { _id?: string }; newBalance?: number } };
+      await updateSession({ walletBalance: nftData?.data?.newBalance });
+      setNotification({ type: 'success', title: 'NFT Created!', message: 'Your NFT has been uploaded successfully.' });
+      setTimeout(() => router.push(`/nft/${nftData?.data?.nft?._id}`), 1500);
     } catch (error) {
-      setNotification({ type: 'error', title: 'Upload Failed', message: error instanceof Error ? error.message : 'Something went wrong' });
+      setNotification({
+        type: 'error',
+        title: 'Upload Failed',
+        message: error instanceof Error ? error.message : 'Something went wrong. Please try again.',
+      });
     } finally {
       setIsLoading(false);
     }
@@ -327,15 +372,13 @@ export default function UploadPage() {
       formDataObj.append('name', collectionName.trim());
       formDataObj.append('description', collectionDescription.trim());
       formDataObj.append('category', collectionCategory);
-      formDataObj.append('collectionPrice', collectionPrice); // Add collection price
+      formDataObj.append('collectionPrice', collectionPrice);
 
-      // Calculate price per item based on collection price
       const pricePerItem = parseFloat(collectionPrice) / collectionItems.length;
-      
       const itemsData = collectionItems.map((item) => ({
         title: item.title.trim(),
-        description: item.title.trim(), // Use title as description
-        price: pricePerItem, // Use calculated price per item
+        description: item.title.trim(),
+        price: pricePerItem,
         tags: item.tags,
       }));
       formDataObj.append('items', JSON.stringify(itemsData));
@@ -345,15 +388,24 @@ export default function UploadPage() {
       });
 
       const response = await fetch('/api/collections', { method: 'POST', body: formDataObj });
-      const data = await response.json();
+      const { ok, errorMsg, data } = await safeReadResponse(response);
 
-      if (!response.ok) throw new Error(data.error || 'Failed to create collection');
+      if (!ok) throw new Error(errorMsg);
 
-      await updateSession({ walletBalance: data.data.newBalance });
-      setNotification({ type: 'success', title: 'Collection Created!', message: `${data.data.uploadedCount} items uploaded.` });
-      setTimeout(() => router.push(`/collection/${data.data.collection._id}`), 1500);
+      const colData = data as { data?: { collection?: { _id?: string }; uploadedCount?: number; newBalance?: number } };
+      await updateSession({ walletBalance: colData?.data?.newBalance });
+      setNotification({
+        type: 'success',
+        title: 'Collection Created!',
+        message: `${colData?.data?.uploadedCount ?? collectionItems.length} items uploaded successfully.`,
+      });
+      setTimeout(() => router.push(`/collection/${colData?.data?.collection?._id}`), 1500);
     } catch (error) {
-      setNotification({ type: 'error', title: 'Upload Failed', message: error instanceof Error ? error.message : 'Something went wrong' });
+      setNotification({
+        type: 'error',
+        title: 'Upload Failed',
+        message: error instanceof Error ? error.message : 'Something went wrong. Please try again.',
+      });
     } finally {
       setIsLoading(false);
     }
