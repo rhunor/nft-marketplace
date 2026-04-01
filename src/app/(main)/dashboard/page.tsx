@@ -21,7 +21,7 @@ import {
   Loader2,
 } from 'lucide-react';
 import { Button, Card, Badge, Loading, Modal, Input, Notification } from '@/components/ui';
-import { formatETH, getCategoryLabel } from '@/lib/utils';
+import { formatETH, getCategoryLabel, safeFetch } from '@/lib/utils';
 import { useEthPrice } from '@/contexts';
 import type { NFTWithUser, PaginatedResponse } from '@/types';
 
@@ -103,12 +103,13 @@ export default function DashboardPage() {
         body: formData,
       });
 
-      const data = await response.json();
+      const result = await safeFetch(response);
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Upload failed');
+      if (!result.ok) {
+        throw new Error(result.error);
       }
 
+      const data = result.data as { data: { avatar: string } };
       // Update session with new avatar
       await updateSession({ avatar: data.data.avatar });
       setNotification({ type: 'success', title: 'Profile picture updated!' });

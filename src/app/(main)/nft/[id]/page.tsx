@@ -24,7 +24,7 @@ import {
 import { Button, Avatar, Badge, Card, Loading, Modal, Input, Notification } from '@/components/ui';
 import { NFTCarousel } from '@/components/nft';
 import { sampleNFTs, type SampleNFT } from '@/lib/db/seed-data';
-import { formatETH, getCategoryLabel, formatNumber, formatDate } from '@/lib/utils';
+import { formatETH, getCategoryLabel, formatNumber, formatDate, safeFetch } from '@/lib/utils';
 import { useEthPrice } from '@/contexts';
 import type { NFTWithUser } from '@/types';
 
@@ -119,9 +119,10 @@ export default function NFTDetailPage() {
           method: 'POST',
         });
 
-        const data = await response.json();
+        const result = await safeFetch(response);
 
-        if (response.ok) {
+        if (result.ok) {
+          const data = result.data as { data: { liked: boolean; likeCount: number } };
           setIsLiked(data.data.liked);
           setLikeCount(data.data.likeCount);
           setNotification({
@@ -164,12 +165,13 @@ export default function NFTDetailPage() {
           method: 'POST',
         });
 
-        const data = await response.json();
+        const result = await safeFetch(response);
 
-        if (!response.ok) {
-          throw new Error(data.error || 'Failed to purchase NFT');
+        if (!result.ok) {
+          throw new Error(result.error);
         }
 
+        const data = result.data as { data: { transaction: { totalCost: number } } };
         // Update session balance
         if (session?.user) {
           const newBalance = session.user.walletBalance - data.data.transaction.totalCost;
@@ -283,8 +285,8 @@ export default function NFTDetailPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ isListed: true, price }),
       });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error || 'Failed to list NFT');
+      const result = await safeFetch(response);
+      if (!result.ok) throw new Error(result.error);
       setShowManageModal(false);
       setNotification({ type: 'success', title: 'NFT Listed!', message: 'Your NFT is now available on the marketplace.' });
       await fetchNFT();
@@ -304,8 +306,8 @@ export default function NFTDetailPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ isListed: false }),
       });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error || 'Failed to unlist NFT');
+      const result = await safeFetch(response);
+      if (!result.ok) throw new Error(result.error);
       setShowManageModal(false);
       setNotification({ type: 'success', title: 'NFT Unlisted', message: 'Your NFT has been removed from the marketplace.' });
       await fetchNFT();
@@ -331,8 +333,8 @@ export default function NFTDetailPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ price }),
       });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error || 'Failed to update price');
+      const result = await safeFetch(response);
+      if (!result.ok) throw new Error(result.error);
       setShowManageModal(false);
       setNotification({ type: 'success', title: 'Price Updated!', message: `New price: ${price} ETH` });
       await fetchNFT();

@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import Image from 'next/image';
 import { Camera, X, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui';
+import { safeFetch } from '@/lib/utils';
 
 interface ProfilePictureUploadProps {
   currentAvatar?: string;
@@ -57,12 +58,13 @@ export function ProfilePictureUpload({
         body: formData,
       });
 
-      const data = await response.json();
+      const result = await safeFetch(response);
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Upload failed');
+      if (!result.ok) {
+        throw new Error(result.error);
       }
 
+      const data = result.data as { data: { avatar: string } };
       onUploadSuccess?.(data.data.avatar);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Upload failed');
@@ -81,10 +83,10 @@ export function ProfilePictureUpload({
         method: 'DELETE',
       });
 
-      const data = await response.json();
+      const result = await safeFetch(response);
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to remove avatar');
+      if (!result.ok) {
+        throw new Error(result.error);
       }
 
       setPreviewUrl(null);

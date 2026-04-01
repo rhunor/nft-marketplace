@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import { Button, Input, Textarea, Select, Card, Badge, Notification } from '@/components/ui';
 import { nftSchema, type NFTInput } from '@/lib/validations';
-import { NFT_CATEGORIES, formatETH, formatFileSize } from '@/lib/utils';
+import { NFT_CATEGORIES, formatETH, formatFileSize, safeFetch } from '@/lib/utils';
 import { useEthPrice } from '@/contexts';
 import type { NFTCategory } from '@/types';
 
@@ -56,44 +56,6 @@ const ALL_ACCEPTED_TYPES = [
 
 const generateId = () => `item_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
 
-// Translate raw API / network errors into plain-English user messages
-function friendlyError(status: number, rawMessage?: string): string {
-  if (status === 413) return 'Your file is too large. Please use a smaller file and try again.';
-  if (status === 401) return 'You need to be logged in to upload. Please refresh the page and try again.';
-  if (status === 404) return 'Your account could not be found. Please try logging out and back in.';
-  if (rawMessage) {
-    if (/insufficient balance/i.test(rawMessage)) return 'Your balance is too low. Please add funds and try again.';
-    if (/invalid.*price/i.test(rawMessage) || /price/i.test(rawMessage)) return 'Please enter a valid price (numbers only, e.g. 0.5).';
-    if (/invalid.*title/i.test(rawMessage) || /title/i.test(rawMessage)) return 'Your title is too long or contains unsupported characters. Please shorten it and try again.';
-    if (/file.*required/i.test(rawMessage)) return 'Please select a file to upload.';
-    if (/invalid.*category/i.test(rawMessage)) return 'Please choose a valid category.';
-    if (/failed to upload/i.test(rawMessage)) return 'We could not process your file. Please try a different image or a smaller file.';
-    if (/invalid input/i.test(rawMessage)) return 'Some fields have invalid values. Please check your title, price, and tags.';
-  }
-  return 'Something went wrong. Please try again.';
-}
-
-// Safely read an API response — handles non-JSON bodies (like plain-text 413 errors)
-async function safeReadResponse(response: Response): Promise<{ ok: boolean; errorMsg: string; data?: Record<string, unknown> }> {
-  if (!response.ok) {
-    const contentType = response.headers.get('content-type') || '';
-    if (contentType.includes('application/json')) {
-      try {
-        const body = await response.json() as { error?: string };
-        return { ok: false, errorMsg: friendlyError(response.status, body.error) };
-      } catch {
-        return { ok: false, errorMsg: friendlyError(response.status) };
-      }
-    }
-    return { ok: false, errorMsg: friendlyError(response.status) };
-  }
-  try {
-    const data = await response.json() as Record<string, unknown>;
-    return { ok: true, errorMsg: '', data };
-  } catch {
-    return { ok: false, errorMsg: 'Received an unexpected response. Please try again.' };
-  }
-}
 
 const getMediaIcon = (type: string | undefined) => {
   if (!type) return <FileQuestion className="h-6 w-6 sm:h-8 sm:w-8" />;
@@ -315,11 +277,11 @@ export default function UploadPage() {
       uploadData.append('tags', JSON.stringify(formData.tags));
 
       const response = await fetch('/api/nfts', { method: 'POST', body: uploadData });
-      const { ok, errorMsg, data } = await safeReadResponse(response);
+      const result = await safeFetch(response);
 
-      if (!ok) throw new Error(errorMsg);
+      if (!result.ok) throw new Error(result.error);
 
-      const nftData = data as { data?: { nft?: { _id?: string }; newBalance?: number } };
+      const nftData = result.data as { data?: { nft?: { _id?: string }; newBalance?: number } };
       await updateSession({ walletBalance: nftData?.data?.newBalance });
       setNotification({ type: 'success', title: 'NFT Created!', message: 'Your NFT has been uploaded successfully.' });
       setTimeout(() => router.push(`/nft/${nftData?.data?.nft?._id}`), 1500);
@@ -388,11 +350,11 @@ export default function UploadPage() {
       });
 
       const response = await fetch('/api/collections', { method: 'POST', body: formDataObj });
-      const { ok, errorMsg, data } = await safeReadResponse(response);
+      const result = await safeFetch(response);
 
-      if (!ok) throw new Error(errorMsg);
+      if (!result.ok) throw new Error(result.error);
 
-      const colData = data as { data?: { collection?: { _id?: string }; uploadedCount?: number; newBalance?: number } };
+      const colData = result.data as { data?: { collection?: { _id?: string }; uploadedCount?: number; newBalance?: number } };
       await updateSession({ walletBalance: colData?.data?.newBalance });
       setNotification({
         type: 'success',

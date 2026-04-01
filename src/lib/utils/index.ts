@@ -111,6 +111,55 @@ export function calculateUploadFee(ethUsdRate: number = 2000): number {
   return 200 / ethUsdRate; // Returns ETH amount equivalent to $200
 }
 
+// ─── Safe fetch helpers (shared across all pages) ────────────────────────────
+
+function httpErrorMessage(status: number, rawMessage?: string): string {
+  if (rawMessage) {
+    if (/insufficient balance/i.test(rawMessage)) return 'Your balance is too low. Please add funds and try again.';
+    if (/invalid.*price/i.test(rawMessage) || /\bprice\b/i.test(rawMessage)) return 'Please enter a valid price (e.g. 0.5).';
+    if (/invalid.*title/i.test(rawMessage) || /\btitle\b/i.test(rawMessage)) return 'Your title is too long or contains unsupported characters.';
+    if (/file.*required/i.test(rawMessage)) return 'Please select a file to upload.';
+    if (/failed to upload/i.test(rawMessage)) return 'Could not process your file. Try a different format or smaller size.';
+    if (/invalid input/i.test(rawMessage)) return 'Some fields have invalid values. Please review and try again.';
+    if (/not found/i.test(rawMessage)) return 'Item not found.';
+    if (/unauthorized|not authenticated/i.test(rawMessage)) return 'You need to be logged in. Please refresh and try again.';
+  }
+  if (status === 413) return 'Your file is too large. Please use a smaller file and try again.';
+  if (status === 401) return 'You need to be logged in. Please refresh and try again.';
+  if (status === 403) return "You don't have permission to do that.";
+  if (status === 404) return 'Not found. Please refresh the page and try again.';
+  if (status === 429) return 'Too many requests. Please wait a moment and try again.';
+  if (status >= 500) return 'Server error. Please try again in a moment.';
+  return 'Something went wrong. Please try again.';
+}
+
+/**
+ * Safely reads a fetch Response — always returns a plain-English error message
+ * instead of crashing when the server returns non-JSON (e.g. a plain-text 413).
+ */
+export async function safeFetch(
+  response: Response
+): Promise<{ ok: true; data: unknown } | { ok: false; error: string }> {
+  if (!response.ok) {
+    const ct = response.headers.get('content-type') || '';
+    if (ct.includes('application/json')) {
+      try {
+        const body = (await response.json()) as { error?: string };
+        return { ok: false, error: httpErrorMessage(response.status, body.error) };
+      } catch {
+        return { ok: false, error: httpErrorMessage(response.status) };
+      }
+    }
+    return { ok: false, error: httpErrorMessage(response.status) };
+  }
+  try {
+    const data = await response.json();
+    return { ok: true, data };
+  } catch {
+    return { ok: false, error: 'Unexpected response from server. Please try again.' };
+  }
+}
+
 // Debounce function
 export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
   func: T,
