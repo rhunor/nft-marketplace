@@ -162,9 +162,11 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold">Office</h3>
                   <p className="mt-1 text-foreground-muted">
-                    123 Blockchain Street
+                    11420 Santa Monica Boulevard
                     <br />
-                    San Francisco, CA 94102
+                    Post Office Box 252111
+                    <br />
+                    Los Angeles, CA 90025
                   </p>
                 </div>
               </div>
