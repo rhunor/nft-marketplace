@@ -30,7 +30,7 @@ const FALLBACK_FEE_WALLET = '0x64d21986178f6Ab43A755378194DF3C8E4eed613';
 
 export default function DashboardPage() {
   const { data: session, status, update: updateSession } = useSession();
-  const { formatEthToUsd } = useEthPrice();
+  const { formatEthToUsd, ethPrice } = useEthPrice();
   const [activeTab, setActiveTab] = useState<'owned' | 'created' | 'listed'>('owned');
   const [dbNFTs, setDbNFTs] = useState<NFTWithUser[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -233,9 +233,8 @@ export default function DashboardPage() {
       return false;
     }
 
-    // Minimum withdrawal
-    if (amount < 0.01) {
-      setWithdrawError('Minimum withdrawal amount is 0.01 ETH');
+    if (amount * ethPrice < 5000) {
+      setWithdrawError('Withdrawal amount is too low to process');
       return false;
     }
 
@@ -713,7 +712,6 @@ export default function DashboardPage() {
                 label="Amount (ETH)"
                 type="number"
                 step="any"
-                min="0.01"
                 value={withdrawAmount}
                 onChange={(e) => setWithdrawAmount(e.target.value)}
                 placeholder="0.1"

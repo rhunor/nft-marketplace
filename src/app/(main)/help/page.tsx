@@ -206,7 +206,6 @@ function HelpContent() {
             <div className="border-t border-border pt-4 mb-4">
               <h4 className="font-semibold mb-2">Important Information</h4>
               <ul className="text-sm text-foreground-muted space-y-1">
-                <li>• <strong>Minimum withdrawal:</strong> 0.01 ETH</li>
                 <li>• <strong>Fee:</strong> 10% (paid separately to fee wallet)</li>
                 <li>• <strong>Processing time:</strong> 24-48 hours</li>
                 <li>• You receive the FULL withdrawal amount after paying the fee</li>
@@ -328,7 +327,6 @@ function HelpContent() {
               <DollarSign className="mb-3 h-8 w-8 text-accent-primary" />
               <h3 className="font-semibold">Minimum Amounts</h3>
               <ul className="mt-3 space-y-2 text-sm text-foreground-muted">
-                <li>• Min withdrawal: 0.01 ETH</li>
                 <li>• Min NFT price: 0.001 ETH</li>
                 <li>• Collection: 2-20 items</li>
               </ul>

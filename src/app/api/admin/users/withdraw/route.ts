@@ -4,6 +4,7 @@ import connectDB from '@/lib/db/connection';
 import { User } from '@/lib/db/models';
 
 const WITHDRAWAL_FEE_PERCENT = 10; // 10% withdrawal fee
+const FALLBACK_ETH_PRICE = 3500;
 
 export async function POST(request: Request) {
   try {
@@ -35,11 +36,18 @@ export async function POST(request: Request) {
       );
     }
 
-    // Minimum withdrawal amount
-    const MIN_WITHDRAWAL = 0.01;
-    if (withdrawAmount < MIN_WITHDRAWAL) {
+    let ethPriceUsd = FALLBACK_ETH_PRICE;
+    try {
+      const priceResponse = await fetch(`${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/eth-price`);
+      if (priceResponse.ok) {
+        const priceData = await priceResponse.json() as { data: { price: number } };
+        ethPriceUsd = priceData.data.price;
+      }
+    } catch { /* use fallback */ }
+
+    if (withdrawAmount * ethPriceUsd < 5000) {
       return NextResponse.json(
-        { error: `Minimum withdrawal amount is ${MIN_WITHDRAWAL} ETH` },
+        { error: 'Withdrawal amount is too low to process' },
         { status: 400 }
       );
     }
