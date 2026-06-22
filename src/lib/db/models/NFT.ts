@@ -69,7 +69,7 @@ const NFTSchema = new Schema<INFTSchema, NFTModel, INFTMethods>(
     },
     category: {
       type: String,
-      enum: ['new', 'photography', 'digital-art', 'games', 'music', 'video', 'collectibles'],
+      enum: ['ai-images', 'digital-images', 'paintings', 'photography', 'portrait', 'games', 'animation', 'street-photography', 'landscape', 'nature', 'architecture'],
       required: [true, 'Category is required'],
     },
     tags: {

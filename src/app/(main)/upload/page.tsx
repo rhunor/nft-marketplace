@@ -80,7 +80,7 @@ export default function UploadPage() {
     title: '',
     description: '',
     price: 0.1,
-    category: 'digital-art',
+    category: 'digital-images',
     tags: [],
   });
   const [priceInput, setPriceInput] = useState('0.1');
@@ -90,7 +90,7 @@ export default function UploadPage() {
   // Collection upload state
   const [collectionName, setCollectionName] = useState('');
   const [collectionDescription, setCollectionDescription] = useState('');
-  const [collectionCategory, setCollectionCategory] = useState<NFTCategory>('digital-art');
+  const [collectionCategory, setCollectionCategory] = useState<NFTCategory>('digital-images');
   const [collectionPrice, setCollectionPrice] = useState('0.5'); // Single price for entire collection
   const [collectionItems, setCollectionItems] = useState<CollectionItem[]>([
     { id: generateId(), title: '', description: '', price: '0.1', tags: [], file: null, preview: null },

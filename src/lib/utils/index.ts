@@ -213,12 +213,17 @@ export function createUrl(base: string, params: Record<string, string | number |
 
 // Categories with display names
 export const NFT_CATEGORIES = [
-  { value: 'new', label: 'New', icon: '✨' },
+  { value: 'ai-images', label: 'AI Images', icon: '🤖' },
+  { value: 'digital-images', label: 'Digital Images', icon: '🖼️' },
+  { value: 'paintings', label: 'Paintings', icon: '🎨' },
   { value: 'photography', label: 'Photography', icon: '📸' },
-  { value: 'digital-art', label: 'Digital Art', icon: '🎨' },
+  { value: 'portrait', label: 'Portrait', icon: '👤' },
   { value: 'games', label: 'Games', icon: '🎮' },
-  { value: 'music', label: 'Music', icon: '🎵' },
-  { value: 'video', label: 'Video', icon: '🎬' },
+  { value: 'animation', label: 'Animation', icon: '✨' },
+  { value: 'street-photography', label: 'Street Photography', icon: '🏙️' },
+  { value: 'landscape', label: 'Landscape', icon: '🌄' },
+  { value: 'nature', label: 'Nature', icon: '🌿' },
+  { value: 'architecture', label: 'Architecture', icon: '🏛️' },
 ] as const;
 
 // Get category label

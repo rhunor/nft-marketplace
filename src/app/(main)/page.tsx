@@ -4,8 +4,97 @@ import { ArrowRight, Shield, Gem, Users, Award } from 'lucide-react';
 import { Button, Avatar, Card } from '@/components/ui';
 import { sampleCollections } from '@/lib/db/seed-data';
 import { formatETH, NFT_CATEGORIES } from '@/lib/utils';
+import connectDB from '@/lib/db/connection';
+import NFTModel from '@/lib/db/models/NFT';
+import CollectionModel from '@/lib/db/models/Collection';
 
-export default function HomePage() {
+export const dynamic = 'force-dynamic';
+
+function shuffle<T>(arr: T[]): T[] {
+  return [...arr].sort(() => Math.random() - 0.5);
+}
+
+async function getRandomNFTImages(count: number): Promise<string[]> {
+  try {
+    await connectDB();
+    const nfts = await NFTModel.find({ isListed: true, mediaType: 'image' })
+      .select('mediaUrl thumbnailUrl')
+      .limit(100)
+      .lean();
+    if (nfts.length === 0) return [];
+    return shuffle(nfts)
+      .slice(0, count)
+      .map((n) => (n as { thumbnailUrl?: string; mediaUrl: string }).thumbnailUrl || (n as { mediaUrl: string }).mediaUrl);
+  } catch {
+    return [];
+  }
+}
+
+interface DBCollection {
+  _id: unknown;
+  name: string;
+  description: string;
+  coverImage: string;
+  nfts: unknown[];
+  floorPrice: number;
+  totalVolume: number;
+  creator: { name: string; username: string; avatar?: string };
+}
+
+async function getRandomCollections(count: number): Promise<DBCollection[]> {
+  try {
+    await connectDB();
+    const cols = await CollectionModel.find({ isPublished: true })
+      .populate('creator', 'name username avatar')
+      .limit(100)
+      .lean();
+    if (cols.length === 0) return [];
+    return shuffle(cols as unknown as DBCollection[]).slice(0, count);
+  } catch {
+    return [];
+  }
+}
+
+export default async function HomePage() {
+  const [heroImages, featuredCols, moreCols] = await Promise.all([
+    getRandomNFTImages(4),
+    getRandomCollections(3),
+    getRandomCollections(5),
+  ]);
+
+  // Use DB cover images if available, else fall back to sample data
+  const heroSrcs =
+    heroImages.length >= 4
+      ? heroImages
+      : sampleCollections.slice(0, 4).map((c) => c.coverImage);
+
+  // Normalise DB collections to the shape expected by the cards
+  const toCard = (c: DBCollection) => ({
+    id: String(c._id),
+    name: c.name,
+    description: c.description,
+    coverImage: c.coverImage,
+    creatorName: c.creator?.name ?? '',
+    creatorUsername: c.creator?.username ?? '',
+    creatorAvatar: c.creator?.avatar ?? '',
+    totalItems: c.nfts?.length ?? 0,
+    floorPrice: c.floorPrice ?? 0,
+    totalVolume: c.totalVolume ?? 0,
+    isFromDB: true,
+  });
+
+  const featuredCards =
+    featuredCols.length > 0
+      ? featuredCols.map(toCard)
+      : sampleCollections.slice(0, 3).map((c) => ({ ...c, isFromDB: false }));
+
+  // exclude collections already used in featured
+  const featuredIds = new Set(featuredCards.map((c) => c.id));
+  const moreCards =
+    moreCols.length > 0
+      ? moreCols.filter((c) => !featuredIds.has(String(c._id))).slice(0, 2).map(toCard)
+      : sampleCollections.slice(3, 5).map((c) => ({ ...c, isFromDB: false }));
+
   return (
     <div className="relative">
       {/* Background effects */}
@@ -29,8 +118,8 @@ export default function HomePage() {
                 <span className="text-gradient">Exclusive</span> NFT Collections
               </h1>
               <p className="mt-6 text-lg text-foreground-muted sm:text-xl">
-                Foundation Exclusive is the premier destination for high-value NFT 
-                collectors. Join an exclusive community where exceptional digital 
+                Foundation Exclusive is the premier destination for high-value NFT
+                collectors. Join an exclusive community where exceptional digital
                 art finds its rightful collectors.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -46,7 +135,7 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              {/* Stats - Reduced numbers for exclusivity */}
+              {/* Stats */}
               <div className="mt-12 grid grid-cols-3 gap-8">
                 <div>
                   <p className="text-3xl font-bold text-accent-primary">150+</p>
@@ -63,14 +152,14 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hero Image Grid */}
+            {/* Hero Image Grid — random NFT images */}
             <div className="relative hidden lg:block">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="animate-float overflow-hidden rounded-2xl shadow-glow">
                     <Image
-                      src={sampleCollections[0]?.coverImage || ''}
-                      alt="Featured Collection 1"
+                      src={heroSrcs[0] ?? ''}
+                      alt="Featured NFT 1"
                       width={300}
                       height={300}
                       className="h-full w-full object-cover"
@@ -78,8 +167,8 @@ export default function HomePage() {
                   </div>
                   <div className="animation-delay-400 animate-float overflow-hidden rounded-2xl shadow-card">
                     <Image
-                      src={sampleCollections[1]?.coverImage || ''}
-                      alt="Featured Collection 2"
+                      src={heroSrcs[1] ?? ''}
+                      alt="Featured NFT 2"
                       width={300}
                       height={200}
                       className="h-full w-full object-cover"
@@ -89,8 +178,8 @@ export default function HomePage() {
                 <div className="mt-8 space-y-4">
                   <div className="animation-delay-200 animate-float overflow-hidden rounded-2xl shadow-card">
                     <Image
-                      src={sampleCollections[2]?.coverImage || ''}
-                      alt="Featured Collection 3"
+                      src={heroSrcs[2] ?? ''}
+                      alt="Featured NFT 3"
                       width={300}
                       height={200}
                       className="h-full w-full object-cover"
@@ -98,8 +187,8 @@ export default function HomePage() {
                   </div>
                   <div className="animation-delay-600 animate-float overflow-hidden rounded-2xl shadow-glow">
                     <Image
-                      src={sampleCollections[3]?.coverImage || ''}
-                      alt="Featured Collection 4"
+                      src={heroSrcs[3] ?? ''}
+                      alt="Featured NFT 4"
                       width={300}
                       height={300}
                       className="h-full w-full object-cover"
@@ -128,9 +217,9 @@ export default function HomePage() {
               </Button>
             </Link>
           </div>
-          
+
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {sampleCollections.slice(0, 3).map((collection) => (
+            {featuredCards.map((collection) => (
               <Link key={collection.id} href={`/collection/${collection.id}`}>
                 <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
                   <div className="relative aspect-[4/3] overflow-hidden">
@@ -185,9 +274,9 @@ export default function HomePage() {
               The Exclusive Community
             </h2>
             <p className="mt-4 text-foreground-muted">
-              Foundation Exclusive is an extension of Foundation, created for serious 
-              collectors who understand the true value of exceptional digital art. 
-              Our curated platform ensures every piece meets the highest standards 
+              Foundation Exclusive is an extension of Foundation, created for serious
+              collectors who understand the true value of exceptional digital art.
+              Our curated platform ensures every piece meets the highest standards
               of quality and authenticity.
             </p>
             <Link href="/about">
@@ -208,7 +297,7 @@ export default function HomePage() {
               Explore collections across different categories
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
             {NFT_CATEGORIES.map((category) => (
               <Link
                 key={category.value}
@@ -216,7 +305,7 @@ export default function HomePage() {
                 className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-background-card p-6 transition-all hover:-translate-y-1 hover:border-accent-primary hover:shadow-glow-sm"
               >
                 <span className="text-4xl">{category.icon}</span>
-                <span className="font-medium">{category.label}</span>
+                <span className="text-center font-medium text-sm">{category.label}</span>
               </Link>
             ))}
           </div>
@@ -239,9 +328,9 @@ export default function HomePage() {
               </Button>
             </Link>
           </div>
-          
+
           <div className="grid gap-6 sm:grid-cols-2">
-            {sampleCollections.slice(3, 5).map((collection) => (
+            {moreCards.map((collection) => (
               <Link key={collection.id} href={`/collection/${collection.id}`}>
                 <Card className="group flex overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
                   <div className="relative aspect-square w-1/3 overflow-hidden">
@@ -342,8 +431,8 @@ export default function HomePage() {
                 Ready to Join the Exclusive?
               </h2>
               <p className="mt-4 text-lg text-white/80">
-                Become a member of Foundation Exclusive and gain access to 
-                premium collections, exclusive drops, and a community of 
+                Become a member of Foundation Exclusive and gain access to
+                premium collections, exclusive drops, and a community of
                 like-minded collectors.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -366,7 +455,6 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            {/* Decorative elements */}
             <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
             <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
           </div>

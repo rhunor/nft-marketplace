@@ -38,11 +38,16 @@ interface Withdrawal {
   createdAt: string;
 }
 
+const USERS_PAGE_SIZE = 50;
+
 export default function AdminUsersPage() {
   const [users, setUsers] = useState<User[]>([]);
   const [withdrawals, setWithdrawals] = useState<Withdrawal[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [search, setSearch] = useState('');
+  const [usersPage, setUsersPage] = useState(1);
+  const [usersTotalPages, setUsersTotalPages] = useState(1);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [balanceAmount, setBalanceAmount] = useState('');
   const [userWithdrawalAddress, setUserWithdrawalAddress] = useState('');
@@ -56,17 +61,22 @@ export default function AdminUsersPage() {
     message?: string;
   } | null>(null);
 
-  const fetchUsers = async () => {
+  const fetchUsers = async (page = 1, append = false) => {
     try {
-      const response = await fetch(`/api/admin/users?search=${search}`);
+      if (page === 1) setIsLoading(true);
+      else setIsLoadingMore(true);
+      const response = await fetch(`/api/admin/users?search=${search}&page=${page}&limit=${USERS_PAGE_SIZE}`);
       const data = await response.json();
       if (data.success) {
-        setUsers(data.data.users);
+        setUsers(prev => append ? [...prev, ...data.data.users] : data.data.users);
+        setUsersTotalPages(data.data.totalPages || 1);
+        setUsersPage(page);
       }
     } catch (error) {
       console.error('Failed to fetch users:', error);
     } finally {
       setIsLoading(false);
+      setIsLoadingMore(false);
     }
   };
 
@@ -84,7 +94,7 @@ export default function AdminUsersPage() {
   };
 
   useEffect(() => {
-    fetchUsers();
+    fetchUsers(1, false);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
@@ -161,7 +171,7 @@ export default function AdminUsersPage() {
         });
         setSelectedUser(null);
         setBalanceAmount('');
-        fetchUsers();
+        fetchUsers(1, false);
       } else {
         throw new Error(data.error || 'Update failed');
       }
@@ -197,7 +207,7 @@ export default function AdminUsersPage() {
           message: 'User wallet addresses have been saved',
         });
         setSelectedUser(null);
-        fetchUsers();
+        fetchUsers(1, false);
       } else {
         throw new Error(data.error || 'Update failed');
       }
@@ -229,7 +239,7 @@ export default function AdminUsersPage() {
           title: 'Role Updated',
           message: `User role changed to ${newRole}`,
         });
-        fetchUsers();
+        fetchUsers(1, false);
       } else {
         throw new Error(data.error);
       }
@@ -383,6 +393,19 @@ export default function AdminUsersPage() {
           </div>
         )}
       </Card>
+
+      {/* Load More */}
+      {usersPage < usersTotalPages && (
+        <div className="mt-4 flex justify-center">
+          <Button
+            variant="secondary"
+            onClick={() => fetchUsers(usersPage + 1, true)}
+            isLoading={isLoadingMore}
+          >
+            {isLoadingMore ? 'Loading...' : `Load More Users (${users.length} shown)`}
+          </Button>
+        </div>
+      )}
 
       {/* Withdrawal Requests Section */}
       <div className="mt-10 mb-8">

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Search, ArrowRightLeft, Trash2, ExternalLink, DollarSign, ListPlus, ListX } from 'lucide-react';
+import { Search, ArrowRightLeft, Trash2, ExternalLink, DollarSign, ListPlus, ListX, Edit } from 'lucide-react';
 import { Button, Input, Card, Badge, Modal, Select, Notification } from '@/components/ui';
 import { formatETH, formatDate, getCategoryLabel } from '@/lib/utils';
 
@@ -34,7 +34,10 @@ export default function AdminNFTsPage() {
   const [newOwnerId, setNewOwnerId] = useState('');
   const [showTransferModal, setShowTransferModal] = useState(false);
   const [showPriceModal, setShowPriceModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
   const [editPrice, setEditPrice] = useState('');
+  const [editViews, setEditViews] = useState('');
+  const [editCreatedAt, setEditCreatedAt] = useState('');
   const [notification, setNotification] = useState<{
     type: 'success' | 'error';
     title: string;
@@ -152,6 +155,33 @@ export default function AdminNFTsPage() {
           title: nft.isListed ? 'NFT Unlisted' : 'NFT Listed',
           message: nft.isListed ? 'NFT removed from marketplace' : 'NFT is now listed on the marketplace',
         });
+        fetchNFTs();
+      } else {
+        throw new Error(data.error);
+      }
+    } catch (error) {
+      setNotification({ type: 'error', title: 'Update Failed', message: error instanceof Error ? error.message : 'Something went wrong' });
+    }
+  };
+
+  const updateNFTFields = async () => {
+    if (!selectedNFT) return;
+    try {
+      const body: Record<string, unknown> = { nftId: selectedNFT._id };
+      if (editViews !== '') body.views = parseInt(editViews, 10);
+      if (editCreatedAt !== '') body.createdAt = editCreatedAt;
+      const response = await fetch('/api/admin/nfts', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setNotification({ type: 'success', title: 'NFT Updated', message: 'Date and views have been updated.' });
+        setShowEditModal(false);
+        setSelectedNFT(null);
+        setEditViews('');
+        setEditCreatedAt('');
         fetchNFTs();
       } else {
         throw new Error(data.error);
@@ -284,6 +314,19 @@ export default function AdminNFTsPage() {
                   title={nft.isListed ? 'Unlist NFT' : 'List NFT'}
                 >
                   {nft.isListed ? <ListX className="h-4 w-4 text-warning" /> : <ListPlus className="h-4 w-4 text-success" />}
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    setSelectedNFT(nft);
+                    setEditViews(String(nft.views));
+                    setEditCreatedAt(nft.createdAt ? new Date(nft.createdAt).toISOString().slice(0, 16) : '');
+                    setShowEditModal(true);
+                  }}
+                  title="Edit date & views"
+                >
+                  <Edit className="h-4 w-4" />
                 </Button>
                 <Button
                   variant="ghost"
@@ -431,6 +474,68 @@ export default function AdminNFTsPage() {
                 disabled={!editPrice}
               >
                 Update Price
+              </Button>
+            </div>
+          </div>
+        )}
+      </Modal>
+
+      {/* Edit Date & Views Modal */}
+      <Modal
+        isOpen={showEditModal}
+        onClose={() => {
+          setShowEditModal(false);
+          setSelectedNFT(null);
+          setEditViews('');
+          setEditCreatedAt('');
+        }}
+        title="Edit NFT — Date & Views"
+      >
+        {selectedNFT && (
+          <div className="space-y-4">
+            <div className="flex items-center gap-4 rounded-xl border border-border p-4">
+              <div className="relative h-16 w-16 overflow-hidden rounded-lg">
+                <Image src={selectedNFT.mediaUrl} alt={selectedNFT.title} fill className="object-cover" />
+              </div>
+              <div>
+                <p className="font-medium">{selectedNFT.title}</p>
+                <p className="text-sm text-foreground-muted">
+                  Current views: {selectedNFT.views} · Created: {formatDate(selectedNFT.createdAt)}
+                </p>
+              </div>
+            </div>
+
+            <Input
+              label="Views"
+              type="number"
+              min="0"
+              value={editViews}
+              onChange={(e) => setEditViews(e.target.value)}
+              placeholder="0"
+            />
+
+            <Input
+              label="Date Created"
+              type="datetime-local"
+              value={editCreatedAt}
+              onChange={(e) => setEditCreatedAt(e.target.value)}
+            />
+
+            <div className="flex gap-3">
+              <Button
+                variant="secondary"
+                className="flex-1"
+                onClick={() => {
+                  setShowEditModal(false);
+                  setSelectedNFT(null);
+                  setEditViews('');
+                  setEditCreatedAt('');
+                }}
+              >
+                Cancel
+              </Button>
+              <Button className="flex-1" onClick={updateNFTFields}>
+                Save Changes
               </Button>
             </div>
           </div>

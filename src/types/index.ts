@@ -23,7 +23,7 @@ export type SafeUser = Omit<IUser, 'password' | '_id'> & {
 };
 
 // NFT Types
-export type NFTCategory = 'new' | 'photography' | 'digital-art' | 'games' | 'music' | 'video' | 'collectibles';
+export type NFTCategory = 'ai-images' | 'digital-images' | 'paintings' | 'photography' | 'portrait' | 'games' | 'animation' | 'street-photography' | 'landscape' | 'nature' | 'architecture';
 
 export interface INFT {
   _id?: Types.ObjectId;

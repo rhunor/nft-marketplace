@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { Types } from 'mongoose';
 import { auth } from '@/auth';
 import connectDB from '@/lib/db/connection';
 import { NFT, User } from '@/lib/db/models';
@@ -59,7 +60,7 @@ export async function GET(request: Request) {
   }
 }
 
-// PATCH - Transfer ownership
+// PATCH - Transfer ownership or edit NFT fields (createdAt, views)
 export async function PATCH(request: Request) {
   try {
     const session = await auth();
@@ -71,16 +72,52 @@ export async function PATCH(request: Request) {
     }
 
     const body = await request.json();
-    const { nftId, newOwnerId } = body;
+    const { nftId, newOwnerId, createdAt, views } = body;
 
-    if (!nftId || !newOwnerId) {
+    if (!nftId) {
       return NextResponse.json(
-        { error: 'NFT ID and new owner ID are required' },
+        { error: 'NFT ID is required' },
         { status: 400 }
       );
     }
 
     await connectDB();
+
+    // Edit createdAt / views
+    if (createdAt !== undefined || views !== undefined) {
+      const $set: Record<string, unknown> = {};
+      if (createdAt !== undefined) {
+        const d = new Date(createdAt);
+        if (isNaN(d.getTime())) {
+          return NextResponse.json({ error: 'Invalid date format' }, { status: 400 });
+        }
+        $set.createdAt = d;
+      }
+      if (views !== undefined) {
+        const v = parseInt(String(views), 10);
+        if (isNaN(v) || v < 0) {
+          return NextResponse.json({ error: 'Views must be a non-negative number' }, { status: 400 });
+        }
+        $set.views = v;
+      }
+      // Use direct collection update to bypass Mongoose timestamps protection
+      await NFT.collection.updateOne({ _id: new Types.ObjectId(nftId) }, { $set });
+
+      const updated = await NFT.findById(nftId)
+        .populate('creator', 'username name')
+        .populate('owner', 'username name')
+        .lean();
+
+      return NextResponse.json({ success: true, data: updated, message: 'NFT updated' });
+    }
+
+    // Transfer ownership
+    if (!newOwnerId) {
+      return NextResponse.json(
+        { error: 'NFT ID and new owner ID are required' },
+        { status: 400 }
+      );
+    }
 
     const [nft, newOwner] = await Promise.all([
       NFT.findById(nftId),
@@ -101,11 +138,9 @@ export async function PATCH(request: Request) {
       );
     }
 
-    // Transfer ownership
     nft.owner = newOwner._id;
     await nft.save();
 
-    // Populate the updated NFT
     await nft.populate('creator', 'username name');
     await nft.populate('owner', 'username name');
 
@@ -117,7 +152,7 @@ export async function PATCH(request: Request) {
   } catch (error) {
     console.error('Admin NFT transfer error:', error);
     return NextResponse.json(
-      { error: 'Failed to transfer ownership' },
+      { error: 'Failed to update NFT' },
       { status: 500 }
     );
   }

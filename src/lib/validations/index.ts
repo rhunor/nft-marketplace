@@ -58,7 +58,7 @@ export const nftSchema = z.object({
     .number()
     .min(0.0001, 'Price must be at least 0.0001 ETH')
     .max(10000, 'Price cannot exceed 10000 ETH'),
-  category: z.enum(['new', 'photography', 'digital-art', 'games', 'music', 'video'], {
+  category: z.enum(['ai-images', 'digital-images', 'paintings', 'photography', 'portrait', 'games', 'animation', 'street-photography', 'landscape', 'nature', 'architecture'], {
     errorMap: () => ({ message: 'Please select a valid category' }),
   }),
   tags: z
@@ -108,7 +108,7 @@ export const contactSchema = z.object({
 // Search/filter params
 export const searchParamsSchema = z.object({
   q: z.string().optional(),
-  category: z.enum(['new', 'photography', 'digital-art', 'games', 'music', 'video']).optional(),
+  category: z.enum(['ai-images', 'digital-images', 'paintings', 'photography', 'portrait', 'games', 'animation', 'street-photography', 'landscape', 'nature', 'architecture']).optional(),
   minPrice: z.coerce.number().min(0).optional(),
   maxPrice: z.coerce.number().min(0).optional(),
   sortBy: z.enum(['price', 'createdAt', 'views', 'likes']).optional().default('createdAt'),

@@ -603,9 +603,16 @@ export default function NFTDetailPage() {
                   </div>
                 )}
                 {isOwner && nft.isFromDatabase && (
-                  <Button variant="secondary" size="lg" onClick={openManageModal}>
-                    Manage NFT
-                  </Button>
+                  <div className="flex flex-wrap gap-2">
+                    <Button variant="secondary" size="lg" onClick={openManageModal}>
+                      Manage NFT
+                    </Button>
+                    <Link href={`/export-nft/${nft.id}`}>
+                      <Button variant="ghost" size="lg">
+                        Export NFT
+                      </Button>
+                    </Link>
+                  </div>
                 )}
               </div>
             </Card>

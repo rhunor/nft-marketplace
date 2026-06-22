@@ -13,12 +13,18 @@ import { useEthPrice } from '@/contexts';
 import type { NFTWithUser, CollectionWithCreator } from '@/types';
 
 const sortOptions = [
+  { value: 'random', label: 'Random' },
+  { value: 'recent-desc', label: 'Most Recent' },
   { value: 'volume-desc', label: 'Highest Volume' },
   { value: 'volume-asc', label: 'Lowest Volume' },
   { value: 'floor-asc', label: 'Floor: Low to High' },
   { value: 'floor-desc', label: 'Floor: High to Low' },
   { value: 'items-desc', label: 'Most Items' },
 ];
+
+function shuffleArray<T>(arr: T[]): T[] {
+  return [...arr].sort(() => Math.random() - 0.5);
+}
 
 function ExploreContent() {
   const router = useRouter();
@@ -27,7 +33,7 @@ function ExploreContent() {
 
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || '');
-  const [sortBy, setSortBy] = useState(searchParams.get('sort') || 'volume-desc');
+  const [sortBy, setSortBy] = useState(searchParams.get('sort') || 'random');
   const [showFilters, setShowFilters] = useState(false);
   const [viewMode, setViewMode] = useState<'collections' | 'items'>('collections');
   const [dbNFTs, setDbNFTs] = useState<NFTWithUser[]>([]);
@@ -57,7 +63,9 @@ function ExploreContent() {
       const collectionData = await collectionResponse.json();
 
       if (nftData.success) {
-        setDbNFTs(nftData.data.items);
+        const items = nftData.data.items as NFTWithUser[];
+        // Randomise by default; API handles sort when a non-random sort is selected
+        setDbNFTs(sortBy === 'random' ? [...items].sort(() => Math.random() - 0.5) : items);
       }
 
       if (collectionData.success) {
@@ -132,12 +140,23 @@ function ExploreContent() {
     }
 
     // Sort collections
+    if (sortBy === 'random') {
+      return shuffleArray(collections);
+    }
+
     const [sortField, sortOrder] = sortBy.split('-');
     collections.sort((a, b) => {
       let aVal: number = 0;
       let bVal: number = 0;
 
       switch (sortField) {
+        case 'recent': {
+          const aDate = (a as Record<string, unknown>).createdAt;
+          const bDate = (b as Record<string, unknown>).createdAt;
+          const aTime = aDate ? new Date(aDate as string).getTime() : 0;
+          const bTime = bDate ? new Date(bDate as string).getTime() : 0;
+          return sortOrder === 'asc' ? aTime - bTime : bTime - aTime;
+        }
         case 'volume':
           aVal = a.totalVolume;
           bVal = b.totalVolume;
@@ -180,20 +199,26 @@ function ExploreContent() {
       nfts = nfts.filter((nft) => nft.category === selectedCategory);
     }
 
-    // Deduplicate by image URL - keep only first occurrence of each image
+    // Deduplicate by image URL
     const seenImages = new Set<string>();
     nfts = nfts.filter((nft) => {
-      // Safely get imageKey with fallback to full URL
       const imageKey = nft.mediaUrl?.split('?')[0] ?? nft.mediaUrl ?? '';
-      if (!imageKey || seenImages.has(imageKey)) {
-        return false;
-      }
+      if (!imageKey || seenImages.has(imageKey)) return false;
       seenImages.add(imageKey);
       return true;
     });
 
+    // Shuffle by default; sort by most recent only when explicitly requested
+    if (sortBy === 'recent-desc') {
+      // SampleNFT has no createdAt — keep original order (already newest-first in seed data)
+    } else if (sortBy !== 'random') {
+      // keep other sort options consistent — no-op for sample NFTs
+    } else {
+      nfts = shuffleArray(nfts);
+    }
+
     return nfts;
-  }, [searchQuery, selectedCategory]);
+  }, [searchQuery, selectedCategory, sortBy]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
