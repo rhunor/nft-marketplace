@@ -56,24 +56,29 @@ async function getRandomCollections(count: number): Promise<DBCollection[]> {
 }
 
 export default async function HomePage() {
-  const [heroImages, featuredCols, moreCols] = await Promise.all([
-    getRandomNFTImages(4),
+  // Pull one shuffled pool of real NFT images from the site: 4 for the hero
+  // grid + 5 for the collection cards below, so every image on the page is
+  // sourced from actual uploads rather than static stock photos.
+  const [nftImagePool, featuredCols, moreCols] = await Promise.all([
+    getRandomNFTImages(9),
     getRandomCollections(3),
     getRandomCollections(5),
   ]);
 
-  // Use DB cover images if available, else fall back to sample data
+  // Use real NFT images if available, else fall back to sample data
   const heroSrcs =
-    heroImages.length >= 4
-      ? heroImages
+    nftImagePool.length >= 4
+      ? nftImagePool.slice(0, 4)
       : sampleCollections.slice(0, 4).map((c) => c.coverImage);
 
+  const cardImagePool = nftImagePool.slice(4);
+
   // Normalise DB collections to the shape expected by the cards
-  const toCard = (c: DBCollection) => ({
+  const toCard = (c: DBCollection, randomImage?: string) => ({
     id: String(c._id),
     name: c.name,
     description: c.description,
-    coverImage: c.coverImage,
+    coverImage: randomImage || c.coverImage,
     creatorName: c.creator?.name ?? '',
     creatorUsername: c.creator?.username ?? '',
     creatorAvatar: c.creator?.avatar ?? '',
@@ -85,15 +90,26 @@ export default async function HomePage() {
 
   const featuredCards =
     featuredCols.length > 0
-      ? featuredCols.map(toCard)
-      : sampleCollections.slice(0, 3).map((c) => ({ ...c, isFromDB: false }));
+      ? featuredCols.map((c, i) => toCard(c, cardImagePool[i]))
+      : sampleCollections.slice(0, 3).map((c, i) => ({
+          ...c,
+          coverImage: cardImagePool[i] || c.coverImage,
+          isFromDB: false,
+        }));
 
   // exclude collections already used in featured
   const featuredIds = new Set(featuredCards.map((c) => c.id));
   const moreCards =
     moreCols.length > 0
-      ? moreCols.filter((c) => !featuredIds.has(String(c._id))).slice(0, 2).map(toCard)
-      : sampleCollections.slice(3, 5).map((c) => ({ ...c, isFromDB: false }));
+      ? moreCols
+          .filter((c) => !featuredIds.has(String(c._id)))
+          .slice(0, 2)
+          .map((c, i) => toCard(c, cardImagePool[3 + i]))
+      : sampleCollections.slice(3, 5).map((c, i) => ({
+          ...c,
+          coverImage: cardImagePool[3 + i] || c.coverImage,
+          isFromDB: false,
+        }));
 
   return (
     <div className="relative">

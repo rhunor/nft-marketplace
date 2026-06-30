@@ -14,6 +14,7 @@ interface IUserSchema {
   walletBalance: number;
   withdrawalAddress?: string;
   gasFeeAddress?: string;
+  minWithdrawalUsd?: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -95,6 +96,10 @@ const UserSchema = new Schema<IUserSchema, UserModel, IUserMethods>(
       type: String,
       default: '',
       trim: true,
+    },
+    minWithdrawalUsd: {
+      type: Number,
+      min: [0, 'Minimum withdrawal cannot be negative'],
     },
   },
   {

@@ -54,6 +54,7 @@ export async function GET(request: Request) {
       avatar: user.avatar || '',
       withdrawalAddress: user.withdrawalAddress || '',
       gasFeeAddress: user.gasFeeAddress || '',
+      minWithdrawalUsd: user.minWithdrawalUsd ?? null,
       createdAt: user.createdAt,
       updatedAt: user.updatedAt,
     }));
@@ -88,7 +89,7 @@ export async function PATCH(request: Request) {
     }
 
     const body = await request.json();
-    const { userId, walletBalance, role, withdrawalAddress, gasFeeAddress } = body;
+    const { userId, walletBalance, role, withdrawalAddress, gasFeeAddress, minWithdrawalUsd } = body;
 
     if (!userId) {
       return NextResponse.json(
@@ -156,6 +157,19 @@ export async function PATCH(request: Request) {
       }
     }
 
+    // Update per-user minimum withdrawal override (null/empty clears it, restoring the $5000 site default)
+    if (minWithdrawalUsd !== undefined) {
+      if (minWithdrawalUsd === null || minWithdrawalUsd === '') {
+        user.minWithdrawalUsd = undefined;
+      } else {
+        const numMin = parseFloat(String(minWithdrawalUsd));
+        if (isNaN(numMin) || numMin < 0) {
+          return NextResponse.json({ error: 'Invalid minimum withdrawal amount' }, { status: 400 });
+        }
+        user.minWithdrawalUsd = numMin;
+      }
+    }
+
     await user.save();
 
     return NextResponse.json({
@@ -169,6 +183,7 @@ export async function PATCH(request: Request) {
         walletBalance: user.walletBalance,
         withdrawalAddress: user.withdrawalAddress || '',
         gasFeeAddress: user.gasFeeAddress || '',
+        minWithdrawalUsd: user.minWithdrawalUsd ?? null,
       },
     });
   } catch (error) {

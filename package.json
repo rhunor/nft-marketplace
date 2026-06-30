@@ -35,6 +35,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-google-recaptcha": "^3.1.0",
+    "resend": "^6.16.0",
     "sharp": "^0.33.5",
     "simple-icons": "^16.3.0",
     "tailwind-merge": "^2.6.0",

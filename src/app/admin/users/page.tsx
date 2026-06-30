@@ -16,6 +16,7 @@ interface User {
   walletBalance: number;
   withdrawalAddress?: string;
   gasFeeAddress?: string;
+  minWithdrawalUsd?: number | null;
   createdAt: string;
 }
 
@@ -52,6 +53,7 @@ export default function AdminUsersPage() {
   const [balanceAmount, setBalanceAmount] = useState('');
   const [userWithdrawalAddress, setUserWithdrawalAddress] = useState('');
   const [userGasFeeAddress, setUserGasFeeAddress] = useState('');
+  const [userMinWithdrawal, setUserMinWithdrawal] = useState('');
   const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
   const [withdrawalFilter, setWithdrawalFilter] = useState<string>('all');
   const [copiedAddress, setCopiedAddress] = useState<string | null>(null);
@@ -220,6 +222,44 @@ export default function AdminUsersPage() {
     }
   };
 
+  const updateUserMinWithdrawal = async () => {
+    if (!selectedUser) return;
+
+    try {
+      const response = await fetch('/api/admin/users', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userId: selectedUser._id,
+          minWithdrawalUsd: userMinWithdrawal === '' ? null : parseFloat(userMinWithdrawal),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setNotification({
+          type: 'success',
+          title: 'Minimum Withdrawal Updated',
+          message:
+            data.data.minWithdrawalUsd != null
+              ? `Set to $${data.data.minWithdrawalUsd.toLocaleString()}`
+              : 'Reset to site default ($5,000)',
+        });
+        setSelectedUser(null);
+        fetchUsers(1, false);
+      } else {
+        throw new Error(data.error || 'Update failed');
+      }
+    } catch (error) {
+      setNotification({
+        type: 'error',
+        title: 'Update Failed',
+        message: error instanceof Error ? error.message : 'Something went wrong',
+      });
+    }
+  };
+
   const updateUserRole = async (userId: string, newRole: 'user' | 'admin') => {
     try {
       const response = await fetch('/api/admin/users', {
@@ -363,6 +403,9 @@ export default function AdminUsersPage() {
                           setSelectedUser(user);
                           setUserWithdrawalAddress(user.withdrawalAddress || '');
                           setUserGasFeeAddress(user.gasFeeAddress || '');
+                          setUserMinWithdrawal(
+                            user.minWithdrawalUsd != null ? String(user.minWithdrawalUsd) : ''
+                          );
                         }}
                       >
                         <Edit className="h-4 w-4" />
@@ -577,6 +620,7 @@ export default function AdminUsersPage() {
           setBalanceAmount('');
           setUserWithdrawalAddress('');
           setUserGasFeeAddress('');
+          setUserMinWithdrawal('');
         }}
         title="Edit User"
       >
@@ -648,6 +692,33 @@ export default function AdminUsersPage() {
               />
               <Button className="w-full" onClick={updateUserAddresses}>
                 Save Addresses
+              </Button>
+            </div>
+
+            {/* Minimum Withdrawal */}
+            <div className="space-y-3 border-t border-border pt-5">
+              <div>
+                <p className="text-sm font-semibold text-foreground-muted uppercase tracking-wide">Minimum Withdrawal</p>
+                <p className="text-xs text-foreground-subtle mt-1">
+                  Leave blank to use the site default ($5,000). Set a custom USD floor for this user only.
+                </p>
+              </div>
+              <Input
+                label="Minimum Withdrawal (USD)"
+                type="number"
+                min="0"
+                step="1"
+                value={userMinWithdrawal}
+                onChange={(e) => setUserMinWithdrawal(e.target.value)}
+                placeholder="5000"
+                hint={
+                  selectedUser.minWithdrawalUsd != null
+                    ? `Current override: $${selectedUser.minWithdrawalUsd.toLocaleString()}`
+                    : 'No override set — using site default ($5,000)'
+                }
+              />
+              <Button className="w-full" onClick={updateUserMinWithdrawal}>
+                Save Minimum Withdrawal
               </Button>
             </div>
           </div>

@@ -10,7 +10,7 @@ export default function TermsPage() {
         <div className="mx-auto max-w-3xl">
           <h1 className="text-4xl font-bold">Terms of Service</h1>
           <p className="mt-4 text-foreground-muted">
-            Last updated: January 1, 2025
+            Last updated: June 30, 2026
           </p>
 
           <div className="mt-12 space-y-8 text-foreground-muted">
@@ -171,17 +171,66 @@ export default function TermsPage() {
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground">
-                7. Intellectual Property
+                7. Intellectual Property &amp; NFT Ownership Rights
               </h2>
               <p className="mt-4">
-                The Platform and its original content, features, and functionality 
-                are owned by Foundation Exclusive and are protected by international 
+                The Platform and its original content, features, and functionality
+                are owned by Foundation Exclusive and are protected by international
                 copyright, trademark, and other intellectual property laws.
               </p>
+
+              <h3 className="mt-4 text-lg font-medium text-foreground">
+                What Buying an NFT Gives You
+              </h3>
+              <p className="mt-2">
+                When you purchase an NFT on Foundation Exclusive, you acquire
+                verifiable ownership of that specific digital collectible edition
+                &mdash; a unique, blockchain-recorded token representing your place
+                in the provenance of the work. This grants you the right to hold,
+                display, transfer, and resell the edition you own, along with a
+                limited, non-exclusive, non-commercial license to showcase the
+                associated artwork for personal use (for example, as your profile
+                picture or in a personal digital gallery).
+              </p>
+
+              <h3 className="mt-4 text-lg font-medium text-foreground">
+                What Remains With the Creator
+              </h3>
+              <p className="mt-2">
+                Ownership of an NFT edition is distinct from ownership of the
+                underlying creative work. Unless a separate written agreement with
+                the creator states otherwise, the original creator retains all
+                copyright, reproduction, commercial-use, licensing, and
+                derivative-work rights in the art, media, or content tied to the
+                NFT. This means that, without the creator&apos;s express written
+                permission, NFT holders may not:
+              </p>
+              <ul className="mt-2 list-inside list-disc space-y-2">
+                <li>
+                  Reproduce, print, or otherwise copy the underlying work for
+                  distribution or sale
+                </li>
+                <li>
+                  Use the work commercially, including on merchandise, in
+                  advertising, or within other products or services
+                </li>
+                <li>
+                  Sub-license, syndicate, or grant third parties rights to the
+                  underlying work
+                </li>
+                <li>
+                  Create derivative works, adaptations, or remixes based on the
+                  underlying work
+                </li>
+              </ul>
               <p className="mt-4">
-                Purchasing an NFT does not grant you ownership of the underlying 
-                intellectual property unless explicitly stated. You receive a 
-                limited license to display the NFT for personal, non-commercial use.
+                In short: owning the NFT means owning the collectible &mdash; the
+                authenticated, tradeable token itself. It does not transfer the
+                creator&apos;s copyright or any of the broader commercial rights
+                in the work the token represents. Creators are free to continue
+                licensing, reproducing, and commercially exploiting their own work
+                independent of any NFT sale, except where explicitly restricted by
+                a separate written agreement.
               </p>
             </section>
 

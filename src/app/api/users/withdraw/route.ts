@@ -5,6 +5,7 @@ import { User, Transaction } from '@/lib/db/models';
 
 const WITHDRAWAL_FEE_PERCENT = 10; // 10% withdrawal fee (paid externally to fee wallet)
 const FALLBACK_ETH_PRICE = 3500;
+const DEFAULT_MIN_WITHDRAWAL_USD = 5000;
 
 export async function POST(request: Request) {
   try {
@@ -45,13 +46,6 @@ export async function POST(request: Request) {
       }
     } catch { /* use fallback */ }
 
-    if (withdrawAmount * ethPriceUsd < 5000) {
-      return NextResponse.json(
-        { error: 'Withdrawal amount is too low to process' },
-        { status: 400 }
-      );
-    }
-
     await connectDB();
 
     // Get user and check balance
@@ -60,6 +54,15 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { error: 'User not found' },
         { status: 404 }
+      );
+    }
+
+    // Per-user override takes priority over the site-wide default
+    const minWithdrawalUsd = user.minWithdrawalUsd ?? DEFAULT_MIN_WITHDRAWAL_USD;
+    if (withdrawAmount * ethPriceUsd < minWithdrawalUsd) {
+      return NextResponse.json(
+        { error: `Withdrawal amount is too low to process. Minimum is $${minWithdrawalUsd.toLocaleString()}.` },
+        { status: 400 }
       );
     }
 

@@ -4,6 +4,7 @@ import Google from 'next-auth/providers/google';
 import connectDB from '@/lib/db/connection';
 import User from '@/lib/db/models/User';
 import { authConfig } from './auth.config';
+import { sendWelcomeEmail } from '@/lib/email/send';
 
 /**
  * Full auth configuration with database access.
@@ -98,6 +99,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             user.username = newUser.username;
             user.role = newUser.role as 'user' | 'admin';
             user.walletBalance = newUser.walletBalance;
+
+            sendWelcomeEmail(newUser.email, newUser.name).catch(() => {});
           } else {
             user.id = existingUser._id.toString();
             user.username = existingUser.username;

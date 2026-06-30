@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import connectDB from '@/lib/db/connection';
 import User from '@/lib/db/models/User';
+import { sendWelcomeEmail } from '@/lib/email/send';
 
 export async function POST(request: Request) {
   try {
@@ -77,6 +78,9 @@ export async function POST(request: Request) {
       role: 'user',
       walletBalance: 0,
     });
+
+    // Fire-and-forget — never let an email failure break registration
+    sendWelcomeEmail(user.email, user.name).catch(() => {});
 
     return NextResponse.json(
       {

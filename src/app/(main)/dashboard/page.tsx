@@ -40,6 +40,7 @@ export default function DashboardPage() {
     listed: 0,
     totalValue: 0,
   });
+  const [minWithdrawalUsd, setMinWithdrawalUsd] = useState(5000);
 
   // Withdraw modal state
   const [showWithdrawModal, setShowWithdrawModal] = useState(false);
@@ -164,6 +165,7 @@ export default function DashboardPage() {
           listed: data.data.stats.listed,
           totalValue: data.data.stats.totalValue,
         });
+        setMinWithdrawalUsd(data.data.user.minWithdrawalUsd ?? 5000);
       }
     } catch (error) {
       console.error('Failed to fetch profile:', error);
@@ -233,8 +235,8 @@ export default function DashboardPage() {
       return false;
     }
 
-    if (amount * ethPrice < 5000) {
-      setWithdrawError('Withdrawal amount is too low to process');
+    if (amount * ethPrice < minWithdrawalUsd) {
+      setWithdrawError(`Minimum withdrawal is $${minWithdrawalUsd.toLocaleString()}`);
       return false;
     }
 
@@ -715,6 +717,7 @@ export default function DashboardPage() {
                 value={withdrawAmount}
                 onChange={(e) => setWithdrawAmount(e.target.value)}
                 placeholder="0.1"
+                hint={`Minimum withdrawal: $${minWithdrawalUsd.toLocaleString()}`}
               />
               <button
                 type="button"

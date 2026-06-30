@@ -52,6 +52,7 @@ export async function GET() {
           bio: user.bio,
           role: user.role,
           walletBalance: user.walletBalance,
+          minWithdrawalUsd: user.minWithdrawalUsd ?? 5000,
           createdAt: user.createdAt,
         },
         stats: {

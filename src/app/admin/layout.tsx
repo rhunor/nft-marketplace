@@ -9,6 +9,7 @@ import {
   Users,
   Image as ImageIcon,
   Settings,
+  Mail,
   ArrowLeft,
   Menu,
   X,
@@ -31,6 +32,11 @@ const adminNavItems = [
     href: '/admin/nfts',
     label: 'NFTs',
     icon: ImageIcon,
+  },
+  {
+    href: '/admin/email',
+    label: 'Mass Email',
+    icon: Mail,
   },
   {
     href: '/admin/settings',
