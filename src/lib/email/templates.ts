@@ -81,7 +81,7 @@ export function buildWelcomeEmail(name: string): { subject: string; html: string
         <li style="margin-bottom:6px;">Fund your wallet to start collecting</li>
         <li style="margin-bottom:6px;">List and showcase your own work to a curated audience</li>
       </ul>
-      <p style="margin:0;">If you have any questions, just reply to this email &mdash; we're happy to help.</p>
+      <p style="margin:0;">If you have any questions, contact our support on <a href="https://t.me/foundationexclusive" style="color:${COLORS.secondary};text-decoration:none;">Telegram</a> or <a href="mailto:foundationexclusivenft@gmail.com" style="color:${COLORS.secondary};text-decoration:none;">Email</a>.</p>
     `,
     ctaLabel: 'Explore Collections',
     ctaUrl: `${appUrl}/explore`,
