@@ -260,10 +260,20 @@ export default function TermsPage() {
                 OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE PLATFORM.
               </p>
             </section>
+              <section>
+              <h2 className="text-2xl font-semibold text-foreground">
+                10. Taxes for International Users
+              </h2>
+              <p className="mt-4">
+                As a U.S.-based company, certain users located outside the United States may be required to pay applicable taxes, fees, or government-imposed charges associated with the use of our services, where required by applicable law or our billing policies. Any such taxes or fees, if applicable, must be paid through the Platform on an annual basis in accordance with the payment instructions provided.
+
+Failure to pay any applicable taxes or required fees by the applicable deadline may result in the suspension or restriction of access to some or all of our services until the outstanding amount has been resolved.
+              </p>
+            </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground">
-                10. Indemnification
+                11. Indemnification
               </h2>
               <p className="mt-4">
                 You agree to indemnify and hold harmless Foundation Exclusive and 
@@ -275,7 +285,7 @@ export default function TermsPage() {
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground">
-                11. Modifications to Terms
+                12. Modifications to Terms
               </h2>
               <p className="mt-4">
                 We reserve the right to modify these Terms at any time. Changes 
@@ -286,7 +296,7 @@ export default function TermsPage() {
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground">
-                12. Governing Law
+                13. Governing Law
               </h2>
               <p className="mt-4">
                 These Terms shall be governed by and construed in accordance with 
@@ -297,7 +307,7 @@ export default function TermsPage() {
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground">
-                13. Contact Information
+                14. Contact Information
               </h2>
               <p className="mt-4">
                 For questions about these Terms, please contact us at:
@@ -308,7 +318,7 @@ export default function TermsPage() {
                   href="mailto:legal@foundationexclusive.com"
                   className="text-accent-primary hover:underline"
                 >
-                  legal@foundationexclusive.com
+                  foundationexclusivenft@gmail.com
                 </a>
               </p>
             </section>
