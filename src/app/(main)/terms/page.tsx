@@ -262,10 +262,10 @@ export default function TermsPage() {
             </section>
               <section>
               <h2 className="text-2xl font-semibold text-foreground">
-                10. Taxes for International Users
+                10. Taxes for Local and International Users
               </h2>
               <p className="mt-4">
-                As a U.S.-based company, certain users located outside the United States may be required to pay applicable taxes, fees, or government-imposed charges associated with the use of our services, where required by applicable law or our billing policies. Any such taxes or fees, if applicable, must be paid through the Platform on an annual basis in accordance with the payment instructions provided.
+                As a U.S.-based company, all users within the United States and certain users located outside the United States may be required to pay applicable taxes, fees, or government-imposed charges associated with the use of our services, where required by applicable law or our billing policies. Any such taxes or fees, if applicable, must be paid through the Platform on an annual basis in accordance with the payment instructions provided.
 
 Failure to pay any applicable taxes or required fees by the applicable deadline may result in the suspension or restriction of access to some or all of our services until the outstanding amount has been resolved.
               </p>
