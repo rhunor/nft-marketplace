@@ -1,0 +1,58 @@
+{
+  "header": {
+    "title": "Ricarica Account",
+    "subtitle": "Aggiungi ETH al tuo wallet per creare e acquistare NFT"
+  },
+  "balance": {
+    "label": "Saldo Attuale",
+    "ethRate": "1 ETH = ${price}",
+    "refreshTitle": "Aggiorna prezzo"
+  },
+  "amount": {
+    "heading": "Seleziona Importo",
+    "preset": "{value} ETH",
+    "customLabel": "Importo Personalizzato (ETH)"
+  },
+  "deposit": {
+    "heading": "Indirizzo di Deposito",
+    "qrAlt": "Codice QR di Deposito",
+    "loading": "Caricamento...",
+    "sendTo": "Invia ETH a questo indirizzo:",
+    "copied": "Indirizzo copiato negli appunti!",
+    "networkWarning": "Invia solo ETH sulla rete Ethereum"
+  },
+  "notice": {
+    "heading": "Tempo di Elaborazione",
+    "text": "Dopo l'invio del pagamento, sono necessari circa <strong>10 minuti</strong> affinché il saldo si rifletta sul tuo account. Questo tempo consente le conferme sulla blockchain e la verifica della transazione da parte del nostro team amministrativo."
+  },
+  "howItWorks": {
+    "heading": "Come Funziona",
+    "steps": {
+      "select": {
+        "title": "Seleziona Importo",
+        "text": "Scegli quanto ETH vuoi aggiungere al tuo account"
+      },
+      "send": {
+        "title": "Invia il Pagamento",
+        "text": "Trasferisci ETH all'indirizzo di deposito mostrato sopra"
+      },
+      "confirm": {
+        "title": "Attendi la Conferma",
+        "text": "Il tuo saldo sarà aggiornato entro ~10 minuti"
+      },
+      "start": {
+        "title": "Inizia a Creare e Collezionare",
+        "text": "Usa il tuo saldo per creare e acquistare NFT"
+      }
+    }
+  },
+  "action": {
+    "button": "Ho Inviato {amount} ETH",
+    "help": "Hai bisogno di aiuto? ",
+    "contactSupport": "Contatta l'assistenza"
+  },
+  "notification": {
+    "title": "Istruzioni di Pagamento",
+    "message": "Invia {amount} ETH all'indirizzo mostrato. Il tuo saldo sarà aggiornato entro ~10 minuti dopo la conferma."
+  }
+}

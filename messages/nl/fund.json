@@ -1,0 +1,58 @@
+{
+  "header": {
+    "title": "Account Opwaarderen",
+    "subtitle": "Voeg ETH toe aan uw wallet om NFT's te creëren en aan te kopen"
+  },
+  "balance": {
+    "label": "Huidig Saldo",
+    "ethRate": "1 ETH = ${price}",
+    "refreshTitle": "Prijs vernieuwen"
+  },
+  "amount": {
+    "heading": "Selecteer Bedrag",
+    "preset": "{value} ETH",
+    "customLabel": "Aangepast Bedrag (ETH)"
+  },
+  "deposit": {
+    "heading": "Stortingsadres",
+    "qrAlt": "QR-code voor Storting",
+    "loading": "Laden...",
+    "sendTo": "Stuur ETH naar dit adres:",
+    "copied": "Adres gekopieerd naar klembord!",
+    "networkWarning": "Stuur alleen ETH op het Ethereum-netwerk"
+  },
+  "notice": {
+    "heading": "Verwerkingstijd",
+    "text": "Na het versturen van de betaling duurt het ongeveer <strong>10 minuten</strong> voordat uw saldo op uw account wordt bijgewerkt. Dit geeft tijd voor blockchainbevestigingen en voor ons beheerteam om de transactie te verifiëren."
+  },
+  "howItWorks": {
+    "heading": "Hoe het Werkt",
+    "steps": {
+      "select": {
+        "title": "Selecteer Bedrag",
+        "text": "Kies hoeveel ETH u aan uw account wilt toevoegen"
+      },
+      "send": {
+        "title": "Verstuur Betaling",
+        "text": "Stuur ETH naar het hierboven weergegeven stortingsadres"
+      },
+      "confirm": {
+        "title": "Wacht op Bevestiging",
+        "text": "Uw saldo wordt binnen ~10 minuten bijgewerkt"
+      },
+      "start": {
+        "title": "Begin met Creëren & Verzamelen",
+        "text": "Gebruik uw saldo om NFT's te creëren en aan te kopen"
+      }
+    }
+  },
+  "action": {
+    "button": "Ik Heb {amount} ETH Verstuurd",
+    "help": "Hulp nodig? ",
+    "contactSupport": "Neem contact op met support"
+  },
+  "notification": {
+    "title": "Betalingsinstructies",
+    "message": "Stuur {amount} ETH naar het weergegeven adres. Uw saldo wordt binnen ~10 minuten na bevestiging bijgewerkt."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "header": {
+    "heading": "Liên Hệ Với Chúng Tôi",
+    "subtitle": "Bạn có câu hỏi hoặc cần trợ giúp? Chúng tôi luôn sẵn sàng hỗ trợ bạn."
+  },
+  "subjectOptions": {
+    "general": "Yêu Cầu Chung",
+    "support": "Hỗ Trợ Kỹ Thuật",
+    "billing": "Thanh Toán & Hóa Đơn",
+    "partnership": "Hợp Tác",
+    "bug": "Báo Cáo Lỗi",
+    "feature": "Đề Xuất Tính Năng",
+    "other": "Khác"
+  },
+  "info": {
+    "email": {
+      "title": "Email",
+      "subtitle": "Cho các yêu cầu chung"
+    },
+    "liveChat": {
+      "title": "Trò Chuyện Trực Tuyến",
+      "value": "Hỗ trợ 24/7",
+      "subtitle": "Phản hồi nhanh chóng"
+    },
+    "responseTime": {
+      "title": "Thời Gian Phản Hồi",
+      "value": "Trong vòng 24-48 giờ",
+      "subtitle": "Ngày làm việc"
+    },
+    "office": {
+      "title": "Văn Phòng",
+      "line1": "11420 Santa Monica Boulevard",
+      "line2": "Post Office Box 252111",
+      "line3": "Los Angeles, CA 90025"
+    }
+  },
+  "form": {
+    "heading": "Gửi tin nhắn cho chúng tôi",
+    "nameLabel": "Họ Tên Của Bạn",
+    "namePlaceholder": "Nguyễn Văn A",
+    "emailLabel": "Địa Chỉ Email",
+    "emailPlaceholder": "ban@example.com",
+    "subjectLabel": "Chủ Đề",
+    "subjectPlaceholder": "Chọn một chủ đề",
+    "messageLabel": "Tin Nhắn",
+    "messagePlaceholder": "Chúng tôi có thể giúp gì cho bạn?",
+    "submit": "Gửi Tin Nhắn"
+  },
+  "success": {
+    "heading": "Gửi Tin Nhắn Thành Công!",
+    "text": "Cảm ơn bạn đã liên hệ. Đội ngũ của chúng tôi sẽ xem xét tin nhắn của bạn và phản hồi trong vòng 24-48 giờ.",
+    "sendAnother": "Gửi Tin Nhắn Khác"
+  },
+  "notification": {
+    "title": "Đã Gửi Tin Nhắn!",
+    "message": "Chúng tôi sẽ phản hồi bạn trong vòng 24-48 giờ."
+  }
+}

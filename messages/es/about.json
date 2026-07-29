@@ -1,0 +1,56 @@
+{
+  "metaTitle": "Acerca de | Foundation Exclusive",
+  "metaDescription": "Foundation Exclusive es una extensión de Foundation, una comunidad exclusiva de coleccionistas y creadores de NFT de alto valor.",
+  "hero": {
+    "badge": "Una extensión de Foundation",
+    "heading": "Bienvenido a <gradient>Foundation Exclusive</gradient>",
+    "subtitle": "Foundation Exclusive es el destino principal para coleccionistas y creadores de NFT de alto valor. Como extensión de Foundation, ofrecemos una comunidad exclusiva donde el arte digital excepcional encuentra a sus legítimos coleccionistas."
+  },
+  "stats": [
+    { "value": "2.500+", "label": "Coleccionistas verificados" },
+    { "value": "150+", "label": "Colecciones curadas" },
+    { "value": "$45M+", "label": "Volumen total" },
+    { "value": "15 ETH", "label": "Precio de venta promedio" }
+  ],
+  "story": {
+    "heading": "Nuestra historia",
+    "p1": "Foundation Exclusive nació de una simple observación: el mercado de los NFT necesitaba un espacio dedicado a coleccionistas serios que valoran la calidad por encima de la cantidad. Mientras Foundation revolucionó la forma en que los artistas se conectan con los coleccionistas, nosotros vimos la oportunidad de crear algo aún más refinado.",
+    "p2": "Nuestra plataforma funciona como una extensión curada del ecosistema Foundation, donde cada colección se selecciona a mano y cada artista es verificado. Creemos que el arte digital merece la misma reverencia y consideración como inversión que el arte tradicional de galería.",
+    "p3": "Los precios que ves en Foundation Exclusive reflejan el verdadero valor del arte digital excepcional. Nuestros coleccionistas entienden que las piezas premium tienen precios premium, y nuestro historial de revalorización valida este enfoque.",
+    "imageAlt": "Galería de arte digital",
+    "imageCaption": "Donde el arte digital excepcional encuentra su hogar"
+  },
+  "values": {
+    "heading": "Qué nos distingue",
+    "subtitle": "Foundation Exclusive se sustenta en principios que garantizan los más altos estándares para nuestra comunidad de coleccionistas y creadores.",
+    "items": [
+      {
+        "title": "Autenticidad verificada",
+        "description": "Cada pieza de nuestro marketplace pasa por una verificación rigurosa para garantizar su autenticidad y procedencia."
+      },
+      {
+        "title": "Calidad premium",
+        "description": "Seleccionamos únicamente el mejor arte digital de artistas consagrados y emergentes que cumplen con nuestros altos estándares."
+      },
+      {
+        "title": "Comunidad exclusiva",
+        "description": "Únete a una red selecta de coleccionistas, artistas y entusiastas que comparten la pasión por el arte digital excepcional."
+      },
+      {
+        "title": "Grado de inversión",
+        "description": "Nuestros NFT tienen precios que reflejan su verdadero valor, con un historial comprobado de revalorización en el mercado secundario."
+      }
+    ]
+  },
+  "membership": {
+    "heading": "Únete a la comunidad exclusiva",
+    "text": "Foundation Exclusive es más que un marketplace: es una comunidad de personas afines que entienden el valor del arte digital excepcional. Nuestros miembros disfrutan de acceso anticipado a los lanzamientos, eventos exclusivos y una red de coleccionistas y artistas.",
+    "becomeMember": "Hazte miembro",
+    "exploreCollections": "Explorar colecciones"
+  },
+  "cta": {
+    "heading": "¿Listo para vivir lo exclusivo?",
+    "text": "Descubre por qué los coleccionistas serios eligen Foundation Exclusive para sus adquisiciones más valiosas.",
+    "viewCollections": "Ver colecciones"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "Sprache ändern",
+    "popular": "Beliebte Sprachen",
+    "more": "Weitere Sprachen"
+  },
+  "languageBanner": {
+    "message": "Es sieht so aus, als würden Sie {language} bevorzugen.",
+    "switch": "Wechseln",
+    "dismiss": "Verwerfen"
+  },
+  "nav": {
+    "home": "Startseite",
+    "explore": "Entdecken",
+    "about": "Über uns",
+    "help": "Hilfe",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "NFTs, Künstler suchen...",
+    "create": "Erstellen",
+    "signIn": "Anmelden",
+    "getStarted": "Loslegen",
+    "userMenu": {
+      "dashboard": "Dashboard",
+      "createNft": "NFT erstellen",
+      "fundAccount": "Konto aufladen",
+      "adminPanel": "Admin-Bereich",
+      "signOut": "Abmelden"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "Eine Erweiterung von Foundation - die erste Adresse für hochwertige NFT-Sammler und -Künstler. Werden Sie Teil unserer exklusiven Community anspruchsvoller Sammler.",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "E-Mail"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "Marktplatz",
+        "exploreCollections": "Kollektionen entdecken",
+        "howItWorks": "So funktioniert's",
+        "create": "Erstellen"
+      },
+      "resources": {
+        "heading": "Ressourcen",
+        "helpCenter": "Hilfe-Center",
+        "contactUs": "Kontaktieren Sie uns",
+        "faq": "Häufige Fragen"
+      },
+      "company": {
+        "heading": "Unternehmen",
+        "aboutUs": "Über uns",
+        "termsOfService": "Nutzungsbedingungen",
+        "privacyPolicy": "Datenschutzerklärung",
+        "cookiePolicy": "Cookie-Richtlinie"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. Alle Rechte vorbehalten.",
+    "bottomLinks": {
+      "terms": "AGB",
+      "privacy": "Datenschutz",
+      "cookies": "Cookies"
+    }
+  },
+  "modal": {
+    "dismiss": "Verwerfen"
+  },
+  "nftCard": {
+    "currentPrice": "Aktueller Preis",
+    "by": "von"
+  },
+  "nftGrid": {
+    "emptyMessage": "Keine NFTs gefunden"
+  },
+  "nftImage": {
+    "unavailable": "Bild nicht verfügbar"
+  }
+}

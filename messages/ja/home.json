@@ -1,0 +1,75 @@
+{
+  "metaTitle": "プレミアムNFTマーケットプレイス",
+  "metaDescription": "エリートアーティストによる特別なNFTコレクションを発見しましょう。Foundation Exclusiveは、高価値のNFTコレクターのための最高峰のデスティネーションです。",
+  "hero": {
+    "badge": "Foundationの拡張プラットフォーム",
+    "heading": "<gradient>特別な</gradient>NFTコレクションを発見する",
+    "subtitle": "Foundation Exclusiveは、高価値のNFTコレクターのための最高峰のデスティネーションです。卓越したデジタルアートがふさわしいコレクターと出会う、特別なコミュニティにご参加ください。",
+    "exploreCollections": "コレクションを探す",
+    "learnMore": "詳しく見る",
+    "imageAlt": "注目のNFT {n}",
+    "stats": [
+      {
+        "value": "150+",
+        "label": "厳選コレクション"
+      },
+      {
+        "value": "50+",
+        "label": "エリートアーティスト"
+      },
+      {
+        "value": "$45M+",
+        "label": "総取引高"
+      }
+    ]
+  },
+  "featured": {
+    "heading": "注目のコレクション",
+    "subtitle": "特別なアーティストによる厳選コレクション",
+    "viewAll": "すべて見る",
+    "itemsCount": "{count}点",
+    "floor": "フロア価格"
+  },
+  "aboutBrief": {
+    "heading": "特別なコミュニティ",
+    "text": "Foundation Exclusiveは、卓越したデジタルアートの真の価値を理解する真剣なコレクターのために生まれた、Foundationの拡張プラットフォームです。私たちの厳選されたプラットフォームは、すべての作品が最高水準の品質と真正性を満たしていることを保証します。",
+    "cta": "会社概要を見る"
+  },
+  "categories": {
+    "heading": "カテゴリーから探す",
+    "subtitle": "さまざまなカテゴリーのコレクションを探索する"
+  },
+  "moreCollections": {
+    "heading": "その他のコレクション",
+    "subtitle": "さらに多くの特別なコレクションを発見する",
+    "viewAll": "すべて見る"
+  },
+  "features": {
+    "heading": "Foundation Exclusiveが選ばれる理由",
+    "subtitle": "プレミアムNFTコレクターに最も信頼されているプラットフォーム",
+    "items": [
+      {
+        "title": "認証された真正性",
+        "description": "すべての作品は真正性を保証するために厳格な検証を受けています"
+      },
+      {
+        "title": "プレミアムな品質",
+        "description": "世界クラスのデジタルアーティストによる厳選コレクション"
+      },
+      {
+        "title": "特別なコミュニティ",
+        "description": "真剣なコレクターによる選ばれたネットワークにご参加ください"
+      },
+      {
+        "title": "投資グレード",
+        "description": "真の市場価値を反映した価格設定のNFT"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "特別なコミュニティに参加する準備はできましたか?",
+    "text": "Foundation Exclusiveのメンバーになり、プレミアムコレクション、限定ドロップ、そして同志であるコレクターたちのコミュニティへのアクセスを手に入れましょう。",
+    "becomeMember": "メンバーになる",
+    "exploreCollections": "コレクションを探す"
+  }
+}

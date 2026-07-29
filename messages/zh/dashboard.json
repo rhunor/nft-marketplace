@@ -1,0 +1,126 @@
+{
+  "loading": "正在加载控制台...",
+  "avatar": {
+    "invalidType": "请选择一个图片文件",
+    "tooLarge": "图片大小不能超过 5MB",
+    "uploadSuccess": "头像更新成功！",
+    "uploadFailedTitle": "上传失败",
+    "uploadFailedDefault": "出现了一些问题",
+    "changePicture": "更换头像"
+  },
+  "welcome": "欢迎回来，{name}！",
+  "adminBadge": "管理员",
+  "fundAccount": "账户充值",
+  "createNft": "创建 NFT",
+  "stats": {
+    "walletBalance": "钱包余额",
+    "nftsOwned": "持有 NFT",
+    "nftsCreated": "创建 NFT",
+    "totalValue": "总价值"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "探索合集",
+      "subtitle": "发现全新藏品"
+    },
+    "create": {
+      "title": "创建 NFT",
+      "subtitle": "上传您的作品"
+    },
+    "fund": {
+      "title": "账户充值",
+      "subtitle": "向钱包添加 ETH"
+    },
+    "withdraw": {
+      "title": "提取资金",
+      "subtitle": "转账至您的钱包"
+    }
+  },
+  "tabs": {
+    "owned": "持有（{count}）",
+    "created": "创建（{count}）",
+    "listed": "上架（{count}）"
+  },
+  "nftCard": {
+    "created": "创建时间",
+    "notListed": "未上架",
+    "price": "价格"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "暂无持有 NFT",
+      "text": "开始在我们的交易市场收藏独特的数字资产",
+      "button": "探索合集"
+    },
+    "created": {
+      "title": "暂无创建 NFT",
+      "text": "创建您的第一个 NFT，与世界分享",
+      "button": "创建 NFT"
+    },
+    "listed": {
+      "title": "暂无上架 NFT",
+      "text": "您还没有任何正在出售的 NFT"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "提取资金",
+      "fee": "支付提现手续费",
+      "processing": "正在处理提现",
+      "success": "提现成功"
+    },
+    "form": {
+      "availableBalance": "可用余额",
+      "walletAddressLabel": "钱包地址",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "请输入您的以太坊钱包地址",
+      "amountLabel": "金额（ETH）",
+      "amountPlaceholder": "0.1",
+      "amountHint": "最低提现金额：${minAmount}",
+      "withdrawMax": "提取全部",
+      "continue": "继续"
+    },
+    "errors": {
+      "invalidAddress": "请输入有效的以太坊钱包地址（0x...）",
+      "invalidAmount": "请输入有效的提现金额",
+      "minWithdrawal": "最低提现金额为 ${minAmount}",
+      "insufficientBalance": "余额不足",
+      "serverError": "服务器错误，请稍后重试。",
+      "withdrawalFailed": "提现失败",
+      "invalidResponse": "服务器返回的响应无效",
+      "withdrawalFailedRetry": "提现失败，请重试。"
+    },
+    "fee": {
+      "noticeTitle": "需支付提现手续费",
+      "noticeText": "为处理您的提现请求，请向以下钱包地址发送 {percent}% 的手续费（{amount}）。",
+      "walletLabel": "您的提现钱包",
+      "withdrawalAmount": "提现金额",
+      "feeToSend": "应付手续费（{percent}%）",
+      "youllReceive": "您将收到",
+      "sendFeeTo": "手续费支付地址：",
+      "sendExactly": "请向此地址准确发送 {amount}",
+      "qrAlt": "手续费支付二维码",
+      "walletAddressLabel": "手续费钱包地址（ETH）",
+      "copyAddress": "复制地址",
+      "copiedNotification": "地址已复制到剪贴板",
+      "warning": "发送 {feeAmount} 手续费后，请点击“确认付款”以处理您的提现。您的全额提现金额 {receiveAmount} 将发送至您的钱包。",
+      "back": "返回",
+      "confirmPayment": "确认付款"
+    },
+    "processing": {
+      "title": "正在处理提现",
+      "text": "请稍候，我们正在处理您的交易..."
+    },
+    "success": {
+      "title": "提现申请已提交！",
+      "subtitle": "您的资金正在转入您的钱包",
+      "transactionId": "交易编号",
+      "amountReceived": "您将收到的金额",
+      "feePaid": "已付手续费",
+      "newBalance": "最新余额",
+      "estimatedTime": "预计处理时间",
+      "estimatedTimeValue": "24-48 小时",
+      "done": "完成"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "header": {
+    "heading": "Contact Us",
+    "subtitle": "Have a question or need help? We're here for you."
+  },
+  "subjectOptions": {
+    "general": "General Inquiry",
+    "support": "Technical Support",
+    "billing": "Billing & Payments",
+    "partnership": "Partnership",
+    "bug": "Bug Report",
+    "feature": "Feature Request",
+    "other": "Other"
+  },
+  "info": {
+    "email": {
+      "title": "Email",
+      "subtitle": "For general inquiries"
+    },
+    "liveChat": {
+      "title": "Live Chat",
+      "value": "Available 24/7",
+      "subtitle": "Quick response time"
+    },
+    "responseTime": {
+      "title": "Response Time",
+      "value": "Within 24-48 hours",
+      "subtitle": "Business days"
+    },
+    "office": {
+      "title": "Office",
+      "line1": "11420 Santa Monica Boulevard",
+      "line2": "Post Office Box 252111",
+      "line3": "Los Angeles, CA 90025"
+    }
+  },
+  "form": {
+    "heading": "Send us a message",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Select a topic",
+    "messageLabel": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "submit": "Send Message"
+  },
+  "success": {
+    "heading": "Message Sent Successfully!",
+    "text": "Thank you for reaching out. Our team will review your message and get back to you within 24-48 hours.",
+    "sendAnother": "Send Another Message"
+  },
+  "notification": {
+    "title": "Message Sent!",
+    "message": "We'll get back to you within 24-48 hours."
+  }
+}

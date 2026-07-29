@@ -1,0 +1,126 @@
+{
+  "loading": "Ładowanie panelu...",
+  "avatar": {
+    "invalidType": "Wybierz plik graficzny",
+    "tooLarge": "Rozmiar obrazu musi być mniejszy niż 5MB",
+    "uploadSuccess": "Zdjęcie profilowe zostało zaktualizowane!",
+    "uploadFailedTitle": "Przesyłanie nie powiodło się",
+    "uploadFailedDefault": "Coś poszło nie tak",
+    "changePicture": "Zmień zdjęcie profilowe"
+  },
+  "welcome": "Witaj ponownie, {name}!",
+  "adminBadge": "Administrator",
+  "fundAccount": "Zasil konto",
+  "createNft": "Utwórz NFT",
+  "stats": {
+    "walletBalance": "Saldo portfela",
+    "nftsOwned": "Posiadane NFT",
+    "nftsCreated": "Utworzone NFT",
+    "totalValue": "Łączna wartość"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "Przeglądaj kolekcje",
+      "subtitle": "Odkrywaj nowe kolekcjonerskie przedmioty"
+    },
+    "create": {
+      "title": "Utwórz NFT",
+      "subtitle": "Prześlij swoją twórczość"
+    },
+    "fund": {
+      "title": "Zasil konto",
+      "subtitle": "Dodaj ETH do swojego portfela"
+    },
+    "withdraw": {
+      "title": "Wypłać środki",
+      "subtitle": "Prześlij środki do swojego portfela"
+    }
+  },
+  "tabs": {
+    "owned": "Posiadane ({count})",
+    "created": "Utworzone ({count})",
+    "listed": "Wystawione ({count})"
+  },
+  "nftCard": {
+    "created": "Utworzono",
+    "notListed": "Niewystawione",
+    "price": "Cena"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "Brak posiadanych NFT",
+      "text": "Zacznij kolekcjonować unikalne cyfrowe aktywa z naszego rynku",
+      "button": "Przeglądaj kolekcje"
+    },
+    "created": {
+      "title": "Brak utworzonych NFT",
+      "text": "Utwórz swój pierwszy NFT i podziel się nim ze światem",
+      "button": "Utwórz NFT"
+    },
+    "listed": {
+      "title": "Brak wystawionych NFT",
+      "text": "Nie masz żadnych NFT wystawionych na sprzedaż"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "Wypłać środki",
+      "fee": "Zapłać opłatę za wypłatę",
+      "processing": "Przetwarzanie wypłaty",
+      "success": "Wypłata zakończona sukcesem"
+    },
+    "form": {
+      "availableBalance": "Dostępne saldo",
+      "walletAddressLabel": "Adres portfela",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "Podaj adres swojego portfela Ethereum",
+      "amountLabel": "Kwota (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "Minimalna kwota wypłaty: {minAmount} $",
+      "withdrawMax": "Wypłać maksimum",
+      "continue": "Kontynuuj"
+    },
+    "errors": {
+      "invalidAddress": "Podaj prawidłowy adres portfela Ethereum (0x...)",
+      "invalidAmount": "Podaj prawidłową kwotę wypłaty",
+      "minWithdrawal": "Minimalna kwota wypłaty to {minAmount} $",
+      "insufficientBalance": "Niewystarczające saldo",
+      "serverError": "Błąd serwera. Spróbuj ponownie później.",
+      "withdrawalFailed": "Wypłata nie powiodła się",
+      "invalidResponse": "Nieprawidłowa odpowiedź serwera",
+      "withdrawalFailedRetry": "Wypłata nie powiodła się. Spróbuj ponownie."
+    },
+    "fee": {
+      "noticeTitle": "Wymagana opłata za wypłatę",
+      "noticeText": "Aby przetworzyć wypłatę, wyślij opłatę w wysokości {percent}% ({amount}) na poniższy adres portfela.",
+      "walletLabel": "Twój portfel wypłaty",
+      "withdrawalAmount": "Kwota wypłaty",
+      "feeToSend": "Opłata do wysłania ({percent}%)",
+      "youllReceive": "Otrzymasz",
+      "sendFeeTo": "Wyślij opłatę na:",
+      "sendExactly": "Wyślij dokładnie {amount} na ten adres",
+      "qrAlt": "Kod QR opłaty",
+      "walletAddressLabel": "Adres portfela opłaty (ETH)",
+      "copyAddress": "Kopiuj adres",
+      "copiedNotification": "Adres skopiowany do schowka",
+      "warning": "Po wysłaniu opłaty {feeAmount} kliknij „Potwierdź płatność”, aby przetworzyć wypłatę. Pełna kwota wypłaty {receiveAmount} zostanie wysłana na Twój portfel.",
+      "back": "Wstecz",
+      "confirmPayment": "Potwierdź płatność"
+    },
+    "processing": {
+      "title": "Przetwarzanie wypłaty",
+      "text": "Poczekaj, aż przetworzymy Twoją transakcję..."
+    },
+    "success": {
+      "title": "Wypłata złożona!",
+      "subtitle": "Twoje środki są w drodze do Twojego portfela",
+      "transactionId": "ID transakcji",
+      "amountReceived": "Kwota, którą otrzymasz",
+      "feePaid": "Zapłacona opłata",
+      "newBalance": "Nowe saldo",
+      "estimatedTime": "Szacowany czas przetwarzania",
+      "estimatedTimeValue": "24-48 godzin",
+      "done": "Gotowe"
+    }
+  }
+}

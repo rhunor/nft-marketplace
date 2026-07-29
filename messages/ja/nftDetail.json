@@ -1,0 +1,156 @@
+{
+  "detail": {
+    "loading": "NFTを読み込み中...",
+    "notFound": {
+      "heading": "NFTが見つかりません",
+      "genericMessage": "お探しのNFTは存在しないか、削除されています。",
+      "browseButton": "NFTを閲覧する"
+    },
+    "back": "戻る",
+    "share": "シェア",
+    "translated": {
+      "badge": "機械翻訳",
+      "showOriginal": "原文を表示",
+      "showTranslation": "翻訳を表示"
+    },
+    "badges": {
+      "notForSale": "非売品",
+      "youOwnThis": "所有中",
+      "marketplaceNft": "マーケットプレイスNFT",
+      "you": "(あなた)"
+    },
+    "creator": "クリエイター",
+    "owner": "所有者",
+    "price": {
+      "current": "現在価格",
+      "insufficientBalance": "残高が不足しています",
+      "buyNow": "今すぐ購入",
+      "manageNft": "NFTを管理",
+      "exportNft": "NFTをエクスポート"
+    },
+    "description": "説明",
+    "tags": "タグ",
+    "details": {
+      "heading": "詳細",
+      "tokenId": "トークンID",
+      "blockchain": "ブロックチェーン",
+      "ethereum": "イーサリアム",
+      "mediaType": "メディアタイプ",
+      "created": "作成日"
+    },
+    "related": {
+      "title": "このカテゴリーのその他の作品",
+      "subtitle": "{category}のNFTをもっと見る"
+    },
+    "buyModal": {
+      "title": "購入内容の確認",
+      "by": "by @{username}",
+      "price": "価格",
+      "platformFee": "プラットフォーム手数料 (2.5%)",
+      "gasFee": "ガス代 (概算)",
+      "total": "合計",
+      "yourBalance": "現在の残高",
+      "insufficientBalanceWarning": "残高が不足しています。アカウントに入金してください。",
+      "immediateTransferNote": "所有権は確認後すぐに移転されます。",
+      "adminTransferNote": "購入後、所有権の移転は当社の管理チームによって24時間以内に処理されます。",
+      "cancel": "キャンセル",
+      "confirm": "購入を確定"
+    },
+    "manageModal": {
+      "title": "NFTを管理",
+      "statusListed": "ステータス: 出品中",
+      "statusNotListed": "ステータス: 未出品",
+      "priceLabel": "価格 (ETH)",
+      "pricePlaceholder": "0.1",
+      "listForSale": "販売用に出品",
+      "updatePrice": "価格を更新",
+      "unlist": "マーケットプレイスから出品を取り下げる",
+      "cancel": "キャンセル"
+    },
+    "notifications": {
+      "addedToFavorites": "お気に入りに追加しました",
+      "removedFromFavorites": "お気に入りから削除しました",
+      "likeUpdateFailed": "いいねの更新に失敗しました",
+      "purchaseSuccessTitle": "購入が完了しました!",
+      "purchaseSuccessMessage": "このNFTの所有者になりました。",
+      "purchaseFailedTitle": "購入に失敗しました",
+      "genericError": "問題が発生しました",
+      "purchaseSubmittedTitle": "購入リクエストを送信しました!",
+      "purchaseSubmittedMessage": "購入を処理しています。管理者の確認後、所有権が移転されます。",
+      "linkCopied": "リンクをクリップボードにコピーしました!",
+      "copyFailed": "リンクのコピーに失敗しました",
+      "invalidPrice": "有効な価格を入力してください",
+      "listedTitle": "NFTを出品しました!",
+      "listedMessage": "このNFTはマーケットプレイスで購入可能になりました。",
+      "listFailedTitle": "NFTの出品に失敗しました",
+      "unlistedTitle": "NFTの出品を取り下げました",
+      "unlistedMessage": "このNFTはマーケットプレイスから削除されました。",
+      "unlistFailedTitle": "NFTの出品取り下げに失敗しました",
+      "priceUpdatedTitle": "価格を更新しました!",
+      "priceUpdatedMessage": "新しい価格: {price} ETH",
+      "priceUpdateFailedTitle": "価格の更新に失敗しました"
+    },
+    "errors": {
+      "fetchFailed": "NFTの取得に失敗しました",
+      "notFoundError": "NFTが見つかりません",
+      "loadFailed": "NFTの読み込みに失敗しました"
+    }
+  },
+  "export": {
+    "cannotExport": "このNFTはエクスポートできません。",
+    "loadFailed": "NFTの読み込みに失敗しました",
+    "fetchFailed": "NFTの取得に失敗しました",
+    "loading": "NFTを読み込み中...",
+    "cannotExportHeading": "NFTをエクスポートできません",
+    "nftNotFound": "NFTが見つかりません。",
+    "browseButton": "NFTを閲覧する",
+    "accessDenied": {
+      "heading": "アクセス拒否",
+      "message": "このNFTの所有者のみがエクスポートできます。",
+      "backButton": "NFTに戻る"
+    },
+    "back": "戻る",
+    "heading": "NFTをエクスポート",
+    "subheading": "NFTをご自身のウォレットにエクスポートします",
+    "by": "by @{username}",
+    "fee": {
+      "heading": "エクスポート手数料",
+      "amountLabel": "送金する金額",
+      "loadingAmount": "読み込み中...",
+      "approxUsd": "≈ ${amount} USD",
+      "note": "この一回限りの手数料は、NFTを外部ウォレットにエクスポートするために必要なガス代および処理費用をカバーします。"
+    },
+    "payment": {
+      "heading": "お支払い先",
+      "instruction": "以下のイーサリアムアドレスに正確に",
+      "instructionSuffix": "を送金してください:",
+      "copyAddress": "アドレスをコピー",
+      "addressCopied": "アドレスをクリップボードにコピーしました!",
+      "networkWarning": "イーサリアムネットワーク上のETHのみを送金してください"
+    },
+    "processing": {
+      "heading": "処理時間について",
+      "message": "お支払いの確認後、NFTのエクスポートは{hours}以内に処理されます。エクスポートされたファイルは、登録済みのメールアドレスに送付されます。",
+      "hours": "24時間"
+    },
+    "steps": {
+      "heading": "ご利用の流れ",
+      "step1": { "title": "上記のウォレットアドレスをコピーする", "description": "イーサリアム対応のウォレットを使って送金を開始してください。" },
+      "step2": { "title": "{amount}を送金する", "description": "イーサリアムメインネットで送金していることをご確認ください。", "fallbackAmount": "100ドル相当のETH" },
+      "step3": { "title": "下記の「支払い済み」をクリックする", "description": "お支払い後、当社に通知してください。" },
+      "step4": { "title": "エクスポートされたNFTを受け取る", "description": "当社が24時間以内に処理・お届けします。" }
+    },
+    "paidButton": "支払い済み",
+    "paidConfirmation": {
+      "heading": "お支払いを受け付けました",
+      "message": "エクスポートリクエストは24時間以内に処理いたします。",
+      "backButton": "NFTに戻る"
+    },
+    "notification": {
+      "title": "お支払いを受け付けました",
+      "message": "ありがとうございます。エクスポートリクエストを受け付けました。当社チームが24時間以内に処理し、登録済みのメールアドレスにNFTファイルをお送りします。"
+    },
+    "helpText": "お困りですか?",
+    "contactSupport": "サポートに連絡"
+  }
+}

@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { Heart, Eye, Play, Volume2 } from 'lucide-react';
 import { cn, formatETH, formatNumber, getCategoryLabel } from '@/lib/utils';
 import { Avatar, Badge } from '@/components/ui';
@@ -16,6 +17,7 @@ interface NFTCardProps {
 }
 
 export function NFTCard({ nft, index = 0 }: NFTCardProps) {
+  const t = useTranslations('common.nftCard');
   const [isLiked, setIsLiked] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const { formatEthToUsd } = useEthPrice();
@@ -104,14 +106,14 @@ export function NFTCard({ nft, index = 0 }: NFTCardProps) {
                 fallback={nft.creatorName}
               />
               <span className="text-sm text-foreground-muted">
-                by <span className="text-foreground">@{nft.creatorUsername}</span>
+                {t('by')} <span className="text-foreground">@{nft.creatorUsername}</span>
               </span>
             </div>
 
             {/* Price and stats */}
             <div className="mt-4 flex items-center justify-between">
               <div>
-                <p className="text-xs text-foreground-subtle">Current Price</p>
+                <p className="text-xs text-foreground-subtle">{t('currentPrice')}</p>
                 <p className="text-lg font-bold text-accent-primary">
                   {formatETH(nft.price)}
                 </p>

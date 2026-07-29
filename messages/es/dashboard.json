@@ -1,0 +1,126 @@
+{
+  "loading": "Cargando panel...",
+  "avatar": {
+    "invalidType": "Selecciona un archivo de imagen",
+    "tooLarge": "El tamaño de la imagen debe ser inferior a 5 MB",
+    "uploadSuccess": "¡Foto de perfil actualizada!",
+    "uploadFailedTitle": "Error al subir",
+    "uploadFailedDefault": "Algo salió mal",
+    "changePicture": "Cambiar foto de perfil"
+  },
+  "welcome": "¡Bienvenido de nuevo, {name}!",
+  "adminBadge": "Administrador",
+  "fundAccount": "Recargar cuenta",
+  "createNft": "Crear NFT",
+  "stats": {
+    "walletBalance": "Saldo de la billetera",
+    "nftsOwned": "NFT en propiedad",
+    "nftsCreated": "NFT creados",
+    "totalValue": "Valor total"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "Explorar colecciones",
+      "subtitle": "Descubre nuevos coleccionables"
+    },
+    "create": {
+      "title": "Crear NFT",
+      "subtitle": "Sube tu obra de arte"
+    },
+    "fund": {
+      "title": "Recargar cuenta",
+      "subtitle": "Añade ETH a tu billetera"
+    },
+    "withdraw": {
+      "title": "Retirar fondos",
+      "subtitle": "Transferir a tu billetera"
+    }
+  },
+  "tabs": {
+    "owned": "En propiedad ({count})",
+    "created": "Creados ({count})",
+    "listed": "Publicados ({count})"
+  },
+  "nftCard": {
+    "created": "Creado",
+    "notListed": "No publicado",
+    "price": "Precio"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "Aún no tienes NFT",
+      "text": "Comienza a coleccionar activos digitales únicos en nuestro marketplace",
+      "button": "Explorar colecciones"
+    },
+    "created": {
+      "title": "Aún no has creado NFT",
+      "text": "Crea tu primer NFT y compártelo con el mundo",
+      "button": "Crear NFT"
+    },
+    "listed": {
+      "title": "No hay NFT publicados",
+      "text": "No tienes ningún NFT publicado para la venta"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "Retirar fondos",
+      "fee": "Pagar comisión de retiro",
+      "processing": "Procesando retiro",
+      "success": "Retiro exitoso"
+    },
+    "form": {
+      "availableBalance": "Saldo disponible",
+      "walletAddressLabel": "Dirección de la billetera",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "Introduce tu dirección de billetera de Ethereum",
+      "amountLabel": "Cantidad (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "Retiro mínimo: ${minAmount}",
+      "withdrawMax": "Retirar el máximo",
+      "continue": "Continuar"
+    },
+    "errors": {
+      "invalidAddress": "Introduce una dirección de billetera de Ethereum válida (0x...)",
+      "invalidAmount": "Introduce una cantidad de retiro válida",
+      "minWithdrawal": "El retiro mínimo es de ${minAmount}",
+      "insufficientBalance": "Saldo insuficiente",
+      "serverError": "Error del servidor. Inténtalo de nuevo más tarde.",
+      "withdrawalFailed": "No se pudo procesar el retiro",
+      "invalidResponse": "Respuesta no válida del servidor",
+      "withdrawalFailedRetry": "No se pudo procesar el retiro. Inténtalo de nuevo."
+    },
+    "fee": {
+      "noticeTitle": "Se requiere comisión de retiro",
+      "noticeText": "Para procesar tu retiro, envía una comisión del {percent}% ({amount}) a la dirección de billetera que aparece abajo.",
+      "walletLabel": "Tu billetera de retiro",
+      "withdrawalAmount": "Cantidad a retirar",
+      "feeToSend": "Comisión a enviar ({percent}%)",
+      "youllReceive": "Recibirás",
+      "sendFeeTo": "Enviar el pago de la comisión a:",
+      "sendExactly": "Envía exactamente {amount} a esta dirección",
+      "qrAlt": "Código QR de pago de la comisión",
+      "walletAddressLabel": "Dirección de la billetera de comisiones (ETH)",
+      "copyAddress": "Copiar dirección",
+      "copiedNotification": "Dirección copiada al portapapeles",
+      "warning": "Después de enviar la comisión de {feeAmount}, haz clic en \"Confirmar pago\" para procesar tu retiro. El monto total de tu retiro, {receiveAmount}, se enviará a tu billetera.",
+      "back": "Atrás",
+      "confirmPayment": "Confirmar pago"
+    },
+    "processing": {
+      "title": "Procesando retiro",
+      "text": "Espera mientras procesamos tu transacción..."
+    },
+    "success": {
+      "title": "¡Retiro enviado!",
+      "subtitle": "Tus fondos están en camino a tu billetera",
+      "transactionId": "ID de transacción",
+      "amountReceived": "Cantidad que recibirás",
+      "feePaid": "Comisión pagada",
+      "newBalance": "Nuevo saldo",
+      "estimatedTime": "Tiempo estimado de procesamiento",
+      "estimatedTimeValue": "24-48 horas",
+      "done": "Listo"
+    }
+  }
+}

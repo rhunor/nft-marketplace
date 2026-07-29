@@ -1,0 +1,58 @@
+{
+  "header": {
+    "title": "Fund Account",
+    "subtitle": "Add ETH to your wallet to create and purchase NFTs"
+  },
+  "balance": {
+    "label": "Current Balance",
+    "ethRate": "1 ETH = ${price}",
+    "refreshTitle": "Refresh price"
+  },
+  "amount": {
+    "heading": "Select Amount",
+    "preset": "{value} ETH",
+    "customLabel": "Custom Amount (ETH)"
+  },
+  "deposit": {
+    "heading": "Deposit Address",
+    "qrAlt": "Deposit QR Code",
+    "loading": "Loading...",
+    "sendTo": "Send ETH to this address:",
+    "copied": "Address copied to clipboard!",
+    "networkWarning": "Only send ETH on Ethereum network"
+  },
+  "notice": {
+    "heading": "Processing Time",
+    "text": "After sending payment, it takes approximately <strong>10 minutes</strong> for your balance to reflect in your account. This allows time for blockchain confirmations and our admin team to verify the transaction."
+  },
+  "howItWorks": {
+    "heading": "How It Works",
+    "steps": {
+      "select": {
+        "title": "Select Amount",
+        "text": "Choose how much ETH you want to add to your account"
+      },
+      "send": {
+        "title": "Send Payment",
+        "text": "Transfer ETH to the deposit address shown above"
+      },
+      "confirm": {
+        "title": "Wait for Confirmation",
+        "text": "Your balance will be updated within ~10 minutes"
+      },
+      "start": {
+        "title": "Start Creating & Collecting",
+        "text": "Use your balance to create and purchase NFTs"
+      }
+    }
+  },
+  "action": {
+    "button": "I've Sent {amount} ETH",
+    "help": "Need help? ",
+    "contactSupport": "Contact support"
+  },
+  "notification": {
+    "title": "Payment Instructions",
+    "message": "Send {amount} ETH to the address shown. Your balance will be updated within ~10 minutes after confirmation."
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "loading": "Panel yükleniyor...",
+  "avatar": {
+    "invalidType": "Lütfen bir görsel dosyası seçin",
+    "tooLarge": "Görsel boyutu 5MB'tan küçük olmalıdır",
+    "uploadSuccess": "Profil fotoğrafı güncellendi!",
+    "uploadFailedTitle": "Yükleme başarısız",
+    "uploadFailedDefault": "Bir şeyler ters gitti",
+    "changePicture": "Profil fotoğrafını değiştir"
+  },
+  "welcome": "Tekrar hoş geldiniz, {name}!",
+  "adminBadge": "Yönetici",
+  "fundAccount": "Hesabı Fonla",
+  "createNft": "NFT Oluştur",
+  "stats": {
+    "walletBalance": "Cüzdan Bakiyesi",
+    "nftsOwned": "Sahip Olunan NFT'ler",
+    "nftsCreated": "Oluşturulan NFT'ler",
+    "totalValue": "Toplam Değer"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "Koleksiyonları Keşfedin",
+      "subtitle": "Yeni koleksiyon parçaları keşfedin"
+    },
+    "create": {
+      "title": "NFT Oluştur",
+      "subtitle": "Sanat eserinizi yükleyin"
+    },
+    "fund": {
+      "title": "Hesabı Fonla",
+      "subtitle": "Cüzdanınıza ETH ekleyin"
+    },
+    "withdraw": {
+      "title": "Para Çek",
+      "subtitle": "Cüzdanınıza aktarın"
+    }
+  },
+  "tabs": {
+    "owned": "Sahip Olunan ({count})",
+    "created": "Oluşturulan ({count})",
+    "listed": "Listelenen ({count})"
+  },
+  "nftCard": {
+    "created": "Oluşturuldu",
+    "notListed": "Listelenmedi",
+    "price": "Fiyat"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "Henüz Sahip Olunan NFT Yok",
+      "text": "Pazar yerimizden benzersiz dijital varlıklar toplamaya başlayın",
+      "button": "Koleksiyonları Keşfedin"
+    },
+    "created": {
+      "title": "Henüz Oluşturulan NFT Yok",
+      "text": "İlk NFT'nizi oluşturun ve dünyayla paylaşın",
+      "button": "NFT Oluştur"
+    },
+    "listed": {
+      "title": "Listelenen NFT Yok",
+      "text": "Satışa çıkarılmış herhangi bir NFT'niz bulunmuyor"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "Para Çek",
+      "fee": "Para Çekme Ücretini Öde",
+      "processing": "Para Çekme İşleniyor",
+      "success": "Para Çekme Başarılı"
+    },
+    "form": {
+      "availableBalance": "Kullanılabilir Bakiye",
+      "walletAddressLabel": "Cüzdan Adresi",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "Ethereum cüzdan adresinizi girin",
+      "amountLabel": "Tutar (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "Minimum çekim tutarı: ${minAmount}",
+      "withdrawMax": "Maksimumu Çek",
+      "continue": "Devam Et"
+    },
+    "errors": {
+      "invalidAddress": "Lütfen geçerli bir Ethereum cüzdan adresi girin (0x...)",
+      "invalidAmount": "Lütfen geçerli bir çekim tutarı girin",
+      "minWithdrawal": "Minimum çekim tutarı ${minAmount}",
+      "insufficientBalance": "Yetersiz bakiye",
+      "serverError": "Sunucu hatası. Lütfen daha sonra tekrar deneyin.",
+      "withdrawalFailed": "Para çekme başarısız oldu",
+      "invalidResponse": "Sunucudan geçersiz yanıt",
+      "withdrawalFailedRetry": "Para çekme başarısız oldu. Lütfen tekrar deneyin."
+    },
+    "fee": {
+      "noticeTitle": "Para Çekme Ücreti Gerekli",
+      "noticeText": "Para çekme işleminizi gerçekleştirmek için lütfen aşağıdaki cüzdan adresine %{percent} ücret ({amount}) gönderin.",
+      "walletLabel": "Para Çekme Cüzdanınız",
+      "withdrawalAmount": "Çekim Tutarı",
+      "feeToSend": "Gönderilecek Ücret (%{percent})",
+      "youllReceive": "Alacağınız Tutar",
+      "sendFeeTo": "Ücreti Şu Adrese Gönderin:",
+      "sendExactly": "Bu adrese tam olarak {amount} gönderin",
+      "qrAlt": "Ücret Ödeme QR Kodu",
+      "walletAddressLabel": "Ücret Cüzdan Adresi (ETH)",
+      "copyAddress": "Adresi Kopyala",
+      "copiedNotification": "Adres panoya kopyalandı",
+      "warning": "{feeAmount} ücretini gönderdikten sonra, para çekme işleminizi gerçekleştirmek için \"Ödemeyi Onayla\" butonuna tıklayın. Toplam {receiveAmount} tutarındaki çekim miktarınız cüzdanınıza gönderilecektir.",
+      "back": "Geri",
+      "confirmPayment": "Ödemeyi Onayla"
+    },
+    "processing": {
+      "title": "Para Çekme İşleniyor",
+      "text": "İşleminiz işlenirken lütfen bekleyin..."
+    },
+    "success": {
+      "title": "Para Çekme Talebi Gönderildi!",
+      "subtitle": "Fonlarınız cüzdanınıza doğru yolda",
+      "transactionId": "İşlem Kimliği",
+      "amountReceived": "Alacağınız Tutar",
+      "feePaid": "Ödenen Ücret",
+      "newBalance": "Yeni Bakiye",
+      "estimatedTime": "Tahmini İşlem Süresi",
+      "estimatedTimeValue": "24-48 saat",
+      "done": "Tamam"
+    }
+  }
+}

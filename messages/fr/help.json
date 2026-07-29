@@ -1,0 +1,162 @@
+{
+  "header": {
+    "heading": "Centre d'aide",
+    "subtitle": "Tout ce que vous devez savoir pour utiliser Foundation Exclusive"
+  },
+  "topics": {
+    "wallet": { "title": "Portefeuille et solde", "description": "Approvisionnez votre compte et gérez vos ETH" },
+    "creating": { "title": "Créer des NFT", "description": "Créez votre premier NFT" },
+    "buying": { "title": "Acheter des NFT", "description": "Achetez et collectionnez des NFT" },
+    "withdrawals": { "title": "Retraits", "description": "Retirez des fonds de votre compte" },
+    "security": { "title": "Sécurité", "description": "Sécurisez votre compte" },
+    "exploring": { "title": "Explorer les NFT", "description": "Parcourez et découvrez des collections" }
+  },
+  "wallet": {
+    "heading": "Portefeuille et solde",
+    "cardHeading": "Comment approvisionner votre compte",
+    "steps": {
+      "step1": "Connectez-vous et accédez à votre <b>tableau de bord</b>",
+      "step2": "Cliquez sur <b>« Approvisionner le compte »</b>",
+      "step3": "Vous verrez un code QR et une adresse de portefeuille ETH",
+      "step4": "Envoyez des ETH depuis votre portefeuille externe vers cette adresse",
+      "step5": "Attendez environ 10 minutes pour la mise à jour du solde"
+    },
+    "notesHeading": "Remarques importantes",
+    "notes": [
+      "Envoyez uniquement des ETH (Ethereum) à l'adresse fournie",
+      "Vérifiez attentivement l'adresse du portefeuille avant d'envoyer",
+      "Conservez votre hash de transaction pour référence"
+    ]
+  },
+  "creating": {
+    "heading": "Créer des NFT",
+    "singleCardHeading": "Comment créer un NFT unique",
+    "singleSteps": {
+      "step1": "Assurez-vous d'avoir au moins <b>200 $ d'ETH</b>",
+      "step2": "Rendez-vous sur la page <b>Créer</b>",
+      "step3": "Sélectionnez le mode <b>« NFT unique »</b>",
+      "step4": "Téléversez votre fichier média (100 Mo max)",
+      "step5": "Renseignez le titre, le prix et la catégorie",
+      "step6": "Cliquez sur <b>« Créer un NFT »</b>"
+    },
+    "collectionCardHeading": "Comment créer une collection",
+    "collectionSteps": {
+      "step1": "Sélectionnez le mode <b>« Collection »</b> sur la page Créer",
+      "step2": "Ajoutez le nom, la description et l'image de couverture de la collection",
+      "step3": "Ajoutez de 2 à 20 objets à votre collection",
+      "step4": "Définissez le prix de la collection (<b>200 $ par objet</b>)"
+    },
+    "feesHeading": "Frais de téléversement",
+    "feesText": "NFT unique : 200 $ | Collection : 200 $ par objet"
+  },
+  "buying": {
+    "heading": "Acheter des NFT",
+    "cardHeading": "Comment acheter un NFT",
+    "steps": {
+      "step1": "Parcourez la page <b>Explorer</b>",
+      "step2": "Utilisez les filtres pour trouver ce que vous cherchez",
+      "step3": "Cliquez sur un NFT pour voir ses détails",
+      "step4": "Cliquez sur <b>« Acheter maintenant »</b>",
+      "step5": "Confirmez l'achat",
+      "step6": "Attendez la confirmation de l'administration (sous 24 heures)"
+    },
+    "afterHeading": "Après l'achat",
+    "after": [
+      "Le NFT apparaît dans votre tableau de bord sous « Possédés »",
+      "Aucun frais supplémentaire pour l'achat"
+    ]
+  },
+  "withdrawals": {
+    "heading": "Retraits",
+    "cardHeading": "Comment retirer des fonds",
+    "steps": {
+      "step1": "Allez dans <b>Tableau de bord</b> et cliquez sur <b>« Retirer »</b>",
+      "step2": "Saisissez votre adresse de portefeuille ETH externe (0x...)",
+      "step3": "Saisissez le montant du retrait",
+      "step4": "Cliquez sur <b>« Continuer »</b>",
+      "step5": "Envoyez les <b>frais de 10%</b> à l'adresse de portefeuille indiquée",
+      "step6": "Cliquez sur <b>« Confirmer le paiement »</b>",
+      "step7": "Le retrait est traité sous <b>24 à 48 heures</b>"
+    },
+    "infoHeading": "Informations importantes",
+    "info": [
+      { "label": "Frais :", "text": "10% (payés séparément au portefeuille de frais)" },
+      { "label": "Délai de traitement :", "text": "24 à 48 heures" }
+    ],
+    "infoPlain": "Vous recevez le montant TOTAL du retrait après avoir payé les frais",
+    "feeWarningHeading": "⚠️ Paiement des frais",
+    "feeWarningText": "Les frais de 10% doivent être envoyés à notre portefeuille de frais <b>avant</b> le traitement de votre retrait. Par exemple : retrait de 1 ETH → envoi de 0,1 ETH de frais → réception de 1 ETH sur votre portefeuille."
+  },
+  "exploring": {
+    "heading": "Explorer les NFT",
+    "cardHeading": "Comment parcourir les NFT",
+    "steps": {
+      "step1": "Allez sur la page <b>Explorer</b>",
+      "step2": "Parcourez les collections ou passez à la vue par objets",
+      "step3": "Utilisez la <b>barre de recherche</b> pour trouver des NFT spécifiques",
+      "step4": "Filtrez par <b>catégorie</b>",
+      "step5": "Triez par volume, prix plancher ou nombre d'objets"
+    },
+    "tipsHeading": "Astuces de recherche",
+    "tips": [
+      "Recherchez par titre, description ou nom de créateur",
+      "Utilisez des mots-clés comme « abstrait », « espace », « nature »",
+      "Cliquez sur une collection pour voir tous ses objets"
+    ]
+  },
+  "security": {
+    "heading": "Sécurité",
+    "cardHeading": "Comment sécuriser votre compte",
+    "items": [
+      { "label": "Utilisez un mot de passe fort :", "text": "Au moins 8 caractères" },
+      { "label": "Ne partagez jamais votre mot de passe :", "text": "Nous ne vous le demanderons jamais" },
+      { "label": "Vérifiez les adresses de portefeuille :", "text": "Vérifiez attentivement avant d'envoyer" },
+      { "label": "Méfiez-vous des arnaques :", "text": "Nous ne vous contactons jamais en message privé pour vous demander un paiement" }
+    ]
+  },
+  "faq": {
+    "heading": "Foire aux questions",
+    "items": [
+      {
+        "question": "Qu'est-ce qu'un NFT ?",
+        "answer": "NFT signifie Non-Fungible Token (jeton non fongible). Il s'agit d'un actif numérique unique stocké sur une blockchain qui représente la propriété d'objets numériques tels que de l'art, de la musique, des vidéos, et plus encore."
+      },
+      {
+        "question": "Comment créer un NFT ?",
+        "answer": "Approvisionnez votre compte avec au moins 200 $ d'ETH, rendez-vous sur la page Créer, téléversez votre fichier, ajoutez les détails, puis validez."
+      },
+      {
+        "question": "Quels sont les frais ?",
+        "answer": "La création d'un NFT coûte 200 $ par objet. L'achat de NFT ne nécessite que le paiement du prix affiché. Les retraits nécessitent des frais de 10% payés séparément."
+      },
+      {
+        "question": "Combien de temps prend le traitement des transactions ?",
+        "answer": "Approvisionnement : environ 10 minutes. Achats de NFT : sous 24 heures. Retraits : 24 à 48 heures."
+      }
+    ]
+  },
+  "quickRef": {
+    "heading": "Référence rapide",
+    "processingTimes": {
+      "heading": "Délais de traitement",
+      "items": ["Mise à jour du solde : ~10 minutes", "Achats de NFT : sous 24 heures", "Retraits : 24 à 48 heures"]
+    },
+    "fees": {
+      "heading": "Frais",
+      "items": ["Création de NFT : 200 $ par objet", "Achat : prix affiché uniquement", "Retraits : 10% (payés séparément)"]
+    },
+    "formats": {
+      "heading": "Formats pris en charge",
+      "items": ["Images : JPG, PNG, GIF, WEBP", "Vidéo : MP4, WEBM", "Audio : MP3, WAV, OGG"]
+    },
+    "minimums": {
+      "heading": "Montants minimums",
+      "items": ["Prix minimum d'un NFT : 0,001 ETH", "Collection : 2 à 20 objets"]
+    }
+  },
+  "contactCta": {
+    "heading": "Vous avez encore des questions ?",
+    "text": "Notre équipe de support est là pour vous aider",
+    "button": "Contacter le support"
+  }
+}

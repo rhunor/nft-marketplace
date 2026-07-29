@@ -1,0 +1,126 @@
+{
+  "loading": "Dashboard laden...",
+  "avatar": {
+    "invalidType": "Selecteer een afbeeldingsbestand",
+    "tooLarge": "Afbeelding moet kleiner zijn dan 5MB",
+    "uploadSuccess": "Profielfoto bijgewerkt!",
+    "uploadFailedTitle": "Uploaden mislukt",
+    "uploadFailedDefault": "Er is iets misgegaan",
+    "changePicture": "Profielfoto wijzigen"
+  },
+  "welcome": "Welkom terug, {name}!",
+  "adminBadge": "Beheerder",
+  "fundAccount": "Account Opwaarderen",
+  "createNft": "NFT Creëren",
+  "stats": {
+    "walletBalance": "Walletsaldo",
+    "nftsOwned": "NFT's in Bezit",
+    "nftsCreated": "Gemaakte NFT's",
+    "totalValue": "Totale Waarde"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "Ontdek Collecties",
+      "subtitle": "Ontdek nieuwe verzamelobjecten"
+    },
+    "create": {
+      "title": "NFT Creëren",
+      "subtitle": "Upload uw kunstwerk"
+    },
+    "fund": {
+      "title": "Account Opwaarderen",
+      "subtitle": "Voeg ETH toe aan uw wallet"
+    },
+    "withdraw": {
+      "title": "Geld Opnemen",
+      "subtitle": "Overmaken naar uw wallet"
+    }
+  },
+  "tabs": {
+    "owned": "In Bezit ({count})",
+    "created": "Gemaakt ({count})",
+    "listed": "Te Koop ({count})"
+  },
+  "nftCard": {
+    "created": "Gemaakt",
+    "notListed": "Niet Te Koop",
+    "price": "Prijs"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "Nog Geen NFT's in Bezit",
+      "text": "Begin met het verzamelen van unieke digitale bezittingen uit onze marketplace",
+      "button": "Ontdek Collecties"
+    },
+    "created": {
+      "title": "Nog Geen NFT's Gemaakt",
+      "text": "Maak uw eerste NFT en deel deze met de wereld",
+      "button": "NFT Creëren"
+    },
+    "listed": {
+      "title": "Geen NFT's Te Koop",
+      "text": "U heeft geen NFT's te koop staan"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "Geld Opnemen",
+      "fee": "Opnamekosten Betalen",
+      "processing": "Opname Wordt Verwerkt",
+      "success": "Opname Geslaagd"
+    },
+    "form": {
+      "availableBalance": "Beschikbaar Saldo",
+      "walletAddressLabel": "Walletadres",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "Voer uw Ethereum-walletadres in",
+      "amountLabel": "Bedrag (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "Minimale opname: ${minAmount}",
+      "withdrawMax": "Maximaal Opnemen",
+      "continue": "Doorgaan"
+    },
+    "errors": {
+      "invalidAddress": "Voer een geldig Ethereum-walletadres in (0x...)",
+      "invalidAmount": "Voer een geldig opnamebedrag in",
+      "minWithdrawal": "Minimale opname is ${minAmount}",
+      "insufficientBalance": "Onvoldoende saldo",
+      "serverError": "Serverfout. Probeer het later opnieuw.",
+      "withdrawalFailed": "Opname mislukt",
+      "invalidResponse": "Ongeldig antwoord van server",
+      "withdrawalFailedRetry": "Opname mislukt. Probeer het opnieuw."
+    },
+    "fee": {
+      "noticeTitle": "Opnamekosten Vereist",
+      "noticeText": "Om uw opname te verwerken, stuur a.u.b. {percent}% kosten ({amount}) naar onderstaand walletadres.",
+      "walletLabel": "Uw Opnamewallet",
+      "withdrawalAmount": "Opnamebedrag",
+      "feeToSend": "Te Versturen Kosten ({percent}%)",
+      "youllReceive": "U Ontvangt",
+      "sendFeeTo": "Verstuur Kosten Naar:",
+      "sendExactly": "Verstuur exact {amount} naar dit adres",
+      "qrAlt": "QR-code voor Betaling van Kosten",
+      "walletAddressLabel": "Walletadres voor Kosten (ETH)",
+      "copyAddress": "Adres Kopiëren",
+      "copiedNotification": "Adres gekopieerd naar klembord",
+      "warning": "Klik na het versturen van de {feeAmount} kosten op \"Betaling Bevestigen\" om uw opname te verwerken. Uw volledige opnamebedrag van {receiveAmount} wordt naar uw wallet gestuurd.",
+      "back": "Terug",
+      "confirmPayment": "Betaling Bevestigen"
+    },
+    "processing": {
+      "title": "Opname Wordt Verwerkt",
+      "text": "Even geduld terwijl we uw transactie verwerken..."
+    },
+    "success": {
+      "title": "Opname Ingediend!",
+      "subtitle": "Uw geld is onderweg naar uw wallet",
+      "transactionId": "Transactie-ID",
+      "amountReceived": "Te Ontvangen Bedrag",
+      "feePaid": "Betaalde Kosten",
+      "newBalance": "Nieuw Saldo",
+      "estimatedTime": "Geschatte Verwerkingstijd",
+      "estimatedTimeValue": "24-48 uur",
+      "done": "Klaar"
+    }
+  }
+}

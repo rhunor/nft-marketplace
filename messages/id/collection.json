@@ -1,0 +1,24 @@
+{
+  "loading": "Memuat koleksi...",
+  "notFound": {
+    "heading": "Koleksi Tidak Ditemukan",
+    "genericMessage": "Koleksi yang Anda cari tidak ada.",
+    "collectionNotFoundError": "Koleksi tidak ditemukan",
+    "loadFailedError": "Gagal memuat koleksi",
+    "backToExplore": "Kembali ke Jelajahi"
+  },
+  "back": "Kembali",
+  "createdBy": "Dibuat oleh",
+  "stats": {
+    "items": "Item",
+    "floorPrice": "Harga Dasar",
+    "totalVolume": "Total Volume"
+  },
+  "share": "Bagikan",
+  "itemsHeading": "Item ({count})",
+  "price": "Harga",
+  "empty": {
+    "heading": "Belum Ada Item",
+    "message": "Koleksi ini belum memiliki item."
+  }
+}

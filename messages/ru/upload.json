@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "Создать NFT",
+    "subtitle": "Загрузите свою цифровую работу"
+  },
+  "mode": {
+    "single": {
+      "title": "Один NFT",
+      "subtitle": "Загрузить одну работу"
+    },
+    "collection": {
+      "title": "Коллекция",
+      "subtitle": "2–20 предметов сразу"
+    }
+  },
+  "fee": {
+    "label": "Комиссия за загрузку",
+    "singleDescription": "$200 за загрузку NFT",
+    "collectionDescription": "$200 × {count} предметов = ${total}",
+    "yourBalance": "Ваш баланс",
+    "insufficientBalance": "Недостаточно средств. Пожалуйста, пополните счёт."
+  },
+  "notifications": {
+    "invalidFileType": {
+      "title": "Неверный тип файла",
+      "message": "Пожалуйста, загрузите изображение, видео или аудиофайл."
+    },
+    "fileTooLarge": {
+      "title": "Файл слишком большой",
+      "message": "Максимальный размер файла — 100 МБ."
+    },
+    "maxItemsReached": {
+      "title": "Достигнут максимум",
+      "message": "Коллекция может содержать не более 20 предметов."
+    },
+    "minItemsRequired": {
+      "title": "Требуется минимум",
+      "message": "Коллекция должна содержать не менее 2 предметов."
+    },
+    "noFileSelected": {
+      "title": "Файл не выбран"
+    },
+    "insufficientBalance": {
+      "title": "Недостаточно средств",
+      "uploadMessage": "Для загрузки требуется {fee}.",
+      "collectionMessage": "Для создания коллекции требуется {fee}."
+    },
+    "nftCreated": {
+      "title": "NFT создан!",
+      "message": "Ваш NFT успешно загружен."
+    },
+    "uploadFailed": {
+      "title": "Загрузка не удалась",
+      "defaultMessage": "Что-то пошло не так. Попробуйте снова."
+    },
+    "collectionInvalidFileType": {
+      "title": "Неверный тип файла"
+    },
+    "collectionFileTooLarge": {
+      "title": "Файл слишком большой",
+      "message": "Максимум 100 МБ."
+    },
+    "fillRequiredFields": {
+      "title": "Заполните все обязательные поля"
+    },
+    "collectionCreated": {
+      "title": "Коллекция создана!",
+      "message": "{count} предметов успешно загружено."
+    }
+  },
+  "form": {
+    "single": {
+      "mediaLabel": "Медиафайл *",
+      "dragDrop": "Перетащите файл или нажмите, чтобы загрузить",
+      "acceptedTypes": "JPG, PNG, GIF, MP4, MP3 (макс. 100 МБ)",
+      "titleLabel": "Название *",
+      "titlePlaceholder": "Название NFT",
+      "priceLabel": "Цена (ETH) *",
+      "pricePlaceholder": "0.1",
+      "categoryLabel": "Категория *",
+      "tagsLabel": "Теги (до 10)",
+      "tagsPlaceholder": "Добавить тег",
+      "addTag": "Добавить",
+      "submit": "Создать NFT",
+      "submitting": "Загрузка...",
+      "priceError": "Цена должна быть больше 0"
+    },
+    "collection": {
+      "detailsHeading": "Детали коллекции",
+      "nameLabel": "Название коллекции *",
+      "namePlaceholder": "Моя коллекция",
+      "descriptionLabel": "Описание *",
+      "descriptionPlaceholder": "Опишите вашу коллекцию...",
+      "categoryLabel": "Категория *",
+      "priceLabel": "Цена коллекции (ETH) *",
+      "pricePlaceholder": "0.5",
+      "pricePerItemHint": "Цена за предмет: {price}",
+      "itemsHeading": "Предметы ({count})",
+      "addItem": "Добавить",
+      "itemLabel": "Предмет {number}",
+      "itemUploadPrompt": "Нажмите, чтобы загрузить",
+      "itemTitleLabel": "Название *",
+      "itemTitlePlaceholder": "Название предмета",
+      "requiredError": "Обязательное поле",
+      "priceError": "Цена коллекции должна быть больше 0",
+      "submit": "Создать коллекцию ({count} предметов)",
+      "submitting": "Создание коллекции..."
+    }
+  }
+}

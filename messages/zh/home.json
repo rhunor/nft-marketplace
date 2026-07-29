@@ -1,0 +1,75 @@
+{
+  "metaTitle": "尊享 NFT 交易市场",
+  "metaDescription": "发现来自顶级艺术家的尊享 NFT 合集。Foundation Exclusive 是高价值 NFT 收藏家的首选平台。",
+  "hero": {
+    "badge": "Foundation 旗下尊享品牌",
+    "heading": "发现<gradient>尊享</gradient>NFT 合集",
+    "subtitle": "Foundation Exclusive 是高价值 NFT 收藏家的首选平台。加入尊享社区，让卓越的数字艺术品与其应得的收藏家相遇。",
+    "exploreCollections": "探索合集",
+    "learnMore": "了解更多",
+    "imageAlt": "精选 NFT {n}",
+    "stats": [
+      {
+        "value": "150+",
+        "label": "精选合集"
+      },
+      {
+        "value": "50+",
+        "label": "顶级艺术家"
+      },
+      {
+        "value": "$45M+",
+        "label": "总交易额"
+      }
+    ]
+  },
+  "featured": {
+    "heading": "精选合集",
+    "subtitle": "来自我们尊享艺术家的甄选合集",
+    "viewAll": "查看全部",
+    "itemsCount": "{count} 件作品",
+    "floor": "地板价"
+  },
+  "aboutBrief": {
+    "heading": "尊享社区",
+    "text": "Foundation Exclusive 是 Foundation 的延伸品牌，专为深谙卓越数字艺术真正价值的资深收藏家打造。我们精心策划的平台确保每一件作品都符合最高的品质与真实性标准。",
+    "cta": "了解我们"
+  },
+  "categories": {
+    "heading": "按分类浏览",
+    "subtitle": "探索各类别的精彩合集"
+  },
+  "moreCollections": {
+    "heading": "更多合集",
+    "subtitle": "发现更多尊享合集",
+    "viewAll": "查看全部"
+  },
+  "features": {
+    "heading": "为何选择 Foundation Exclusive？",
+    "subtitle": "尊享 NFT 收藏家最信赖的平台",
+    "items": [
+      {
+        "title": "认证真实性",
+        "description": "每件作品都经过严格审核以确保其真实性"
+      },
+      {
+        "title": "尊享品质",
+        "description": "汇聚世界顶级数字艺术家的精选合集"
+      },
+      {
+        "title": "尊享社区",
+        "description": "加入这个由资深收藏家组成的精选网络"
+      },
+      {
+        "title": "投资级品质",
+        "description": "NFT 定价真实反映其市场价值"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "准备好加入尊享行列了吗？",
+    "text": "成为 Foundation Exclusive 会员，畅享尊享合集、独家新品发售以及志同道合的收藏家社区。",
+    "becomeMember": "成为会员",
+    "exploreCollections": "探索合集"
+  }
+}

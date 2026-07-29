@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "Tạo NFT",
+    "subtitle": "Tải lên tác phẩm nghệ thuật số của bạn"
+  },
+  "mode": {
+    "single": {
+      "title": "NFT Đơn Lẻ",
+      "subtitle": "Tải lên một tác phẩm"
+    },
+    "collection": {
+      "title": "Bộ Sưu Tập",
+      "subtitle": "2-20 sản phẩm cùng lúc"
+    }
+  },
+  "fee": {
+    "label": "Phí Tải Lên",
+    "singleDescription": "200 USD cho mỗi NFT tải lên",
+    "collectionDescription": "200 USD × {count} sản phẩm = {total} USD",
+    "yourBalance": "Số Dư Của Bạn",
+    "insufficientBalance": "Số dư không đủ. Vui lòng nạp tiền vào tài khoản của bạn."
+  },
+  "notifications": {
+    "invalidFileType": {
+      "title": "Loại tệp không hợp lệ",
+      "message": "Vui lòng tải lên tệp hình ảnh, video hoặc âm thanh."
+    },
+    "fileTooLarge": {
+      "title": "Tệp quá lớn",
+      "message": "Kích thước tệp tối đa là 100MB."
+    },
+    "maxItemsReached": {
+      "title": "Đã đạt số lượng tối đa",
+      "message": "Một bộ sưu tập chỉ được có tối đa 20 sản phẩm."
+    },
+    "minItemsRequired": {
+      "title": "Chưa đủ số lượng tối thiểu",
+      "message": "Một bộ sưu tập phải có ít nhất 2 sản phẩm."
+    },
+    "noFileSelected": {
+      "title": "Chưa chọn tệp"
+    },
+    "insufficientBalance": {
+      "title": "Số Dư Không Đủ",
+      "uploadMessage": "Cần {fee} để tải lên.",
+      "collectionMessage": "Cần {fee} để tạo bộ sưu tập."
+    },
+    "nftCreated": {
+      "title": "Đã Tạo NFT!",
+      "message": "NFT của bạn đã được tải lên thành công."
+    },
+    "uploadFailed": {
+      "title": "Tải Lên Thất Bại",
+      "defaultMessage": "Đã xảy ra lỗi. Vui lòng thử lại."
+    },
+    "collectionInvalidFileType": {
+      "title": "Loại tệp không hợp lệ"
+    },
+    "collectionFileTooLarge": {
+      "title": "Tệp quá lớn",
+      "message": "Tối đa 100MB."
+    },
+    "fillRequiredFields": {
+      "title": "Vui lòng điền đầy đủ các trường bắt buộc"
+    },
+    "collectionCreated": {
+      "title": "Đã Tạo Bộ Sưu Tập!",
+      "message": "{count} sản phẩm đã được tải lên thành công."
+    }
+  },
+  "form": {
+    "single": {
+      "mediaLabel": "Tệp Media *",
+      "dragDrop": "Kéo thả hoặc nhấn để tải lên",
+      "acceptedTypes": "JPG, PNG, GIF, MP4, MP3 (Tối đa 100MB)",
+      "titleLabel": "Tiêu Đề *",
+      "titlePlaceholder": "Tiêu đề NFT",
+      "priceLabel": "Giá (ETH) *",
+      "pricePlaceholder": "0.1",
+      "categoryLabel": "Danh Mục *",
+      "tagsLabel": "Thẻ (tối đa 10)",
+      "tagsPlaceholder": "Thêm thẻ",
+      "addTag": "Thêm",
+      "submit": "Tạo NFT",
+      "submitting": "Đang tải lên...",
+      "priceError": "Giá phải lớn hơn 0"
+    },
+    "collection": {
+      "detailsHeading": "Chi Tiết Bộ Sưu Tập",
+      "nameLabel": "Tên Bộ Sưu Tập *",
+      "namePlaceholder": "Bộ Sưu Tập Của Tôi",
+      "descriptionLabel": "Mô Tả *",
+      "descriptionPlaceholder": "Mô tả bộ sưu tập của bạn...",
+      "categoryLabel": "Danh Mục *",
+      "priceLabel": "Giá Bộ Sưu Tập (ETH) *",
+      "pricePlaceholder": "0.5",
+      "pricePerItemHint": "Giá mỗi sản phẩm: {price}",
+      "itemsHeading": "Sản Phẩm ({count})",
+      "addItem": "Thêm",
+      "itemLabel": "Sản Phẩm {number}",
+      "itemUploadPrompt": "Nhấn để tải lên",
+      "itemTitleLabel": "Tiêu Đề *",
+      "itemTitlePlaceholder": "Tiêu đề sản phẩm",
+      "requiredError": "Bắt buộc",
+      "priceError": "Giá bộ sưu tập phải lớn hơn 0",
+      "submit": "Tạo Bộ Sưu Tập ({count} sản phẩm)",
+      "submitting": "Đang tạo bộ sưu tập..."
+    }
+  }
+}

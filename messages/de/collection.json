@@ -1,0 +1,24 @@
+{
+  "loading": "Kollektion wird geladen...",
+  "notFound": {
+    "heading": "Kollektion nicht gefunden",
+    "genericMessage": "Die gesuchte Kollektion existiert nicht.",
+    "collectionNotFoundError": "Kollektion nicht gefunden",
+    "loadFailedError": "Kollektion konnte nicht geladen werden",
+    "backToExplore": "Zurück zu Entdecken"
+  },
+  "back": "Zurück",
+  "createdBy": "Erstellt von",
+  "stats": {
+    "items": "Artikel",
+    "floorPrice": "Mindestpreis",
+    "totalVolume": "Gesamtvolumen"
+  },
+  "share": "Teilen",
+  "itemsHeading": "Artikel ({count})",
+  "price": "Preis",
+  "empty": {
+    "heading": "Noch keine Artikel",
+    "message": "Diese Kollektion enthält keine Artikel."
+  }
+}

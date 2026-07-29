@@ -1,0 +1,126 @@
+{
+  "loading": "Memuat dasbor...",
+  "avatar": {
+    "invalidType": "Silakan pilih berkas gambar",
+    "tooLarge": "Ukuran gambar harus kurang dari 5MB",
+    "uploadSuccess": "Foto profil berhasil diperbarui!",
+    "uploadFailedTitle": "Unggah gagal",
+    "uploadFailedDefault": "Terjadi kesalahan",
+    "changePicture": "Ubah foto profil"
+  },
+  "welcome": "Selamat datang kembali, {name}!",
+  "adminBadge": "Admin",
+  "fundAccount": "Isi Saldo Akun",
+  "createNft": "Buat NFT",
+  "stats": {
+    "walletBalance": "Saldo Dompet",
+    "nftsOwned": "NFT Dimiliki",
+    "nftsCreated": "NFT Dibuat",
+    "totalValue": "Total Nilai"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "Jelajahi Koleksi",
+      "subtitle": "Temukan barang koleksi baru"
+    },
+    "create": {
+      "title": "Buat NFT",
+      "subtitle": "Unggah karya seni Anda"
+    },
+    "fund": {
+      "title": "Isi Saldo Akun",
+      "subtitle": "Tambahkan ETH ke dompet Anda"
+    },
+    "withdraw": {
+      "title": "Tarik Dana",
+      "subtitle": "Transfer ke dompet Anda"
+    }
+  },
+  "tabs": {
+    "owned": "Dimiliki ({count})",
+    "created": "Dibuat ({count})",
+    "listed": "Terdaftar ({count})"
+  },
+  "nftCard": {
+    "created": "Dibuat",
+    "notListed": "Tidak Terdaftar",
+    "price": "Harga"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "Belum Ada NFT yang Dimiliki",
+      "text": "Mulai kumpulkan aset digital unik dari marketplace kami",
+      "button": "Jelajahi Koleksi"
+    },
+    "created": {
+      "title": "Belum Ada NFT yang Dibuat",
+      "text": "Buat NFT pertama Anda dan bagikan kepada dunia",
+      "button": "Buat NFT"
+    },
+    "listed": {
+      "title": "Tidak Ada NFT yang Terdaftar",
+      "text": "Anda belum memiliki NFT yang didaftarkan untuk dijual"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "Tarik Dana",
+      "fee": "Bayar Biaya Penarikan",
+      "processing": "Memproses Penarikan",
+      "success": "Penarikan Berhasil"
+    },
+    "form": {
+      "availableBalance": "Saldo Tersedia",
+      "walletAddressLabel": "Alamat Dompet",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "Masukkan alamat dompet Ethereum Anda",
+      "amountLabel": "Jumlah (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "Penarikan minimum: ${minAmount}",
+      "withdrawMax": "Tarik Maksimum",
+      "continue": "Lanjutkan"
+    },
+    "errors": {
+      "invalidAddress": "Silakan masukkan alamat dompet Ethereum yang valid (0x...)",
+      "invalidAmount": "Silakan masukkan jumlah penarikan yang valid",
+      "minWithdrawal": "Penarikan minimum adalah ${minAmount}",
+      "insufficientBalance": "Saldo tidak mencukupi",
+      "serverError": "Kesalahan server. Silakan coba lagi nanti.",
+      "withdrawalFailed": "Penarikan gagal",
+      "invalidResponse": "Respons tidak valid dari server",
+      "withdrawalFailedRetry": "Penarikan gagal. Silakan coba lagi."
+    },
+    "fee": {
+      "noticeTitle": "Biaya Penarikan Diperlukan",
+      "noticeText": "Untuk memproses penarikan Anda, silakan kirim biaya {percent}% ({amount}) ke alamat dompet di bawah ini.",
+      "walletLabel": "Dompet Penarikan Anda",
+      "withdrawalAmount": "Jumlah Penarikan",
+      "feeToSend": "Biaya yang Dikirim ({percent}%)",
+      "youllReceive": "Yang Akan Anda Terima",
+      "sendFeeTo": "Kirim Pembayaran Biaya Ke:",
+      "sendExactly": "Kirim tepat {amount} ke alamat ini",
+      "qrAlt": "Kode QR Pembayaran Biaya",
+      "walletAddressLabel": "Alamat Dompet Biaya (ETH)",
+      "copyAddress": "Salin Alamat",
+      "copiedNotification": "Alamat disalin ke clipboard",
+      "warning": "Setelah mengirim biaya {feeAmount}, klik \"Konfirmasi Pembayaran\" untuk memproses penarikan Anda. Jumlah penarikan penuh Anda sebesar {receiveAmount} akan dikirim ke dompet Anda.",
+      "back": "Kembali",
+      "confirmPayment": "Konfirmasi Pembayaran"
+    },
+    "processing": {
+      "title": "Memproses Penarikan",
+      "text": "Mohon tunggu sementara kami memproses transaksi Anda..."
+    },
+    "success": {
+      "title": "Penarikan Berhasil Dikirim!",
+      "subtitle": "Dana Anda sedang dalam perjalanan menuju dompet Anda",
+      "transactionId": "ID Transaksi",
+      "amountReceived": "Jumlah yang Akan Anda Terima",
+      "feePaid": "Biaya yang Dibayar",
+      "newBalance": "Saldo Baru",
+      "estimatedTime": "Estimasi Waktu Pemrosesan",
+      "estimatedTimeValue": "24-48 jam",
+      "done": "Selesai"
+    }
+  }
+}

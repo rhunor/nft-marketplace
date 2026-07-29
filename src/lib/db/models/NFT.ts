@@ -1,6 +1,16 @@
 import mongoose, { Schema, Types } from 'mongoose';
 import type { Model } from 'mongoose';
 
+// Cached machine-translated title/description for a single locale. Keyed by
+// locale in the `translations` Map below. sourceHash lets us detect when the
+// creator has edited the source title/description, invalidating the cache.
+export interface INFTTranslation {
+  title: string;
+  description: string;
+  sourceHash: string;
+  translatedAt: Date;
+}
+
 // Define the NFT interface directly here to avoid TypeScript conflicts with Document.collection
 interface INFTSchema {
   title: string;
@@ -18,6 +28,7 @@ interface INFTSchema {
   likes: Types.ObjectId[];
   views: number;
   isListed: boolean;
+  translations?: Map<string, INFTTranslation>;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -111,6 +122,19 @@ const NFTSchema = new Schema<INFTSchema, NFTModel, INFTMethods>(
     isListed: {
       type: Boolean,
       default: true,
+    },
+    translations: {
+      type: Map,
+      of: new Schema<INFTTranslation>(
+        {
+          title: { type: String, required: true },
+          description: { type: String, required: true },
+          sourceHash: { type: String, required: true },
+          translatedAt: { type: Date, required: true },
+        },
+        { _id: false }
+      ),
+      default: undefined,
     },
   },
   {

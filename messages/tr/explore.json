@@ -1,0 +1,45 @@
+{
+  "pageTitle": "Keşfet",
+  "pageSubtitle": "Dünya standartlarında dijital sanatçılardan seçkin koleksiyonları keşfedin",
+  "sort": {
+    "random": "Rastgele",
+    "recentDesc": "En Yeni",
+    "volumeDesc": "En Yüksek Hacim",
+    "volumeAsc": "En Düşük Hacim",
+    "floorAsc": "Taban Fiyat: Düşükten Yükseğe",
+    "floorDesc": "Taban Fiyat: Yüksekten Düşüğe",
+    "itemsDesc": "En Çok Öğe"
+  },
+  "newUploads": {
+    "heading": "Yeni Yüklemeler",
+    "subtitle": "Pazar yerimizin sanatçılarından yeni NFT'ler",
+    "viewAll": "Tüm Yeni Yüklemeleri Görüntüle ({count})"
+  },
+  "newBadge": "Yeni",
+  "price": "Fiyat",
+  "search": {
+    "collectionsPlaceholder": "Koleksiyon ara...",
+    "nftsPlaceholder": "NFT ara..."
+  },
+  "viewMode": {
+    "collections": "Koleksiyonları Görüntüle",
+    "items": "Tekil Öğeleri Görüntüle"
+  },
+  "filters": "Filtreler",
+  "categories": "Kategoriler",
+  "allCategories": "Tüm Kategoriler",
+  "all": "Tümü",
+  "clearAllFilters": "Tüm Filtreleri Temizle",
+  "activeFilters": "Aktif filtreler:",
+  "searchLabel": "Arama: {query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {# koleksiyon gösteriliyor} other {# koleksiyon gösteriliyor}}",
+    "items": "{count, plural, one {# NFT gösteriliyor} other {# NFT gösteriliyor}}"
+  },
+  "noCollectionsFound": "Kriterlerinize uyan koleksiyon bulunamadı",
+  "clearFilters": "Filtreleri Temizle",
+  "itemsCount": "{count, plural, one {# öğe} other {# öğe}}",
+  "floor": "Taban",
+  "totalVolume": "Toplam Hacim",
+  "usd": "USD"
+}

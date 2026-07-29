@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { useRouter, Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import { signIn } from 'next-auth/react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Mail, Lock, Eye, EyeOff, User, AtSign, Phone, ChevronDown } from 'lucide-react';
@@ -73,6 +73,7 @@ interface RegisterFormData {
 type FormErrors = Partial<Record<keyof RegisterFormData, string>>;
 
 export function RegisterForm() {
+  const t = useTranslations('auth.register');
   const router = useRouter();
 
   const [formData, setFormData] = useState<RegisterFormData>({
@@ -110,45 +111,45 @@ export function RegisterForm() {
     const newErrors: FormErrors = {};
 
     if (!formData.email) {
-      newErrors.email = 'Email is required';
+      newErrors.email = t('errors.emailRequired');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Invalid email address';
+      newErrors.email = t('errors.emailInvalid');
     }
 
     if (!formData.username) {
-      newErrors.username = 'Username is required';
+      newErrors.username = t('errors.usernameRequired');
     } else if (formData.username.length < 3) {
-      newErrors.username = 'Username must be at least 3 characters';
+      newErrors.username = t('errors.usernameTooShort');
     } else if (!/^[a-zA-Z0-9_]+$/.test(formData.username)) {
-      newErrors.username = 'Username can only contain letters, numbers, and underscores';
+      newErrors.username = t('errors.usernameInvalidChars');
     }
 
     if (!formData.name) {
-      newErrors.name = 'Name is required';
+      newErrors.name = t('errors.nameRequired');
     }
 
     if (!formData.phoneNumber) {
-      newErrors.phoneNumber = 'Phone number is required';
+      newErrors.phoneNumber = t('errors.phoneRequired');
     } else if (!/^\d{6,15}$/.test(formData.phoneNumber.replace(/\D/g, ''))) {
-      newErrors.phoneNumber = 'Please enter a valid phone number';
+      newErrors.phoneNumber = t('errors.phoneInvalid');
     }
 
     if (!formData.password) {
-      newErrors.password = 'Password is required';
+      newErrors.password = t('errors.passwordRequired');
     } else if (formData.password.length < 8) {
-      newErrors.password = 'Password must be at least 8 characters';
+      newErrors.password = t('errors.passwordTooShort');
     } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(formData.password)) {
-      newErrors.password = 'Password must contain uppercase, lowercase, and number';
+      newErrors.password = t('errors.passwordComplexity');
     }
 
     if (!formData.confirmPassword) {
-      newErrors.confirmPassword = 'Please confirm your password';
+      newErrors.confirmPassword = t('errors.confirmPasswordRequired');
     } else if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = 'Passwords do not match';
+      newErrors.confirmPassword = t('errors.passwordMismatch');
     }
 
     if (recaptchaSiteKey && !captchaToken) {
-      newErrors.email = 'Please complete the CAPTCHA verification';
+      newErrors.email = t('errors.captchaRequired');
     }
 
     setErrors(newErrors);
@@ -184,7 +185,7 @@ export function RegisterForm() {
       const data = await response.json();
 
       if (!response.ok) {
-        setAuthError(data.error || 'Failed to create account');
+        setAuthError(data.error || t('errors.createAccountFailed'));
         setIsLoading(false);
         return;
       }
@@ -202,7 +203,7 @@ export function RegisterForm() {
         router.refresh();
       }
     } catch {
-      setAuthError('Something went wrong. Please try again.');
+      setAuthError(t('errors.somethingWentWrong'));
       recaptchaRef.current?.reset();
       setCaptchaToken(null);
       setIsLoading(false);
@@ -214,10 +215,8 @@ export function RegisterForm() {
   return (
     <Card className="w-full max-w-md p-8">
       <div className="mb-8 text-center">
-        <h1 className="text-2xl font-bold">Create Account</h1>
-        <p className="mt-2 text-foreground-muted">
-          Join Foundation Exclusive and start collecting
-        </p>
+        <h1 className="text-2xl font-bold">{t('heading')}</h1>
+        <p className="mt-2 text-foreground-muted">{t('subheading')}</p>
       </div>
 
       {authError && (
@@ -228,44 +227,44 @@ export function RegisterForm() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <Input
-          label="Full Name"
+          label={t('fullNameLabel')}
           name="name"
           type="text"
           value={formData.name}
           onChange={handleChange}
           error={errors.name}
-          placeholder="John Doe"
+          placeholder={t('fullNamePlaceholder')}
           leftIcon={<User className="h-4 w-4" />}
           autoComplete="name"
         />
 
         <Input
-          label="Username"
+          label={t('usernameLabel')}
           name="username"
           type="text"
           value={formData.username}
           onChange={handleChange}
           error={errors.username}
-          placeholder="johndoe"
+          placeholder={t('usernamePlaceholder')}
           leftIcon={<AtSign className="h-4 w-4" />}
           autoComplete="username"
         />
 
         <Input
-          label="Email"
+          label={t('emailLabel')}
           name="email"
           type="email"
           value={formData.email}
           onChange={handleChange}
           error={errors.email}
-          placeholder="you@example.com"
+          placeholder={t('emailPlaceholder')}
           leftIcon={<Mail className="h-4 w-4" />}
           autoComplete="email"
         />
 
         {/* Phone Number with Country Code */}
         <div>
-          <label className="mb-1.5 block text-sm font-medium">Phone Number</label>
+          <label className="mb-1.5 block text-sm font-medium">{t('phoneLabel')}</label>
           <div className="flex gap-2">
             {/* Country Code Dropdown */}
             <div className="relative">
@@ -306,7 +305,7 @@ export function RegisterForm() {
                   name="phoneNumber"
                   value={formData.phoneNumber}
                   onChange={handleChange}
-                  placeholder="1234567890"
+                  placeholder={t('phonePlaceholder')}
                   className="h-11 w-full rounded-xl border border-border bg-background-secondary pl-10 pr-4 text-sm placeholder:text-foreground-subtle focus:border-accent-primary focus:outline-none focus:ring-2 focus:ring-accent-primary/20"
                   autoComplete="tel"
                 />
@@ -319,13 +318,13 @@ export function RegisterForm() {
         </div>
 
         <Input
-          label="Password"
+          label={t('passwordLabel')}
           name="password"
           type={showPassword ? 'text' : 'password'}
           value={formData.password}
           onChange={handleChange}
           error={errors.password}
-          placeholder="••••••••"
+          placeholder={t('passwordPlaceholder')}
           leftIcon={<Lock className="h-4 w-4" />}
           rightIcon={
             <button
@@ -341,17 +340,17 @@ export function RegisterForm() {
             </button>
           }
           autoComplete="new-password"
-          hint="At least 8 characters with uppercase, lowercase, and number"
+          hint={t('passwordHint')}
         />
 
         <Input
-          label="Confirm Password"
+          label={t('confirmPasswordLabel')}
           name="confirmPassword"
           type={showPassword ? 'text' : 'password'}
           value={formData.confirmPassword}
           onChange={handleChange}
           error={errors.confirmPassword}
-          placeholder="••••••••"
+          placeholder={t('confirmPasswordPlaceholder')}
           leftIcon={<Lock className="h-4 w-4" />}
           autoComplete="new-password"
         />
@@ -370,18 +369,18 @@ export function RegisterForm() {
 
         <div className="pt-2">
           <Button type="submit" className="w-full" isLoading={isLoading}>
-            Create Account
+            {t('submit')}
           </Button>
         </div>
       </form>
 
       <p className="mt-8 text-center text-sm text-foreground-muted">
-        Already have an account?{' '}
+        {t('haveAccount')}{' '}
         <Link
           href="/login"
           className="font-medium text-accent-primary hover:text-accent-secondary"
         >
-          Sign in
+          {t('signInLink')}
         </Link>
       </p>
     </Card>

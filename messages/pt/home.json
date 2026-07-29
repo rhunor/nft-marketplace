@@ -1,0 +1,75 @@
+{
+  "metaTitle": "Marketplace Premium de NFTs",
+  "metaDescription": "Descubra coleções exclusivas de NFTs de artistas de elite. A Foundation Exclusive é o destino principal para colecionadores de NFTs de alto valor.",
+  "hero": {
+    "badge": "Uma Extensão da Foundation",
+    "heading": "Descubra Coleções de NFTs <gradient>Exclusivas</gradient>",
+    "subtitle": "A Foundation Exclusive é o destino principal para colecionadores de NFTs de alto valor. Junte-se a uma comunidade exclusiva onde a arte digital excepcional encontra seus verdadeiros colecionadores.",
+    "exploreCollections": "Explorar Coleções",
+    "learnMore": "Saiba Mais",
+    "imageAlt": "NFT em Destaque {n}",
+    "stats": [
+      {
+        "value": "150+",
+        "label": "Coleções Selecionadas"
+      },
+      {
+        "value": "50+",
+        "label": "Artistas de Elite"
+      },
+      {
+        "value": "US$ 45M+",
+        "label": "Volume Total"
+      }
+    ]
+  },
+  "featured": {
+    "heading": "Coleções em Destaque",
+    "subtitle": "Coleções escolhidas a dedo de nossos artistas exclusivos",
+    "viewAll": "Ver Todas",
+    "itemsCount": "{count} itens",
+    "floor": "Preço Mínimo"
+  },
+  "aboutBrief": {
+    "heading": "A Comunidade Exclusiva",
+    "text": "A Foundation Exclusive é uma extensão da Foundation, criada para colecionadores sérios que entendem o verdadeiro valor da arte digital excepcional. Nossa plataforma selecionada garante que cada peça atenda aos mais altos padrões de qualidade e autenticidade.",
+    "cta": "Conheça Nossa História"
+  },
+  "categories": {
+    "heading": "Navegar por Categoria",
+    "subtitle": "Explore coleções em diferentes categorias"
+  },
+  "moreCollections": {
+    "heading": "Mais Coleções",
+    "subtitle": "Descubra mais coleções exclusivas",
+    "viewAll": "Ver Todas"
+  },
+  "features": {
+    "heading": "Por Que Escolher a Foundation Exclusive?",
+    "subtitle": "A plataforma mais confiável para colecionadores premium de NFTs",
+    "items": [
+      {
+        "title": "Autenticidade Verificada",
+        "description": "Cada peça passa por uma verificação rigorosa de autenticidade"
+      },
+      {
+        "title": "Qualidade Premium",
+        "description": "Coleções selecionadas de artistas digitais de classe mundial"
+      },
+      {
+        "title": "Comunidade Exclusiva",
+        "description": "Junte-se a uma rede seleta de colecionadores sérios"
+      },
+      {
+        "title": "Grau de Investimento",
+        "description": "NFTs com preços que refletem seu verdadeiro valor de mercado"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Pronto para se Juntar à Exclusividade?",
+    "text": "Torne-se membro da Foundation Exclusive e tenha acesso a coleções premium, lançamentos exclusivos e uma comunidade de colecionadores com a mesma visão.",
+    "becomeMember": "Tornar-se Membro",
+    "exploreCollections": "Explorar Coleções"
+  }
+}

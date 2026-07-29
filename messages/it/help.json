@@ -1,0 +1,162 @@
+{
+  "header": {
+    "heading": "Centro Assistenza",
+    "subtitle": "Tutto quello che devi sapere sull'utilizzo di Foundation Exclusive"
+  },
+  "topics": {
+    "wallet": { "title": "Wallet e Saldo", "description": "Ricarica il tuo account e gestisci gli ETH" },
+    "creating": { "title": "Creazione di NFT", "description": "Conia il tuo primo NFT" },
+    "buying": { "title": "Acquisto di NFT", "description": "Acquista e colleziona NFT" },
+    "withdrawals": { "title": "Prelievi", "description": "Preleva fondi dal tuo account" },
+    "security": { "title": "Sicurezza", "description": "Mantieni sicuro il tuo account" },
+    "exploring": { "title": "Esplorazione degli NFT", "description": "Sfoglia e scopri le collezioni" }
+  },
+  "wallet": {
+    "heading": "Wallet e Saldo",
+    "cardHeading": "Come Ricaricare il Tuo Account",
+    "steps": {
+      "step1": "Accedi e vai alla tua <b>Dashboard</b>",
+      "step2": "Fai clic su <b>\"Ricarica Account\"</b>",
+      "step3": "Vedrai un codice QR e un indirizzo wallet ETH",
+      "step4": "Invia ETH dal tuo wallet esterno a questo indirizzo",
+      "step5": "Attendi ~10 minuti affinché il saldo si aggiorni"
+    },
+    "notesHeading": "Note Importanti",
+    "notes": [
+      "Invia solo ETH (Ethereum) all'indirizzo fornito",
+      "Controlla attentamente l'indirizzo del wallet prima di inviare",
+      "Conserva l'hash della transazione per riferimento"
+    ]
+  },
+  "creating": {
+    "heading": "Creazione di NFT",
+    "singleCardHeading": "Come Creare un Singolo NFT",
+    "singleSteps": {
+      "step1": "Assicurati di avere almeno <b>$200 di controvalore in ETH</b>",
+      "step2": "Vai alla pagina <b>Crea</b>",
+      "step3": "Seleziona la modalità <b>\"NFT Singolo\"</b>",
+      "step4": "Carica il tuo file multimediale (max 100MB)",
+      "step5": "Compila titolo, prezzo e categoria",
+      "step6": "Fai clic su <b>\"Crea NFT\"</b>"
+    },
+    "collectionCardHeading": "Come Creare una Collezione",
+    "collectionSteps": {
+      "step1": "Seleziona la modalità <b>\"Collezione\"</b> nella pagina Crea",
+      "step2": "Aggiungi nome, descrizione e immagine di copertina della collezione",
+      "step3": "Aggiungi da 2 a 20 oggetti alla tua collezione",
+      "step4": "Imposta il prezzo della collezione (<b>$200 per oggetto</b>)"
+    },
+    "feesHeading": "Commissioni di Caricamento",
+    "feesText": "NFT Singolo: $200 | Collezione: $200 per oggetto"
+  },
+  "buying": {
+    "heading": "Acquisto di NFT",
+    "cardHeading": "Come Acquistare un NFT",
+    "steps": {
+      "step1": "Sfoglia la pagina <b>Esplora</b>",
+      "step2": "Usa i filtri per trovare quello che cerchi",
+      "step3": "Fai clic su un NFT per vederne i dettagli",
+      "step4": "Fai clic su <b>\"Acquista Ora\"</b>",
+      "step5": "Conferma l'acquisto",
+      "step6": "Attendi la conferma dell'amministratore (entro 24 ore)"
+    },
+    "afterHeading": "Dopo l'Acquisto",
+    "after": [
+      "L'NFT appare nella tua Dashboard sotto \"Posseduti\"",
+      "Nessuna commissione aggiuntiva per l'acquisto"
+    ]
+  },
+  "withdrawals": {
+    "heading": "Prelievi",
+    "cardHeading": "Come Prelevare Fondi",
+    "steps": {
+      "step1": "Vai alla <b>Dashboard</b> e fai clic su <b>\"Preleva\"</b>",
+      "step2": "Inserisci il tuo indirizzo wallet ETH esterno (0x...)",
+      "step3": "Inserisci l'importo del prelievo",
+      "step4": "Fai clic su <b>\"Continua\"</b>",
+      "step5": "Invia la <b>commissione del 10%</b> all'indirizzo wallet fornito",
+      "step6": "Fai clic su <b>\"Conferma Pagamento\"</b>",
+      "step7": "Il prelievo viene elaborato entro <b>24-48 ore</b>"
+    },
+    "infoHeading": "Informazioni Importanti",
+    "info": [
+      { "label": "Commissione:", "text": "10% (pagata separatamente al wallet della commissione)" },
+      { "label": "Tempo di elaborazione:", "text": "24-48 ore" }
+    ],
+    "infoPlain": "Ricevi l'INTERO importo del prelievo dopo aver pagato la commissione",
+    "feeWarningHeading": "⚠️ Pagamento della Commissione",
+    "feeWarningText": "La commissione del 10% deve essere inviata al nostro wallet delle commissioni <b>prima</b> che il tuo prelievo venga elaborato. Ad esempio: prelevi 1 ETH → invii 0,1 ETH di commissione → ricevi 1 ETH sul tuo wallet."
+  },
+  "exploring": {
+    "heading": "Esplorazione degli NFT",
+    "cardHeading": "Come Sfogliare gli NFT",
+    "steps": {
+      "step1": "Vai alla pagina <b>Esplora</b>",
+      "step2": "Sfoglia le collezioni o passa alla vista oggetti",
+      "step3": "Usa la <b>barra di ricerca</b> per trovare NFT specifici",
+      "step4": "Filtra per <b>categoria</b>",
+      "step5": "Ordina per volume, prezzo minimo o numero di oggetti"
+    },
+    "tipsHeading": "Consigli per la Ricerca",
+    "tips": [
+      "Cerca per titolo, descrizione o nome del creatore",
+      "Usa tag come \"astratto\", \"spazio\", \"natura\"",
+      "Fai clic su una collezione per vedere tutti gli oggetti"
+    ]
+  },
+  "security": {
+    "heading": "Sicurezza",
+    "cardHeading": "Come Mantenere Sicuro il Tuo Account",
+    "items": [
+      { "label": "Usa una password forte:", "text": "Almeno 8 caratteri" },
+      { "label": "Non condividere mai la tua password:", "text": "Non te la chiederemo mai" },
+      { "label": "Verifica gli indirizzi wallet:", "text": "Controlla attentamente prima di inviare" },
+      { "label": "Attenzione alle truffe:", "text": "Non inviamo mai messaggi diretti per chiedere pagamenti" }
+    ]
+  },
+  "faq": {
+    "heading": "Domande Frequenti",
+    "items": [
+      {
+        "question": "Cos'è un NFT?",
+        "answer": "NFT è l'acronimo di Non-Fungible Token (token non fungibile). È un asset digitale unico registrato su una blockchain che rappresenta la proprietà di oggetti digitali come arte, musica, video e altro ancora."
+      },
+      {
+        "question": "Come posso creare un NFT?",
+        "answer": "Ricarica il tuo account con almeno $200 di controvalore in ETH, vai alla pagina Crea, carica il tuo file, aggiungi i dettagli e invia."
+      },
+      {
+        "question": "Quali sono le commissioni?",
+        "answer": "Creare un NFT costa $200 per oggetto. L'acquisto di NFT richiede solo il prezzo indicato. I prelievi richiedono una commissione del 10% pagata separatamente."
+      },
+      {
+        "question": "Quanto tempo richiede l'elaborazione delle transazioni?",
+        "answer": "Ricarica: ~10 minuti. Acquisti di NFT: entro 24 ore. Prelievi: 24-48 ore."
+      }
+    ]
+  },
+  "quickRef": {
+    "heading": "Riferimento Rapido",
+    "processingTimes": {
+      "heading": "Tempi di Elaborazione",
+      "items": ["Aggiornamento saldo: ~10 minuti", "Acquisti di NFT: entro 24 ore", "Prelievi: 24-48 ore"]
+    },
+    "fees": {
+      "heading": "Commissioni",
+      "items": ["Creazione NFT: $200 per oggetto", "Acquisto: solo prezzo indicato", "Prelievi: 10% (pagata separatamente)"]
+    },
+    "formats": {
+      "heading": "Formati Supportati",
+      "items": ["Immagini: JPG, PNG, GIF, WEBP", "Video: MP4, WEBM", "Audio: MP3, WAV, OGG"]
+    },
+    "minimums": {
+      "heading": "Importi Minimi",
+      "items": ["Prezzo minimo NFT: 0,001 ETH", "Collezione: 2-20 oggetti"]
+    }
+  },
+  "contactCta": {
+    "heading": "Hai Ancora Domande?",
+    "text": "Il nostro team di assistenza è qui per aiutarti",
+    "button": "Contatta l'Assistenza"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "header": {
+    "heading": "Bize Ulaşın",
+    "subtitle": "Bir sorunuz mu var veya yardıma mı ihtiyacınız var? Sizin için buradayız."
+  },
+  "subjectOptions": {
+    "general": "Genel Soru",
+    "support": "Teknik Destek",
+    "billing": "Fatura ve Ödemeler",
+    "partnership": "İş Birliği",
+    "bug": "Hata Bildirimi",
+    "feature": "Özellik Talebi",
+    "other": "Diğer"
+  },
+  "info": {
+    "email": {
+      "title": "E-posta",
+      "subtitle": "Genel sorular için"
+    },
+    "liveChat": {
+      "title": "Canlı Destek",
+      "value": "7/24 Kullanılabilir",
+      "subtitle": "Hızlı yanıt süresi"
+    },
+    "responseTime": {
+      "title": "Yanıt Süresi",
+      "value": "24-48 saat içinde",
+      "subtitle": "İş günleri"
+    },
+    "office": {
+      "title": "Ofis",
+      "line1": "11420 Santa Monica Boulevard",
+      "line2": "Post Office Box 252111",
+      "line3": "Los Angeles, CA 90025"
+    }
+  },
+  "form": {
+    "heading": "Bize mesaj gönderin",
+    "nameLabel": "Adınız",
+    "namePlaceholder": "Ahmet Yılmaz",
+    "emailLabel": "E-posta Adresi",
+    "emailPlaceholder": "siz@ornek.com",
+    "subjectLabel": "Konu",
+    "subjectPlaceholder": "Bir konu seçin",
+    "messageLabel": "Mesaj",
+    "messagePlaceholder": "Size nasıl yardımcı olabiliriz?",
+    "submit": "Mesaj Gönder"
+  },
+  "success": {
+    "heading": "Mesajınız Başarıyla Gönderildi!",
+    "text": "Bize ulaştığınız için teşekkür ederiz. Ekibimiz mesajınızı inceleyecek ve 24-48 saat içinde size geri dönüş yapacaktır.",
+    "sendAnother": "Başka Bir Mesaj Gönder"
+  },
+  "notification": {
+    "title": "Mesaj Gönderildi!",
+    "message": "24-48 saat içinde size geri dönüş yapacağız."
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "header": {
+    "heading": "Helpcentrum",
+    "subtitle": "Alles wat u moet weten over het gebruik van Foundation Exclusive"
+  },
+  "topics": {
+    "wallet": { "title": "Wallet & Saldo", "description": "Waardeer uw account op en beheer ETH" },
+    "creating": { "title": "NFT's Creëren", "description": "Mint uw eerste NFT" },
+    "buying": { "title": "NFT's Kopen", "description": "Koop en verzamel NFT's" },
+    "withdrawals": { "title": "Opnames", "description": "Neem geld op van uw account" },
+    "security": { "title": "Beveiliging", "description": "Houd uw account veilig" },
+    "exploring": { "title": "NFT's Ontdekken", "description": "Blader door en ontdek collecties" }
+  },
+  "wallet": {
+    "heading": "Wallet & Saldo",
+    "cardHeading": "Hoe u uw Account Opwaardeert",
+    "steps": {
+      "step1": "Log in en ga naar uw <b>Dashboard</b>",
+      "step2": "Klik op <b>\"Account Opwaarderen\"</b>",
+      "step3": "U ziet een QR-code en ETH-walletadres",
+      "step4": "Stuur ETH van uw externe wallet naar dit adres",
+      "step5": "Wacht ~10 minuten tot het saldo wordt bijgewerkt"
+    },
+    "notesHeading": "Belangrijke Opmerkingen",
+    "notes": [
+      "Stuur alleen ETH (Ethereum) naar het opgegeven adres",
+      "Controleer het walletadres dubbel voordat u het verstuurt",
+      "Bewaar uw transactiehash ter referentie"
+    ]
+  },
+  "creating": {
+    "heading": "NFT's Creëren",
+    "singleCardHeading": "Hoe u een Enkele NFT Creëert",
+    "singleSteps": {
+      "step1": "Zorg dat u minimaal <b>$200 aan ETH</b> heeft",
+      "step2": "Ga naar de pagina <b>Creëren</b>",
+      "step3": "Selecteer de modus <b>\"Enkele NFT\"</b>",
+      "step4": "Upload uw mediabestand (max. 100MB)",
+      "step5": "Vul titel, prijs en categorie in",
+      "step6": "Klik op <b>\"NFT Creëren\"</b>"
+    },
+    "collectionCardHeading": "Hoe u een Collectie Creëert",
+    "collectionSteps": {
+      "step1": "Selecteer de modus <b>\"Collectie\"</b> op de pagina Creëren",
+      "step2": "Voeg collectienaam, beschrijving en omslagafbeelding toe",
+      "step3": "Voeg 2-20 items toe aan uw collectie",
+      "step4": "Stel de collectieprijs in (<b>$200 per item</b>)"
+    },
+    "feesHeading": "Uploadkosten",
+    "feesText": "Enkele NFT: $200 | Collectie: $200 per item"
+  },
+  "buying": {
+    "heading": "NFT's Kopen",
+    "cardHeading": "Hoe u een NFT Koopt",
+    "steps": {
+      "step1": "Blader door de pagina <b>Ontdekken</b>",
+      "step2": "Gebruik filters om te vinden wat u zoekt",
+      "step3": "Klik op een NFT om de details te bekijken",
+      "step4": "Klik op <b>\"Nu Kopen\"</b>",
+      "step5": "Bevestig de aankoop",
+      "step6": "Wacht op bevestiging door de beheerder (binnen 24 uur)"
+    },
+    "afterHeading": "Na Aankoop",
+    "after": [
+      "De NFT verschijnt in uw Dashboard onder \"In Bezit\"",
+      "Geen extra kosten voor het kopen"
+    ]
+  },
+  "withdrawals": {
+    "heading": "Opnames",
+    "cardHeading": "Hoe u Geld Opneemt",
+    "steps": {
+      "step1": "Ga naar <b>Dashboard</b> en klik op <b>\"Opnemen\"</b>",
+      "step2": "Voer uw externe ETH-walletadres in (0x...)",
+      "step3": "Voer het opnamebedrag in",
+      "step4": "Klik op <b>\"Doorgaan\"</b>",
+      "step5": "Stuur de <b>10% kosten</b> naar het opgegeven walletadres",
+      "step6": "Klik op <b>\"Betaling Bevestigen\"</b>",
+      "step7": "Opname wordt verwerkt binnen <b>24-48 uur</b>"
+    },
+    "infoHeading": "Belangrijke Informatie",
+    "info": [
+      { "label": "Kosten:", "text": "10% (apart betaald aan de kostenwallet)" },
+      { "label": "Verwerkingstijd:", "text": "24-48 uur" }
+    ],
+    "infoPlain": "U ontvangt het VOLLEDIGE opnamebedrag na betaling van de kosten",
+    "feeWarningHeading": "⚠️ Betaling van Kosten",
+    "feeWarningText": "De 10% kosten moeten <b>voordat</b> uw opname wordt verwerkt naar onze kostenwallet worden gestuurd. Voorbeeld: 1 ETH opnemen → 0,1 ETH kosten versturen → 1 ETH ontvangen op uw wallet."
+  },
+  "exploring": {
+    "heading": "NFT's Ontdekken",
+    "cardHeading": "Hoe u door NFT's Bladert",
+    "steps": {
+      "step1": "Ga naar de pagina <b>Ontdekken</b>",
+      "step2": "Blader door collecties of schakel over naar de itemweergave",
+      "step3": "Gebruik de <b>zoekbalk</b> om specifieke NFT's te vinden",
+      "step4": "Filter op <b>categorie</b>",
+      "step5": "Sorteer op volume, bodemprijs of aantal items"
+    },
+    "tipsHeading": "Zoektips",
+    "tips": [
+      "Zoek op titel, beschrijving of naam van de maker",
+      "Gebruik tags zoals \"abstract\", \"ruimte\", \"natuur\"",
+      "Klik op een collectie om alle items te bekijken"
+    ]
+  },
+  "security": {
+    "heading": "Beveiliging",
+    "cardHeading": "Uw Account Veilig Houden",
+    "items": [
+      { "label": "Gebruik een sterk wachtwoord:", "text": "Minimaal 8 tekens" },
+      { "label": "Deel uw wachtwoord nooit:", "text": "Wij zullen er nooit naar vragen" },
+      { "label": "Verifieer walletadressen:", "text": "Controleer dubbel voordat u iets verstuurt" },
+      { "label": "Pas op voor oplichting:", "text": "Wij sturen nooit DM's met verzoeken om betalingen" }
+    ]
+  },
+  "faq": {
+    "heading": "Veelgestelde Vragen",
+    "items": [
+      {
+        "question": "Wat is een NFT?",
+        "answer": "NFT staat voor Non-Fungible Token. Het is een uniek digitaal bezit dat is opgeslagen op een blockchain en dat eigendom vertegenwoordigt van digitale items zoals kunst, muziek, video's en meer."
+      },
+      {
+        "question": "Hoe maak ik een NFT?",
+        "answer": "Waardeer uw account op met minimaal $200 aan ETH, ga naar de pagina Creëren, upload uw bestand, voeg details toe en dien in."
+      },
+      {
+        "question": "Wat zijn de kosten?",
+        "answer": "Het creëren van een NFT kost $200 per item. Voor het kopen van NFT's betaalt u alleen de vermelde prijs. Voor opnames geldt een apart te betalen kosten van 10%."
+      },
+      {
+        "question": "Hoe lang duurt het verwerken van transacties?",
+        "answer": "Opwaarderen: ~10 minuten. NFT-aankopen: binnen 24 uur. Opnames: 24-48 uur."
+      }
+    ]
+  },
+  "quickRef": {
+    "heading": "Snel Overzicht",
+    "processingTimes": {
+      "heading": "Verwerkingstijden",
+      "items": ["Saldo-updates: ~10 minuten", "NFT-aankopen: binnen 24 uur", "Opnames: 24-48 uur"]
+    },
+    "fees": {
+      "heading": "Kosten",
+      "items": ["NFT creëren: $200 per item", "Kopen: alleen vermelde prijs", "Opnames: 10% (apart betaald)"]
+    },
+    "formats": {
+      "heading": "Ondersteunde Formaten",
+      "items": ["Afbeeldingen: JPG, PNG, GIF, WEBP", "Video: MP4, WEBM", "Audio: MP3, WAV, OGG"]
+    },
+    "minimums": {
+      "heading": "Minimumbedragen",
+      "items": ["Min. NFT-prijs: 0,001 ETH", "Collectie: 2-20 items"]
+    }
+  },
+  "contactCta": {
+    "heading": "Nog Vragen?",
+    "text": "Ons supportteam staat klaar om u te helpen",
+    "button": "Contact met Support"
+  }
+}

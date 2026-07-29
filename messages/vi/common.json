@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "Đổi ngôn ngữ",
+    "popular": "Ngôn ngữ phổ biến",
+    "more": "Thêm ngôn ngữ"
+  },
+  "languageBanner": {
+    "message": "Có vẻ như bạn muốn sử dụng {language}.",
+    "switch": "Chuyển đổi",
+    "dismiss": "Bỏ qua"
+  },
+  "nav": {
+    "home": "Trang Chủ",
+    "explore": "Khám Phá",
+    "about": "Giới Thiệu",
+    "help": "Trợ Giúp",
+    "contact": "Liên Hệ"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "Tìm kiếm NFT, người sáng tạo...",
+    "create": "Tạo Mới",
+    "signIn": "Đăng Nhập",
+    "getStarted": "Bắt Đầu Ngay",
+    "userMenu": {
+      "dashboard": "Bảng Điều Khiển",
+      "createNft": "Tạo NFT",
+      "fundAccount": "Nạp Tiền",
+      "adminPanel": "Trang Quản Trị",
+      "signOut": "Đăng Xuất"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "Phần mở rộng của Foundation - điểm đến hàng đầu dành cho các nhà sưu tầm và nghệ sĩ NFT giá trị cao. Tham gia cộng đồng độc quyền của những nhà sưu tầm sành sỏi.",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "Email"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "Nền Tảng",
+        "exploreCollections": "Khám Phá Bộ Sưu Tập",
+        "howItWorks": "Cách Thức Hoạt Động",
+        "create": "Tạo Mới"
+      },
+      "resources": {
+        "heading": "Tài Nguyên",
+        "helpCenter": "Trung Tâm Trợ Giúp",
+        "contactUs": "Liên Hệ Với Chúng Tôi",
+        "faq": "Câu Hỏi Thường Gặp"
+      },
+      "company": {
+        "heading": "Công Ty",
+        "aboutUs": "Về Chúng Tôi",
+        "termsOfService": "Điều Khoản Dịch Vụ",
+        "privacyPolicy": "Chính Sách Bảo Mật",
+        "cookiePolicy": "Chính Sách Cookie"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. Đã đăng ký bản quyền.",
+    "bottomLinks": {
+      "terms": "Điều Khoản",
+      "privacy": "Bảo Mật",
+      "cookies": "Cookie"
+    }
+  },
+  "modal": {
+    "dismiss": "Bỏ qua"
+  },
+  "nftCard": {
+    "currentPrice": "Giá Hiện Tại",
+    "by": "bởi"
+  },
+  "nftGrid": {
+    "emptyMessage": "Không tìm thấy NFT nào"
+  },
+  "nftImage": {
+    "unavailable": "Hình ảnh không khả dụng"
+  }
+}

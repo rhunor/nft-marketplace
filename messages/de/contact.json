@@ -1,0 +1,58 @@
+{
+  "header": {
+    "heading": "Kontaktieren Sie uns",
+    "subtitle": "Haben Sie eine Frage oder benötigen Sie Hilfe? Wir sind für Sie da."
+  },
+  "subjectOptions": {
+    "general": "Allgemeine Anfrage",
+    "support": "Technischer Support",
+    "billing": "Abrechnung & Zahlungen",
+    "partnership": "Partnerschaft",
+    "bug": "Fehlermeldung",
+    "feature": "Funktionswunsch",
+    "other": "Sonstiges"
+  },
+  "info": {
+    "email": {
+      "title": "E-Mail",
+      "subtitle": "Für allgemeine Anfragen"
+    },
+    "liveChat": {
+      "title": "Live-Chat",
+      "value": "Rund um die Uhr verfügbar",
+      "subtitle": "Schnelle Reaktionszeit"
+    },
+    "responseTime": {
+      "title": "Reaktionszeit",
+      "value": "Innerhalb von 24-48 Stunden",
+      "subtitle": "Werktage"
+    },
+    "office": {
+      "title": "Büro",
+      "line1": "11420 Santa Monica Boulevard",
+      "line2": "Post Office Box 252111",
+      "line3": "Los Angeles, CA 90025"
+    }
+  },
+  "form": {
+    "heading": "Senden Sie uns eine Nachricht",
+    "nameLabel": "Ihr Name",
+    "namePlaceholder": "Max Mustermann",
+    "emailLabel": "E-Mail-Adresse",
+    "emailPlaceholder": "sie@beispiel.de",
+    "subjectLabel": "Betreff",
+    "subjectPlaceholder": "Wählen Sie ein Thema",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Wie können wir Ihnen helfen?",
+    "submit": "Nachricht senden"
+  },
+  "success": {
+    "heading": "Nachricht erfolgreich gesendet!",
+    "text": "Vielen Dank für Ihre Nachricht. Unser Team wird sie prüfen und sich innerhalb von 24-48 Stunden bei Ihnen melden.",
+    "sendAnother": "Weitere Nachricht senden"
+  },
+  "notification": {
+    "title": "Nachricht gesendet!",
+    "message": "Wir melden uns innerhalb von 24-48 Stunden bei Ihnen."
+  }
+}

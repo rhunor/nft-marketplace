@@ -1,0 +1,58 @@
+{
+  "header": {
+    "title": "Konto aufladen",
+    "subtitle": "Fügen Sie ETH zu Ihrer Wallet hinzu, um NFTs zu erstellen und zu kaufen"
+  },
+  "balance": {
+    "label": "Aktuelles Guthaben",
+    "ethRate": "1 ETH = {price} $",
+    "refreshTitle": "Preis aktualisieren"
+  },
+  "amount": {
+    "heading": "Betrag auswählen",
+    "preset": "{value} ETH",
+    "customLabel": "Individueller Betrag (ETH)"
+  },
+  "deposit": {
+    "heading": "Einzahlungsadresse",
+    "qrAlt": "QR-Code für Einzahlung",
+    "loading": "Wird geladen...",
+    "sendTo": "Senden Sie ETH an diese Adresse:",
+    "copied": "Adresse in die Zwischenablage kopiert!",
+    "networkWarning": "Senden Sie ausschließlich ETH über das Ethereum-Netzwerk"
+  },
+  "notice": {
+    "heading": "Bearbeitungszeit",
+    "text": "Nach dem Senden der Zahlung dauert es in der Regel <strong>10 Minuten</strong>, bis sich Ihr Guthaben in Ihrem Konto widerspiegelt. Diese Zeit wird für Blockchain-Bestätigungen und die Überprüfung der Transaktion durch unser Admin-Team benötigt."
+  },
+  "howItWorks": {
+    "heading": "So funktioniert's",
+    "steps": {
+      "select": {
+        "title": "Betrag auswählen",
+        "text": "Wählen Sie, wie viel ETH Sie Ihrem Konto hinzufügen möchten"
+      },
+      "send": {
+        "title": "Zahlung senden",
+        "text": "Übertragen Sie ETH an die oben angezeigte Einzahlungsadresse"
+      },
+      "confirm": {
+        "title": "Auf Bestätigung warten",
+        "text": "Ihr Guthaben wird innerhalb von ca. 10 Minuten aktualisiert"
+      },
+      "start": {
+        "title": "Mit Erstellen & Sammeln beginnen",
+        "text": "Nutzen Sie Ihr Guthaben, um NFTs zu erstellen und zu kaufen"
+      }
+    }
+  },
+  "action": {
+    "button": "Ich habe {amount} ETH gesendet",
+    "help": "Benötigen Sie Hilfe? ",
+    "contactSupport": "Support kontaktieren"
+  },
+  "notification": {
+    "title": "Zahlungsanweisungen",
+    "message": "Senden Sie {amount} ETH an die angezeigte Adresse. Ihr Guthaben wird nach der Bestätigung innerhalb von ca. 10 Minuten aktualisiert."
+  }
+}

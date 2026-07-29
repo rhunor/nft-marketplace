@@ -1,0 +1,45 @@
+{
+  "pageTitle": "Explorer",
+  "pageSubtitle": "Découvrez des collections exclusives d'artistes numériques de classe mondiale",
+  "sort": {
+    "random": "Aléatoire",
+    "recentDesc": "Plus récent",
+    "volumeDesc": "Volume le plus élevé",
+    "volumeAsc": "Volume le plus faible",
+    "floorAsc": "Prix plancher : croissant",
+    "floorDesc": "Prix plancher : décroissant",
+    "itemsDesc": "Le plus d'objets"
+  },
+  "newUploads": {
+    "heading": "Nouveautés",
+    "subtitle": "Nouveaux NFT de nos créateurs marketplace",
+    "viewAll": "Voir toutes les nouveautés ({count})"
+  },
+  "newBadge": "Nouveau",
+  "price": "Prix",
+  "search": {
+    "collectionsPlaceholder": "Rechercher des collections...",
+    "nftsPlaceholder": "Rechercher des NFT..."
+  },
+  "viewMode": {
+    "collections": "Voir les collections",
+    "items": "Voir les objets individuels"
+  },
+  "filters": "Filtres",
+  "categories": "Catégories",
+  "allCategories": "Toutes les catégories",
+  "all": "Tous",
+  "clearAllFilters": "Effacer tous les filtres",
+  "activeFilters": "Filtres actifs :",
+  "searchLabel": "Recherche : {query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {Affichage de # collection} other {Affichage de # collections}}",
+    "items": "{count, plural, one {Affichage de # NFT} other {Affichage de # NFT}}"
+  },
+  "noCollectionsFound": "Aucune collection ne correspond à vos critères",
+  "clearFilters": "Effacer les filtres",
+  "itemsCount": "{count, plural, one {# objet} other {# objets}}",
+  "floor": "Prix plancher",
+  "totalVolume": "Volume total",
+  "usd": "USD"
+}

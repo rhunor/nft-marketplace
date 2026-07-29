@@ -1,0 +1,156 @@
+{
+  "detail": {
+    "loading": "Carregando NFT...",
+    "notFound": {
+      "heading": "NFT Não Encontrado",
+      "genericMessage": "O NFT que você está procurando não existe ou foi removido.",
+      "browseButton": "Explorar NFTs"
+    },
+    "back": "Voltar",
+    "share": "Compartilhar",
+    "translated": {
+      "badge": "Traduzido automaticamente",
+      "showOriginal": "Mostrar original",
+      "showTranslation": "Mostrar tradução"
+    },
+    "badges": {
+      "notForSale": "Não Está à Venda",
+      "youOwnThis": "Você Possui Este",
+      "marketplaceNft": "NFT do Marketplace",
+      "you": "(Você)"
+    },
+    "creator": "Criador",
+    "owner": "Proprietário",
+    "price": {
+      "current": "Preço Atual",
+      "insufficientBalance": "Saldo insuficiente",
+      "buyNow": "Comprar Agora",
+      "manageNft": "Gerenciar NFT",
+      "exportNft": "Exportar NFT"
+    },
+    "description": "Descrição",
+    "tags": "Tags",
+    "details": {
+      "heading": "Detalhes",
+      "tokenId": "ID do Token",
+      "blockchain": "Blockchain",
+      "ethereum": "Ethereum",
+      "mediaType": "Tipo de Mídia",
+      "created": "Criado em"
+    },
+    "related": {
+      "title": "Mais desta categoria",
+      "subtitle": "Explore mais NFTs de {category}"
+    },
+    "buyModal": {
+      "title": "Confirmar Compra",
+      "by": "por @{username}",
+      "price": "Preço",
+      "platformFee": "Taxa da Plataforma (2,5%)",
+      "gasFee": "Taxa de Gás (estimada)",
+      "total": "Total",
+      "yourBalance": "Seu Saldo",
+      "insufficientBalanceWarning": "Saldo insuficiente. Adicione fundos à sua conta.",
+      "immediateTransferNote": "A propriedade será transferida imediatamente após a confirmação.",
+      "adminTransferNote": "Após a compra, a transferência de propriedade será processada por nossa equipe de administração em até 24 horas.",
+      "cancel": "Cancelar",
+      "confirm": "Confirmar Compra"
+    },
+    "manageModal": {
+      "title": "Gerenciar NFT",
+      "statusListed": "Status: Listado",
+      "statusNotListed": "Status: Não Listado",
+      "priceLabel": "Preço (ETH)",
+      "pricePlaceholder": "0.1",
+      "listForSale": "Listar para Venda",
+      "updatePrice": "Atualizar Preço",
+      "unlist": "Remover do Marketplace",
+      "cancel": "Cancelar"
+    },
+    "notifications": {
+      "addedToFavorites": "Adicionado aos favoritos",
+      "removedFromFavorites": "Removido dos favoritos",
+      "likeUpdateFailed": "Falha ao atualizar curtida",
+      "purchaseSuccessTitle": "Compra Realizada com Sucesso!",
+      "purchaseSuccessMessage": "Agora você é o proprietário deste NFT.",
+      "purchaseFailedTitle": "Falha na Compra",
+      "genericError": "Algo deu errado",
+      "purchaseSubmittedTitle": "Solicitação de Compra Enviada!",
+      "purchaseSubmittedMessage": "Sua compra está sendo processada. A propriedade será transferida após a confirmação do administrador.",
+      "linkCopied": "Link copiado para a área de transferência!",
+      "copyFailed": "Falha ao copiar link",
+      "invalidPrice": "Digite um preço válido",
+      "listedTitle": "NFT Listado!",
+      "listedMessage": "Seu NFT já está disponível no marketplace.",
+      "listFailedTitle": "Falha ao listar NFT",
+      "unlistedTitle": "NFT Removido da Listagem",
+      "unlistedMessage": "Seu NFT foi removido do marketplace.",
+      "unlistFailedTitle": "Falha ao remover NFT da listagem",
+      "priceUpdatedTitle": "Preço Atualizado!",
+      "priceUpdatedMessage": "Novo preço: {price} ETH",
+      "priceUpdateFailedTitle": "Falha ao atualizar preço"
+    },
+    "errors": {
+      "fetchFailed": "Falha ao buscar NFT",
+      "notFoundError": "NFT não encontrado",
+      "loadFailed": "Falha ao carregar NFT"
+    }
+  },
+  "export": {
+    "cannotExport": "Este NFT não pode ser exportado.",
+    "loadFailed": "Falha ao carregar NFT",
+    "fetchFailed": "Falha ao buscar NFT",
+    "loading": "Carregando NFT...",
+    "cannotExportHeading": "Não é Possível Exportar o NFT",
+    "nftNotFound": "NFT não encontrado.",
+    "browseButton": "Explorar NFTs",
+    "accessDenied": {
+      "heading": "Acesso Negado",
+      "message": "Somente o proprietário deste NFT pode exportá-lo.",
+      "backButton": "Voltar ao NFT"
+    },
+    "back": "Voltar",
+    "heading": "Exportar NFT",
+    "subheading": "Exporte seu NFT para sua carteira pessoal",
+    "by": "por @{username}",
+    "fee": {
+      "heading": "Taxa de Exportação",
+      "amountLabel": "Valor a enviar",
+      "loadingAmount": "Carregando...",
+      "approxUsd": "≈ US$ {amount}",
+      "note": "Esta taxa única cobre os custos de gás e o processamento necessários para exportar seu NFT para uma carteira externa."
+    },
+    "payment": {
+      "heading": "Enviar Pagamento Para",
+      "instruction": "Transfira exatamente",
+      "instructionSuffix": "para o endereço Ethereum abaixo:",
+      "copyAddress": "Copiar endereço",
+      "addressCopied": "Endereço copiado para a área de transferência!",
+      "networkWarning": "Envie apenas ETH na rede Ethereum"
+    },
+    "processing": {
+      "heading": "Tempo de Processamento",
+      "message": "Após a confirmação do pagamento, a exportação do seu NFT será processada em até {hours}. O arquivo exportado será enviado para seu e-mail cadastrado.",
+      "hours": "24 horas"
+    },
+    "steps": {
+      "heading": "Como Funciona",
+      "step1": { "title": "Copie o endereço da carteira acima", "description": "Use qualquer carteira compatível com Ethereum para iniciar a transferência." },
+      "step2": { "title": "Envie {amount}", "description": "Certifique-se de enviar na mainnet do Ethereum.", "fallbackAmount": "US$ 100 em ETH" },
+      "step3": { "title": "Clique em \"Pago\" abaixo", "description": "Nos avise assim que o pagamento for enviado." },
+      "step4": { "title": "Receba a exportação do seu NFT", "description": "Processaremos e entregaremos em até 24 horas." }
+    },
+    "paidButton": "Pago",
+    "paidConfirmation": {
+      "heading": "Pagamento Enviado",
+      "message": "Processaremos sua solicitação de exportação em até 24 horas.",
+      "backButton": "Voltar ao NFT"
+    },
+    "notification": {
+      "title": "Pagamento Enviado",
+      "message": "Obrigado! Sua solicitação de exportação foi recebida. Nossa equipe irá processá-la em até 24 horas e enviará o arquivo do NFT para seu e-mail cadastrado."
+    },
+    "helpText": "Precisa de ajuda?",
+    "contactSupport": "Fale com o suporte"
+  }
+}

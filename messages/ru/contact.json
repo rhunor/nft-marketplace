@@ -1,0 +1,58 @@
+{
+  "header": {
+    "heading": "Связаться с нами",
+    "subtitle": "Есть вопрос или нужна помощь? Мы всегда на связи."
+  },
+  "subjectOptions": {
+    "general": "Общий вопрос",
+    "support": "Техническая поддержка",
+    "billing": "Оплата и платежи",
+    "partnership": "Партнёрство",
+    "bug": "Сообщение об ошибке",
+    "feature": "Предложение функции",
+    "other": "Другое"
+  },
+  "info": {
+    "email": {
+      "title": "Email",
+      "subtitle": "Для общих вопросов"
+    },
+    "liveChat": {
+      "title": "Онлайн-чат",
+      "value": "Доступен круглосуточно",
+      "subtitle": "Быстрый ответ"
+    },
+    "responseTime": {
+      "title": "Время ответа",
+      "value": "В течение 24–48 часов",
+      "subtitle": "В рабочие дни"
+    },
+    "office": {
+      "title": "Офис",
+      "line1": "11420 Santa Monica Boulevard",
+      "line2": "Post Office Box 252111",
+      "line3": "Los Angeles, CA 90025"
+    }
+  },
+  "form": {
+    "heading": "Отправьте нам сообщение",
+    "nameLabel": "Ваше имя",
+    "namePlaceholder": "Иван Иванов",
+    "emailLabel": "Адрес email",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "Тема",
+    "subjectPlaceholder": "Выберите тему",
+    "messageLabel": "Сообщение",
+    "messagePlaceholder": "Чем мы можем помочь?",
+    "submit": "Отправить сообщение"
+  },
+  "success": {
+    "heading": "Сообщение успешно отправлено!",
+    "text": "Благодарим за обращение. Наша команда рассмотрит ваше сообщение и ответит в течение 24–48 часов.",
+    "sendAnother": "Отправить ещё одно сообщение"
+  },
+  "notification": {
+    "title": "Сообщение отправлено!",
+    "message": "Мы ответим вам в течение 24–48 часов."
+  }
+}

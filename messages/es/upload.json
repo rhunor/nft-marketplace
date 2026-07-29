@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "Crear NFT",
+    "subtitle": "Sube tu obra de arte digital"
+  },
+  "mode": {
+    "single": {
+      "title": "NFT individual",
+      "subtitle": "Sube una sola obra"
+    },
+    "collection": {
+      "title": "Colección",
+      "subtitle": "De 2 a 20 elementos a la vez"
+    }
+  },
+  "fee": {
+    "label": "Comisión de publicación",
+    "singleDescription": "$200 por publicación de NFT",
+    "collectionDescription": "$200 × {count} elementos = ${total}",
+    "yourBalance": "Tu saldo",
+    "insufficientBalance": "Saldo insuficiente. Recarga tu cuenta."
+  },
+  "notifications": {
+    "invalidFileType": {
+      "title": "Tipo de archivo no válido",
+      "message": "Sube un archivo de imagen, video o audio."
+    },
+    "fileTooLarge": {
+      "title": "Archivo demasiado grande",
+      "message": "El tamaño máximo del archivo es de 100 MB."
+    },
+    "maxItemsReached": {
+      "title": "Máximo alcanzado",
+      "message": "Una colección puede tener como máximo 20 elementos."
+    },
+    "minItemsRequired": {
+      "title": "Mínimo requerido",
+      "message": "Una colección debe tener al menos 2 elementos."
+    },
+    "noFileSelected": {
+      "title": "Ningún archivo seleccionado"
+    },
+    "insufficientBalance": {
+      "title": "Saldo insuficiente",
+      "uploadMessage": "Necesitas {fee} para publicar.",
+      "collectionMessage": "Necesitas {fee} para crear la colección."
+    },
+    "nftCreated": {
+      "title": "¡NFT creado!",
+      "message": "Tu NFT se ha publicado correctamente."
+    },
+    "uploadFailed": {
+      "title": "Error al publicar",
+      "defaultMessage": "Algo salió mal. Inténtalo de nuevo."
+    },
+    "collectionInvalidFileType": {
+      "title": "Tipo de archivo no válido"
+    },
+    "collectionFileTooLarge": {
+      "title": "Archivo demasiado grande",
+      "message": "Máximo 100 MB."
+    },
+    "fillRequiredFields": {
+      "title": "Completa todos los campos obligatorios"
+    },
+    "collectionCreated": {
+      "title": "¡Colección creada!",
+      "message": "{count} elementos publicados correctamente."
+    }
+  },
+  "form": {
+    "single": {
+      "mediaLabel": "Archivo multimedia *",
+      "dragDrop": "Arrastra y suelta o haz clic para subir",
+      "acceptedTypes": "JPG, PNG, GIF, MP4, MP3 (máx. 100 MB)",
+      "titleLabel": "Título *",
+      "titlePlaceholder": "Título del NFT",
+      "priceLabel": "Precio (ETH) *",
+      "pricePlaceholder": "0.1",
+      "categoryLabel": "Categoría *",
+      "tagsLabel": "Etiquetas (hasta 10)",
+      "tagsPlaceholder": "Añadir etiqueta",
+      "addTag": "Añadir",
+      "submit": "Crear NFT",
+      "submitting": "Subiendo...",
+      "priceError": "El precio debe ser mayor que 0"
+    },
+    "collection": {
+      "detailsHeading": "Detalles de la colección",
+      "nameLabel": "Nombre de la colección *",
+      "namePlaceholder": "Mi colección",
+      "descriptionLabel": "Descripción *",
+      "descriptionPlaceholder": "Describe tu colección...",
+      "categoryLabel": "Categoría *",
+      "priceLabel": "Precio de la colección (ETH) *",
+      "pricePlaceholder": "0.5",
+      "pricePerItemHint": "Precio por elemento: {price}",
+      "itemsHeading": "Elementos ({count})",
+      "addItem": "Añadir",
+      "itemLabel": "Elemento {number}",
+      "itemUploadPrompt": "Haz clic para subir",
+      "itemTitleLabel": "Título *",
+      "itemTitlePlaceholder": "Título del elemento",
+      "requiredError": "Obligatorio",
+      "priceError": "El precio de la colección debe ser mayor que 0",
+      "submit": "Crear colección ({count} elementos)",
+      "submitting": "Creando colección..."
+    }
+  }
+}

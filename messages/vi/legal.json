@@ -1,0 +1,364 @@
+{
+  "terms": {
+    "metaTitle": "Điều Khoản Dịch Vụ",
+    "metaDescription": "Điều Khoản Dịch Vụ của Foundation Exclusive - Đọc các điều khoản và điều kiện sử dụng nền tảng giao dịch NFT của chúng tôi.",
+    "heading": "Điều Khoản Dịch Vụ",
+    "lastUpdated": "Cập nhật lần cuối: 30 tháng 6, 2026",
+    "s1": {
+      "heading": "1. Đồng Ý Với Điều Khoản",
+      "p1": "Bằng việc truy cập hoặc sử dụng Foundation Exclusive (\"Nền Tảng\"), bạn đồng ý bị ràng buộc bởi các Điều Khoản Dịch Vụ này (\"Điều Khoản\"). Nếu bạn không đồng ý với các Điều Khoản này, bạn không được phép truy cập hoặc sử dụng Nền Tảng.",
+      "p2": "Foundation Exclusive là một nền tảng giao dịch NFT độc quyền, hoạt động như phần mở rộng của hệ sinh thái Foundation. Nền tảng của chúng tôi phục vụ các nhà sưu tầm và nghệ sĩ giá trị cao đang tìm kiếm nghệ thuật số cao cấp."
+    },
+    "s2": {
+      "heading": "2. Điều Kiện Sử Dụng",
+      "intro": "Để sử dụng Foundation Exclusive, bạn phải:",
+      "items": [
+        "Đủ 18 tuổi trở lên",
+        "Có đầy đủ năng lực pháp lý để tham gia vào các hợp đồng ràng buộc",
+        "Không thuộc đối tượng bị cấm sử dụng Nền Tảng theo luật hiện hành",
+        "Có một ví tiền điện tử hợp lệ tương thích với Nền Tảng của chúng tôi"
+      ]
+    },
+    "s3": {
+      "heading": "3. Đăng Ký Tài Khoản",
+      "intro": "Để truy cập một số tính năng nhất định của Nền Tảng, bạn có thể cần phải tạo tài khoản. Bạn đồng ý:",
+      "items": [
+        "Cung cấp thông tin chính xác, cập nhật và đầy đủ",
+        "Duy trì và kịp thời cập nhật thông tin tài khoản của bạn",
+        "Bảo mật thông tin đăng nhập tài khoản của bạn",
+        "Chịu trách nhiệm về mọi hoạt động diễn ra dưới tài khoản của bạn",
+        "Thông báo ngay cho chúng tôi về bất kỳ truy cập trái phép nào vào tài khoản của bạn"
+      ]
+    },
+    "s4": {
+      "heading": "4. Giao Dịch NFT",
+      "purchasing": {
+        "heading": "Mua NFT",
+        "intro": "Khi bạn mua một NFT trên Foundation Exclusive, bạn đồng ý rằng:",
+        "items": [
+          "Mọi giao dịch mua bán đều là cuối cùng và không thể hoàn tiền",
+          "Bạn chịu trách nhiệm về mọi khoản phí gas và chi phí giao dịch",
+          "Quyền sở hữu được chuyển giao khi giao dịch blockchain hoàn tất thành công",
+          "Nền Tảng không chịu trách nhiệm về bất kỳ sai sót nào liên quan đến địa chỉ ví hoặc chi tiết giao dịch"
+        ]
+      },
+      "creating": {
+        "heading": "Tạo Và Bán NFT",
+        "intro": "Nếu bạn tạo hoặc bán NFT trên Nền Tảng, bạn cam đoan và bảo đảm rằng:",
+        "items": [
+          "Bạn sở hữu hoặc có quyền đối với nội dung mà bạn đúc thành NFT",
+          "Nội dung của bạn không vi phạm quyền sở hữu trí tuệ của bất kỳ bên thứ ba nào",
+          "Nội dung của bạn tuân thủ mọi luật và quy định hiện hành",
+          "Bạn sẽ mô tả chính xác NFT của mình và không thực hiện các hành vi gây hiểu lầm"
+        ]
+      }
+    },
+    "s5": {
+      "heading": "5. Phí Nền Tảng",
+      "intro": "Foundation Exclusive thu phí đối với một số dịch vụ nhất định:",
+      "items": [
+        {
+          "label": "Phí Giao Dịch:",
+          "text": "Một tỷ lệ phần trăm của mỗi giao dịch bán sẽ được Nền Tảng giữ lại"
+        },
+        {
+          "label": "Phí Đúc NFT:",
+          "text": "Một khoản phí được tính khi tạo NFT mới"
+        },
+        {
+          "label": "Tiền Bản Quyền Cho Người Sáng Tạo:",
+          "text": "Người sáng tạo gốc nhận tiền bản quyền trên các giao dịch bán thứ cấp theo quy định"
+        }
+      ],
+      "outro": "Mọi khoản phí có thể thay đổi. Cơ cấu phí hiện hành được hiển thị trong quá trình giao dịch."
+    },
+    "s6": {
+      "heading": "6. Hành Vi Bị Cấm",
+      "intro": "Bạn đồng ý không được:",
+      "items": [
+        "Sử dụng Nền Tảng cho bất kỳ mục đích bất hợp pháp nào hoặc vi phạm bất kỳ luật nào",
+        "Tải lên nội dung xâm phạm, phỉ báng hoặc có hại",
+        "Tham gia vào các hành vi thao túng thị trường, giao dịch giả tạo (wash trading), hoặc gian lận",
+        "Cố gắng can thiệp hoặc làm gián đoạn hoạt động của Nền Tảng",
+        "Sử dụng hệ thống tự động hoặc bot mà không có sự cho phép rõ ràng của chúng tôi",
+        "Mạo danh người khác hoặc trình bày sai lệch về danh tính của bạn"
+      ]
+    },
+    "s7": {
+      "heading": "7. Sở Hữu Trí Tuệ & Quyền Sở Hữu NFT",
+      "intro": "Nền Tảng và nội dung gốc, tính năng cũng như chức năng của nó thuộc quyền sở hữu của Foundation Exclusive và được bảo vệ bởi luật bản quyền, nhãn hiệu và sở hữu trí tuệ quốc tế.",
+      "buying": {
+        "heading": "Mua NFT Mang Lại Cho Bạn Điều Gì",
+        "text": "Khi bạn mua một NFT trên Foundation Exclusive, bạn có được quyền sở hữu có thể xác minh đối với phiên bản vật phẩm sưu tầm số cụ thể đó — một token duy nhất được ghi nhận trên blockchain, đại diện cho vị trí của bạn trong nguồn gốc của tác phẩm. Điều này trao cho bạn quyền nắm giữ, trưng bày, chuyển nhượng và bán lại phiên bản mà bạn sở hữu, cùng với giấy phép hạn chế, không độc quyền, phi thương mại để trưng bày tác phẩm nghệ thuật liên quan cho mục đích cá nhân (ví dụ, làm ảnh đại diện hoặc trong phòng trưng bày số cá nhân)."
+      },
+      "creatorRights": {
+        "heading": "Điều Vẫn Thuộc Về Người Sáng Tạo",
+        "intro": "Quyền sở hữu một phiên bản NFT khác biệt với quyền sở hữu tác phẩm sáng tạo gốc. Trừ khi có thỏa thuận bằng văn bản riêng với người sáng tạo quy định khác, người sáng tạo gốc giữ lại toàn bộ quyền bản quyền, sao chép, sử dụng thương mại, cấp phép và tạo tác phẩm phái sinh đối với tác phẩm nghệ thuật, phương tiện truyền thông, hoặc nội dung gắn liền với NFT. Điều này có nghĩa là, nếu không có sự cho phép bằng văn bản rõ ràng của người sáng tạo, chủ sở hữu NFT không được:",
+        "items": [
+          "Sao chép, in ấn, hoặc sao chép tác phẩm gốc theo bất kỳ hình thức nào để phân phối hoặc bán",
+          "Sử dụng tác phẩm cho mục đích thương mại, bao gồm trên hàng hóa, trong quảng cáo, hoặc trong các sản phẩm hoặc dịch vụ khác",
+          "Cấp phép lại, phân phối, hoặc trao quyền cho bên thứ ba đối với tác phẩm gốc",
+          "Tạo ra các tác phẩm phái sinh, chuyển thể, hoặc bản phối lại dựa trên tác phẩm gốc"
+        ],
+        "outro": "Tóm lại: sở hữu NFT nghĩa là sở hữu vật phẩm sưu tầm - chính token đã được xác thực và có thể giao dịch. Điều này không chuyển giao bản quyền của người sáng tạo hoặc bất kỳ quyền thương mại rộng hơn nào đối với tác phẩm mà token đại diện. Người sáng tạo hoàn toàn tự do tiếp tục cấp phép, sao chép và khai thác thương mại tác phẩm của riêng họ độc lập với bất kỳ giao dịch bán NFT nào, ngoại trừ trường hợp bị hạn chế rõ ràng bởi một thỏa thuận bằng văn bản riêng."
+      }
+    },
+    "s8": {
+      "heading": "8. Miễn Trừ Trách Nhiệm",
+      "p1": "NỀN TẢNG ĐƯỢC CUNG CẤP \"NGUYÊN TRẠNG\" VÀ \"THEO TÌNH TRẠNG SẴN CÓ\" MÀ KHÔNG CÓ BẤT KỲ BẢO ĐẢM NÀO. CHÚNG TÔI KHÔNG ĐẢM BẢO TÍNH CHÍNH XÁC, ĐẦY ĐỦ, HOẶC ĐỘ TIN CẬY CỦA BẤT KỲ NỘI DUNG NÀO TRÊN NỀN TẢNG.",
+      "p2": "Giá trị NFT có tính biến động cao và mang tính đầu cơ. Chúng tôi không đưa ra bất kỳ cam kết nào về lợi nhuận hoặc thua lỗ tiềm ẩn. Bạn thừa nhận rằng bạn hoàn toàn chịu trách nhiệm về các quyết định đầu tư của mình."
+    },
+    "s9": {
+      "heading": "9. Giới Hạn Trách Nhiệm Pháp Lý",
+      "text": "TRONG PHẠM VI TỐI ĐA ĐƯỢC PHÁP LUẬT CHO PHÉP, FOUNDATION EXCLUSIVE SẼ KHÔNG CHỊU TRÁCH NHIỆM VỀ BẤT KỲ THIỆT HẠI GIÁN TIẾP, NGẪU NHIÊN, ĐẶC BIỆT, HỆ QUẢ HOẶC MANG TÍNH TRỪNG PHẠT NÀO PHÁT SINH TỪ VIỆC BẠN SỬ DỤNG NỀN TẢNG."
+    },
+    "s10": {
+      "heading": "10. Thuế Đối Với Người Dùng Trong Nước Và Quốc Tế",
+      "p1": "Là một công ty có trụ sở tại Hoa Kỳ, tất cả người dùng trong lãnh thổ Hoa Kỳ và một số người dùng nhất định ở ngoài Hoa Kỳ có thể được yêu cầu nộp các khoản thuế, phí, hoặc lệ phí do chính phủ áp đặt liên quan đến việc sử dụng dịch vụ của chúng tôi, khi luật hiện hành hoặc chính sách thanh toán của chúng tôi yêu cầu. Bất kỳ khoản thuế hoặc phí nào như vậy, nếu áp dụng, phải được thanh toán thông qua Nền Tảng hàng năm theo hướng dẫn thanh toán được cung cấp.",
+      "p2": "Việc không thanh toán bất kỳ khoản thuế hoặc phí bắt buộc nào theo đúng thời hạn có thể dẫn đến việc tạm ngừng hoặc hạn chế quyền truy cập vào một số hoặc toàn bộ dịch vụ của chúng tôi cho đến khi khoản nợ được giải quyết."
+    },
+    "s11": {
+      "heading": "11. Bồi Thường",
+      "text": "Bạn đồng ý bồi thường và miễn trừ trách nhiệm cho Foundation Exclusive cùng các cán bộ, giám đốc, nhân viên và đại diện của mình khỏi bất kỳ khiếu nại, thiệt hại, tổn thất, hoặc chi phí nào phát sinh từ việc bạn sử dụng Nền Tảng hoặc vi phạm các Điều Khoản này."
+    },
+    "s12": {
+      "heading": "12. Sửa Đổi Điều Khoản",
+      "text": "Chúng tôi có quyền sửa đổi các Điều Khoản này bất kỳ lúc nào. Các thay đổi sẽ có hiệu lực ngay khi được đăng tải. Việc bạn tiếp tục sử dụng Nền Tảng đồng nghĩa với việc chấp nhận các Điều Khoản đã được sửa đổi."
+    },
+    "s13": {
+      "heading": "13. Luật Điều Chỉnh",
+      "text": "Các Điều Khoản này sẽ được điều chỉnh và diễn giải theo luật pháp của khu vực pháp lý nơi Foundation Exclusive hoạt động, không xét đến các quy định về xung đột pháp luật."
+    },
+    "s14": {
+      "heading": "14. Thông Tin Liên Hệ",
+      "intro": "Nếu có thắc mắc về các Điều Khoản này, vui lòng liên hệ với chúng tôi tại:",
+      "emailLabel": "Email:"
+    }
+  },
+  "privacy": {
+    "metaTitle": "Chính Sách Bảo Mật | Foundation Exclusive",
+    "metaDescription": "Chính Sách Bảo Mật của Foundation Exclusive - Tìm hiểu cách chúng tôi thu thập, sử dụng và bảo vệ thông tin cá nhân của bạn.",
+    "heading": "Chính Sách Bảo Mật",
+    "lastUpdated": "Cập nhật lần cuối: 1 tháng 1, 2025",
+    "s1": {
+      "heading": "1. Giới Thiệu",
+      "p1": "Foundation Exclusive (\"chúng tôi\") cam kết bảo vệ quyền riêng tư của bạn. Chính Sách Bảo Mật này giải thích cách chúng tôi thu thập, sử dụng, tiết lộ và bảo vệ thông tin của bạn khi bạn truy cập trang web và sử dụng dịch vụ giao dịch NFT của chúng tôi.",
+      "p2": "Là một nền tảng độc quyền dành cho các nhà sưu tầm và nghệ sĩ NFT giá trị cao, chúng tôi hiểu tầm quan trọng của việc duy trì tính bảo mật và an toàn cho thông tin cá nhân và tài chính của bạn."
+    },
+    "s2": {
+      "heading": "2. Thông Tin Chúng Tôi Thu Thập",
+      "personal": {
+        "heading": "Thông Tin Cá Nhân",
+        "items": [
+          "Họ tên và địa chỉ email",
+          "Địa chỉ ví liên kết với tài khoản của bạn",
+          "Thông tin hồ sơ bạn chọn cung cấp",
+          "Lịch sử giao dịch và hồ sơ sở hữu NFT",
+          "Tùy chọn liên lạc"
+        ]
+      },
+      "technical": {
+        "heading": "Thông Tin Kỹ Thuật",
+        "items": [
+          "Địa chỉ IP và mã định danh thiết bị",
+          "Loại và phiên bản trình duyệt",
+          "Hệ điều hành",
+          "Các trang đã truy cập và thời gian sử dụng trên nền tảng của chúng tôi",
+          "Địa chỉ trang web giới thiệu"
+        ]
+      }
+    },
+    "s3": {
+      "heading": "3. Cách Chúng Tôi Sử Dụng Thông Tin Của Bạn",
+      "intro": "Chúng tôi sử dụng thông tin thu thập được để:",
+      "items": [
+        "Cung cấp, vận hành và duy trì dịch vụ giao dịch của chúng tôi",
+        "Xử lý giao dịch và gửi thông tin liên quan",
+        "Xác minh danh tính của bạn và ngăn chặn gian lận",
+        "Gửi cho bạn thông tin cập nhật về tài khoản và giao dịch của bạn",
+        "Phản hồi các bình luận, câu hỏi và yêu cầu của bạn",
+        "Cải thiện nền tảng và phát triển tính năng mới",
+        "Tuân thủ các nghĩa vụ pháp lý"
+      ]
+    },
+    "s4": {
+      "heading": "4. Chia Sẻ Và Tiết Lộ Thông Tin",
+      "intro": "Chúng tôi không bán, trao đổi, hoặc cho thuê thông tin cá nhân của bạn cho bên thứ ba. Chúng tôi có thể chia sẻ thông tin của bạn trong các trường hợp sau:",
+      "items": [
+        {
+          "label": "Giao Dịch Blockchain:",
+          "text": "Các giao dịch NFT được ghi lại trên blockchain công khai và có thể được bất kỳ ai nhìn thấy."
+        },
+        {
+          "label": "Nhà Cung Cấp Dịch Vụ:",
+          "text": "Chúng tôi có thể chia sẻ thông tin với các nhà cung cấp dịch vụ bên thứ ba đáng tin cậy, hỗ trợ vận hành nền tảng của chúng tôi."
+        },
+        {
+          "label": "Yêu Cầu Pháp Lý:",
+          "text": "Chúng tôi có thể tiết lộ thông tin khi pháp luật yêu cầu hoặc để bảo vệ quyền lợi của chúng tôi."
+        }
+      ]
+    },
+    "s5": {
+      "heading": "5. Bảo Mật Dữ Liệu",
+      "text": "Chúng tôi triển khai các biện pháp kỹ thuật và tổ chức phù hợp để bảo vệ thông tin cá nhân của bạn khỏi truy cập, thay đổi, tiết lộ, hoặc phá hủy trái phép. Tuy nhiên, không có phương thức truyền tải nào qua Internet là an toàn tuyệt đối 100%."
+    },
+    "s6": {
+      "heading": "6. Quyền Của Bạn",
+      "intro": "Bạn có quyền:",
+      "items": [
+        "Truy cập thông tin cá nhân của bạn",
+        "Sửa thông tin không chính xác hoặc chưa đầy đủ",
+        "Yêu cầu xóa thông tin cá nhân của bạn",
+        "Phản đối hoặc hạn chế việc xử lý thông tin của bạn",
+        "Khả năng di chuyển dữ liệu",
+        "Rút lại sự đồng ý bất kỳ lúc nào"
+      ]
+    },
+    "s7": {
+      "heading": "7. Cookie Và Theo Dõi",
+      "text": "Chúng tôi sử dụng cookie và các công nghệ theo dõi tương tự để nâng cao trải nghiệm của bạn trên nền tảng của chúng tôi. Để biết thêm thông tin, vui lòng xem <cookieLink>Chính Sách Cookie</cookieLink> của chúng tôi."
+    },
+    "s8": {
+      "heading": "8. Thay Đổi Đối Với Chính Sách Này",
+      "text": "Chúng tôi có thể cập nhật Chính Sách Bảo Mật này theo thời gian. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi nào bằng cách đăng Chính Sách Bảo Mật mới trên trang này và cập nhật ngày \"Cập nhật lần cuối\"."
+    },
+    "s9": {
+      "heading": "9. Liên Hệ Với Chúng Tôi",
+      "intro": "Nếu bạn có bất kỳ câu hỏi nào về Chính Sách Bảo Mật này, vui lòng liên hệ với chúng tôi tại:",
+      "emailLabel": "Email:"
+    }
+  },
+  "cookies": {
+    "metaTitle": "Chính Sách Cookie | Foundation Exclusive",
+    "metaDescription": "Chính Sách Cookie của Foundation Exclusive - Tìm hiểu về việc sử dụng cookie và công nghệ theo dõi của chúng tôi.",
+    "heading": "Chính Sách Cookie",
+    "lastUpdated": "Cập nhật lần cuối: 1 tháng 1, 2025",
+    "s1": {
+      "heading": "1. Cookie Là Gì",
+      "p1": "Cookie là các tệp văn bản nhỏ được đặt trên máy tính hoặc thiết bị di động của bạn khi bạn truy cập một trang web. Chúng được sử dụng rộng rãi để giúp trang web hoạt động hiệu quả hơn và cung cấp thông tin cho chủ sở hữu trang web.",
+      "p2": "Foundation Exclusive sử dụng cookie và các công nghệ tương tự để nâng cao trải nghiệm của bạn trên nền tảng của chúng tôi, hiểu cách bạn sử dụng dịch vụ của chúng tôi, và cải thiện các dịch vụ mà chúng tôi cung cấp."
+    },
+    "s2": {
+      "heading": "2. Các Loại Cookie Chúng Tôi Sử Dụng",
+      "essential": {
+        "heading": "Cookie Thiết Yếu",
+        "text": "Các cookie này cần thiết để trang web hoạt động bình thường. Chúng cho phép các chức năng cốt lõi như bảo mật, quản lý mạng và truy cập tài khoản. Bạn không thể từ chối các cookie này.",
+        "items": [
+          "Quản lý phiên",
+          "Xác thực và đăng nhập",
+          "Tính năng bảo mật",
+          "Cân bằng tải"
+        ]
+      },
+      "performance": {
+        "heading": "Cookie Hiệu Suất",
+        "text": "Các cookie này giúp chúng tôi hiểu cách khách truy cập tương tác với trang web của mình bằng cách thu thập và báo cáo thông tin một cách ẩn danh.",
+        "items": [
+          "Thời gian tải trang",
+          "Thông báo lỗi gặp phải",
+          "Các trang đã truy cập",
+          "Thời gian dành cho từng trang"
+        ]
+      },
+      "functionality": {
+        "heading": "Cookie Chức Năng",
+        "text": "Các cookie này cho phép các chức năng nâng cao và cá nhân hóa, chẳng hạn như ghi nhớ tùy chọn của bạn.",
+        "items": [
+          "Tùy chọn ngôn ngữ",
+          "Cài đặt giao diện (chế độ tối/sáng)",
+          "Sản phẩm đã xem gần đây",
+          "Tùy chọn người dùng"
+        ]
+      },
+      "analytics": {
+        "heading": "Cookie Phân Tích",
+        "text": "Chúng tôi sử dụng cookie phân tích để thu thập thông tin chuyên sâu về cách nền tảng của chúng tôi được sử dụng, giúp chúng tôi cải thiện dịch vụ.",
+        "items": [
+          "Nguồn truy cập",
+          "Mô hình hành vi người dùng",
+          "Thống kê sử dụng tính năng",
+          "Theo dõi chuyển đổi"
+        ]
+      }
+    },
+    "s3": {
+      "heading": "3. Cookie Của Bên Thứ Ba",
+      "p1": "Một số cookie trên nền tảng của chúng tôi được đặt bởi các dịch vụ bên thứ ba xuất hiện trên các trang của chúng tôi. Chúng tôi không kiểm soát các cookie này.",
+      "intro": "Các dịch vụ bên thứ ba chúng tôi có thể sử dụng bao gồm:",
+      "items": [
+        {
+          "label": "Google Analytics:",
+          "text": "Để hiểu lưu lượng truy cập và mô hình sử dụng trang web"
+        },
+        {
+          "label": "Nhà Cung Cấp Ví:",
+          "text": "Để kết nối ví tiền điện tử và thực hiện giao dịch"
+        },
+        {
+          "label": "Mạng Xã Hội:",
+          "text": "Để hỗ trợ chức năng chia sẻ và tùy chọn đăng nhập qua mạng xã hội"
+        }
+      ]
+    },
+    "s4": {
+      "heading": "4. Cookie Tồn Tại Trong Bao Lâu",
+      "intro": "Cookie có thể tồn tại trên thiết bị của bạn trong các khoảng thời gian khác nhau:",
+      "items": [
+        {
+          "label": "Cookie Phiên:",
+          "text": "Đây là các cookie tạm thời và sẽ bị xóa khi bạn đóng trình duyệt."
+        },
+        {
+          "label": "Cookie Vĩnh Viễn:",
+          "text": "Các cookie này vẫn tồn tại trên thiết bị của bạn trong một khoảng thời gian nhất định (ví dụ: 30 ngày, 1 năm) hoặc cho đến khi bạn xóa chúng."
+        }
+      ]
+    },
+    "s5": {
+      "heading": "5. Quản Lý Cookie",
+      "intro": "Bạn có một số tùy chọn để quản lý cookie:",
+      "browserSettings": {
+        "heading": "Cài Đặt Trình Duyệt",
+        "intro": "Hầu hết các trình duyệt web cho phép bạn kiểm soát cookie thông qua cài đặt của chúng. Bạn có thể:",
+        "items": [
+          "Xem các cookie được lưu trữ trên thiết bị của bạn",
+          "Xóa từng cookie riêng lẻ hoặc tất cả cookie",
+          "Chặn cookie từ một số trang web cụ thể hoặc tất cả trang web",
+          "Đặt tùy chọn cho cookie của bên thứ nhất so với bên thứ ba"
+        ]
+      },
+      "browserSpecific": {
+        "heading": "Hướng Dẫn Theo Từng Trình Duyệt",
+        "items": [
+          { "label": "Chrome:", "text": "Cài đặt → Quyền riêng tư và bảo mật → Cookie và dữ liệu trang web khác" },
+          { "label": "Firefox:", "text": "Tùy chọn → Quyền riêng tư & Bảo mật → Cookie và Dữ liệu Trang web" },
+          { "label": "Safari:", "text": "Tùy chọn → Quyền riêng tư → Quản lý Dữ liệu Trang web" },
+          { "label": "Edge:", "text": "Cài đặt → Cookie và quyền của trang web" }
+        ]
+      },
+      "note": {
+        "label": "Lưu ý:",
+        "text": "Việc tắt một số cookie nhất định có thể ảnh hưởng đến chức năng của nền tảng chúng tôi. Cookie thiết yếu không thể bị tắt vì chúng cần thiết để nền tảng hoạt động."
+      }
+    },
+    "s6": {
+      "heading": "6. Cân Nhắc Về Web3 Và Blockchain",
+      "intro": "Là một nền tảng giao dịch NFT, chúng tôi tương tác với công nghệ blockchain và ví tiền điện tử. Xin lưu ý:",
+      "items": [
+        "Dữ liệu kết nối ví có thể được lưu trữ cục bộ trên trình duyệt của bạn",
+        "Chữ ký giao dịch được xử lý thông qua nhà cung cấp ví của bạn",
+        "Giao dịch blockchain là công khai và vĩnh viễn, độc lập với cookie"
+      ]
+    },
+    "s7": {
+      "heading": "7. Cập Nhật Chính Sách Này",
+      "text": "Chúng tôi có thể cập nhật Chính Sách Cookie này theo thời gian để phản ánh những thay đổi trong hoạt động của chúng tôi hoặc vì các lý do vận hành, pháp lý, hoặc quy định khác. Chúng tôi khuyến khích bạn xem lại chính sách này định kỳ."
+    },
+    "s8": {
+      "heading": "8. Liên Hệ Với Chúng Tôi",
+      "intro": "Nếu bạn có câu hỏi về việc sử dụng cookie của chúng tôi, vui lòng liên hệ với chúng tôi:",
+      "emailLabel": "Email:"
+    }
+  }
+}

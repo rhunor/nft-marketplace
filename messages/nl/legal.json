@@ -1,0 +1,364 @@
+{
+  "terms": {
+    "metaTitle": "Servicevoorwaarden",
+    "metaDescription": "Servicevoorwaarden voor Foundation Exclusive - Lees onze algemene voorwaarden voor het gebruik van onze NFT-marketplace.",
+    "heading": "Servicevoorwaarden",
+    "lastUpdated": "Laatst bijgewerkt: 30 juni 2026",
+    "s1": {
+      "heading": "1. Aanvaarding van de Voorwaarden",
+      "p1": "Door toegang te krijgen tot of gebruik te maken van Foundation Exclusive (\"het Platform\"), gaat u ermee akkoord gebonden te zijn aan deze Servicevoorwaarden (\"Voorwaarden\"). Als u niet akkoord gaat met deze Voorwaarden, mag u geen toegang krijgen tot of gebruikmaken van het Platform.",
+      "p2": "Foundation Exclusive is een exclusieve NFT-marketplace die fungeert als een uitbreiding van het Foundation-ecosysteem. Ons platform richt zich op verzamelaars en makers met een hoge waarde die op zoek zijn naar premium digitale kunst."
+    },
+    "s2": {
+      "heading": "2. Toelaatbaarheid",
+      "intro": "Om Foundation Exclusive te gebruiken, moet u:",
+      "items": [
+        "Ten minste 18 jaar oud zijn",
+        "De wettelijke bevoegdheid hebben om bindende overeenkomsten aan te gaan",
+        "Niet zijn uitgesloten van het gebruik van het Platform onder toepasselijke wetgeving",
+        "Beschikken over een geldige cryptowallet die compatibel is met ons Platform"
+      ]
+    },
+    "s3": {
+      "heading": "3. Accountregistratie",
+      "intro": "Om toegang te krijgen tot bepaalde functies van het Platform, kan het nodig zijn een account aan te maken. U gaat ermee akkoord om:",
+      "items": [
+        "Nauwkeurige, actuele en volledige informatie te verstrekken",
+        "Uw accountgegevens bij te houden en tijdig bij te werken",
+        "De beveiliging van uw accountgegevens te handhaven",
+        "Verantwoordelijkheid te nemen voor alle activiteiten die onder uw account plaatsvinden",
+        "Ons onmiddellijk op de hoogte te stellen van ongeautoriseerde toegang tot uw account"
+      ]
+    },
+    "s4": {
+      "heading": "4. NFT-Transacties",
+      "purchasing": {
+        "heading": "NFT's Kopen",
+        "intro": "Wanneer u een NFT koopt op Foundation Exclusive, gaat u ermee akkoord dat:",
+        "items": [
+          "Alle verkopen definitief zijn en niet kunnen worden terugbetaald",
+          "U verantwoordelijk bent voor alle gaskosten en transactiekosten",
+          "Eigendom wordt overgedragen zodra de blockchaintransactie succesvol is voltooid",
+          "Het Platform niet verantwoordelijk is voor fouten in walletadressen of transactiegegevens"
+        ]
+      },
+      "creating": {
+        "heading": "NFT's Creëren en Verkopen",
+        "intro": "Als u NFT's creëert of verkoopt op het Platform, verklaart en garandeert u dat:",
+        "items": [
+          "U eigenaar bent van, of de rechten heeft op, de content die u mint",
+          "Uw content geen inbreuk maakt op intellectuele-eigendomsrechten van derden",
+          "Uw content voldoet aan alle toepasselijke wet- en regelgeving",
+          "U uw NFT's nauwkeurig zult beschrijven en zich niet zult inlaten met misleidende praktijken"
+        ]
+      }
+    },
+    "s5": {
+      "heading": "5. Platformkosten",
+      "intro": "Foundation Exclusive brengt kosten in rekening voor bepaalde diensten:",
+      "items": [
+        {
+          "label": "Transactiekosten:",
+          "text": "Een percentage van elke verkoop wordt ingehouden door het Platform"
+        },
+        {
+          "label": "Mintkosten:",
+          "text": "Er worden kosten in rekening gebracht bij het creëren van nieuwe NFT's"
+        },
+        {
+          "label": "Royalty's voor Makers:",
+          "text": "Originele makers ontvangen royalty's op secundaire verkopen zoals gespecificeerd"
+        }
+      ],
+      "outro": "Alle kosten kunnen worden gewijzigd. De actuele kostenstructuren worden weergegeven tijdens het transactieproces."
+    },
+    "s6": {
+      "heading": "6. Verboden Gedrag",
+      "intro": "U gaat ermee akkoord om niet:",
+      "items": [
+        "Het Platform te gebruiken voor illegale doeleinden of in strijd met wetgeving",
+        "Content te uploaden die inbreuk maakt, lasterlijk of schadelijk is",
+        "Zich in te laten met marktmanipulatie, wash trading of frauduleuze activiteiten",
+        "Te proberen de werking van het Platform te verstoren of te belemmeren",
+        "Geautomatiseerde systemen of bots te gebruiken zonder onze uitdrukkelijke toestemming",
+        "Zich voor te doen als anderen of uw identiteit verkeerd voor te stellen"
+      ]
+    },
+    "s7": {
+      "heading": "7. Intellectueel Eigendom & NFT-Eigendomsrechten",
+      "intro": "Het Platform en de bijbehorende oorspronkelijke content, functies en functionaliteit zijn eigendom van Foundation Exclusive en worden beschermd door internationale auteursrechten, merkenrechten en andere wetten op het gebied van intellectueel eigendom.",
+      "buying": {
+        "heading": "Wat het Kopen van een NFT U Oplevert",
+        "text": "Wanneer u een NFT koopt op Foundation Exclusive, verwerft u aantoonbaar eigendom van die specifieke digitale editie - een uniek, op de blockchain vastgelegd token dat uw plaats in de herkomstgeschiedenis van het werk vertegenwoordigt. Dit geeft u het recht om de editie die u bezit te houden, tonen, overdragen en doorverkopen, samen met een beperkte, niet-exclusieve, niet-commerciële licentie om het bijbehorende kunstwerk voor persoonlijk gebruik te tonen (bijvoorbeeld als profielfoto of in een persoonlijke digitale galerij)."
+      },
+      "creatorRights": {
+        "heading": "Wat Bij de Maker Blijft",
+        "intro": "Eigendom van een NFT-editie is iets anders dan eigendom van het onderliggende creatieve werk. Tenzij een aparte schriftelijke overeenkomst met de maker anders bepaalt, behoudt de oorspronkelijke maker alle auteursrechten, reproductierechten, commerciële-gebruiksrechten, licentierechten en rechten op afgeleide werken met betrekking tot de kunst, media of content die aan de NFT is gekoppeld. Dit betekent dat NFT-houders, zonder uitdrukkelijke schriftelijke toestemming van de maker, niet mogen:",
+        "items": [
+          "Het onderliggende werk reproduceren, afdrukken of anderszins kopiëren voor distributie of verkoop",
+          "Het werk commercieel gebruiken, onder meer op merchandise, in reclame of binnen andere producten of diensten",
+          "Rechten op het onderliggende werk sublicentiëren, syndiceren of aan derden verlenen",
+          "Afgeleide werken, bewerkingen of remixes maken op basis van het onderliggende werk"
+        ],
+        "outro": "Kortom: het bezitten van de NFT betekent het bezitten van het verzamelobject - het geauthenticeerde, verhandelbare token zelf. Het draagt niet het auteursrecht van de maker of de bredere commerciële rechten op het werk dat het token vertegenwoordigt over. Makers blijven vrij om hun eigen werk te blijven licentiëren, reproduceren en commercieel te exploiteren, onafhankelijk van enige NFT-verkoop, tenzij uitdrukkelijk beperkt door een aparte schriftelijke overeenkomst."
+      }
+    },
+    "s8": {
+      "heading": "8. Disclaimers",
+      "p1": "HET PLATFORM WORDT GELEVERD \"ZOALS HET IS\" EN \"ZOALS BESCHIKBAAR\" ZONDER ENIGE VORM VAN GARANTIE. WIJ GARANDEREN NIET DE NAUWKEURIGHEID, VOLLEDIGHEID OF BETROUWBAARHEID VAN ENIGE CONTENT OP HET PLATFORM.",
+      "p2": "NFT-waardes zijn zeer volatiel en speculatief. Wij doen geen uitspraken over mogelijke winsten of verliezen. U erkent dat u als enige verantwoordelijk bent voor uw investeringsbeslissingen."
+    },
+    "s9": {
+      "heading": "9. Beperking van Aansprakelijkheid",
+      "text": "VOOR ZOVER MAXIMAAL TOEGESTAAN DOOR DE WET, IS FOUNDATION EXCLUSIVE NIET AANSPRAKELIJK VOOR ENIGE INDIRECTE, INCIDENTELE, BIJZONDERE, GEVOLG- OF PUNITIEVE SCHADE DIE VOORTVLOEIT UIT UW GEBRUIK VAN HET PLATFORM."
+    },
+    "s10": {
+      "heading": "10. Belastingen voor Lokale en Internationale Gebruikers",
+      "p1": "Als in de Verenigde Staten gevestigd bedrijf kan het zijn dat alle gebruikers binnen de Verenigde Staten en bepaalde gebruikers buiten de Verenigde Staten toepasselijke belastingen, kosten of door de overheid opgelegde heffingen moeten betalen die verband houden met het gebruik van onze diensten, indien vereist door toepasselijke wetgeving of ons facturatiebeleid. Dergelijke belastingen of kosten, indien van toepassing, moeten jaarlijks via het Platform worden betaald overeenkomstig de verstrekte betalingsinstructies.",
+      "p2": "Het niet tijdig betalen van toepasselijke belastingen of vereiste kosten kan leiden tot opschorting of beperking van de toegang tot sommige of alle van onze diensten totdat het openstaande bedrag is voldaan."
+    },
+    "s11": {
+      "heading": "11. Vrijwaring",
+      "text": "U gaat ermee akkoord Foundation Exclusive en haar functionarissen, directeuren, werknemers en vertegenwoordigers te vrijwaren van en te behoeden voor claims, schade, verliezen of kosten die voortvloeien uit uw gebruik van het Platform of schending van deze Voorwaarden."
+    },
+    "s12": {
+      "heading": "12. Wijzigingen aan de Voorwaarden",
+      "text": "Wij behouden ons het recht voor deze Voorwaarden op elk moment te wijzigen. Wijzigingen worden onmiddellijk van kracht na publicatie. Uw voortgezette gebruik van het Platform houdt aanvaarding van de gewijzigde Voorwaarden in."
+    },
+    "s13": {
+      "heading": "13. Toepasselijk Recht",
+      "text": "Deze Voorwaarden worden beheerst door en geïnterpreteerd in overeenstemming met de wetten van het rechtsgebied waarin Foundation Exclusive actief is, ongeacht de daarin vervatte conflictregels."
+    },
+    "s14": {
+      "heading": "14. Contactgegevens",
+      "intro": "Voor vragen over deze Voorwaarden kunt u contact met ons opnemen via:",
+      "emailLabel": "E-mail:"
+    }
+  },
+  "privacy": {
+    "metaTitle": "Privacybeleid | Foundation Exclusive",
+    "metaDescription": "Privacybeleid voor Foundation Exclusive - Lees hoe wij uw persoonlijke gegevens verzamelen, gebruiken en beschermen.",
+    "heading": "Privacybeleid",
+    "lastUpdated": "Laatst bijgewerkt: 1 januari 2025",
+    "s1": {
+      "heading": "1. Inleiding",
+      "p1": "Foundation Exclusive (\"wij,\" \"ons,\" of \"onze\") zet zich in voor de bescherming van uw privacy. Dit Privacybeleid legt uit hoe wij uw gegevens verzamelen, gebruiken, openbaar maken en beschermen wanneer u onze website bezoekt en onze NFT-marketplacediensten gebruikt.",
+      "p2": "Als exclusief platform voor NFT-verzamelaars en makers met een hoge waarde begrijpen wij het belang van het waarborgen van de vertrouwelijkheid en veiligheid van uw persoonlijke en financiële gegevens."
+    },
+    "s2": {
+      "heading": "2. Gegevens die Wij Verzamelen",
+      "personal": {
+        "heading": "Persoonlijke Gegevens",
+        "items": [
+          "Naam en e-mailadres",
+          "Walletadressen die aan uw account zijn gekoppeld",
+          "Profielinformatie die u ervoor kiest te verstrekken",
+          "Transactiegeschiedenis en registraties van NFT-eigendom",
+          "Communicatievoorkeuren"
+        ]
+      },
+      "technical": {
+        "heading": "Technische Gegevens",
+        "items": [
+          "IP-adres en apparaat-identificatoren",
+          "Type en versie van browser",
+          "Besturingssysteem",
+          "Bezochte pagina's en tijd doorgebracht op ons platform",
+          "Verwijzende websiteadressen"
+        ]
+      }
+    },
+    "s3": {
+      "heading": "3. Hoe Wij Uw Gegevens Gebruiken",
+      "intro": "Wij gebruiken de gegevens die wij verzamelen om:",
+      "items": [
+        "Onze marketplacediensten te leveren, te beheren en te onderhouden",
+        "Transacties te verwerken en gerelateerde informatie te versturen",
+        "Uw identiteit te verifiëren en fraude te voorkomen",
+        "U updates te sturen over uw account en transacties",
+        "Te reageren op uw opmerkingen, vragen en verzoeken",
+        "Ons platform te verbeteren en nieuwe functies te ontwikkelen",
+        "Te voldoen aan wettelijke verplichtingen"
+      ]
+    },
+    "s4": {
+      "heading": "4. Delen en Openbaarmaking van Gegevens",
+      "intro": "Wij verkopen, verhandelen of verhuren uw persoonlijke gegevens niet aan derden. Wij kunnen uw gegevens in de volgende omstandigheden delen:",
+      "items": [
+        {
+          "label": "Blockchaintransacties:",
+          "text": "NFT-transacties worden vastgelegd op openbare blockchains en zijn voor iedereen zichtbaar."
+        },
+        {
+          "label": "Dienstverleners:",
+          "text": "Wij kunnen gegevens delen met vertrouwde externe dienstverleners die ons helpen bij het beheren van ons platform."
+        },
+        {
+          "label": "Wettelijke Vereisten:",
+          "text": "Wij kunnen gegevens openbaar maken wanneer dit wettelijk verplicht is of om onze rechten te beschermen."
+        }
+      ]
+    },
+    "s5": {
+      "heading": "5. Gegevensbeveiliging",
+      "text": "Wij implementeren passende technische en organisatorische maatregelen om uw persoonlijke gegevens te beschermen tegen ongeautoriseerde toegang, wijziging, openbaarmaking of vernietiging. Geen enkele methode van verzending via internet is echter 100% veilig."
+    },
+    "s6": {
+      "heading": "6. Uw Rechten",
+      "intro": "U heeft het recht om:",
+      "items": [
+        "Toegang te krijgen tot uw persoonlijke gegevens",
+        "Onjuiste of onvolledige gegevens te corrigeren",
+        "Verwijdering van uw persoonlijke gegevens te verzoeken",
+        "Bezwaar te maken tegen of de verwerking van uw gegevens te beperken",
+        "Gegevensoverdraagbaarheid",
+        "Toestemming op elk moment in te trekken"
+      ]
+    },
+    "s7": {
+      "heading": "7. Cookies en Tracking",
+      "text": "Wij gebruiken cookies en soortgelijke trackingtechnologieën om uw ervaring op ons platform te verbeteren. Zie voor meer informatie ons <cookieLink>Cookiebeleid</cookieLink>."
+    },
+    "s8": {
+      "heading": "8. Wijzigingen in dit Beleid",
+      "text": "Wij kunnen dit Privacybeleid van tijd tot tijd bijwerken. Wij stellen u op de hoogte van eventuele wijzigingen door het nieuwe Privacybeleid op deze pagina te plaatsen en de datum \"Laatst bijgewerkt\" aan te passen."
+    },
+    "s9": {
+      "heading": "9. Neem Contact Op",
+      "intro": "Als u vragen heeft over dit Privacybeleid, neem dan contact met ons op via:",
+      "emailLabel": "E-mail:"
+    }
+  },
+  "cookies": {
+    "metaTitle": "Cookiebeleid | Foundation Exclusive",
+    "metaDescription": "Cookiebeleid voor Foundation Exclusive - Lees meer over ons gebruik van cookies en trackingtechnologieën.",
+    "heading": "Cookiebeleid",
+    "lastUpdated": "Laatst bijgewerkt: 1 januari 2025",
+    "s1": {
+      "heading": "1. Wat Zijn Cookies",
+      "p1": "Cookies zijn kleine tekstbestanden die op uw computer of mobiele apparaat worden geplaatst wanneer u een website bezoekt. Ze worden veelvuldig gebruikt om websites efficiënter te laten werken en om informatie te verstrekken aan website-eigenaren.",
+      "p2": "Foundation Exclusive gebruikt cookies en soortgelijke technologieën om uw ervaring op ons platform te verbeteren, te begrijpen hoe u onze diensten gebruikt en ons aanbod te verbeteren."
+    },
+    "s2": {
+      "heading": "2. Soorten Cookies die Wij Gebruiken",
+      "essential": {
+        "heading": "Essentiële Cookies",
+        "text": "Deze cookies zijn noodzakelijk om de website goed te laten functioneren. Ze maken kernfunctionaliteit mogelijk, zoals beveiliging, netwerkbeheer en accounttoegang. U kunt zich niet afmelden voor deze cookies.",
+        "items": [
+          "Sessiebeheer",
+          "Authenticatie en inloggen",
+          "Beveiligingsfuncties",
+          "Load balancing"
+        ]
+      },
+      "performance": {
+        "heading": "Prestatiecookies",
+        "text": "Deze cookies helpen ons te begrijpen hoe bezoekers omgaan met onze website door informatie anoniem te verzamelen en te rapporteren.",
+        "items": [
+          "Laadtijden van pagina's",
+          "Aangetroffen foutmeldingen",
+          "Bezochte pagina's",
+          "Tijd doorgebracht op pagina's"
+        ]
+      },
+      "functionality": {
+        "heading": "Functionaliteitscookies",
+        "text": "Deze cookies maken verbeterde functionaliteit en personalisatie mogelijk, zoals het onthouden van uw voorkeuren.",
+        "items": [
+          "Taalvoorkeuren",
+          "Themainstellingen (donkere/lichte modus)",
+          "Recent bekeken items",
+          "Gebruikersvoorkeuren"
+        ]
+      },
+      "analytics": {
+        "heading": "Analysecookies",
+        "text": "Wij gebruiken analysecookies om inzicht te krijgen in hoe ons platform wordt gebruikt, wat ons helpt onze diensten te verbeteren.",
+        "items": [
+          "Verkeersbronnen",
+          "Gebruikersgedrag",
+          "Statistieken over functiegebruik",
+          "Conversietracking"
+        ]
+      }
+    },
+    "s3": {
+      "heading": "3. Cookies van Derden",
+      "p1": "Sommige cookies op ons platform worden geplaatst door externe diensten die op onze pagina's verschijnen. Wij hebben geen controle over deze cookies.",
+      "intro": "Externe diensten die wij mogelijk gebruiken zijn onder meer:",
+      "items": [
+        {
+          "label": "Google Analytics:",
+          "text": "Voor het begrijpen van websiteverkeer en gebruikspatronen"
+        },
+        {
+          "label": "Walletproviders:",
+          "text": "Voor cryptowalletverbindingen en transacties"
+        },
+        {
+          "label": "Sociale Media:",
+          "text": "Voor deelfunctionaliteit en opties om via sociale media in te loggen"
+        }
+      ]
+    },
+    "s4": {
+      "heading": "4. Hoe Lang Blijven Cookies Bewaard",
+      "intro": "Cookies kunnen voor verschillende periodes op uw apparaat blijven staan:",
+      "items": [
+        {
+          "label": "Sessiecookies:",
+          "text": "Deze zijn tijdelijk en worden verwijderd wanneer u uw browser sluit."
+        },
+        {
+          "label": "Permanente Cookies:",
+          "text": "Deze blijven voor een vaste periode (bijv. 30 dagen, 1 jaar) op uw apparaat staan, of totdat u ze verwijdert."
+        }
+      ]
+    },
+    "s5": {
+      "heading": "5. Cookies Beheren",
+      "intro": "U heeft verschillende mogelijkheden om cookies te beheren:",
+      "browserSettings": {
+        "heading": "Browserinstellingen",
+        "intro": "De meeste webbrowsers stellen u in staat cookies te beheren via hun instellingen. U kunt:",
+        "items": [
+          "Cookies bekijken die op uw apparaat zijn opgeslagen",
+          "Individuele of alle cookies verwijderen",
+          "Cookies van specifieke of alle websites blokkeren",
+          "Voorkeuren instellen voor first-party versus third-party cookies"
+        ]
+      },
+      "browserSpecific": {
+        "heading": "Browserspecifieke Instructies",
+        "items": [
+          { "label": "Chrome:", "text": "Instellingen → Privacy en beveiliging → Cookies en andere sitegegevens" },
+          { "label": "Firefox:", "text": "Opties → Privacy & Beveiliging → Cookies en Websitegegevens" },
+          { "label": "Safari:", "text": "Voorkeuren → Privacy → Websitegegevens Beheren" },
+          { "label": "Edge:", "text": "Instellingen → Cookies en sitemachtigingen" }
+        ]
+      },
+      "note": {
+        "label": "Let op:",
+        "text": "Het uitschakelen van bepaalde cookies kan de functionaliteit van ons platform beïnvloeden. Essentiële cookies kunnen niet worden uitgeschakeld omdat ze vereist zijn voor de werking van het platform."
+      }
+    },
+    "s6": {
+      "heading": "6. Web3- en Blockchainoverwegingen",
+      "intro": "Als NFT-marketplace werken wij met blockchaintechnologie en cryptowallets. Houd rekening met het volgende:",
+      "items": [
+        "Gegevens over walletverbindingen kunnen lokaal in uw browser worden opgeslagen",
+        "Transactiehandtekeningen worden verwerkt via uw walletprovider",
+        "Blockchaintransacties zijn openbaar en permanent, onafhankelijk van cookies"
+      ]
+    },
+    "s7": {
+      "heading": "7. Updates van dit Beleid",
+      "text": "Wij kunnen dit Cookiebeleid van tijd tot tijd bijwerken om wijzigingen in onze praktijken of om andere operationele, juridische of regelgevende redenen weer te geven. Wij raden u aan dit beleid regelmatig te controleren."
+    },
+    "s8": {
+      "heading": "8. Neem Contact Op",
+      "intro": "Als u vragen heeft over ons gebruik van cookies, neem dan contact met ons op:",
+      "emailLabel": "E-mail:"
+    }
+  }
+}

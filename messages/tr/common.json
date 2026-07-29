@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "Dili değiştir",
+    "popular": "Popüler diller",
+    "more": "Daha fazla dil"
+  },
+  "languageBanner": {
+    "message": "{language} dilini tercih edebileceğiniz görünüyor.",
+    "switch": "Değiştir",
+    "dismiss": "Kapat"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "explore": "Keşfet",
+    "about": "Hakkımızda",
+    "help": "Yardım",
+    "contact": "İletişim"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "NFT, sanatçı ara...",
+    "create": "Oluştur",
+    "signIn": "Giriş Yap",
+    "getStarted": "Başlayın",
+    "userMenu": {
+      "dashboard": "Panel",
+      "createNft": "NFT Oluştur",
+      "fundAccount": "Hesabı Fonla",
+      "adminPanel": "Yönetici Paneli",
+      "signOut": "Çıkış Yap"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "Foundation'ın bir uzantısı - yüksek değerli NFT koleksiyoncuları ve sanatçıları için önde gelen adres. Seçici koleksiyoncularımızın seçkin topluluğuna katılın.",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "E-posta"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "Pazar Yeri",
+        "exploreCollections": "Koleksiyonları Keşfedin",
+        "howItWorks": "Nasıl Çalışır",
+        "create": "Oluştur"
+      },
+      "resources": {
+        "heading": "Kaynaklar",
+        "helpCenter": "Yardım Merkezi",
+        "contactUs": "Bize Ulaşın",
+        "faq": "SSS"
+      },
+      "company": {
+        "heading": "Şirket",
+        "aboutUs": "Hakkımızda",
+        "termsOfService": "Kullanım Koşulları",
+        "privacyPolicy": "Gizlilik Politikası",
+        "cookiePolicy": "Çerez Politikası"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. Tüm hakları saklıdır.",
+    "bottomLinks": {
+      "terms": "Koşullar",
+      "privacy": "Gizlilik",
+      "cookies": "Çerezler"
+    }
+  },
+  "modal": {
+    "dismiss": "Kapat"
+  },
+  "nftCard": {
+    "currentPrice": "Güncel Fiyat",
+    "by": "Oluşturan"
+  },
+  "nftGrid": {
+    "emptyMessage": "NFT bulunamadı"
+  },
+  "nftImage": {
+    "unavailable": "Görsel kullanılamıyor"
+  }
+}

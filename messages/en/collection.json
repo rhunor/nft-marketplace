@@ -1,0 +1,24 @@
+{
+  "loading": "Loading collection...",
+  "notFound": {
+    "heading": "Collection Not Found",
+    "genericMessage": "The collection you are looking for does not exist.",
+    "collectionNotFoundError": "Collection not found",
+    "loadFailedError": "Failed to load collection",
+    "backToExplore": "Back to Explore"
+  },
+  "back": "Back",
+  "createdBy": "Created by",
+  "stats": {
+    "items": "Items",
+    "floorPrice": "Floor Price",
+    "totalVolume": "Total Volume"
+  },
+  "share": "Share",
+  "itemsHeading": "Items ({count})",
+  "price": "Price",
+  "empty": {
+    "heading": "No Items Yet",
+    "message": "This collection has no items."
+  }
+}

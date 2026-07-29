@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "تغيير اللغة",
+    "popular": "اللغات الشائعة",
+    "more": "المزيد من اللغات"
+  },
+  "languageBanner": {
+    "message": "يبدو أنك قد تفضّل {language}.",
+    "switch": "تبديل",
+    "dismiss": "تجاهل"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "explore": "استكشاف",
+    "about": "من نحن",
+    "help": "المساعدة",
+    "contact": "تواصل معنا"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "ابحث عن أصول رقمية، مبدعين...",
+    "create": "إنشاء",
+    "signIn": "تسجيل الدخول",
+    "getStarted": "ابدأ الآن",
+    "userMenu": {
+      "dashboard": "لوحة التحكم",
+      "createNft": "إنشاء NFT",
+      "fundAccount": "تمويل الحساب",
+      "adminPanel": "لوحة الإدارة",
+      "signOut": "تسجيل الخروج"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "امتداد لمنصة Foundation - الوجهة الأولى لجامعي ومبدعي الأصول الرقمية غير القابلة للاستبدال عالية القيمة. انضم إلى مجتمعنا الحصري من الجامعين المميزين.",
+    "social": {
+      "twitter": "تويتر",
+      "telegram": "تيليجرام",
+      "email": "البريد الإلكتروني"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "السوق",
+        "exploreCollections": "استكشف المجموعات",
+        "howItWorks": "كيف تعمل المنصة",
+        "create": "إنشاء"
+      },
+      "resources": {
+        "heading": "الموارد",
+        "helpCenter": "مركز المساعدة",
+        "contactUs": "تواصل معنا",
+        "faq": "الأسئلة الشائعة"
+      },
+      "company": {
+        "heading": "الشركة",
+        "aboutUs": "من نحن",
+        "termsOfService": "شروط الخدمة",
+        "privacyPolicy": "سياسة الخصوصية",
+        "cookiePolicy": "سياسة ملفات تعريف الارتباط"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. جميع الحقوق محفوظة.",
+    "bottomLinks": {
+      "terms": "الشروط",
+      "privacy": "الخصوصية",
+      "cookies": "ملفات تعريف الارتباط"
+    }
+  },
+  "modal": {
+    "dismiss": "تجاهل"
+  },
+  "nftCard": {
+    "currentPrice": "السعر الحالي",
+    "by": "بواسطة"
+  },
+  "nftGrid": {
+    "emptyMessage": "لم يتم العثور على أي NFT"
+  },
+  "nftImage": {
+    "unavailable": "الصورة غير متاحة"
+  }
+}

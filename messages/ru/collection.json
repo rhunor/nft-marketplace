@@ -1,0 +1,24 @@
+{
+  "loading": "Загрузка коллекции...",
+  "notFound": {
+    "heading": "Коллекция не найдена",
+    "genericMessage": "Коллекция, которую вы ищете, не существует.",
+    "collectionNotFoundError": "Коллекция не найдена",
+    "loadFailedError": "Не удалось загрузить коллекцию",
+    "backToExplore": "Вернуться к каталогу"
+  },
+  "back": "Назад",
+  "createdBy": "Автор",
+  "stats": {
+    "items": "Предметы",
+    "floorPrice": "Минимальная цена",
+    "totalVolume": "Общий объём торгов"
+  },
+  "share": "Поделиться",
+  "itemsHeading": "Предметы ({count})",
+  "price": "Цена",
+  "empty": {
+    "heading": "Пока нет предметов",
+    "message": "В этой коллекции пока нет предметов."
+  }
+}

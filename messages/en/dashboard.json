@@ -1,0 +1,126 @@
+{
+  "loading": "Loading dashboard...",
+  "avatar": {
+    "invalidType": "Please select an image file",
+    "tooLarge": "Image size must be less than 5MB",
+    "uploadSuccess": "Profile picture updated!",
+    "uploadFailedTitle": "Upload failed",
+    "uploadFailedDefault": "Something went wrong",
+    "changePicture": "Change profile picture"
+  },
+  "welcome": "Welcome back, {name}!",
+  "adminBadge": "Admin",
+  "fundAccount": "Fund Account",
+  "createNft": "Create NFT",
+  "stats": {
+    "walletBalance": "Wallet Balance",
+    "nftsOwned": "NFTs Owned",
+    "nftsCreated": "NFTs Created",
+    "totalValue": "Total Value"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "Explore Collections",
+      "subtitle": "Discover new collectibles"
+    },
+    "create": {
+      "title": "Create NFT",
+      "subtitle": "Upload your artwork"
+    },
+    "fund": {
+      "title": "Fund Account",
+      "subtitle": "Add ETH to your wallet"
+    },
+    "withdraw": {
+      "title": "Withdraw Funds",
+      "subtitle": "Transfer to your wallet"
+    }
+  },
+  "tabs": {
+    "owned": "Owned ({count})",
+    "created": "Created ({count})",
+    "listed": "Listed ({count})"
+  },
+  "nftCard": {
+    "created": "Created",
+    "notListed": "Not Listed",
+    "price": "Price"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "No NFTs Owned Yet",
+      "text": "Start collecting unique digital assets from our marketplace",
+      "button": "Explore Collections"
+    },
+    "created": {
+      "title": "No NFTs Created Yet",
+      "text": "Create your first NFT and share it with the world",
+      "button": "Create NFT"
+    },
+    "listed": {
+      "title": "No NFTs Listed",
+      "text": "You don't have any NFTs listed for sale"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "Withdraw Funds",
+      "fee": "Pay Withdrawal Fee",
+      "processing": "Processing Withdrawal",
+      "success": "Withdrawal Successful"
+    },
+    "form": {
+      "availableBalance": "Available Balance",
+      "walletAddressLabel": "Wallet Address",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "Enter your Ethereum wallet address",
+      "amountLabel": "Amount (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "Minimum withdrawal: ${minAmount}",
+      "withdrawMax": "Withdraw Max",
+      "continue": "Continue"
+    },
+    "errors": {
+      "invalidAddress": "Please enter a valid Ethereum wallet address (0x...)",
+      "invalidAmount": "Please enter a valid withdrawal amount",
+      "minWithdrawal": "Minimum withdrawal is ${minAmount}",
+      "insufficientBalance": "Insufficient balance",
+      "serverError": "Server error. Please try again later.",
+      "withdrawalFailed": "Withdrawal failed",
+      "invalidResponse": "Invalid response from server",
+      "withdrawalFailedRetry": "Withdrawal failed. Please try again."
+    },
+    "fee": {
+      "noticeTitle": "Withdrawal Fee Required",
+      "noticeText": "To process your withdrawal, please send a {percent}% fee ({amount}) to the wallet address below.",
+      "walletLabel": "Your Withdrawal Wallet",
+      "withdrawalAmount": "Withdrawal Amount",
+      "feeToSend": "Fee to Send ({percent}%)",
+      "youllReceive": "You'll Receive",
+      "sendFeeTo": "Send Fee Payment To:",
+      "sendExactly": "Send exactly {amount} to this address",
+      "qrAlt": "Fee Payment QR Code",
+      "walletAddressLabel": "Fee Wallet Address (ETH)",
+      "copyAddress": "Copy Address",
+      "copiedNotification": "Address copied to clipboard",
+      "warning": "After sending the {feeAmount} fee, click \"Confirm Payment\" to process your withdrawal. Your full withdrawal amount of {receiveAmount} will be sent to your wallet.",
+      "back": "Back",
+      "confirmPayment": "Confirm Payment"
+    },
+    "processing": {
+      "title": "Processing Withdrawal",
+      "text": "Please wait while we process your transaction..."
+    },
+    "success": {
+      "title": "Withdrawal Submitted!",
+      "subtitle": "Your funds are on the way to your wallet",
+      "transactionId": "Transaction ID",
+      "amountReceived": "Amount You'll Receive",
+      "feePaid": "Fee Paid",
+      "newBalance": "New Balance",
+      "estimatedTime": "Estimated Processing Time",
+      "estimatedTimeValue": "24-48 hours",
+      "done": "Done"
+    }
+  }
+}

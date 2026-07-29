@@ -1,0 +1,24 @@
+{
+  "loading": "Đang tải bộ sưu tập...",
+  "notFound": {
+    "heading": "Không Tìm Thấy Bộ Sưu Tập",
+    "genericMessage": "Bộ sưu tập bạn đang tìm kiếm không tồn tại.",
+    "collectionNotFoundError": "Không tìm thấy bộ sưu tập",
+    "loadFailedError": "Không thể tải bộ sưu tập",
+    "backToExplore": "Quay Lại Khám Phá"
+  },
+  "back": "Quay Lại",
+  "createdBy": "Tạo bởi",
+  "stats": {
+    "items": "Số Lượng",
+    "floorPrice": "Giá Sàn",
+    "totalVolume": "Tổng Khối Lượng"
+  },
+  "share": "Chia Sẻ",
+  "itemsHeading": "Sản Phẩm ({count})",
+  "price": "Giá",
+  "empty": {
+    "heading": "Chưa Có Sản Phẩm",
+    "message": "Bộ sưu tập này chưa có sản phẩm nào."
+  }
+}

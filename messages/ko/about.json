@@ -1,0 +1,56 @@
+{
+  "metaTitle": "소개 | Foundation Exclusive",
+  "metaDescription": "Foundation Exclusive는 Foundation의 확장 서비스로, 고가치 NFT 컬렉터와 크리에이터를 위한 특별한 커뮤니티입니다.",
+  "hero": {
+    "badge": "Foundation의 확장 서비스",
+    "heading": "<gradient>Foundation Exclusive</gradient>에 오신 것을 환영합니다",
+    "subtitle": "Foundation Exclusive는 고가치 NFT 컬렉터와 크리에이터를 위한 최고의 목적지입니다. Foundation의 확장 서비스로서, 뛰어난 디지털 아트가 합당한 컬렉터를 만날 수 있는 특별한 커뮤니티를 제공합니다."
+  },
+  "stats": [
+    { "value": "2,500+", "label": "인증된 컬렉터" },
+    { "value": "150+", "label": "큐레이션 컬렉션" },
+    { "value": "$45M+", "label": "총 거래량" },
+    { "value": "15 ETH", "label": "평균 판매가" }
+  ],
+  "story": {
+    "heading": "우리의 이야기",
+    "p1": "Foundation Exclusive는 하나의 단순한 관찰에서 출발했습니다. NFT 시장에는 양보다 질을 중시하는 진지한 컬렉터들을 위한 공간이 필요하다는 것이었습니다. Foundation이 아티스트와 컬렉터가 연결되는 방식을 혁신하는 동안, 저희는 한층 더 정제된 무언가를 만들 기회를 발견했습니다.",
+    "p2": "저희 플랫폼은 Foundation 생태계의 큐레이션된 확장 서비스로서, 모든 컬렉션이 직접 선별되고 모든 아티스트가 검증됩니다. 저희는 디지털 아트가 전통 순수 미술과 동등한 경의와 투자 가치를 인정받아야 한다고 믿습니다.",
+    "p3": "Foundation Exclusive에서 보시는 가격은 뛰어난 디지털 아트의 진정한 가치를 반영합니다. 저희 컬렉터들은 프리미엄 작품이 프리미엄 가격을 요구한다는 것을 이해하고 있으며, 저희의 가치 상승 실적이 이러한 접근 방식을 뒷받침합니다.",
+    "imageAlt": "디지털 아트 갤러리",
+    "imageCaption": "뛰어난 디지털 아트가 안식처를 찾는 곳"
+  },
+  "values": {
+    "heading": "차별화된 강점",
+    "subtitle": "Foundation Exclusive는 컬렉터와 크리에이터 커뮤니티를 위한 최고 수준의 기준을 보장하는 원칙 위에 세워졌습니다.",
+    "items": [
+      {
+        "title": "검증된 진품성",
+        "description": "저희 마켓플레이스의 모든 작품은 진품성과 출처를 보장하기 위해 엄격한 검증 절차를 거칩니다."
+      },
+      {
+        "title": "프리미엄 품질",
+        "description": "저희는 높은 기준을 충족하는 기성 및 신진 아티스트의 최고급 디지털 아트만을 선별합니다."
+      },
+      {
+        "title": "특별한 커뮤니티",
+        "description": "뛰어난 디지털 아트에 대한 열정을 공유하는 컬렉터, 아티스트, 애호가들의 선별된 네트워크에 참여하세요."
+      },
+      {
+        "title": "투자 등급",
+        "description": "저희 NFT는 진정한 가치를 반영하여 가격이 책정되며, 세컨더리 마켓에서의 가치 상승 실적을 보유하고 있습니다."
+      }
+    ]
+  },
+  "membership": {
+    "heading": "특별한 커뮤니티에 참여하세요",
+    "text": "Foundation Exclusive는 단순한 마켓플레이스를 넘어, 뛰어난 디지털 아트의 가치를 이해하는 뜻맞는 사람들의 커뮤니티입니다. 회원들은 드롭 우선 접근권, 특별 이벤트, 그리고 동료 컬렉터 및 아티스트 네트워크를 누리실 수 있습니다.",
+    "becomeMember": "회원 가입하기",
+    "exploreCollections": "컬렉션 둘러보기"
+  },
+  "cta": {
+    "heading": "익스클루시브를 경험할 준비가 되셨나요?",
+    "text": "진지한 컬렉터들이 가장 소중한 소장품을 위해 Foundation Exclusive를 선택하는 이유를 확인해 보세요.",
+    "viewCollections": "컬렉션 보기"
+  }
+}

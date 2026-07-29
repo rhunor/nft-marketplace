@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "Créer un NFT",
+    "subtitle": "Téléversez votre œuvre numérique"
+  },
+  "mode": {
+    "single": {
+      "title": "NFT unique",
+      "subtitle": "Téléversez une seule œuvre"
+    },
+    "collection": {
+      "title": "Collection",
+      "subtitle": "De 2 à 20 objets à la fois"
+    }
+  },
+  "fee": {
+    "label": "Frais de téléversement",
+    "singleDescription": "200 $ par NFT téléversé",
+    "collectionDescription": "200 $ × {count} objets = {total} $",
+    "yourBalance": "Votre solde",
+    "insufficientBalance": "Solde insuffisant. Veuillez approvisionner votre compte."
+  },
+  "notifications": {
+    "invalidFileType": {
+      "title": "Type de fichier invalide",
+      "message": "Veuillez téléverser un fichier image, vidéo ou audio."
+    },
+    "fileTooLarge": {
+      "title": "Fichier trop volumineux",
+      "message": "La taille maximale du fichier est de 100 Mo."
+    },
+    "maxItemsReached": {
+      "title": "Maximum atteint",
+      "message": "Une collection peut contenir au maximum 20 objets."
+    },
+    "minItemsRequired": {
+      "title": "Minimum requis",
+      "message": "Une collection doit contenir au moins 2 objets."
+    },
+    "noFileSelected": {
+      "title": "Aucun fichier sélectionné"
+    },
+    "insufficientBalance": {
+      "title": "Solde insuffisant",
+      "uploadMessage": "{fee} nécessaires pour téléverser.",
+      "collectionMessage": "{fee} nécessaires pour créer la collection."
+    },
+    "nftCreated": {
+      "title": "NFT créé !",
+      "message": "Votre NFT a été téléversé avec succès."
+    },
+    "uploadFailed": {
+      "title": "Échec du téléversement",
+      "defaultMessage": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "collectionInvalidFileType": {
+      "title": "Type de fichier invalide"
+    },
+    "collectionFileTooLarge": {
+      "title": "Fichier trop volumineux",
+      "message": "100 Mo maximum."
+    },
+    "fillRequiredFields": {
+      "title": "Veuillez remplir tous les champs obligatoires"
+    },
+    "collectionCreated": {
+      "title": "Collection créée !",
+      "message": "{count} objets téléversés avec succès."
+    }
+  },
+  "form": {
+    "single": {
+      "mediaLabel": "Fichier média *",
+      "dragDrop": "Glissez-déposez ou cliquez pour téléverser",
+      "acceptedTypes": "JPG, PNG, GIF, MP4, MP3 (100 Mo max)",
+      "titleLabel": "Titre *",
+      "titlePlaceholder": "Titre du NFT",
+      "priceLabel": "Prix (ETH) *",
+      "pricePlaceholder": "0.1",
+      "categoryLabel": "Catégorie *",
+      "tagsLabel": "Tags (jusqu'à 10)",
+      "tagsPlaceholder": "Ajouter un tag",
+      "addTag": "Ajouter",
+      "submit": "Créer le NFT",
+      "submitting": "Téléversement...",
+      "priceError": "Le prix doit être supérieur à 0"
+    },
+    "collection": {
+      "detailsHeading": "Détails de la collection",
+      "nameLabel": "Nom de la collection *",
+      "namePlaceholder": "Ma collection",
+      "descriptionLabel": "Description *",
+      "descriptionPlaceholder": "Décrivez votre collection...",
+      "categoryLabel": "Catégorie *",
+      "priceLabel": "Prix de la collection (ETH) *",
+      "pricePlaceholder": "0.5",
+      "pricePerItemHint": "Prix par objet : {price}",
+      "itemsHeading": "Objets ({count})",
+      "addItem": "Ajouter",
+      "itemLabel": "Objet {number}",
+      "itemUploadPrompt": "Cliquez pour téléverser",
+      "itemTitleLabel": "Titre *",
+      "itemTitlePlaceholder": "Titre de l'objet",
+      "requiredError": "Requis",
+      "priceError": "Le prix de la collection doit être supérieur à 0",
+      "submit": "Créer la collection ({count} objets)",
+      "submitting": "Création de la collection..."
+    }
+  }
+}

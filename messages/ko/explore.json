@@ -1,0 +1,45 @@
+{
+  "pageTitle": "둘러보기",
+  "pageSubtitle": "세계적인 디지털 아티스트들의 특별한 컬렉션을 만나보세요",
+  "sort": {
+    "random": "무작위",
+    "recentDesc": "최신순",
+    "volumeDesc": "거래량 높은 순",
+    "volumeAsc": "거래량 낮은 순",
+    "floorAsc": "최저가: 낮은 순",
+    "floorDesc": "최저가: 높은 순",
+    "itemsDesc": "아이템 많은 순"
+  },
+  "newUploads": {
+    "heading": "신규 업로드",
+    "subtitle": "저희 마켓플레이스 크리에이터들의 새로운 NFT",
+    "viewAll": "신규 업로드 전체 보기 ({count})"
+  },
+  "newBadge": "신규",
+  "price": "가격",
+  "search": {
+    "collectionsPlaceholder": "컬렉션 검색...",
+    "nftsPlaceholder": "NFT 검색..."
+  },
+  "viewMode": {
+    "collections": "컬렉션 보기",
+    "items": "개별 아이템 보기"
+  },
+  "filters": "필터",
+  "categories": "카테고리",
+  "allCategories": "전체 카테고리",
+  "all": "전체",
+  "clearAllFilters": "모든 필터 지우기",
+  "activeFilters": "적용된 필터:",
+  "searchLabel": "검색: {query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {총 #개 컬렉션} other {총 #개 컬렉션}}",
+    "items": "{count, plural, one {총 #개 NFT} other {총 #개 NFT}}"
+  },
+  "noCollectionsFound": "조건에 맞는 컬렉션을 찾을 수 없습니다",
+  "clearFilters": "필터 지우기",
+  "itemsCount": "{count, plural, one {#개 아이템} other {#개 아이템}}",
+  "floor": "최저가",
+  "totalVolume": "총 거래량",
+  "usd": "USD"
+}

@@ -1,0 +1,162 @@
+{
+  "header": {
+    "heading": "Centrum pomocy",
+    "subtitle": "Wszystko, co musisz wiedzieć o korzystaniu z Foundation Exclusive"
+  },
+  "topics": {
+    "wallet": { "title": "Portfel i saldo", "description": "Zasil konto i zarządzaj ETH" },
+    "creating": { "title": "Tworzenie NFT", "description": "Wybij swój pierwszy NFT" },
+    "buying": { "title": "Kupowanie NFT", "description": "Kupuj i kolekcjonuj NFT" },
+    "withdrawals": { "title": "Wypłaty", "description": "Wypłacaj środki ze swojego konta" },
+    "security": { "title": "Bezpieczeństwo", "description": "Zadbaj o bezpieczeństwo swojego konta" },
+    "exploring": { "title": "Przeglądanie NFT", "description": "Przeglądaj i odkrywaj kolekcje" }
+  },
+  "wallet": {
+    "heading": "Portfel i saldo",
+    "cardHeading": "Jak zasilić swoje konto",
+    "steps": {
+      "step1": "Zaloguj się i przejdź do swojego <b>Panelu</b>",
+      "step2": "Kliknij <b>„Zasil konto”</b>",
+      "step3": "Zobaczysz kod QR oraz adres portfela ETH",
+      "step4": "Wyślij ETH ze swojego zewnętrznego portfela na ten adres",
+      "step5": "Poczekaj ~10 minut na aktualizację salda"
+    },
+    "notesHeading": "Ważne informacje",
+    "notes": [
+      "Wysyłaj na podany adres wyłącznie ETH (Ethereum)",
+      "Sprawdź dokładnie adres portfela przed wysłaniem",
+      "Zachowaj hash transakcji do wglądu"
+    ]
+  },
+  "creating": {
+    "heading": "Tworzenie NFT",
+    "singleCardHeading": "Jak utworzyć pojedynczy NFT",
+    "singleSteps": {
+      "step1": "Upewnij się, że masz co najmniej <b>200 $ w ETH</b>",
+      "step2": "Przejdź do strony <b>Utwórz</b>",
+      "step3": "Wybierz tryb <b>„Pojedynczy NFT”</b>",
+      "step4": "Prześlij swój plik multimedialny (maks. 100MB)",
+      "step5": "Wypełnij tytuł, cenę i kategorię",
+      "step6": "Kliknij <b>„Utwórz NFT”</b>"
+    },
+    "collectionCardHeading": "Jak utworzyć kolekcję",
+    "collectionSteps": {
+      "step1": "Wybierz tryb <b>„Kolekcja”</b> na stronie Utwórz",
+      "step2": "Dodaj nazwę kolekcji, opis i obraz okładki",
+      "step3": "Dodaj od 2 do 20 przedmiotów do swojej kolekcji",
+      "step4": "Ustaw cenę kolekcji (<b>200 $ za przedmiot</b>)"
+    },
+    "feesHeading": "Opłaty za przesyłanie",
+    "feesText": "Pojedynczy NFT: 200 $ | Kolekcja: 200 $ za przedmiot"
+  },
+  "buying": {
+    "heading": "Kupowanie NFT",
+    "cardHeading": "Jak kupić NFT",
+    "steps": {
+      "step1": "Przeglądaj stronę <b>Przeglądaj</b>",
+      "step2": "Użyj filtrów, aby znaleźć to, czego szukasz",
+      "step3": "Kliknij NFT, aby zobaczyć szczegóły",
+      "step4": "Kliknij <b>„Kup teraz”</b>",
+      "step5": "Potwierdź zakup",
+      "step6": "Poczekaj na potwierdzenie przez administratora (w ciągu 24 godzin)"
+    },
+    "afterHeading": "Po zakupie",
+    "after": [
+      "NFT pojawia się w Twoim Panelu w sekcji „Posiadane”",
+      "Brak dodatkowych opłat za zakup"
+    ]
+  },
+  "withdrawals": {
+    "heading": "Wypłaty",
+    "cardHeading": "Jak wypłacić środki",
+    "steps": {
+      "step1": "Przejdź do <b>Panelu</b> i kliknij <b>„Wypłać”</b>",
+      "step2": "Podaj adres swojego zewnętrznego portfela ETH (0x...)",
+      "step3": "Podaj kwotę wypłaty",
+      "step4": "Kliknij <b>„Kontynuuj”</b>",
+      "step5": "Wyślij <b>opłatę w wysokości 10%</b> na podany adres portfela",
+      "step6": "Kliknij <b>„Potwierdź płatność”</b>",
+      "step7": "Wypłata jest przetwarzana w ciągu <b>24-48 godzin</b>"
+    },
+    "infoHeading": "Ważne informacje",
+    "info": [
+      { "label": "Opłata:", "text": "10% (płatna osobno na portfel opłaty)" },
+      { "label": "Czas przetwarzania:", "text": "24-48 godzin" }
+    ],
+    "infoPlain": "Otrzymujesz PEŁNĄ kwotę wypłaty po opłaceniu prowizji",
+    "feeWarningHeading": "⚠️ Płatność opłaty",
+    "feeWarningText": "Opłata w wysokości 10% musi zostać wysłana na nasz portfel opłaty <b>przed</b> przetworzeniem wypłaty. Przykład: wypłacasz 1 ETH → wysyłasz opłatę 0,1 ETH → otrzymujesz 1 ETH na swój portfel."
+  },
+  "exploring": {
+    "heading": "Przeglądanie NFT",
+    "cardHeading": "Jak przeglądać NFT",
+    "steps": {
+      "step1": "Przejdź do strony <b>Przeglądaj</b>",
+      "step2": "Przeglądaj kolekcje lub przełącz się na widok przedmiotów",
+      "step3": "Użyj <b>paska wyszukiwania</b>, aby znaleźć konkretne NFT",
+      "step4": "Filtruj według <b>kategorii</b>",
+      "step5": "Sortuj według wolumenu, ceny minimalnej lub liczby przedmiotów"
+    },
+    "tipsHeading": "Wskazówki dotyczące wyszukiwania",
+    "tips": [
+      "Szukaj po tytule, opisie lub nazwie twórcy",
+      "Używaj tagów, takich jak „abstrakcja”, „kosmos”, „natura”",
+      "Kliknij kolekcję, aby zobaczyć wszystkie jej przedmioty"
+    ]
+  },
+  "security": {
+    "heading": "Bezpieczeństwo",
+    "cardHeading": "Jak dbać o bezpieczeństwo konta",
+    "items": [
+      { "label": "Używaj silnego hasła:", "text": "Co najmniej 8 znaków" },
+      { "label": "Nigdy nie udostępniaj swojego hasła:", "text": "Nigdy o nie nie poprosimy" },
+      { "label": "Weryfikuj adresy portfeli:", "text": "Sprawdzaj dokładnie przed wysłaniem" },
+      { "label": "Uważaj na oszustwa:", "text": "Nigdy nie prosimy o płatności w prywatnych wiadomościach" }
+    ]
+  },
+  "faq": {
+    "heading": "Najczęściej zadawane pytania",
+    "items": [
+      {
+        "question": "Czym jest NFT?",
+        "answer": "NFT oznacza Non-Fungible Token (token niewymienialny). To unikalne cyfrowe aktywo przechowywane w sieci blockchain, które reprezentuje własność cyfrowych elementów, takich jak sztuka, muzyka, filmy i inne."
+      },
+      {
+        "question": "Jak utworzyć NFT?",
+        "answer": "Zasil swoje konto co najmniej 200 $ w ETH, przejdź do strony Utwórz, prześlij plik, dodaj szczegóły i wyślij."
+      },
+      {
+        "question": "Jakie są opłaty?",
+        "answer": "Utworzenie NFT kosztuje 200 $ za przedmiot. Zakup NFT wymaga jedynie zapłaty podanej ceny. Wypłaty wymagają osobnej opłaty w wysokości 10%."
+      },
+      {
+        "question": "Jak długo trwa przetwarzanie transakcji?",
+        "answer": "Zasilenie konta: ~10 minut. Zakupy NFT: w ciągu 24 godzin. Wypłaty: 24-48 godzin."
+      }
+    ]
+  },
+  "quickRef": {
+    "heading": "Szybkie informacje",
+    "processingTimes": {
+      "heading": "Czasy przetwarzania",
+      "items": ["Aktualizacja salda: ~10 minut", "Zakupy NFT: w ciągu 24 godzin", "Wypłaty: 24-48 godzin"]
+    },
+    "fees": {
+      "heading": "Opłaty",
+      "items": ["Tworzenie NFT: 200 $ za przedmiot", "Zakup: tylko podana cena", "Wypłaty: 10% (płatne osobno)"]
+    },
+    "formats": {
+      "heading": "Obsługiwane formaty",
+      "items": ["Obrazy: JPG, PNG, GIF, WEBP", "Wideo: MP4, WEBM", "Audio: MP3, WAV, OGG"]
+    },
+    "minimums": {
+      "heading": "Kwoty minimalne",
+      "items": ["Minimalna cena NFT: 0,001 ETH", "Kolekcja: 2-20 przedmiotów"]
+    }
+  },
+  "contactCta": {
+    "heading": "Nadal masz pytania?",
+    "text": "Nasz zespół wsparcia jest tutaj, aby Ci pomóc",
+    "button": "Skontaktuj się z pomocą"
+  }
+}

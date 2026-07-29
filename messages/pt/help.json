@@ -1,0 +1,162 @@
+{
+  "header": {
+    "heading": "Central de Ajuda",
+    "subtitle": "Tudo o que você precisa saber para usar a Foundation Exclusive"
+  },
+  "topics": {
+    "wallet": { "title": "Carteira e Saldo", "description": "Adicione fundos à sua conta e gerencie seu ETH" },
+    "creating": { "title": "Criando NFTs", "description": "Crie seu primeiro NFT" },
+    "buying": { "title": "Comprando NFTs", "description": "Compre e colecione NFTs" },
+    "withdrawals": { "title": "Saques", "description": "Saque fundos da sua conta" },
+    "security": { "title": "Segurança", "description": "Mantenha sua conta segura" },
+    "exploring": { "title": "Explorando NFTs", "description": "Navegue e descubra coleções" }
+  },
+  "wallet": {
+    "heading": "Carteira e Saldo",
+    "cardHeading": "Como Adicionar Fundos à Sua Conta",
+    "steps": {
+      "step1": "Faça login e acesse seu <b>Painel</b>",
+      "step2": "Clique em <b>\"Adicionar Fundos\"</b>",
+      "step3": "Você verá um código QR e o endereço da carteira ETH",
+      "step4": "Envie ETH da sua carteira externa para esse endereço",
+      "step5": "Aguarde aproximadamente 10 minutos para o saldo ser atualizado"
+    },
+    "notesHeading": "Notas Importantes",
+    "notes": [
+      "Envie apenas ETH (Ethereum) para o endereço fornecido",
+      "Verifique novamente o endereço da carteira antes de enviar",
+      "Guarde o hash da transação para referência"
+    ]
+  },
+  "creating": {
+    "heading": "Criando NFTs",
+    "singleCardHeading": "Como Criar um NFT Único",
+    "singleSteps": {
+      "step1": "Tenha pelo menos <b>US$ 200 em ETH</b>",
+      "step2": "Acesse a página <b>Criar</b>",
+      "step3": "Selecione o modo <b>\"NFT Único\"</b>",
+      "step4": "Envie seu arquivo de mídia (máximo 100MB)",
+      "step5": "Preencha título, preço e categoria",
+      "step6": "Clique em <b>\"Criar NFT\"</b>"
+    },
+    "collectionCardHeading": "Como Criar uma Coleção",
+    "collectionSteps": {
+      "step1": "Selecione o modo <b>\"Coleção\"</b> na página Criar",
+      "step2": "Adicione nome, descrição e imagem de capa da coleção",
+      "step3": "Adicione de 2 a 20 itens à sua coleção",
+      "step4": "Defina o preço da coleção (<b>US$ 200 por item</b>)"
+    },
+    "feesHeading": "Taxas de Envio",
+    "feesText": "NFT Único: US$ 200 | Coleção: US$ 200 por item"
+  },
+  "buying": {
+    "heading": "Comprando NFTs",
+    "cardHeading": "Como Comprar um NFT",
+    "steps": {
+      "step1": "Navegue pela página <b>Explorar</b>",
+      "step2": "Use os filtros para encontrar o que você quer",
+      "step3": "Clique em um NFT para ver os detalhes",
+      "step4": "Clique em <b>\"Comprar Agora\"</b>",
+      "step5": "Confirme a compra",
+      "step6": "Aguarde a confirmação do administrador (em até 24 horas)"
+    },
+    "afterHeading": "Após a Compra",
+    "after": [
+      "O NFT aparece no seu Painel em \"Possuídos\"",
+      "Não há taxas adicionais para compras"
+    ]
+  },
+  "withdrawals": {
+    "heading": "Saques",
+    "cardHeading": "Como Sacar Fundos",
+    "steps": {
+      "step1": "Acesse o <b>Painel</b> e clique em <b>\"Sacar\"</b>",
+      "step2": "Digite o endereço da sua carteira ETH externa (0x...)",
+      "step3": "Digite o valor do saque",
+      "step4": "Clique em <b>\"Continuar\"</b>",
+      "step5": "Envie a <b>taxa de 10%</b> para o endereço de carteira fornecido",
+      "step6": "Clique em <b>\"Confirmar Pagamento\"</b>",
+      "step7": "O saque é processado em <b>24-48 horas</b>"
+    },
+    "infoHeading": "Informações Importantes",
+    "info": [
+      { "label": "Taxa:", "text": "10% (paga separadamente à carteira de taxas)" },
+      { "label": "Tempo de processamento:", "text": "24-48 horas" }
+    ],
+    "infoPlain": "Você recebe o valor TOTAL do saque após pagar a taxa",
+    "feeWarningHeading": "⚠️ Pagamento da Taxa",
+    "feeWarningText": "A taxa de 10% deve ser enviada para nossa carteira de taxas <b>antes</b> de seu saque ser processado. Por exemplo: sacar 1 ETH → enviar 0,1 ETH de taxa → receber 1 ETH em sua carteira."
+  },
+  "exploring": {
+    "heading": "Explorando NFTs",
+    "cardHeading": "Como Navegar pelos NFTs",
+    "steps": {
+      "step1": "Acesse a página <b>Explorar</b>",
+      "step2": "Navegue pelas coleções ou mude para a visualização de itens",
+      "step3": "Use a <b>barra de busca</b> para encontrar NFTs específicos",
+      "step4": "Filtre por <b>categoria</b>",
+      "step5": "Ordene por volume, preço mínimo ou número de itens"
+    },
+    "tipsHeading": "Dicas de Busca",
+    "tips": [
+      "Busque por título, descrição ou nome do criador",
+      "Use tags como \"abstrato\", \"espaço\", \"natureza\"",
+      "Clique em uma coleção para ver todos os itens"
+    ]
+  },
+  "security": {
+    "heading": "Segurança",
+    "cardHeading": "Mantendo Sua Conta Segura",
+    "items": [
+      { "label": "Use uma senha forte:", "text": "Pelo menos 8 caracteres" },
+      { "label": "Nunca compartilhe sua senha:", "text": "Nunca pediremos sua senha" },
+      { "label": "Verifique os endereços de carteira:", "text": "Confira novamente antes de enviar" },
+      { "label": "Cuidado com golpes:", "text": "Nunca enviamos mensagens diretas pedindo pagamentos" }
+    ]
+  },
+  "faq": {
+    "heading": "Perguntas Frequentes",
+    "items": [
+      {
+        "question": "O que é um NFT?",
+        "answer": "NFT significa Token Não Fungível (Non-Fungible Token). É um ativo digital único armazenado em uma blockchain que representa a propriedade de itens digitais como arte, música, vídeos e muito mais."
+      },
+      {
+        "question": "Como eu crio um NFT?",
+        "answer": "Adicione fundos à sua conta com pelo menos US$ 200 em ETH, acesse a página Criar, envie seu arquivo, adicione os detalhes e envie."
+      },
+      {
+        "question": "Quais são as taxas?",
+        "answer": "Criar um NFT custa US$ 200 por item. Comprar NFTs exige apenas o preço listado. Saques exigem uma taxa de 10% paga separadamente."
+      },
+      {
+        "question": "Quanto tempo leva para processar as transações?",
+        "answer": "Depósitos: aproximadamente 10 minutos. Compras de NFT: em até 24 horas. Saques: 24-48 horas."
+      }
+    ]
+  },
+  "quickRef": {
+    "heading": "Referência Rápida",
+    "processingTimes": {
+      "heading": "Tempos de Processamento",
+      "items": ["Atualizações de saldo: aproximadamente 10 minutos", "Compras de NFT: em até 24 horas", "Saques: 24-48 horas"]
+    },
+    "fees": {
+      "heading": "Taxas",
+      "items": ["Criação de NFT: US$ 200 por item", "Compra: apenas o preço listado", "Saques: 10% (pago separadamente)"]
+    },
+    "formats": {
+      "heading": "Formatos Suportados",
+      "items": ["Imagens: JPG, PNG, GIF, WEBP", "Vídeo: MP4, WEBM", "Áudio: MP3, WAV, OGG"]
+    },
+    "minimums": {
+      "heading": "Valores Mínimos",
+      "items": ["Preço mínimo de NFT: 0,001 ETH", "Coleção: 2-20 itens"]
+    }
+  },
+  "contactCta": {
+    "heading": "Ainda Tem Dúvidas?",
+    "text": "Nossa equipe de suporte está aqui para ajudar você",
+    "button": "Contatar Suporte"
+  }
+}

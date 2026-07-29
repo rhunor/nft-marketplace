@@ -1,0 +1,156 @@
+{
+  "detail": {
+    "loading": "NFT laden...",
+    "notFound": {
+      "heading": "NFT Niet Gevonden",
+      "genericMessage": "De NFT die u zoekt bestaat niet of is verwijderd.",
+      "browseButton": "NFT's Bekijken"
+    },
+    "back": "Terug",
+    "share": "Delen",
+    "translated": {
+      "badge": "Machinaal vertaald",
+      "showOriginal": "Toon origineel",
+      "showTranslation": "Toon vertaling"
+    },
+    "badges": {
+      "notForSale": "Niet Te Koop",
+      "youOwnThis": "U Bezit Dit",
+      "marketplaceNft": "Marketplace-NFT",
+      "you": "(U)"
+    },
+    "creator": "Maker",
+    "owner": "Eigenaar",
+    "price": {
+      "current": "Huidige Prijs",
+      "insufficientBalance": "Onvoldoende saldo",
+      "buyNow": "Nu Kopen",
+      "manageNft": "NFT Beheren",
+      "exportNft": "NFT Exporteren"
+    },
+    "description": "Beschrijving",
+    "tags": "Tags",
+    "details": {
+      "heading": "Details",
+      "tokenId": "Token-ID",
+      "blockchain": "Blockchain",
+      "ethereum": "Ethereum",
+      "mediaType": "Mediatype",
+      "created": "Gemaakt"
+    },
+    "related": {
+      "title": "Meer uit deze categorie",
+      "subtitle": "Ontdek meer {category} NFT's"
+    },
+    "buyModal": {
+      "title": "Aankoop Bevestigen",
+      "by": "door @{username}",
+      "price": "Prijs",
+      "platformFee": "Platformkosten (2,5%)",
+      "gasFee": "Gaskosten (geschat)",
+      "total": "Totaal",
+      "yourBalance": "Uw Saldo",
+      "insufficientBalanceWarning": "Onvoldoende saldo. Waardeer uw account op.",
+      "immediateTransferNote": "Eigendom wordt direct na bevestiging overgedragen.",
+      "adminTransferNote": "Na aankoop wordt de eigendomsoverdracht binnen 24 uur verwerkt door ons beheerteam.",
+      "cancel": "Annuleren",
+      "confirm": "Aankoop Bevestigen"
+    },
+    "manageModal": {
+      "title": "NFT Beheren",
+      "statusListed": "Status: Te Koop",
+      "statusNotListed": "Status: Niet Te Koop",
+      "priceLabel": "Prijs (ETH)",
+      "pricePlaceholder": "0.1",
+      "listForSale": "Te Koop Aanbieden",
+      "updatePrice": "Prijs Bijwerken",
+      "unlist": "Verwijderen uit Marketplace",
+      "cancel": "Annuleren"
+    },
+    "notifications": {
+      "addedToFavorites": "Toegevoegd aan favorieten",
+      "removedFromFavorites": "Verwijderd uit favorieten",
+      "likeUpdateFailed": "Bijwerken van like mislukt",
+      "purchaseSuccessTitle": "Aankoop Geslaagd!",
+      "purchaseSuccessMessage": "U bent nu de eigenaar van deze NFT.",
+      "purchaseFailedTitle": "Aankoop Mislukt",
+      "genericError": "Er is iets misgegaan",
+      "purchaseSubmittedTitle": "Aankoopverzoek Ingediend!",
+      "purchaseSubmittedMessage": "Uw aankoop wordt verwerkt. Eigendom wordt overgedragen na bevestiging door de beheerder.",
+      "linkCopied": "Link gekopieerd naar klembord!",
+      "copyFailed": "Kopiëren van link mislukt",
+      "invalidPrice": "Voer een geldige prijs in",
+      "listedTitle": "NFT Te Koop Gezet!",
+      "listedMessage": "Uw NFT is nu beschikbaar op de marketplace.",
+      "listFailedTitle": "Te koop zetten van NFT mislukt",
+      "unlistedTitle": "NFT Niet Meer Te Koop",
+      "unlistedMessage": "Uw NFT is verwijderd van de marketplace.",
+      "unlistFailedTitle": "Verwijderen van NFT mislukt",
+      "priceUpdatedTitle": "Prijs Bijgewerkt!",
+      "priceUpdatedMessage": "Nieuwe prijs: {price} ETH",
+      "priceUpdateFailedTitle": "Bijwerken van prijs mislukt"
+    },
+    "errors": {
+      "fetchFailed": "Ophalen van NFT mislukt",
+      "notFoundError": "NFT niet gevonden",
+      "loadFailed": "Laden van NFT mislukt"
+    }
+  },
+  "export": {
+    "cannotExport": "Deze NFT kan niet worden geëxporteerd.",
+    "loadFailed": "Laden van NFT mislukt",
+    "fetchFailed": "Ophalen van NFT mislukt",
+    "loading": "NFT laden...",
+    "cannotExportHeading": "NFT Kan Niet Worden Geëxporteerd",
+    "nftNotFound": "NFT niet gevonden.",
+    "browseButton": "NFT's Bekijken",
+    "accessDenied": {
+      "heading": "Toegang Geweigerd",
+      "message": "Alleen de eigenaar van deze NFT kan deze exporteren.",
+      "backButton": "Terug naar NFT"
+    },
+    "back": "Terug",
+    "heading": "NFT Exporteren",
+    "subheading": "Exporteer uw NFT naar uw persoonlijke wallet",
+    "by": "door @{username}",
+    "fee": {
+      "heading": "Exportkosten",
+      "amountLabel": "Te versturen bedrag",
+      "loadingAmount": "Laden...",
+      "approxUsd": "≈ ${amount} USD",
+      "note": "Deze eenmalige kosten dekken de gaskosten en verwerking die nodig zijn om uw NFT naar een externe wallet te exporteren."
+    },
+    "payment": {
+      "heading": "Verstuur Betaling Naar",
+      "instruction": "Maak exact",
+      "instructionSuffix": "over naar onderstaand Ethereum-adres:",
+      "copyAddress": "Adres kopiëren",
+      "addressCopied": "Adres gekopieerd naar klembord!",
+      "networkWarning": "Stuur alleen ETH op het Ethereum-netwerk"
+    },
+    "processing": {
+      "heading": "Verwerkingstijd",
+      "message": "Nadat de betaling is bevestigd, wordt de export van uw NFT binnen {hours} verwerkt. Het geëxporteerde bestand wordt afgeleverd op uw geregistreerde e-mailadres.",
+      "hours": "24 uur"
+    },
+    "steps": {
+      "heading": "Hoe het Werkt",
+      "step1": { "title": "Kopieer het bovenstaande walletadres", "description": "Gebruik een willekeurige Ethereum-compatibele wallet om de overdracht te starten." },
+      "step2": { "title": "Verstuur {amount}", "description": "Zorg ervoor dat u op het Ethereum-mainnet verstuurt.", "fallbackAmount": "$100 aan ETH" },
+      "step3": { "title": "Klik hieronder op \"Betaald\"", "description": "Meld ons zodra de betaling is verstuurd." },
+      "step4": { "title": "Ontvang uw NFT-export", "description": "Wij verwerken en leveren binnen 24 uur." }
+    },
+    "paidButton": "Betaald",
+    "paidConfirmation": {
+      "heading": "Betaling Ingediend",
+      "message": "Wij verwerken uw exportverzoek binnen 24 uur.",
+      "backButton": "Terug naar NFT"
+    },
+    "notification": {
+      "title": "Betaling Ingediend",
+      "message": "Dank u! Uw exportverzoek is ontvangen. Ons team verwerkt het binnen 24 uur en stuurt het NFT-bestand naar uw geregistreerde e-mailadres."
+    },
+    "helpText": "Hulp nodig?",
+    "contactSupport": "Neem contact op met support"
+  }
+}

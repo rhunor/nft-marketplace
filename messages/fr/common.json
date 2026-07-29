@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "Changer de langue",
+    "popular": "Langues populaires",
+    "more": "Plus de langues"
+  },
+  "languageBanner": {
+    "message": "Il semble que vous préfériez {language}.",
+    "switch": "Changer",
+    "dismiss": "Ignorer"
+  },
+  "nav": {
+    "home": "Accueil",
+    "explore": "Explorer",
+    "about": "À propos",
+    "help": "Aide",
+    "contact": "Contact"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "Rechercher des NFT, des créateurs...",
+    "create": "Créer",
+    "signIn": "Se connecter",
+    "getStarted": "Commencer",
+    "userMenu": {
+      "dashboard": "Tableau de bord",
+      "createNft": "Créer un NFT",
+      "fundAccount": "Approvisionner le compte",
+      "adminPanel": "Panneau d'administration",
+      "signOut": "Se déconnecter"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "Une extension de Foundation - la destination de référence pour les collectionneurs et créateurs de NFT de grande valeur. Rejoignez notre communauté exclusive de collectionneurs avertis.",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "E-mail"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "Marketplace",
+        "exploreCollections": "Explorer les collections",
+        "howItWorks": "Comment ça marche",
+        "create": "Créer"
+      },
+      "resources": {
+        "heading": "Ressources",
+        "helpCenter": "Centre d'aide",
+        "contactUs": "Nous contacter",
+        "faq": "FAQ"
+      },
+      "company": {
+        "heading": "Entreprise",
+        "aboutUs": "À propos de nous",
+        "termsOfService": "Conditions d'utilisation",
+        "privacyPolicy": "Politique de confidentialité",
+        "cookiePolicy": "Politique de cookies"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. Tous droits réservés.",
+    "bottomLinks": {
+      "terms": "Conditions",
+      "privacy": "Confidentialité",
+      "cookies": "Cookies"
+    }
+  },
+  "modal": {
+    "dismiss": "Ignorer"
+  },
+  "nftCard": {
+    "currentPrice": "Prix actuel",
+    "by": "par"
+  },
+  "nftGrid": {
+    "emptyMessage": "Aucun NFT trouvé"
+  },
+  "nftImage": {
+    "unavailable": "Image indisponible"
+  }
+}

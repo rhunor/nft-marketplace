@@ -1,0 +1,58 @@
+{
+  "header": {
+    "heading": "お問い合わせ",
+    "subtitle": "ご質問やお困りのことがございましたら、お気軽にご連絡ください。"
+  },
+  "subjectOptions": {
+    "general": "一般的なお問い合わせ",
+    "support": "技術サポート",
+    "billing": "請求・お支払い",
+    "partnership": "パートナーシップ",
+    "bug": "不具合の報告",
+    "feature": "機能のリクエスト",
+    "other": "その他"
+  },
+  "info": {
+    "email": {
+      "title": "メール",
+      "subtitle": "一般的なお問い合わせについて"
+    },
+    "liveChat": {
+      "title": "ライブチャット",
+      "value": "24時間365日対応",
+      "subtitle": "迅速な対応"
+    },
+    "responseTime": {
+      "title": "対応時間",
+      "value": "24〜48時間以内",
+      "subtitle": "営業日"
+    },
+    "office": {
+      "title": "オフィス",
+      "line1": "11420 Santa Monica Boulevard",
+      "line2": "Post Office Box 252111",
+      "line3": "Los Angeles, CA 90025"
+    }
+  },
+  "form": {
+    "heading": "メッセージを送る",
+    "nameLabel": "お名前",
+    "namePlaceholder": "山田 太郎",
+    "emailLabel": "メールアドレス",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "件名",
+    "subjectPlaceholder": "トピックを選択してください",
+    "messageLabel": "メッセージ",
+    "messagePlaceholder": "どのようなご用件でしょうか?",
+    "submit": "メッセージを送信"
+  },
+  "success": {
+    "heading": "メッセージを送信しました!",
+    "text": "お問い合わせいただきありがとうございます。担当チームがメッセージを確認し、24〜48時間以内にご連絡いたします。",
+    "sendAnother": "別のメッセージを送る"
+  },
+  "notification": {
+    "title": "メッセージを送信しました!",
+    "message": "24〜48時間以内にご連絡いたします。"
+  }
+}

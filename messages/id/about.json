@@ -1,0 +1,56 @@
+{
+  "metaTitle": "Tentang Kami | Foundation Exclusive",
+  "metaDescription": "Foundation Exclusive adalah perluasan dari Foundation - komunitas eksklusif kolektor dan kreator NFT bernilai tinggi.",
+  "hero": {
+    "badge": "Perluasan dari Foundation",
+    "heading": "Selamat Datang di <gradient>Foundation Exclusive</gradient>",
+    "subtitle": "Foundation Exclusive adalah destinasi utama bagi kolektor dan kreator NFT bernilai tinggi. Sebagai perluasan dari Foundation, kami menghadirkan komunitas eksklusif tempat karya seni digital luar biasa menemukan kolektor yang tepat."
+  },
+  "stats": [
+    { "value": "2,500+", "label": "Kolektor Terverifikasi" },
+    { "value": "150+", "label": "Koleksi Terkurasi" },
+    { "value": "$45M+", "label": "Total Volume" },
+    { "value": "15 ETH", "label": "Rata-rata Harga Jual" }
+  ],
+  "story": {
+    "heading": "Kisah Kami",
+    "p1": "Foundation Exclusive lahir dari sebuah pengamatan sederhana: pasar NFT membutuhkan ruang khusus bagi kolektor serius yang mengutamakan kualitas di atas kuantitas. Saat Foundation merevolusi cara seniman terhubung dengan kolektor, kami melihat peluang untuk menciptakan sesuatu yang lebih eksklusif lagi.",
+    "p2": "Platform kami merupakan perluasan terkurasi dari ekosistem Foundation, di mana setiap koleksi dipilih secara langsung dan setiap seniman diverifikasi dengan seksama. Kami percaya bahwa seni digital layak mendapatkan penghormatan dan pertimbangan investasi yang sama seperti seni rupa tradisional.",
+    "p3": "Harga yang Anda lihat di Foundation Exclusive mencerminkan nilai sesungguhnya dari karya seni digital yang luar biasa. Kolektor kami memahami bahwa karya premium sepadan dengan harga premium, dan rekam jejak apresiasi nilai kami membuktikan pendekatan ini.",
+    "imageAlt": "Galeri Seni Digital",
+    "imageCaption": "Tempat karya seni digital luar biasa menemukan rumahnya"
+  },
+  "values": {
+    "heading": "Yang Membuat Kami Berbeda",
+    "subtitle": "Foundation Exclusive dibangun di atas prinsip-prinsip yang menjamin standar tertinggi bagi komunitas kolektor dan kreator kami.",
+    "items": [
+      {
+        "title": "Keaslian Terverifikasi",
+        "description": "Setiap karya di marketplace kami melalui proses verifikasi ketat untuk memastikan keaslian dan asal-usulnya."
+      },
+      {
+        "title": "Kualitas Premium",
+        "description": "Kami hanya mengkurasi seni digital terbaik dari seniman mapan maupun berbakat yang memenuhi standar tinggi kami."
+      },
+      {
+        "title": "Komunitas Eksklusif",
+        "description": "Bergabunglah dengan jaringan selektif kolektor, seniman, dan penggemar yang berbagi kecintaan terhadap seni digital luar biasa."
+      },
+      {
+        "title": "Kelas Investasi",
+        "description": "NFT kami dihargai sesuai nilai sesungguhnya, dengan rekam jejak apresiasi nilai di pasar sekunder."
+      }
+    ]
+  },
+  "membership": {
+    "heading": "Bergabung dengan Komunitas Eksklusif",
+    "text": "Foundation Exclusive lebih dari sekadar marketplace—ini adalah komunitas individu yang sepemikiran dan memahami nilai seni digital luar biasa. Anggota kami menikmati akses awal ke peluncuran karya, acara eksklusif, dan jaringan sesama kolektor dan seniman.",
+    "becomeMember": "Menjadi Anggota",
+    "exploreCollections": "Jelajahi Koleksi"
+  },
+  "cta": {
+    "heading": "Siap Merasakan Keeksklusifannya?",
+    "text": "Temukan alasan mengapa kolektor serius memilih Foundation Exclusive untuk akuisisi paling berharga mereka.",
+    "viewCollections": "Lihat Koleksi"
+  }
+}

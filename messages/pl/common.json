@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "Zmień język",
+    "popular": "Popularne języki",
+    "more": "Więcej języków"
+  },
+  "languageBanner": {
+    "message": "Wygląda na to, że wolisz język: {language}.",
+    "switch": "Przełącz",
+    "dismiss": "Odrzuć"
+  },
+  "nav": {
+    "home": "Strona główna",
+    "explore": "Przeglądaj",
+    "about": "O nas",
+    "help": "Pomoc",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "Szukaj NFT, twórców...",
+    "create": "Utwórz",
+    "signIn": "Zaloguj się",
+    "getStarted": "Zaczynamy",
+    "userMenu": {
+      "dashboard": "Panel",
+      "createNft": "Utwórz NFT",
+      "fundAccount": "Zasil konto",
+      "adminPanel": "Panel administratora",
+      "signOut": "Wyloguj się"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "Rozszerzenie Foundation - wiodące miejsce dla kolekcjonerów i twórców NFT o wysokiej wartości. Dołącz do naszej ekskluzywnej społeczności wymagających kolekcjonerów.",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "E-mail"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "Rynek",
+        "exploreCollections": "Przeglądaj kolekcje",
+        "howItWorks": "Jak to działa",
+        "create": "Utwórz"
+      },
+      "resources": {
+        "heading": "Zasoby",
+        "helpCenter": "Centrum pomocy",
+        "contactUs": "Skontaktuj się z nami",
+        "faq": "FAQ"
+      },
+      "company": {
+        "heading": "Firma",
+        "aboutUs": "O nas",
+        "termsOfService": "Regulamin",
+        "privacyPolicy": "Polityka prywatności",
+        "cookiePolicy": "Polityka plików cookie"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. Wszelkie prawa zastrzeżone.",
+    "bottomLinks": {
+      "terms": "Regulamin",
+      "privacy": "Prywatność",
+      "cookies": "Pliki cookie"
+    }
+  },
+  "modal": {
+    "dismiss": "Odrzuć"
+  },
+  "nftCard": {
+    "currentPrice": "Aktualna cena",
+    "by": "od"
+  },
+  "nftGrid": {
+    "emptyMessage": "Nie znaleziono NFT"
+  },
+  "nftImage": {
+    "unavailable": "Obraz niedostępny"
+  }
+}

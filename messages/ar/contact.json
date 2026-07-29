@@ -1,0 +1,58 @@
+{
+  "header": {
+    "heading": "تواصل معنا",
+    "subtitle": "لديك سؤال أو تحتاج إلى مساعدة؟ نحن هنا من أجلك."
+  },
+  "subjectOptions": {
+    "general": "استفسار عام",
+    "support": "الدعم الفني",
+    "billing": "الفوترة والمدفوعات",
+    "partnership": "شراكة",
+    "bug": "الإبلاغ عن خلل",
+    "feature": "طلب ميزة",
+    "other": "أخرى"
+  },
+  "info": {
+    "email": {
+      "title": "البريد الإلكتروني",
+      "subtitle": "للاستفسارات العامة"
+    },
+    "liveChat": {
+      "title": "الدردشة المباشرة",
+      "value": "متاحة على مدار الساعة",
+      "subtitle": "زمن استجابة سريع"
+    },
+    "responseTime": {
+      "title": "زمن الاستجابة",
+      "value": "خلال 24 إلى 48 ساعة",
+      "subtitle": "أيام العمل"
+    },
+    "office": {
+      "title": "المكتب",
+      "line1": "11420 Santa Monica Boulevard",
+      "line2": "Post Office Box 252111",
+      "line3": "Los Angeles, CA 90025"
+    }
+  },
+  "form": {
+    "heading": "أرسل لنا رسالة",
+    "nameLabel": "اسمك",
+    "namePlaceholder": "محمد أحمد",
+    "emailLabel": "عنوان البريد الإلكتروني",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "الموضوع",
+    "subjectPlaceholder": "اختر موضوعًا",
+    "messageLabel": "الرسالة",
+    "messagePlaceholder": "كيف يمكننا مساعدتك؟",
+    "submit": "إرسال الرسالة"
+  },
+  "success": {
+    "heading": "تم إرسال الرسالة بنجاح!",
+    "text": "شكرًا لتواصلك معنا. سيراجع فريقنا رسالتك ويعاود التواصل معك خلال 24 إلى 48 ساعة.",
+    "sendAnother": "إرسال رسالة أخرى"
+  },
+  "notification": {
+    "title": "تم إرسال الرسالة!",
+    "message": "سنعاود التواصل معك خلال 24 إلى 48 ساعة."
+  }
+}

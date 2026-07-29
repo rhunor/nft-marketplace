@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "إنشاء NFT",
+    "subtitle": "ارفع عملك الفني الرقمي"
+  },
+  "mode": {
+    "single": {
+      "title": "NFT مفرد",
+      "subtitle": "ارفع عملًا فنيًا واحدًا"
+    },
+    "collection": {
+      "title": "مجموعة",
+      "subtitle": "من 2 إلى 20 عنصرًا دفعة واحدة"
+    }
+  },
+  "fee": {
+    "label": "رسوم الرفع",
+    "singleDescription": "200 دولار لكل رفع NFT",
+    "collectionDescription": "200 دولار × {count} عنصر = {total} دولار",
+    "yourBalance": "رصيدك",
+    "insufficientBalance": "الرصيد غير كافٍ. يرجى تمويل حسابك."
+  },
+  "notifications": {
+    "invalidFileType": {
+      "title": "نوع ملف غير صالح",
+      "message": "يرجى رفع ملف صورة أو فيديو أو صوت."
+    },
+    "fileTooLarge": {
+      "title": "حجم الملف كبير جدًا",
+      "message": "الحد الأقصى لحجم الملف هو 100 ميجابايت."
+    },
+    "maxItemsReached": {
+      "title": "تم بلوغ الحد الأقصى",
+      "message": "يمكن أن تحتوي المجموعة على 20 عنصرًا كحد أقصى."
+    },
+    "minItemsRequired": {
+      "title": "الحد الأدنى مطلوب",
+      "message": "يجب أن تحتوي المجموعة على عنصرين على الأقل."
+    },
+    "noFileSelected": {
+      "title": "لم يتم اختيار ملف"
+    },
+    "insufficientBalance": {
+      "title": "الرصيد غير كافٍ",
+      "uploadMessage": "تحتاج إلى {fee} للرفع.",
+      "collectionMessage": "تحتاج إلى {fee} لإنشاء المجموعة."
+    },
+    "nftCreated": {
+      "title": "تم إنشاء NFT!",
+      "message": "تم رفع أصلك الرقمي بنجاح."
+    },
+    "uploadFailed": {
+      "title": "فشل الرفع",
+      "defaultMessage": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+    },
+    "collectionInvalidFileType": {
+      "title": "نوع ملف غير صالح"
+    },
+    "collectionFileTooLarge": {
+      "title": "حجم الملف كبير جدًا",
+      "message": "الحد الأقصى 100 ميجابايت."
+    },
+    "fillRequiredFields": {
+      "title": "يرجى ملء جميع الحقول المطلوبة"
+    },
+    "collectionCreated": {
+      "title": "تم إنشاء المجموعة!",
+      "message": "تم رفع {count} عنصر بنجاح."
+    }
+  },
+  "form": {
+    "single": {
+      "mediaLabel": "ملف الوسائط *",
+      "dragDrop": "اسحب وأفلت الملف هنا أو اضغط للرفع",
+      "acceptedTypes": "JPG، PNG، GIF، MP4، MP3 (بحد أقصى 100 ميجابايت)",
+      "titleLabel": "العنوان *",
+      "titlePlaceholder": "عنوان NFT",
+      "priceLabel": "السعر (ETH) *",
+      "pricePlaceholder": "0.1",
+      "categoryLabel": "الفئة *",
+      "tagsLabel": "الوسوم (حتى 10)",
+      "tagsPlaceholder": "أضف وسمًا",
+      "addTag": "إضافة",
+      "submit": "إنشاء NFT",
+      "submitting": "جارٍ الرفع...",
+      "priceError": "يجب أن يكون السعر أكبر من 0"
+    },
+    "collection": {
+      "detailsHeading": "تفاصيل المجموعة",
+      "nameLabel": "اسم المجموعة *",
+      "namePlaceholder": "مجموعتي",
+      "descriptionLabel": "الوصف *",
+      "descriptionPlaceholder": "صف مجموعتك...",
+      "categoryLabel": "الفئة *",
+      "priceLabel": "سعر المجموعة (ETH) *",
+      "pricePlaceholder": "0.5",
+      "pricePerItemHint": "السعر لكل عنصر: {price}",
+      "itemsHeading": "العناصر ({count})",
+      "addItem": "إضافة",
+      "itemLabel": "العنصر {number}",
+      "itemUploadPrompt": "اضغط للرفع",
+      "itemTitleLabel": "العنوان *",
+      "itemTitlePlaceholder": "عنوان العنصر",
+      "requiredError": "مطلوب",
+      "priceError": "يجب أن يكون سعر المجموعة أكبر من 0",
+      "submit": "إنشاء المجموعة ({count} عنصر)",
+      "submitting": "جارٍ إنشاء المجموعة..."
+    }
+  }
+}

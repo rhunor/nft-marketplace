@@ -1,0 +1,58 @@
+{
+  "header": {
+    "title": "계정 충전",
+    "subtitle": "NFT를 생성하고 구매하려면 지갑에 ETH를 추가하세요"
+  },
+  "balance": {
+    "label": "현재 잔액",
+    "ethRate": "1 ETH = ${price}",
+    "refreshTitle": "가격 새로고침"
+  },
+  "amount": {
+    "heading": "금액 선택",
+    "preset": "{value} ETH",
+    "customLabel": "직접 입력 (ETH)"
+  },
+  "deposit": {
+    "heading": "입금 주소",
+    "qrAlt": "입금 QR 코드",
+    "loading": "불러오는 중...",
+    "sendTo": "이 주소로 ETH를 보내주세요:",
+    "copied": "주소가 클립보드에 복사되었습니다!",
+    "networkWarning": "이더리움 네트워크로만 ETH를 보내주세요"
+  },
+  "notice": {
+    "heading": "처리 시간",
+    "text": "결제를 보내신 후, 계정 잔액에 반영되기까지 약 <strong>10분</strong>이 소요됩니다. 이는 블록체인 컨펌 및 관리팀의 거래 확인에 필요한 시간입니다."
+  },
+  "howItWorks": {
+    "heading": "이용 방법",
+    "steps": {
+      "select": {
+        "title": "금액 선택",
+        "text": "계정에 충전할 ETH 금액을 선택하세요"
+      },
+      "send": {
+        "title": "결제 전송",
+        "text": "위에 표시된 입금 주소로 ETH를 전송하세요"
+      },
+      "confirm": {
+        "title": "컨펌 대기",
+        "text": "약 10분 이내에 잔액이 업데이트됩니다"
+      },
+      "start": {
+        "title": "생성 및 컬렉팅 시작",
+        "text": "잔액을 사용해 NFT를 생성하고 구매하세요"
+      }
+    }
+  },
+  "action": {
+    "button": "{amount} ETH를 보냈습니다",
+    "help": "도움이 필요하신가요? ",
+    "contactSupport": "고객 지원팀에 문의하기"
+  },
+  "notification": {
+    "title": "결제 안내",
+    "message": "표시된 주소로 {amount} ETH를 보내주세요. 컨펌 후 약 10분 이내에 잔액이 업데이트됩니다."
+  }
+}

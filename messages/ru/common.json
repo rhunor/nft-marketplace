@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "Изменить язык",
+    "popular": "Популярные языки",
+    "more": "Другие языки"
+  },
+  "languageBanner": {
+    "message": "Похоже, вам подойдёт {language}.",
+    "switch": "Переключить",
+    "dismiss": "Скрыть"
+  },
+  "nav": {
+    "home": "Главная",
+    "explore": "Каталог",
+    "about": "О нас",
+    "help": "Помощь",
+    "contact": "Контакты"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "Поиск NFT, авторов...",
+    "create": "Создать",
+    "signIn": "Войти",
+    "getStarted": "Начать",
+    "userMenu": {
+      "dashboard": "Личный кабинет",
+      "createNft": "Создать NFT",
+      "fundAccount": "Пополнить счёт",
+      "adminPanel": "Панель администратора",
+      "signOut": "Выйти"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "Расширение Foundation — ведущая площадка для коллекционеров и создателей ценных NFT. Присоединяйтесь к нашему эксклюзивному сообществу взыскательных коллекционеров.",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "Email"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "Маркетплейс",
+        "exploreCollections": "Смотреть коллекции",
+        "howItWorks": "Как это работает",
+        "create": "Создать"
+      },
+      "resources": {
+        "heading": "Ресурсы",
+        "helpCenter": "Центр помощи",
+        "contactUs": "Связаться с нами",
+        "faq": "Часто задаваемые вопросы"
+      },
+      "company": {
+        "heading": "Компания",
+        "aboutUs": "О нас",
+        "termsOfService": "Условия использования",
+        "privacyPolicy": "Политика конфиденциальности",
+        "cookiePolicy": "Политика использования файлов cookie"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. Все права защищены.",
+    "bottomLinks": {
+      "terms": "Условия",
+      "privacy": "Конфиденциальность",
+      "cookies": "Cookie"
+    }
+  },
+  "modal": {
+    "dismiss": "Закрыть"
+  },
+  "nftCard": {
+    "currentPrice": "Текущая цена",
+    "by": "автор"
+  },
+  "nftGrid": {
+    "emptyMessage": "NFT не найдены"
+  },
+  "nftImage": {
+    "unavailable": "Изображение недоступно"
+  }
+}

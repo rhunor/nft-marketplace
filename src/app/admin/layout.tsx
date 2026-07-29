@@ -16,6 +16,9 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Loading } from '@/components/ui';
+import { AppProviders } from '@/components/AppProviders';
+import { spaceGrotesk, inter } from '@/lib/fonts';
+import '@/styles/globals.css';
 
 const adminNavItems = [
   {
@@ -45,11 +48,7 @@ const adminNavItems = [
   },
 ];
 
-export default function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function AdminLayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { data: session, status } = useSession();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -166,5 +165,24 @@ export default function AdminLayout({
         <div className="min-h-screen p-4 sm:p-6 lg:p-8">{children}</div>
       </main>
     </div>
+  );
+}
+
+// Admin is a separate root layout (English-only, outside the [locale] segment) -
+// see the "multiple root layouts" pattern: no shared app/layout.tsx exists,
+// so both this and src/app/[locale]/layout.tsx define their own <html>/<body>.
+export default function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
+        <AppProviders>
+          <AdminLayoutContent>{children}</AdminLayoutContent>
+        </AppProviders>
+      </body>
+    </html>
   );
 }

@@ -1,0 +1,56 @@
+{
+  "metaTitle": "Hakkımızda | Foundation Exclusive",
+  "metaDescription": "Foundation Exclusive, Foundation'ın bir uzantısıdır - yüksek değerli NFT koleksiyoncuları ve sanatçılarından oluşan seçkin bir topluluk.",
+  "hero": {
+    "badge": "Foundation'ın Bir Uzantısı",
+    "heading": "<gradient>Foundation Exclusive</gradient>'a Hoş Geldiniz",
+    "subtitle": "Foundation Exclusive, yüksek değerli NFT koleksiyoncuları ve sanatçıları için önde gelen adrestir. Foundation'ın bir uzantısı olarak, olağanüstü dijital sanatın hak ettiği koleksiyoncularla buluştuğu seçkin bir topluluk sunuyoruz."
+  },
+  "stats": [
+    { "value": "2.500+", "label": "Doğrulanmış Koleksiyoncu" },
+    { "value": "150+", "label": "Küratörlü Koleksiyon" },
+    { "value": "$45M+", "label": "Toplam Hacim" },
+    { "value": "15 ETH", "label": "Ort. Satış Fiyatı" }
+  ],
+  "story": {
+    "heading": "Hikayemiz",
+    "p1": "Foundation Exclusive, basit bir gözlemden doğdu: NFT piyasasının, nicelikten çok niteliğe değer veren ciddi koleksiyoncular için ayrılmış bir alana ihtiyacı vardı. Foundation, sanatçıların koleksiyoncularla buluşma şeklinde devrim yaratırken, biz daha da rafine bir şey yaratma fırsatı gördük.",
+    "p2": "Platformumuz, her koleksiyonun özenle seçildiği ve her sanatçının titizlikle değerlendirildiği, Foundation ekosisteminin küratörlü bir uzantısı olarak hizmet veriyor. Dijital sanatın, geleneksel güzel sanatlarla aynı saygıyı ve yatırım değerlendirmesini hak ettiğine inanıyoruz.",
+    "p3": "Foundation Exclusive'da gördüğünüz fiyatlar, olağanüstü dijital sanatın gerçek değerini yansıtır. Koleksiyoncularımız, premium eserlerin premium fiyatlar gerektirdiğini anlar ve değer artışına dair geçmiş performansımız bu yaklaşımı doğrular.",
+    "imageAlt": "Dijital Sanat Galerisi",
+    "imageCaption": "Olağanüstü dijital sanatın evini bulduğu yer"
+  },
+  "values": {
+    "heading": "Bizi Farklı Kılan",
+    "subtitle": "Foundation Exclusive, koleksiyoncu ve sanatçı topluluğumuz için en yüksek standartları güvence altına alan ilkeler üzerine kuruludur.",
+    "items": [
+      {
+        "title": "Doğrulanmış Özgünlük",
+        "description": "Pazar yerimizdeki her eser, özgünlüğünü ve kökenini garanti altına almak için titiz bir doğrulama sürecinden geçer."
+      },
+      {
+        "title": "Premium Kalite",
+        "description": "Yüksek standartlarımızı karşılayan yerleşik ve yükselen sanatçılardan yalnızca en seçkin dijital sanatı bir araya getiriyoruz."
+      },
+      {
+        "title": "Seçkin Topluluk",
+        "description": "Olağanüstü dijital sanata tutkuyla bağlı koleksiyoncular, sanatçılar ve meraklılardan oluşan seçkin bir ağa katılın."
+      },
+      {
+        "title": "Yatırım Değerinde",
+        "description": "NFT'lerimiz gerçek değerlerini yansıtacak şekilde fiyatlandırılır ve ikincil piyasada kanıtlanmış bir değer artışı geçmişine sahiptir."
+      }
+    ]
+  },
+  "membership": {
+    "heading": "Seçkin Topluluğa Katılın",
+    "text": "Foundation Exclusive bir pazar yerinden çok daha fazlasıdır—olağanüstü dijital sanatın değerini anlayan, benzer düşünen bireylerden oluşan bir topluluktur. Üyelerimiz, drop'lara erken erişim, özel etkinlikler ve diğer koleksiyoncu ve sanatçılardan oluşan bir ağın keyfini çıkarır.",
+    "becomeMember": "Üye Olun",
+    "exploreCollections": "Koleksiyonları Keşfedin"
+  },
+  "cta": {
+    "heading": "Ayrıcalıklı Deneyimi Yaşamaya Hazır mısınız?",
+    "text": "Ciddi koleksiyoncuların en değerli edinimleri için neden Foundation Exclusive'ı tercih ettiğini keşfedin.",
+    "viewCollections": "Koleksiyonları Görüntüleyin"
+  }
+}

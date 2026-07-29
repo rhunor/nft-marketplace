@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "NFT Oluştur",
+    "subtitle": "Dijital sanat eserinizi yükleyin"
+  },
+  "mode": {
+    "single": {
+      "title": "Tekil NFT",
+      "subtitle": "Tek bir sanat eseri yükleyin"
+    },
+    "collection": {
+      "title": "Koleksiyon",
+      "subtitle": "Tek seferde 2-20 öğe"
+    }
+  },
+  "fee": {
+    "label": "Yükleme Ücreti",
+    "singleDescription": "NFT yüklemesi başına 200$",
+    "collectionDescription": "200$ × {count} öğe = ${total}",
+    "yourBalance": "Bakiyeniz",
+    "insufficientBalance": "Yetersiz bakiye. Lütfen hesabınızı fonlayın."
+  },
+  "notifications": {
+    "invalidFileType": {
+      "title": "Geçersiz dosya türü",
+      "message": "Lütfen bir görsel, video veya ses dosyası yükleyin."
+    },
+    "fileTooLarge": {
+      "title": "Dosya çok büyük",
+      "message": "Maksimum dosya boyutu 100MB'tır."
+    },
+    "maxItemsReached": {
+      "title": "Maksimuma ulaşıldı",
+      "message": "Bir koleksiyon en fazla 20 öğe içerebilir."
+    },
+    "minItemsRequired": {
+      "title": "Minimum gereksinim",
+      "message": "Bir koleksiyon en az 2 öğe içermelidir."
+    },
+    "noFileSelected": {
+      "title": "Dosya seçilmedi"
+    },
+    "insufficientBalance": {
+      "title": "Yetersiz Bakiye",
+      "uploadMessage": "Yükleme için {fee} gerekiyor.",
+      "collectionMessage": "Koleksiyon oluşturmak için {fee} gerekiyor."
+    },
+    "nftCreated": {
+      "title": "NFT Oluşturuldu!",
+      "message": "NFT'niz başarıyla yüklendi."
+    },
+    "uploadFailed": {
+      "title": "Yükleme Başarısız",
+      "defaultMessage": "Bir şeyler ters gitti. Lütfen tekrar deneyin."
+    },
+    "collectionInvalidFileType": {
+      "title": "Geçersiz dosya türü"
+    },
+    "collectionFileTooLarge": {
+      "title": "Dosya çok büyük",
+      "message": "Maksimum 100MB."
+    },
+    "fillRequiredFields": {
+      "title": "Lütfen tüm zorunlu alanları doldurun"
+    },
+    "collectionCreated": {
+      "title": "Koleksiyon Oluşturuldu!",
+      "message": "{count} öğe başarıyla yüklendi."
+    }
+  },
+  "form": {
+    "single": {
+      "mediaLabel": "Medya Dosyası *",
+      "dragDrop": "Sürükleyip bırakın veya yüklemek için tıklayın",
+      "acceptedTypes": "JPG, PNG, GIF, MP4, MP3 (Maks. 100MB)",
+      "titleLabel": "Başlık *",
+      "titlePlaceholder": "NFT başlığı",
+      "priceLabel": "Fiyat (ETH) *",
+      "pricePlaceholder": "0.1",
+      "categoryLabel": "Kategori *",
+      "tagsLabel": "Etiketler (en fazla 10)",
+      "tagsPlaceholder": "Etiket ekle",
+      "addTag": "Ekle",
+      "submit": "NFT Oluştur",
+      "submitting": "Yükleniyor...",
+      "priceError": "Fiyat 0'dan büyük olmalıdır"
+    },
+    "collection": {
+      "detailsHeading": "Koleksiyon Detayları",
+      "nameLabel": "Koleksiyon Adı *",
+      "namePlaceholder": "Koleksiyonum",
+      "descriptionLabel": "Açıklama *",
+      "descriptionPlaceholder": "Koleksiyonunuzu tanımlayın...",
+      "categoryLabel": "Kategori *",
+      "priceLabel": "Koleksiyon Fiyatı (ETH) *",
+      "pricePlaceholder": "0.5",
+      "pricePerItemHint": "Öğe başına fiyat: {price}",
+      "itemsHeading": "Öğeler ({count})",
+      "addItem": "Ekle",
+      "itemLabel": "Öğe {number}",
+      "itemUploadPrompt": "Yüklemek için tıklayın",
+      "itemTitleLabel": "Başlık *",
+      "itemTitlePlaceholder": "Öğe başlığı",
+      "requiredError": "Zorunlu",
+      "priceError": "Koleksiyon fiyatı 0'dan büyük olmalıdır",
+      "submit": "Koleksiyon Oluştur ({count} öğe)",
+      "submitting": "Koleksiyon Oluşturuluyor..."
+    }
+  }
+}

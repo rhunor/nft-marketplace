@@ -1,0 +1,126 @@
+{
+  "loading": "Đang tải bảng điều khiển...",
+  "avatar": {
+    "invalidType": "Vui lòng chọn một tệp hình ảnh",
+    "tooLarge": "Kích thước ảnh phải nhỏ hơn 5MB",
+    "uploadSuccess": "Đã cập nhật ảnh đại diện!",
+    "uploadFailedTitle": "Tải lên thất bại",
+    "uploadFailedDefault": "Đã xảy ra lỗi",
+    "changePicture": "Đổi ảnh đại diện"
+  },
+  "welcome": "Chào mừng trở lại, {name}!",
+  "adminBadge": "Quản Trị Viên",
+  "fundAccount": "Nạp Tiền",
+  "createNft": "Tạo NFT",
+  "stats": {
+    "walletBalance": "Số Dư Ví",
+    "nftsOwned": "NFT Sở Hữu",
+    "nftsCreated": "NFT Đã Tạo",
+    "totalValue": "Tổng Giá Trị"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "Khám Phá Bộ Sưu Tập",
+      "subtitle": "Khám phá vật phẩm sưu tầm mới"
+    },
+    "create": {
+      "title": "Tạo NFT",
+      "subtitle": "Tải lên tác phẩm nghệ thuật của bạn"
+    },
+    "fund": {
+      "title": "Nạp Tiền",
+      "subtitle": "Thêm ETH vào ví của bạn"
+    },
+    "withdraw": {
+      "title": "Rút Tiền",
+      "subtitle": "Chuyển về ví của bạn"
+    }
+  },
+  "tabs": {
+    "owned": "Sở Hữu ({count})",
+    "created": "Đã Tạo ({count})",
+    "listed": "Đang Bán ({count})"
+  },
+  "nftCard": {
+    "created": "Đã Tạo",
+    "notListed": "Chưa Niêm Yết",
+    "price": "Giá"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "Chưa Sở Hữu NFT Nào",
+      "text": "Bắt đầu sưu tầm những tài sản số độc đáo từ nền tảng của chúng tôi",
+      "button": "Khám Phá Bộ Sưu Tập"
+    },
+    "created": {
+      "title": "Chưa Tạo NFT Nào",
+      "text": "Tạo NFT đầu tiên của bạn và chia sẻ với thế giới",
+      "button": "Tạo NFT"
+    },
+    "listed": {
+      "title": "Không Có NFT Đang Bán",
+      "text": "Bạn chưa niêm yết NFT nào để bán"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "Rút Tiền",
+      "fee": "Thanh Toán Phí Rút Tiền",
+      "processing": "Đang Xử Lý Rút Tiền",
+      "success": "Rút Tiền Thành Công"
+    },
+    "form": {
+      "availableBalance": "Số Dư Khả Dụng",
+      "walletAddressLabel": "Địa Chỉ Ví",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "Nhập địa chỉ ví Ethereum của bạn",
+      "amountLabel": "Số Lượng (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "Số lượng rút tối thiểu: ${minAmount}",
+      "withdrawMax": "Rút Tối Đa",
+      "continue": "Tiếp Tục"
+    },
+    "errors": {
+      "invalidAddress": "Vui lòng nhập địa chỉ ví Ethereum hợp lệ (0x...)",
+      "invalidAmount": "Vui lòng nhập số lượng rút hợp lệ",
+      "minWithdrawal": "Số lượng rút tối thiểu là ${minAmount}",
+      "insufficientBalance": "Số dư không đủ",
+      "serverError": "Lỗi máy chủ. Vui lòng thử lại sau.",
+      "withdrawalFailed": "Rút tiền thất bại",
+      "invalidResponse": "Phản hồi không hợp lệ từ máy chủ",
+      "withdrawalFailedRetry": "Rút tiền thất bại. Vui lòng thử lại."
+    },
+    "fee": {
+      "noticeTitle": "Yêu Cầu Thanh Toán Phí Rút Tiền",
+      "noticeText": "Để xử lý yêu cầu rút tiền của bạn, vui lòng gửi phí {percent}% ({amount}) đến địa chỉ ví bên dưới.",
+      "walletLabel": "Ví Rút Tiền Của Bạn",
+      "withdrawalAmount": "Số Tiền Rút",
+      "feeToSend": "Phí Cần Gửi ({percent}%)",
+      "youllReceive": "Bạn Sẽ Nhận Được",
+      "sendFeeTo": "Gửi Phí Thanh Toán Đến:",
+      "sendExactly": "Gửi chính xác {amount} đến địa chỉ này",
+      "qrAlt": "Mã QR Thanh Toán Phí",
+      "walletAddressLabel": "Địa Chỉ Ví Nhận Phí (ETH)",
+      "copyAddress": "Sao Chép Địa Chỉ",
+      "copiedNotification": "Đã sao chép địa chỉ vào bộ nhớ tạm",
+      "warning": "Sau khi gửi phí {feeAmount}, nhấn \"Xác Nhận Thanh Toán\" để xử lý yêu cầu rút tiền của bạn. Toàn bộ số tiền rút {receiveAmount} sẽ được gửi đến ví của bạn.",
+      "back": "Quay Lại",
+      "confirmPayment": "Xác Nhận Thanh Toán"
+    },
+    "processing": {
+      "title": "Đang Xử Lý Rút Tiền",
+      "text": "Vui lòng đợi trong khi chúng tôi xử lý giao dịch của bạn..."
+    },
+    "success": {
+      "title": "Đã Gửi Yêu Cầu Rút Tiền!",
+      "subtitle": "Tiền của bạn đang được chuyển đến ví của bạn",
+      "transactionId": "Mã Giao Dịch",
+      "amountReceived": "Số Tiền Bạn Sẽ Nhận Được",
+      "feePaid": "Phí Đã Thanh Toán",
+      "newBalance": "Số Dư Mới",
+      "estimatedTime": "Thời Gian Xử Lý Dự Kiến",
+      "estimatedTimeValue": "24-48 giờ",
+      "done": "Hoàn Tất"
+    }
+  }
+}

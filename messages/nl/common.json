@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "Taal wijzigen",
+    "popular": "Populaire talen",
+    "more": "Meer talen"
+  },
+  "languageBanner": {
+    "message": "Het lijkt erop dat u {language} verkiest.",
+    "switch": "Wisselen",
+    "dismiss": "Sluiten"
+  },
+  "nav": {
+    "home": "Home",
+    "explore": "Ontdekken",
+    "about": "Over ons",
+    "help": "Help",
+    "contact": "Contact"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "Zoek NFT's, makers...",
+    "create": "Creëren",
+    "signIn": "Inloggen",
+    "getStarted": "Aan de Slag",
+    "userMenu": {
+      "dashboard": "Dashboard",
+      "createNft": "NFT Creëren",
+      "fundAccount": "Account Opwaarderen",
+      "adminPanel": "Beheerderspaneel",
+      "signOut": "Uitloggen"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "Een uitbreiding van Foundation - dé bestemming voor NFT-verzamelaars en makers met een hoge waarde. Word lid van onze exclusieve community van kieskeurige verzamelaars.",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "E-mail"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "Marketplace",
+        "exploreCollections": "Ontdek Collecties",
+        "howItWorks": "Hoe het Werkt",
+        "create": "Creëren"
+      },
+      "resources": {
+        "heading": "Hulpbronnen",
+        "helpCenter": "Helpcentrum",
+        "contactUs": "Neem Contact Op",
+        "faq": "Veelgestelde Vragen"
+      },
+      "company": {
+        "heading": "Bedrijf",
+        "aboutUs": "Over Ons",
+        "termsOfService": "Servicevoorwaarden",
+        "privacyPolicy": "Privacybeleid",
+        "cookiePolicy": "Cookiebeleid"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. Alle rechten voorbehouden.",
+    "bottomLinks": {
+      "terms": "Voorwaarden",
+      "privacy": "Privacy",
+      "cookies": "Cookies"
+    }
+  },
+  "modal": {
+    "dismiss": "Sluiten"
+  },
+  "nftCard": {
+    "currentPrice": "Huidige Prijs",
+    "by": "door"
+  },
+  "nftGrid": {
+    "emptyMessage": "Geen NFT's gevonden"
+  },
+  "nftImage": {
+    "unavailable": "Afbeelding niet beschikbaar"
+  }
+}

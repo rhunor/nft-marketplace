@@ -1,0 +1,58 @@
+{
+  "header": {
+    "title": "Hesabı Fonla",
+    "subtitle": "NFT oluşturmak ve satın almak için cüzdanınıza ETH ekleyin"
+  },
+  "balance": {
+    "label": "Güncel Bakiye",
+    "ethRate": "1 ETH = ${price}",
+    "refreshTitle": "Fiyatı yenile"
+  },
+  "amount": {
+    "heading": "Tutar Seçin",
+    "preset": "{value} ETH",
+    "customLabel": "Özel Tutar (ETH)"
+  },
+  "deposit": {
+    "heading": "Yatırma Adresi",
+    "qrAlt": "Yatırma QR Kodu",
+    "loading": "Yükleniyor...",
+    "sendTo": "ETH'yi şu adrese gönderin:",
+    "copied": "Adres panoya kopyalandı!",
+    "networkWarning": "Yalnızca Ethereum ağı üzerinden ETH gönderin"
+  },
+  "notice": {
+    "heading": "İşlem Süresi",
+    "text": "Ödemeyi gönderdikten sonra, bakiyenizin hesabınıza yansıması yaklaşık <strong>10 dakika</strong> sürer. Bu süre, blok zinciri onaylarına ve yönetici ekibimizin işlemi doğrulamasına olanak tanır."
+  },
+  "howItWorks": {
+    "heading": "Nasıl Çalışır",
+    "steps": {
+      "select": {
+        "title": "Tutar Seçin",
+        "text": "Hesabınıza ne kadar ETH eklemek istediğinizi seçin"
+      },
+      "send": {
+        "title": "Ödeme Gönderin",
+        "text": "ETH'yi yukarıda gösterilen yatırma adresine aktarın"
+      },
+      "confirm": {
+        "title": "Onay Bekleyin",
+        "text": "Bakiyeniz ~10 dakika içinde güncellenecektir"
+      },
+      "start": {
+        "title": "Oluşturmaya ve Koleksiyon Yapmaya Başlayın",
+        "text": "NFT oluşturmak ve satın almak için bakiyenizi kullanın"
+      }
+    }
+  },
+  "action": {
+    "button": "{amount} ETH Gönderdim",
+    "help": "Yardıma mı ihtiyacınız var? ",
+    "contactSupport": "Destek ile iletişime geçin"
+  },
+  "notification": {
+    "title": "Ödeme Talimatları",
+    "message": "Gösterilen adrese {amount} ETH gönderin. Onaydan sonra bakiyeniz ~10 dakika içinde güncellenecektir."
+  }
+}

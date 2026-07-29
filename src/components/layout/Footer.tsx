@@ -1,34 +1,11 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 // import { Twitter, MessageCircle, Mail } from 'lucide-react';
 import {siX, siGmail,siTelegram} from 'simple-icons';
 import type { SimpleIcon } from 'simple-icons';
-
-const footerLinks = {
-  marketplace: [
-    { label: 'Explore Collections', href: '/explore' },
-    { label: 'How it Works', href: '/help' },
-    { label: 'Create', href: '/upload' },
-  ],
-  resources: [
-    { label: 'Help Center', href: '/help' },
-    { label: 'Contact Us', href: '/contact' },
-    { label: 'FAQ', href: '/help#faq' },
-  ],
-  company: [
-    { label: 'About Us', href: '/about' },
-    { label: 'Terms of Service', href: '/terms' },
-    { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Cookie Policy', href: '/cookies' },
-  ],
-};
-
-const socialLinks = [
-  { icon: siX, href: 'https://x.com/foundation', label: 'Twitter' },
-  { icon: siTelegram, href: 'https://t.me/foundationexclusive', label: 'Telegram' },
-  { icon: siGmail, href: 'mailto:foundationexclusivenft@gmail.com', label: 'Email' },
-];
+import { useTranslations } from 'next-intl';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 // Simple reusable component to render SimpleIcon as SVG
 function IconComponent({ icon, className }: { icon: SimpleIcon; className?: string }) {
@@ -47,6 +24,33 @@ function IconComponent({ icon, className }: { icon: SimpleIcon; className?: stri
 }
 
 export function Footer() {
+  const t = useTranslations('common');
+
+  const footerLinks = {
+    marketplace: [
+      { label: t('footer.sections.marketplace.exploreCollections'), href: '/explore' },
+      { label: t('footer.sections.marketplace.howItWorks'), href: '/help' },
+      { label: t('footer.sections.marketplace.create'), href: '/upload' },
+    ],
+    resources: [
+      { label: t('footer.sections.resources.helpCenter'), href: '/help' },
+      { label: t('footer.sections.resources.contactUs'), href: '/contact' },
+      { label: t('footer.sections.resources.faq'), href: '/help#faq' },
+    ],
+    company: [
+      { label: t('footer.sections.company.aboutUs'), href: '/about' },
+      { label: t('footer.sections.company.termsOfService'), href: '/terms' },
+      { label: t('footer.sections.company.privacyPolicy'), href: '/privacy' },
+      { label: t('footer.sections.company.cookiePolicy'), href: '/cookies' },
+    ],
+  };
+
+  const socialLinks = [
+    { icon: siX, href: 'https://x.com/foundation', label: t('footer.social.twitter') },
+    { icon: siTelegram, href: 'https://t.me/foundationexclusive', label: t('footer.social.telegram') },
+    { icon: siGmail, href: 'mailto:foundationexclusivenft@gmail.com', label: t('footer.social.email') },
+  ];
+
   return (
     <footer className="border-t border-border bg-background-secondary">
       <div className="section-container">
@@ -55,19 +59,17 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3">
-              <img 
-                src="/images/logo.svg" 
-                alt="Foundation Exclusive" 
+              <img
+                src="/images/logo.svg"
+                alt={t('footer.logoAlt')}
                 className="h-8 w-auto invert"
               />
               <span className="text-xl font-bold">
-                Foundation<span className="text-accent-primary">Exclusive</span>
+                {t('footer.brandPrimary')}<span className="text-accent-primary">{t('footer.brandAccent')}</span>
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-foreground-muted">
-              An extension of Foundation - the premier destination for high-value 
-              NFT collectors and creators. Join our exclusive community of 
-              discerning collectors.
+              {t('footer.description')}
             </p>
             <div className="mt-6 flex gap-4">
               {socialLinks.map((social) => (
@@ -88,7 +90,7 @@ export function Footer() {
           {/* Marketplace Links */}
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground-subtle">
-              Marketplace
+              {t('footer.sections.marketplace.heading')}
             </h3>
             <ul className="space-y-3">
               {footerLinks.marketplace.map((link) => (
@@ -107,7 +109,7 @@ export function Footer() {
           {/* Resources Links */}
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground-subtle">
-              Resources
+              {t('footer.sections.resources.heading')}
             </h3>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
@@ -126,7 +128,7 @@ export function Footer() {
           {/* Company Links */}
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground-subtle">
-              Company
+              {t('footer.sections.company.heading')}
             </h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
@@ -146,27 +148,28 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-border py-6 sm:flex-row">
           <p className="text-sm text-foreground-subtle">
-            © {new Date().getFullYear()} Foundation Exclusive. All rights reserved.
+            {t('footer.copyright', { year: new Date().getFullYear() })}
           </p>
           <div className="flex gap-6">
             <Link
               href="/terms"
               className="text-sm text-foreground-subtle transition-colors hover:text-foreground"
             >
-              Terms
+              {t('footer.bottomLinks.terms')}
             </Link>
             <Link
               href="/privacy"
               className="text-sm text-foreground-subtle transition-colors hover:text-foreground"
             >
-              Privacy
+              {t('footer.bottomLinks.privacy')}
             </Link>
             <Link
               href="/cookies"
               className="text-sm text-foreground-subtle transition-colors hover:text-foreground"
             >
-              Cookies
+              {t('footer.bottomLinks.cookies')}
             </Link>
+            <LanguageSwitcher />
           </div>
         </div>
       </div>

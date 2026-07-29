@@ -1,0 +1,126 @@
+{
+  "loading": "Dashboard wird geladen...",
+  "avatar": {
+    "invalidType": "Bitte wählen Sie eine Bilddatei aus",
+    "tooLarge": "Die Bildgröße darf 5 MB nicht überschreiten",
+    "uploadSuccess": "Profilbild aktualisiert!",
+    "uploadFailedTitle": "Upload fehlgeschlagen",
+    "uploadFailedDefault": "Etwas ist schiefgelaufen",
+    "changePicture": "Profilbild ändern"
+  },
+  "welcome": "Willkommen zurück, {name}!",
+  "adminBadge": "Admin",
+  "fundAccount": "Konto aufladen",
+  "createNft": "NFT erstellen",
+  "stats": {
+    "walletBalance": "Wallet-Guthaben",
+    "nftsOwned": "Eigene NFTs",
+    "nftsCreated": "Erstellte NFTs",
+    "totalValue": "Gesamtwert"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "Kollektionen entdecken",
+      "subtitle": "Neue Sammlerstücke entdecken"
+    },
+    "create": {
+      "title": "NFT erstellen",
+      "subtitle": "Laden Sie Ihr Kunstwerk hoch"
+    },
+    "fund": {
+      "title": "Konto aufladen",
+      "subtitle": "ETH zu Ihrer Wallet hinzufügen"
+    },
+    "withdraw": {
+      "title": "Guthaben abheben",
+      "subtitle": "Auf Ihre Wallet übertragen"
+    }
+  },
+  "tabs": {
+    "owned": "Im Besitz ({count})",
+    "created": "Erstellt ({count})",
+    "listed": "Gelistet ({count})"
+  },
+  "nftCard": {
+    "created": "Erstellt",
+    "notListed": "Nicht gelistet",
+    "price": "Preis"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "Noch keine NFTs im Besitz",
+      "text": "Beginnen Sie, einzigartige digitale Werke aus unserem Marktplatz zu sammeln",
+      "button": "Kollektionen entdecken"
+    },
+    "created": {
+      "title": "Noch keine NFTs erstellt",
+      "text": "Erstellen Sie Ihr erstes NFT und teilen Sie es mit der Welt",
+      "button": "NFT erstellen"
+    },
+    "listed": {
+      "title": "Keine NFTs gelistet",
+      "text": "Sie haben keine NFTs zum Verkauf gelistet"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "Guthaben abheben",
+      "fee": "Abhebegebühr bezahlen",
+      "processing": "Abhebung wird verarbeitet",
+      "success": "Abhebung erfolgreich"
+    },
+    "form": {
+      "availableBalance": "Verfügbares Guthaben",
+      "walletAddressLabel": "Wallet-Adresse",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "Geben Sie Ihre Ethereum-Wallet-Adresse ein",
+      "amountLabel": "Betrag (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "Mindestabhebung: {minAmount} $",
+      "withdrawMax": "Maximalbetrag abheben",
+      "continue": "Weiter"
+    },
+    "errors": {
+      "invalidAddress": "Bitte geben Sie eine gültige Ethereum-Wallet-Adresse ein (0x...)",
+      "invalidAmount": "Bitte geben Sie einen gültigen Abhebungsbetrag ein",
+      "minWithdrawal": "Die Mindestabhebung beträgt {minAmount} $",
+      "insufficientBalance": "Unzureichendes Guthaben",
+      "serverError": "Serverfehler. Bitte versuchen Sie es später erneut.",
+      "withdrawalFailed": "Abhebung fehlgeschlagen",
+      "invalidResponse": "Ungültige Antwort vom Server",
+      "withdrawalFailedRetry": "Abhebung fehlgeschlagen. Bitte versuchen Sie es erneut."
+    },
+    "fee": {
+      "noticeTitle": "Abhebegebühr erforderlich",
+      "noticeText": "Um Ihre Abhebung zu bearbeiten, senden Sie bitte eine Gebühr von {percent}% ({amount}) an die unten stehende Wallet-Adresse.",
+      "walletLabel": "Ihre Abhebe-Wallet",
+      "withdrawalAmount": "Abhebungsbetrag",
+      "feeToSend": "Zu sendende Gebühr ({percent}%)",
+      "youllReceive": "Sie erhalten",
+      "sendFeeTo": "Gebühr senden an:",
+      "sendExactly": "Senden Sie genau {amount} an diese Adresse",
+      "qrAlt": "QR-Code für Gebührenzahlung",
+      "walletAddressLabel": "Gebühren-Wallet-Adresse (ETH)",
+      "copyAddress": "Adresse kopieren",
+      "copiedNotification": "Adresse in die Zwischenablage kopiert",
+      "warning": "Klicken Sie nach dem Senden der Gebühr von {feeAmount} auf „Zahlung bestätigen“, um Ihre Abhebung zu bearbeiten. Ihr vollständiger Abhebungsbetrag von {receiveAmount} wird an Ihre Wallet gesendet.",
+      "back": "Zurück",
+      "confirmPayment": "Zahlung bestätigen"
+    },
+    "processing": {
+      "title": "Abhebung wird verarbeitet",
+      "text": "Bitte warten Sie, während wir Ihre Transaktion verarbeiten..."
+    },
+    "success": {
+      "title": "Abhebung eingereicht!",
+      "subtitle": "Ihr Guthaben ist auf dem Weg zu Ihrer Wallet",
+      "transactionId": "Transaktions-ID",
+      "amountReceived": "Betrag, den Sie erhalten",
+      "feePaid": "Gezahlte Gebühr",
+      "newBalance": "Neues Guthaben",
+      "estimatedTime": "Voraussichtliche Bearbeitungszeit",
+      "estimatedTimeValue": "24-48 Stunden",
+      "done": "Fertig"
+    }
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "terms": {
+    "metaTitle": "Ketentuan Layanan",
+    "metaDescription": "Ketentuan Layanan untuk Foundation Exclusive - Baca syarat dan ketentuan kami untuk menggunakan marketplace NFT kami.",
+    "heading": "Ketentuan Layanan",
+    "lastUpdated": "Terakhir diperbarui: 30 Juni 2026",
+    "s1": {
+      "heading": "1. Persetujuan terhadap Ketentuan",
+      "p1": "Dengan mengakses atau menggunakan Foundation Exclusive (\"Platform\"), Anda setuju untuk terikat oleh Ketentuan Layanan ini (\"Ketentuan\"). Jika Anda tidak setuju dengan Ketentuan ini, Anda tidak boleh mengakses atau menggunakan Platform.",
+      "p2": "Foundation Exclusive adalah marketplace NFT eksklusif yang beroperasi sebagai perluasan dari ekosistem Foundation. Platform kami melayani kolektor dan kreator bernilai tinggi yang mencari seni digital premium."
+    },
+    "s2": {
+      "heading": "2. Kelayakan",
+      "intro": "Untuk menggunakan Foundation Exclusive, Anda harus:",
+      "items": [
+        "Berusia minimal 18 tahun",
+        "Memiliki kapasitas hukum untuk mengikat diri dalam kontrak",
+        "Tidak dilarang menggunakan Platform berdasarkan hukum yang berlaku",
+        "Memiliki dompet mata uang kripto yang valid dan kompatibel dengan Platform kami"
+      ]
+    },
+    "s3": {
+      "heading": "3. Pendaftaran Akun",
+      "intro": "Untuk mengakses fitur tertentu pada Platform, Anda mungkin diharuskan membuat akun. Anda setuju untuk:",
+      "items": [
+        "Memberikan informasi yang akurat, terkini, dan lengkap",
+        "Memelihara dan segera memperbarui informasi akun Anda",
+        "Menjaga keamanan kredensial akun Anda",
+        "Bertanggung jawab atas semua aktivitas yang terjadi di akun Anda",
+        "Segera memberi tahu kami jika terjadi akses tidak sah ke akun Anda"
+      ]
+    },
+    "s4": {
+      "heading": "4. Transaksi NFT",
+      "purchasing": {
+        "heading": "Membeli NFT",
+        "intro": "Ketika Anda membeli NFT di Foundation Exclusive, Anda setuju bahwa:",
+        "items": [
+          "Semua penjualan bersifat final dan tidak dapat dikembalikan",
+          "Anda bertanggung jawab atas semua biaya gas dan biaya transaksi",
+          "Kepemilikan berpindah setelah transaksi blockchain berhasil diselesaikan",
+          "Platform tidak bertanggung jawab atas kesalahan pada alamat dompet atau detail transaksi"
+        ]
+      },
+      "creating": {
+        "heading": "Membuat dan Menjual NFT",
+        "intro": "Jika Anda membuat atau menjual NFT di Platform, Anda menyatakan dan menjamin bahwa:",
+        "items": [
+          "Anda memiliki atau memiliki hak atas konten yang Anda mint",
+          "Konten Anda tidak melanggar hak kekayaan intelektual pihak ketiga mana pun",
+          "Konten Anda mematuhi semua hukum dan peraturan yang berlaku",
+          "Anda akan mendeskripsikan NFT Anda secara akurat dan tidak melakukan praktik yang menyesatkan"
+        ]
+      }
+    },
+    "s5": {
+      "heading": "5. Biaya Platform",
+      "intro": "Foundation Exclusive mengenakan biaya untuk layanan tertentu:",
+      "items": [
+        {
+          "label": "Biaya Transaksi:",
+          "text": "Persentase dari setiap penjualan ditahan oleh Platform"
+        },
+        {
+          "label": "Biaya Minting:",
+          "text": "Biaya dikenakan saat membuat NFT baru"
+        },
+        {
+          "label": "Royalti Kreator:",
+          "text": "Kreator asli menerima royalti atas penjualan sekunder sebagaimana ditentukan"
+        }
+      ],
+      "outro": "Semua biaya dapat berubah sewaktu-waktu. Struktur biaya terkini ditampilkan selama proses transaksi."
+    },
+    "s6": {
+      "heading": "6. Perilaku yang Dilarang",
+      "intro": "Anda setuju untuk tidak:",
+      "items": [
+        "Menggunakan Platform untuk tujuan ilegal atau melanggar hukum apa pun",
+        "Mengunggah konten yang melanggar hak, mencemarkan nama baik, atau berbahaya",
+        "Melakukan manipulasi pasar, wash trading, atau aktivitas penipuan",
+        "Berupaya mengganggu atau merusak operasional Platform",
+        "Menggunakan sistem otomatis atau bot tanpa izin tertulis dari kami",
+        "Menyamar sebagai orang lain atau memberikan identitas palsu"
+      ]
+    },
+    "s7": {
+      "heading": "7. Kekayaan Intelektual & Hak Kepemilikan NFT",
+      "intro": "Platform beserta konten asli, fitur, dan fungsinya dimiliki oleh Foundation Exclusive dan dilindungi oleh hukum hak cipta, merek dagang, dan kekayaan intelektual internasional lainnya.",
+      "buying": {
+        "heading": "Apa yang Anda Dapatkan dengan Membeli NFT",
+        "text": "Ketika Anda membeli NFT di Foundation Exclusive, Anda memperoleh kepemilikan yang dapat diverifikasi atas edisi barang koleksi digital tersebut — sebuah token unik yang tercatat di blockchain yang merepresentasikan posisi Anda dalam riwayat kepemilikan karya tersebut. Ini memberi Anda hak untuk memiliki, menampilkan, mentransfer, dan menjual kembali edisi yang Anda miliki, beserta lisensi terbatas, non-eksklusif, dan non-komersial untuk memamerkan karya seni terkait untuk penggunaan pribadi (misalnya, sebagai foto profil Anda atau di galeri digital pribadi)."
+      },
+      "creatorRights": {
+        "heading": "Apa yang Tetap Menjadi Milik Kreator",
+        "intro": "Kepemilikan edisi NFT berbeda dari kepemilikan karya kreatif yang mendasarinya. Kecuali ada perjanjian tertulis terpisah dengan kreator yang menyatakan sebaliknya, kreator asli tetap memegang seluruh hak cipta, reproduksi, penggunaan komersial, lisensi, dan karya turunan atas seni, media, atau konten yang terkait dengan NFT tersebut. Ini berarti, tanpa izin tertulis eksplisit dari kreator, pemegang NFT tidak boleh:",
+        "items": [
+          "Mereproduksi, mencetak, atau menyalin karya yang mendasarinya untuk distribusi atau penjualan",
+          "Menggunakan karya tersebut secara komersial, termasuk pada merchandise, dalam iklan, atau dalam produk atau layanan lain",
+          "Mensublisensikan, mensindikasikan, atau memberikan hak atas karya yang mendasarinya kepada pihak ketiga",
+          "Membuat karya turunan, adaptasi, atau remix berdasarkan karya yang mendasarinya"
+        ],
+        "outro": "Singkatnya: memiliki NFT berarti memiliki barang koleksinya — token yang terautentikasi dan dapat diperdagangkan itu sendiri. Ini tidak mengalihkan hak cipta kreator atau hak komersial lain yang lebih luas atas karya yang direpresentasikan oleh token tersebut. Kreator bebas untuk terus melisensikan, mereproduksi, dan mengeksploitasi karya mereka sendiri secara komersial secara independen dari penjualan NFT mana pun, kecuali dibatasi secara eksplisit oleh perjanjian tertulis terpisah."
+      }
+    },
+    "s8": {
+      "heading": "8. Sangkalan (Disclaimer)",
+      "p1": "PLATFORM DISEDIAKAN \"SEBAGAIMANA ADANYA\" DAN \"SESUAI KETERSEDIAAN\" TANPA JAMINAN APA PUN. KAMI TIDAK MENJAMIN KEAKURATAN, KELENGKAPAN, ATAU KEANDALAN KONTEN APA PUN DI PLATFORM.",
+      "p2": "Nilai NFT sangat fluktuatif dan bersifat spekulatif. Kami tidak memberikan pernyataan mengenai potensi keuntungan atau kerugian. Anda mengakui bahwa Anda sepenuhnya bertanggung jawab atas keputusan investasi Anda."
+    },
+    "s9": {
+      "heading": "9. Pembatasan Tanggung Jawab",
+      "text": "SEJAUH DIIZINKAN OLEH HUKUM, FOUNDATION EXCLUSIVE TIDAK BERTANGGUNG JAWAB ATAS KERUSAKAN TIDAK LANGSUNG, INSIDENTAL, KHUSUS, KONSEKUENSIAL, ATAU PUNITIF YANG TIMBUL DARI PENGGUNAAN PLATFORM OLEH ANDA."
+    },
+    "s10": {
+      "heading": "10. Pajak untuk Pengguna Lokal dan Internasional",
+      "p1": "Sebagai perusahaan yang berbasis di Amerika Serikat, semua pengguna di dalam Amerika Serikat dan pengguna tertentu yang berada di luar Amerika Serikat mungkin diharuskan membayar pajak, biaya, atau pungutan pemerintah yang berlaku terkait penggunaan layanan kami, sebagaimana diwajibkan oleh hukum yang berlaku atau kebijakan penagihan kami. Setiap pajak atau biaya tersebut, jika berlaku, harus dibayar melalui Platform setiap tahun sesuai dengan instruksi pembayaran yang diberikan.",
+      "p2": "Kegagalan membayar pajak atau biaya yang diwajibkan pada batas waktu yang berlaku dapat mengakibatkan penangguhan atau pembatasan akses ke sebagian atau seluruh layanan kami hingga jumlah yang tertunggak diselesaikan."
+    },
+    "s11": {
+      "heading": "11. Ganti Rugi",
+      "text": "Anda setuju untuk mengganti rugi dan membebaskan Foundation Exclusive beserta pejabat, direktur, karyawan, dan agennya dari segala klaim, kerusakan, kerugian, atau biaya yang timbul dari penggunaan Platform oleh Anda atau pelanggaran terhadap Ketentuan ini."
+    },
+    "s12": {
+      "heading": "12. Perubahan Ketentuan",
+      "text": "Kami berhak mengubah Ketentuan ini kapan saja. Perubahan akan berlaku segera setelah dipublikasikan. Penggunaan Platform yang berkelanjutan oleh Anda merupakan penerimaan atas Ketentuan yang telah diubah."
+    },
+    "s13": {
+      "heading": "13. Hukum yang Berlaku",
+      "text": "Ketentuan ini akan diatur oleh dan ditafsirkan sesuai dengan hukum yurisdiksi tempat Foundation Exclusive beroperasi, tanpa memperhatikan ketentuan konflik hukumnya."
+    },
+    "s14": {
+      "heading": "14. Informasi Kontak",
+      "intro": "Untuk pertanyaan mengenai Ketentuan ini, silakan hubungi kami di:",
+      "emailLabel": "Email:"
+    }
+  },
+  "privacy": {
+    "metaTitle": "Kebijakan Privasi | Foundation Exclusive",
+    "metaDescription": "Kebijakan Privasi untuk Foundation Exclusive - Pelajari cara kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda.",
+    "heading": "Kebijakan Privasi",
+    "lastUpdated": "Terakhir diperbarui: 1 Januari 2025",
+    "s1": {
+      "heading": "1. Pendahuluan",
+      "p1": "Foundation Exclusive (\"kami\") berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, mengungkapkan, dan melindungi informasi Anda saat Anda mengunjungi situs web kami dan menggunakan layanan marketplace NFT kami.",
+      "p2": "Sebagai platform eksklusif bagi kolektor dan kreator NFT bernilai tinggi, kami memahami pentingnya menjaga kerahasiaan dan keamanan informasi pribadi dan finansial Anda."
+    },
+    "s2": {
+      "heading": "2. Informasi yang Kami Kumpulkan",
+      "personal": {
+        "heading": "Informasi Pribadi",
+        "items": [
+          "Nama dan alamat email",
+          "Alamat dompet yang terkait dengan akun Anda",
+          "Informasi profil yang Anda pilih untuk diberikan",
+          "Riwayat transaksi dan catatan kepemilikan NFT",
+          "Preferensi komunikasi"
+        ]
+      },
+      "technical": {
+        "heading": "Informasi Teknis",
+        "items": [
+          "Alamat IP dan pengenal perangkat",
+          "Jenis dan versi peramban",
+          "Sistem operasi",
+          "Halaman yang dikunjungi dan waktu yang dihabiskan di platform kami",
+          "Alamat situs web perujuk"
+        ]
+      }
+    },
+    "s3": {
+      "heading": "3. Cara Kami Menggunakan Informasi Anda",
+      "intro": "Kami menggunakan informasi yang kami kumpulkan untuk:",
+      "items": [
+        "Menyediakan, mengoperasikan, dan memelihara layanan marketplace kami",
+        "Memproses transaksi dan mengirimkan informasi terkait",
+        "Memverifikasi identitas Anda dan mencegah penipuan",
+        "Mengirimkan pembaruan tentang akun dan transaksi Anda",
+        "Menanggapi komentar, pertanyaan, dan permintaan Anda",
+        "Meningkatkan platform kami dan mengembangkan fitur baru",
+        "Mematuhi kewajiban hukum"
+      ]
+    },
+    "s4": {
+      "heading": "4. Berbagi dan Pengungkapan Informasi",
+      "intro": "Kami tidak menjual, memperdagangkan, atau menyewakan informasi pribadi Anda kepada pihak ketiga. Kami dapat membagikan informasi Anda dalam keadaan berikut:",
+      "items": [
+        {
+          "label": "Transaksi Blockchain:",
+          "text": "Transaksi NFT tercatat di blockchain publik dan terlihat oleh siapa saja."
+        },
+        {
+          "label": "Penyedia Layanan:",
+          "text": "Kami dapat membagikan informasi dengan penyedia layanan pihak ketiga tepercaya yang membantu mengoperasikan platform kami."
+        },
+        {
+          "label": "Persyaratan Hukum:",
+          "text": "Kami dapat mengungkapkan informasi ketika diwajibkan oleh hukum atau untuk melindungi hak kami."
+        }
+      ]
+    },
+    "s5": {
+      "heading": "5. Keamanan Data",
+      "text": "Kami menerapkan langkah-langkah teknis dan organisasional yang sesuai untuk melindungi informasi pribadi Anda dari akses, perubahan, pengungkapan, atau penghancuran yang tidak sah. Namun, tidak ada metode transmisi melalui Internet yang 100% aman."
+    },
+    "s6": {
+      "heading": "6. Hak Anda",
+      "intro": "Anda berhak untuk:",
+      "items": [
+        "Mengakses informasi pribadi Anda",
+        "Mengoreksi informasi yang tidak akurat atau tidak lengkap",
+        "Meminta penghapusan informasi pribadi Anda",
+        "Menolak atau membatasi pemrosesan informasi Anda",
+        "Portabilitas data",
+        "Menarik persetujuan kapan saja"
+      ]
+    },
+    "s7": {
+      "heading": "7. Cookie dan Pelacakan",
+      "text": "Kami menggunakan cookie dan teknologi pelacakan serupa untuk meningkatkan pengalaman Anda di platform kami. Untuk informasi lebih lanjut, silakan lihat <cookieLink>Kebijakan Cookie</cookieLink> kami."
+    },
+    "s8": {
+      "heading": "8. Perubahan pada Kebijakan Ini",
+      "text": "Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Kami akan memberi tahu Anda mengenai perubahan apa pun dengan mempublikasikan Kebijakan Privasi baru di halaman ini dan memperbarui tanggal \"Terakhir diperbarui\"."
+    },
+    "s9": {
+      "heading": "9. Hubungi Kami",
+      "intro": "Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini, silakan hubungi kami di:",
+      "emailLabel": "Email:"
+    }
+  },
+  "cookies": {
+    "metaTitle": "Kebijakan Cookie | Foundation Exclusive",
+    "metaDescription": "Kebijakan Cookie untuk Foundation Exclusive - Pelajari tentang penggunaan cookie dan teknologi pelacakan kami.",
+    "heading": "Kebijakan Cookie",
+    "lastUpdated": "Terakhir diperbarui: 1 Januari 2025",
+    "s1": {
+      "heading": "1. Apa Itu Cookie",
+      "p1": "Cookie adalah berkas teks kecil yang ditempatkan di komputer atau perangkat seluler Anda saat Anda mengunjungi sebuah situs web. Cookie banyak digunakan untuk membuat situs web bekerja lebih efisien dan memberikan informasi kepada pemilik situs web.",
+      "p2": "Foundation Exclusive menggunakan cookie dan teknologi serupa untuk meningkatkan pengalaman Anda di platform kami, memahami cara Anda menggunakan layanan kami, dan meningkatkan penawaran kami."
+    },
+    "s2": {
+      "heading": "2. Jenis Cookie yang Kami Gunakan",
+      "essential": {
+        "heading": "Cookie Esensial",
+        "text": "Cookie ini diperlukan agar situs web dapat berfungsi dengan baik. Cookie ini memungkinkan fungsi inti seperti keamanan, manajemen jaringan, dan akses akun. Anda tidak dapat menonaktifkan cookie ini.",
+        "items": [
+          "Manajemen sesi",
+          "Autentikasi dan login",
+          "Fitur keamanan",
+          "Pemerataan beban (load balancing)"
+        ]
+      },
+      "performance": {
+        "heading": "Cookie Performa",
+        "text": "Cookie ini membantu kami memahami cara pengunjung berinteraksi dengan situs web kami dengan mengumpulkan dan melaporkan informasi secara anonim.",
+        "items": [
+          "Waktu pemuatan halaman",
+          "Pesan kesalahan yang ditemui",
+          "Halaman yang dikunjungi",
+          "Waktu yang dihabiskan di halaman"
+        ]
+      },
+      "functionality": {
+        "heading": "Cookie Fungsionalitas",
+        "text": "Cookie ini memungkinkan fungsionalitas dan personalisasi yang lebih baik, seperti mengingat preferensi Anda.",
+        "items": [
+          "Preferensi bahasa",
+          "Pengaturan tema (mode gelap/terang)",
+          "Item yang baru dilihat",
+          "Preferensi pengguna"
+        ]
+      },
+      "analytics": {
+        "heading": "Cookie Analitik",
+        "text": "Kami menggunakan cookie analitik untuk mengumpulkan wawasan tentang cara platform kami digunakan, yang membantu kami meningkatkan layanan kami.",
+        "items": [
+          "Sumber lalu lintas",
+          "Pola perilaku pengguna",
+          "Statistik penggunaan fitur",
+          "Pelacakan konversi"
+        ]
+      }
+    },
+    "s3": {
+      "heading": "3. Cookie Pihak Ketiga",
+      "p1": "Beberapa cookie di platform kami ditempatkan oleh layanan pihak ketiga yang muncul di halaman kami. Kami tidak mengendalikan cookie tersebut.",
+      "intro": "Layanan pihak ketiga yang mungkin kami gunakan meliputi:",
+      "items": [
+        {
+          "label": "Google Analytics:",
+          "text": "Untuk memahami lalu lintas situs web dan pola penggunaan"
+        },
+        {
+          "label": "Penyedia Dompet:",
+          "text": "Untuk koneksi dompet mata uang kripto dan transaksi"
+        },
+        {
+          "label": "Media Sosial:",
+          "text": "Untuk fungsi berbagi dan opsi login sosial"
+        }
+      ]
+    },
+    "s4": {
+      "heading": "4. Berapa Lama Cookie Bertahan",
+      "intro": "Cookie dapat tetap berada di perangkat Anda untuk jangka waktu yang berbeda-beda:",
+      "items": [
+        {
+          "label": "Cookie Sesi:",
+          "text": "Cookie ini bersifat sementara dan dihapus saat Anda menutup peramban Anda."
+        },
+        {
+          "label": "Cookie Persisten:",
+          "text": "Cookie ini tetap berada di perangkat Anda untuk jangka waktu tertentu (misalnya, 30 hari, 1 tahun) atau hingga Anda menghapusnya."
+        }
+      ]
+    },
+    "s5": {
+      "heading": "5. Mengelola Cookie",
+      "intro": "Anda memiliki beberapa opsi untuk mengelola cookie:",
+      "browserSettings": {
+        "heading": "Pengaturan Peramban",
+        "intro": "Sebagian besar peramban web memungkinkan Anda mengontrol cookie melalui pengaturannya. Anda dapat:",
+        "items": [
+          "Melihat cookie yang tersimpan di perangkat Anda",
+          "Menghapus cookie secara individual atau semuanya",
+          "Memblokir cookie dari situs web tertentu atau semua situs web",
+          "Mengatur preferensi untuk cookie pihak pertama vs. pihak ketiga"
+        ]
+      },
+      "browserSpecific": {
+        "heading": "Instruksi Khusus Peramban",
+        "items": [
+          { "label": "Chrome:", "text": "Pengaturan → Privasi dan keamanan → Cookie dan data situs lainnya" },
+          { "label": "Firefox:", "text": "Opsi → Privasi & Keamanan → Cookie dan Data Situs" },
+          { "label": "Safari:", "text": "Preferensi → Privasi → Kelola Data Situs Web" },
+          { "label": "Edge:", "text": "Pengaturan → Cookie dan izin situs" }
+        ]
+      },
+      "note": {
+        "label": "Catatan:",
+        "text": "Menonaktifkan cookie tertentu dapat memengaruhi fungsionalitas platform kami. Cookie esensial tidak dapat dinonaktifkan karena diperlukan agar platform dapat berfungsi."
+      }
+    },
+    "s6": {
+      "heading": "6. Pertimbangan Web3 dan Blockchain",
+      "intro": "Sebagai marketplace NFT, kami berinteraksi dengan teknologi blockchain dan dompet mata uang kripto. Harap diperhatikan:",
+      "items": [
+        "Data koneksi dompet dapat disimpan secara lokal di peramban Anda",
+        "Tanda tangan transaksi diproses melalui penyedia dompet Anda",
+        "Transaksi blockchain bersifat publik dan permanen, tidak bergantung pada cookie"
+      ]
+    },
+    "s7": {
+      "heading": "7. Pembaruan pada Kebijakan Ini",
+      "text": "Kami dapat memperbarui Kebijakan Cookie ini dari waktu ke waktu untuk mencerminkan perubahan dalam praktik kami atau untuk alasan operasional, hukum, atau regulasi lainnya. Kami mendorong Anda untuk meninjau kebijakan ini secara berkala."
+    },
+    "s8": {
+      "heading": "8. Hubungi Kami",
+      "intro": "Jika Anda memiliki pertanyaan tentang penggunaan cookie kami, silakan hubungi kami:",
+      "emailLabel": "Email:"
+    }
+  }
+}

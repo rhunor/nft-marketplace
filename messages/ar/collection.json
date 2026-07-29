@@ -1,0 +1,24 @@
+{
+  "loading": "جارٍ تحميل المجموعة...",
+  "notFound": {
+    "heading": "المجموعة غير موجودة",
+    "genericMessage": "المجموعة التي تبحث عنها غير موجودة.",
+    "collectionNotFoundError": "المجموعة غير موجودة",
+    "loadFailedError": "فشل تحميل المجموعة",
+    "backToExplore": "العودة إلى الاستكشاف"
+  },
+  "back": "رجوع",
+  "createdBy": "أنشأها",
+  "stats": {
+    "items": "العناصر",
+    "floorPrice": "أدنى سعر",
+    "totalVolume": "إجمالي حجم التداول"
+  },
+  "share": "مشاركة",
+  "itemsHeading": "العناصر ({count})",
+  "price": "السعر",
+  "empty": {
+    "heading": "لا توجد عناصر بعد",
+    "message": "لا تحتوي هذه المجموعة على أي عناصر."
+  }
+}

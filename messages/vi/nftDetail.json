@@ -1,0 +1,156 @@
+{
+  "detail": {
+    "loading": "Đang tải NFT...",
+    "notFound": {
+      "heading": "Không Tìm Thấy NFT",
+      "genericMessage": "NFT bạn đang tìm kiếm không tồn tại hoặc đã bị gỡ bỏ.",
+      "browseButton": "Duyệt NFT"
+    },
+    "back": "Quay Lại",
+    "share": "Chia Sẻ",
+    "translated": {
+      "badge": "Dịch tự động",
+      "showOriginal": "Xem bản gốc",
+      "showTranslation": "Xem bản dịch"
+    },
+    "badges": {
+      "notForSale": "Không Bán",
+      "youOwnThis": "Bạn Đang Sở Hữu",
+      "marketplaceNft": "NFT Trên Nền Tảng",
+      "you": "(Bạn)"
+    },
+    "creator": "Người Sáng Tạo",
+    "owner": "Chủ Sở Hữu",
+    "price": {
+      "current": "Giá Hiện Tại",
+      "insufficientBalance": "Số dư không đủ",
+      "buyNow": "Mua Ngay",
+      "manageNft": "Quản Lý NFT",
+      "exportNft": "Xuất NFT"
+    },
+    "description": "Mô Tả",
+    "tags": "Thẻ",
+    "details": {
+      "heading": "Chi Tiết",
+      "tokenId": "Mã Token",
+      "blockchain": "Blockchain",
+      "ethereum": "Ethereum",
+      "mediaType": "Loại Media",
+      "created": "Ngày Tạo"
+    },
+    "related": {
+      "title": "Thêm Từ Danh Mục Này",
+      "subtitle": "Khám phá thêm NFT thuộc danh mục {category}"
+    },
+    "buyModal": {
+      "title": "Xác Nhận Mua Hàng",
+      "by": "bởi @{username}",
+      "price": "Giá",
+      "platformFee": "Phí Nền Tảng (2.5%)",
+      "gasFee": "Phí Gas (ước tính)",
+      "total": "Tổng Cộng",
+      "yourBalance": "Số Dư Của Bạn",
+      "insufficientBalanceWarning": "Số dư không đủ. Vui lòng nạp tiền vào tài khoản của bạn.",
+      "immediateTransferNote": "Quyền sở hữu sẽ được chuyển giao ngay sau khi xác nhận.",
+      "adminTransferNote": "Sau khi mua, việc chuyển giao quyền sở hữu sẽ được đội ngũ quản trị của chúng tôi xử lý trong vòng 24 giờ.",
+      "cancel": "Hủy",
+      "confirm": "Xác Nhận Mua"
+    },
+    "manageModal": {
+      "title": "Quản Lý NFT",
+      "statusListed": "Trạng thái: Đang Bán",
+      "statusNotListed": "Trạng thái: Chưa Niêm Yết",
+      "priceLabel": "Giá (ETH)",
+      "pricePlaceholder": "0.1",
+      "listForSale": "Niêm Yết Bán",
+      "updatePrice": "Cập Nhật Giá",
+      "unlist": "Gỡ Khỏi Nền Tảng",
+      "cancel": "Hủy"
+    },
+    "notifications": {
+      "addedToFavorites": "Đã thêm vào mục yêu thích",
+      "removedFromFavorites": "Đã xóa khỏi mục yêu thích",
+      "likeUpdateFailed": "Không thể cập nhật lượt thích",
+      "purchaseSuccessTitle": "Mua Hàng Thành Công!",
+      "purchaseSuccessMessage": "Bạn hiện là chủ sở hữu của NFT này.",
+      "purchaseFailedTitle": "Mua Hàng Thất Bại",
+      "genericError": "Đã xảy ra lỗi",
+      "purchaseSubmittedTitle": "Đã Gửi Yêu Cầu Mua!",
+      "purchaseSubmittedMessage": "Giao dịch mua của bạn đang được xử lý. Quyền sở hữu sẽ được chuyển giao sau khi quản trị viên xác nhận.",
+      "linkCopied": "Đã sao chép liên kết vào bộ nhớ tạm!",
+      "copyFailed": "Không thể sao chép liên kết",
+      "invalidPrice": "Vui lòng nhập mức giá hợp lệ",
+      "listedTitle": "Đã Niêm Yết NFT!",
+      "listedMessage": "NFT của bạn hiện đã có mặt trên nền tảng.",
+      "listFailedTitle": "Không thể niêm yết NFT",
+      "unlistedTitle": "Đã Gỡ NFT",
+      "unlistedMessage": "NFT của bạn đã được gỡ khỏi nền tảng.",
+      "unlistFailedTitle": "Không thể gỡ NFT",
+      "priceUpdatedTitle": "Đã Cập Nhật Giá!",
+      "priceUpdatedMessage": "Giá mới: {price} ETH",
+      "priceUpdateFailedTitle": "Không thể cập nhật giá"
+    },
+    "errors": {
+      "fetchFailed": "Không thể lấy dữ liệu NFT",
+      "notFoundError": "Không tìm thấy NFT",
+      "loadFailed": "Không thể tải NFT"
+    }
+  },
+  "export": {
+    "cannotExport": "Không thể xuất NFT này.",
+    "loadFailed": "Không thể tải NFT",
+    "fetchFailed": "Không thể lấy dữ liệu NFT",
+    "loading": "Đang tải NFT...",
+    "cannotExportHeading": "Không Thể Xuất NFT",
+    "nftNotFound": "Không tìm thấy NFT.",
+    "browseButton": "Duyệt NFT",
+    "accessDenied": {
+      "heading": "Truy Cập Bị Từ Chối",
+      "message": "Chỉ chủ sở hữu của NFT này mới có thể xuất nó.",
+      "backButton": "Quay Lại NFT"
+    },
+    "back": "Quay Lại",
+    "heading": "Xuất NFT",
+    "subheading": "Xuất NFT của bạn về ví cá nhân",
+    "by": "bởi @{username}",
+    "fee": {
+      "heading": "Phí Xuất NFT",
+      "amountLabel": "Số tiền cần gửi",
+      "loadingAmount": "Đang tải...",
+      "approxUsd": "≈ {amount} USD",
+      "note": "Khoản phí một lần này chi trả cho chi phí gas và xử lý cần thiết để xuất NFT của bạn ra ví bên ngoài."
+    },
+    "payment": {
+      "heading": "Gửi Thanh Toán Đến",
+      "instruction": "Chuyển chính xác",
+      "instructionSuffix": "đến địa chỉ Ethereum bên dưới:",
+      "copyAddress": "Sao chép địa chỉ",
+      "addressCopied": "Đã sao chép địa chỉ vào bộ nhớ tạm!",
+      "networkWarning": "Chỉ gửi ETH trên mạng Ethereum"
+    },
+    "processing": {
+      "heading": "Thời Gian Xử Lý",
+      "message": "Sau khi thanh toán được xác nhận, yêu cầu xuất NFT của bạn sẽ được xử lý trong vòng {hours}. Tệp đã xuất sẽ được gửi đến địa chỉ email đã đăng ký của bạn.",
+      "hours": "24 giờ"
+    },
+    "steps": {
+      "heading": "Cách Thức Hoạt Động",
+      "step1": { "title": "Sao chép địa chỉ ví ở trên", "description": "Sử dụng bất kỳ ví tương thích với Ethereum nào để bắt đầu chuyển khoản." },
+      "step2": { "title": "Gửi {amount}", "description": "Đảm bảo gửi trên mạng chính Ethereum (mainnet).", "fallbackAmount": "100 USD giá trị ETH" },
+      "step3": { "title": "Nhấn \"Đã Thanh Toán\" bên dưới", "description": "Thông báo cho chúng tôi khi đã gửi thanh toán." },
+      "step4": { "title": "Nhận NFT đã xuất của bạn", "description": "Chúng tôi sẽ xử lý và gửi trong vòng 24 giờ." }
+    },
+    "paidButton": "Đã Thanh Toán",
+    "paidConfirmation": {
+      "heading": "Đã Gửi Thanh Toán",
+      "message": "Chúng tôi sẽ xử lý yêu cầu xuất của bạn trong vòng 24 giờ.",
+      "backButton": "Quay Lại NFT"
+    },
+    "notification": {
+      "title": "Đã Gửi Thanh Toán",
+      "message": "Cảm ơn bạn! Yêu cầu xuất NFT của bạn đã được ghi nhận. Đội ngũ của chúng tôi sẽ xử lý trong vòng 24 giờ và gửi tệp NFT đến email đã đăng ký của bạn."
+    },
+    "helpText": "Cần trợ giúp?",
+    "contactSupport": "Liên hệ hỗ trợ"
+  }
+}

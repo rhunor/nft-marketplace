@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "言語を変更",
+    "popular": "よく使われる言語",
+    "more": "その他の言語"
+  },
+  "languageBanner": {
+    "message": "{language}がお好みのようです。",
+    "switch": "切り替える",
+    "dismiss": "閉じる"
+  },
+  "nav": {
+    "home": "ホーム",
+    "explore": "探索",
+    "about": "会社概要",
+    "help": "ヘルプ",
+    "contact": "お問い合わせ"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "NFT、クリエイターを検索...",
+    "create": "作成",
+    "signIn": "サインイン",
+    "getStarted": "はじめる",
+    "userMenu": {
+      "dashboard": "ダッシュボード",
+      "createNft": "NFTを作成",
+      "fundAccount": "アカウントに入金",
+      "adminPanel": "管理パネル",
+      "signOut": "サインアウト"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "Foundationの拡張プラットフォームであり、高価値のNFTコレクターとクリエイターのための最高峰のデスティネーションです。目の肥えたコレクターによる特別なコミュニティにご参加ください。",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "メール"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "マーケットプレイス",
+        "exploreCollections": "コレクションを探す",
+        "howItWorks": "仕組み",
+        "create": "作成"
+      },
+      "resources": {
+        "heading": "リソース",
+        "helpCenter": "ヘルプセンター",
+        "contactUs": "お問い合わせ",
+        "faq": "よくある質問"
+      },
+      "company": {
+        "heading": "会社情報",
+        "aboutUs": "会社概要",
+        "termsOfService": "利用規約",
+        "privacyPolicy": "プライバシーポリシー",
+        "cookiePolicy": "Cookieポリシー"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. All rights reserved.",
+    "bottomLinks": {
+      "terms": "利用規約",
+      "privacy": "プライバシー",
+      "cookies": "Cookie"
+    }
+  },
+  "modal": {
+    "dismiss": "閉じる"
+  },
+  "nftCard": {
+    "currentPrice": "現在価格",
+    "by": "作成者:"
+  },
+  "nftGrid": {
+    "emptyMessage": "NFTが見つかりません"
+  },
+  "nftImage": {
+    "unavailable": "画像を利用できません"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "pageTitle": "Przeglądaj",
+  "pageSubtitle": "Odkrywaj ekskluzywne kolekcje od artystów cyfrowych światowej klasy",
+  "sort": {
+    "random": "Losowo",
+    "recentDesc": "Najnowsze",
+    "volumeDesc": "Najwyższy wolumen",
+    "volumeAsc": "Najniższy wolumen",
+    "floorAsc": "Cena minimalna: od najniższej",
+    "floorDesc": "Cena minimalna: od najwyższej",
+    "itemsDesc": "Najwięcej przedmiotów"
+  },
+  "newUploads": {
+    "heading": "Nowe przesłane pliki",
+    "subtitle": "Świeże NFT od twórców naszego rynku",
+    "viewAll": "Zobacz wszystkie nowe przesłane pliki ({count})"
+  },
+  "newBadge": "Nowość",
+  "price": "Cena",
+  "search": {
+    "collectionsPlaceholder": "Szukaj kolekcji...",
+    "nftsPlaceholder": "Szukaj NFT..."
+  },
+  "viewMode": {
+    "collections": "Widok kolekcji",
+    "items": "Widok pojedynczych przedmiotów"
+  },
+  "filters": "Filtry",
+  "categories": "Kategorie",
+  "allCategories": "Wszystkie kategorie",
+  "all": "Wszystko",
+  "clearAllFilters": "Wyczyść wszystkie filtry",
+  "activeFilters": "Aktywne filtry:",
+  "searchLabel": "Szukaj: {query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {Wyświetlanie # kolekcji} other {Wyświetlanie # kolekcji}}",
+    "items": "{count, plural, one {Wyświetlanie # NFT} other {Wyświetlanie # NFT}}"
+  },
+  "noCollectionsFound": "Nie znaleziono kolekcji spełniających Twoje kryteria",
+  "clearFilters": "Wyczyść filtry",
+  "itemsCount": "{count, plural, one {# przedmiot} other {# przedmiotów}}",
+  "floor": "Cena minimalna",
+  "totalVolume": "Łączny wolumen",
+  "usd": "USD"
+}

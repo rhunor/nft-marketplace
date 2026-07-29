@@ -1,0 +1,75 @@
+{
+  "metaTitle": "프리미엄 NFT 마켓플레이스",
+  "metaDescription": "엘리트 아티스트들의 특별한 NFT 컬렉션을 만나보세요. Foundation Exclusive는 고가치 NFT 컬렉터를 위한 최고의 목적지입니다.",
+  "hero": {
+    "badge": "Foundation의 확장 서비스",
+    "heading": "<gradient>특별한</gradient> NFT 컬렉션을 발견하세요",
+    "subtitle": "Foundation Exclusive는 고가치 NFT 컬렉터를 위한 최고의 목적지입니다. 뛰어난 디지털 아트가 합당한 컬렉터를 만날 수 있는 특별한 커뮤니티에 참여하세요.",
+    "exploreCollections": "컬렉션 둘러보기",
+    "learnMore": "더 알아보기",
+    "imageAlt": "추천 NFT {n}",
+    "stats": [
+      {
+        "value": "150+",
+        "label": "큐레이션 컬렉션"
+      },
+      {
+        "value": "50+",
+        "label": "엘리트 아티스트"
+      },
+      {
+        "value": "$45M+",
+        "label": "총 거래량"
+      }
+    ]
+  },
+  "featured": {
+    "heading": "추천 컬렉션",
+    "subtitle": "저희 특별한 아티스트들의 엄선된 컬렉션",
+    "viewAll": "전체 보기",
+    "itemsCount": "{count}개 아이템",
+    "floor": "최저가"
+  },
+  "aboutBrief": {
+    "heading": "특별한 커뮤니티",
+    "text": "Foundation Exclusive는 Foundation의 확장 서비스로, 뛰어난 디지털 아트의 진정한 가치를 이해하는 진지한 컬렉터를 위해 만들어졌습니다. 저희 큐레이션 플랫폼은 모든 작품이 최고 수준의 품질과 진품성 기준을 충족하도록 보장합니다.",
+    "cta": "회사 소개 더 보기"
+  },
+  "categories": {
+    "heading": "카테고리별로 둘러보기",
+    "subtitle": "다양한 카테고리의 컬렉션을 탐색해 보세요"
+  },
+  "moreCollections": {
+    "heading": "더 많은 컬렉션",
+    "subtitle": "더 특별한 컬렉션을 발견해 보세요",
+    "viewAll": "전체 보기"
+  },
+  "features": {
+    "heading": "왜 Foundation Exclusive를 선택해야 할까요?",
+    "subtitle": "프리미엄 NFT 컬렉터를 위한 가장 신뢰받는 플랫폼",
+    "items": [
+      {
+        "title": "검증된 진품성",
+        "description": "모든 작품은 진품성을 위한 엄격한 검증 절차를 거칩니다"
+      },
+      {
+        "title": "프리미엄 품질",
+        "description": "세계적인 디지털 아티스트들의 큐레이션 컬렉션"
+      },
+      {
+        "title": "특별한 커뮤니티",
+        "description": "진지한 컬렉터들의 선별된 네트워크에 참여하세요"
+      },
+      {
+        "title": "투자 등급",
+        "description": "진정한 시장 가치를 반영하여 가격이 책정된 NFT"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "익스클루시브에 참여할 준비가 되셨나요?",
+    "text": "Foundation Exclusive의 회원이 되어 프리미엄 컬렉션, 특별 드롭, 그리고 뜻맞는 컬렉터들의 커뮤니티에 접근해 보세요.",
+    "becomeMember": "회원 가입하기",
+    "exploreCollections": "컬렉션 둘러보기"
+  }
+}

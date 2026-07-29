@@ -1,0 +1,156 @@
+{
+  "detail": {
+    "loading": "正在加载 NFT...",
+    "notFound": {
+      "heading": "未找到 NFT",
+      "genericMessage": "您查找的 NFT 不存在或已被移除。",
+      "browseButton": "浏览 NFT"
+    },
+    "back": "返回",
+    "share": "分享",
+    "translated": {
+      "badge": "机器翻译",
+      "showOriginal": "显示原文",
+      "showTranslation": "显示译文"
+    },
+    "badges": {
+      "notForSale": "非卖品",
+      "youOwnThis": "您已持有",
+      "marketplaceNft": "市场 NFT",
+      "you": "（您）"
+    },
+    "creator": "创作者",
+    "owner": "持有者",
+    "price": {
+      "current": "当前价格",
+      "insufficientBalance": "余额不足",
+      "buyNow": "立即购买",
+      "manageNft": "管理 NFT",
+      "exportNft": "导出 NFT"
+    },
+    "description": "描述",
+    "tags": "标签",
+    "details": {
+      "heading": "详情",
+      "tokenId": "代币 ID",
+      "blockchain": "区块链",
+      "ethereum": "以太坊",
+      "mediaType": "媒体类型",
+      "created": "创建时间"
+    },
+    "related": {
+      "title": "更多同分类作品",
+      "subtitle": "探索更多 {category} 类 NFT"
+    },
+    "buyModal": {
+      "title": "确认购买",
+      "by": "作者 @{username}",
+      "price": "价格",
+      "platformFee": "平台手续费（2.5%）",
+      "gasFee": "预估 Gas 费",
+      "total": "总计",
+      "yourBalance": "您的余额",
+      "insufficientBalanceWarning": "余额不足，请为账户充值。",
+      "immediateTransferNote": "确认后所有权将立即转移。",
+      "adminTransferNote": "购买完成后，所有权转移将由我们的管理团队在 24 小时内处理。",
+      "cancel": "取消",
+      "confirm": "确认购买"
+    },
+    "manageModal": {
+      "title": "管理 NFT",
+      "statusListed": "状态：已上架",
+      "statusNotListed": "状态：未上架",
+      "priceLabel": "价格（ETH）",
+      "pricePlaceholder": "0.1",
+      "listForSale": "上架出售",
+      "updatePrice": "更新价格",
+      "unlist": "从市场下架",
+      "cancel": "取消"
+    },
+    "notifications": {
+      "addedToFavorites": "已加入收藏",
+      "removedFromFavorites": "已取消收藏",
+      "likeUpdateFailed": "更新点赞状态失败",
+      "purchaseSuccessTitle": "购买成功！",
+      "purchaseSuccessMessage": "您现在是这件 NFT 的所有者。",
+      "purchaseFailedTitle": "购买失败",
+      "genericError": "出现了一些问题",
+      "purchaseSubmittedTitle": "购买请求已提交！",
+      "purchaseSubmittedMessage": "您的购买正在处理中。所有权将在管理员确认后转移。",
+      "linkCopied": "链接已复制到剪贴板！",
+      "copyFailed": "复制链接失败",
+      "invalidPrice": "请输入有效的价格",
+      "listedTitle": "NFT 已上架！",
+      "listedMessage": "您的 NFT 现已在市场上出售。",
+      "listFailedTitle": "NFT 上架失败",
+      "unlistedTitle": "NFT 已下架",
+      "unlistedMessage": "您的 NFT 已从市场移除。",
+      "unlistFailedTitle": "NFT 下架失败",
+      "priceUpdatedTitle": "价格已更新！",
+      "priceUpdatedMessage": "新价格：{price} ETH",
+      "priceUpdateFailedTitle": "更新价格失败"
+    },
+    "errors": {
+      "fetchFailed": "获取 NFT 失败",
+      "notFoundError": "未找到 NFT",
+      "loadFailed": "加载 NFT 失败"
+    }
+  },
+  "export": {
+    "cannotExport": "此 NFT 无法导出。",
+    "loadFailed": "加载 NFT 失败",
+    "fetchFailed": "获取 NFT 失败",
+    "loading": "正在加载 NFT...",
+    "cannotExportHeading": "无法导出 NFT",
+    "nftNotFound": "未找到 NFT。",
+    "browseButton": "浏览 NFT",
+    "accessDenied": {
+      "heading": "访问被拒绝",
+      "message": "只有此 NFT 的所有者才能导出。",
+      "backButton": "返回 NFT 页面"
+    },
+    "back": "返回",
+    "heading": "导出 NFT",
+    "subheading": "将您的 NFT 导出至个人钱包",
+    "by": "作者 @{username}",
+    "fee": {
+      "heading": "导出费用",
+      "amountLabel": "应付金额",
+      "loadingAmount": "加载中...",
+      "approxUsd": "≈ ${amount} 美元",
+      "note": "此一次性费用用于支付将您的 NFT 导出至外部钱包所需的 Gas 费和处理成本。"
+    },
+    "payment": {
+      "heading": "付款地址",
+      "instruction": "请准确转账",
+      "instructionSuffix": "至以下以太坊地址：",
+      "copyAddress": "复制地址",
+      "addressCopied": "地址已复制到剪贴板！",
+      "networkWarning": "仅支持发送以太坊网络上的 ETH"
+    },
+    "processing": {
+      "heading": "处理时间",
+      "message": "付款确认后，您的 NFT 导出请求将在 {hours}内处理完成。导出的文件将发送至您注册的邮箱地址。",
+      "hours": "24 小时"
+    },
+    "steps": {
+      "heading": "运作方式",
+      "step1": { "title": "复制上方钱包地址", "description": "使用任意兼容以太坊的钱包发起转账。" },
+      "step2": { "title": "发送 {amount}", "description": "请确保在以太坊主网上发送。", "fallbackAmount": "价值 $100 的 ETH" },
+      "step3": { "title": "点击下方“已付款”", "description": "付款完成后请通知我们。" },
+      "step4": { "title": "接收您的 NFT 导出文件", "description": "我们将在 24 小时内处理并交付。" }
+    },
+    "paidButton": "已付款",
+    "paidConfirmation": {
+      "heading": "付款已提交",
+      "message": "我们将在 24 小时内处理您的导出请求。",
+      "backButton": "返回 NFT 页面"
+    },
+    "notification": {
+      "title": "付款已提交",
+      "message": "感谢您！我们已收到您的导出请求。我们的团队将在 24 小时内处理，并将 NFT 文件发送至您注册的邮箱。"
+    },
+    "helpText": "需要帮助？",
+    "contactSupport": "联系客服"
+  }
+}

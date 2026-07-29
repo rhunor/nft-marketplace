@@ -1,0 +1,126 @@
+{
+  "loading": "ダッシュボードを読み込み中...",
+  "avatar": {
+    "invalidType": "画像ファイルを選択してください",
+    "tooLarge": "画像サイズは5MB未満にしてください",
+    "uploadSuccess": "プロフィール画像を更新しました!",
+    "uploadFailedTitle": "アップロードに失敗しました",
+    "uploadFailedDefault": "問題が発生しました",
+    "changePicture": "プロフィール画像を変更"
+  },
+  "welcome": "おかえりなさい、{name}さん!",
+  "adminBadge": "管理者",
+  "fundAccount": "アカウントに入金",
+  "createNft": "NFTを作成",
+  "stats": {
+    "walletBalance": "ウォレット残高",
+    "nftsOwned": "所有NFT数",
+    "nftsCreated": "作成NFT数",
+    "totalValue": "総評価額"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "コレクションを探す",
+      "subtitle": "新しいコレクティブルを発見する"
+    },
+    "create": {
+      "title": "NFTを作成",
+      "subtitle": "あなたの作品をアップロード"
+    },
+    "fund": {
+      "title": "アカウントに入金",
+      "subtitle": "ウォレットにETHを追加"
+    },
+    "withdraw": {
+      "title": "資金を引き出す",
+      "subtitle": "ウォレットへ送金"
+    }
+  },
+  "tabs": {
+    "owned": "所有中 ({count})",
+    "created": "作成済み ({count})",
+    "listed": "出品中 ({count})"
+  },
+  "nftCard": {
+    "created": "作成日",
+    "notListed": "未出品",
+    "price": "価格"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "まだ所有しているNFTがありません",
+      "text": "マーケットプレイスからユニークなデジタルアセットの収集を始めましょう",
+      "button": "コレクションを探す"
+    },
+    "created": {
+      "title": "まだ作成したNFTがありません",
+      "text": "最初のNFTを作成して世界に公開しましょう",
+      "button": "NFTを作成"
+    },
+    "listed": {
+      "title": "出品中のNFTがありません",
+      "text": "現在販売用に出品しているNFTはありません"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "資金を引き出す",
+      "fee": "引き出し手数料のお支払い",
+      "processing": "引き出し処理中",
+      "success": "引き出し完了"
+    },
+    "form": {
+      "availableBalance": "利用可能残高",
+      "walletAddressLabel": "ウォレットアドレス",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "ご自身のイーサリアムウォレットアドレスを入力してください",
+      "amountLabel": "金額 (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "最低引き出し額: ${minAmount}",
+      "withdrawMax": "最大額を引き出す",
+      "continue": "次へ"
+    },
+    "errors": {
+      "invalidAddress": "有効なイーサリアムウォレットアドレスを入力してください (0x...)",
+      "invalidAmount": "有効な引き出し金額を入力してください",
+      "minWithdrawal": "最低引き出し額は${minAmount}です",
+      "insufficientBalance": "残高が不足しています",
+      "serverError": "サーバーエラーです。しばらくしてから再度お試しください。",
+      "withdrawalFailed": "引き出しに失敗しました",
+      "invalidResponse": "サーバーから無効な応答がありました",
+      "withdrawalFailedRetry": "引き出しに失敗しました。もう一度お試しください。"
+    },
+    "fee": {
+      "noticeTitle": "引き出し手数料が必要です",
+      "noticeText": "引き出しを処理するために、下記のウォレットアドレスへ{percent}%の手数料 ({amount}) をお送りください。",
+      "walletLabel": "お客様の引き出し用ウォレット",
+      "withdrawalAmount": "引き出し金額",
+      "feeToSend": "送金する手数料 ({percent}%)",
+      "youllReceive": "受け取り額",
+      "sendFeeTo": "手数料の送金先:",
+      "sendExactly": "このアドレスに正確に{amount}を送金してください",
+      "qrAlt": "手数料支払い用QRコード",
+      "walletAddressLabel": "手数料ウォレットアドレス (ETH)",
+      "copyAddress": "アドレスをコピー",
+      "copiedNotification": "アドレスをクリップボードにコピーしました",
+      "warning": "{feeAmount}の手数料を送金した後、「支払いを確認」をクリックして引き出しを処理してください。引き出し金額の全額{receiveAmount}がお客様のウォレットに送金されます。",
+      "back": "戻る",
+      "confirmPayment": "支払いを確認"
+    },
+    "processing": {
+      "title": "引き出し処理中",
+      "text": "取引を処理しておりますので、しばらくお待ちください..."
+    },
+    "success": {
+      "title": "引き出しを受け付けました!",
+      "subtitle": "資金はお客様のウォレットに向けて送金中です",
+      "transactionId": "取引ID",
+      "amountReceived": "受け取り予定額",
+      "feePaid": "支払済み手数料",
+      "newBalance": "新しい残高",
+      "estimatedTime": "処理予定時間",
+      "estimatedTimeValue": "24〜48時間",
+      "done": "完了"
+    }
+  }
+}

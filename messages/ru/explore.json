@@ -1,0 +1,45 @@
+{
+  "pageTitle": "Каталог",
+  "pageSubtitle": "Открывайте эксклюзивные коллекции от лучших цифровых художников мира",
+  "sort": {
+    "random": "Случайный порядок",
+    "recentDesc": "Сначала новые",
+    "volumeDesc": "По убыванию объёма торгов",
+    "volumeAsc": "По возрастанию объёма торгов",
+    "floorAsc": "Мин. цена: по возрастанию",
+    "floorDesc": "Мин. цена: по убыванию",
+    "itemsDesc": "Больше всего предметов"
+  },
+  "newUploads": {
+    "heading": "Новые загрузки",
+    "subtitle": "Свежие NFT от создателей нашего маркетплейса",
+    "viewAll": "Смотреть все новые загрузки ({count})"
+  },
+  "newBadge": "Новинка",
+  "price": "Цена",
+  "search": {
+    "collectionsPlaceholder": "Поиск коллекций...",
+    "nftsPlaceholder": "Поиск NFT..."
+  },
+  "viewMode": {
+    "collections": "Показать коллекции",
+    "items": "Показать отдельные предметы"
+  },
+  "filters": "Фильтры",
+  "categories": "Категории",
+  "allCategories": "Все категории",
+  "all": "Все",
+  "clearAllFilters": "Сбросить все фильтры",
+  "activeFilters": "Активные фильтры:",
+  "searchLabel": "Поиск: {query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {Показана # коллекция} other {Показано # коллекций}}",
+    "items": "{count, plural, one {Показан # NFT} other {Показано # NFT}}"
+  },
+  "noCollectionsFound": "Коллекции, соответствующие вашим критериям, не найдены",
+  "clearFilters": "Сбросить фильтры",
+  "itemsCount": "{count, plural, one {# предмет} other {# предметов}}",
+  "floor": "Мин. цена",
+  "totalVolume": "Общий объём торгов",
+  "usd": "USD"
+}

@@ -1,0 +1,156 @@
+{
+  "detail": {
+    "loading": "Loading NFT...",
+    "notFound": {
+      "heading": "NFT Not Found",
+      "genericMessage": "The NFT you're looking for doesn't exist or has been removed.",
+      "browseButton": "Browse NFTs"
+    },
+    "back": "Back",
+    "share": "Share",
+    "translated": {
+      "badge": "Machine-translated",
+      "showOriginal": "Show original",
+      "showTranslation": "Show translation"
+    },
+    "badges": {
+      "notForSale": "Not for Sale",
+      "youOwnThis": "You Own This",
+      "marketplaceNft": "Marketplace NFT",
+      "you": "(You)"
+    },
+    "creator": "Creator",
+    "owner": "Owner",
+    "price": {
+      "current": "Current Price",
+      "insufficientBalance": "Insufficient balance",
+      "buyNow": "Buy Now",
+      "manageNft": "Manage NFT",
+      "exportNft": "Export NFT"
+    },
+    "description": "Description",
+    "tags": "Tags",
+    "details": {
+      "heading": "Details",
+      "tokenId": "Token ID",
+      "blockchain": "Blockchain",
+      "ethereum": "Ethereum",
+      "mediaType": "Media Type",
+      "created": "Created"
+    },
+    "related": {
+      "title": "More from this category",
+      "subtitle": "Explore more {category} NFTs"
+    },
+    "buyModal": {
+      "title": "Confirm Purchase",
+      "by": "by @{username}",
+      "price": "Price",
+      "platformFee": "Platform Fee (2.5%)",
+      "gasFee": "Gas Fee (est.)",
+      "total": "Total",
+      "yourBalance": "Your Balance",
+      "insufficientBalanceWarning": "Insufficient balance. Please fund your account.",
+      "immediateTransferNote": "Ownership will be transferred immediately after confirmation.",
+      "adminTransferNote": "After purchase, ownership transfer will be processed by our admin team within 24 hours.",
+      "cancel": "Cancel",
+      "confirm": "Confirm Purchase"
+    },
+    "manageModal": {
+      "title": "Manage NFT",
+      "statusListed": "Status: Listed",
+      "statusNotListed": "Status: Not Listed",
+      "priceLabel": "Price (ETH)",
+      "pricePlaceholder": "0.1",
+      "listForSale": "List for Sale",
+      "updatePrice": "Update Price",
+      "unlist": "Unlist from Marketplace",
+      "cancel": "Cancel"
+    },
+    "notifications": {
+      "addedToFavorites": "Added to favorites",
+      "removedFromFavorites": "Removed from favorites",
+      "likeUpdateFailed": "Failed to update like",
+      "purchaseSuccessTitle": "Purchase Successful!",
+      "purchaseSuccessMessage": "You are now the owner of this NFT.",
+      "purchaseFailedTitle": "Purchase Failed",
+      "genericError": "Something went wrong",
+      "purchaseSubmittedTitle": "Purchase Request Submitted!",
+      "purchaseSubmittedMessage": "Your purchase is being processed. Ownership will be transferred after admin confirmation.",
+      "linkCopied": "Link copied to clipboard!",
+      "copyFailed": "Failed to copy link",
+      "invalidPrice": "Please enter a valid price",
+      "listedTitle": "NFT Listed!",
+      "listedMessage": "Your NFT is now available on the marketplace.",
+      "listFailedTitle": "Failed to list NFT",
+      "unlistedTitle": "NFT Unlisted",
+      "unlistedMessage": "Your NFT has been removed from the marketplace.",
+      "unlistFailedTitle": "Failed to unlist NFT",
+      "priceUpdatedTitle": "Price Updated!",
+      "priceUpdatedMessage": "New price: {price} ETH",
+      "priceUpdateFailedTitle": "Failed to update price"
+    },
+    "errors": {
+      "fetchFailed": "Failed to fetch NFT",
+      "notFoundError": "NFT not found",
+      "loadFailed": "Failed to load NFT"
+    }
+  },
+  "export": {
+    "cannotExport": "This NFT cannot be exported.",
+    "loadFailed": "Failed to load NFT",
+    "fetchFailed": "Failed to fetch NFT",
+    "loading": "Loading NFT...",
+    "cannotExportHeading": "Cannot Export NFT",
+    "nftNotFound": "NFT not found.",
+    "browseButton": "Browse NFTs",
+    "accessDenied": {
+      "heading": "Access Denied",
+      "message": "Only the owner of this NFT can export it.",
+      "backButton": "Back to NFT"
+    },
+    "back": "Back",
+    "heading": "Export NFT",
+    "subheading": "Export your NFT to your personal wallet",
+    "by": "by @{username}",
+    "fee": {
+      "heading": "Export Fee",
+      "amountLabel": "Amount to send",
+      "loadingAmount": "Loading...",
+      "approxUsd": "≈ ${amount} USD",
+      "note": "This one-time fee covers the gas costs and processing required to export your NFT to an external wallet."
+    },
+    "payment": {
+      "heading": "Send Payment To",
+      "instruction": "Transfer exactly",
+      "instructionSuffix": "to the Ethereum address below:",
+      "copyAddress": "Copy address",
+      "addressCopied": "Address copied to clipboard!",
+      "networkWarning": "Only send ETH on the Ethereum network"
+    },
+    "processing": {
+      "heading": "Processing Time",
+      "message": "After payment is confirmed, your NFT export will be processed within {hours}. The exported file will be delivered to your registered email address.",
+      "hours": "24 hours"
+    },
+    "steps": {
+      "heading": "How It Works",
+      "step1": { "title": "Copy the wallet address above", "description": "Use any Ethereum-compatible wallet to initiate the transfer." },
+      "step2": { "title": "Send {amount}", "description": "Make sure to send on the Ethereum mainnet.", "fallbackAmount": "$100 worth of ETH" },
+      "step3": { "title": "Click \"Paid\" below", "description": "Notify us once payment has been sent." },
+      "step4": { "title": "Receive your NFT export", "description": "We will process and deliver within 24 hours." }
+    },
+    "paidButton": "Paid",
+    "paidConfirmation": {
+      "heading": "Payment Submitted",
+      "message": "We will process your export request within 24 hours.",
+      "backButton": "Back to NFT"
+    },
+    "notification": {
+      "title": "Payment Submitted",
+      "message": "Thank you! Your export request has been received. Our team will process it within 24 hours and send the NFT file to your registered email."
+    },
+    "helpText": "Need help?",
+    "contactSupport": "Contact support"
+  }
+}

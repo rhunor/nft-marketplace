@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "Alterar idioma",
+    "popular": "Idiomas populares",
+    "more": "Mais idiomas"
+  },
+  "languageBanner": {
+    "message": "Parece que você prefere {language}.",
+    "switch": "Mudar",
+    "dismiss": "Dispensar"
+  },
+  "nav": {
+    "home": "Início",
+    "explore": "Explorar",
+    "about": "Sobre",
+    "help": "Ajuda",
+    "contact": "Contato"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "Buscar NFTs, criadores...",
+    "create": "Criar",
+    "signIn": "Entrar",
+    "getStarted": "Começar",
+    "userMenu": {
+      "dashboard": "Painel",
+      "createNft": "Criar NFT",
+      "fundAccount": "Adicionar Fundos",
+      "adminPanel": "Painel de Administração",
+      "signOut": "Sair"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "Uma extensão da Foundation - o destino principal para colecionadores e criadores de NFTs de alto valor. Junte-se à nossa comunidade exclusiva de colecionadores exigentes.",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "E-mail"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "Marketplace",
+        "exploreCollections": "Explorar Coleções",
+        "howItWorks": "Como Funciona",
+        "create": "Criar"
+      },
+      "resources": {
+        "heading": "Recursos",
+        "helpCenter": "Central de Ajuda",
+        "contactUs": "Fale Conosco",
+        "faq": "Perguntas Frequentes"
+      },
+      "company": {
+        "heading": "Empresa",
+        "aboutUs": "Sobre Nós",
+        "termsOfService": "Termos de Serviço",
+        "privacyPolicy": "Política de Privacidade",
+        "cookiePolicy": "Política de Cookies"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. Todos os direitos reservados.",
+    "bottomLinks": {
+      "terms": "Termos",
+      "privacy": "Privacidade",
+      "cookies": "Cookies"
+    }
+  },
+  "modal": {
+    "dismiss": "Dispensar"
+  },
+  "nftCard": {
+    "currentPrice": "Preço Atual",
+    "by": "por"
+  },
+  "nftGrid": {
+    "emptyMessage": "Nenhum NFT encontrado"
+  },
+  "nftImage": {
+    "unavailable": "Imagem indisponível"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "metaTitle": "Premium NFT Marketplace",
+  "metaDescription": "Ontdek exclusieve NFT-collecties van elite kunstenaars. Foundation Exclusive is dé bestemming voor NFT-verzamelaars met een hoge waarde.",
+  "hero": {
+    "badge": "Een Uitbreiding van Foundation",
+    "heading": "Ontdek <gradient>Exclusieve</gradient> NFT-Collecties",
+    "subtitle": "Foundation Exclusive is dé bestemming voor NFT-verzamelaars met een hoge waarde. Word lid van een exclusieve community waarin uitzonderlijke digitale kunst haar rechtmatige verzamelaars vindt.",
+    "exploreCollections": "Ontdek Collecties",
+    "learnMore": "Meer Informatie",
+    "imageAlt": "Uitgelichte NFT {n}",
+    "stats": [
+      {
+        "value": "150+",
+        "label": "Samengestelde Collecties"
+      },
+      {
+        "value": "50+",
+        "label": "Elite Kunstenaars"
+      },
+      {
+        "value": "$45M+",
+        "label": "Totaal Volume"
+      }
+    ]
+  },
+  "featured": {
+    "heading": "Uitgelichte Collecties",
+    "subtitle": "Met de hand geselecteerde collecties van onze exclusieve kunstenaars",
+    "viewAll": "Bekijk Alles",
+    "itemsCount": "{count} items",
+    "floor": "Bodemprijs"
+  },
+  "aboutBrief": {
+    "heading": "De Exclusieve Community",
+    "text": "Foundation Exclusive is een uitbreiding van Foundation, gemaakt voor serieuze verzamelaars die de werkelijke waarde van uitzonderlijke digitale kunst begrijpen. Ons zorgvuldig samengestelde platform zorgt ervoor dat elk werk voldoet aan de hoogste standaarden van kwaliteit en authenticiteit.",
+    "cta": "Lees Meer Over Ons"
+  },
+  "categories": {
+    "heading": "Blader per Categorie",
+    "subtitle": "Ontdek collecties in verschillende categorieën"
+  },
+  "moreCollections": {
+    "heading": "Meer Collecties",
+    "subtitle": "Ontdek meer exclusieve collecties",
+    "viewAll": "Bekijk Alles"
+  },
+  "features": {
+    "heading": "Waarom Kiezen voor Foundation Exclusive?",
+    "subtitle": "Het meest vertrouwde platform voor premium NFT-verzamelaars",
+    "items": [
+      {
+        "title": "Geverifieerde Authenticiteit",
+        "description": "Elk werk ondergaat een strenge verificatie op authenticiteit"
+      },
+      {
+        "title": "Premium Kwaliteit",
+        "description": "Samengestelde collecties van digitale kunstenaars van wereldklasse"
+      },
+      {
+        "title": "Exclusieve Community",
+        "description": "Word lid van een selectief netwerk van serieuze verzamelaars"
+      },
+      {
+        "title": "Investeringswaardig",
+        "description": "NFT's geprijsd naar hun werkelijke marktwaarde"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Klaar om Lid te Worden van het Exclusieve?",
+    "text": "Word lid van Foundation Exclusive en krijg toegang tot premium collecties, exclusieve drops en een community van gelijkgestemde verzamelaars.",
+    "becomeMember": "Word Lid",
+    "exploreCollections": "Ontdek Collecties"
+  }
+}

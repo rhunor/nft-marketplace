@@ -1,0 +1,162 @@
+{
+  "header": {
+    "heading": "Hilfe-Center",
+    "subtitle": "Alles, was Sie über die Nutzung von Foundation Exclusive wissen müssen"
+  },
+  "topics": {
+    "wallet": { "title": "Wallet & Guthaben", "description": "Laden Sie Ihr Konto auf und verwalten Sie ETH" },
+    "creating": { "title": "NFTs erstellen", "description": "Prägen Sie Ihr erstes NFT" },
+    "buying": { "title": "NFTs kaufen", "description": "NFTs kaufen und sammeln" },
+    "withdrawals": { "title": "Abhebungen", "description": "Guthaben von Ihrem Konto abheben" },
+    "security": { "title": "Sicherheit", "description": "Schützen Sie Ihr Konto" },
+    "exploring": { "title": "NFTs entdecken", "description": "Kollektionen durchsuchen und entdecken" }
+  },
+  "wallet": {
+    "heading": "Wallet & Guthaben",
+    "cardHeading": "So laden Sie Ihr Konto auf",
+    "steps": {
+      "step1": "Melden Sie sich an und gehen Sie zu Ihrem <b>Dashboard</b>",
+      "step2": "Klicken Sie auf <b>„Konto aufladen“</b>",
+      "step3": "Sie sehen einen QR-Code und eine ETH-Wallet-Adresse",
+      "step4": "Senden Sie ETH von Ihrer externen Wallet an diese Adresse",
+      "step5": "Warten Sie ca. 10 Minuten, bis das Guthaben aktualisiert wird"
+    },
+    "notesHeading": "Wichtige Hinweise",
+    "notes": [
+      "Senden Sie ausschließlich ETH (Ethereum) an die angegebene Adresse",
+      "Überprüfen Sie die Wallet-Adresse vor dem Senden sorgfältig",
+      "Bewahren Sie Ihren Transaktions-Hash zur Referenz auf"
+    ]
+  },
+  "creating": {
+    "heading": "NFTs erstellen",
+    "singleCardHeading": "So erstellen Sie ein einzelnes NFT",
+    "singleSteps": {
+      "step1": "Stellen Sie sicher, dass Sie ETH im Wert von mindestens <b>200 $</b> besitzen",
+      "step2": "Gehen Sie zur Seite <b>Erstellen</b>",
+      "step3": "Wählen Sie den Modus <b>„Einzelnes NFT“</b>",
+      "step4": "Laden Sie Ihre Mediendatei hoch (max. 100 MB)",
+      "step5": "Geben Sie Titel, Preis und Kategorie ein",
+      "step6": "Klicken Sie auf <b>„NFT erstellen“</b>"
+    },
+    "collectionCardHeading": "So erstellen Sie eine Kollektion",
+    "collectionSteps": {
+      "step1": "Wählen Sie auf der Seite Erstellen den Modus <b>„Kollektion“</b>",
+      "step2": "Fügen Sie Kollektionsname, Beschreibung und Titelbild hinzu",
+      "step3": "Fügen Sie 2-20 Artikel zu Ihrer Kollektion hinzu",
+      "step4": "Legen Sie den Kollektionspreis fest (<b>200 $ pro Artikel</b>)"
+    },
+    "feesHeading": "Upload-Gebühren",
+    "feesText": "Einzelnes NFT: 200 $ | Kollektion: 200 $ pro Artikel"
+  },
+  "buying": {
+    "heading": "NFTs kaufen",
+    "cardHeading": "So kaufen Sie ein NFT",
+    "steps": {
+      "step1": "Durchsuchen Sie die Seite <b>Entdecken</b>",
+      "step2": "Nutzen Sie Filter, um das Gesuchte zu finden",
+      "step3": "Klicken Sie auf ein NFT, um die Details anzuzeigen",
+      "step4": "Klicken Sie auf <b>„Jetzt kaufen“</b>",
+      "step5": "Bestätigen Sie den Kauf",
+      "step6": "Warten Sie auf die Bestätigung durch den Administrator (innerhalb von 24 Stunden)"
+    },
+    "afterHeading": "Nach dem Kauf",
+    "after": [
+      "Das NFT erscheint in Ihrem Dashboard unter „Im Besitz“",
+      "Keine zusätzlichen Gebühren beim Kauf"
+    ]
+  },
+  "withdrawals": {
+    "heading": "Abhebungen",
+    "cardHeading": "So heben Sie Guthaben ab",
+    "steps": {
+      "step1": "Gehen Sie zum <b>Dashboard</b> und klicken Sie auf <b>„Abheben“</b>",
+      "step2": "Geben Sie Ihre externe ETH-Wallet-Adresse ein (0x...)",
+      "step3": "Geben Sie den Abhebungsbetrag ein",
+      "step4": "Klicken Sie auf <b>„Weiter“</b>",
+      "step5": "Senden Sie die <b>10 % Gebühr</b> an die angegebene Wallet-Adresse",
+      "step6": "Klicken Sie auf <b>„Zahlung bestätigen“</b>",
+      "step7": "Die Abhebung wird innerhalb von <b>24-48 Stunden</b> bearbeitet"
+    },
+    "infoHeading": "Wichtige Informationen",
+    "info": [
+      { "label": "Gebühr:", "text": "10 % (separat an die Gebühren-Wallet zu zahlen)" },
+      { "label": "Bearbeitungszeit:", "text": "24-48 Stunden" }
+    ],
+    "infoPlain": "Sie erhalten den VOLLEN Abhebungsbetrag, nachdem Sie die Gebühr bezahlt haben",
+    "feeWarningHeading": "⚠️ Gebührenzahlung",
+    "feeWarningText": "Die 10 % Gebühr muss <b>vor</b> der Bearbeitung Ihrer Abhebung an unsere Gebühren-Wallet gesendet werden. Beispiel: 1 ETH abheben → 0,1 ETH Gebühr senden → 1 ETH auf Ihre Wallet erhalten."
+  },
+  "exploring": {
+    "heading": "NFTs entdecken",
+    "cardHeading": "So durchsuchen Sie NFTs",
+    "steps": {
+      "step1": "Gehen Sie zur Seite <b>Entdecken</b>",
+      "step2": "Durchsuchen Sie Kollektionen oder wechseln Sie zur Artikelansicht",
+      "step3": "Nutzen Sie die <b>Suchleiste</b>, um bestimmte NFTs zu finden",
+      "step4": "Filtern Sie nach <b>Kategorie</b>",
+      "step5": "Sortieren Sie nach Volumen, Mindestpreis oder Anzahl der Artikel"
+    },
+    "tipsHeading": "Suchtipps",
+    "tips": [
+      "Suchen Sie nach Titel, Beschreibung oder Künstlername",
+      "Verwenden Sie Tags wie „abstrakt“, „Weltraum“, „Natur“",
+      "Klicken Sie auf eine Kollektion, um alle Artikel anzuzeigen"
+    ]
+  },
+  "security": {
+    "heading": "Sicherheit",
+    "cardHeading": "So schützen Sie Ihr Konto",
+    "items": [
+      { "label": "Verwenden Sie ein sicheres Passwort:", "text": "Mindestens 8 Zeichen" },
+      { "label": "Geben Sie Ihr Passwort niemals weiter:", "text": "Wir werden Sie niemals danach fragen" },
+      { "label": "Überprüfen Sie Wallet-Adressen:", "text": "Vor dem Senden sorgfältig prüfen" },
+      { "label": "Achten Sie auf Betrug:", "text": "Wir fragen niemals per Direktnachricht nach Zahlungen" }
+    ]
+  },
+  "faq": {
+    "heading": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "question": "Was ist ein NFT?",
+        "answer": "NFT steht für Non-Fungible Token. Es handelt sich um ein einzigartiges digitales Gut, das auf einer Blockchain gespeichert ist und das Eigentum an digitalen Inhalten wie Kunst, Musik, Videos und mehr repräsentiert."
+      },
+      {
+        "question": "Wie erstelle ich ein NFT?",
+        "answer": "Laden Sie Ihr Konto mit ETH im Wert von mindestens 200 $ auf, gehen Sie zur Seite Erstellen, laden Sie Ihre Datei hoch, fügen Sie die Details hinzu und senden Sie das Formular ab."
+      },
+      {
+        "question": "Welche Gebühren fallen an?",
+        "answer": "Das Erstellen eines NFTs kostet 200 $ pro Artikel. Für den Kauf von NFTs ist lediglich der angegebene Preis erforderlich. Abhebungen erfordern eine separat zu zahlende Gebühr von 10 %."
+      },
+      {
+        "question": "Wie lange dauert die Bearbeitung von Transaktionen?",
+        "answer": "Aufladen: ca. 10 Minuten. NFT-Käufe: innerhalb von 24 Stunden. Abhebungen: 24-48 Stunden."
+      }
+    ]
+  },
+  "quickRef": {
+    "heading": "Kurzübersicht",
+    "processingTimes": {
+      "heading": "Bearbeitungszeiten",
+      "items": ["Guthaben-Aktualisierung: ca. 10 Minuten", "NFT-Käufe: innerhalb von 24 Stunden", "Abhebungen: 24-48 Stunden"]
+    },
+    "fees": {
+      "heading": "Gebühren",
+      "items": ["NFT-Erstellung: 200 $ pro Artikel", "Kauf: nur der angegebene Preis", "Abhebungen: 10 % (separat zu zahlen)"]
+    },
+    "formats": {
+      "heading": "Unterstützte Formate",
+      "items": ["Bilder: JPG, PNG, GIF, WEBP", "Video: MP4, WEBM", "Audio: MP3, WAV, OGG"]
+    },
+    "minimums": {
+      "heading": "Mindestbeträge",
+      "items": ["Mindestpreis für NFT: 0,001 ETH", "Kollektion: 2-20 Artikel"]
+    }
+  },
+  "contactCta": {
+    "heading": "Noch Fragen?",
+    "text": "Unser Support-Team hilft Ihnen gerne weiter",
+    "button": "Support kontaktieren"
+  }
+}

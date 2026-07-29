@@ -1,0 +1,126 @@
+{
+  "loading": "Carregando painel...",
+  "avatar": {
+    "invalidType": "Selecione um arquivo de imagem",
+    "tooLarge": "O tamanho da imagem deve ser menor que 5MB",
+    "uploadSuccess": "Foto de perfil atualizada!",
+    "uploadFailedTitle": "Falha no envio",
+    "uploadFailedDefault": "Algo deu errado",
+    "changePicture": "Alterar foto de perfil"
+  },
+  "welcome": "Bem-vindo de volta, {name}!",
+  "adminBadge": "Admin",
+  "fundAccount": "Adicionar Fundos",
+  "createNft": "Criar NFT",
+  "stats": {
+    "walletBalance": "Saldo da Carteira",
+    "nftsOwned": "NFTs Possuídos",
+    "nftsCreated": "NFTs Criados",
+    "totalValue": "Valor Total"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "Explorar Coleções",
+      "subtitle": "Descubra novos colecionáveis"
+    },
+    "create": {
+      "title": "Criar NFT",
+      "subtitle": "Envie sua obra de arte"
+    },
+    "fund": {
+      "title": "Adicionar Fundos",
+      "subtitle": "Adicione ETH à sua carteira"
+    },
+    "withdraw": {
+      "title": "Sacar Fundos",
+      "subtitle": "Transfira para sua carteira"
+    }
+  },
+  "tabs": {
+    "owned": "Possuídos ({count})",
+    "created": "Criados ({count})",
+    "listed": "Listados ({count})"
+  },
+  "nftCard": {
+    "created": "Criado",
+    "notListed": "Não Listado",
+    "price": "Preço"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "Ainda Sem NFTs Possuídos",
+      "text": "Comece a colecionar ativos digitais únicos em nosso marketplace",
+      "button": "Explorar Coleções"
+    },
+    "created": {
+      "title": "Ainda Sem NFTs Criados",
+      "text": "Crie seu primeiro NFT e compartilhe com o mundo",
+      "button": "Criar NFT"
+    },
+    "listed": {
+      "title": "Nenhum NFT Listado",
+      "text": "Você não tem nenhum NFT listado para venda"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "Sacar Fundos",
+      "fee": "Pagar Taxa de Saque",
+      "processing": "Processando Saque",
+      "success": "Saque Realizado com Sucesso"
+    },
+    "form": {
+      "availableBalance": "Saldo Disponível",
+      "walletAddressLabel": "Endereço da Carteira",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "Digite o endereço da sua carteira Ethereum",
+      "amountLabel": "Valor (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "Saque mínimo: ${minAmount}",
+      "withdrawMax": "Sacar Máximo",
+      "continue": "Continuar"
+    },
+    "errors": {
+      "invalidAddress": "Digite um endereço de carteira Ethereum válido (0x...)",
+      "invalidAmount": "Digite um valor de saque válido",
+      "minWithdrawal": "O saque mínimo é ${minAmount}",
+      "insufficientBalance": "Saldo insuficiente",
+      "serverError": "Erro no servidor. Tente novamente mais tarde.",
+      "withdrawalFailed": "Falha no saque",
+      "invalidResponse": "Resposta inválida do servidor",
+      "withdrawalFailedRetry": "Falha no saque. Tente novamente."
+    },
+    "fee": {
+      "noticeTitle": "Taxa de Saque Necessária",
+      "noticeText": "Para processar seu saque, envie uma taxa de {percent}% ({amount}) para o endereço de carteira abaixo.",
+      "walletLabel": "Sua Carteira de Saque",
+      "withdrawalAmount": "Valor do Saque",
+      "feeToSend": "Taxa a Enviar ({percent}%)",
+      "youllReceive": "Você Receberá",
+      "sendFeeTo": "Enviar Pagamento da Taxa Para:",
+      "sendExactly": "Envie exatamente {amount} para este endereço",
+      "qrAlt": "Código QR de Pagamento da Taxa",
+      "walletAddressLabel": "Endereço da Carteira da Taxa (ETH)",
+      "copyAddress": "Copiar Endereço",
+      "copiedNotification": "Endereço copiado para a área de transferência",
+      "warning": "Após enviar a taxa de {feeAmount}, clique em \"Confirmar Pagamento\" para processar seu saque. O valor total do seu saque de {receiveAmount} será enviado para sua carteira.",
+      "back": "Voltar",
+      "confirmPayment": "Confirmar Pagamento"
+    },
+    "processing": {
+      "title": "Processando Saque",
+      "text": "Aguarde enquanto processamos sua transação..."
+    },
+    "success": {
+      "title": "Saque Enviado!",
+      "subtitle": "Seus fundos estão a caminho da sua carteira",
+      "transactionId": "ID da Transação",
+      "amountReceived": "Valor que Você Receberá",
+      "feePaid": "Taxa Paga",
+      "newBalance": "Novo Saldo",
+      "estimatedTime": "Tempo Estimado de Processamento",
+      "estimatedTimeValue": "24-48 horas",
+      "done": "Concluído"
+    }
+  }
+}

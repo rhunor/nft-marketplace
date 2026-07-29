@@ -1,0 +1,45 @@
+{
+  "pageTitle": "探索",
+  "pageSubtitle": "发现来自世界顶级数字艺术家的尊享合集",
+  "sort": {
+    "random": "随机",
+    "recentDesc": "最新发布",
+    "volumeDesc": "交易额从高到低",
+    "volumeAsc": "交易额从低到高",
+    "floorAsc": "地板价从低到高",
+    "floorDesc": "地板价从高到低",
+    "itemsDesc": "作品数量最多"
+  },
+  "newUploads": {
+    "heading": "最新上传",
+    "subtitle": "来自我们平台创作者的全新 NFT",
+    "viewAll": "查看全部最新上传（{count}）"
+  },
+  "newBadge": "新品",
+  "price": "价格",
+  "search": {
+    "collectionsPlaceholder": "搜索合集...",
+    "nftsPlaceholder": "搜索 NFT..."
+  },
+  "viewMode": {
+    "collections": "查看合集",
+    "items": "查看单件作品"
+  },
+  "filters": "筛选",
+  "categories": "分类",
+  "allCategories": "全部分类",
+  "all": "全部",
+  "clearAllFilters": "清除所有筛选",
+  "activeFilters": "当前筛选条件：",
+  "searchLabel": "搜索：{query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {共 # 个合集} other {共 # 个合集}}",
+    "items": "{count, plural, one {共 # 个 NFT} other {共 # 个 NFT}}"
+  },
+  "noCollectionsFound": "未找到符合条件的合集",
+  "clearFilters": "清除筛选",
+  "itemsCount": "{count, plural, one {# 件作品} other {# 件作品}}",
+  "floor": "地板价",
+  "totalVolume": "总交易额",
+  "usd": "USD"
+}

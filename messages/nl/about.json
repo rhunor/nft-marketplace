@@ -1,0 +1,56 @@
+{
+  "metaTitle": "Over ons | Foundation Exclusive",
+  "metaDescription": "Foundation Exclusive is een uitbreiding van Foundation - een exclusieve community van NFT-verzamelaars en makers met een hoge waarde.",
+  "hero": {
+    "badge": "Een Uitbreiding van Foundation",
+    "heading": "Welkom bij <gradient>Foundation Exclusive</gradient>",
+    "subtitle": "Foundation Exclusive is dé bestemming voor NFT-verzamelaars en makers met een hoge waarde. Als uitbreiding van Foundation bieden wij een exclusieve community waarin uitzonderlijke digitale kunst haar rechtmatige verzamelaars vindt."
+  },
+  "stats": [
+    { "value": "2.500+", "label": "Geverifieerde Verzamelaars" },
+    { "value": "150+", "label": "Samengestelde Collecties" },
+    { "value": "$45M+", "label": "Totaal Volume" },
+    { "value": "15 ETH", "label": "Gem. Verkoopprijs" }
+  ],
+  "story": {
+    "heading": "Ons Verhaal",
+    "p1": "Foundation Exclusive is ontstaan uit een simpele observatie: de NFT-markt had behoefte aan een plek voor serieuze verzamelaars die kwaliteit boven kwantiteit stellen. Terwijl Foundation de manier waarop kunstenaars en verzamelaars elkaar vinden revolutioneerde, zagen wij de kans om iets nog verfijnders te creëren.",
+    "p2": "Ons platform vormt een zorgvuldig samengestelde uitbreiding van het Foundation-ecosysteem, waarin elke collectie met de hand wordt geselecteerd en elke kunstenaar wordt gescreend. Wij geloven dat digitale kunst dezelfde eerbied en investeringsoverweging verdient als traditionele beeldende kunst.",
+    "p3": "De prijzen die u op Foundation Exclusive ziet, weerspiegelen de werkelijke waarde van uitzonderlijke digitale kunst. Onze verzamelaars begrijpen dat premium werken premium prijzen rechtvaardigen, en onze staat van dienst op het gebied van waardestijging bevestigt deze benadering.",
+    "imageAlt": "Digitale Kunstgalerie",
+    "imageCaption": "Waar uitzonderlijke digitale kunst haar thuis vindt"
+  },
+  "values": {
+    "heading": "Wat Ons Onderscheidt",
+    "subtitle": "Foundation Exclusive is gebouwd op principes die de hoogste standaarden garanderen voor onze community van verzamelaars en makers.",
+    "items": [
+      {
+        "title": "Geverifieerde Authenticiteit",
+        "description": "Elk werk in onze marketplace ondergaat een strenge verificatie om authenticiteit en herkomst te waarborgen."
+      },
+      {
+        "title": "Premium Kwaliteit",
+        "description": "Wij selecteren uitsluitend de beste digitale kunst van gevestigde en opkomende kunstenaars die aan onze hoge standaarden voldoen."
+      },
+      {
+        "title": "Exclusieve Community",
+        "description": "Word lid van een selectief netwerk van verzamelaars, kunstenaars en liefhebbers die een passie voor uitzonderlijke digitale kunst delen."
+      },
+      {
+        "title": "Investeringswaardig",
+        "description": "Onze NFT's zijn geprijsd naar hun werkelijke waarde, met een staat van dienst van waardestijging op de secundaire markt."
+      }
+    ]
+  },
+  "membership": {
+    "heading": "Word Lid van de Exclusieve Community",
+    "text": "Foundation Exclusive is meer dan een marketplace - het is een community van gelijkgestemde individuen die de waarde van uitzonderlijke digitale kunst begrijpen. Onze leden genieten vroegtijdige toegang tot drops, exclusieve evenementen en een netwerk van medeverzamelaars en kunstenaars.",
+    "becomeMember": "Word Lid",
+    "exploreCollections": "Ontdek Collecties"
+  },
+  "cta": {
+    "heading": "Klaar om het Exclusieve te Ervaren?",
+    "text": "Ontdek waarom serieuze verzamelaars voor Foundation Exclusive kiezen voor hun meest waardevolle aankopen.",
+    "viewCollections": "Bekijk Collecties"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "pageTitle": "Explorar",
+  "pageSubtitle": "Descubra coleções exclusivas de artistas digitais de classe mundial",
+  "sort": {
+    "random": "Aleatório",
+    "recentDesc": "Mais Recentes",
+    "volumeDesc": "Maior Volume",
+    "volumeAsc": "Menor Volume",
+    "floorAsc": "Preço Mínimo: Menor para Maior",
+    "floorDesc": "Preço Mínimo: Maior para Menor",
+    "itemsDesc": "Mais Itens"
+  },
+  "newUploads": {
+    "heading": "Novos Envios",
+    "subtitle": "NFTs recentes dos criadores do nosso marketplace",
+    "viewAll": "Ver Todos os Novos Envios ({count})"
+  },
+  "newBadge": "Novo",
+  "price": "Preço",
+  "search": {
+    "collectionsPlaceholder": "Buscar coleções...",
+    "nftsPlaceholder": "Buscar NFTs..."
+  },
+  "viewMode": {
+    "collections": "Ver Coleções",
+    "items": "Ver Itens Individuais"
+  },
+  "filters": "Filtros",
+  "categories": "Categorias",
+  "allCategories": "Todas as Categorias",
+  "all": "Todos",
+  "clearAllFilters": "Limpar Todos os Filtros",
+  "activeFilters": "Filtros ativos:",
+  "searchLabel": "Busca: {query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {Exibindo # coleção} other {Exibindo # coleções}}",
+    "items": "{count, plural, one {Exibindo # NFT} other {Exibindo # NFTs}}"
+  },
+  "noCollectionsFound": "Nenhuma coleção encontrada com esses critérios",
+  "clearFilters": "Limpar Filtros",
+  "itemsCount": "{count, plural, one {# item} other {# itens}}",
+  "floor": "Preço Mínimo",
+  "totalVolume": "Volume Total",
+  "usd": "USD"
+}

@@ -1,0 +1,45 @@
+{
+  "pageTitle": "استكشاف",
+  "pageSubtitle": "اكتشف مجموعات حصرية من فنانين رقميين عالميين",
+  "sort": {
+    "random": "عشوائي",
+    "recentDesc": "الأحدث",
+    "volumeDesc": "الأعلى حجم تداول",
+    "volumeAsc": "الأقل حجم تداول",
+    "floorAsc": "أدنى سعر: من الأقل إلى الأعلى",
+    "floorDesc": "أدنى سعر: من الأعلى إلى الأقل",
+    "itemsDesc": "الأكثر عناصر"
+  },
+  "newUploads": {
+    "heading": "أحدث الإضافات",
+    "subtitle": "أصول رقمية جديدة من مبدعي سوقنا",
+    "viewAll": "عرض كل الإضافات الجديدة ({count})"
+  },
+  "newBadge": "جديد",
+  "price": "السعر",
+  "search": {
+    "collectionsPlaceholder": "ابحث في المجموعات...",
+    "nftsPlaceholder": "ابحث في الأصول الرقمية..."
+  },
+  "viewMode": {
+    "collections": "عرض المجموعات",
+    "items": "عرض العناصر الفردية"
+  },
+  "filters": "التصفية",
+  "categories": "الفئات",
+  "allCategories": "جميع الفئات",
+  "all": "الكل",
+  "clearAllFilters": "مسح جميع الفلاتر",
+  "activeFilters": "الفلاتر النشطة:",
+  "searchLabel": "بحث: {query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {عرض مجموعة #} other {عرض # مجموعة}}",
+    "items": "{count, plural, one {عرض NFT #} other {عرض # NFT}}"
+  },
+  "noCollectionsFound": "لم يتم العثور على مجموعات مطابقة لمعاييرك",
+  "clearFilters": "مسح الفلاتر",
+  "itemsCount": "{count, plural, one {# عنصر} other {# عناصر}}",
+  "floor": "أدنى سعر",
+  "totalVolume": "إجمالي حجم التداول",
+  "usd": "USD"
+}

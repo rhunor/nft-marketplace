@@ -1,0 +1,58 @@
+{
+  "header": {
+    "title": "Nạp Tiền",
+    "subtitle": "Thêm ETH vào ví của bạn để tạo và mua NFT"
+  },
+  "balance": {
+    "label": "Số Dư Hiện Tại",
+    "ethRate": "1 ETH = ${price}",
+    "refreshTitle": "Làm mới giá"
+  },
+  "amount": {
+    "heading": "Chọn Số Lượng",
+    "preset": "{value} ETH",
+    "customLabel": "Số Lượng Tùy Chỉnh (ETH)"
+  },
+  "deposit": {
+    "heading": "Địa Chỉ Nạp Tiền",
+    "qrAlt": "Mã QR Nạp Tiền",
+    "loading": "Đang tải...",
+    "sendTo": "Gửi ETH đến địa chỉ này:",
+    "copied": "Đã sao chép địa chỉ vào bộ nhớ tạm!",
+    "networkWarning": "Chỉ gửi ETH trên mạng Ethereum"
+  },
+  "notice": {
+    "heading": "Thời Gian Xử Lý",
+    "text": "Sau khi gửi thanh toán, cần khoảng <strong>10 phút</strong> để số dư của bạn được cập nhật trong tài khoản. Điều này để đảm bảo thời gian xác nhận trên blockchain và để đội ngũ quản trị của chúng tôi xác minh giao dịch."
+  },
+  "howItWorks": {
+    "heading": "Cách Thức Hoạt Động",
+    "steps": {
+      "select": {
+        "title": "Chọn Số Lượng",
+        "text": "Chọn số lượng ETH bạn muốn nạp vào tài khoản"
+      },
+      "send": {
+        "title": "Gửi Thanh Toán",
+        "text": "Chuyển ETH đến địa chỉ nạp tiền hiển thị phía trên"
+      },
+      "confirm": {
+        "title": "Chờ Xác Nhận",
+        "text": "Số dư của bạn sẽ được cập nhật trong khoảng ~10 phút"
+      },
+      "start": {
+        "title": "Bắt Đầu Tạo & Sưu Tầm",
+        "text": "Sử dụng số dư của bạn để tạo và mua NFT"
+      }
+    }
+  },
+  "action": {
+    "button": "Tôi Đã Gửi {amount} ETH",
+    "help": "Cần trợ giúp? ",
+    "contactSupport": "Liên hệ hỗ trợ"
+  },
+  "notification": {
+    "title": "Hướng Dẫn Thanh Toán",
+    "message": "Gửi {amount} ETH đến địa chỉ hiển thị. Số dư của bạn sẽ được cập nhật trong khoảng ~10 phút sau khi xác nhận."
+  }
+}

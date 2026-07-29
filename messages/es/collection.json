@@ -1,0 +1,24 @@
+{
+  "loading": "Cargando colección...",
+  "notFound": {
+    "heading": "Colección no encontrada",
+    "genericMessage": "La colección que buscas no existe.",
+    "collectionNotFoundError": "Colección no encontrada",
+    "loadFailedError": "No se pudo cargar la colección",
+    "backToExplore": "Volver a Explorar"
+  },
+  "back": "Atrás",
+  "createdBy": "Creado por",
+  "stats": {
+    "items": "Elementos",
+    "floorPrice": "Precio mínimo",
+    "totalVolume": "Volumen total"
+  },
+  "share": "Compartir",
+  "itemsHeading": "Elementos ({count})",
+  "price": "Precio",
+  "empty": {
+    "heading": "Aún no hay elementos",
+    "message": "Esta colección no tiene elementos."
+  }
+}

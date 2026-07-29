@@ -1,0 +1,58 @@
+{
+  "header": {
+    "title": "アカウントに入金",
+    "subtitle": "NFTの作成・購入のためにウォレットにETHを追加します"
+  },
+  "balance": {
+    "label": "現在の残高",
+    "ethRate": "1 ETH = ${price}",
+    "refreshTitle": "価格を更新"
+  },
+  "amount": {
+    "heading": "金額を選択",
+    "preset": "{value} ETH",
+    "customLabel": "カスタム金額 (ETH)"
+  },
+  "deposit": {
+    "heading": "入金アドレス",
+    "qrAlt": "入金用QRコード",
+    "loading": "読み込み中...",
+    "sendTo": "このアドレスにETHを送金してください:",
+    "copied": "アドレスをクリップボードにコピーしました!",
+    "networkWarning": "イーサリアムネットワーク上のETHのみを送金してください"
+  },
+  "notice": {
+    "heading": "処理時間について",
+    "text": "お支払い送金後、残高に反映されるまで約<strong>10分</strong>かかります。これはブロックチェーンの承認と、管理チームによる取引の確認のための時間です。"
+  },
+  "howItWorks": {
+    "heading": "ご利用の流れ",
+    "steps": {
+      "select": {
+        "title": "金額を選択",
+        "text": "アカウントに追加したいETHの金額を選択します"
+      },
+      "send": {
+        "title": "送金する",
+        "text": "上記の入金アドレスにETHを送金します"
+      },
+      "confirm": {
+        "title": "確認をお待ちください",
+        "text": "残高は約10分以内に更新されます"
+      },
+      "start": {
+        "title": "作成・収集を始める",
+        "text": "残高を使ってNFTを作成・購入できます"
+      }
+    }
+  },
+  "action": {
+    "button": "{amount} ETHを送金しました",
+    "help": "お困りですか? ",
+    "contactSupport": "サポートに連絡"
+  },
+  "notification": {
+    "title": "お支払いについて",
+    "message": "表示されたアドレスに{amount} ETHを送金してください。確認後、約10分以内に残高が更新されます。"
+  }
+}

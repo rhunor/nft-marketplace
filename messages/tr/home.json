@@ -1,0 +1,75 @@
+{
+  "metaTitle": "Premium NFT Pazar Yeri",
+  "metaDescription": "Seçkin sanatçılardan özel NFT koleksiyonlarını keşfedin. Foundation Exclusive, yüksek değerli NFT koleksiyoncuları için önde gelen adrestir.",
+  "hero": {
+    "badge": "Foundation'ın Bir Uzantısı",
+    "heading": "<gradient>Ayrıcalıklı</gradient> NFT Koleksiyonlarını Keşfedin",
+    "subtitle": "Foundation Exclusive, yüksek değerli NFT koleksiyoncuları için önde gelen adrestir. Olağanüstü dijital sanatın hak ettiği koleksiyoncularla buluştuğu seçkin bir topluluğa katılın.",
+    "exploreCollections": "Koleksiyonları Keşfedin",
+    "learnMore": "Daha Fazla Bilgi",
+    "imageAlt": "Öne Çıkan NFT {n}",
+    "stats": [
+      {
+        "value": "150+",
+        "label": "Küratörlü Koleksiyon"
+      },
+      {
+        "value": "50+",
+        "label": "Seçkin Sanatçı"
+      },
+      {
+        "value": "$45M+",
+        "label": "Toplam Hacim"
+      }
+    ]
+  },
+  "featured": {
+    "heading": "Öne Çıkan Koleksiyonlar",
+    "subtitle": "Seçkin sanatçılarımızdan özenle seçilmiş koleksiyonlar",
+    "viewAll": "Tümünü Görüntüle",
+    "itemsCount": "{count} öğe",
+    "floor": "Taban"
+  },
+  "aboutBrief": {
+    "heading": "Ayrıcalıklı Topluluk",
+    "text": "Foundation Exclusive, olağanüstü dijital sanatın gerçek değerini anlayan ciddi koleksiyoncular için oluşturulmuş, Foundation'ın bir uzantısıdır. Küratörlü platformumuz, her eserin en yüksek kalite ve özgünlük standartlarını karşılamasını sağlar.",
+    "cta": "Hakkımızda Bilgi Alın"
+  },
+  "categories": {
+    "heading": "Kategoriye Göre Gözat",
+    "subtitle": "Farklı kategorilerdeki koleksiyonları keşfedin"
+  },
+  "moreCollections": {
+    "heading": "Daha Fazla Koleksiyon",
+    "subtitle": "Daha fazla özel koleksiyon keşfedin",
+    "viewAll": "Tümünü Görüntüle"
+  },
+  "features": {
+    "heading": "Neden Foundation Exclusive'ı Seçmelisiniz?",
+    "subtitle": "Premium NFT koleksiyoncuları için en güvenilir platform",
+    "items": [
+      {
+        "title": "Doğrulanmış Özgünlük",
+        "description": "Her eser, özgünlüğünü garanti altına almak için titiz bir doğrulama sürecinden geçer"
+      },
+      {
+        "title": "Premium Kalite",
+        "description": "Dünya standartlarında dijital sanatçılardan küratörlü koleksiyonlar"
+      },
+      {
+        "title": "Seçkin Topluluk",
+        "description": "Ciddi koleksiyonculardan oluşan seçkin bir ağa katılın"
+      },
+      {
+        "title": "Yatırım Değerinde",
+        "description": "Gerçek piyasa değerini yansıtacak şekilde fiyatlandırılmış NFT'ler"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ayrıcalıklı Olmaya Hazır mısınız?",
+    "text": "Foundation Exclusive'ın bir üyesi olun ve premium koleksiyonlara, özel drop'lara ve benzer düşünen koleksiyonculardan oluşan bir topluluğa erişim kazanın.",
+    "becomeMember": "Üye Olun",
+    "exploreCollections": "Koleksiyonları Keşfedin"
+  }
+}

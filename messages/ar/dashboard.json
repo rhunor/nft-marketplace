@@ -1,0 +1,126 @@
+{
+  "loading": "جارٍ تحميل لوحة التحكم...",
+  "avatar": {
+    "invalidType": "يرجى اختيار ملف صورة",
+    "tooLarge": "يجب ألا يتجاوز حجم الصورة 5 ميجابايت",
+    "uploadSuccess": "تم تحديث الصورة الشخصية!",
+    "uploadFailedTitle": "فشل الرفع",
+    "uploadFailedDefault": "حدث خطأ ما",
+    "changePicture": "تغيير الصورة الشخصية"
+  },
+  "welcome": "مرحبًا بعودتك، {name}!",
+  "adminBadge": "مسؤول",
+  "fundAccount": "تمويل الحساب",
+  "createNft": "إنشاء NFT",
+  "stats": {
+    "walletBalance": "رصيد المحفظة",
+    "nftsOwned": "الأصول المملوكة",
+    "nftsCreated": "الأصول المُنشأة",
+    "totalValue": "القيمة الإجمالية"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "استكشف المجموعات",
+      "subtitle": "اكتشف مقتنيات جديدة"
+    },
+    "create": {
+      "title": "إنشاء NFT",
+      "subtitle": "ارفع عملك الفني"
+    },
+    "fund": {
+      "title": "تمويل الحساب",
+      "subtitle": "أضف ETH إلى محفظتك"
+    },
+    "withdraw": {
+      "title": "سحب الأموال",
+      "subtitle": "حوّل الأموال إلى محفظتك"
+    }
+  },
+  "tabs": {
+    "owned": "المملوكة ({count})",
+    "created": "المُنشأة ({count})",
+    "listed": "المعروضة ({count})"
+  },
+  "nftCard": {
+    "created": "تاريخ الإنشاء",
+    "notListed": "غير معروض",
+    "price": "السعر"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "لا تمتلك أي NFT بعد",
+      "text": "ابدأ في جمع أصول رقمية فريدة من سوقنا",
+      "button": "استكشف المجموعات"
+    },
+    "created": {
+      "title": "لم تُنشئ أي NFT بعد",
+      "text": "أنشئ أول NFT خاص بك وشاركه مع العالم",
+      "button": "إنشاء NFT"
+    },
+    "listed": {
+      "title": "لا توجد أصول معروضة",
+      "text": "ليس لديك أي أصول معروضة للبيع"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "سحب الأموال",
+      "fee": "دفع رسوم السحب",
+      "processing": "جارٍ معالجة السحب",
+      "success": "تم السحب بنجاح"
+    },
+    "form": {
+      "availableBalance": "الرصيد المتاح",
+      "walletAddressLabel": "عنوان المحفظة",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "أدخل عنوان محفظة الإيثيريوم الخاصة بك",
+      "amountLabel": "المبلغ (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "الحد الأدنى للسحب: ${minAmount}",
+      "withdrawMax": "سحب الحد الأقصى",
+      "continue": "متابعة"
+    },
+    "errors": {
+      "invalidAddress": "يرجى إدخال عنوان محفظة إيثيريوم صالح (0x...)",
+      "invalidAmount": "يرجى إدخال مبلغ سحب صالح",
+      "minWithdrawal": "الحد الأدنى للسحب هو ${minAmount}",
+      "insufficientBalance": "الرصيد غير كافٍ",
+      "serverError": "خطأ في الخادم. يرجى المحاولة مرة أخرى لاحقًا.",
+      "withdrawalFailed": "فشلت عملية السحب",
+      "invalidResponse": "استجابة غير صالحة من الخادم",
+      "withdrawalFailedRetry": "فشلت عملية السحب. يرجى المحاولة مرة أخرى."
+    },
+    "fee": {
+      "noticeTitle": "رسوم السحب مطلوبة",
+      "noticeText": "لمعالجة عملية السحب الخاصة بك، يرجى إرسال رسوم بنسبة {percent}% ({amount}) إلى عنوان المحفظة أدناه.",
+      "walletLabel": "محفظة السحب الخاصة بك",
+      "withdrawalAmount": "مبلغ السحب",
+      "feeToSend": "الرسوم المطلوب إرسالها ({percent}%)",
+      "youllReceive": "ستحصل على",
+      "sendFeeTo": "أرسل دفعة الرسوم إلى:",
+      "sendExactly": "أرسل {amount} بالضبط إلى هذا العنوان",
+      "qrAlt": "رمز QR لدفع الرسوم",
+      "walletAddressLabel": "عنوان محفظة الرسوم (ETH)",
+      "copyAddress": "نسخ العنوان",
+      "copiedNotification": "تم نسخ العنوان إلى الحافظة",
+      "warning": "بعد إرسال رسوم {feeAmount}، اضغط على \"تأكيد الدفع\" لمعالجة عملية السحب الخاصة بك. سيتم إرسال كامل مبلغ السحب البالغ {receiveAmount} إلى محفظتك.",
+      "back": "رجوع",
+      "confirmPayment": "تأكيد الدفع"
+    },
+    "processing": {
+      "title": "جارٍ معالجة السحب",
+      "text": "يرجى الانتظار بينما نعالج معاملتك..."
+    },
+    "success": {
+      "title": "تم إرسال طلب السحب!",
+      "subtitle": "أموالك في طريقها إلى محفظتك",
+      "transactionId": "معرّف المعاملة",
+      "amountReceived": "المبلغ الذي ستستلمه",
+      "feePaid": "الرسوم المدفوعة",
+      "newBalance": "الرصيد الجديد",
+      "estimatedTime": "الوقت المتوقع للمعالجة",
+      "estimatedTimeValue": "24 إلى 48 ساعة",
+      "done": "تم"
+    }
+  }
+}

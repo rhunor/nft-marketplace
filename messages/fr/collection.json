@@ -1,0 +1,24 @@
+{
+  "loading": "Chargement de la collection...",
+  "notFound": {
+    "heading": "Collection introuvable",
+    "genericMessage": "La collection que vous recherchez n'existe pas.",
+    "collectionNotFoundError": "Collection introuvable",
+    "loadFailedError": "Échec du chargement de la collection",
+    "backToExplore": "Retour à Explorer"
+  },
+  "back": "Retour",
+  "createdBy": "Créée par",
+  "stats": {
+    "items": "Objets",
+    "floorPrice": "Prix plancher",
+    "totalVolume": "Volume total"
+  },
+  "share": "Partager",
+  "itemsHeading": "Objets ({count})",
+  "price": "Prix",
+  "empty": {
+    "heading": "Aucun objet pour le moment",
+    "message": "Cette collection ne contient aucun objet."
+  }
+}

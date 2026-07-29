@@ -1,0 +1,58 @@
+{
+  "header": {
+    "title": "Zasil konto",
+    "subtitle": "Dodaj ETH do swojego portfela, aby tworzyć i kupować NFT"
+  },
+  "balance": {
+    "label": "Aktualne saldo",
+    "ethRate": "1 ETH = {price} $",
+    "refreshTitle": "Odśwież cenę"
+  },
+  "amount": {
+    "heading": "Wybierz kwotę",
+    "preset": "{value} ETH",
+    "customLabel": "Własna kwota (ETH)"
+  },
+  "deposit": {
+    "heading": "Adres depozytowy",
+    "qrAlt": "Kod QR depozytu",
+    "loading": "Ładowanie...",
+    "sendTo": "Wyślij ETH na ten adres:",
+    "copied": "Adres skopiowany do schowka!",
+    "networkWarning": "Wysyłaj ETH wyłącznie w sieci Ethereum"
+  },
+  "notice": {
+    "heading": "Czas przetwarzania",
+    "text": "Po wysłaniu płatności zaktualizowanie salda na Twoim koncie zajmuje około <strong>10 minut</strong>. Czas ten jest potrzebny na potwierdzenia w sieci blockchain oraz weryfikację transakcji przez nasz zespół administracyjny."
+  },
+  "howItWorks": {
+    "heading": "Jak to działa",
+    "steps": {
+      "select": {
+        "title": "Wybierz kwotę",
+        "text": "Wybierz, ile ETH chcesz dodać do swojego konta"
+      },
+      "send": {
+        "title": "Wyślij płatność",
+        "text": "Przelej ETH na adres depozytowy pokazany powyżej"
+      },
+      "confirm": {
+        "title": "Poczekaj na potwierdzenie",
+        "text": "Twoje saldo zostanie zaktualizowane w ciągu ~10 minut"
+      },
+      "start": {
+        "title": "Zacznij tworzyć i kolekcjonować",
+        "text": "Użyj swojego salda, aby tworzyć i kupować NFT"
+      }
+    }
+  },
+  "action": {
+    "button": "Wysłałem/-am {amount} ETH",
+    "help": "Potrzebujesz pomocy? ",
+    "contactSupport": "Skontaktuj się z pomocą"
+  },
+  "notification": {
+    "title": "Instrukcje płatności",
+    "message": "Wyślij {amount} ETH na pokazany adres. Twoje saldo zostanie zaktualizowane w ciągu ~10 minut po potwierdzeniu."
+  }
+}

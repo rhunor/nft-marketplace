@@ -1,0 +1,45 @@
+{
+  "pageTitle": "探索",
+  "pageSubtitle": "世界クラスのデジタルアーティストによる特別なコレクションを発見する",
+  "sort": {
+    "random": "ランダム",
+    "recentDesc": "新着順",
+    "volumeDesc": "取引高が高い順",
+    "volumeAsc": "取引高が低い順",
+    "floorAsc": "フロア価格: 低い順",
+    "floorDesc": "フロア価格: 高い順",
+    "itemsDesc": "アイテム数が多い順"
+  },
+  "newUploads": {
+    "heading": "新着アップロード",
+    "subtitle": "マーケットプレイスのクリエイターによる新着NFT",
+    "viewAll": "新着アップロードをすべて見る ({count})"
+  },
+  "newBadge": "New",
+  "price": "価格",
+  "search": {
+    "collectionsPlaceholder": "コレクションを検索...",
+    "nftsPlaceholder": "NFTを検索..."
+  },
+  "viewMode": {
+    "collections": "コレクション表示",
+    "items": "個別アイテム表示"
+  },
+  "filters": "フィルター",
+  "categories": "カテゴリー",
+  "allCategories": "すべてのカテゴリー",
+  "all": "すべて",
+  "clearAllFilters": "フィルターをすべてクリア",
+  "activeFilters": "適用中のフィルター:",
+  "searchLabel": "検索: {query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {#件のコレクションを表示中} other {#件のコレクションを表示中}}",
+    "items": "{count, plural, one {#件のNFTを表示中} other {#件のNFTを表示中}}"
+  },
+  "noCollectionsFound": "条件に一致するコレクションが見つかりません",
+  "clearFilters": "フィルターをクリア",
+  "itemsCount": "{count, plural, one {#アイテム} other {#アイテム}}",
+  "floor": "フロア価格",
+  "totalVolume": "総取引高",
+  "usd": "USD"
+}

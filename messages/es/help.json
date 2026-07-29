@@ -1,0 +1,162 @@
+{
+  "header": {
+    "heading": "Centro de ayuda",
+    "subtitle": "Todo lo que necesitas saber sobre el uso de Foundation Exclusive"
+  },
+  "topics": {
+    "wallet": { "title": "Billetera y saldo", "description": "Recarga tu cuenta y gestiona tu ETH" },
+    "creating": { "title": "Crear NFT", "description": "Acuña tu primer NFT" },
+    "buying": { "title": "Comprar NFT", "description": "Compra y colecciona NFT" },
+    "withdrawals": { "title": "Retiros", "description": "Retira fondos de tu cuenta" },
+    "security": { "title": "Seguridad", "description": "Mantén tu cuenta segura" },
+    "exploring": { "title": "Explorar NFT", "description": "Navega y descubre colecciones" }
+  },
+  "wallet": {
+    "heading": "Billetera y saldo",
+    "cardHeading": "Cómo recargar tu cuenta",
+    "steps": {
+      "step1": "Inicia sesión y ve a tu <b>Panel</b>",
+      "step2": "Haz clic en <b>\"Recargar cuenta\"</b>",
+      "step3": "Verás un código QR y una dirección de billetera de ETH",
+      "step4": "Envía ETH desde tu billetera externa a esta dirección",
+      "step5": "Espera aproximadamente 10 minutos para que el saldo se actualice"
+    },
+    "notesHeading": "Notas importantes",
+    "notes": [
+      "Envía únicamente ETH (Ethereum) a la dirección proporcionada",
+      "Verifica dos veces la dirección de la billetera antes de enviar",
+      "Conserva el hash de tu transacción como referencia"
+    ]
+  },
+  "creating": {
+    "heading": "Crear NFT",
+    "singleCardHeading": "Cómo crear un NFT individual",
+    "singleSteps": {
+      "step1": "Asegúrate de tener al menos <b>$200 en ETH</b>",
+      "step2": "Ve a la página <b>Crear</b>",
+      "step3": "Selecciona el modo <b>\"NFT individual\"</b>",
+      "step4": "Sube tu archivo multimedia (máx. 100 MB)",
+      "step5": "Completa el título, el precio y la categoría",
+      "step6": "Haz clic en <b>\"Crear NFT\"</b>"
+    },
+    "collectionCardHeading": "Cómo crear una colección",
+    "collectionSteps": {
+      "step1": "Selecciona el modo <b>\"Colección\"</b> en la página Crear",
+      "step2": "Añade el nombre de la colección, la descripción y la imagen de portada",
+      "step3": "Añade entre 2 y 20 elementos a tu colección",
+      "step4": "Establece el precio de la colección (<b>$200 por elemento</b>)"
+    },
+    "feesHeading": "Comisiones de publicación",
+    "feesText": "NFT individual: $200 | Colección: $200 por elemento"
+  },
+  "buying": {
+    "heading": "Comprar NFT",
+    "cardHeading": "Cómo comprar un NFT",
+    "steps": {
+      "step1": "Navega por la página <b>Explorar</b>",
+      "step2": "Usa los filtros para encontrar lo que buscas",
+      "step3": "Haz clic en un NFT para ver los detalles",
+      "step4": "Haz clic en <b>\"Comprar ahora\"</b>",
+      "step5": "Confirma la compra",
+      "step6": "Espera la confirmación del administrador (dentro de las 24 horas)"
+    },
+    "afterHeading": "Después de la compra",
+    "after": [
+      "El NFT aparece en tu Panel bajo \"En propiedad\"",
+      "No hay comisiones adicionales por la compra"
+    ]
+  },
+  "withdrawals": {
+    "heading": "Retiros",
+    "cardHeading": "Cómo retirar fondos",
+    "steps": {
+      "step1": "Ve al <b>Panel</b> y haz clic en <b>\"Retirar\"</b>",
+      "step2": "Introduce la dirección de tu billetera externa de ETH (0x...)",
+      "step3": "Introduce la cantidad a retirar",
+      "step4": "Haz clic en <b>\"Continuar\"</b>",
+      "step5": "Envía la <b>comisión del 10%</b> a la dirección de billetera proporcionada",
+      "step6": "Haz clic en <b>\"Confirmar pago\"</b>",
+      "step7": "El retiro se procesa en <b>24-48 horas</b>"
+    },
+    "infoHeading": "Información importante",
+    "info": [
+      { "label": "Comisión:", "text": "10% (se paga por separado a la billetera de comisiones)" },
+      { "label": "Tiempo de procesamiento:", "text": "24-48 horas" }
+    ],
+    "infoPlain": "Recibes el monto TOTAL del retiro después de pagar la comisión",
+    "feeWarningHeading": "⚠️ Pago de la comisión",
+    "feeWarningText": "La comisión del 10% debe enviarse a nuestra billetera de comisiones <b>antes</b> de que se procese tu retiro. Por ejemplo: retiras 1 ETH → envías 0.1 ETH de comisión → recibes 1 ETH en tu billetera."
+  },
+  "exploring": {
+    "heading": "Explorar NFT",
+    "cardHeading": "Cómo navegar por los NFT",
+    "steps": {
+      "step1": "Ve a la página <b>Explorar</b>",
+      "step2": "Navega por las colecciones o cambia a la vista de elementos",
+      "step3": "Usa la <b>barra de búsqueda</b> para encontrar NFT específicos",
+      "step4": "Filtra por <b>categoría</b>",
+      "step5": "Ordena por volumen, precio mínimo o cantidad de elementos"
+    },
+    "tipsHeading": "Consejos de búsqueda",
+    "tips": [
+      "Busca por título, descripción o nombre del creador",
+      "Usa etiquetas como \"abstracto\", \"espacio\", \"naturaleza\"",
+      "Haz clic en una colección para ver todos sus elementos"
+    ]
+  },
+  "security": {
+    "heading": "Seguridad",
+    "cardHeading": "Cómo mantener tu cuenta segura",
+    "items": [
+      { "label": "Usa una contraseña segura:", "text": "Al menos 8 caracteres" },
+      { "label": "Nunca compartas tu contraseña:", "text": "Nunca te la pediremos" },
+      { "label": "Verifica las direcciones de billetera:", "text": "Revísalas dos veces antes de enviar" },
+      { "label": "Cuidado con las estafas:", "text": "Nunca te escribiremos por mensaje directo para pedir pagos" }
+    ]
+  },
+  "faq": {
+    "heading": "Preguntas frecuentes",
+    "items": [
+      {
+        "question": "¿Qué es un NFT?",
+        "answer": "NFT significa Token No Fungible (Non-Fungible Token). Es un activo digital único almacenado en una blockchain que representa la propiedad de elementos digitales como arte, música, videos y más."
+      },
+      {
+        "question": "¿Cómo creo un NFT?",
+        "answer": "Recarga tu cuenta con al menos $200 en ETH, ve a la página Crear, sube tu archivo, añade los detalles y envía."
+      },
+      {
+        "question": "¿Cuáles son las comisiones?",
+        "answer": "Crear un NFT cuesta $200 por elemento. Comprar NFT solo requiere el precio indicado. Los retiros requieren una comisión del 10% pagada por separado."
+      },
+      {
+        "question": "¿Cuánto tiempo tardan en procesarse las transacciones?",
+        "answer": "Recargas: ~10 minutos. Compras de NFT: dentro de 24 horas. Retiros: 24-48 horas."
+      }
+    ]
+  },
+  "quickRef": {
+    "heading": "Referencia rápida",
+    "processingTimes": {
+      "heading": "Tiempos de procesamiento",
+      "items": ["Actualización de saldo: ~10 minutos", "Compras de NFT: dentro de 24 horas", "Retiros: 24-48 horas"]
+    },
+    "fees": {
+      "heading": "Comisiones",
+      "items": ["Creación de NFT: $200 por elemento", "Compra: solo el precio indicado", "Retiros: 10% (pagado por separado)"]
+    },
+    "formats": {
+      "heading": "Formatos admitidos",
+      "items": ["Imágenes: JPG, PNG, GIF, WEBP", "Video: MP4, WEBM", "Audio: MP3, WAV, OGG"]
+    },
+    "minimums": {
+      "heading": "Cantidades mínimas",
+      "items": ["Precio mínimo de NFT: 0.001 ETH", "Colección: 2-20 elementos"]
+    }
+  },
+  "contactCta": {
+    "heading": "¿Aún tienes preguntas?",
+    "text": "Nuestro equipo de soporte está aquí para ayudarte",
+    "button": "Contactar con soporte"
+  }
+}

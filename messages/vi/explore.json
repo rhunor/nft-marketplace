@@ -1,0 +1,45 @@
+{
+  "pageTitle": "Khám Phá",
+  "pageSubtitle": "Khám phá các bộ sưu tập độc quyền từ những nghệ sĩ số hàng đầu thế giới",
+  "sort": {
+    "random": "Ngẫu Nhiên",
+    "recentDesc": "Mới Nhất",
+    "volumeDesc": "Khối Lượng Cao Nhất",
+    "volumeAsc": "Khối Lượng Thấp Nhất",
+    "floorAsc": "Giá Sàn: Thấp Đến Cao",
+    "floorDesc": "Giá Sàn: Cao Đến Thấp",
+    "itemsDesc": "Nhiều Sản Phẩm Nhất"
+  },
+  "newUploads": {
+    "heading": "Sản Phẩm Mới Tải Lên",
+    "subtitle": "NFT mới từ các nhà sáng tạo trên nền tảng của chúng tôi",
+    "viewAll": "Xem Tất Cả Sản Phẩm Mới ({count})"
+  },
+  "newBadge": "Mới",
+  "price": "Giá",
+  "search": {
+    "collectionsPlaceholder": "Tìm kiếm bộ sưu tập...",
+    "nftsPlaceholder": "Tìm kiếm NFT..."
+  },
+  "viewMode": {
+    "collections": "Xem Bộ Sưu Tập",
+    "items": "Xem Từng Sản Phẩm"
+  },
+  "filters": "Bộ Lọc",
+  "categories": "Danh Mục",
+  "allCategories": "Tất Cả Danh Mục",
+  "all": "Tất Cả",
+  "clearAllFilters": "Xóa Tất Cả Bộ Lọc",
+  "activeFilters": "Bộ lọc đang áp dụng:",
+  "searchLabel": "Tìm kiếm: {query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {Hiển thị # bộ sưu tập} other {Hiển thị # bộ sưu tập}}",
+    "items": "{count, plural, one {Hiển thị # NFT} other {Hiển thị # NFT}}"
+  },
+  "noCollectionsFound": "Không tìm thấy bộ sưu tập nào phù hợp với tiêu chí của bạn",
+  "clearFilters": "Xóa Bộ Lọc",
+  "itemsCount": "{count, plural, one {# sản phẩm} other {# sản phẩm}}",
+  "floor": "Giá Sàn",
+  "totalVolume": "Tổng Khối Lượng",
+  "usd": "USD"
+}

@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "NFTを作成",
+    "subtitle": "あなたのデジタルアートワークをアップロード"
+  },
+  "mode": {
+    "single": {
+      "title": "単体NFT",
+      "subtitle": "1点の作品をアップロード"
+    },
+    "collection": {
+      "title": "コレクション",
+      "subtitle": "一度に2〜20点のアイテム"
+    }
+  },
+  "fee": {
+    "label": "アップロード手数料",
+    "singleDescription": "NFT1点のアップロードにつき200ドル",
+    "collectionDescription": "200ドル × {count}点 = ${total}",
+    "yourBalance": "現在の残高",
+    "insufficientBalance": "残高が不足しています。アカウントに入金してください。"
+  },
+  "notifications": {
+    "invalidFileType": {
+      "title": "無効なファイル形式です",
+      "message": "画像、動画、または音声ファイルをアップロードしてください。"
+    },
+    "fileTooLarge": {
+      "title": "ファイルサイズが大きすぎます",
+      "message": "最大ファイルサイズは100MBです。"
+    },
+    "maxItemsReached": {
+      "title": "上限に達しました",
+      "message": "コレクションには最大20点までしか追加できません。"
+    },
+    "minItemsRequired": {
+      "title": "最低数が必要です",
+      "message": "コレクションには最低2点のアイテムが必要です。"
+    },
+    "noFileSelected": {
+      "title": "ファイルが選択されていません"
+    },
+    "insufficientBalance": {
+      "title": "残高不足",
+      "uploadMessage": "アップロードには{fee}が必要です。",
+      "collectionMessage": "コレクションの作成には{fee}が必要です。"
+    },
+    "nftCreated": {
+      "title": "NFTを作成しました!",
+      "message": "NFTのアップロードが完了しました。"
+    },
+    "uploadFailed": {
+      "title": "アップロードに失敗しました",
+      "defaultMessage": "問題が発生しました。もう一度お試しください。"
+    },
+    "collectionInvalidFileType": {
+      "title": "無効なファイル形式です"
+    },
+    "collectionFileTooLarge": {
+      "title": "ファイルサイズが大きすぎます",
+      "message": "最大100MBです。"
+    },
+    "fillRequiredFields": {
+      "title": "必須項目をすべて入力してください"
+    },
+    "collectionCreated": {
+      "title": "コレクションを作成しました!",
+      "message": "{count}点のアイテムのアップロードが完了しました。"
+    }
+  },
+  "form": {
+    "single": {
+      "mediaLabel": "メディアファイル *",
+      "dragDrop": "ドラッグ&ドロップ、またはクリックしてアップロード",
+      "acceptedTypes": "JPG, PNG, GIF, MP4, MP3 (最大100MB)",
+      "titleLabel": "タイトル *",
+      "titlePlaceholder": "NFTのタイトル",
+      "priceLabel": "価格 (ETH) *",
+      "pricePlaceholder": "0.1",
+      "categoryLabel": "カテゴリー *",
+      "tagsLabel": "タグ (最大10個)",
+      "tagsPlaceholder": "タグを追加",
+      "addTag": "追加",
+      "submit": "NFTを作成",
+      "submitting": "アップロード中...",
+      "priceError": "価格は0より大きい値を入力してください"
+    },
+    "collection": {
+      "detailsHeading": "コレクション詳細",
+      "nameLabel": "コレクション名 *",
+      "namePlaceholder": "マイコレクション",
+      "descriptionLabel": "説明 *",
+      "descriptionPlaceholder": "コレクションについて説明してください...",
+      "categoryLabel": "カテゴリー *",
+      "priceLabel": "コレクション価格 (ETH) *",
+      "pricePlaceholder": "0.5",
+      "pricePerItemHint": "1点あたりの価格: {price}",
+      "itemsHeading": "アイテム ({count})",
+      "addItem": "追加",
+      "itemLabel": "アイテム {number}",
+      "itemUploadPrompt": "クリックしてアップロード",
+      "itemTitleLabel": "タイトル *",
+      "itemTitlePlaceholder": "アイテムのタイトル",
+      "requiredError": "必須項目です",
+      "priceError": "コレクション価格は0より大きい値を入力してください",
+      "submit": "コレクションを作成 ({count}点)",
+      "submitting": "コレクションを作成中..."
+    }
+  }
+}

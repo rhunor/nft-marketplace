@@ -1,0 +1,24 @@
+{
+  "loading": "コレクションを読み込み中...",
+  "notFound": {
+    "heading": "コレクションが見つかりません",
+    "genericMessage": "お探しのコレクションは存在しません。",
+    "collectionNotFoundError": "コレクションが見つかりません",
+    "loadFailedError": "コレクションの読み込みに失敗しました",
+    "backToExplore": "探索に戻る"
+  },
+  "back": "戻る",
+  "createdBy": "作成者",
+  "stats": {
+    "items": "アイテム数",
+    "floorPrice": "フロア価格",
+    "totalVolume": "総取引高"
+  },
+  "share": "シェア",
+  "itemsHeading": "アイテム ({count})",
+  "price": "価格",
+  "empty": {
+    "heading": "まだアイテムがありません",
+    "message": "このコレクションにはアイテムがありません。"
+  }
+}

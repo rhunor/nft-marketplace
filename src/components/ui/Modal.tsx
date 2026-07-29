@@ -2,6 +2,7 @@
 
 import { useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -141,6 +142,8 @@ export function Notification({
   onClose,
   duration = 5000,
 }: NotificationProps) {
+  const t = useTranslations('common.modal');
+
   useEffect(() => {
     if (isVisible && duration > 0) {
       const timer = setTimeout(onClose, duration);
@@ -221,7 +224,7 @@ export function Notification({
               {/* Close */}
               <button
                 onClick={onClose}
-                aria-label="Dismiss"
+                aria-label={t('dismiss')}
                 className="shrink-0 rounded-lg p-1 text-foreground-subtle transition-colors hover:bg-white/10 hover:text-foreground"
               >
                 <X className="h-4 w-4" />

@@ -1,0 +1,162 @@
+{
+  "header": {
+    "heading": "Help Center",
+    "subtitle": "Everything you need to know about using Foundation Exclusive"
+  },
+  "topics": {
+    "wallet": { "title": "Wallet & Balance", "description": "Fund your account and manage ETH" },
+    "creating": { "title": "Creating NFTs", "description": "Mint your first NFT" },
+    "buying": { "title": "Buying NFTs", "description": "Purchase and collect NFTs" },
+    "withdrawals": { "title": "Withdrawals", "description": "Withdraw funds from your account" },
+    "security": { "title": "Security", "description": "Keep your account safe" },
+    "exploring": { "title": "Exploring NFTs", "description": "Browse and discover collections" }
+  },
+  "wallet": {
+    "heading": "Wallet & Balance",
+    "cardHeading": "How to Fund Your Account",
+    "steps": {
+      "step1": "Log in and go to your <b>Dashboard</b>",
+      "step2": "Click <b>\"Fund Account\"</b>",
+      "step3": "You'll see a QR code and ETH wallet address",
+      "step4": "Send ETH from your external wallet to this address",
+      "step5": "Wait ~10 minutes for balance to update"
+    },
+    "notesHeading": "Important Notes",
+    "notes": [
+      "Only send ETH (Ethereum) to the provided address",
+      "Double-check the wallet address before sending",
+      "Keep your transaction hash for reference"
+    ]
+  },
+  "creating": {
+    "heading": "Creating NFTs",
+    "singleCardHeading": "How to Create a Single NFT",
+    "singleSteps": {
+      "step1": "Ensure you have at least <b>$200 worth of ETH</b>",
+      "step2": "Go to <b>Create</b> page",
+      "step3": "Select <b>\"Single NFT\"</b> mode",
+      "step4": "Upload your media file (max 100MB)",
+      "step5": "Fill in title, price, and category",
+      "step6": "Click <b>\"Create NFT\"</b>"
+    },
+    "collectionCardHeading": "How to Create a Collection",
+    "collectionSteps": {
+      "step1": "Select <b>\"Collection\"</b> mode on Create page",
+      "step2": "Add collection name, description, and cover image",
+      "step3": "Add 2-20 items to your collection",
+      "step4": "Set the collection price (<b>$200 per item</b>)"
+    },
+    "feesHeading": "Upload Fees",
+    "feesText": "Single NFT: $200 | Collection: $200 per item"
+  },
+  "buying": {
+    "heading": "Buying NFTs",
+    "cardHeading": "How to Purchase an NFT",
+    "steps": {
+      "step1": "Browse the <b>Explore</b> page",
+      "step2": "Use filters to find what you want",
+      "step3": "Click on an NFT to view details",
+      "step4": "Click <b>\"Buy Now\"</b>",
+      "step5": "Confirm the purchase",
+      "step6": "Wait for admin confirmation (within 24 hours)"
+    },
+    "afterHeading": "After Purchase",
+    "after": [
+      "NFT appears in your Dashboard under \"Owned\"",
+      "No additional fees for purchasing"
+    ]
+  },
+  "withdrawals": {
+    "heading": "Withdrawals",
+    "cardHeading": "How to Withdraw Funds",
+    "steps": {
+      "step1": "Go to <b>Dashboard</b> and click <b>\"Withdraw\"</b>",
+      "step2": "Enter your external ETH wallet address (0x...)",
+      "step3": "Enter the withdrawal amount",
+      "step4": "Click <b>\"Continue\"</b>",
+      "step5": "Send the <b>10% fee</b> to the provided wallet address",
+      "step6": "Click <b>\"Confirm Payment\"</b>",
+      "step7": "Withdrawal processed in <b>24-48 hours</b>"
+    },
+    "infoHeading": "Important Information",
+    "info": [
+      { "label": "Fee:", "text": "10% (paid separately to fee wallet)" },
+      { "label": "Processing time:", "text": "24-48 hours" }
+    ],
+    "infoPlain": "You receive the FULL withdrawal amount after paying the fee",
+    "feeWarningHeading": "⚠️ Fee Payment",
+    "feeWarningText": "The 10% fee must be sent to our fee wallet <b>before</b> your withdrawal is processed. For example: withdraw 1 ETH → send 0.1 ETH fee → receive 1 ETH to your wallet."
+  },
+  "exploring": {
+    "heading": "Exploring NFTs",
+    "cardHeading": "How to Browse NFTs",
+    "steps": {
+      "step1": "Go to <b>Explore</b> page",
+      "step2": "Browse collections or switch to items view",
+      "step3": "Use the <b>search bar</b> to find specific NFTs",
+      "step4": "Filter by <b>category</b>",
+      "step5": "Sort by volume, floor price, or items"
+    },
+    "tipsHeading": "Search Tips",
+    "tips": [
+      "Search by title, description, or creator name",
+      "Use tags like \"abstract\", \"space\", \"nature\"",
+      "Click on a collection to view all items"
+    ]
+  },
+  "security": {
+    "heading": "Security",
+    "cardHeading": "Keeping Your Account Safe",
+    "items": [
+      { "label": "Use a strong password:", "text": "At least 8 characters" },
+      { "label": "Never share your password:", "text": "We will never ask for it" },
+      { "label": "Verify wallet addresses:", "text": "Double-check before sending" },
+      { "label": "Beware of scams:", "text": "We never DM asking for payments" }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What is an NFT?",
+        "answer": "NFT stands for Non-Fungible Token. It's a unique digital asset stored on a blockchain that represents ownership of digital items like art, music, videos, and more."
+      },
+      {
+        "question": "How do I create an NFT?",
+        "answer": "Fund your account with at least $200 worth of ETH, go to the Create page, upload your file, add details, and submit."
+      },
+      {
+        "question": "What are the fees?",
+        "answer": "Creating an NFT costs $200 per item. Purchasing NFTs only requires the listed price. Withdrawals require a 10% fee paid separately."
+      },
+      {
+        "question": "How long does it take to process transactions?",
+        "answer": "Funding: ~10 minutes. NFT purchases: Within 24 hours. Withdrawals: 24-48 hours."
+      }
+    ]
+  },
+  "quickRef": {
+    "heading": "Quick Reference",
+    "processingTimes": {
+      "heading": "Processing Times",
+      "items": ["Balance updates: ~10 minutes", "NFT purchases: Within 24 hours", "Withdrawals: 24-48 hours"]
+    },
+    "fees": {
+      "heading": "Fees",
+      "items": ["NFT creation: $200 per item", "Purchasing: Listed price only", "Withdrawals: 10% (paid separately)"]
+    },
+    "formats": {
+      "heading": "Supported Formats",
+      "items": ["Images: JPG, PNG, GIF, WEBP", "Video: MP4, WEBM", "Audio: MP3, WAV, OGG"]
+    },
+    "minimums": {
+      "heading": "Minimum Amounts",
+      "items": ["Min NFT price: 0.001 ETH", "Collection: 2-20 items"]
+    }
+  },
+  "contactCta": {
+    "heading": "Still Have Questions?",
+    "text": "Our support team is here to help you",
+    "button": "Contact Support"
+  }
+}

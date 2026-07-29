@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { NFTCard } from './NFTCard';
 import { NFTCardSkeleton } from '@/components/ui';
 import type { SampleNFT } from '@/lib/db/seed-data';
@@ -14,9 +15,11 @@ interface NFTGridProps {
 export function NFTGrid({
   nfts,
   isLoading = false,
-  emptyMessage = 'No NFTs found',
+  emptyMessage,
   columns = 3,
 }: NFTGridProps) {
+  const t = useTranslations('common.nftGrid');
+  const resolvedEmptyMessage = emptyMessage ?? t('emptyMessage');
   const columnClasses = {
     2: 'grid-cols-1 sm:grid-cols-2',
     3: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
@@ -36,7 +39,7 @@ export function NFTGrid({
   if (nfts.length === 0) {
     return (
       <div className="flex min-h-[300px] flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-background-secondary/50 p-8 text-center">
-        <p className="text-lg text-foreground-muted">{emptyMessage}</p>
+        <p className="text-lg text-foreground-muted">{resolvedEmptyMessage}</p>
       </div>
     );
   }

@@ -1,0 +1,75 @@
+{
+  "metaTitle": "Premium rynek NFT",
+  "metaDescription": "Odkrywaj ekskluzywne kolekcje NFT od elitarnych artystów. Foundation Exclusive to wiodące miejsce dla kolekcjonerów NFT o wysokiej wartości.",
+  "hero": {
+    "badge": "Rozszerzenie Foundation",
+    "heading": "Odkryj <gradient>ekskluzywne</gradient> kolekcje NFT",
+    "subtitle": "Foundation Exclusive to wiodące miejsce dla kolekcjonerów NFT o wysokiej wartości. Dołącz do ekskluzywnej społeczności, w której wyjątkowa sztuka cyfrowa trafia do właściwych kolekcjonerów.",
+    "exploreCollections": "Przeglądaj kolekcje",
+    "learnMore": "Dowiedz się więcej",
+    "imageAlt": "Wyróżniony NFT {n}",
+    "stats": [
+      {
+        "value": "150+",
+        "label": "Wyselekcjonowanych kolekcji"
+      },
+      {
+        "value": "50+",
+        "label": "Elitarnych artystów"
+      },
+      {
+        "value": "45 mln $+",
+        "label": "Łączny wolumen"
+      }
+    ]
+  },
+  "featured": {
+    "heading": "Wyróżnione kolekcje",
+    "subtitle": "Starannie wybrane kolekcje od naszych ekskluzywnych artystów",
+    "viewAll": "Zobacz wszystkie",
+    "itemsCount": "{count} przedmiotów",
+    "floor": "Cena minimalna"
+  },
+  "aboutBrief": {
+    "heading": "Ekskluzywna społeczność",
+    "text": "Foundation Exclusive to rozszerzenie Foundation stworzone dla poważnych kolekcjonerów, którzy rozumieją prawdziwą wartość wyjątkowej sztuki cyfrowej. Nasza kuratorowana platforma zapewnia, że każde dzieło spełnia najwyższe standardy jakości i autentyczności.",
+    "cta": "Dowiedz się więcej o nas"
+  },
+  "categories": {
+    "heading": "Przeglądaj według kategorii",
+    "subtitle": "Odkrywaj kolekcje w różnych kategoriach"
+  },
+  "moreCollections": {
+    "heading": "Więcej kolekcji",
+    "subtitle": "Odkryj więcej ekskluzywnych kolekcji",
+    "viewAll": "Zobacz wszystkie"
+  },
+  "features": {
+    "heading": "Dlaczego warto wybrać Foundation Exclusive?",
+    "subtitle": "Najbardziej zaufana platforma dla kolekcjonerów NFT premium",
+    "items": [
+      {
+        "title": "Zweryfikowana autentyczność",
+        "description": "Każde dzieło przechodzi rygorystyczną weryfikację autentyczności"
+      },
+      {
+        "title": "Najwyższa jakość",
+        "description": "Kuratorowane kolekcje od artystów cyfrowych światowej klasy"
+      },
+      {
+        "title": "Ekskluzywna społeczność",
+        "description": "Dołącz do selektywnej sieci poważnych kolekcjonerów"
+      },
+      {
+        "title": "Klasa inwestycyjna",
+        "description": "NFT wyceniane tak, aby odzwierciedlać ich prawdziwą wartość rynkową"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Gotowy dołączyć do ekskluzywnej społeczności?",
+    "text": "Zostań członkiem Foundation Exclusive i zyskaj dostęp do kolekcji premium, ekskluzywnych premier oraz społeczności podobnie myślących kolekcjonerów.",
+    "becomeMember": "Zostań członkiem",
+    "exploreCollections": "Przeglądaj kolekcje"
+  }
+}

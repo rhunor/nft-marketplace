@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "Create NFT",
+    "subtitle": "Upload your digital artwork"
+  },
+  "mode": {
+    "single": {
+      "title": "Single NFT",
+      "subtitle": "Upload one artwork"
+    },
+    "collection": {
+      "title": "Collection",
+      "subtitle": "2-20 items at once"
+    }
+  },
+  "fee": {
+    "label": "Upload Fee",
+    "singleDescription": "$200 per NFT upload",
+    "collectionDescription": "$200 × {count} items = ${total}",
+    "yourBalance": "Your Balance",
+    "insufficientBalance": "Insufficient balance. Please fund your account."
+  },
+  "notifications": {
+    "invalidFileType": {
+      "title": "Invalid file type",
+      "message": "Please upload an image, video, or audio file."
+    },
+    "fileTooLarge": {
+      "title": "File too large",
+      "message": "Maximum file size is 100MB."
+    },
+    "maxItemsReached": {
+      "title": "Maximum reached",
+      "message": "A collection can have at most 20 items."
+    },
+    "minItemsRequired": {
+      "title": "Minimum required",
+      "message": "A collection must have at least 2 items."
+    },
+    "noFileSelected": {
+      "title": "No file selected"
+    },
+    "insufficientBalance": {
+      "title": "Insufficient Balance",
+      "uploadMessage": "Need {fee} to upload.",
+      "collectionMessage": "Need {fee} to create collection."
+    },
+    "nftCreated": {
+      "title": "NFT Created!",
+      "message": "Your NFT has been uploaded successfully."
+    },
+    "uploadFailed": {
+      "title": "Upload Failed",
+      "defaultMessage": "Something went wrong. Please try again."
+    },
+    "collectionInvalidFileType": {
+      "title": "Invalid file type"
+    },
+    "collectionFileTooLarge": {
+      "title": "File too large",
+      "message": "Maximum 100MB."
+    },
+    "fillRequiredFields": {
+      "title": "Please fill all required fields"
+    },
+    "collectionCreated": {
+      "title": "Collection Created!",
+      "message": "{count} items uploaded successfully."
+    }
+  },
+  "form": {
+    "single": {
+      "mediaLabel": "Media File *",
+      "dragDrop": "Drag and drop or click to upload",
+      "acceptedTypes": "JPG, PNG, GIF, MP4, MP3 (Max 100MB)",
+      "titleLabel": "Title *",
+      "titlePlaceholder": "NFT title",
+      "priceLabel": "Price (ETH) *",
+      "pricePlaceholder": "0.1",
+      "categoryLabel": "Category *",
+      "tagsLabel": "Tags (up to 10)",
+      "tagsPlaceholder": "Add tag",
+      "addTag": "Add",
+      "submit": "Create NFT",
+      "submitting": "Uploading...",
+      "priceError": "Price must be greater than 0"
+    },
+    "collection": {
+      "detailsHeading": "Collection Details",
+      "nameLabel": "Collection Name *",
+      "namePlaceholder": "My Collection",
+      "descriptionLabel": "Description *",
+      "descriptionPlaceholder": "Describe your collection...",
+      "categoryLabel": "Category *",
+      "priceLabel": "Collection Price (ETH) *",
+      "pricePlaceholder": "0.5",
+      "pricePerItemHint": "Price per item: {price}",
+      "itemsHeading": "Items ({count})",
+      "addItem": "Add",
+      "itemLabel": "Item {number}",
+      "itemUploadPrompt": "Click to upload",
+      "itemTitleLabel": "Title *",
+      "itemTitlePlaceholder": "Item title",
+      "requiredError": "Required",
+      "priceError": "Collection price must be greater than 0",
+      "submit": "Create Collection ({count} items)",
+      "submitting": "Creating Collection..."
+    }
+  }
+}

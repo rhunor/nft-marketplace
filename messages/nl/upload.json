@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "NFT Creëren",
+    "subtitle": "Upload uw digitale kunstwerk"
+  },
+  "mode": {
+    "single": {
+      "title": "Enkele NFT",
+      "subtitle": "Upload één kunstwerk"
+    },
+    "collection": {
+      "title": "Collectie",
+      "subtitle": "2-20 items tegelijk"
+    }
+  },
+  "fee": {
+    "label": "Uploadkosten",
+    "singleDescription": "$200 per NFT-upload",
+    "collectionDescription": "$200 × {count} items = ${total}",
+    "yourBalance": "Uw Saldo",
+    "insufficientBalance": "Onvoldoende saldo. Waardeer uw account op."
+  },
+  "notifications": {
+    "invalidFileType": {
+      "title": "Ongeldig bestandstype",
+      "message": "Upload een afbeeldings-, video- of audiobestand."
+    },
+    "fileTooLarge": {
+      "title": "Bestand te groot",
+      "message": "Maximale bestandsgrootte is 100MB."
+    },
+    "maxItemsReached": {
+      "title": "Maximum bereikt",
+      "message": "Een collectie kan maximaal 20 items bevatten."
+    },
+    "minItemsRequired": {
+      "title": "Minimum vereist",
+      "message": "Een collectie moet minimaal 2 items bevatten."
+    },
+    "noFileSelected": {
+      "title": "Geen bestand geselecteerd"
+    },
+    "insufficientBalance": {
+      "title": "Onvoldoende Saldo",
+      "uploadMessage": "{fee} nodig om te uploaden.",
+      "collectionMessage": "{fee} nodig om collectie te creëren."
+    },
+    "nftCreated": {
+      "title": "NFT Gemaakt!",
+      "message": "Uw NFT is succesvol geüpload."
+    },
+    "uploadFailed": {
+      "title": "Uploaden Mislukt",
+      "defaultMessage": "Er is iets misgegaan. Probeer het opnieuw."
+    },
+    "collectionInvalidFileType": {
+      "title": "Ongeldig bestandstype"
+    },
+    "collectionFileTooLarge": {
+      "title": "Bestand te groot",
+      "message": "Maximaal 100MB."
+    },
+    "fillRequiredFields": {
+      "title": "Vul alle verplichte velden in"
+    },
+    "collectionCreated": {
+      "title": "Collectie Gemaakt!",
+      "message": "{count} items succesvol geüpload."
+    }
+  },
+  "form": {
+    "single": {
+      "mediaLabel": "Mediabestand *",
+      "dragDrop": "Sleep en zet neer of klik om te uploaden",
+      "acceptedTypes": "JPG, PNG, GIF, MP4, MP3 (Max. 100MB)",
+      "titleLabel": "Titel *",
+      "titlePlaceholder": "NFT-titel",
+      "priceLabel": "Prijs (ETH) *",
+      "pricePlaceholder": "0.1",
+      "categoryLabel": "Categorie *",
+      "tagsLabel": "Tags (tot 10)",
+      "tagsPlaceholder": "Tag toevoegen",
+      "addTag": "Toevoegen",
+      "submit": "NFT Creëren",
+      "submitting": "Uploaden...",
+      "priceError": "Prijs moet groter zijn dan 0"
+    },
+    "collection": {
+      "detailsHeading": "Collectiedetails",
+      "nameLabel": "Collectienaam *",
+      "namePlaceholder": "Mijn Collectie",
+      "descriptionLabel": "Beschrijving *",
+      "descriptionPlaceholder": "Beschrijf uw collectie...",
+      "categoryLabel": "Categorie *",
+      "priceLabel": "Collectieprijs (ETH) *",
+      "pricePlaceholder": "0.5",
+      "pricePerItemHint": "Prijs per item: {price}",
+      "itemsHeading": "Items ({count})",
+      "addItem": "Toevoegen",
+      "itemLabel": "Item {number}",
+      "itemUploadPrompt": "Klik om te uploaden",
+      "itemTitleLabel": "Titel *",
+      "itemTitlePlaceholder": "Itemtitel",
+      "requiredError": "Verplicht",
+      "priceError": "Collectieprijs moet groter zijn dan 0",
+      "submit": "Collectie Creëren ({count} items)",
+      "submitting": "Collectie Wordt Gemaakt..."
+    }
+  }
+}

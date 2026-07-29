@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { ImageOff } from 'lucide-react';
 
 interface NFTImageProps {
@@ -23,6 +24,7 @@ export function NFTImage({
   className = '',
   priority = false,
 }: NFTImageProps) {
+  const t = useTranslations('common.nftImage');
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -31,7 +33,7 @@ export function NFTImage({
       <div className={`flex items-center justify-center bg-background-secondary ${className}`}>
         <div className="flex flex-col items-center text-foreground-muted">
           <ImageOff className="h-8 w-8 mb-2" />
-          <span className="text-xs">Image unavailable</span>
+          <span className="text-xs">{t('unavailable')}</span>
         </div>
       </div>
     );

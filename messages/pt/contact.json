@@ -1,0 +1,58 @@
+{
+  "header": {
+    "heading": "Fale Conosco",
+    "subtitle": "Tem uma pergunta ou precisa de ajuda? Estamos aqui para você."
+  },
+  "subjectOptions": {
+    "general": "Dúvida Geral",
+    "support": "Suporte Técnico",
+    "billing": "Cobrança e Pagamentos",
+    "partnership": "Parceria",
+    "bug": "Relatar um Erro",
+    "feature": "Solicitar Funcionalidade",
+    "other": "Outro"
+  },
+  "info": {
+    "email": {
+      "title": "E-mail",
+      "subtitle": "Para dúvidas gerais"
+    },
+    "liveChat": {
+      "title": "Chat ao Vivo",
+      "value": "Disponível 24/7",
+      "subtitle": "Tempo de resposta rápido"
+    },
+    "responseTime": {
+      "title": "Tempo de Resposta",
+      "value": "Em até 24-48 horas",
+      "subtitle": "Dias úteis"
+    },
+    "office": {
+      "title": "Escritório",
+      "line1": "11420 Santa Monica Boulevard",
+      "line2": "Post Office Box 252111",
+      "line3": "Los Angeles, CA 90025"
+    }
+  },
+  "form": {
+    "heading": "Envie-nos uma mensagem",
+    "nameLabel": "Seu Nome",
+    "namePlaceholder": "João da Silva",
+    "emailLabel": "Endereço de E-mail",
+    "emailPlaceholder": "voce@exemplo.com",
+    "subjectLabel": "Assunto",
+    "subjectPlaceholder": "Selecione um tópico",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Como podemos ajudar?",
+    "submit": "Enviar Mensagem"
+  },
+  "success": {
+    "heading": "Mensagem Enviada com Sucesso!",
+    "text": "Obrigado por entrar em contato. Nossa equipe analisará sua mensagem e retornará em até 24-48 horas.",
+    "sendAnother": "Enviar Outra Mensagem"
+  },
+  "notification": {
+    "title": "Mensagem Enviada!",
+    "message": "Retornaremos em até 24-48 horas."
+  }
+}

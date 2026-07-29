@@ -1,0 +1,24 @@
+{
+  "loading": "컬렉션을 불러오는 중...",
+  "notFound": {
+    "heading": "컬렉션을 찾을 수 없습니다",
+    "genericMessage": "찾으시는 컬렉션이 존재하지 않습니다.",
+    "collectionNotFoundError": "컬렉션을 찾을 수 없습니다",
+    "loadFailedError": "컬렉션을 불러오지 못했습니다",
+    "backToExplore": "둘러보기로 돌아가기"
+  },
+  "back": "뒤로",
+  "createdBy": "제작자",
+  "stats": {
+    "items": "아이템",
+    "floorPrice": "최저가",
+    "totalVolume": "총 거래량"
+  },
+  "share": "공유",
+  "itemsHeading": "아이템 ({count})",
+  "price": "가격",
+  "empty": {
+    "heading": "아이템이 없습니다",
+    "message": "이 컬렉션에는 아이템이 없습니다."
+  }
+}

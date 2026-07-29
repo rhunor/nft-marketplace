@@ -1,0 +1,156 @@
+{
+  "detail": {
+    "loading": "Memuat NFT...",
+    "notFound": {
+      "heading": "NFT Tidak Ditemukan",
+      "genericMessage": "NFT yang Anda cari tidak ada atau telah dihapus.",
+      "browseButton": "Telusuri NFT"
+    },
+    "back": "Kembali",
+    "share": "Bagikan",
+    "translated": {
+      "badge": "Terjemahan mesin",
+      "showOriginal": "Tampilkan asli",
+      "showTranslation": "Tampilkan terjemahan"
+    },
+    "badges": {
+      "notForSale": "Tidak Dijual",
+      "youOwnThis": "Anda Memiliki Ini",
+      "marketplaceNft": "NFT Marketplace",
+      "you": "(Anda)"
+    },
+    "creator": "Kreator",
+    "owner": "Pemilik",
+    "price": {
+      "current": "Harga Saat Ini",
+      "insufficientBalance": "Saldo tidak mencukupi",
+      "buyNow": "Beli Sekarang",
+      "manageNft": "Kelola NFT",
+      "exportNft": "Ekspor NFT"
+    },
+    "description": "Deskripsi",
+    "tags": "Tag",
+    "details": {
+      "heading": "Detail",
+      "tokenId": "ID Token",
+      "blockchain": "Blockchain",
+      "ethereum": "Ethereum",
+      "mediaType": "Jenis Media",
+      "created": "Dibuat"
+    },
+    "related": {
+      "title": "Lainnya dari kategori ini",
+      "subtitle": "Jelajahi lebih banyak NFT {category}"
+    },
+    "buyModal": {
+      "title": "Konfirmasi Pembelian",
+      "by": "oleh @{username}",
+      "price": "Harga",
+      "platformFee": "Biaya Platform (2,5%)",
+      "gasFee": "Biaya Gas (perkiraan)",
+      "total": "Total",
+      "yourBalance": "Saldo Anda",
+      "insufficientBalanceWarning": "Saldo tidak mencukupi. Silakan isi saldo akun Anda.",
+      "immediateTransferNote": "Kepemilikan akan ditransfer segera setelah konfirmasi.",
+      "adminTransferNote": "Setelah pembelian, transfer kepemilikan akan diproses oleh tim admin kami dalam 24 jam.",
+      "cancel": "Batal",
+      "confirm": "Konfirmasi Pembelian"
+    },
+    "manageModal": {
+      "title": "Kelola NFT",
+      "statusListed": "Status: Terdaftar",
+      "statusNotListed": "Status: Tidak Terdaftar",
+      "priceLabel": "Harga (ETH)",
+      "pricePlaceholder": "0.1",
+      "listForSale": "Daftarkan untuk Dijual",
+      "updatePrice": "Perbarui Harga",
+      "unlist": "Hapus dari Marketplace",
+      "cancel": "Batal"
+    },
+    "notifications": {
+      "addedToFavorites": "Ditambahkan ke favorit",
+      "removedFromFavorites": "Dihapus dari favorit",
+      "likeUpdateFailed": "Gagal memperbarui suka",
+      "purchaseSuccessTitle": "Pembelian Berhasil!",
+      "purchaseSuccessMessage": "Anda sekarang adalah pemilik NFT ini.",
+      "purchaseFailedTitle": "Pembelian Gagal",
+      "genericError": "Terjadi kesalahan",
+      "purchaseSubmittedTitle": "Permintaan Pembelian Terkirim!",
+      "purchaseSubmittedMessage": "Pembelian Anda sedang diproses. Kepemilikan akan ditransfer setelah konfirmasi admin.",
+      "linkCopied": "Tautan disalin ke clipboard!",
+      "copyFailed": "Gagal menyalin tautan",
+      "invalidPrice": "Silakan masukkan harga yang valid",
+      "listedTitle": "NFT Terdaftar!",
+      "listedMessage": "NFT Anda sekarang tersedia di marketplace.",
+      "listFailedTitle": "Gagal mendaftarkan NFT",
+      "unlistedTitle": "NFT Dihapus dari Daftar",
+      "unlistedMessage": "NFT Anda telah dihapus dari marketplace.",
+      "unlistFailedTitle": "Gagal menghapus NFT dari daftar",
+      "priceUpdatedTitle": "Harga Diperbarui!",
+      "priceUpdatedMessage": "Harga baru: {price} ETH",
+      "priceUpdateFailedTitle": "Gagal memperbarui harga"
+    },
+    "errors": {
+      "fetchFailed": "Gagal mengambil data NFT",
+      "notFoundError": "NFT tidak ditemukan",
+      "loadFailed": "Gagal memuat NFT"
+    }
+  },
+  "export": {
+    "cannotExport": "NFT ini tidak dapat diekspor.",
+    "loadFailed": "Gagal memuat NFT",
+    "fetchFailed": "Gagal mengambil data NFT",
+    "loading": "Memuat NFT...",
+    "cannotExportHeading": "Tidak Dapat Mengekspor NFT",
+    "nftNotFound": "NFT tidak ditemukan.",
+    "browseButton": "Telusuri NFT",
+    "accessDenied": {
+      "heading": "Akses Ditolak",
+      "message": "Hanya pemilik NFT ini yang dapat mengekspornya.",
+      "backButton": "Kembali ke NFT"
+    },
+    "back": "Kembali",
+    "heading": "Ekspor NFT",
+    "subheading": "Ekspor NFT Anda ke dompet pribadi Anda",
+    "by": "oleh @{username}",
+    "fee": {
+      "heading": "Biaya Ekspor",
+      "amountLabel": "Jumlah yang dikirim",
+      "loadingAmount": "Memuat...",
+      "approxUsd": "≈ ${amount} USD",
+      "note": "Biaya sekali bayar ini mencakup biaya gas dan pemrosesan yang diperlukan untuk mengekspor NFT Anda ke dompet eksternal."
+    },
+    "payment": {
+      "heading": "Kirim Pembayaran Ke",
+      "instruction": "Transfer tepat",
+      "instructionSuffix": "ke alamat Ethereum di bawah ini:",
+      "copyAddress": "Salin alamat",
+      "addressCopied": "Alamat disalin ke clipboard!",
+      "networkWarning": "Hanya kirim ETH di jaringan Ethereum"
+    },
+    "processing": {
+      "heading": "Waktu Pemrosesan",
+      "message": "Setelah pembayaran dikonfirmasi, ekspor NFT Anda akan diproses dalam {hours}. Berkas yang diekspor akan dikirim ke alamat email terdaftar Anda.",
+      "hours": "24 jam"
+    },
+    "steps": {
+      "heading": "Cara Kerja",
+      "step1": { "title": "Salin alamat dompet di atas", "description": "Gunakan dompet yang kompatibel dengan Ethereum untuk memulai transfer." },
+      "step2": { "title": "Kirim {amount}", "description": "Pastikan untuk mengirim di Ethereum mainnet.", "fallbackAmount": "ETH senilai $100" },
+      "step3": { "title": "Klik \"Sudah Dibayar\" di bawah", "description": "Beri tahu kami setelah pembayaran dikirim." },
+      "step4": { "title": "Terima ekspor NFT Anda", "description": "Kami akan memproses dan mengirimkannya dalam 24 jam." }
+    },
+    "paidButton": "Sudah Dibayar",
+    "paidConfirmation": {
+      "heading": "Pembayaran Terkirim",
+      "message": "Kami akan memproses permintaan ekspor Anda dalam 24 jam.",
+      "backButton": "Kembali ke NFT"
+    },
+    "notification": {
+      "title": "Pembayaran Terkirim",
+      "message": "Terima kasih! Permintaan ekspor Anda telah kami terima. Tim kami akan memprosesnya dalam 24 jam dan mengirim berkas NFT ke email terdaftar Anda."
+    },
+    "helpText": "Butuh bantuan?",
+    "contactSupport": "Hubungi dukungan"
+  }
+}

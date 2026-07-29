@@ -1,0 +1,45 @@
+{
+  "pageTitle": "Explore",
+  "pageSubtitle": "Discover exclusive collections from world-class digital artists",
+  "sort": {
+    "random": "Random",
+    "recentDesc": "Most Recent",
+    "volumeDesc": "Highest Volume",
+    "volumeAsc": "Lowest Volume",
+    "floorAsc": "Floor: Low to High",
+    "floorDesc": "Floor: High to Low",
+    "itemsDesc": "Most Items"
+  },
+  "newUploads": {
+    "heading": "New Uploads",
+    "subtitle": "Fresh NFTs from our marketplace creators",
+    "viewAll": "View All New Uploads ({count})"
+  },
+  "newBadge": "New",
+  "price": "Price",
+  "search": {
+    "collectionsPlaceholder": "Search collections...",
+    "nftsPlaceholder": "Search NFTs..."
+  },
+  "viewMode": {
+    "collections": "View Collections",
+    "items": "View Individual Items"
+  },
+  "filters": "Filters",
+  "categories": "Categories",
+  "allCategories": "All Categories",
+  "all": "All",
+  "clearAllFilters": "Clear All Filters",
+  "activeFilters": "Active filters:",
+  "searchLabel": "Search: {query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {Showing # collection} other {Showing # collections}}",
+    "items": "{count, plural, one {Showing # NFT} other {Showing # NFTs}}"
+  },
+  "noCollectionsFound": "No collections found matching your criteria",
+  "clearFilters": "Clear Filters",
+  "itemsCount": "{count, plural, one {# item} other {# items}}",
+  "floor": "Floor",
+  "totalVolume": "Total Volume",
+  "usd": "USD"
+}

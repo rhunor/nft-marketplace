@@ -1,0 +1,162 @@
+{
+  "header": {
+    "heading": "Trung Tâm Trợ Giúp",
+    "subtitle": "Mọi thứ bạn cần biết về cách sử dụng Foundation Exclusive"
+  },
+  "topics": {
+    "wallet": { "title": "Ví & Số Dư", "description": "Nạp tiền vào tài khoản và quản lý ETH" },
+    "creating": { "title": "Tạo NFT", "description": "Đúc NFT đầu tiên của bạn" },
+    "buying": { "title": "Mua NFT", "description": "Mua và sưu tầm NFT" },
+    "withdrawals": { "title": "Rút Tiền", "description": "Rút tiền từ tài khoản của bạn" },
+    "security": { "title": "Bảo Mật", "description": "Giữ an toàn cho tài khoản của bạn" },
+    "exploring": { "title": "Khám Phá NFT", "description": "Duyệt và khám phá các bộ sưu tập" }
+  },
+  "wallet": {
+    "heading": "Ví & Số Dư",
+    "cardHeading": "Cách Nạp Tiền Vào Tài Khoản",
+    "steps": {
+      "step1": "Đăng nhập và vào <b>Bảng Điều Khiển</b>",
+      "step2": "Nhấn <b>\"Nạp Tiền\"</b>",
+      "step3": "Bạn sẽ thấy mã QR và địa chỉ ví ETH",
+      "step4": "Gửi ETH từ ví bên ngoài của bạn đến địa chỉ này",
+      "step5": "Chờ khoảng ~10 phút để số dư được cập nhật"
+    },
+    "notesHeading": "Lưu Ý Quan Trọng",
+    "notes": [
+      "Chỉ gửi ETH (Ethereum) đến địa chỉ được cung cấp",
+      "Kiểm tra kỹ địa chỉ ví trước khi gửi",
+      "Lưu lại mã giao dịch (hash) để đối chiếu sau này"
+    ]
+  },
+  "creating": {
+    "heading": "Tạo NFT",
+    "singleCardHeading": "Cách Tạo Một NFT Đơn Lẻ",
+    "singleSteps": {
+      "step1": "Đảm bảo bạn có ít nhất <b>200 USD giá trị ETH</b>",
+      "step2": "Vào trang <b>Tạo Mới</b>",
+      "step3": "Chọn chế độ <b>\"NFT Đơn Lẻ\"</b>",
+      "step4": "Tải lên tệp media của bạn (tối đa 100MB)",
+      "step5": "Điền tiêu đề, giá và danh mục",
+      "step6": "Nhấn <b>\"Tạo NFT\"</b>"
+    },
+    "collectionCardHeading": "Cách Tạo Một Bộ Sưu Tập",
+    "collectionSteps": {
+      "step1": "Chọn chế độ <b>\"Bộ Sưu Tập\"</b> trên trang Tạo Mới",
+      "step2": "Thêm tên bộ sưu tập, mô tả và ảnh bìa",
+      "step3": "Thêm từ 2-20 sản phẩm vào bộ sưu tập của bạn",
+      "step4": "Đặt giá bộ sưu tập (<b>200 USD mỗi sản phẩm</b>)"
+    },
+    "feesHeading": "Phí Tải Lên",
+    "feesText": "NFT đơn lẻ: 200 USD | Bộ sưu tập: 200 USD mỗi sản phẩm"
+  },
+  "buying": {
+    "heading": "Mua NFT",
+    "cardHeading": "Cách Mua Một NFT",
+    "steps": {
+      "step1": "Duyệt trang <b>Khám Phá</b>",
+      "step2": "Sử dụng bộ lọc để tìm sản phẩm bạn muốn",
+      "step3": "Nhấn vào một NFT để xem chi tiết",
+      "step4": "Nhấn <b>\"Mua Ngay\"</b>",
+      "step5": "Xác nhận giao dịch mua",
+      "step6": "Chờ xác nhận từ quản trị viên (trong vòng 24 giờ)"
+    },
+    "afterHeading": "Sau Khi Mua",
+    "after": [
+      "NFT sẽ xuất hiện trong Bảng Điều Khiển của bạn tại mục \"Sở Hữu\"",
+      "Không có phí bổ sung khi mua"
+    ]
+  },
+  "withdrawals": {
+    "heading": "Rút Tiền",
+    "cardHeading": "Cách Rút Tiền",
+    "steps": {
+      "step1": "Vào <b>Bảng Điều Khiển</b> và nhấn <b>\"Rút Tiền\"</b>",
+      "step2": "Nhập địa chỉ ví ETH bên ngoài của bạn (0x...)",
+      "step3": "Nhập số tiền muốn rút",
+      "step4": "Nhấn <b>\"Tiếp Tục\"</b>",
+      "step5": "Gửi <b>phí 10%</b> đến địa chỉ ví được cung cấp",
+      "step6": "Nhấn <b>\"Xác Nhận Thanh Toán\"</b>",
+      "step7": "Yêu cầu rút tiền được xử lý trong <b>24-48 giờ</b>"
+    },
+    "infoHeading": "Thông Tin Quan Trọng",
+    "info": [
+      { "label": "Phí:", "text": "10% (thanh toán riêng đến ví nhận phí)" },
+      { "label": "Thời gian xử lý:", "text": "24-48 giờ" }
+    ],
+    "infoPlain": "Bạn nhận được TOÀN BỘ số tiền rút sau khi đã thanh toán phí",
+    "feeWarningHeading": "⚠️ Thanh Toán Phí",
+    "feeWarningText": "Phí 10% phải được gửi đến ví nhận phí của chúng tôi <b>trước khi</b> yêu cầu rút tiền của bạn được xử lý. Ví dụ: rút 1 ETH → gửi phí 0.1 ETH → nhận 1 ETH vào ví của bạn."
+  },
+  "exploring": {
+    "heading": "Khám Phá NFT",
+    "cardHeading": "Cách Duyệt NFT",
+    "steps": {
+      "step1": "Vào trang <b>Khám Phá</b>",
+      "step2": "Duyệt các bộ sưu tập hoặc chuyển sang chế độ xem từng sản phẩm",
+      "step3": "Sử dụng <b>thanh tìm kiếm</b> để tìm NFT cụ thể",
+      "step4": "Lọc theo <b>danh mục</b>",
+      "step5": "Sắp xếp theo khối lượng, giá sàn hoặc số lượng sản phẩm"
+    },
+    "tipsHeading": "Mẹo Tìm Kiếm",
+    "tips": [
+      "Tìm kiếm theo tiêu đề, mô tả hoặc tên người sáng tạo",
+      "Sử dụng thẻ như \"trừu tượng\", \"vũ trụ\", \"thiên nhiên\"",
+      "Nhấn vào một bộ sưu tập để xem tất cả sản phẩm"
+    ]
+  },
+  "security": {
+    "heading": "Bảo Mật",
+    "cardHeading": "Giữ An Toàn Cho Tài Khoản Của Bạn",
+    "items": [
+      { "label": "Sử dụng mật khẩu mạnh:", "text": "Ít nhất 8 ký tự" },
+      { "label": "Không bao giờ chia sẻ mật khẩu:", "text": "Chúng tôi sẽ không bao giờ yêu cầu mật khẩu của bạn" },
+      { "label": "Xác minh địa chỉ ví:", "text": "Kiểm tra kỹ trước khi gửi" },
+      { "label": "Cảnh giác với lừa đảo:", "text": "Chúng tôi không bao giờ nhắn tin riêng yêu cầu thanh toán" }
+    ]
+  },
+  "faq": {
+    "heading": "Câu Hỏi Thường Gặp",
+    "items": [
+      {
+        "question": "NFT là gì?",
+        "answer": "NFT là viết tắt của Non-Fungible Token (Token Không Thể Thay Thế). Đây là một tài sản số độc nhất được lưu trữ trên blockchain, đại diện cho quyền sở hữu các vật phẩm số như tác phẩm nghệ thuật, âm nhạc, video và nhiều loại khác."
+      },
+      {
+        "question": "Làm thế nào để tạo NFT?",
+        "answer": "Nạp vào tài khoản ít nhất 200 USD giá trị ETH, vào trang Tạo Mới, tải lên tệp của bạn, thêm chi tiết và gửi."
+      },
+      {
+        "question": "Các loại phí là gì?",
+        "answer": "Tạo NFT có giá 200 USD mỗi sản phẩm. Mua NFT chỉ yêu cầu thanh toán mức giá niêm yết. Rút tiền yêu cầu phí 10% được thanh toán riêng."
+      },
+      {
+        "question": "Mất bao lâu để xử lý giao dịch?",
+        "answer": "Nạp tiền: khoảng ~10 phút. Mua NFT: trong vòng 24 giờ. Rút tiền: 24-48 giờ."
+      }
+    ]
+  },
+  "quickRef": {
+    "heading": "Tham Khảo Nhanh",
+    "processingTimes": {
+      "heading": "Thời Gian Xử Lý",
+      "items": ["Cập nhật số dư: khoảng ~10 phút", "Mua NFT: trong vòng 24 giờ", "Rút tiền: 24-48 giờ"]
+    },
+    "fees": {
+      "heading": "Phí",
+      "items": ["Tạo NFT: 200 USD mỗi sản phẩm", "Mua: chỉ theo giá niêm yết", "Rút tiền: 10% (thanh toán riêng)"]
+    },
+    "formats": {
+      "heading": "Định Dạng Được Hỗ Trợ",
+      "items": ["Hình ảnh: JPG, PNG, GIF, WEBP", "Video: MP4, WEBM", "Âm thanh: MP3, WAV, OGG"]
+    },
+    "minimums": {
+      "heading": "Số Lượng Tối Thiểu",
+      "items": ["Giá NFT tối thiểu: 0.001 ETH", "Bộ sưu tập: 2-20 sản phẩm"]
+    }
+  },
+  "contactCta": {
+    "heading": "Vẫn Còn Thắc Mắc?",
+    "text": "Đội ngũ hỗ trợ của chúng tôi luôn sẵn sàng giúp đỡ bạn",
+    "button": "Liên Hệ Hỗ Trợ"
+  }
+}

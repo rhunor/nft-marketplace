@@ -1,0 +1,364 @@
+{
+  "terms": {
+    "metaTitle": "Termos de Serviço",
+    "metaDescription": "Termos de Serviço da Foundation Exclusive - Leia nossos termos e condições para o uso do nosso marketplace de NFTs.",
+    "heading": "Termos de Serviço",
+    "lastUpdated": "Última atualização: 30 de junho de 2026",
+    "s1": {
+      "heading": "1. Aceitação dos Termos",
+      "p1": "Ao acessar ou usar a Foundation Exclusive (\"a Plataforma\"), você concorda em se vincular a estes Termos de Serviço (\"Termos\"). Se você não concordar com estes Termos, não deverá acessar ou usar a Plataforma.",
+      "p2": "A Foundation Exclusive é um marketplace exclusivo de NFTs que opera como uma extensão do ecossistema Foundation. Nossa plataforma atende colecionadores e criadores de alto valor em busca de arte digital premium."
+    },
+    "s2": {
+      "heading": "2. Elegibilidade",
+      "intro": "Para usar a Foundation Exclusive, você deve:",
+      "items": [
+        "Ter pelo menos 18 anos de idade",
+        "Ter capacidade legal para celebrar contratos vinculantes",
+        "Não estar impedido de usar a Plataforma sob as leis aplicáveis",
+        "Possuir uma carteira de criptomoedas válida e compatível com nossa Plataforma"
+      ]
+    },
+    "s3": {
+      "heading": "3. Cadastro de Conta",
+      "intro": "Para acessar determinados recursos da Plataforma, pode ser necessário criar uma conta. Você concorda em:",
+      "items": [
+        "Fornecer informações precisas, atuais e completas",
+        "Manter e atualizar prontamente as informações da sua conta",
+        "Manter a segurança das credenciais da sua conta",
+        "Assumir a responsabilidade por todas as atividades realizadas em sua conta",
+        "Notificar-nos imediatamente sobre qualquer acesso não autorizado à sua conta"
+      ]
+    },
+    "s4": {
+      "heading": "4. Transações de NFTs",
+      "purchasing": {
+        "heading": "Comprando NFTs",
+        "intro": "Ao comprar um NFT na Foundation Exclusive, você concorda que:",
+        "items": [
+          "Todas as vendas são finais e não reembolsáveis",
+          "Você é responsável por todas as taxas de gás e custos de transação",
+          "A propriedade é transferida após a conclusão bem-sucedida da transação na blockchain",
+          "A Plataforma não se responsabiliza por erros em endereços de carteira ou detalhes da transação"
+        ]
+      },
+      "creating": {
+        "heading": "Criando e Vendendo NFTs",
+        "intro": "Se você criar ou vender NFTs na Plataforma, você declara e garante que:",
+        "items": [
+          "Você possui ou tem os direitos sobre o conteúdo que cria",
+          "Seu conteúdo não infringe direitos de propriedade intelectual de terceiros",
+          "Seu conteúdo cumpre todas as leis e regulamentações aplicáveis",
+          "Você descreverá seus NFTs com precisão e não se envolverá em práticas enganosas"
+        ]
+      }
+    },
+    "s5": {
+      "heading": "5. Taxas da Plataforma",
+      "intro": "A Foundation Exclusive cobra taxas por determinados serviços:",
+      "items": [
+        {
+          "label": "Taxa de Transação:",
+          "text": "Um percentual de cada venda é retido pela Plataforma"
+        },
+        {
+          "label": "Taxa de Criação:",
+          "text": "Uma taxa é cobrada ao criar novos NFTs"
+        },
+        {
+          "label": "Royalties do Criador:",
+          "text": "Os criadores originais recebem royalties sobre vendas secundárias, conforme especificado"
+        }
+      ],
+      "outro": "Todas as taxas estão sujeitas a alterações. As estruturas de taxas atuais são exibidas durante o processo de transação."
+    },
+    "s6": {
+      "heading": "6. Conduta Proibida",
+      "intro": "Você concorda em não:",
+      "items": [
+        "Usar a Plataforma para qualquer finalidade ilegal ou em violação de qualquer lei",
+        "Enviar conteúdo que seja infrator, difamatório ou prejudicial",
+        "Envolver-se em manipulação de mercado, wash trading ou atividades fraudulentas",
+        "Tentar interferir ou interromper as operações da Plataforma",
+        "Usar sistemas automatizados ou bots sem nossa autorização expressa",
+        "Personificar terceiros ou deturpar sua identidade"
+      ]
+    },
+    "s7": {
+      "heading": "7. Propriedade Intelectual e Direitos de Propriedade de NFTs",
+      "intro": "A Plataforma e seu conteúdo original, recursos e funcionalidades são de propriedade da Foundation Exclusive e são protegidos por leis internacionais de direitos autorais, marcas registradas e outras leis de propriedade intelectual.",
+      "buying": {
+        "heading": "O Que Comprar um NFT Lhe Garante",
+        "text": "Ao comprar um NFT na Foundation Exclusive, você adquire a propriedade verificável daquela edição específica de colecionável digital — um token único, registrado na blockchain, que representa seu lugar na procedência da obra. Isso lhe concede o direito de manter, exibir, transferir e revender a edição que você possui, junto com uma licença limitada, não exclusiva e não comercial para exibir a obra de arte associada para uso pessoal (por exemplo, como sua foto de perfil ou em uma galeria digital pessoal)."
+      },
+      "creatorRights": {
+        "heading": "O Que Permanece com o Criador",
+        "intro": "A propriedade de uma edição de NFT é distinta da propriedade da obra criativa subjacente. A menos que um acordo escrito separado com o criador declare o contrário, o criador original mantém todos os direitos de reprodução, uso comercial, licenciamento e obras derivadas sobre a arte, mídia ou conteúdo vinculado ao NFT. Isso significa que, sem a permissão expressa por escrito do criador, os detentores de NFTs não podem:",
+        "items": [
+          "Reproduzir, imprimir ou copiar de qualquer outra forma a obra subjacente para distribuição ou venda",
+          "Usar a obra comercialmente, inclusive em mercadorias, publicidade ou dentro de outros produtos ou serviços",
+          "Sublicenciar, distribuir ou conceder a terceiros direitos sobre a obra subjacente",
+          "Criar obras derivadas, adaptações ou remixes com base na obra subjacente"
+        ],
+        "outro": "Em resumo: possuir o NFT significa possuir o colecionável — o token autenticado e negociável em si. Isso não transfere os direitos autorais do criador nem quaisquer dos direitos comerciais mais amplos sobre a obra que o token representa. Os criadores são livres para continuar licenciando, reproduzindo e explorando comercialmente sua própria obra independentemente de qualquer venda de NFT, exceto onde explicitamente restrito por um acordo escrito separado."
+      }
+    },
+    "s8": {
+      "heading": "8. Isenções de Responsabilidade",
+      "p1": "A PLATAFORMA É FORNECIDA \"NO ESTADO EM QUE SE ENCONTRA\" E \"CONFORME DISPONÍVEL\", SEM GARANTIAS DE QUALQUER TIPO. NÃO GARANTIMOS A PRECISÃO, INTEGRIDADE OU CONFIABILIDADE DE QUALQUER CONTEÚDO NA PLATAFORMA.",
+      "p2": "Os valores dos NFTs são altamente voláteis e especulativos. Não fazemos nenhuma declaração sobre possíveis lucros ou perdas. Você reconhece que é o único responsável por suas decisões de investimento."
+    },
+    "s9": {
+      "heading": "9. Limitação de Responsabilidade",
+      "text": "NA MÁXIMA MEDIDA PERMITIDA POR LEI, A FOUNDATION EXCLUSIVE NÃO SERÁ RESPONSÁVEL POR QUAISQUER DANOS INDIRETOS, INCIDENTAIS, ESPECIAIS, CONSEQUENCIAIS OU PUNITIVOS DECORRENTES DO USO DA PLATAFORMA."
+    },
+    "s10": {
+      "heading": "10. Impostos para Usuários Locais e Internacionais",
+      "p1": "Como uma empresa sediada nos EUA, todos os usuários dentro dos Estados Unidos e determinados usuários localizados fora dos Estados Unidos podem ser obrigados a pagar impostos, taxas ou encargos governamentais aplicáveis associados ao uso de nossos serviços, quando exigido pela legislação aplicável ou por nossas políticas de cobrança. Quaisquer desses impostos ou taxas, se aplicáveis, devem ser pagos por meio da Plataforma anualmente, de acordo com as instruções de pagamento fornecidas.",
+      "p2": "O não pagamento de quaisquer impostos ou taxas aplicáveis dentro do prazo estabelecido pode resultar na suspensão ou restrição do acesso a alguns ou a todos os nossos serviços até que o valor pendente seja resolvido."
+    },
+    "s11": {
+      "heading": "11. Indenização",
+      "text": "Você concorda em indenizar e isentar de responsabilidade a Foundation Exclusive e seus diretores, executivos, funcionários e agentes de quaisquer reivindicações, danos, perdas ou despesas decorrentes do seu uso da Plataforma ou da violação destes Termos."
+    },
+    "s12": {
+      "heading": "12. Modificações nos Termos",
+      "text": "Reservamo-nos o direito de modificar estes Termos a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação. O uso continuado da Plataforma por sua parte constitui aceitação dos Termos modificados."
+    },
+    "s13": {
+      "heading": "13. Legislação Aplicável",
+      "text": "Estes Termos serão regidos e interpretados de acordo com as leis da jurisdição em que a Foundation Exclusive opera, independentemente de suas disposições sobre conflito de leis."
+    },
+    "s14": {
+      "heading": "14. Informações de Contato",
+      "intro": "Para dúvidas sobre estes Termos, entre em contato conosco em:",
+      "emailLabel": "E-mail:"
+    }
+  },
+  "privacy": {
+    "metaTitle": "Política de Privacidade | Foundation Exclusive",
+    "metaDescription": "Política de Privacidade da Foundation Exclusive - Saiba como coletamos, usamos e protegemos suas informações pessoais.",
+    "heading": "Política de Privacidade",
+    "lastUpdated": "Última atualização: 1º de janeiro de 2025",
+    "s1": {
+      "heading": "1. Introdução",
+      "p1": "A Foundation Exclusive (\"nós\", \"nosso\" ou \"nos\") está comprometida em proteger sua privacidade. Esta Política de Privacidade explica como coletamos, usamos, divulgamos e protegemos suas informações quando você visita nosso site e usa nossos serviços de marketplace de NFTs.",
+      "p2": "Como uma plataforma exclusiva para colecionadores e criadores de NFTs de alto valor, entendemos a importância de manter a confidencialidade e a segurança de suas informações pessoais e financeiras."
+    },
+    "s2": {
+      "heading": "2. Informações que Coletamos",
+      "personal": {
+        "heading": "Informações Pessoais",
+        "items": [
+          "Nome e endereço de e-mail",
+          "Endereços de carteira associados à sua conta",
+          "Informações de perfil que você optar por fornecer",
+          "Histórico de transações e registros de propriedade de NFTs",
+          "Preferências de comunicação"
+        ]
+      },
+      "technical": {
+        "heading": "Informações Técnicas",
+        "items": [
+          "Endereço IP e identificadores de dispositivo",
+          "Tipo e versão do navegador",
+          "Sistema operacional",
+          "Páginas visitadas e tempo gasto em nossa plataforma",
+          "Endereços de sites de referência"
+        ]
+      }
+    },
+    "s3": {
+      "heading": "3. Como Usamos Suas Informações",
+      "intro": "Usamos as informações que coletamos para:",
+      "items": [
+        "Fornecer, operar e manter nossos serviços de marketplace",
+        "Processar transações e enviar informações relacionadas",
+        "Verificar sua identidade e prevenir fraudes",
+        "Enviar atualizações sobre sua conta e transações",
+        "Responder a seus comentários, perguntas e solicitações",
+        "Melhorar nossa plataforma e desenvolver novos recursos",
+        "Cumprir obrigações legais"
+      ]
+    },
+    "s4": {
+      "heading": "4. Compartilhamento e Divulgação de Informações",
+      "intro": "Não vendemos, negociamos ou alugamos suas informações pessoais a terceiros. Podemos compartilhar suas informações nas seguintes circunstâncias:",
+      "items": [
+        {
+          "label": "Transações na Blockchain:",
+          "text": "As transações de NFTs são registradas em blockchains públicas e são visíveis para qualquer pessoa."
+        },
+        {
+          "label": "Provedores de Serviço:",
+          "text": "Podemos compartilhar informações com provedores de serviços terceirizados de confiança que auxiliam na operação de nossa plataforma."
+        },
+        {
+          "label": "Exigências Legais:",
+          "text": "Podemos divulgar informações quando exigido por lei ou para proteger nossos direitos."
+        }
+      ]
+    },
+    "s5": {
+      "heading": "5. Segurança dos Dados",
+      "text": "Implementamos medidas técnicas e organizacionais adequadas para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição. No entanto, nenhum método de transmissão pela Internet é 100% seguro."
+    },
+    "s6": {
+      "heading": "6. Seus Direitos",
+      "intro": "Você tem o direito de:",
+      "items": [
+        "Acessar suas informações pessoais",
+        "Corrigir informações imprecisas ou incompletas",
+        "Solicitar a exclusão de suas informações pessoais",
+        "Opor-se ou restringir o processamento de suas informações",
+        "Portabilidade de dados",
+        "Retirar seu consentimento a qualquer momento"
+      ]
+    },
+    "s7": {
+      "heading": "7. Cookies e Rastreamento",
+      "text": "Usamos cookies e tecnologias de rastreamento semelhantes para melhorar sua experiência em nossa plataforma. Para mais informações, consulte nossa <cookieLink>Política de Cookies</cookieLink>."
+    },
+    "s8": {
+      "heading": "8. Alterações nesta Política",
+      "text": "Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos você sobre quaisquer alterações publicando a nova Política de Privacidade nesta página e atualizando a data de \"Última atualização\"."
+    },
+    "s9": {
+      "heading": "9. Fale Conosco",
+      "intro": "Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato conosco em:",
+      "emailLabel": "E-mail:"
+    }
+  },
+  "cookies": {
+    "metaTitle": "Política de Cookies | Foundation Exclusive",
+    "metaDescription": "Política de Cookies da Foundation Exclusive - Saiba mais sobre o uso de cookies e tecnologias de rastreamento.",
+    "heading": "Política de Cookies",
+    "lastUpdated": "Última atualização: 1º de janeiro de 2025",
+    "s1": {
+      "heading": "1. O Que São Cookies",
+      "p1": "Cookies são pequenos arquivos de texto colocados em seu computador ou dispositivo móvel quando você visita um site. São amplamente utilizados para fazer os sites funcionarem com mais eficiência e para fornecer informações aos proprietários dos sites.",
+      "p2": "A Foundation Exclusive usa cookies e tecnologias semelhantes para melhorar sua experiência em nossa plataforma, entender como você usa nossos serviços e aprimorar nossas ofertas."
+    },
+    "s2": {
+      "heading": "2. Tipos de Cookies que Usamos",
+      "essential": {
+        "heading": "Cookies Essenciais",
+        "text": "Esses cookies são necessários para que o site funcione corretamente. Eles habilitam funcionalidades essenciais, como segurança, gerenciamento de rede e acesso à conta. Você não pode desativar esses cookies.",
+        "items": [
+          "Gerenciamento de sessão",
+          "Autenticação e login",
+          "Recursos de segurança",
+          "Balanceamento de carga"
+        ]
+      },
+      "performance": {
+        "heading": "Cookies de Desempenho",
+        "text": "Esses cookies nos ajudam a entender como os visitantes interagem com nosso site, coletando e reportando informações de forma anônima.",
+        "items": [
+          "Tempos de carregamento de página",
+          "Mensagens de erro encontradas",
+          "Páginas visitadas",
+          "Tempo gasto nas páginas"
+        ]
+      },
+      "functionality": {
+        "heading": "Cookies de Funcionalidade",
+        "text": "Esses cookies possibilitam funcionalidades aprimoradas e personalização, como lembrar suas preferências.",
+        "items": [
+          "Preferências de idioma",
+          "Configurações de tema (modo claro/escuro)",
+          "Itens visualizados recentemente",
+          "Preferências do usuário"
+        ]
+      },
+      "analytics": {
+        "heading": "Cookies de Análise",
+        "text": "Usamos cookies de análise para obter insights sobre como nossa plataforma é usada, o que nos ajuda a melhorar nossos serviços.",
+        "items": [
+          "Fontes de tráfego",
+          "Padrões de comportamento do usuário",
+          "Estatísticas de uso de recursos",
+          "Rastreamento de conversões"
+        ]
+      }
+    },
+    "s3": {
+      "heading": "3. Cookies de Terceiros",
+      "p1": "Alguns cookies em nossa plataforma são colocados por serviços de terceiros que aparecem em nossas páginas. Não temos controle sobre esses cookies.",
+      "intro": "Serviços de terceiros que podemos usar incluem:",
+      "items": [
+        {
+          "label": "Google Analytics:",
+          "text": "Para entender o tráfego do site e os padrões de uso"
+        },
+        {
+          "label": "Provedores de Carteira:",
+          "text": "Para conexões e transações de carteiras de criptomoedas"
+        },
+        {
+          "label": "Redes Sociais:",
+          "text": "Para funcionalidades de compartilhamento e opções de login social"
+        }
+      ]
+    },
+    "s4": {
+      "heading": "4. Por Quanto Tempo os Cookies Duram",
+      "intro": "Os cookies podem permanecer em seu dispositivo por diferentes períodos:",
+      "items": [
+        {
+          "label": "Cookies de Sessão:",
+          "text": "Esses são temporários e são excluídos quando você fecha o navegador."
+        },
+        {
+          "label": "Cookies Persistentes:",
+          "text": "Esses permanecem em seu dispositivo por um período determinado (por exemplo, 30 dias, 1 ano) ou até que você os exclua."
+        }
+      ]
+    },
+    "s5": {
+      "heading": "5. Gerenciando Cookies",
+      "intro": "Você tem várias opções para gerenciar cookies:",
+      "browserSettings": {
+        "heading": "Configurações do Navegador",
+        "intro": "A maioria dos navegadores permite controlar cookies por meio de suas configurações. Você pode:",
+        "items": [
+          "Visualizar os cookies armazenados em seu dispositivo",
+          "Excluir cookies individuais ou todos eles",
+          "Bloquear cookies de sites específicos ou de todos os sites",
+          "Definir preferências para cookies próprios versus de terceiros"
+        ]
+      },
+      "browserSpecific": {
+        "heading": "Instruções Específicas por Navegador",
+        "items": [
+          { "label": "Chrome:", "text": "Configurações → Privacidade e segurança → Cookies e outros dados do site" },
+          { "label": "Firefox:", "text": "Opções → Privacidade e Segurança → Cookies e Dados de Sites" },
+          { "label": "Safari:", "text": "Preferências → Privacidade → Gerenciar Dados de Sites" },
+          { "label": "Edge:", "text": "Configurações → Cookies e permissões do site" }
+        ]
+      },
+      "note": {
+        "label": "Observação:",
+        "text": "Desativar determinados cookies pode afetar a funcionalidade de nossa plataforma. Os cookies essenciais não podem ser desativados, pois são necessários para o funcionamento da plataforma."
+      }
+    },
+    "s6": {
+      "heading": "6. Considerações sobre Web3 e Blockchain",
+      "intro": "Como um marketplace de NFTs, interagimos com tecnologia blockchain e carteiras de criptomoedas. Observe que:",
+      "items": [
+        "Os dados de conexão da carteira podem ser armazenados localmente em seu navegador",
+        "As assinaturas de transações são processadas por meio do seu provedor de carteira",
+        "As transações na blockchain são públicas e permanentes, independentemente dos cookies"
+      ]
+    },
+    "s7": {
+      "heading": "7. Atualizações desta Política",
+      "text": "Podemos atualizar esta Política de Cookies periodicamente para refletir mudanças em nossas práticas ou por outros motivos operacionais, legais ou regulatórios. Recomendamos que você revise esta política periodicamente."
+    },
+    "s8": {
+      "heading": "8. Fale Conosco",
+      "intro": "Se você tiver dúvidas sobre nosso uso de cookies, entre em contato conosco:",
+      "emailLabel": "E-mail:"
+    }
+  }
+}

@@ -2,14 +2,16 @@ import { NextResponse } from 'next/server';
 import { auth } from '@/auth';
 import connectDB from '@/lib/db/connection';
 import { NFT } from '@/lib/db/models';
+import { getTranslatedNftContent } from '@/lib/translation/getTranslatedNftContent';
 
 // GET - Get single NFT
 export async function GET(
-  _request: Request,
+  request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { id } = await params;
+    const locale = new URL(request.url).searchParams.get('locale') || 'en';
     await connectDB();
 
     const nft = await NFT.findById(id)
@@ -27,9 +29,21 @@ export async function GET(
     // Increment views
     await NFT.findByIdAndUpdate(id, { $inc: { views: 1 } });
 
+    const translated = await getTranslatedNftContent(
+      { _id: nft._id, title: nft.title, description: nft.description, translations: nft.translations },
+      locale
+    );
+
     return NextResponse.json({
       success: true,
-      data: nft,
+      data: {
+        ...nft,
+        title: translated.title,
+        description: translated.description,
+        originalTitle: nft.title,
+        originalDescription: nft.description,
+        isTranslated: translated.isTranslated,
+      },
     });
   } catch (error) {
     console.error('NFT fetch error:', error);

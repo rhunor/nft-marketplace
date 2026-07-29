@@ -1,0 +1,58 @@
+{
+  "header": {
+    "heading": "Hubungi Kami",
+    "subtitle": "Punya pertanyaan atau butuh bantuan? Kami siap membantu Anda."
+  },
+  "subjectOptions": {
+    "general": "Pertanyaan Umum",
+    "support": "Dukungan Teknis",
+    "billing": "Penagihan & Pembayaran",
+    "partnership": "Kemitraan",
+    "bug": "Laporan Bug",
+    "feature": "Permintaan Fitur",
+    "other": "Lainnya"
+  },
+  "info": {
+    "email": {
+      "title": "Email",
+      "subtitle": "Untuk pertanyaan umum"
+    },
+    "liveChat": {
+      "title": "Live Chat",
+      "value": "Tersedia 24/7",
+      "subtitle": "Waktu respons cepat"
+    },
+    "responseTime": {
+      "title": "Waktu Respons",
+      "value": "Dalam 24-48 jam",
+      "subtitle": "Hari kerja"
+    },
+    "office": {
+      "title": "Kantor",
+      "line1": "11420 Santa Monica Boulevard",
+      "line2": "Post Office Box 252111",
+      "line3": "Los Angeles, CA 90025"
+    }
+  },
+  "form": {
+    "heading": "Kirimkan pesan kepada kami",
+    "nameLabel": "Nama Anda",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Alamat Email",
+    "emailPlaceholder": "anda@contoh.com",
+    "subjectLabel": "Subjek",
+    "subjectPlaceholder": "Pilih topik",
+    "messageLabel": "Pesan",
+    "messagePlaceholder": "Bagaimana kami bisa membantu Anda?",
+    "submit": "Kirim Pesan"
+  },
+  "success": {
+    "heading": "Pesan Berhasil Dikirim!",
+    "text": "Terima kasih telah menghubungi kami. Tim kami akan meninjau pesan Anda dan menghubungi Anda kembali dalam 24-48 jam.",
+    "sendAnother": "Kirim Pesan Lain"
+  },
+  "notification": {
+    "title": "Pesan Terkirim!",
+    "message": "Kami akan menghubungi Anda kembali dalam 24-48 jam."
+  }
+}

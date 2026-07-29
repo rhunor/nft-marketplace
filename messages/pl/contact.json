@@ -1,0 +1,58 @@
+{
+  "header": {
+    "heading": "Skontaktuj się z nami",
+    "subtitle": "Masz pytanie lub potrzebujesz pomocy? Jesteśmy tutaj dla Ciebie."
+  },
+  "subjectOptions": {
+    "general": "Zapytanie ogólne",
+    "support": "Wsparcie techniczne",
+    "billing": "Rozliczenia i płatności",
+    "partnership": "Współpraca",
+    "bug": "Zgłoszenie błędu",
+    "feature": "Propozycja funkcji",
+    "other": "Inne"
+  },
+  "info": {
+    "email": {
+      "title": "E-mail",
+      "subtitle": "W sprawach ogólnych"
+    },
+    "liveChat": {
+      "title": "Czat na żywo",
+      "value": "Dostępny 24/7",
+      "subtitle": "Szybki czas odpowiedzi"
+    },
+    "responseTime": {
+      "title": "Czas odpowiedzi",
+      "value": "W ciągu 24-48 godzin",
+      "subtitle": "Dni robocze"
+    },
+    "office": {
+      "title": "Biuro",
+      "line1": "11420 Santa Monica Boulevard",
+      "line2": "Post Office Box 252111",
+      "line3": "Los Angeles, CA 90025"
+    }
+  },
+  "form": {
+    "heading": "Wyślij nam wiadomość",
+    "nameLabel": "Twoje imię i nazwisko",
+    "namePlaceholder": "Jan Kowalski",
+    "emailLabel": "Adres e-mail",
+    "emailPlaceholder": "ty@example.com",
+    "subjectLabel": "Temat",
+    "subjectPlaceholder": "Wybierz temat",
+    "messageLabel": "Wiadomość",
+    "messagePlaceholder": "Jak możemy Ci pomóc?",
+    "submit": "Wyślij wiadomość"
+  },
+  "success": {
+    "heading": "Wiadomość została wysłana!",
+    "text": "Dziękujemy za kontakt. Nasz zespół przeanalizuje Twoją wiadomość i odpowie w ciągu 24-48 godzin.",
+    "sendAnother": "Wyślij kolejną wiadomość"
+  },
+  "notification": {
+    "title": "Wiadomość wysłana!",
+    "message": "Odpowiemy w ciągu 24-48 godzin."
+  }
+}

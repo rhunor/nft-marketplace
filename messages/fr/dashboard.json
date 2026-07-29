@@ -1,0 +1,126 @@
+{
+  "loading": "Chargement du tableau de bord...",
+  "avatar": {
+    "invalidType": "Veuillez sélectionner un fichier image",
+    "tooLarge": "La taille de l'image doit être inférieure à 5 Mo",
+    "uploadSuccess": "Photo de profil mise à jour !",
+    "uploadFailedTitle": "Échec du téléversement",
+    "uploadFailedDefault": "Une erreur s'est produite",
+    "changePicture": "Changer la photo de profil"
+  },
+  "welcome": "Bon retour, {name} !",
+  "adminBadge": "Admin",
+  "fundAccount": "Approvisionner le compte",
+  "createNft": "Créer un NFT",
+  "stats": {
+    "walletBalance": "Solde du portefeuille",
+    "nftsOwned": "NFT possédés",
+    "nftsCreated": "NFT créés",
+    "totalValue": "Valeur totale"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "Explorer les collections",
+      "subtitle": "Découvrez de nouveaux objets de collection"
+    },
+    "create": {
+      "title": "Créer un NFT",
+      "subtitle": "Téléversez votre œuvre"
+    },
+    "fund": {
+      "title": "Approvisionner le compte",
+      "subtitle": "Ajoutez des ETH à votre portefeuille"
+    },
+    "withdraw": {
+      "title": "Retirer des fonds",
+      "subtitle": "Transférez vers votre portefeuille"
+    }
+  },
+  "tabs": {
+    "owned": "Possédés ({count})",
+    "created": "Créés ({count})",
+    "listed": "En vente ({count})"
+  },
+  "nftCard": {
+    "created": "Créé",
+    "notListed": "Pas en vente",
+    "price": "Prix"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "Aucun NFT possédé pour le moment",
+      "text": "Commencez à collectionner des objets numériques uniques sur notre marketplace",
+      "button": "Explorer les collections"
+    },
+    "created": {
+      "title": "Aucun NFT créé pour le moment",
+      "text": "Créez votre premier NFT et partagez-le avec le monde entier",
+      "button": "Créer un NFT"
+    },
+    "listed": {
+      "title": "Aucun NFT en vente",
+      "text": "Vous n'avez aucun NFT en vente actuellement"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "Retirer des fonds",
+      "fee": "Payer les frais de retrait",
+      "processing": "Traitement du retrait",
+      "success": "Retrait réussi"
+    },
+    "form": {
+      "availableBalance": "Solde disponible",
+      "walletAddressLabel": "Adresse du portefeuille",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "Saisissez votre adresse de portefeuille Ethereum",
+      "amountLabel": "Montant (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "Retrait minimum : ${minAmount}",
+      "withdrawMax": "Retirer le maximum",
+      "continue": "Continuer"
+    },
+    "errors": {
+      "invalidAddress": "Veuillez saisir une adresse de portefeuille Ethereum valide (0x...)",
+      "invalidAmount": "Veuillez saisir un montant de retrait valide",
+      "minWithdrawal": "Le retrait minimum est de ${minAmount}",
+      "insufficientBalance": "Solde insuffisant",
+      "serverError": "Erreur serveur. Veuillez réessayer plus tard.",
+      "withdrawalFailed": "Échec du retrait",
+      "invalidResponse": "Réponse invalide du serveur",
+      "withdrawalFailedRetry": "Échec du retrait. Veuillez réessayer."
+    },
+    "fee": {
+      "noticeTitle": "Frais de retrait requis",
+      "noticeText": "Pour traiter votre retrait, veuillez envoyer des frais de {percent}% ({amount}) à l'adresse de portefeuille ci-dessous.",
+      "walletLabel": "Votre portefeuille de retrait",
+      "withdrawalAmount": "Montant du retrait",
+      "feeToSend": "Frais à envoyer ({percent}%)",
+      "youllReceive": "Vous recevrez",
+      "sendFeeTo": "Envoyer le paiement des frais à :",
+      "sendExactly": "Envoyez exactement {amount} à cette adresse",
+      "qrAlt": "Code QR de paiement des frais",
+      "walletAddressLabel": "Adresse du portefeuille de frais (ETH)",
+      "copyAddress": "Copier l'adresse",
+      "copiedNotification": "Adresse copiée dans le presse-papiers",
+      "warning": "Après avoir envoyé les frais de {feeAmount}, cliquez sur « Confirmer le paiement » pour traiter votre retrait. Le montant total de votre retrait, {receiveAmount}, sera envoyé à votre portefeuille.",
+      "back": "Retour",
+      "confirmPayment": "Confirmer le paiement"
+    },
+    "processing": {
+      "title": "Traitement du retrait",
+      "text": "Veuillez patienter pendant que nous traitons votre transaction..."
+    },
+    "success": {
+      "title": "Retrait soumis !",
+      "subtitle": "Vos fonds sont en route vers votre portefeuille",
+      "transactionId": "ID de transaction",
+      "amountReceived": "Montant que vous recevrez",
+      "feePaid": "Frais payés",
+      "newBalance": "Nouveau solde",
+      "estimatedTime": "Délai de traitement estimé",
+      "estimatedTimeValue": "24 à 48 heures",
+      "done": "Terminé"
+    }
+  }
+}

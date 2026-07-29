@@ -1,0 +1,24 @@
+{
+  "loading": "Collectie laden...",
+  "notFound": {
+    "heading": "Collectie Niet Gevonden",
+    "genericMessage": "De collectie die u zoekt bestaat niet.",
+    "collectionNotFoundError": "Collectie niet gevonden",
+    "loadFailedError": "Laden van collectie mislukt",
+    "backToExplore": "Terug naar Ontdekken"
+  },
+  "back": "Terug",
+  "createdBy": "Gemaakt door",
+  "stats": {
+    "items": "Items",
+    "floorPrice": "Bodemprijs",
+    "totalVolume": "Totaal Volume"
+  },
+  "share": "Delen",
+  "itemsHeading": "Items ({count})",
+  "price": "Prijs",
+  "empty": {
+    "heading": "Nog Geen Items",
+    "message": "Deze collectie bevat nog geen items."
+  }
+}

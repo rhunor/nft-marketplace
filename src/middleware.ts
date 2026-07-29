@@ -1,17 +1,34 @@
 import NextAuth from 'next-auth';
-import { authConfig } from './auth.config';
 import { NextResponse } from 'next/server';
+import createIntlMiddleware from 'next-intl/middleware';
+import { authConfig } from './auth.config';
+import { routing, defaultLocale, LOCALE_COOKIE_NAME, type Locale } from './i18n/routing';
+import { countryToLocale } from './i18n/geoLocaleMap';
 
 const { auth } = NextAuth(authConfig);
+const intlMiddleware = createIntlMiddleware(routing);
 
 // Protected routes that require authentication
 const protectedRoutes = ['/dashboard', '/upload', '/fund'];
 
-// Admin-only routes
+// Admin-only routes (outside the [locale] segment - always unprefixed)
 const adminRoutes = ['/admin'];
 
 // Auth routes (redirect if already logged in)
 const authRoutes = ['/login', '/register'];
+
+function stripLocale(pathname: string): { locale: Locale | null; path: string } {
+  const [, first = '', ...rest] = pathname.split('/');
+  if ((routing.locales as readonly string[]).includes(first)) {
+    return { locale: first as Locale, path: `/${rest.join('/')}` || '/' };
+  }
+  return { locale: null, path: pathname };
+}
+
+function withLocalePrefix(path: string, locale: Locale | null): string {
+  if (!locale || locale === defaultLocale) return path;
+  return `/${locale}${path}`;
+}
 
 export default auth((req) => {
   const { nextUrl } = req;
@@ -19,57 +36,56 @@ export default auth((req) => {
   const userRole = req.auth?.user?.role;
   const isAdmin = userRole === 'admin';
 
-  console.log('[Middleware] Path:', nextUrl.pathname);
-  console.log('[Middleware] isLoggedIn:', isLoggedIn);
-  console.log('[Middleware] User:', req.auth?.user?.email);
-  console.log('[Middleware] Role:', userRole);
-  console.log('[Middleware] isAdmin:', isAdmin);
+  const { locale, path } = stripLocale(nextUrl.pathname);
 
-  // Check if current path matches any protected route
-  const isProtectedRoute = protectedRoutes.some((route) =>
-    nextUrl.pathname.startsWith(route)
-  );
+  const isProtectedRoute = protectedRoutes.some((route) => path.startsWith(route));
+  const isAdminRoute = adminRoutes.some((route) => nextUrl.pathname.startsWith(route));
+  const isAuthRoute = authRoutes.some((route) => path.startsWith(route));
 
-  // Check if current path is an admin route
-  const isAdminRoute = adminRoutes.some((route) =>
-    nextUrl.pathname.startsWith(route)
-  );
-
-  // Check if current path is an auth route
-  const isAuthRoute = authRoutes.some((route) =>
-    nextUrl.pathname.startsWith(route)
-  );
-
-  // Redirect to login if trying to access protected route without auth
+  // Redirect to login if trying to access a protected route without auth
   if (isProtectedRoute && !isLoggedIn) {
-    console.log('[Middleware] Redirecting to login - protected route without auth');
     const callbackUrl = encodeURIComponent(nextUrl.pathname + nextUrl.search);
     return NextResponse.redirect(
-      new URL(`/login?callbackUrl=${callbackUrl}`, nextUrl)
+      new URL(`${withLocalePrefix('/login', locale)}?callbackUrl=${callbackUrl}`, nextUrl)
     );
   }
 
-  // Redirect to home if trying to access admin route without admin role
+  // Admin panel is English-only and lives outside the [locale] segment
   if (isAdminRoute) {
-    console.log('[Middleware] Admin route detected');
     if (!isLoggedIn) {
-      console.log('[Middleware] Redirecting - not logged in');
       return NextResponse.redirect(new URL('/login', nextUrl));
     }
     if (!isAdmin) {
-      console.log('[Middleware] Redirecting - not admin, role is:', userRole);
       return NextResponse.redirect(new URL('/', nextUrl));
     }
-    console.log('[Middleware] Admin access granted');
+    return NextResponse.next();
   }
 
   // Redirect to dashboard if trying to access auth routes while logged in
   if (isAuthRoute && isLoggedIn) {
-    console.log('[Middleware] Redirecting to dashboard - already logged in');
-    return NextResponse.redirect(new URL('/dashboard', nextUrl));
+    return NextResponse.redirect(new URL(withLocalePrefix('/dashboard', locale), nextUrl));
   }
 
-  return NextResponse.next();
+  // Geo is only ever a fallback: it's consulted purely to pick the first
+  // locale for a visitor whose browser sends no usable Accept-Language
+  // header (most real browsers always send one, so this rarely fires).
+  // It never overrides an explicit choice or a working Accept-Language match.
+  const hasLocaleCookie = req.cookies.has(LOCALE_COOKIE_NAME);
+  const acceptLanguage = req.headers.get('accept-language');
+  const hasUsableAcceptLanguage = !!acceptLanguage && acceptLanguage.trim() !== '*';
+
+  if (!hasLocaleCookie && !hasUsableAcceptLanguage && !locale) {
+    const country = req.headers.get('x-vercel-ip-country');
+    const geoLocale = countryToLocale(country);
+    if (geoLocale && geoLocale !== defaultLocale) {
+      const redirectUrl = new URL(withLocalePrefix(path, geoLocale) + nextUrl.search, nextUrl);
+      const response = NextResponse.redirect(redirectUrl);
+      response.cookies.set(LOCALE_COOKIE_NAME, geoLocale, { path: '/' });
+      return response;
+    }
+  }
+
+  return intlMiddleware(req);
 });
 
 export const config = {

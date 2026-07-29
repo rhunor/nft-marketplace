@@ -1,0 +1,58 @@
+{
+  "header": {
+    "title": "Approvisionner le compte",
+    "subtitle": "Ajoutez des ETH à votre portefeuille pour créer et acheter des NFT"
+  },
+  "balance": {
+    "label": "Solde actuel",
+    "ethRate": "1 ETH = ${price}",
+    "refreshTitle": "Actualiser le prix"
+  },
+  "amount": {
+    "heading": "Sélectionner le montant",
+    "preset": "{value} ETH",
+    "customLabel": "Montant personnalisé (ETH)"
+  },
+  "deposit": {
+    "heading": "Adresse de dépôt",
+    "qrAlt": "Code QR de dépôt",
+    "loading": "Chargement...",
+    "sendTo": "Envoyez des ETH à cette adresse :",
+    "copied": "Adresse copiée dans le presse-papiers !",
+    "networkWarning": "Envoyez uniquement des ETH sur le réseau Ethereum"
+  },
+  "notice": {
+    "heading": "Délai de traitement",
+    "text": "Après l'envoi du paiement, il faut environ <strong>10 minutes</strong> pour que votre solde soit mis à jour sur votre compte. Ce délai permet les confirmations blockchain et la vérification de la transaction par notre équipe d'administration."
+  },
+  "howItWorks": {
+    "heading": "Comment ça marche",
+    "steps": {
+      "select": {
+        "title": "Sélectionner le montant",
+        "text": "Choisissez le montant d'ETH que vous souhaitez ajouter à votre compte"
+      },
+      "send": {
+        "title": "Envoyer le paiement",
+        "text": "Transférez des ETH à l'adresse de dépôt indiquée ci-dessus"
+      },
+      "confirm": {
+        "title": "Attendre la confirmation",
+        "text": "Votre solde sera mis à jour dans environ 10 minutes"
+      },
+      "start": {
+        "title": "Commencer à créer et collectionner",
+        "text": "Utilisez votre solde pour créer et acheter des NFT"
+      }
+    }
+  },
+  "action": {
+    "button": "J'ai envoyé {amount} ETH",
+    "help": "Besoin d'aide ? ",
+    "contactSupport": "Contacter le support"
+  },
+  "notification": {
+    "title": "Instructions de paiement",
+    "message": "Envoyez {amount} ETH à l'adresse indiquée. Votre solde sera mis à jour dans environ 10 minutes après confirmation."
+  }
+}

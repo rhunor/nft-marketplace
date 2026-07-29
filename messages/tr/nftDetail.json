@@ -1,0 +1,156 @@
+{
+  "detail": {
+    "loading": "NFT yükleniyor...",
+    "notFound": {
+      "heading": "NFT Bulunamadı",
+      "genericMessage": "Aradığınız NFT mevcut değil veya kaldırılmış.",
+      "browseButton": "NFT'lere Göz At"
+    },
+    "back": "Geri",
+    "share": "Paylaş",
+    "translated": {
+      "badge": "Makine çevirisi",
+      "showOriginal": "Orijinali göster",
+      "showTranslation": "Çeviriyi göster"
+    },
+    "badges": {
+      "notForSale": "Satılık Değil",
+      "youOwnThis": "Bu Size Ait",
+      "marketplaceNft": "Pazar Yeri NFT'si",
+      "you": "(Siz)"
+    },
+    "creator": "Sanatçı",
+    "owner": "Sahip",
+    "price": {
+      "current": "Güncel Fiyat",
+      "insufficientBalance": "Yetersiz bakiye",
+      "buyNow": "Şimdi Satın Al",
+      "manageNft": "NFT'yi Yönet",
+      "exportNft": "NFT'yi Dışa Aktar"
+    },
+    "description": "Açıklama",
+    "tags": "Etiketler",
+    "details": {
+      "heading": "Detaylar",
+      "tokenId": "Token Kimliği",
+      "blockchain": "Blok Zinciri",
+      "ethereum": "Ethereum",
+      "mediaType": "Medya Türü",
+      "created": "Oluşturuldu"
+    },
+    "related": {
+      "title": "Bu kategoriden daha fazlası",
+      "subtitle": "Daha fazla {category} NFT'sini keşfedin"
+    },
+    "buyModal": {
+      "title": "Satın Almayı Onayla",
+      "by": "@{username} tarafından",
+      "price": "Fiyat",
+      "platformFee": "Platform Ücreti (%2,5)",
+      "gasFee": "Gaz Ücreti (tah.)",
+      "total": "Toplam",
+      "yourBalance": "Bakiyeniz",
+      "insufficientBalanceWarning": "Yetersiz bakiye. Lütfen hesabınızı fonlayın.",
+      "immediateTransferNote": "Sahiplik, onaydan hemen sonra devredilecektir.",
+      "adminTransferNote": "Satın alma sonrası, sahiplik devri yönetici ekibimiz tarafından 24 saat içinde gerçekleştirilecektir.",
+      "cancel": "İptal",
+      "confirm": "Satın Almayı Onayla"
+    },
+    "manageModal": {
+      "title": "NFT'yi Yönet",
+      "statusListed": "Durum: Listelendi",
+      "statusNotListed": "Durum: Listelenmedi",
+      "priceLabel": "Fiyat (ETH)",
+      "pricePlaceholder": "0.1",
+      "listForSale": "Satışa Çıkar",
+      "updatePrice": "Fiyatı Güncelle",
+      "unlist": "Pazar Yerinden Kaldır",
+      "cancel": "İptal"
+    },
+    "notifications": {
+      "addedToFavorites": "Favorilere eklendi",
+      "removedFromFavorites": "Favorilerden kaldırıldı",
+      "likeUpdateFailed": "Beğeni güncellenemedi",
+      "purchaseSuccessTitle": "Satın Alma Başarılı!",
+      "purchaseSuccessMessage": "Artık bu NFT'nin sahibisiniz.",
+      "purchaseFailedTitle": "Satın Alma Başarısız",
+      "genericError": "Bir şeyler ters gitti",
+      "purchaseSubmittedTitle": "Satın Alma Talebi Gönderildi!",
+      "purchaseSubmittedMessage": "Satın alımınız işleniyor. Sahiplik, yönetici onayından sonra devredilecektir.",
+      "linkCopied": "Bağlantı panoya kopyalandı!",
+      "copyFailed": "Bağlantı kopyalanamadı",
+      "invalidPrice": "Lütfen geçerli bir fiyat girin",
+      "listedTitle": "NFT Listelendi!",
+      "listedMessage": "NFT'niz artık pazar yerinde mevcut.",
+      "listFailedTitle": "NFT listelenemedi",
+      "unlistedTitle": "NFT Listeden Kaldırıldı",
+      "unlistedMessage": "NFT'niz pazar yerinden kaldırıldı.",
+      "unlistFailedTitle": "NFT listeden kaldırılamadı",
+      "priceUpdatedTitle": "Fiyat Güncellendi!",
+      "priceUpdatedMessage": "Yeni fiyat: {price} ETH",
+      "priceUpdateFailedTitle": "Fiyat güncellenemedi"
+    },
+    "errors": {
+      "fetchFailed": "NFT getirilemedi",
+      "notFoundError": "NFT bulunamadı",
+      "loadFailed": "NFT yüklenemedi"
+    }
+  },
+  "export": {
+    "cannotExport": "Bu NFT dışa aktarılamaz.",
+    "loadFailed": "NFT yüklenemedi",
+    "fetchFailed": "NFT getirilemedi",
+    "loading": "NFT yükleniyor...",
+    "cannotExportHeading": "NFT Dışa Aktarılamıyor",
+    "nftNotFound": "NFT bulunamadı.",
+    "browseButton": "NFT'lere Göz At",
+    "accessDenied": {
+      "heading": "Erişim Reddedildi",
+      "message": "Yalnızca bu NFT'nin sahibi onu dışa aktarabilir.",
+      "backButton": "NFT'ye Geri Dön"
+    },
+    "back": "Geri",
+    "heading": "NFT'yi Dışa Aktar",
+    "subheading": "NFT'nizi kişisel cüzdanınıza aktarın",
+    "by": "@{username} tarafından",
+    "fee": {
+      "heading": "Dışa Aktarma Ücreti",
+      "amountLabel": "Gönderilecek tutar",
+      "loadingAmount": "Yükleniyor...",
+      "approxUsd": "≈ ${amount} USD",
+      "note": "Bu tek seferlik ücret, NFT'nizi harici bir cüzdana aktarmak için gereken gaz maliyetlerini ve işlem sürecini kapsar."
+    },
+    "payment": {
+      "heading": "Ödemeyi Şu Adrese Gönderin",
+      "instruction": "Tam olarak",
+      "instructionSuffix": "tutarını aşağıdaki Ethereum adresine aktarın:",
+      "copyAddress": "Adresi kopyala",
+      "addressCopied": "Adres panoya kopyalandı!",
+      "networkWarning": "Yalnızca Ethereum ağı üzerinden ETH gönderin"
+    },
+    "processing": {
+      "heading": "İşlem Süresi",
+      "message": "Ödeme onaylandıktan sonra, NFT dışa aktarma işleminiz {hours} içinde tamamlanacaktır. Dışa aktarılan dosya, kayıtlı e-posta adresinize gönderilecektir.",
+      "hours": "24 saat"
+    },
+    "steps": {
+      "heading": "Nasıl Çalışır",
+      "step1": { "title": "Yukarıdaki cüzdan adresini kopyalayın", "description": "Transferi başlatmak için Ethereum uyumlu herhangi bir cüzdan kullanın." },
+      "step2": { "title": "{amount} gönderin", "description": "Ethereum ana ağı üzerinden gönderdiğinizden emin olun.", "fallbackAmount": "100$ değerinde ETH" },
+      "step3": { "title": "Aşağıdan \"Ödendi\" butonuna tıklayın", "description": "Ödeme gönderildiğinde bize bildirin." },
+      "step4": { "title": "NFT dışa aktarımınızı alın", "description": "24 saat içinde işleyip teslim edeceğiz." }
+    },
+    "paidButton": "Ödendi",
+    "paidConfirmation": {
+      "heading": "Ödeme Gönderildi",
+      "message": "Dışa aktarma talebinizi 24 saat içinde işleme alacağız.",
+      "backButton": "NFT'ye Geri Dön"
+    },
+    "notification": {
+      "title": "Ödeme Gönderildi",
+      "message": "Teşekkür ederiz! Dışa aktarma talebiniz alındı. Ekibimiz 24 saat içinde işleyecek ve NFT dosyasını kayıtlı e-posta adresinize gönderecektir."
+    },
+    "helpText": "Yardıma mı ihtiyacınız var?",
+    "contactSupport": "Destek ile iletişime geçin"
+  }
+}

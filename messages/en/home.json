@@ -1,0 +1,75 @@
+{
+  "metaTitle": "Premium NFT Marketplace",
+  "metaDescription": "Discover exclusive NFT collections from elite artists. Foundation Exclusive is the premier destination for high-value NFT collectors.",
+  "hero": {
+    "badge": "An Extension of Foundation",
+    "heading": "Discover <gradient>Exclusive</gradient> NFT Collections",
+    "subtitle": "Foundation Exclusive is the premier destination for high-value NFT collectors. Join an exclusive community where exceptional digital art finds its rightful collectors.",
+    "exploreCollections": "Explore Collections",
+    "learnMore": "Learn More",
+    "imageAlt": "Featured NFT {n}",
+    "stats": [
+      {
+        "value": "150+",
+        "label": "Curated Collections"
+      },
+      {
+        "value": "50+",
+        "label": "Elite Artists"
+      },
+      {
+        "value": "$45M+",
+        "label": "Total Volume"
+      }
+    ]
+  },
+  "featured": {
+    "heading": "Featured Collections",
+    "subtitle": "Hand-picked collections from our exclusive artists",
+    "viewAll": "View All",
+    "itemsCount": "{count} items",
+    "floor": "Floor"
+  },
+  "aboutBrief": {
+    "heading": "The Exclusive Community",
+    "text": "Foundation Exclusive is an extension of Foundation, created for serious collectors who understand the true value of exceptional digital art. Our curated platform ensures every piece meets the highest standards of quality and authenticity.",
+    "cta": "Learn About Us"
+  },
+  "categories": {
+    "heading": "Browse by Category",
+    "subtitle": "Explore collections across different categories"
+  },
+  "moreCollections": {
+    "heading": "More Collections",
+    "subtitle": "Discover more exclusive collections",
+    "viewAll": "View All"
+  },
+  "features": {
+    "heading": "Why Choose Foundation Exclusive?",
+    "subtitle": "The most trusted platform for premium NFT collectors",
+    "items": [
+      {
+        "title": "Verified Authenticity",
+        "description": "Every piece undergoes rigorous verification for authenticity"
+      },
+      {
+        "title": "Premium Quality",
+        "description": "Curated collections from world-class digital artists"
+      },
+      {
+        "title": "Exclusive Community",
+        "description": "Join a selective network of serious collectors"
+      },
+      {
+        "title": "Investment Grade",
+        "description": "NFTs priced to reflect their true market value"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to Join the Exclusive?",
+    "text": "Become a member of Foundation Exclusive and gain access to premium collections, exclusive drops, and a community of like-minded collectors.",
+    "becomeMember": "Become a Member",
+    "exploreCollections": "Explore Collections"
+  }
+}

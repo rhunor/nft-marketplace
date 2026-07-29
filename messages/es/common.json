@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "Cambiar idioma",
+    "popular": "Idiomas populares",
+    "more": "Más idiomas"
+  },
+  "languageBanner": {
+    "message": "Parece que prefieres {language}.",
+    "switch": "Cambiar",
+    "dismiss": "Descartar"
+  },
+  "nav": {
+    "home": "Inicio",
+    "explore": "Explorar",
+    "about": "Acerca de",
+    "help": "Ayuda",
+    "contact": "Contacto"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "Buscar NFT, creadores...",
+    "create": "Crear",
+    "signIn": "Iniciar sesión",
+    "getStarted": "Comenzar",
+    "userMenu": {
+      "dashboard": "Panel",
+      "createNft": "Crear NFT",
+      "fundAccount": "Recargar cuenta",
+      "adminPanel": "Panel de administración",
+      "signOut": "Cerrar sesión"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "Una extensión de Foundation: el destino principal para coleccionistas y creadores de NFT de alto valor. Únete a nuestra comunidad exclusiva de coleccionistas exigentes.",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "Correo electrónico"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "Marketplace",
+        "exploreCollections": "Explorar colecciones",
+        "howItWorks": "Cómo funciona",
+        "create": "Crear"
+      },
+      "resources": {
+        "heading": "Recursos",
+        "helpCenter": "Centro de ayuda",
+        "contactUs": "Contáctanos",
+        "faq": "Preguntas frecuentes"
+      },
+      "company": {
+        "heading": "Empresa",
+        "aboutUs": "Sobre nosotros",
+        "termsOfService": "Términos de servicio",
+        "privacyPolicy": "Política de privacidad",
+        "cookiePolicy": "Política de cookies"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. Todos los derechos reservados.",
+    "bottomLinks": {
+      "terms": "Términos",
+      "privacy": "Privacidad",
+      "cookies": "Cookies"
+    }
+  },
+  "modal": {
+    "dismiss": "Descartar"
+  },
+  "nftCard": {
+    "currentPrice": "Precio actual",
+    "by": "por"
+  },
+  "nftGrid": {
+    "emptyMessage": "No se encontraron NFT"
+  },
+  "nftImage": {
+    "unavailable": "Imagen no disponible"
+  }
+}

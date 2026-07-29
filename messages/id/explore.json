@@ -1,0 +1,45 @@
+{
+  "pageTitle": "Jelajahi",
+  "pageSubtitle": "Temukan koleksi eksklusif dari seniman digital kelas dunia",
+  "sort": {
+    "random": "Acak",
+    "recentDesc": "Terbaru",
+    "volumeDesc": "Volume Tertinggi",
+    "volumeAsc": "Volume Terendah",
+    "floorAsc": "Harga Dasar: Rendah ke Tinggi",
+    "floorDesc": "Harga Dasar: Tinggi ke Rendah",
+    "itemsDesc": "Item Terbanyak"
+  },
+  "newUploads": {
+    "heading": "Unggahan Baru",
+    "subtitle": "NFT terbaru dari kreator marketplace kami",
+    "viewAll": "Lihat Semua Unggahan Baru ({count})"
+  },
+  "newBadge": "Baru",
+  "price": "Harga",
+  "search": {
+    "collectionsPlaceholder": "Cari koleksi...",
+    "nftsPlaceholder": "Cari NFT..."
+  },
+  "viewMode": {
+    "collections": "Lihat Koleksi",
+    "items": "Lihat Item Individual"
+  },
+  "filters": "Filter",
+  "categories": "Kategori",
+  "allCategories": "Semua Kategori",
+  "all": "Semua",
+  "clearAllFilters": "Hapus Semua Filter",
+  "activeFilters": "Filter aktif:",
+  "searchLabel": "Cari: {query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {Menampilkan # koleksi} other {Menampilkan # koleksi}}",
+    "items": "{count, plural, one {Menampilkan # NFT} other {Menampilkan # NFT}}"
+  },
+  "noCollectionsFound": "Tidak ada koleksi yang cocok dengan kriteria Anda",
+  "clearFilters": "Hapus Filter",
+  "itemsCount": "{count, plural, one {# item} other {# item}}",
+  "floor": "Harga Dasar",
+  "totalVolume": "Total Volume",
+  "usd": "USD"
+}

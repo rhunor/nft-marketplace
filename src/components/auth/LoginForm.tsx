@@ -1,14 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { useRouter, Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import { signIn } from 'next-auth/react';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { Button, Input, Card } from '@/components/ui';
 import { loginSchema, type LoginInput } from '@/lib/validations';
 
 export function LoginForm() {
+  const t = useTranslations('auth.login');
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl') || '/dashboard';
@@ -56,7 +58,7 @@ export function LoginForm() {
       });
 
       if (response?.error) {
-        setAuthError('Invalid email or password');
+        setAuthError(t('errors.invalidCredentials'));
         setIsLoading(false);
         return;
       }
@@ -66,11 +68,11 @@ export function LoginForm() {
         router.push(callbackUrl);
         router.refresh();
       } else {
-        setAuthError('Login failed. Please try again.');
+        setAuthError(t('errors.loginFailed'));
         setIsLoading(false);
       }
     } catch {
-      setAuthError('Something went wrong. Please try again.');
+      setAuthError(t('errors.somethingWentWrong'));
       setIsLoading(false);
     }
   };
@@ -78,10 +80,8 @@ export function LoginForm() {
   return (
     <Card className="w-full max-w-md p-8">
       <div className="mb-8 text-center">
-        <h1 className="text-2xl font-bold">Welcome Back</h1>
-        <p className="mt-2 text-foreground-muted">
-          Sign in to continue to Foundation Exclusive
-        </p>
+        <h1 className="text-2xl font-bold">{t('heading')}</h1>
+        <p className="mt-2 text-foreground-muted">{t('subheading')}</p>
       </div>
 
       {authError && (
@@ -92,25 +92,25 @@ export function LoginForm() {
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <Input
-          label="Email"
+          label={t('emailLabel')}
           name="email"
           type="email"
           value={formData.email}
           onChange={handleChange}
           error={errors.email}
-          placeholder="you@example.com"
+          placeholder={t('emailPlaceholder')}
           leftIcon={<Mail className="h-4 w-4" />}
           autoComplete="email"
         />
 
         <Input
-          label="Password"
+          label={t('passwordLabel')}
           name="password"
           type={showPassword ? 'text' : 'password'}
           value={formData.password}
           onChange={handleChange}
           error={errors.password}
-          placeholder="••••••••"
+          placeholder={t('passwordPlaceholder')}
           leftIcon={<Lock className="h-4 w-4" />}
           rightIcon={
             <button
@@ -134,28 +134,28 @@ export function LoginForm() {
               type="checkbox"
               className="h-4 w-4 rounded border-border bg-background-secondary text-accent-primary focus:ring-accent-primary"
             />
-            <span className="text-foreground-muted">Remember me</span>
+            <span className="text-foreground-muted">{t('rememberMe')}</span>
           </label>
           <Link
             href="/forgot-password"
             className="text-sm text-accent-primary hover:text-accent-secondary"
           >
-            Forgot password?
+            {t('forgotPassword')}
           </Link>
         </div>
 
         <Button type="submit" className="w-full" isLoading={isLoading}>
-          Sign In
+          {t('submit')}
         </Button>
       </form>
 
       <p className="mt-8 text-center text-sm text-foreground-muted">
-        Don&apos;t have an account?{' '}
+        {t('noAccount')}{' '}
         <Link
           href="/register"
           className="font-medium text-accent-primary hover:text-accent-secondary"
         >
-          Sign up for free
+          {t('signUpLink')}
         </Link>
       </p>
     </Card>

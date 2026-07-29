@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "创建 NFT",
+    "subtitle": "上传您的数字艺术作品"
+  },
+  "mode": {
+    "single": {
+      "title": "单个 NFT",
+      "subtitle": "上传一件作品"
+    },
+    "collection": {
+      "title": "合集",
+      "subtitle": "一次上传 2-20 件作品"
+    }
+  },
+  "fee": {
+    "label": "上传费用",
+    "singleDescription": "每次上传 NFT 收费 $200",
+    "collectionDescription": "$200 × {count} 件 = ${total}",
+    "yourBalance": "您的余额",
+    "insufficientBalance": "余额不足，请为账户充值。"
+  },
+  "notifications": {
+    "invalidFileType": {
+      "title": "文件类型无效",
+      "message": "请上传图片、视频或音频文件。"
+    },
+    "fileTooLarge": {
+      "title": "文件过大",
+      "message": "文件大小最大为 100MB。"
+    },
+    "maxItemsReached": {
+      "title": "已达上限",
+      "message": "一个合集最多可包含 20 件作品。"
+    },
+    "minItemsRequired": {
+      "title": "未达最低数量",
+      "message": "一个合集至少需要包含 2 件作品。"
+    },
+    "noFileSelected": {
+      "title": "未选择文件"
+    },
+    "insufficientBalance": {
+      "title": "余额不足",
+      "uploadMessage": "上传需要 {fee}。",
+      "collectionMessage": "创建合集需要 {fee}。"
+    },
+    "nftCreated": {
+      "title": "NFT 创建成功！",
+      "message": "您的 NFT 已成功上传。"
+    },
+    "uploadFailed": {
+      "title": "上传失败",
+      "defaultMessage": "出现了一些问题，请重试。"
+    },
+    "collectionInvalidFileType": {
+      "title": "文件类型无效"
+    },
+    "collectionFileTooLarge": {
+      "title": "文件过大",
+      "message": "最大 100MB。"
+    },
+    "fillRequiredFields": {
+      "title": "请填写所有必填字段"
+    },
+    "collectionCreated": {
+      "title": "合集创建成功！",
+      "message": "已成功上传 {count} 件作品。"
+    }
+  },
+  "form": {
+    "single": {
+      "mediaLabel": "媒体文件 *",
+      "dragDrop": "拖放文件，或点击上传",
+      "acceptedTypes": "JPG、PNG、GIF、MP4、MP3（最大 100MB）",
+      "titleLabel": "标题 *",
+      "titlePlaceholder": "NFT 标题",
+      "priceLabel": "价格（ETH） *",
+      "pricePlaceholder": "0.1",
+      "categoryLabel": "分类 *",
+      "tagsLabel": "标签（最多 10 个）",
+      "tagsPlaceholder": "添加标签",
+      "addTag": "添加",
+      "submit": "创建 NFT",
+      "submitting": "正在上传...",
+      "priceError": "价格必须大于 0"
+    },
+    "collection": {
+      "detailsHeading": "合集详情",
+      "nameLabel": "合集名称 *",
+      "namePlaceholder": "我的合集",
+      "descriptionLabel": "描述 *",
+      "descriptionPlaceholder": "描述您的合集...",
+      "categoryLabel": "分类 *",
+      "priceLabel": "合集价格（ETH） *",
+      "pricePlaceholder": "0.5",
+      "pricePerItemHint": "每件价格：{price}",
+      "itemsHeading": "作品（{count}）",
+      "addItem": "添加",
+      "itemLabel": "作品 {number}",
+      "itemUploadPrompt": "点击上传",
+      "itemTitleLabel": "标题 *",
+      "itemTitlePlaceholder": "作品标题",
+      "requiredError": "必填",
+      "priceError": "合集价格必须大于 0",
+      "submit": "创建合集（{count} 件作品）",
+      "submitting": "正在创建合集..."
+    }
+  }
+}

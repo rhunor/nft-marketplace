@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "Buat NFT",
+    "subtitle": "Unggah karya seni digital Anda"
+  },
+  "mode": {
+    "single": {
+      "title": "NFT Tunggal",
+      "subtitle": "Unggah satu karya seni"
+    },
+    "collection": {
+      "title": "Koleksi",
+      "subtitle": "2-20 item sekaligus"
+    }
+  },
+  "fee": {
+    "label": "Biaya Unggahan",
+    "singleDescription": "$200 per unggahan NFT",
+    "collectionDescription": "$200 × {count} item = ${total}",
+    "yourBalance": "Saldo Anda",
+    "insufficientBalance": "Saldo tidak mencukupi. Silakan isi saldo akun Anda."
+  },
+  "notifications": {
+    "invalidFileType": {
+      "title": "Jenis berkas tidak valid",
+      "message": "Silakan unggah berkas gambar, video, atau audio."
+    },
+    "fileTooLarge": {
+      "title": "Berkas terlalu besar",
+      "message": "Ukuran berkas maksimum adalah 100MB."
+    },
+    "maxItemsReached": {
+      "title": "Batas maksimum tercapai",
+      "message": "Sebuah koleksi dapat memiliki maksimal 20 item."
+    },
+    "minItemsRequired": {
+      "title": "Minimum diperlukan",
+      "message": "Sebuah koleksi harus memiliki minimal 2 item."
+    },
+    "noFileSelected": {
+      "title": "Tidak ada berkas yang dipilih"
+    },
+    "insufficientBalance": {
+      "title": "Saldo Tidak Mencukupi",
+      "uploadMessage": "Membutuhkan {fee} untuk mengunggah.",
+      "collectionMessage": "Membutuhkan {fee} untuk membuat koleksi."
+    },
+    "nftCreated": {
+      "title": "NFT Berhasil Dibuat!",
+      "message": "NFT Anda telah berhasil diunggah."
+    },
+    "uploadFailed": {
+      "title": "Unggahan Gagal",
+      "defaultMessage": "Terjadi kesalahan. Silakan coba lagi."
+    },
+    "collectionInvalidFileType": {
+      "title": "Jenis berkas tidak valid"
+    },
+    "collectionFileTooLarge": {
+      "title": "Berkas terlalu besar",
+      "message": "Maksimum 100MB."
+    },
+    "fillRequiredFields": {
+      "title": "Silakan isi semua kolom yang wajib diisi"
+    },
+    "collectionCreated": {
+      "title": "Koleksi Berhasil Dibuat!",
+      "message": "{count} item berhasil diunggah."
+    }
+  },
+  "form": {
+    "single": {
+      "mediaLabel": "Berkas Media *",
+      "dragDrop": "Seret dan lepas atau klik untuk mengunggah",
+      "acceptedTypes": "JPG, PNG, GIF, MP4, MP3 (Maks 100MB)",
+      "titleLabel": "Judul *",
+      "titlePlaceholder": "Judul NFT",
+      "priceLabel": "Harga (ETH) *",
+      "pricePlaceholder": "0.1",
+      "categoryLabel": "Kategori *",
+      "tagsLabel": "Tag (hingga 10)",
+      "tagsPlaceholder": "Tambah tag",
+      "addTag": "Tambah",
+      "submit": "Buat NFT",
+      "submitting": "Mengunggah...",
+      "priceError": "Harga harus lebih besar dari 0"
+    },
+    "collection": {
+      "detailsHeading": "Detail Koleksi",
+      "nameLabel": "Nama Koleksi *",
+      "namePlaceholder": "Koleksi Saya",
+      "descriptionLabel": "Deskripsi *",
+      "descriptionPlaceholder": "Deskripsikan koleksi Anda...",
+      "categoryLabel": "Kategori *",
+      "priceLabel": "Harga Koleksi (ETH) *",
+      "pricePlaceholder": "0.5",
+      "pricePerItemHint": "Harga per item: {price}",
+      "itemsHeading": "Item ({count})",
+      "addItem": "Tambah",
+      "itemLabel": "Item {number}",
+      "itemUploadPrompt": "Klik untuk mengunggah",
+      "itemTitleLabel": "Judul *",
+      "itemTitlePlaceholder": "Judul item",
+      "requiredError": "Wajib diisi",
+      "priceError": "Harga koleksi harus lebih besar dari 0",
+      "submit": "Buat Koleksi ({count} item)",
+      "submitting": "Membuat Koleksi..."
+    }
+  }
+}

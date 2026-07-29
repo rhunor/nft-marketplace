@@ -68,6 +68,11 @@ export interface NFTWithUser {
   isListed: boolean;
   createdAt: Date;
   updatedAt: Date;
+  // Present when fetched in a non-English locale: machine-translated title/description,
+  // with the creator's original text preserved for a "view original" toggle.
+  originalTitle?: string;
+  originalDescription?: string;
+  isTranslated?: boolean;
 }
 
 // Collection Types

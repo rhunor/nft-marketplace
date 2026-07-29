@@ -1,0 +1,156 @@
+{
+  "detail": {
+    "loading": "NFT를 불러오는 중...",
+    "notFound": {
+      "heading": "NFT를 찾을 수 없습니다",
+      "genericMessage": "찾으시는 NFT가 존재하지 않거나 삭제되었습니다.",
+      "browseButton": "NFT 둘러보기"
+    },
+    "back": "뒤로",
+    "share": "공유",
+    "translated": {
+      "badge": "기계 번역됨",
+      "showOriginal": "원문 보기",
+      "showTranslation": "번역 보기"
+    },
+    "badges": {
+      "notForSale": "판매하지 않음",
+      "youOwnThis": "회원님이 소유 중",
+      "marketplaceNft": "마켓플레이스 NFT",
+      "you": "(회원님)"
+    },
+    "creator": "크리에이터",
+    "owner": "소유자",
+    "price": {
+      "current": "현재 가격",
+      "insufficientBalance": "잔액이 부족합니다",
+      "buyNow": "지금 구매",
+      "manageNft": "NFT 관리",
+      "exportNft": "NFT 내보내기"
+    },
+    "description": "설명",
+    "tags": "태그",
+    "details": {
+      "heading": "상세 정보",
+      "tokenId": "토큰 ID",
+      "blockchain": "블록체인",
+      "ethereum": "이더리움",
+      "mediaType": "미디어 유형",
+      "created": "생성일"
+    },
+    "related": {
+      "title": "이 카테고리의 다른 작품",
+      "subtitle": "{category} NFT 더 둘러보기"
+    },
+    "buyModal": {
+      "title": "구매 확인",
+      "by": "작가 @{username}",
+      "price": "가격",
+      "platformFee": "플랫폼 수수료 (2.5%)",
+      "gasFee": "가스비 (예상)",
+      "total": "합계",
+      "yourBalance": "회원님의 잔액",
+      "insufficientBalanceWarning": "잔액이 부족합니다. 계정을 충전해 주세요.",
+      "immediateTransferNote": "확인 즉시 소유권이 이전됩니다.",
+      "adminTransferNote": "구매 후, 소유권 이전은 관리팀에 의해 24시간 이내에 처리됩니다.",
+      "cancel": "취소",
+      "confirm": "구매 확인"
+    },
+    "manageModal": {
+      "title": "NFT 관리",
+      "statusListed": "상태: 판매 중",
+      "statusNotListed": "상태: 미판매",
+      "priceLabel": "가격 (ETH)",
+      "pricePlaceholder": "0.1",
+      "listForSale": "판매 등록",
+      "updatePrice": "가격 수정",
+      "unlist": "마켓플레이스에서 판매 취소",
+      "cancel": "취소"
+    },
+    "notifications": {
+      "addedToFavorites": "즐겨찾기에 추가되었습니다",
+      "removedFromFavorites": "즐겨찾기에서 제거되었습니다",
+      "likeUpdateFailed": "좋아요 업데이트에 실패했습니다",
+      "purchaseSuccessTitle": "구매 완료!",
+      "purchaseSuccessMessage": "이제 이 NFT의 소유자가 되셨습니다.",
+      "purchaseFailedTitle": "구매 실패",
+      "genericError": "문제가 발생했습니다",
+      "purchaseSubmittedTitle": "구매 요청이 접수되었습니다!",
+      "purchaseSubmittedMessage": "구매가 처리되고 있습니다. 관리팀 확인 후 소유권이 이전됩니다.",
+      "linkCopied": "링크가 클립보드에 복사되었습니다!",
+      "copyFailed": "링크 복사에 실패했습니다",
+      "invalidPrice": "유효한 가격을 입력해 주세요",
+      "listedTitle": "NFT가 등록되었습니다!",
+      "listedMessage": "이제 NFT가 마켓플레이스에서 판매됩니다.",
+      "listFailedTitle": "NFT 등록에 실패했습니다",
+      "unlistedTitle": "NFT 판매가 취소되었습니다",
+      "unlistedMessage": "NFT가 마켓플레이스에서 제거되었습니다.",
+      "unlistFailedTitle": "NFT 판매 취소에 실패했습니다",
+      "priceUpdatedTitle": "가격이 수정되었습니다!",
+      "priceUpdatedMessage": "새 가격: {price} ETH",
+      "priceUpdateFailedTitle": "가격 수정에 실패했습니다"
+    },
+    "errors": {
+      "fetchFailed": "NFT를 가져오지 못했습니다",
+      "notFoundError": "NFT를 찾을 수 없습니다",
+      "loadFailed": "NFT를 불러오지 못했습니다"
+    }
+  },
+  "export": {
+    "cannotExport": "이 NFT는 내보낼 수 없습니다.",
+    "loadFailed": "NFT를 불러오지 못했습니다",
+    "fetchFailed": "NFT를 가져오지 못했습니다",
+    "loading": "NFT를 불러오는 중...",
+    "cannotExportHeading": "NFT를 내보낼 수 없습니다",
+    "nftNotFound": "NFT를 찾을 수 없습니다.",
+    "browseButton": "NFT 둘러보기",
+    "accessDenied": {
+      "heading": "접근 거부됨",
+      "message": "이 NFT의 소유자만 내보낼 수 있습니다.",
+      "backButton": "NFT로 돌아가기"
+    },
+    "back": "뒤로",
+    "heading": "NFT 내보내기",
+    "subheading": "NFT를 개인 지갑으로 내보내세요",
+    "by": "작가 @{username}",
+    "fee": {
+      "heading": "내보내기 수수료",
+      "amountLabel": "보낼 금액",
+      "loadingAmount": "불러오는 중...",
+      "approxUsd": "≈ ${amount} USD",
+      "note": "이 일회성 수수료는 NFT를 외부 지갑으로 내보내는 데 필요한 가스 비용과 처리 비용을 충당합니다."
+    },
+    "payment": {
+      "heading": "다음 주소로 결제 전송",
+      "instruction": "정확히",
+      "instructionSuffix": "을(를) 아래 이더리움 주소로 전송해 주세요:",
+      "copyAddress": "주소 복사",
+      "addressCopied": "주소가 클립보드에 복사되었습니다!",
+      "networkWarning": "이더리움 네트워크로만 ETH를 보내주세요"
+    },
+    "processing": {
+      "heading": "처리 시간",
+      "message": "결제가 확인된 후, NFT 내보내기는 {hours} 이내에 처리됩니다. 내보낸 파일은 등록된 이메일 주소로 전달됩니다.",
+      "hours": "24시간"
+    },
+    "steps": {
+      "heading": "이용 방법",
+      "step1": { "title": "위의 지갑 주소를 복사하세요", "description": "이더리움 호환 지갑을 사용해 전송을 시작하세요." },
+      "step2": { "title": "{amount} 전송", "description": "반드시 이더리움 메인넷으로 전송해 주세요.", "fallbackAmount": "$100 상당의 ETH" },
+      "step3": { "title": "아래에서 \"결제 완료\" 클릭", "description": "결제 전송 후 저희에게 알려주세요." },
+      "step4": { "title": "NFT 내보내기 수신", "description": "24시간 이내에 처리하여 전달해 드립니다." }
+    },
+    "paidButton": "결제 완료",
+    "paidConfirmation": {
+      "heading": "결제가 접수되었습니다",
+      "message": "24시간 이내에 내보내기 요청을 처리해 드리겠습니다.",
+      "backButton": "NFT로 돌아가기"
+    },
+    "notification": {
+      "title": "결제가 접수되었습니다",
+      "message": "감사합니다! 내보내기 요청이 접수되었습니다. 저희 팀이 24시간 이내에 처리하여 등록된 이메일로 NFT 파일을 보내드리겠습니다."
+    },
+    "helpText": "도움이 필요하신가요?",
+    "contactSupport": "고객 지원팀에 문의하기"
+  }
+}

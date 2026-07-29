@@ -1,0 +1,156 @@
+{
+  "detail": {
+    "loading": "Загрузка NFT...",
+    "notFound": {
+      "heading": "NFT не найден",
+      "genericMessage": "NFT, который вы ищете, не существует или был удалён.",
+      "browseButton": "Просмотреть NFT"
+    },
+    "back": "Назад",
+    "share": "Поделиться",
+    "translated": {
+      "badge": "Машинный перевод",
+      "showOriginal": "Показать оригинал",
+      "showTranslation": "Показать перевод"
+    },
+    "badges": {
+      "notForSale": "Не продаётся",
+      "youOwnThis": "Вам принадлежит",
+      "marketplaceNft": "NFT маркетплейса",
+      "you": "(Вы)"
+    },
+    "creator": "Автор",
+    "owner": "Владелец",
+    "price": {
+      "current": "Текущая цена",
+      "insufficientBalance": "Недостаточно средств",
+      "buyNow": "Купить сейчас",
+      "manageNft": "Управление NFT",
+      "exportNft": "Экспортировать NFT"
+    },
+    "description": "Описание",
+    "tags": "Теги",
+    "details": {
+      "heading": "Детали",
+      "tokenId": "ID токена",
+      "blockchain": "Блокчейн",
+      "ethereum": "Ethereum",
+      "mediaType": "Тип медиа",
+      "created": "Создано"
+    },
+    "related": {
+      "title": "Больше из этой категории",
+      "subtitle": "Смотрите больше NFT в категории {category}"
+    },
+    "buyModal": {
+      "title": "Подтверждение покупки",
+      "by": "автор @{username}",
+      "price": "Цена",
+      "platformFee": "Комиссия платформы (2,5%)",
+      "gasFee": "Комиссия сети (примерно)",
+      "total": "Итого",
+      "yourBalance": "Ваш баланс",
+      "insufficientBalanceWarning": "Недостаточно средств. Пожалуйста, пополните счёт.",
+      "immediateTransferNote": "Право собственности будет передано сразу после подтверждения.",
+      "adminTransferNote": "После покупки передача права собственности будет обработана нашей командой администраторов в течение 24 часов.",
+      "cancel": "Отмена",
+      "confirm": "Подтвердить покупку"
+    },
+    "manageModal": {
+      "title": "Управление NFT",
+      "statusListed": "Статус: выставлен",
+      "statusNotListed": "Статус: не выставлен",
+      "priceLabel": "Цена (ETH)",
+      "pricePlaceholder": "0.1",
+      "listForSale": "Выставить на продажу",
+      "updatePrice": "Обновить цену",
+      "unlist": "Снять с продажи",
+      "cancel": "Отмена"
+    },
+    "notifications": {
+      "addedToFavorites": "Добавлено в избранное",
+      "removedFromFavorites": "Удалено из избранного",
+      "likeUpdateFailed": "Не удалось обновить отметку «нравится»",
+      "purchaseSuccessTitle": "Покупка успешно совершена!",
+      "purchaseSuccessMessage": "Теперь вы владелец этого NFT.",
+      "purchaseFailedTitle": "Покупка не удалась",
+      "genericError": "Что-то пошло не так",
+      "purchaseSubmittedTitle": "Запрос на покупку отправлен!",
+      "purchaseSubmittedMessage": "Ваша покупка обрабатывается. Право собственности будет передано после подтверждения администратором.",
+      "linkCopied": "Ссылка скопирована в буфер обмена!",
+      "copyFailed": "Не удалось скопировать ссылку",
+      "invalidPrice": "Введите действительную цену",
+      "listedTitle": "NFT выставлен!",
+      "listedMessage": "Ваш NFT теперь доступен на маркетплейсе.",
+      "listFailedTitle": "Не удалось выставить NFT",
+      "unlistedTitle": "NFT снят с продажи",
+      "unlistedMessage": "Ваш NFT удалён с маркетплейса.",
+      "unlistFailedTitle": "Не удалось снять NFT с продажи",
+      "priceUpdatedTitle": "Цена обновлена!",
+      "priceUpdatedMessage": "Новая цена: {price} ETH",
+      "priceUpdateFailedTitle": "Не удалось обновить цену"
+    },
+    "errors": {
+      "fetchFailed": "Не удалось получить данные NFT",
+      "notFoundError": "NFT не найден",
+      "loadFailed": "Не удалось загрузить NFT"
+    }
+  },
+  "export": {
+    "cannotExport": "Этот NFT нельзя экспортировать.",
+    "loadFailed": "Не удалось загрузить NFT",
+    "fetchFailed": "Не удалось получить данные NFT",
+    "loading": "Загрузка NFT...",
+    "cannotExportHeading": "Невозможно экспортировать NFT",
+    "nftNotFound": "NFT не найден.",
+    "browseButton": "Просмотреть NFT",
+    "accessDenied": {
+      "heading": "Доступ запрещён",
+      "message": "Экспортировать этот NFT может только его владелец.",
+      "backButton": "Вернуться к NFT"
+    },
+    "back": "Назад",
+    "heading": "Экспорт NFT",
+    "subheading": "Экспортируйте свой NFT в личный кошелёк",
+    "by": "автор @{username}",
+    "fee": {
+      "heading": "Комиссия за экспорт",
+      "amountLabel": "Сумма к отправке",
+      "loadingAmount": "Загрузка...",
+      "approxUsd": "≈ ${amount} USD",
+      "note": "Эта единовременная комиссия покрывает расходы на газ и обработку, необходимые для экспорта вашего NFT на внешний кошелёк."
+    },
+    "payment": {
+      "heading": "Отправьте платёж на",
+      "instruction": "Переведите ровно",
+      "instructionSuffix": "на указанный ниже адрес Ethereum:",
+      "copyAddress": "Скопировать адрес",
+      "addressCopied": "Адрес скопирован в буфер обмена!",
+      "networkWarning": "Отправляйте ETH только в сети Ethereum"
+    },
+    "processing": {
+      "heading": "Время обработки",
+      "message": "После подтверждения оплаты экспорт вашего NFT будет обработан в течение {hours}. Экспортированный файл будет отправлен на ваш зарегистрированный адрес электронной почты.",
+      "hours": "24 часов"
+    },
+    "steps": {
+      "heading": "Как это работает",
+      "step1": { "title": "Скопируйте адрес кошелька выше", "description": "Используйте любой кошелёк, совместимый с Ethereum, чтобы начать перевод." },
+      "step2": { "title": "Отправьте {amount}", "description": "Убедитесь, что отправляете в основной сети Ethereum.", "fallbackAmount": "ETH на сумму $100" },
+      "step3": { "title": "Нажмите «Оплачено» ниже", "description": "Уведомите нас после отправки платежа." },
+      "step4": { "title": "Получите экспортированный NFT", "description": "Мы обработаем запрос и доставим файл в течение 24 часов." }
+    },
+    "paidButton": "Оплачено",
+    "paidConfirmation": {
+      "heading": "Платёж отправлен",
+      "message": "Мы обработаем ваш запрос на экспорт в течение 24 часов.",
+      "backButton": "Вернуться к NFT"
+    },
+    "notification": {
+      "title": "Платёж отправлен",
+      "message": "Спасибо! Ваш запрос на экспорт получен. Наша команда обработает его в течение 24 часов и отправит файл NFT на ваш зарегистрированный email."
+    },
+    "helpText": "Нужна помощь?",
+    "contactSupport": "Связаться с поддержкой"
+  }
+}

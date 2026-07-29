@@ -1,0 +1,60 @@
+import type { Locale } from './routing';
+
+/** Best-guess default language per country, used only as a fallback signal
+ * when the browser sends no usable Accept-Language header. */
+const COUNTRY_TO_LOCALE: Record<string, Locale> = {
+  BR: 'pt',
+  PT: 'pt',
+  ES: 'es',
+  MX: 'es',
+  AR: 'es',
+  CO: 'es',
+  CL: 'es',
+  PE: 'es',
+  VE: 'es',
+  EC: 'es',
+  GT: 'es',
+  FR: 'fr',
+  BE: 'fr',
+  DE: 'de',
+  AT: 'de',
+  CH: 'de',
+  IT: 'it',
+  CN: 'zh',
+  TW: 'zh',
+  HK: 'zh',
+  SG: 'zh',
+  JP: 'ja',
+  KR: 'ko',
+  RU: 'ru',
+  SA: 'ar',
+  AE: 'ar',
+  EG: 'ar',
+  QA: 'ar',
+  KW: 'ar',
+  NL: 'nl',
+  TR: 'tr',
+  PL: 'pl',
+  VN: 'vi',
+  ID: 'id',
+  DK: 'da',
+  SE: 'sv',
+  NO: 'nb',
+  FI: 'fi',
+  CZ: 'cs',
+  SK: 'sk',
+  SI: 'sl',
+  HU: 'hu',
+  RO: 'ro',
+  BG: 'bg',
+  GR: 'el',
+  EE: 'et',
+  LV: 'lv',
+  LT: 'lt',
+  UA: 'uk',
+};
+
+export function countryToLocale(countryCode: string | null | undefined): Locale | null {
+  if (!countryCode) return null;
+  return COUNTRY_TO_LOCALE[countryCode.toUpperCase()] ?? null;
+}

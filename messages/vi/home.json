@@ -1,0 +1,75 @@
+{
+  "metaTitle": "Nền Tảng NFT Cao Cấp",
+  "metaDescription": "Khám phá các bộ sưu tập NFT độc quyền từ những nghệ sĩ hàng đầu. Foundation Exclusive là điểm đến hàng đầu dành cho các nhà sưu tầm NFT giá trị cao.",
+  "hero": {
+    "badge": "Phần Mở Rộng Của Foundation",
+    "heading": "Khám Phá Bộ Sưu Tập NFT <gradient>Độc Quyền</gradient>",
+    "subtitle": "Foundation Exclusive là điểm đến hàng đầu dành cho các nhà sưu tầm NFT giá trị cao. Tham gia một cộng đồng độc quyền, nơi nghệ thuật số xuất sắc tìm được những nhà sưu tầm xứng đáng.",
+    "exploreCollections": "Khám Phá Bộ Sưu Tập",
+    "learnMore": "Tìm Hiểu Thêm",
+    "imageAlt": "NFT Nổi Bật {n}",
+    "stats": [
+      {
+        "value": "150+",
+        "label": "Bộ Sưu Tập Được Tuyển Chọn"
+      },
+      {
+        "value": "50+",
+        "label": "Nghệ Sĩ Hàng Đầu"
+      },
+      {
+        "value": "$45M+",
+        "label": "Tổng Khối Lượng Giao Dịch"
+      }
+    ]
+  },
+  "featured": {
+    "heading": "Bộ Sưu Tập Nổi Bật",
+    "subtitle": "Bộ sưu tập được tuyển chọn thủ công từ các nghệ sĩ độc quyền của chúng tôi",
+    "viewAll": "Xem Tất Cả",
+    "itemsCount": "{count} sản phẩm",
+    "floor": "Giá Sàn"
+  },
+  "aboutBrief": {
+    "heading": "Cộng Đồng Độc Quyền",
+    "text": "Foundation Exclusive là phần mở rộng của Foundation, được tạo ra dành cho những nhà sưu tầm nghiêm túc, thấu hiểu giá trị thực sự của nghệ thuật số xuất sắc. Nền tảng được tuyển chọn kỹ lưỡng của chúng tôi đảm bảo mỗi tác phẩm đều đạt tiêu chuẩn cao nhất về chất lượng và tính xác thực.",
+    "cta": "Tìm Hiểu Về Chúng Tôi"
+  },
+  "categories": {
+    "heading": "Duyệt Theo Danh Mục",
+    "subtitle": "Khám phá các bộ sưu tập theo nhiều danh mục khác nhau"
+  },
+  "moreCollections": {
+    "heading": "Thêm Bộ Sưu Tập",
+    "subtitle": "Khám phá thêm nhiều bộ sưu tập độc quyền",
+    "viewAll": "Xem Tất Cả"
+  },
+  "features": {
+    "heading": "Vì Sao Chọn Foundation Exclusive?",
+    "subtitle": "Nền tảng đáng tin cậy nhất dành cho các nhà sưu tầm NFT cao cấp",
+    "items": [
+      {
+        "title": "Xác Thực Đã Được Kiểm Chứng",
+        "description": "Mỗi tác phẩm đều trải qua quy trình xác minh nghiêm ngặt để đảm bảo tính xác thực"
+      },
+      {
+        "title": "Chất Lượng Cao Cấp",
+        "description": "Bộ sưu tập được tuyển chọn từ các nghệ sĩ số hàng đầu thế giới"
+      },
+      {
+        "title": "Cộng Đồng Độc Quyền",
+        "description": "Tham gia mạng lưới chọn lọc gồm các nhà sưu tầm nghiêm túc"
+      },
+      {
+        "title": "Tiềm Năng Đầu Tư",
+        "description": "NFT được định giá phản ánh giá trị thực trên thị trường"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Sẵn Sàng Gia Nhập Sự Độc Quyền?",
+    "text": "Trở thành thành viên của Foundation Exclusive và tiếp cận các bộ sưu tập cao cấp, đợt ra mắt độc quyền, và cộng đồng của những nhà sưu tầm cùng chí hướng.",
+    "becomeMember": "Trở Thành Thành Viên",
+    "exploreCollections": "Khám Phá Bộ Sưu Tập"
+  }
+}

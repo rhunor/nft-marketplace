@@ -1,0 +1,162 @@
+{
+  "header": {
+    "heading": "Yardım Merkezi",
+    "subtitle": "Foundation Exclusive'ı kullanma hakkında bilmeniz gereken her şey"
+  },
+  "topics": {
+    "wallet": { "title": "Cüzdan ve Bakiye", "description": "Hesabınızı fonlayın ve ETH'nizi yönetin" },
+    "creating": { "title": "NFT Oluşturma", "description": "İlk NFT'nizi basın" },
+    "buying": { "title": "NFT Satın Alma", "description": "NFT satın alın ve koleksiyon yapın" },
+    "withdrawals": { "title": "Para Çekme", "description": "Hesabınızdan para çekin" },
+    "security": { "title": "Güvenlik", "description": "Hesabınızı güvende tutun" },
+    "exploring": { "title": "NFT Keşfetme", "description": "Koleksiyonlara göz atın ve keşfedin" }
+  },
+  "wallet": {
+    "heading": "Cüzdan ve Bakiye",
+    "cardHeading": "Hesabınızı Nasıl Fonlarsınız",
+    "steps": {
+      "step1": "Giriş yapın ve <b>Panel</b>inize gidin",
+      "step2": "<b>\"Hesabı Fonla\"</b> butonuna tıklayın",
+      "step3": "Bir QR kodu ve ETH cüzdan adresi göreceksiniz",
+      "step4": "Harici cüzdanınızdan bu adrese ETH gönderin",
+      "step5": "Bakiyenin güncellenmesi için ~10 dakika bekleyin"
+    },
+    "notesHeading": "Önemli Notlar",
+    "notes": [
+      "Belirtilen adrese yalnızca ETH (Ethereum) gönderin",
+      "Göndermeden önce cüzdan adresini iki kez kontrol edin",
+      "Referans için işlem hash'inizi saklayın"
+    ]
+  },
+  "creating": {
+    "heading": "NFT Oluşturma",
+    "singleCardHeading": "Tekil NFT Nasıl Oluşturulur",
+    "singleSteps": {
+      "step1": "En az <b>200$ değerinde ETH</b>'ye sahip olduğunuzdan emin olun",
+      "step2": "<b>Oluştur</b> sayfasına gidin",
+      "step3": "<b>\"Tekil NFT\"</b> modunu seçin",
+      "step4": "Medya dosyanızı yükleyin (maks. 100MB)",
+      "step5": "Başlık, fiyat ve kategoriyi doldurun",
+      "step6": "<b>\"NFT Oluştur\"</b> butonuna tıklayın"
+    },
+    "collectionCardHeading": "Koleksiyon Nasıl Oluşturulur",
+    "collectionSteps": {
+      "step1": "Oluştur sayfasında <b>\"Koleksiyon\"</b> modunu seçin",
+      "step2": "Koleksiyon adı, açıklaması ve kapak görseli ekleyin",
+      "step3": "Koleksiyonunuza 2-20 öğe ekleyin",
+      "step4": "Koleksiyon fiyatını belirleyin (<b>öğe başına 200$</b>)"
+    },
+    "feesHeading": "Yükleme Ücretleri",
+    "feesText": "Tekil NFT: 200$ | Koleksiyon: Öğe başına 200$"
+  },
+  "buying": {
+    "heading": "NFT Satın Alma",
+    "cardHeading": "Bir NFT Nasıl Satın Alınır",
+    "steps": {
+      "step1": "<b>Keşfet</b> sayfasına göz atın",
+      "step2": "İstediğinizi bulmak için filtreleri kullanın",
+      "step3": "Detayları görüntülemek için bir NFT'ye tıklayın",
+      "step4": "<b>\"Şimdi Satın Al\"</b> butonuna tıklayın",
+      "step5": "Satın alımı onaylayın",
+      "step6": "Yönetici onayını bekleyin (24 saat içinde)"
+    },
+    "afterHeading": "Satın Alma Sonrası",
+    "after": [
+      "NFT, Panelinizde \"Sahip Olunan\" bölümünde görünür",
+      "Satın alma için ek ücret alınmaz"
+    ]
+  },
+  "withdrawals": {
+    "heading": "Para Çekme",
+    "cardHeading": "Para Nasıl Çekilir",
+    "steps": {
+      "step1": "<b>Panel</b>e gidin ve <b>\"Para Çek\"</b> butonuna tıklayın",
+      "step2": "Harici ETH cüzdan adresinizi girin (0x...)",
+      "step3": "Çekim tutarını girin",
+      "step4": "<b>\"Devam Et\"</b> butonuna tıklayın",
+      "step5": "Belirtilen cüzdan adresine <b>%10 ücreti</b> gönderin",
+      "step6": "<b>\"Ödemeyi Onayla\"</b> butonuna tıklayın",
+      "step7": "Para çekme işlemi <b>24-48 saat</b> içinde tamamlanır"
+    },
+    "infoHeading": "Önemli Bilgiler",
+    "info": [
+      { "label": "Ücret:", "text": "%10 (ücret cüzdanına ayrıca ödenir)" },
+      { "label": "İşlem süresi:", "text": "24-48 saat" }
+    ],
+    "infoPlain": "Ücreti ödedikten sonra çekim tutarının TAMAMINI alırsınız",
+    "feeWarningHeading": "⚠️ Ücret Ödemesi",
+    "feeWarningText": "%10 ücret, para çekme işleminiz gerçekleştirilmeden <b>önce</b> ücret cüzdanımıza gönderilmelidir. Örneğin: 1 ETH çekin → 0,1 ETH ücret gönderin → cüzdanınıza 1 ETH alın."
+  },
+  "exploring": {
+    "heading": "NFT Keşfetme",
+    "cardHeading": "NFT'lere Nasıl Göz Atılır",
+    "steps": {
+      "step1": "<b>Keşfet</b> sayfasına gidin",
+      "step2": "Koleksiyonlara göz atın veya öğe görünümüne geçin",
+      "step3": "Belirli NFT'leri bulmak için <b>arama çubuğunu</b> kullanın",
+      "step4": "<b>Kategoriye</b> göre filtreleyin",
+      "step5": "Hacme, taban fiyata veya öğe sayısına göre sıralayın"
+    },
+    "tipsHeading": "Arama İpuçları",
+    "tips": [
+      "Başlık, açıklama veya sanatçı adına göre arayın",
+      "\"soyut\", \"uzay\", \"doğa\" gibi etiketler kullanın",
+      "Tüm öğeleri görüntülemek için bir koleksiyona tıklayın"
+    ]
+  },
+  "security": {
+    "heading": "Güvenlik",
+    "cardHeading": "Hesabınızı Güvende Tutmak",
+    "items": [
+      { "label": "Güçlü bir şifre kullanın:", "text": "En az 8 karakter" },
+      { "label": "Şifrenizi asla paylaşmayın:", "text": "Şifrenizi asla sormayacağız" },
+      { "label": "Cüzdan adreslerini doğrulayın:", "text": "Göndermeden önce iki kez kontrol edin" },
+      { "label": "Dolandırıcılıklara dikkat edin:", "text": "Ödeme talep eden DM asla göndermeyiz" }
+    ]
+  },
+  "faq": {
+    "heading": "Sıkça Sorulan Sorular",
+    "items": [
+      {
+        "question": "NFT nedir?",
+        "answer": "NFT, Değiştirilemez Token (Non-Fungible Token) anlamına gelir. Sanat, müzik, video ve daha fazlası gibi dijital öğelerin sahipliğini temsil eden, blok zincirinde saklanan benzersiz bir dijital varlıktır."
+      },
+      {
+        "question": "Nasıl NFT oluşturabilirim?",
+        "answer": "Hesabınızı en az 200$ değerinde ETH ile fonlayın, Oluştur sayfasına gidin, dosyanızı yükleyin, detayları ekleyin ve gönderin."
+      },
+      {
+        "question": "Ücretler nelerdir?",
+        "answer": "NFT oluşturmak öğe başına 200$'a mal olur. NFT satın almak yalnızca listelenen fiyatı gerektirir. Para çekme işlemleri ayrıca ödenen %10 ücret gerektirir."
+      },
+      {
+        "question": "İşlemlerin tamamlanması ne kadar sürer?",
+        "answer": "Fonlama: ~10 dakika. NFT satın alımları: 24 saat içinde. Para çekme: 24-48 saat."
+      }
+    ]
+  },
+  "quickRef": {
+    "heading": "Hızlı Başvuru",
+    "processingTimes": {
+      "heading": "İşlem Süreleri",
+      "items": ["Bakiye güncellemeleri: ~10 dakika", "NFT satın alımları: 24 saat içinde", "Para çekme: 24-48 saat"]
+    },
+    "fees": {
+      "heading": "Ücretler",
+      "items": ["NFT oluşturma: Öğe başına 200$", "Satın alma: Yalnızca listelenen fiyat", "Para çekme: %10 (ayrıca ödenir)"]
+    },
+    "formats": {
+      "heading": "Desteklenen Formatlar",
+      "items": ["Görsel: JPG, PNG, GIF, WEBP", "Video: MP4, WEBM", "Ses: MP3, WAV, OGG"]
+    },
+    "minimums": {
+      "heading": "Minimum Tutarlar",
+      "items": ["Min. NFT fiyatı: 0.001 ETH", "Koleksiyon: 2-20 öğe"]
+    }
+  },
+  "contactCta": {
+    "heading": "Hâlâ Sorularınız mı Var?",
+    "text": "Destek ekibimiz size yardımcı olmak için burada",
+    "button": "Destek ile İletişime Geçin"
+  }
+}

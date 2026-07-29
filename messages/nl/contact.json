@@ -1,0 +1,58 @@
+{
+  "header": {
+    "heading": "Neem Contact Op",
+    "subtitle": "Heeft u een vraag of hulp nodig? Wij staan voor u klaar."
+  },
+  "subjectOptions": {
+    "general": "Algemene Vraag",
+    "support": "Technische Ondersteuning",
+    "billing": "Facturatie & Betalingen",
+    "partnership": "Samenwerking",
+    "bug": "Bug Melden",
+    "feature": "Functieverzoek",
+    "other": "Overig"
+  },
+  "info": {
+    "email": {
+      "title": "E-mail",
+      "subtitle": "Voor algemene vragen"
+    },
+    "liveChat": {
+      "title": "Livechat",
+      "value": "24/7 Beschikbaar",
+      "subtitle": "Snelle reactietijd"
+    },
+    "responseTime": {
+      "title": "Reactietijd",
+      "value": "Binnen 24-48 uur",
+      "subtitle": "Werkdagen"
+    },
+    "office": {
+      "title": "Kantoor",
+      "line1": "11420 Santa Monica Boulevard",
+      "line2": "Post Office Box 252111",
+      "line3": "Los Angeles, CA 90025"
+    }
+  },
+  "form": {
+    "heading": "Stuur ons een bericht",
+    "nameLabel": "Uw Naam",
+    "namePlaceholder": "Jan Jansen",
+    "emailLabel": "E-mailadres",
+    "emailPlaceholder": "u@voorbeeld.com",
+    "subjectLabel": "Onderwerp",
+    "subjectPlaceholder": "Selecteer een onderwerp",
+    "messageLabel": "Bericht",
+    "messagePlaceholder": "Hoe kunnen wij u helpen?",
+    "submit": "Bericht Versturen"
+  },
+  "success": {
+    "heading": "Bericht Succesvol Verzonden!",
+    "text": "Bedankt voor uw bericht. Ons team beoordeelt uw bericht en neemt binnen 24-48 uur contact met u op.",
+    "sendAnother": "Nog een Bericht Versturen"
+  },
+  "notification": {
+    "title": "Bericht Verzonden!",
+    "message": "We nemen binnen 24-48 uur contact met u op."
+  }
+}

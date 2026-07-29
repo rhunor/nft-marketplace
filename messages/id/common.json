@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "Ubah bahasa",
+    "popular": "Bahasa populer",
+    "more": "Bahasa lainnya"
+  },
+  "languageBanner": {
+    "message": "Sepertinya Anda mungkin lebih menyukai {language}.",
+    "switch": "Ganti",
+    "dismiss": "Tutup"
+  },
+  "nav": {
+    "home": "Beranda",
+    "explore": "Jelajahi",
+    "about": "Tentang",
+    "help": "Bantuan",
+    "contact": "Kontak"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "Cari NFT, kreator...",
+    "create": "Buat",
+    "signIn": "Masuk",
+    "getStarted": "Mulai Sekarang",
+    "userMenu": {
+      "dashboard": "Dasbor",
+      "createNft": "Buat NFT",
+      "fundAccount": "Isi Saldo Akun",
+      "adminPanel": "Panel Admin",
+      "signOut": "Keluar"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "Perluasan dari Foundation - destinasi utama bagi kolektor dan kreator NFT bernilai tinggi. Bergabunglah dengan komunitas eksklusif kolektor kami yang cermat.",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "Email"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "Marketplace",
+        "exploreCollections": "Jelajahi Koleksi",
+        "howItWorks": "Cara Kerja",
+        "create": "Buat"
+      },
+      "resources": {
+        "heading": "Sumber Daya",
+        "helpCenter": "Pusat Bantuan",
+        "contactUs": "Hubungi Kami",
+        "faq": "FAQ"
+      },
+      "company": {
+        "heading": "Perusahaan",
+        "aboutUs": "Tentang Kami",
+        "termsOfService": "Ketentuan Layanan",
+        "privacyPolicy": "Kebijakan Privasi",
+        "cookiePolicy": "Kebijakan Cookie"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. Seluruh hak cipta dilindungi.",
+    "bottomLinks": {
+      "terms": "Ketentuan",
+      "privacy": "Privasi",
+      "cookies": "Cookie"
+    }
+  },
+  "modal": {
+    "dismiss": "Tutup"
+  },
+  "nftCard": {
+    "currentPrice": "Harga Saat Ini",
+    "by": "oleh"
+  },
+  "nftGrid": {
+    "emptyMessage": "Tidak ada NFT ditemukan"
+  },
+  "nftImage": {
+    "unavailable": "Gambar tidak tersedia"
+  }
+}

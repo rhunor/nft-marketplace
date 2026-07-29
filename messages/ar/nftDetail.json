@@ -1,0 +1,156 @@
+{
+  "detail": {
+    "loading": "جارٍ تحميل NFT...",
+    "notFound": {
+      "heading": "NFT غير موجود",
+      "genericMessage": "الأصل الرقمي الذي تبحث عنه غير موجود أو تمت إزالته.",
+      "browseButton": "تصفح الأصول الرقمية"
+    },
+    "back": "رجوع",
+    "share": "مشاركة",
+    "translated": {
+      "badge": "ترجمة آلية",
+      "showOriginal": "عرض النص الأصلي",
+      "showTranslation": "عرض الترجمة"
+    },
+    "badges": {
+      "notForSale": "غير معروض للبيع",
+      "youOwnThis": "أنت تملك هذا",
+      "marketplaceNft": "أصل من السوق",
+      "you": "(أنت)"
+    },
+    "creator": "المبدع",
+    "owner": "المالك",
+    "price": {
+      "current": "السعر الحالي",
+      "insufficientBalance": "الرصيد غير كافٍ",
+      "buyNow": "اشترِ الآن",
+      "manageNft": "إدارة NFT",
+      "exportNft": "تصدير NFT"
+    },
+    "description": "الوصف",
+    "tags": "الوسوم",
+    "details": {
+      "heading": "التفاصيل",
+      "tokenId": "معرّف الرمز",
+      "blockchain": "البلوك تشين",
+      "ethereum": "إيثيريوم",
+      "mediaType": "نوع الوسائط",
+      "created": "تاريخ الإنشاء"
+    },
+    "related": {
+      "title": "المزيد من هذه الفئة",
+      "subtitle": "استكشف المزيد من أصول {category} الرقمية"
+    },
+    "buyModal": {
+      "title": "تأكيد الشراء",
+      "by": "بواسطة @{username}",
+      "price": "السعر",
+      "platformFee": "رسوم المنصة (2.5%)",
+      "gasFee": "رسوم الغاز (تقديرية)",
+      "total": "الإجمالي",
+      "yourBalance": "رصيدك",
+      "insufficientBalanceWarning": "الرصيد غير كافٍ. يرجى تمويل حسابك.",
+      "immediateTransferNote": "سيتم نقل الملكية فورًا بعد التأكيد.",
+      "adminTransferNote": "بعد الشراء، سيتم نقل الملكية بواسطة فريقنا الإداري خلال 24 ساعة.",
+      "cancel": "إلغاء",
+      "confirm": "تأكيد الشراء"
+    },
+    "manageModal": {
+      "title": "إدارة NFT",
+      "statusListed": "الحالة: معروض",
+      "statusNotListed": "الحالة: غير معروض",
+      "priceLabel": "السعر (ETH)",
+      "pricePlaceholder": "0.1",
+      "listForSale": "عرض للبيع",
+      "updatePrice": "تحديث السعر",
+      "unlist": "إزالة من السوق",
+      "cancel": "إلغاء"
+    },
+    "notifications": {
+      "addedToFavorites": "تمت الإضافة إلى المفضلة",
+      "removedFromFavorites": "تمت الإزالة من المفضلة",
+      "likeUpdateFailed": "فشل تحديث الإعجاب",
+      "purchaseSuccessTitle": "تم الشراء بنجاح!",
+      "purchaseSuccessMessage": "أنت الآن مالك هذا الأصل الرقمي.",
+      "purchaseFailedTitle": "فشل الشراء",
+      "genericError": "حدث خطأ ما",
+      "purchaseSubmittedTitle": "تم إرسال طلب الشراء!",
+      "purchaseSubmittedMessage": "جارٍ معالجة عملية الشراء الخاصة بك. سيتم نقل الملكية بعد تأكيد الإدارة.",
+      "linkCopied": "تم نسخ الرابط إلى الحافظة!",
+      "copyFailed": "فشل نسخ الرابط",
+      "invalidPrice": "يرجى إدخال سعر صالح",
+      "listedTitle": "تم عرض NFT!",
+      "listedMessage": "أصلك الرقمي متاح الآن في السوق.",
+      "listFailedTitle": "فشل عرض NFT",
+      "unlistedTitle": "تمت إزالة NFT",
+      "unlistedMessage": "تمت إزالة أصلك الرقمي من السوق.",
+      "unlistFailedTitle": "فشلت إزالة NFT",
+      "priceUpdatedTitle": "تم تحديث السعر!",
+      "priceUpdatedMessage": "السعر الجديد: {price} ETH",
+      "priceUpdateFailedTitle": "فشل تحديث السعر"
+    },
+    "errors": {
+      "fetchFailed": "فشل جلب NFT",
+      "notFoundError": "NFT غير موجود",
+      "loadFailed": "فشل تحميل NFT"
+    }
+  },
+  "export": {
+    "cannotExport": "لا يمكن تصدير هذا الأصل الرقمي.",
+    "loadFailed": "فشل تحميل NFT",
+    "fetchFailed": "فشل جلب NFT",
+    "loading": "جارٍ تحميل NFT...",
+    "cannotExportHeading": "لا يمكن تصدير NFT",
+    "nftNotFound": "الأصل الرقمي غير موجود.",
+    "browseButton": "تصفح الأصول الرقمية",
+    "accessDenied": {
+      "heading": "الوصول مرفوض",
+      "message": "فقط مالك هذا الأصل الرقمي يمكنه تصديره.",
+      "backButton": "العودة إلى NFT"
+    },
+    "back": "رجوع",
+    "heading": "تصدير NFT",
+    "subheading": "صدّر أصلك الرقمي إلى محفظتك الشخصية",
+    "by": "بواسطة @{username}",
+    "fee": {
+      "heading": "رسوم التصدير",
+      "amountLabel": "المبلغ المطلوب إرساله",
+      "loadingAmount": "جارٍ التحميل...",
+      "approxUsd": "≈ ${amount} USD",
+      "note": "تغطي هذه الرسوم لمرة واحدة تكاليف الغاز والمعالجة اللازمة لتصدير أصلك الرقمي إلى محفظة خارجية."
+    },
+    "payment": {
+      "heading": "أرسل الدفعة إلى",
+      "instruction": "حوّل بالضبط",
+      "instructionSuffix": "إلى عنوان الإيثيريوم أدناه:",
+      "copyAddress": "نسخ العنوان",
+      "addressCopied": "تم نسخ العنوان إلى الحافظة!",
+      "networkWarning": "أرسل ETH على شبكة إيثيريوم فقط"
+    },
+    "processing": {
+      "heading": "وقت المعالجة",
+      "message": "بعد تأكيد الدفعة، ستتم معالجة تصدير أصلك الرقمي خلال {hours}. سيتم تسليم الملف المُصدَّر إلى عنوان بريدك الإلكتروني المسجَّل.",
+      "hours": "24 ساعة"
+    },
+    "steps": {
+      "heading": "كيف تعمل العملية",
+      "step1": { "title": "انسخ عنوان المحفظة أعلاه", "description": "استخدم أي محفظة متوافقة مع إيثيريوم لبدء التحويل." },
+      "step2": { "title": "أرسل {amount}", "description": "تأكد من الإرسال على الشبكة الرئيسية لإيثيريوم.", "fallbackAmount": "ما يعادل 100 دولار من ETH" },
+      "step3": { "title": "اضغط على \"تم الدفع\" أدناه", "description": "أخطرنا بمجرد إرسال الدفعة." },
+      "step4": { "title": "استلم تصدير NFT الخاص بك", "description": "سنقوم بالمعالجة والتسليم خلال 24 ساعة." }
+    },
+    "paidButton": "تم الدفع",
+    "paidConfirmation": {
+      "heading": "تم إرسال الدفعة",
+      "message": "سنعالج طلب التصدير الخاص بك خلال 24 ساعة.",
+      "backButton": "العودة إلى NFT"
+    },
+    "notification": {
+      "title": "تم إرسال الدفعة",
+      "message": "شكرًا لك! تم استلام طلب التصدير الخاص بك. سيقوم فريقنا بمعالجته خلال 24 ساعة وإرسال ملف الأصل الرقمي إلى بريدك الإلكتروني المسجَّل."
+    },
+    "helpText": "بحاجة إلى مساعدة؟",
+    "contactSupport": "تواصل مع الدعم"
+  }
+}

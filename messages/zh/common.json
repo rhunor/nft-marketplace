@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "切换语言",
+    "popular": "常用语言",
+    "more": "更多语言"
+  },
+  "languageBanner": {
+    "message": "您可能更习惯使用{language}。",
+    "switch": "切换",
+    "dismiss": "关闭"
+  },
+  "nav": {
+    "home": "首页",
+    "explore": "探索",
+    "about": "关于我们",
+    "help": "帮助",
+    "contact": "联系我们"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "搜索 NFT、创作者...",
+    "create": "创作",
+    "signIn": "登录",
+    "getStarted": "立即开始",
+    "userMenu": {
+      "dashboard": "控制台",
+      "createNft": "创建 NFT",
+      "fundAccount": "账户充值",
+      "adminPanel": "管理后台",
+      "signOut": "退出登录"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "Foundation 的延伸品牌——高价值 NFT 收藏家和创作者的首选平台。加入我们由眼光独到的收藏家组成的尊享社区。",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "邮箱"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "交易市场",
+        "exploreCollections": "探索合集",
+        "howItWorks": "运作方式",
+        "create": "创作"
+      },
+      "resources": {
+        "heading": "资源中心",
+        "helpCenter": "帮助中心",
+        "contactUs": "联系我们",
+        "faq": "常见问题"
+      },
+      "company": {
+        "heading": "公司信息",
+        "aboutUs": "关于我们",
+        "termsOfService": "服务条款",
+        "privacyPolicy": "隐私政策",
+        "cookiePolicy": "Cookie 政策"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. 保留所有权利。",
+    "bottomLinks": {
+      "terms": "条款",
+      "privacy": "隐私",
+      "cookies": "Cookie"
+    }
+  },
+  "modal": {
+    "dismiss": "关闭"
+  },
+  "nftCard": {
+    "currentPrice": "当前价格",
+    "by": "作者"
+  },
+  "nftGrid": {
+    "emptyMessage": "未找到 NFT"
+  },
+  "nftImage": {
+    "unavailable": "图片不可用"
+  }
+}

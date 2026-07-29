@@ -1,0 +1,126 @@
+{
+  "loading": "Caricamento dashboard...",
+  "avatar": {
+    "invalidType": "Seleziona un file immagine",
+    "tooLarge": "La dimensione dell'immagine deve essere inferiore a 5MB",
+    "uploadSuccess": "Immagine del profilo aggiornata!",
+    "uploadFailedTitle": "Caricamento non riuscito",
+    "uploadFailedDefault": "Qualcosa è andato storto",
+    "changePicture": "Cambia immagine del profilo"
+  },
+  "welcome": "Bentornato, {name}!",
+  "adminBadge": "Admin",
+  "fundAccount": "Ricarica Account",
+  "createNft": "Crea NFT",
+  "stats": {
+    "walletBalance": "Saldo Wallet",
+    "nftsOwned": "NFT Posseduti",
+    "nftsCreated": "NFT Creati",
+    "totalValue": "Valore Totale"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "Esplora Collezioni",
+      "subtitle": "Scopri nuovi oggetti da collezione"
+    },
+    "create": {
+      "title": "Crea NFT",
+      "subtitle": "Carica la tua opera d'arte"
+    },
+    "fund": {
+      "title": "Ricarica Account",
+      "subtitle": "Aggiungi ETH al tuo wallet"
+    },
+    "withdraw": {
+      "title": "Preleva Fondi",
+      "subtitle": "Trasferisci sul tuo wallet"
+    }
+  },
+  "tabs": {
+    "owned": "Posseduti ({count})",
+    "created": "Creati ({count})",
+    "listed": "In Vendita ({count})"
+  },
+  "nftCard": {
+    "created": "Creato",
+    "notListed": "Non in Vendita",
+    "price": "Prezzo"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "Nessun NFT Posseduto",
+      "text": "Inizia a collezionare asset digitali unici dal nostro marketplace",
+      "button": "Esplora Collezioni"
+    },
+    "created": {
+      "title": "Nessun NFT Creato",
+      "text": "Crea il tuo primo NFT e condividilo con il mondo",
+      "button": "Crea NFT"
+    },
+    "listed": {
+      "title": "Nessun NFT in Vendita",
+      "text": "Non hai NFT in vendita al momento"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "Preleva Fondi",
+      "fee": "Paga Commissione di Prelievo",
+      "processing": "Elaborazione Prelievo",
+      "success": "Prelievo Riuscito"
+    },
+    "form": {
+      "availableBalance": "Saldo Disponibile",
+      "walletAddressLabel": "Indirizzo Wallet",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "Inserisci il tuo indirizzo wallet Ethereum",
+      "amountLabel": "Importo (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "Prelievo minimo: ${minAmount}",
+      "withdrawMax": "Preleva il Massimo",
+      "continue": "Continua"
+    },
+    "errors": {
+      "invalidAddress": "Inserisci un indirizzo wallet Ethereum valido (0x...)",
+      "invalidAmount": "Inserisci un importo di prelievo valido",
+      "minWithdrawal": "Il prelievo minimo è ${minAmount}",
+      "insufficientBalance": "Saldo insufficiente",
+      "serverError": "Errore del server. Riprova più tardi.",
+      "withdrawalFailed": "Prelievo non riuscito",
+      "invalidResponse": "Risposta non valida dal server",
+      "withdrawalFailedRetry": "Prelievo non riuscito. Riprova."
+    },
+    "fee": {
+      "noticeTitle": "Commissione di Prelievo Richiesta",
+      "noticeText": "Per elaborare il tuo prelievo, invia una commissione del {percent}% ({amount}) all'indirizzo wallet indicato di seguito.",
+      "walletLabel": "Il Tuo Wallet di Prelievo",
+      "withdrawalAmount": "Importo del Prelievo",
+      "feeToSend": "Commissione da Inviare ({percent}%)",
+      "youllReceive": "Riceverai",
+      "sendFeeTo": "Invia il Pagamento della Commissione a:",
+      "sendExactly": "Invia esattamente {amount} a questo indirizzo",
+      "qrAlt": "Codice QR per il Pagamento della Commissione",
+      "walletAddressLabel": "Indirizzo Wallet per la Commissione (ETH)",
+      "copyAddress": "Copia Indirizzo",
+      "copiedNotification": "Indirizzo copiato negli appunti",
+      "warning": "Dopo aver inviato la commissione di {feeAmount}, fai clic su \"Conferma Pagamento\" per elaborare il tuo prelievo. L'intero importo del prelievo di {receiveAmount} sarà inviato al tuo wallet.",
+      "back": "Indietro",
+      "confirmPayment": "Conferma Pagamento"
+    },
+    "processing": {
+      "title": "Elaborazione Prelievo",
+      "text": "Attendi mentre elaboriamo la tua transazione..."
+    },
+    "success": {
+      "title": "Prelievo Inviato!",
+      "subtitle": "I tuoi fondi sono in arrivo sul tuo wallet",
+      "transactionId": "ID Transazione",
+      "amountReceived": "Importo che Riceverai",
+      "feePaid": "Commissione Pagata",
+      "newBalance": "Nuovo Saldo",
+      "estimatedTime": "Tempo di Elaborazione Stimato",
+      "estimatedTimeValue": "24-48 ore",
+      "done": "Fatto"
+    }
+  }
+}

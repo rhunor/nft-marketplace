@@ -1,0 +1,24 @@
+{
+  "loading": "Koleksiyon yükleniyor...",
+  "notFound": {
+    "heading": "Koleksiyon Bulunamadı",
+    "genericMessage": "Aradığınız koleksiyon mevcut değil.",
+    "collectionNotFoundError": "Koleksiyon bulunamadı",
+    "loadFailedError": "Koleksiyon yüklenemedi",
+    "backToExplore": "Keşfet'e Geri Dön"
+  },
+  "back": "Geri",
+  "createdBy": "Oluşturan",
+  "stats": {
+    "items": "Öğeler",
+    "floorPrice": "Taban Fiyat",
+    "totalVolume": "Toplam Hacim"
+  },
+  "share": "Paylaş",
+  "itemsHeading": "Öğeler ({count})",
+  "price": "Fiyat",
+  "empty": {
+    "heading": "Henüz Öğe Yok",
+    "message": "Bu koleksiyonda öğe bulunmuyor."
+  }
+}

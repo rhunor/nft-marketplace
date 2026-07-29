@@ -1,0 +1,56 @@
+{
+  "metaTitle": "关于我们 | Foundation Exclusive",
+  "metaDescription": "Foundation Exclusive 是 Foundation 的延伸品牌——一个专为高价值 NFT 收藏家和创作者打造的尊享社区。",
+  "hero": {
+    "badge": "Foundation 旗下尊享品牌",
+    "heading": "欢迎来到 <gradient>Foundation Exclusive</gradient>",
+    "subtitle": "Foundation Exclusive 是高价值 NFT 收藏家和创作者的首选平台。作为 Foundation 的延伸品牌，我们打造了一个尊享社区，让卓越的数字艺术品与其应得的收藏家相遇。"
+  },
+  "stats": [
+    { "value": "2,500+", "label": "认证收藏家" },
+    { "value": "150+", "label": "精选合集" },
+    { "value": "$45M+", "label": "总交易额" },
+    { "value": "15 ETH", "label": "平均成交价" }
+  ],
+  "story": {
+    "heading": "我们的故事",
+    "p1": "Foundation Exclusive 源于一个简单的洞察：NFT 市场需要一个专属于重视品质而非数量的资深收藏家的空间。Foundation 改变了艺术家与收藏家的连接方式，而我们看到了打造更精致平台的机会。",
+    "p2": "我们的平台是 Foundation 生态系统精心策划的延伸，每一个合集都经过人工甄选，每一位艺术家都经过严格审核。我们相信，数字艺术理应获得与传统艺术同等的尊重和投资价值认可。",
+    "p3": "Foundation Exclusive 上的价格反映了卓越数字艺术品的真实价值。我们的收藏家深知，顶级作品理应享有顶级价格，而我们持续增值的历史记录也印证了这一理念。",
+    "imageAlt": "数字艺术画廊",
+    "imageCaption": "卓越数字艺术品的归宿"
+  },
+  "values": {
+    "heading": "我们的与众不同",
+    "subtitle": "Foundation Exclusive 立足于确保收藏家和创作者社区享有最高标准的核心原则。",
+    "items": [
+      {
+        "title": "认证真实性",
+        "description": "平台上的每一件作品都经过严格审核，以确保其真实性和溯源信息。"
+      },
+      {
+        "title": "尊享品质",
+        "description": "我们只甄选来自知名及新锐艺术家、符合我们高标准的顶级数字艺术品。"
+      },
+      {
+        "title": "尊享社区",
+        "description": "加入这个由收藏家、艺术家和爱好者组成的精选网络，共同分享对卓越数字艺术的热忱。"
+      },
+      {
+        "title": "投资级品质",
+        "description": "我们的 NFT 定价反映其真实价值，并在二级市场拥有持续增值的记录。"
+      }
+    ]
+  },
+  "membership": {
+    "heading": "加入尊享社区",
+    "text": "Foundation Exclusive 不仅仅是一个交易市场，更是一个由深知卓越数字艺术价值的志同道合者组成的社区。我们的会员可优先获得新品发售资格、参与专属活动，并与其他收藏家和艺术家建立联系。",
+    "becomeMember": "成为会员",
+    "exploreCollections": "探索合集"
+  },
+  "cta": {
+    "heading": "准备好体验尊享服务了吗？",
+    "text": "了解为何资深收藏家选择 Foundation Exclusive 完成他们最珍视的收藏。",
+    "viewCollections": "查看合集"
+  }
+}

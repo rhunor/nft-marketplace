@@ -1,0 +1,162 @@
+{
+  "header": {
+    "heading": "帮助中心",
+    "subtitle": "关于使用 Foundation Exclusive 您需要了解的一切"
+  },
+  "topics": {
+    "wallet": { "title": "钱包与余额", "description": "为账户充值并管理 ETH" },
+    "creating": { "title": "创建 NFT", "description": "铸造您的第一个 NFT" },
+    "buying": { "title": "购买 NFT", "description": "购买并收藏 NFT" },
+    "withdrawals": { "title": "提现", "description": "从您的账户提取资金" },
+    "security": { "title": "安全", "description": "保护您的账户安全" },
+    "exploring": { "title": "探索 NFT", "description": "浏览并发现合集" }
+  },
+  "wallet": {
+    "heading": "钱包与余额",
+    "cardHeading": "如何为账户充值",
+    "steps": {
+      "step1": "登录后前往您的<b>控制台</b>",
+      "step2": "点击<b>“账户充值”</b>",
+      "step3": "您将看到一个二维码和 ETH 钱包地址",
+      "step4": "从您的外部钱包将 ETH 发送至该地址",
+      "step5": "等待约 10 分钟以更新余额"
+    },
+    "notesHeading": "重要提示",
+    "notes": [
+      "请仅向指定地址发送 ETH（以太坊）",
+      "发送前请仔细核对钱包地址",
+      "请保留交易哈希以备查询"
+    ]
+  },
+  "creating": {
+    "heading": "创建 NFT",
+    "singleCardHeading": "如何创建单个 NFT",
+    "singleSteps": {
+      "step1": "确保您拥有至少<b>价值 $200 的 ETH</b>",
+      "step2": "前往<b>创作</b>页面",
+      "step3": "选择<b>“单个 NFT”</b>模式",
+      "step4": "上传您的媒体文件（最大 100MB）",
+      "step5": "填写标题、价格和分类",
+      "step6": "点击<b>“创建 NFT”</b>"
+    },
+    "collectionCardHeading": "如何创建合集",
+    "collectionSteps": {
+      "step1": "在创作页面选择<b>“合集”</b>模式",
+      "step2": "添加合集名称、描述和封面图",
+      "step3": "为合集添加 2-20 件作品",
+      "step4": "设置合集价格（<b>每件 $200</b>）"
+    },
+    "feesHeading": "上传费用",
+    "feesText": "单个 NFT：$200 | 合集：每件 $200"
+  },
+  "buying": {
+    "heading": "购买 NFT",
+    "cardHeading": "如何购买 NFT",
+    "steps": {
+      "step1": "浏览<b>探索</b>页面",
+      "step2": "使用筛选条件查找心仪作品",
+      "step3": "点击 NFT 查看详情",
+      "step4": "点击<b>“立即购买”</b>",
+      "step5": "确认购买",
+      "step6": "等待管理员确认（24 小时内）"
+    },
+    "afterHeading": "购买之后",
+    "after": [
+      "NFT 将出现在您控制台的“持有”栏目中",
+      "购买无需支付额外费用"
+    ]
+  },
+  "withdrawals": {
+    "heading": "提现",
+    "cardHeading": "如何提取资金",
+    "steps": {
+      "step1": "前往<b>控制台</b>并点击<b>“提现”</b>",
+      "step2": "输入您的外部 ETH 钱包地址（0x...）",
+      "step3": "输入提现金额",
+      "step4": "点击<b>“继续”</b>",
+      "step5": "向指定钱包地址发送<b>10% 手续费</b>",
+      "step6": "点击<b>“确认付款”</b>",
+      "step7": "提现将在<b>24-48 小时</b>内处理完成"
+    },
+    "infoHeading": "重要信息",
+    "info": [
+      { "label": "手续费：", "text": "10%（单独支付至手续费钱包）" },
+      { "label": "处理时间：", "text": "24-48 小时" }
+    ],
+    "infoPlain": "支付手续费后，您将收到全额提现金额",
+    "feeWarningHeading": "⚠️ 手续费支付",
+    "feeWarningText": "10% 的手续费必须在您的提现处理<b>之前</b>发送至我们的手续费钱包。例如：提现 1 ETH → 发送 0.1 ETH 手续费 → 您的钱包将收到 1 ETH。"
+  },
+  "exploring": {
+    "heading": "探索 NFT",
+    "cardHeading": "如何浏览 NFT",
+    "steps": {
+      "step1": "前往<b>探索</b>页面",
+      "step2": "浏览合集或切换至单件作品视图",
+      "step3": "使用<b>搜索框</b>查找特定 NFT",
+      "step4": "按<b>分类</b>筛选",
+      "step5": "按交易额、地板价或作品数量排序"
+    },
+    "tipsHeading": "搜索技巧",
+    "tips": [
+      "可按标题、描述或创作者名称搜索",
+      "使用“抽象”“太空”“自然”等标签",
+      "点击合集即可查看全部作品"
+    ]
+  },
+  "security": {
+    "heading": "安全",
+    "cardHeading": "保护您的账户安全",
+    "items": [
+      { "label": "使用强密码：", "text": "至少 8 个字符" },
+      { "label": "切勿分享您的密码：", "text": "我们绝不会向您索取密码" },
+      { "label": "核实钱包地址：", "text": "发送前请仔细核对" },
+      { "label": "谨防诈骗：", "text": "我们绝不会通过私信索要付款" }
+    ]
+  },
+  "faq": {
+    "heading": "常见问题",
+    "items": [
+      {
+        "question": "什么是 NFT？",
+        "answer": "NFT 即非同质化代币（Non-Fungible Token）。它是存储在区块链上的独特数字资产，代表艺术品、音乐、视频等数字物品的所有权。"
+      },
+      {
+        "question": "如何创建 NFT？",
+        "answer": "为您的账户充值至少价值 $200 的 ETH，前往创作页面，上传您的文件，填写详情后提交即可。"
+      },
+      {
+        "question": "费用是多少？",
+        "answer": "创建 NFT 每件收费 $200。购买 NFT 只需支付标价。提现需另行支付 10% 的手续费。"
+      },
+      {
+        "question": "交易处理需要多长时间？",
+        "answer": "充值：约 10 分钟。购买 NFT：24 小时内。提现：24-48 小时。"
+      }
+    ]
+  },
+  "quickRef": {
+    "heading": "快速参考",
+    "processingTimes": {
+      "heading": "处理时间",
+      "items": ["余额更新：约 10 分钟", "购买 NFT：24 小时内", "提现：24-48 小时"]
+    },
+    "fees": {
+      "heading": "费用",
+      "items": ["创建 NFT：每件 $200", "购买：仅需标价", "提现：10%（单独支付）"]
+    },
+    "formats": {
+      "heading": "支持的格式",
+      "items": ["图片：JPG、PNG、GIF、WEBP", "视频：MP4、WEBM", "音频：MP3、WAV、OGG"]
+    },
+    "minimums": {
+      "heading": "最低金额",
+      "items": ["NFT 最低价格：0.001 ETH", "合集：2-20 件作品"]
+    }
+  },
+  "contactCta": {
+    "heading": "还有其他问题？",
+    "text": "我们的客服团队随时为您提供帮助",
+    "button": "联系客服"
+  }
+}

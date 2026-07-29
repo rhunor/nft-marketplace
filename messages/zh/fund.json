@@ -1,0 +1,58 @@
+{
+  "header": {
+    "title": "账户充值",
+    "subtitle": "向您的钱包添加 ETH，以创建和购买 NFT"
+  },
+  "balance": {
+    "label": "当前余额",
+    "ethRate": "1 ETH = ${price}",
+    "refreshTitle": "刷新价格"
+  },
+  "amount": {
+    "heading": "选择金额",
+    "preset": "{value} ETH",
+    "customLabel": "自定义金额（ETH）"
+  },
+  "deposit": {
+    "heading": "充值地址",
+    "qrAlt": "充值二维码",
+    "loading": "加载中...",
+    "sendTo": "请将 ETH 发送至此地址：",
+    "copied": "地址已复制到剪贴板！",
+    "networkWarning": "仅支持发送以太坊网络上的 ETH"
+  },
+  "notice": {
+    "heading": "处理时间",
+    "text": "付款发送后，大约需要 <strong>10 分钟</strong>才能反映在您的账户余额中。这段时间用于区块链确认以及我们管理团队核实交易。"
+  },
+  "howItWorks": {
+    "heading": "运作方式",
+    "steps": {
+      "select": {
+        "title": "选择金额",
+        "text": "选择您想要充值到账户的 ETH 数量"
+      },
+      "send": {
+        "title": "发送付款",
+        "text": "将 ETH 转账至上方显示的充值地址"
+      },
+      "confirm": {
+        "title": "等待确认",
+        "text": "您的余额将在约 10 分钟内更新"
+      },
+      "start": {
+        "title": "开始创作与收藏",
+        "text": "使用您的余额创建和购买 NFT"
+      }
+    }
+  },
+  "action": {
+    "button": "我已发送 {amount} ETH",
+    "help": "需要帮助？",
+    "contactSupport": "联系客服"
+  },
+  "notification": {
+    "title": "付款说明",
+    "message": "请将 {amount} ETH 发送至显示的地址。确认后，您的余额将在约 10 分钟内更新。"
+  }
+}

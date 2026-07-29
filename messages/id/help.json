@@ -1,0 +1,162 @@
+{
+  "header": {
+    "heading": "Pusat Bantuan",
+    "subtitle": "Semua yang perlu Anda ketahui tentang menggunakan Foundation Exclusive"
+  },
+  "topics": {
+    "wallet": { "title": "Dompet & Saldo", "description": "Isi saldo akun Anda dan kelola ETH" },
+    "creating": { "title": "Membuat NFT", "description": "Mint NFT pertama Anda" },
+    "buying": { "title": "Membeli NFT", "description": "Beli dan koleksi NFT" },
+    "withdrawals": { "title": "Penarikan", "description": "Tarik dana dari akun Anda" },
+    "security": { "title": "Keamanan", "description": "Jaga keamanan akun Anda" },
+    "exploring": { "title": "Menjelajahi NFT", "description": "Telusuri dan temukan koleksi" }
+  },
+  "wallet": {
+    "heading": "Dompet & Saldo",
+    "cardHeading": "Cara Mengisi Saldo Akun Anda",
+    "steps": {
+      "step1": "Masuk dan buka <b>Dasbor</b> Anda",
+      "step2": "Klik <b>\"Isi Saldo Akun\"</b>",
+      "step3": "Anda akan melihat kode QR dan alamat dompet ETH",
+      "step4": "Kirim ETH dari dompet eksternal Anda ke alamat ini",
+      "step5": "Tunggu ~10 menit agar saldo diperbarui"
+    },
+    "notesHeading": "Catatan Penting",
+    "notes": [
+      "Hanya kirim ETH (Ethereum) ke alamat yang disediakan",
+      "Periksa kembali alamat dompet sebelum mengirim",
+      "Simpan hash transaksi Anda sebagai referensi"
+    ]
+  },
+  "creating": {
+    "heading": "Membuat NFT",
+    "singleCardHeading": "Cara Membuat NFT Tunggal",
+    "singleSteps": {
+      "step1": "Pastikan Anda memiliki setidaknya <b>ETH senilai $200</b>",
+      "step2": "Buka halaman <b>Buat</b>",
+      "step3": "Pilih mode <b>\"NFT Tunggal\"</b>",
+      "step4": "Unggah berkas media Anda (maks 100MB)",
+      "step5": "Isi judul, harga, dan kategori",
+      "step6": "Klik <b>\"Buat NFT\"</b>"
+    },
+    "collectionCardHeading": "Cara Membuat Koleksi",
+    "collectionSteps": {
+      "step1": "Pilih mode <b>\"Koleksi\"</b> di halaman Buat",
+      "step2": "Tambahkan nama koleksi, deskripsi, dan gambar sampul",
+      "step3": "Tambahkan 2-20 item ke koleksi Anda",
+      "step4": "Tetapkan harga koleksi (<b>$200 per item</b>)"
+    },
+    "feesHeading": "Biaya Unggahan",
+    "feesText": "NFT Tunggal: $200 | Koleksi: $200 per item"
+  },
+  "buying": {
+    "heading": "Membeli NFT",
+    "cardHeading": "Cara Membeli NFT",
+    "steps": {
+      "step1": "Telusuri halaman <b>Jelajahi</b>",
+      "step2": "Gunakan filter untuk menemukan yang Anda inginkan",
+      "step3": "Klik NFT untuk melihat detailnya",
+      "step4": "Klik <b>\"Beli Sekarang\"</b>",
+      "step5": "Konfirmasi pembelian",
+      "step6": "Tunggu konfirmasi admin (dalam 24 jam)"
+    },
+    "afterHeading": "Setelah Pembelian",
+    "after": [
+      "NFT akan muncul di Dasbor Anda pada bagian \"Dimiliki\"",
+      "Tidak ada biaya tambahan untuk pembelian"
+    ]
+  },
+  "withdrawals": {
+    "heading": "Penarikan",
+    "cardHeading": "Cara Menarik Dana",
+    "steps": {
+      "step1": "Buka <b>Dasbor</b> dan klik <b>\"Tarik\"</b>",
+      "step2": "Masukkan alamat dompet ETH eksternal Anda (0x...)",
+      "step3": "Masukkan jumlah penarikan",
+      "step4": "Klik <b>\"Lanjutkan\"</b>",
+      "step5": "Kirim <b>biaya 10%</b> ke alamat dompet yang disediakan",
+      "step6": "Klik <b>\"Konfirmasi Pembayaran\"</b>",
+      "step7": "Penarikan diproses dalam <b>24-48 jam</b>"
+    },
+    "infoHeading": "Informasi Penting",
+    "info": [
+      { "label": "Biaya:", "text": "10% (dibayar terpisah ke dompet biaya)" },
+      { "label": "Waktu pemrosesan:", "text": "24-48 jam" }
+    ],
+    "infoPlain": "Anda menerima jumlah penarikan PENUH setelah membayar biaya",
+    "feeWarningHeading": "⚠️ Pembayaran Biaya",
+    "feeWarningText": "Biaya 10% harus dikirim ke dompet biaya kami <b>sebelum</b> penarikan Anda diproses. Contoh: menarik 1 ETH → kirim biaya 0,1 ETH → terima 1 ETH ke dompet Anda."
+  },
+  "exploring": {
+    "heading": "Menjelajahi NFT",
+    "cardHeading": "Cara Menelusuri NFT",
+    "steps": {
+      "step1": "Buka halaman <b>Jelajahi</b>",
+      "step2": "Telusuri koleksi atau beralih ke tampilan item",
+      "step3": "Gunakan <b>kolom pencarian</b> untuk menemukan NFT tertentu",
+      "step4": "Filter berdasarkan <b>kategori</b>",
+      "step5": "Urutkan berdasarkan volume, harga dasar, atau jumlah item"
+    },
+    "tipsHeading": "Tips Pencarian",
+    "tips": [
+      "Cari berdasarkan judul, deskripsi, atau nama kreator",
+      "Gunakan tag seperti \"abstrak\", \"luar angkasa\", \"alam\"",
+      "Klik koleksi untuk melihat semua itemnya"
+    ]
+  },
+  "security": {
+    "heading": "Keamanan",
+    "cardHeading": "Menjaga Keamanan Akun Anda",
+    "items": [
+      { "label": "Gunakan kata sandi yang kuat:", "text": "Minimal 8 karakter" },
+      { "label": "Jangan pernah membagikan kata sandi Anda:", "text": "Kami tidak akan pernah memintanya" },
+      { "label": "Verifikasi alamat dompet:", "text": "Periksa kembali sebelum mengirim" },
+      { "label": "Waspada terhadap penipuan:", "text": "Kami tidak pernah mengirim DM meminta pembayaran" }
+    ]
+  },
+  "faq": {
+    "heading": "Pertanyaan yang Sering Diajukan",
+    "items": [
+      {
+        "question": "Apa itu NFT?",
+        "answer": "NFT adalah singkatan dari Non-Fungible Token. Ini adalah aset digital unik yang tersimpan di blockchain yang merepresentasikan kepemilikan atas item digital seperti seni, musik, video, dan lainnya."
+      },
+      {
+        "question": "Bagaimana cara membuat NFT?",
+        "answer": "Isi saldo akun Anda dengan minimal ETH senilai $200, buka halaman Buat, unggah berkas Anda, tambahkan detail, lalu kirim."
+      },
+      {
+        "question": "Berapa biayanya?",
+        "answer": "Membuat NFT berbiaya $200 per item. Membeli NFT hanya memerlukan harga yang tercantum. Penarikan memerlukan biaya 10% yang dibayar terpisah."
+      },
+      {
+        "question": "Berapa lama waktu pemrosesan transaksi?",
+        "answer": "Pengisian saldo: ~10 menit. Pembelian NFT: dalam 24 jam. Penarikan: 24-48 jam."
+      }
+    ]
+  },
+  "quickRef": {
+    "heading": "Referensi Cepat",
+    "processingTimes": {
+      "heading": "Waktu Pemrosesan",
+      "items": ["Pembaruan saldo: ~10 menit", "Pembelian NFT: dalam 24 jam", "Penarikan: 24-48 jam"]
+    },
+    "fees": {
+      "heading": "Biaya",
+      "items": ["Pembuatan NFT: $200 per item", "Pembelian: hanya harga yang tercantum", "Penarikan: 10% (dibayar terpisah)"]
+    },
+    "formats": {
+      "heading": "Format yang Didukung",
+      "items": ["Gambar: JPG, PNG, GIF, WEBP", "Video: MP4, WEBM", "Audio: MP3, WAV, OGG"]
+    },
+    "minimums": {
+      "heading": "Jumlah Minimum",
+      "items": ["Harga NFT minimum: 0,001 ETH", "Koleksi: 2-20 item"]
+    }
+  },
+  "contactCta": {
+    "heading": "Masih Punya Pertanyaan?",
+    "text": "Tim dukungan kami siap membantu Anda",
+    "button": "Hubungi Dukungan"
+  }
+}

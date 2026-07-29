@@ -1,0 +1,58 @@
+{
+  "header": {
+    "title": "Isi Saldo Akun",
+    "subtitle": "Tambahkan ETH ke dompet Anda untuk membuat dan membeli NFT"
+  },
+  "balance": {
+    "label": "Saldo Saat Ini",
+    "ethRate": "1 ETH = ${price}",
+    "refreshTitle": "Segarkan harga"
+  },
+  "amount": {
+    "heading": "Pilih Jumlah",
+    "preset": "{value} ETH",
+    "customLabel": "Jumlah Kustom (ETH)"
+  },
+  "deposit": {
+    "heading": "Alamat Deposit",
+    "qrAlt": "Kode QR Deposit",
+    "loading": "Memuat...",
+    "sendTo": "Kirim ETH ke alamat ini:",
+    "copied": "Alamat disalin ke clipboard!",
+    "networkWarning": "Hanya kirim ETH di jaringan Ethereum"
+  },
+  "notice": {
+    "heading": "Waktu Pemrosesan",
+    "text": "Setelah mengirim pembayaran, dibutuhkan waktu sekitar <strong>10 menit</strong> agar saldo Anda tercermin di akun Anda. Hal ini memberi waktu untuk konfirmasi blockchain dan tim admin kami untuk memverifikasi transaksi."
+  },
+  "howItWorks": {
+    "heading": "Cara Kerja",
+    "steps": {
+      "select": {
+        "title": "Pilih Jumlah",
+        "text": "Pilih berapa banyak ETH yang ingin Anda tambahkan ke akun Anda"
+      },
+      "send": {
+        "title": "Kirim Pembayaran",
+        "text": "Transfer ETH ke alamat deposit yang ditampilkan di atas"
+      },
+      "confirm": {
+        "title": "Tunggu Konfirmasi",
+        "text": "Saldo Anda akan diperbarui dalam ~10 menit"
+      },
+      "start": {
+        "title": "Mulai Membuat & Mengoleksi",
+        "text": "Gunakan saldo Anda untuk membuat dan membeli NFT"
+      }
+    }
+  },
+  "action": {
+    "button": "Saya Telah Mengirim {amount} ETH",
+    "help": "Butuh bantuan? ",
+    "contactSupport": "Hubungi dukungan"
+  },
+  "notification": {
+    "title": "Instruksi Pembayaran",
+    "message": "Kirim {amount} ETH ke alamat yang ditampilkan. Saldo Anda akan diperbarui dalam ~10 menit setelah konfirmasi."
+  }
+}

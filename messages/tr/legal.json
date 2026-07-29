@@ -1,0 +1,364 @@
+{
+  "terms": {
+    "metaTitle": "Kullanım Koşulları",
+    "metaDescription": "Foundation Exclusive için Kullanım Koşulları - NFT pazar yerimizi kullanmak için şartlarımızı ve koşullarımızı okuyun.",
+    "heading": "Kullanım Koşulları",
+    "lastUpdated": "Son güncelleme: 30 Haziran 2026",
+    "s1": {
+      "heading": "1. Koşulların Kabulü",
+      "p1": "Foundation Exclusive'a (\"Platform\") erişerek veya kullanarak, bu Kullanım Koşullarına (\"Koşullar\") bağlı kalmayı kabul edersiniz. Bu Koşulları kabul etmiyorsanız, Platform'a erişemez veya Platform'u kullanamazsınız.",
+      "p2": "Foundation Exclusive, Foundation ekosisteminin bir uzantısı olarak faaliyet gösteren seçkin bir NFT pazar yeridir. Platformumuz, premium dijital sanat arayan yüksek değerli koleksiyoncu ve sanatçılara hizmet vermektedir."
+    },
+    "s2": {
+      "heading": "2. Uygunluk",
+      "intro": "Foundation Exclusive'ı kullanmak için:",
+      "items": [
+        "En az 18 yaşında olmalısınız",
+        "Bağlayıcı sözleşmeler yapma yasal yeterliliğine sahip olmalısınız",
+        "Yürürlükteki yasalar kapsamında Platform'u kullanmaktan men edilmemiş olmalısınız",
+        "Platformumuzla uyumlu geçerli bir kripto para cüzdanına sahip olmalısınız"
+      ]
+    },
+    "s3": {
+      "heading": "3. Hesap Kaydı",
+      "intro": "Platform'un belirli özelliklerine erişmek için bir hesap oluşturmanız gerekebilir. Şunları kabul edersiniz:",
+      "items": [
+        "Doğru, güncel ve eksiksiz bilgi sağlamak",
+        "Hesap bilgilerinizi güncel tutmak ve derhal güncellemek",
+        "Hesap kimlik bilgilerinizin güvenliğini korumak",
+        "Hesabınız altında gerçekleşen tüm faaliyetlerin sorumluluğunu kabul etmek",
+        "Hesabınıza yetkisiz erişim durumunda bizi derhal bilgilendirmek"
+      ]
+    },
+    "s4": {
+      "heading": "4. NFT İşlemleri",
+      "purchasing": {
+        "heading": "NFT Satın Alma",
+        "intro": "Foundation Exclusive'da bir NFT satın aldığınızda, şunları kabul edersiniz:",
+        "items": [
+          "Tüm satışlar kesindir ve iade edilemez",
+          "Tüm gaz ücretlerinden ve işlem maliyetlerinden siz sorumlusunuz",
+          "Sahiplik, blok zinciri işleminin başarıyla tamamlanmasıyla devredilir",
+          "Platform, cüzdan adreslerindeki veya işlem detaylarındaki hatalardan sorumlu değildir"
+        ]
+      },
+      "creating": {
+        "heading": "NFT Oluşturma ve Satma",
+        "intro": "Platform'da NFT oluşturur veya satarsanız, şunları beyan ve garanti edersiniz:",
+        "items": [
+          "Bastığınız içeriğe sahipsiniz veya haklarına sahipsiniz",
+          "İçeriğiniz herhangi bir üçüncü taraf fikri mülkiyet hakkını ihlal etmez",
+          "İçeriğiniz yürürlükteki tüm yasa ve düzenlemelere uygundur",
+          "NFT'lerinizi doğru bir şekilde tanımlayacak ve yanıltıcı uygulamalara girmeyeceksiniz"
+        ]
+      }
+    },
+    "s5": {
+      "heading": "5. Platform Ücretleri",
+      "intro": "Foundation Exclusive belirli hizmetler için ücret talep eder:",
+      "items": [
+        {
+          "label": "İşlem Ücreti:",
+          "text": "Her satışın bir yüzdesi Platform tarafından alıkonulur"
+        },
+        {
+          "label": "Basım Ücreti:",
+          "text": "Yeni NFT oluşturulurken bir ücret alınır"
+        },
+        {
+          "label": "Sanatçı Telif Hakları:",
+          "text": "Orijinal sanatçılar, ikincil satışlarda belirtilen şekilde telif hakkı alır"
+        }
+      ],
+      "outro": "Tüm ücretler değişikliğe tabidir. Güncel ücret yapıları işlem süreci sırasında görüntülenir."
+    },
+    "s6": {
+      "heading": "6. Yasaklanmış Davranışlar",
+      "intro": "Aşağıdakileri yapmamayı kabul edersiniz:",
+      "items": [
+        "Platform'u herhangi bir yasadışı amaçla veya herhangi bir yasayı ihlal ederek kullanmak",
+        "İhlal edici, karalayıcı veya zararlı içerik yüklemek",
+        "Piyasa manipülasyonu, sahte alım satım veya dolandırıcılık faaliyetlerine girişmek",
+        "Platform'un işleyişine müdahale etmeye veya kesintiye uğratmaya çalışmak",
+        "Açık iznimiz olmadan otomatik sistemler veya botlar kullanmak",
+        "Başkalarının kimliğine bürünmek veya kimliğinizi yanlış beyan etmek"
+      ]
+    },
+    "s7": {
+      "heading": "7. Fikri Mülkiyet ve NFT Sahiplik Hakları",
+      "intro": "Platform ve orijinal içeriği, özellikleri ve işlevselliği Foundation Exclusive'a aittir ve uluslararası telif hakkı, ticari marka ve diğer fikri mülkiyet yasaları tarafından korunmaktadır.",
+      "buying": {
+        "heading": "Bir NFT Satın Almak Size Ne Sağlar",
+        "text": "Foundation Exclusive'da bir NFT satın aldığınızda, o belirli dijital koleksiyon parçası baskısının doğrulanabilir sahipliğini elde edersiniz — eserin kökenindeki yerinizi temsil eden, benzersiz ve blok zincirinde kaydedilmiş bir token. Bu, sahip olduğunuz baskıyı elde tutma, sergileme, devretme ve yeniden satma hakkının yanı sıra, ilişkili sanat eserini kişisel kullanım için (örneğin profil fotoğrafınız olarak veya kişisel bir dijital galeride) sergilemeniz için sınırlı, münhasır olmayan, ticari olmayan bir lisans hakkı tanır."
+      },
+      "creatorRights": {
+        "heading": "Sanatçıda Kalan Haklar",
+        "intro": "Bir NFT baskısının sahipliği, temeldeki yaratıcı eserin sahipliğinden ayrıdır. Sanatçıyla yapılmış ayrı bir yazılı anlaşma aksini belirtmedikçe, orijinal sanatçı NFT'ye bağlı sanat, medya veya içerik üzerindeki tüm telif hakkını, çoğaltma, ticari kullanım, lisanslama ve türev eser haklarını elinde tutar. Bu, sanatçının açık yazılı izni olmaksızın, NFT sahiplerinin şunları yapamayacağı anlamına gelir:",
+        "items": [
+          "Temeldeki eseri dağıtım veya satış amacıyla çoğaltmak, basmak veya başka şekilde kopyalamak",
+          "Eseri ticari olarak kullanmak; buna ürünler, reklamlar veya diğer ürün ya da hizmetler dahildir",
+          "Temeldeki eser üzerindeki hakları üçüncü taraflara alt lisanslamak, dağıtmak veya vermek",
+          "Temeldeki esere dayalı türev eserler, uyarlamalar veya remiksler oluşturmak"
+        ],
+        "outro": "Kısacası: NFT'ye sahip olmak, koleksiyon parçasına sahip olmak anlamına gelir — doğrulanmış, alınıp satılabilir token'ın kendisi. Bu, sanatçının telif hakkını veya token'ın temsil ettiği eser üzerindeki daha geniş ticari haklarının hiçbirini devretmez. Sanatçılar, ayrı bir yazılı anlaşmayla açıkça kısıtlanmadığı sürece, herhangi bir NFT satışından bağımsız olarak kendi eserlerini lisanslamaya, çoğaltmaya ve ticari olarak kullanmaya devam etmekte özgürdür."
+      }
+    },
+    "s8": {
+      "heading": "8. Sorumluluk Reddi",
+      "p1": "PLATFORM, HERHANGİ BİR TÜRDE GARANTİ VERİLMEKSİZİN \"OLDUĞU GİBİ\" VE \"MEVCUT OLDUĞU ŞEKİLDE\" SUNULMAKTADIR. PLATFORM'DAKİ HERHANGİ BİR İÇERİĞİN DOĞRULUĞUNU, EKSİKSİZLİĞİNİ VEYA GÜVENİLİRLİĞİNİ GARANTİ ETMİYORUZ.",
+      "p2": "NFT değerleri son derece değişken ve spekülatiftir. Potansiyel kâr veya zararlar hakkında hiçbir beyanda bulunmuyoruz. Yatırım kararlarınızdan yalnızca sizin sorumlu olduğunuzu kabul edersiniz."
+    },
+    "s9": {
+      "heading": "9. Sorumluluğun Sınırlandırılması",
+      "text": "YASALARIN İZİN VERDİĞİ AZAMİ ÖLÇÜDE, FOUNDATION EXCLUSIVE, PLATFORM'U KULLANIMINIZDAN KAYNAKLANAN HERHANGİ BİR DOLAYLI, ARIZİ, ÖZEL, SONUÇSAL VEYA CEZAİ ZARARDAN SORUMLU TUTULAMAZ."
+    },
+    "s10": {
+      "heading": "10. Yerel ve Uluslararası Kullanıcılar İçin Vergiler",
+      "p1": "ABD merkezli bir şirket olarak, Amerika Birleşik Devletleri içindeki tüm kullanıcılar ve Amerika Birleşik Devletleri dışında bulunan belirli kullanıcılar, geçerli yasalar veya faturalandırma politikalarımız gereğince, hizmetlerimizin kullanımıyla ilişkili geçerli vergileri, ücretleri veya devlet tarafından uygulanan masrafları ödemekle yükümlü olabilir. Bu tür vergiler veya ücretler, geçerliyse, sağlanan ödeme talimatlarına uygun olarak Platform üzerinden yıllık olarak ödenmelidir.",
+      "p2": "Geçerli vergilerin veya gerekli ücretlerin son tarihine kadar ödenmemesi, ödenmemiş tutar çözülene kadar hizmetlerimizin bir kısmına veya tamamına erişimin askıya alınması veya kısıtlanmasıyla sonuçlanabilir."
+    },
+    "s11": {
+      "heading": "11. Tazminat",
+      "text": "Platform'u kullanımınızdan veya bu Koşulların ihlalinden kaynaklanan herhangi bir talep, zarar, kayıp veya masraf konusunda Foundation Exclusive'ı ve yöneticilerini, direktörlerini, çalışanlarını ve temsilcilerini tazmin etmeyi ve zarar görmelerini önlemeyi kabul edersiniz."
+    },
+    "s12": {
+      "heading": "12. Koşullarda Değişiklik",
+      "text": "Bu Koşulları herhangi bir zamanda değiştirme hakkını saklı tutarız. Değişiklikler yayınlanır yayınlanmaz yürürlüğe girer. Platform'u kullanmaya devam etmeniz, değiştirilmiş Koşulların kabulü anlamına gelir."
+    },
+    "s13": {
+      "heading": "13. Geçerli Hukuk",
+      "text": "Bu Koşullar, kanunlar ihtilafı hükümlerine bakılmaksızın, Foundation Exclusive'ın faaliyet gösterdiği yargı bölgesinin yasalarına göre yönetilir ve yorumlanır."
+    },
+    "s14": {
+      "heading": "14. İletişim Bilgileri",
+      "intro": "Bu Koşullar hakkında sorularınız için lütfen bizimle iletişime geçin:",
+      "emailLabel": "E-posta:"
+    }
+  },
+  "privacy": {
+    "metaTitle": "Gizlilik Politikası | Foundation Exclusive",
+    "metaDescription": "Foundation Exclusive için Gizlilik Politikası - Kişisel bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu öğrenin.",
+    "heading": "Gizlilik Politikası",
+    "lastUpdated": "Son güncelleme: 1 Ocak 2025",
+    "s1": {
+      "heading": "1. Giriş",
+      "p1": "Foundation Exclusive (\"biz\", \"bizim\" veya \"bize\"), gizliliğinizi korumaya kararlıdır. Bu Gizlilik Politikası, web sitemizi ziyaret ettiğinizde ve NFT pazar yeri hizmetlerimizi kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı, ifşa ettiğimizi ve koruduğumuzu açıklar.",
+      "p2": "Yüksek değerli NFT koleksiyoncuları ve sanatçıları için seçkin bir platform olarak, kişisel ve finansal bilgilerinizin gizliliğini ve güvenliğini korumanın önemini anlıyoruz."
+    },
+    "s2": {
+      "heading": "2. Topladığımız Bilgiler",
+      "personal": {
+        "heading": "Kişisel Bilgiler",
+        "items": [
+          "Ad ve e-posta adresi",
+          "Hesabınızla ilişkili cüzdan adresleri",
+          "Sağlamayı tercih ettiğiniz profil bilgileri",
+          "İşlem geçmişi ve NFT sahiplik kayıtları",
+          "İletişim tercihleri"
+        ]
+      },
+      "technical": {
+        "heading": "Teknik Bilgiler",
+        "items": [
+          "IP adresi ve cihaz tanımlayıcıları",
+          "Tarayıcı türü ve sürümü",
+          "İşletim sistemi",
+          "Ziyaret edilen sayfalar ve platformumuzda geçirilen süre",
+          "Yönlendiren web sitesi adresleri"
+        ]
+      }
+    },
+    "s3": {
+      "heading": "3. Bilgilerinizi Nasıl Kullanıyoruz",
+      "intro": "Topladığımız bilgileri şu amaçlarla kullanırız:",
+      "items": [
+        "Pazar yeri hizmetlerimizi sağlamak, işletmek ve sürdürmek",
+        "İşlemleri gerçekleştirmek ve ilgili bilgileri göndermek",
+        "Kimliğinizi doğrulamak ve dolandırıcılığı önlemek",
+        "Hesabınız ve işlemleriniz hakkında güncellemeler göndermek",
+        "Yorumlarınıza, sorularınıza ve taleplerinize yanıt vermek",
+        "Platformumuzu geliştirmek ve yeni özellikler geliştirmek",
+        "Yasal yükümlülüklere uymak"
+      ]
+    },
+    "s4": {
+      "heading": "4. Bilgi Paylaşımı ve Ifşa",
+      "intro": "Kişisel bilgilerinizi üçüncü taraflara satmıyoruz, takas etmiyoruz veya kiralamıyoruz. Bilgilerinizi aşağıdaki durumlarda paylaşabiliriz:",
+      "items": [
+        {
+          "label": "Blok Zinciri İşlemleri:",
+          "text": "NFT işlemleri herkese açık blok zincirlerinde kaydedilir ve herkes tarafından görülebilir."
+        },
+        {
+          "label": "Hizmet Sağlayıcılar:",
+          "text": "Platformumuzun işletilmesine yardımcı olan güvenilir üçüncü taraf hizmet sağlayıcılarla bilgi paylaşabiliriz."
+        },
+        {
+          "label": "Yasal Gereklilikler:",
+          "text": "Yasa gerektirdiğinde veya haklarımızı korumak için bilgi ifşa edebiliriz."
+        }
+      ]
+    },
+    "s5": {
+      "heading": "5. Veri Güvenliği",
+      "text": "Kişisel bilgilerinizi yetkisiz erişime, değiştirilmeye, ifşaya veya imhaya karşı korumak için uygun teknik ve organizasyonel önlemler uyguluyoruz. Ancak, İnternet üzerinden hiçbir iletim yöntemi %100 güvenli değildir."
+    },
+    "s6": {
+      "heading": "6. Haklarınız",
+      "intro": "Şu haklara sahipsiniz:",
+      "items": [
+        "Kişisel bilgilerinize erişme",
+        "Yanlış veya eksik bilgileri düzeltme",
+        "Kişisel bilgilerinizin silinmesini talep etme",
+        "Bilgilerinizin işlenmesine itiraz etme veya kısıtlama",
+        "Veri taşınabilirliği",
+        "İzninizi istediğiniz zaman geri çekme"
+      ]
+    },
+    "s7": {
+      "heading": "7. Çerezler ve İzleme",
+      "text": "Platformumuzdaki deneyiminizi geliştirmek için çerezler ve benzer izleme teknolojileri kullanıyoruz. Daha fazla bilgi için lütfen <cookieLink>Çerez Politikamıza</cookieLink> bakın."
+    },
+    "s8": {
+      "heading": "8. Bu Politikadaki Değişiklikler",
+      "text": "Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Sizi, yeni Gizlilik Politikasını bu sayfada yayınlayarak ve \"Son güncelleme\" tarihini güncelleyerek değişikliklerden haberdar edeceğiz."
+    },
+    "s9": {
+      "heading": "9. Bize Ulaşın",
+      "intro": "Bu Gizlilik Politikası hakkında sorularınız varsa, lütfen bizimle iletişime geçin:",
+      "emailLabel": "E-posta:"
+    }
+  },
+  "cookies": {
+    "metaTitle": "Çerez Politikası | Foundation Exclusive",
+    "metaDescription": "Foundation Exclusive için Çerez Politikası - Çerez ve izleme teknolojisi kullanımımız hakkında bilgi edinin.",
+    "heading": "Çerez Politikası",
+    "lastUpdated": "Son güncelleme: 1 Ocak 2025",
+    "s1": {
+      "heading": "1. Çerezler Nedir",
+      "p1": "Çerezler, bir web sitesini ziyaret ettiğinizde bilgisayarınıza veya mobil cihazınıza yerleştirilen küçük metin dosyalarıdır. Web sitelerinin daha verimli çalışmasını sağlamak ve web sitesi sahiplerine bilgi vermek için yaygın olarak kullanılırlar.",
+      "p2": "Foundation Exclusive, platformumuzdaki deneyiminizi geliştirmek, hizmetlerimizi nasıl kullandığınızı anlamak ve tekliflerimizi iyileştirmek için çerezler ve benzer teknolojiler kullanır."
+    },
+    "s2": {
+      "heading": "2. Kullandığımız Çerez Türleri",
+      "essential": {
+        "heading": "Temel Çerezler",
+        "text": "Bu çerezler web sitesinin düzgün çalışması için gereklidir. Güvenlik, ağ yönetimi ve hesap erişimi gibi temel işlevleri etkinleştirirler. Bu çerezleri devre dışı bırakamazsınız.",
+        "items": [
+          "Oturum yönetimi",
+          "Kimlik doğrulama ve giriş",
+          "Güvenlik özellikleri",
+          "Yük dengeleme"
+        ]
+      },
+      "performance": {
+        "heading": "Performans Çerezleri",
+        "text": "Bu çerezler, bilgileri anonim olarak toplayıp raporlayarak ziyaretçilerin web sitemizle nasıl etkileşim kurduğunu anlamamıza yardımcı olur.",
+        "items": [
+          "Sayfa yükleme süreleri",
+          "Karşılaşılan hata mesajları",
+          "Ziyaret edilen sayfalar",
+          "Sayfalarda geçirilen süre"
+        ]
+      },
+      "functionality": {
+        "heading": "İşlevsellik Çerezleri",
+        "text": "Bu çerezler, tercihlerinizi hatırlamak gibi gelişmiş işlevsellik ve kişiselleştirmeyi etkinleştirir.",
+        "items": [
+          "Dil tercihleri",
+          "Tema ayarları (koyu/açık mod)",
+          "Son görüntülenen öğeler",
+          "Kullanıcı tercihleri"
+        ]
+      },
+      "analytics": {
+        "heading": "Analitik Çerezler",
+        "text": "Platformumuzun nasıl kullanıldığına dair bilgiler toplamak için analitik çerezler kullanıyoruz; bu da hizmetlerimizi geliştirmemize yardımcı olur.",
+        "items": [
+          "Trafik kaynakları",
+          "Kullanıcı davranış kalıpları",
+          "Özellik kullanım istatistikleri",
+          "Dönüşüm izleme"
+        ]
+      }
+    },
+    "s3": {
+      "heading": "3. Üçüncü Taraf Çerezleri",
+      "p1": "Platformumuzdaki bazı çerezler, sayfalarımızda görünen üçüncü taraf hizmetler tarafından yerleştirilir. Bu çerezleri kontrol etmiyoruz.",
+      "intro": "Kullanabileceğimiz üçüncü taraf hizmetler şunları içerir:",
+      "items": [
+        {
+          "label": "Google Analytics:",
+          "text": "Web sitesi trafiğini ve kullanım kalıplarını anlamak için"
+        },
+        {
+          "label": "Cüzdan Sağlayıcılar:",
+          "text": "Kripto para cüzdanı bağlantıları ve işlemleri için"
+        },
+        {
+          "label": "Sosyal Medya:",
+          "text": "Paylaşım işlevselliği ve sosyal medya ile giriş seçenekleri için"
+        }
+      ]
+    },
+    "s4": {
+      "heading": "4. Çerezler Ne Kadar Süre Geçerlidir",
+      "intro": "Çerezler cihazınızda farklı sürelerde kalabilir:",
+      "items": [
+        {
+          "label": "Oturum Çerezleri:",
+          "text": "Bunlar geçicidir ve tarayıcınızı kapattığınızda silinir."
+        },
+        {
+          "label": "Kalıcı Çerezler:",
+          "text": "Bunlar cihazınızda belirli bir süre boyunca (örn. 30 gün, 1 yıl) veya siz silene kadar kalır."
+        }
+      ]
+    },
+    "s5": {
+      "heading": "5. Çerezleri Yönetme",
+      "intro": "Çerezleri yönetmek için çeşitli seçenekleriniz vardır:",
+      "browserSettings": {
+        "heading": "Tarayıcı Ayarları",
+        "intro": "Çoğu web tarayıcısı, ayarları aracılığıyla çerezleri kontrol etmenize olanak tanır. Şunları yapabilirsiniz:",
+        "items": [
+          "Cihazınızda saklanan çerezleri görüntüleme",
+          "Tek tek veya tüm çerezleri silme",
+          "Belirli veya tüm web sitelerinden çerezleri engelleme",
+          "Birinci taraf ve üçüncü taraf çerezleri için tercihler belirleme"
+        ]
+      },
+      "browserSpecific": {
+        "heading": "Tarayıcıya Özel Talimatlar",
+        "items": [
+          { "label": "Chrome:", "text": "Ayarlar → Gizlilik ve güvenlik → Çerezler ve diğer site verileri" },
+          { "label": "Firefox:", "text": "Seçenekler → Gizlilik ve Güvenlik → Çerezler ve Site Verileri" },
+          { "label": "Safari:", "text": "Tercihler → Gizlilik → Web Sitesi Verilerini Yönet" },
+          { "label": "Edge:", "text": "Ayarlar → Çerezler ve site izinleri" }
+        ]
+      },
+      "note": {
+        "label": "Not:",
+        "text": "Belirli çerezleri devre dışı bırakmak platformumuzun işlevselliğini etkileyebilir. Temel çerezler, platformun çalışması için gerekli oldukları için devre dışı bırakılamaz."
+      }
+    },
+    "s6": {
+      "heading": "6. Web3 ve Blok Zinciri Hususları",
+      "intro": "Bir NFT pazar yeri olarak, blok zinciri teknolojisi ve kripto para cüzdanlarıyla etkileşime giriyoruz. Lütfen dikkat edin:",
+      "items": [
+        "Cüzdan bağlantı verileri tarayıcınızda yerel olarak saklanabilir",
+        "İşlem imzaları cüzdan sağlayıcınız aracılığıyla işlenir",
+        "Blok zinciri işlemleri, çerezlerden bağımsız olarak herkese açık ve kalıcıdır"
+      ]
+    },
+    "s7": {
+      "heading": "7. Bu Politikadaki Güncellemeler",
+      "text": "Uygulamalarımızdaki değişiklikleri yansıtmak veya diğer operasyonel, yasal ya da düzenleyici nedenlerle bu Çerez Politikasını zaman zaman güncelleyebiliriz. Bu politikayı periyodik olarak gözden geçirmenizi öneririz."
+    },
+    "s8": {
+      "heading": "8. Bize Ulaşın",
+      "intro": "Çerez kullanımımız hakkında sorularınız varsa, lütfen bizimle iletişime geçin:",
+      "emailLabel": "E-posta:"
+    }
+  }
+}

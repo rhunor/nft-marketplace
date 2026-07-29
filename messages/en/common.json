@@ -1,0 +1,86 @@
+{
+  "languageSwitcher": {
+    "label": "Change language",
+    "popular": "Popular languages",
+    "more": "More languages"
+  },
+  "languageBanner": {
+    "message": "It looks like you might prefer {language}.",
+    "switch": "Switch",
+    "dismiss": "Dismiss"
+  },
+  "nav": {
+    "home": "Home",
+    "explore": "Explore",
+    "about": "About",
+    "help": "Help",
+    "contact": "Contact"
+  },
+  "header": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "searchPlaceholder": "Search NFTs, creators...",
+    "create": "Create",
+    "signIn": "Sign In",
+    "getStarted": "Get Started",
+    "userMenu": {
+      "dashboard": "Dashboard",
+      "createNft": "Create NFT",
+      "fundAccount": "Fund Account",
+      "adminPanel": "Admin Panel",
+      "signOut": "Sign Out"
+    }
+  },
+  "footer": {
+    "logoAlt": "Foundation Exclusive",
+    "brandPrimary": "Foundation",
+    "brandAccent": "Exclusive",
+    "description": "An extension of Foundation - the premier destination for high-value NFT collectors and creators. Join our exclusive community of discerning collectors.",
+    "social": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "email": "Email"
+    },
+    "sections": {
+      "marketplace": {
+        "heading": "Marketplace",
+        "exploreCollections": "Explore Collections",
+        "howItWorks": "How it Works",
+        "create": "Create"
+      },
+      "resources": {
+        "heading": "Resources",
+        "helpCenter": "Help Center",
+        "contactUs": "Contact Us",
+        "faq": "FAQ"
+      },
+      "company": {
+        "heading": "Company",
+        "aboutUs": "About Us",
+        "termsOfService": "Terms of Service",
+        "privacyPolicy": "Privacy Policy",
+        "cookiePolicy": "Cookie Policy"
+      }
+    },
+    "copyright": "© {year} Foundation Exclusive. All rights reserved.",
+    "bottomLinks": {
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "cookies": "Cookies"
+    }
+  },
+  "modal": {
+    "dismiss": "Dismiss"
+  },
+  "nftCard": {
+    "currentPrice": "Current Price",
+    "by": "by"
+  },
+  "nftGrid": {
+    "emptyMessage": "No NFTs found"
+  },
+  "nftImage": {
+    "unavailable": "Image unavailable"
+  }
+}

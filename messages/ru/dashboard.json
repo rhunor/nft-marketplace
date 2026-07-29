@@ -1,0 +1,126 @@
+{
+  "loading": "Загрузка личного кабинета...",
+  "avatar": {
+    "invalidType": "Пожалуйста, выберите файл изображения",
+    "tooLarge": "Размер изображения не должен превышать 5 МБ",
+    "uploadSuccess": "Фото профиля обновлено!",
+    "uploadFailedTitle": "Ошибка загрузки",
+    "uploadFailedDefault": "Что-то пошло не так",
+    "changePicture": "Изменить фото профиля"
+  },
+  "welcome": "С возвращением, {name}!",
+  "adminBadge": "Администратор",
+  "fundAccount": "Пополнить счёт",
+  "createNft": "Создать NFT",
+  "stats": {
+    "walletBalance": "Баланс кошелька",
+    "nftsOwned": "NFT в коллекции",
+    "nftsCreated": "Создано NFT",
+    "totalValue": "Общая стоимость"
+  },
+  "quickActions": {
+    "explore": {
+      "title": "Смотреть коллекции",
+      "subtitle": "Открывайте новые коллекционные предметы"
+    },
+    "create": {
+      "title": "Создать NFT",
+      "subtitle": "Загрузите свою работу"
+    },
+    "fund": {
+      "title": "Пополнить счёт",
+      "subtitle": "Добавьте ETH на свой кошелёк"
+    },
+    "withdraw": {
+      "title": "Вывести средства",
+      "subtitle": "Перевод на ваш кошелёк"
+    }
+  },
+  "tabs": {
+    "owned": "В коллекции ({count})",
+    "created": "Созданные ({count})",
+    "listed": "Выставленные ({count})"
+  },
+  "nftCard": {
+    "created": "Создано",
+    "notListed": "Не выставлено",
+    "price": "Цена"
+  },
+  "emptyState": {
+    "owned": {
+      "title": "В коллекции пока нет NFT",
+      "text": "Начните собирать уникальные цифровые активы на нашем маркетплейсе",
+      "button": "Смотреть коллекции"
+    },
+    "created": {
+      "title": "Вы ещё не создали ни одного NFT",
+      "text": "Создайте свой первый NFT и поделитесь им со всем миром",
+      "button": "Создать NFT"
+    },
+    "listed": {
+      "title": "Нет выставленных NFT",
+      "text": "У вас нет NFT, выставленных на продажу"
+    }
+  },
+  "withdrawModal": {
+    "title": {
+      "default": "Вывести средства",
+      "fee": "Оплата комиссии за вывод",
+      "processing": "Обработка вывода средств",
+      "success": "Вывод средств выполнен успешно"
+    },
+    "form": {
+      "availableBalance": "Доступный баланс",
+      "walletAddressLabel": "Адрес кошелька",
+      "walletAddressPlaceholder": "0x...",
+      "walletAddressHint": "Введите адрес вашего кошелька Ethereum",
+      "amountLabel": "Сумма (ETH)",
+      "amountPlaceholder": "0.1",
+      "amountHint": "Минимальная сумма вывода: ${minAmount}",
+      "withdrawMax": "Вывести максимум",
+      "continue": "Продолжить"
+    },
+    "errors": {
+      "invalidAddress": "Введите действительный адрес кошелька Ethereum (0x...)",
+      "invalidAmount": "Введите действительную сумму вывода",
+      "minWithdrawal": "Минимальная сумма вывода: ${minAmount}",
+      "insufficientBalance": "Недостаточно средств",
+      "serverError": "Ошибка сервера. Попробуйте позже.",
+      "withdrawalFailed": "Не удалось выполнить вывод средств",
+      "invalidResponse": "Некорректный ответ сервера",
+      "withdrawalFailedRetry": "Не удалось выполнить вывод средств. Попробуйте снова."
+    },
+    "fee": {
+      "noticeTitle": "Требуется комиссия за вывод",
+      "noticeText": "Для обработки вывода средств отправьте комиссию в размере {percent}% ({amount}) на указанный ниже адрес кошелька.",
+      "walletLabel": "Ваш кошелёк для вывода",
+      "withdrawalAmount": "Сумма вывода",
+      "feeToSend": "Комиссия к оплате ({percent}%)",
+      "youllReceive": "Вы получите",
+      "sendFeeTo": "Отправить комиссию на:",
+      "sendExactly": "Отправьте ровно {amount} на этот адрес",
+      "qrAlt": "QR-код для оплаты комиссии",
+      "walletAddressLabel": "Адрес кошелька для комиссии (ETH)",
+      "copyAddress": "Скопировать адрес",
+      "copiedNotification": "Адрес скопирован в буфер обмена",
+      "warning": "После отправки комиссии в размере {feeAmount} нажмите «Подтвердить оплату», чтобы обработать вывод средств. Полная сумма вывода {receiveAmount} будет отправлена на ваш кошелёк.",
+      "back": "Назад",
+      "confirmPayment": "Подтвердить оплату"
+    },
+    "processing": {
+      "title": "Обработка вывода средств",
+      "text": "Пожалуйста, подождите, пока мы обрабатываем вашу транзакцию..."
+    },
+    "success": {
+      "title": "Заявка на вывод отправлена!",
+      "subtitle": "Ваши средства уже направляются на кошелёк",
+      "transactionId": "ID транзакции",
+      "amountReceived": "Сумма к получению",
+      "feePaid": "Уплаченная комиссия",
+      "newBalance": "Новый баланс",
+      "estimatedTime": "Ориентировочное время обработки",
+      "estimatedTimeValue": "24–48 часов",
+      "done": "Готово"
+    }
+  }
+}

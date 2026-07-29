@@ -1,0 +1,24 @@
+{
+  "loading": "正在加载合集...",
+  "notFound": {
+    "heading": "未找到合集",
+    "genericMessage": "您查找的合集不存在。",
+    "collectionNotFoundError": "未找到合集",
+    "loadFailedError": "加载合集失败",
+    "backToExplore": "返回探索页面"
+  },
+  "back": "返回",
+  "createdBy": "创作者",
+  "stats": {
+    "items": "作品数",
+    "floorPrice": "地板价",
+    "totalVolume": "总交易额"
+  },
+  "share": "分享",
+  "itemsHeading": "作品（{count}）",
+  "price": "价格",
+  "empty": {
+    "heading": "暂无作品",
+    "message": "该合集暂无作品。"
+  }
+}

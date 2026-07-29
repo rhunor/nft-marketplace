@@ -1,0 +1,45 @@
+{
+  "pageTitle": "Ontdekken",
+  "pageSubtitle": "Ontdek exclusieve collecties van digitale kunstenaars van wereldklasse",
+  "sort": {
+    "random": "Willekeurig",
+    "recentDesc": "Meest Recent",
+    "volumeDesc": "Hoogste Volume",
+    "volumeAsc": "Laagste Volume",
+    "floorAsc": "Bodemprijs: Laag naar Hoog",
+    "floorDesc": "Bodemprijs: Hoog naar Laag",
+    "itemsDesc": "Meeste Items"
+  },
+  "newUploads": {
+    "heading": "Nieuwe Uploads",
+    "subtitle": "Verse NFT's van onze marketplace-makers",
+    "viewAll": "Bekijk Alle Nieuwe Uploads ({count})"
+  },
+  "newBadge": "Nieuw",
+  "price": "Prijs",
+  "search": {
+    "collectionsPlaceholder": "Zoek collecties...",
+    "nftsPlaceholder": "Zoek NFT's..."
+  },
+  "viewMode": {
+    "collections": "Bekijk Collecties",
+    "items": "Bekijk Individuele Items"
+  },
+  "filters": "Filters",
+  "categories": "Categorieën",
+  "allCategories": "Alle Categorieën",
+  "all": "Alle",
+  "clearAllFilters": "Alle Filters Wissen",
+  "activeFilters": "Actieve filters:",
+  "searchLabel": "Zoeken: {query}",
+  "resultsCount": {
+    "collections": "{count, plural, one {# collectie weergegeven} other {# collecties weergegeven}}",
+    "items": "{count, plural, one {# NFT weergegeven} other {# NFT's weergegeven}}"
+  },
+  "noCollectionsFound": "Geen collecties gevonden die aan uw criteria voldoen",
+  "clearFilters": "Filters Wissen",
+  "itemsCount": "{count, plural, one {# item} other {# items}}",
+  "floor": "Bodemprijs",
+  "totalVolume": "Totaal Volume",
+  "usd": "USD"
+}

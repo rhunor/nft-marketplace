@@ -1,14 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSession, signOut } from 'next-auth/react';
+import { useTranslations } from 'next-intl';
 import {
   Menu,
   X,
- 
+
   Wallet,
   LogOut,
   Upload,
@@ -19,21 +19,23 @@ import {
 import { cn, formatETH } from '@/lib/utils';
 import { Button, Avatar } from '@/components/ui';
 import { useEthPrice } from '@/contexts/EthPriceContext';
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/explore', label: 'Explore' },
-  { href: '/about', label: 'About' },
-  { href: '/help', label: 'Help' },
-  { href: '/contact', label: 'Contact' },
-];
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function Header() {
+  const t = useTranslations('common');
   const pathname = usePathname();
   const { data: session, status } = useSession();
   const { formatEthToUsd } = useEthPrice();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: '/', label: t('nav.home') },
+    { href: '/explore', label: t('nav.explore') },
+    { href: '/about', label: t('nav.about') },
+    { href: '/help', label: t('nav.help') },
+    { href: '/contact', label: t('nav.contact') },
+  ];
 
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/';
@@ -46,13 +48,13 @@ export function Header() {
         <div className="flex h-16 items-center justify-between gap-4 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <img 
-              src="/images/logo.svg" 
-              alt="Foundation Exclusive" 
+            <img
+              src="/images/logo.svg"
+              alt={t('header.logoAlt')}
               className="h-8 w-auto invert"
             />
             <span className="hidden text-xl font-bold sm:inline-block">
-              Foundation<span className="text-accent-primary">Exclusive</span>
+              {t('header.brandPrimary')}<span className="text-accent-primary">{t('header.brandAccent')}</span>
             </span>
           </Link>
 
@@ -103,7 +105,7 @@ export function Header() {
                 {/* Upload Button */}
                 <Link href="/upload" className="hidden sm:block">
                   <Button size="sm" leftIcon={<Upload className="h-4 w-4" />}>
-                    Create
+                    {t('header.create')}
                   </Button>
                 </Link>
 
@@ -153,7 +155,7 @@ export function Header() {
                               onClick={() => setIsUserMenuOpen(false)}
                             >
                               <LayoutDashboard className="h-4 w-4" />
-                              Dashboard
+                              {t('header.userMenu.dashboard')}
                             </Link>
                             <Link
                               href="/upload"
@@ -161,7 +163,7 @@ export function Header() {
                               onClick={() => setIsUserMenuOpen(false)}
                             >
                               <Upload className="h-4 w-4" />
-                              Create NFT
+                              {t('header.userMenu.createNft')}
                             </Link>
                             <Link
                               href="/fund"
@@ -169,7 +171,7 @@ export function Header() {
                               onClick={() => setIsUserMenuOpen(false)}
                             >
                               <Wallet className="h-4 w-4" />
-                              Fund Account
+                              {t('header.userMenu.fundAccount')}
                             </Link>
                             {session.user.role === 'admin' && (
                               <Link
@@ -178,7 +180,7 @@ export function Header() {
                                 onClick={() => setIsUserMenuOpen(false)}
                               >
                                 <Settings className="h-4 w-4" />
-                                Admin Panel
+                                {t('header.userMenu.adminPanel')}
                               </Link>
                             )}
                           </div>
@@ -191,7 +193,7 @@ export function Header() {
                               className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-error transition-colors hover:bg-error/10"
                             >
                               <LogOut className="h-4 w-4" />
-                              Sign Out
+                              {t('header.userMenu.signOut')}
                             </button>
                           </div>
                         </motion.div>
@@ -204,14 +206,17 @@ export function Header() {
               <>
                 <Link href="/login" className="hidden sm:block">
                   <Button variant="ghost" size="sm">
-                    Sign In
+                    {t('header.signIn')}
                   </Button>
                 </Link>
                 <Link href="/register">
-                  <Button size="sm">Get Started</Button>
+                  <Button size="sm">{t('header.getStarted')}</Button>
                 </Link>
               </>
             )}
+
+            {/* Language Switcher */}
+            <LanguageSwitcher className="hidden sm:block" />
 
             {/* Mobile Menu Toggle */}
             <button
@@ -267,16 +272,21 @@ export function Header() {
                 ))}
               </nav>
 
+              {/* Mobile Language Switcher */}
+              <div className="mt-4 border-t border-border pt-4 sm:hidden">
+                <LanguageSwitcher />
+              </div>
+
               {/* Mobile Auth Buttons */}
               {!session && (
                 <div className="mt-4 flex gap-3 border-t border-border pt-4">
                   <Link href="/login" className="flex-1">
                     <Button variant="secondary" className="w-full">
-                      Sign In
+                      {t('header.signIn')}
                     </Button>
                   </Link>
                   <Link href="/register" className="flex-1">
-                    <Button className="w-full">Get Started</Button>
+                    <Button className="w-full">{t('header.getStarted')}</Button>
                   </Link>
                 </div>
               )}
