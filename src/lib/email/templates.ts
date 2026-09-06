@@ -88,3 +88,19 @@ export function buildWelcomeEmail(name: string): { subject: string; html: string
   });
   return { subject, html };
 }
+
+export function buildPasswordResetEmail(name: string, resetUrl: string): { subject: string; html: string } {
+  const subject = 'Reset your Foundation Exclusive password';
+  const html = buildEmailLayout({
+    preheader: 'Use this link to reset your password. It expires in 1 hour.',
+    heading: `Reset your password, ${name}`,
+    bodyHtml: `
+      <p style="margin:0 0 14px;">We received a request to reset the password for your Foundation Exclusive account.</p>
+      <p style="margin:0 0 14px;">Click the button below to choose a new password. This link will expire in 1 hour.</p>
+      <p style="margin:0;">If you didn't request this, you can safely ignore this email &mdash; your password will remain unchanged.</p>
+    `,
+    ctaLabel: 'Reset Password',
+    ctaUrl: resetUrl,
+  });
+  return { subject, html };
+}

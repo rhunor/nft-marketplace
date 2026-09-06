@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24-48 ore",
       "done": "Fatto"
     }
+  },
+  "security": {
+    "title": "Sicurezza",
+    "changePassword": {
+      "title": "Cambia Password",
+      "description": "Aggiorna la password utilizzata per accedere al tuo account.",
+      "button": "Cambia Password",
+      "modalTitle": "Cambia Password",
+      "currentPasswordLabel": "Password Attuale",
+      "currentPasswordPlaceholder": "Inserisci la tua password attuale",
+      "newPasswordLabel": "Nuova Password",
+      "newPasswordPlaceholder": "Inserisci una nuova password",
+      "confirmPasswordLabel": "Conferma Nuova Password",
+      "confirmPasswordPlaceholder": "Reinserisci la nuova password",
+      "submit": "Aggiorna Password",
+      "successTitle": "Password aggiornata",
+      "successMessage": "La tua password è stata modificata con successo.",
+      "errors": {
+        "somethingWentWrong": "Qualcosa è andato storto. Riprova."
+      }
+    }
   }
 }

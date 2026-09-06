@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24-48 horas",
       "done": "Concluído"
     }
+  },
+  "security": {
+    "title": "Segurança",
+    "changePassword": {
+      "title": "Alterar Senha",
+      "description": "Atualize a senha usada para entrar na sua conta.",
+      "button": "Alterar Senha",
+      "modalTitle": "Alterar Senha",
+      "currentPasswordLabel": "Senha Atual",
+      "currentPasswordPlaceholder": "Digite sua senha atual",
+      "newPasswordLabel": "Nova Senha",
+      "newPasswordPlaceholder": "Digite uma nova senha",
+      "confirmPasswordLabel": "Confirmar Nova Senha",
+      "confirmPasswordPlaceholder": "Digite novamente sua nova senha",
+      "submit": "Atualizar Senha",
+      "successTitle": "Senha atualizada",
+      "successMessage": "Sua senha foi alterada com sucesso.",
+      "errors": {
+        "somethingWentWrong": "Algo deu errado. Tente novamente."
+      }
+    }
   }
 }

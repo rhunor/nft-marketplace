@@ -15,6 +15,8 @@ interface IUserSchema {
   withdrawalAddress?: string;
   gasFeeAddress?: string;
   minWithdrawalUsd?: number;
+  resetPasswordTokenHash?: string;
+  resetPasswordExpires?: Date;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -101,16 +103,26 @@ const UserSchema = new Schema<IUserSchema, UserModel, IUserMethods>(
       type: Number,
       min: [0, 'Minimum withdrawal cannot be negative'],
     },
+    resetPasswordTokenHash: {
+      type: String,
+      select: false,
+    },
+    resetPasswordExpires: {
+      type: Date,
+      select: false,
+    },
   },
   {
     timestamps: true,
     toJSON: {
       virtuals: true,
       transform(_doc, ret: Record<string, unknown>) {
-        // Remove password from JSON output (unless explicitly selected)
+        // Remove sensitive fields from JSON output (unless explicitly selected)
         if (ret.password) {
           delete ret.password;
         }
+        delete ret.resetPasswordTokenHash;
+        delete ret.resetPasswordExpires;
         // Convert _id to string
         if (ret._id) {
           ret._id = String(ret._id);
@@ -125,6 +137,7 @@ const UserSchema = new Schema<IUserSchema, UserModel, IUserMethods>(
 UserSchema.index({ email: 1 });
 UserSchema.index({ username: 1 });
 UserSchema.index({ role: 1 });
+UserSchema.index({ resetPasswordTokenHash: 1 });
 
 // No password hashing - store as plain text
 

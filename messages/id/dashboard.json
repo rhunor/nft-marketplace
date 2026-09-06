@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24-48 jam",
       "done": "Selesai"
     }
+  },
+  "security": {
+    "title": "Keamanan",
+    "changePassword": {
+      "title": "Ubah Kata Sandi",
+      "description": "Perbarui kata sandi yang digunakan untuk masuk ke akun Anda.",
+      "button": "Ubah Kata Sandi",
+      "modalTitle": "Ubah Kata Sandi",
+      "currentPasswordLabel": "Kata Sandi Saat Ini",
+      "currentPasswordPlaceholder": "Masukkan kata sandi Anda saat ini",
+      "newPasswordLabel": "Kata Sandi Baru",
+      "newPasswordPlaceholder": "Masukkan kata sandi baru",
+      "confirmPasswordLabel": "Konfirmasi Kata Sandi Baru",
+      "confirmPasswordPlaceholder": "Masukkan kembali kata sandi baru Anda",
+      "submit": "Perbarui Kata Sandi",
+      "successTitle": "Kata sandi diperbarui",
+      "successMessage": "Kata sandi Anda telah berhasil diubah.",
+      "errors": {
+        "somethingWentWrong": "Terjadi kesalahan. Silakan coba lagi."
+      }
+    }
   }
 }

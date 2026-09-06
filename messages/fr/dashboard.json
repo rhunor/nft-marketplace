@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24 à 48 heures",
       "done": "Terminé"
     }
+  },
+  "security": {
+    "title": "Sécurité",
+    "changePassword": {
+      "title": "Changer le Mot de Passe",
+      "description": "Mettez à jour le mot de passe utilisé pour vous connecter à votre compte.",
+      "button": "Changer le Mot de Passe",
+      "modalTitle": "Changer le Mot de Passe",
+      "currentPasswordLabel": "Mot de Passe Actuel",
+      "currentPasswordPlaceholder": "Entrez votre mot de passe actuel",
+      "newPasswordLabel": "Nouveau Mot de Passe",
+      "newPasswordPlaceholder": "Entrez un nouveau mot de passe",
+      "confirmPasswordLabel": "Confirmer le Nouveau Mot de Passe",
+      "confirmPasswordPlaceholder": "Ressaisissez votre nouveau mot de passe",
+      "submit": "Mettre à Jour le Mot de Passe",
+      "successTitle": "Mot de passe mis à jour",
+      "successMessage": "Votre mot de passe a été modifié avec succès.",
+      "errors": {
+        "somethingWentWrong": "Une erreur s'est produite. Veuillez réessayer."
+      }
+    }
   }
 }

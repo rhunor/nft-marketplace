@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24-48 godzin",
       "done": "Gotowe"
     }
+  },
+  "security": {
+    "title": "Bezpieczeństwo",
+    "changePassword": {
+      "title": "Zmień Hasło",
+      "description": "Zaktualizuj hasło używane do logowania na swoje konto.",
+      "button": "Zmień Hasło",
+      "modalTitle": "Zmień Hasło",
+      "currentPasswordLabel": "Obecne Hasło",
+      "currentPasswordPlaceholder": "Wprowadź obecne hasło",
+      "newPasswordLabel": "Nowe Hasło",
+      "newPasswordPlaceholder": "Wprowadź nowe hasło",
+      "confirmPasswordLabel": "Potwierdź Nowe Hasło",
+      "confirmPasswordPlaceholder": "Wprowadź ponownie nowe hasło",
+      "submit": "Zaktualizuj Hasło",
+      "successTitle": "Hasło zaktualizowane",
+      "successMessage": "Twoje hasło zostało pomyślnie zmienione.",
+      "errors": {
+        "somethingWentWrong": "Coś poszło nie tak. Spróbuj ponownie."
+      }
+    }
   }
 }

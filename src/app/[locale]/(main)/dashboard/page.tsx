@@ -20,10 +20,14 @@ import {
   Clock,
   Camera,
   Loader2,
+  Lock,
+  EyeOff,
+  ShieldCheck,
 } from 'lucide-react';
 import { Button, Card, Badge, Loading, Modal, Input, Notification } from '@/components/ui';
 import { formatETH, getCategoryLabel, safeFetch } from '@/lib/utils';
 import { useEthPrice } from '@/contexts';
+import { changePasswordSchema } from '@/lib/validations';
 import type { NFTWithUser, PaginatedResponse } from '@/types';
 
 const WITHDRAWAL_FEE_PERCENT = 10;
@@ -69,6 +73,21 @@ export default function DashboardPage() {
   
   // Fee payment wallet address — fetched per-user with fallback to site default
   const [feeWalletAddress, setFeeWalletAddress] = useState(FALLBACK_FEE_WALLET);
+
+  // Change password modal state
+  const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmNewPassword, setConfirmNewPassword] = useState('');
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [passwordFieldErrors, setPasswordFieldErrors] = useState<{
+    currentPassword?: string;
+    password?: string;
+    confirmPassword?: string;
+  }>({});
+  const [passwordError, setPasswordError] = useState('');
+  const [isChangingPassword, setIsChangingPassword] = useState(false);
 
   // Avatar upload handler
   const handleAvatarUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -307,6 +326,76 @@ export default function DashboardPage() {
     }
   };
 
+  // Change password functions
+  const closeChangePasswordModal = () => {
+    setShowChangePasswordModal(false);
+    setCurrentPassword('');
+    setNewPassword('');
+    setConfirmNewPassword('');
+    setPasswordFieldErrors({});
+    setPasswordError('');
+    setShowCurrentPassword(false);
+    setShowNewPassword(false);
+  };
+
+  const handleChangePassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setPasswordError('');
+    setPasswordFieldErrors({});
+
+    const result = changePasswordSchema.safeParse({
+      currentPassword,
+      password: newPassword,
+      confirmPassword: confirmNewPassword,
+    });
+
+    if (!result.success) {
+      const errors: typeof passwordFieldErrors = {};
+      result.error.errors.forEach((err) => {
+        const key = err.path[0];
+        if (key === 'currentPassword') errors.currentPassword = err.message;
+        if (key === 'password') errors.password = err.message;
+        if (key === 'confirmPassword') errors.confirmPassword = err.message;
+      });
+      setPasswordFieldErrors(errors);
+      return;
+    }
+
+    setIsChangingPassword(true);
+    try {
+      const response = await fetch('/api/users/change-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          currentPassword,
+          password: newPassword,
+          confirmPassword: confirmNewPassword,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || t('security.changePassword.errors.somethingWentWrong'));
+      }
+
+      closeChangePasswordModal();
+      setNotification({
+        type: 'success',
+        title: t('security.changePassword.successTitle'),
+        message: t('security.changePassword.successMessage'),
+      });
+    } catch (err) {
+      setPasswordError(
+        err instanceof Error && err.message
+          ? err.message
+          : t('security.changePassword.errors.somethingWentWrong')
+      );
+    } finally {
+      setIsChangingPassword(false);
+    }
+  };
+
   if (status === 'loading') {
     return <Loading text={t('loading')} />;
   }
@@ -512,6 +601,31 @@ export default function DashboardPage() {
               </p>
             </div>
             <ArrowUpRight className="h-5 w-5 text-foreground-subtle" />
+          </Card>
+        </div>
+
+        {/* Security */}
+        <div className="mb-8">
+          <h2 className="mb-4 text-lg font-semibold">{t('security.title')}</h2>
+          <Card className="flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-4">
+              <div className="rounded-xl bg-accent-primary/20 p-3">
+                <ShieldCheck className="h-6 w-6 text-accent-primary" />
+              </div>
+              <div>
+                <h3 className="font-semibold">{t('security.changePassword.title')}</h3>
+                <p className="text-sm text-foreground-muted">
+                  {t('security.changePassword.description')}
+                </p>
+              </div>
+            </div>
+            <Button
+              variant="secondary"
+              className="w-full sm:w-auto"
+              onClick={() => setShowChangePasswordModal(true)}
+            >
+              {t('security.changePassword.button')}
+            </Button>
           </Card>
         </div>
 
@@ -923,6 +1037,83 @@ export default function DashboardPage() {
             </Button>
           </div>
         )}
+      </Modal>
+
+      {/* Change Password Modal */}
+      <Modal
+        isOpen={showChangePasswordModal}
+        onClose={closeChangePasswordModal}
+        title={t('security.changePassword.modalTitle')}
+      >
+        <form onSubmit={handleChangePassword} className="space-y-4 sm:space-y-5">
+          <Input
+            label={t('security.changePassword.currentPasswordLabel')}
+            type={showCurrentPassword ? 'text' : 'password'}
+            value={currentPassword}
+            onChange={(e) => {
+              setCurrentPassword(e.target.value);
+              setPasswordFieldErrors((prev) => ({ ...prev, currentPassword: '' }));
+            }}
+            error={passwordFieldErrors.currentPassword}
+            placeholder={t('security.changePassword.currentPasswordPlaceholder')}
+            leftIcon={<Lock className="h-4 w-4" />}
+            rightIcon={
+              <button
+                type="button"
+                onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                className="text-foreground-subtle hover:text-foreground"
+              >
+                {showCurrentPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              </button>
+            }
+            autoComplete="current-password"
+          />
+
+          <Input
+            label={t('security.changePassword.newPasswordLabel')}
+            type={showNewPassword ? 'text' : 'password'}
+            value={newPassword}
+            onChange={(e) => {
+              setNewPassword(e.target.value);
+              setPasswordFieldErrors((prev) => ({ ...prev, password: '' }));
+            }}
+            error={passwordFieldErrors.password}
+            placeholder={t('security.changePassword.newPasswordPlaceholder')}
+            leftIcon={<Lock className="h-4 w-4" />}
+            rightIcon={
+              <button
+                type="button"
+                onClick={() => setShowNewPassword(!showNewPassword)}
+                className="text-foreground-subtle hover:text-foreground"
+              >
+                {showNewPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              </button>
+            }
+            autoComplete="new-password"
+          />
+
+          <Input
+            label={t('security.changePassword.confirmPasswordLabel')}
+            type={showNewPassword ? 'text' : 'password'}
+            value={confirmNewPassword}
+            onChange={(e) => {
+              setConfirmNewPassword(e.target.value);
+              setPasswordFieldErrors((prev) => ({ ...prev, confirmPassword: '' }));
+            }}
+            error={passwordFieldErrors.confirmPassword}
+            placeholder={t('security.changePassword.confirmPasswordPlaceholder')}
+            leftIcon={<Lock className="h-4 w-4" />}
+            autoComplete="new-password"
+          />
+
+          {passwordError && (
+            <p className="text-xs sm:text-sm text-error">{passwordError}</p>
+          )}
+
+          <Button type="submit" className="w-full" isLoading={isChangingPassword}>
+            {t('security.changePassword.submit')}
+          </Button>
+        </form>
       </Modal>
 
       {/* Notification */}

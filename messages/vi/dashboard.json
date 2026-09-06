@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24-48 giờ",
       "done": "Hoàn Tất"
     }
+  },
+  "security": {
+    "title": "Bảo Mật",
+    "changePassword": {
+      "title": "Đổi Mật Khẩu",
+      "description": "Cập nhật mật khẩu dùng để đăng nhập vào tài khoản của bạn.",
+      "button": "Đổi Mật Khẩu",
+      "modalTitle": "Đổi Mật Khẩu",
+      "currentPasswordLabel": "Mật Khẩu Hiện Tại",
+      "currentPasswordPlaceholder": "Nhập mật khẩu hiện tại của bạn",
+      "newPasswordLabel": "Mật Khẩu Mới",
+      "newPasswordPlaceholder": "Nhập mật khẩu mới",
+      "confirmPasswordLabel": "Xác Nhận Mật Khẩu Mới",
+      "confirmPasswordPlaceholder": "Nhập lại mật khẩu mới của bạn",
+      "submit": "Cập Nhật Mật Khẩu",
+      "successTitle": "Đã cập nhật mật khẩu",
+      "successMessage": "Mật khẩu của bạn đã được thay đổi thành công.",
+      "errors": {
+        "somethingWentWrong": "Đã xảy ra lỗi. Vui lòng thử lại."
+      }
+    }
   }
 }

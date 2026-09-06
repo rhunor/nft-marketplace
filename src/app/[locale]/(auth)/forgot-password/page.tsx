@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Mail, ArrowLeft, CheckCircle } from 'lucide-react';
 import { Button, Input, Card } from '@/components/ui';
 
 export default function ForgotPasswordPage() {
   const t = useTranslations('auth.forgotPassword');
+  const locale = useLocale();
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -26,8 +27,17 @@ export default function ForgotPasswordPage() {
     }
 
     try {
-      // Simulate API call - in production, this would send a reset email
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const response = await fetch('/api/auth/forgot-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, locale }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        throw new Error(data?.error);
+      }
+
       setIsSubmitted(true);
     } catch {
       setError(t('errors.somethingWentWrong'));

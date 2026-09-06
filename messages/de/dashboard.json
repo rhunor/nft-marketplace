@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24-48 Stunden",
       "done": "Fertig"
     }
+  },
+  "security": {
+    "title": "Sicherheit",
+    "changePassword": {
+      "title": "Passwort Ändern",
+      "description": "Aktualisieren Sie das Passwort, mit dem Sie sich in Ihr Konto einloggen.",
+      "button": "Passwort Ändern",
+      "modalTitle": "Passwort Ändern",
+      "currentPasswordLabel": "Aktuelles Passwort",
+      "currentPasswordPlaceholder": "Geben Sie Ihr aktuelles Passwort ein",
+      "newPasswordLabel": "Neues Passwort",
+      "newPasswordPlaceholder": "Geben Sie ein neues Passwort ein",
+      "confirmPasswordLabel": "Neues Passwort Bestätigen",
+      "confirmPasswordPlaceholder": "Geben Sie Ihr neues Passwort erneut ein",
+      "submit": "Passwort Aktualisieren",
+      "successTitle": "Passwort aktualisiert",
+      "successMessage": "Ihr Passwort wurde erfolgreich geändert.",
+      "errors": {
+        "somethingWentWrong": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+      }
+    }
   }
 }

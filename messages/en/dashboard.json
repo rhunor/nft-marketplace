@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24-48 hours",
       "done": "Done"
     }
+  },
+  "security": {
+    "title": "Security",
+    "changePassword": {
+      "title": "Change Password",
+      "description": "Update the password used to sign in to your account.",
+      "button": "Change Password",
+      "modalTitle": "Change Password",
+      "currentPasswordLabel": "Current Password",
+      "currentPasswordPlaceholder": "Enter your current password",
+      "newPasswordLabel": "New Password",
+      "newPasswordPlaceholder": "Enter a new password",
+      "confirmPasswordLabel": "Confirm New Password",
+      "confirmPasswordPlaceholder": "Re-enter your new password",
+      "submit": "Update Password",
+      "successTitle": "Password updated",
+      "successMessage": "Your password has been changed successfully.",
+      "errors": {
+        "somethingWentWrong": "Something went wrong. Please try again."
+      }
+    }
   }
 }

@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24~48시간",
       "done": "완료"
     }
+  },
+  "security": {
+    "title": "보안",
+    "changePassword": {
+      "title": "비밀번호 변경",
+      "description": "계정 로그인에 사용되는 비밀번호를 업데이트하세요.",
+      "button": "비밀번호 변경",
+      "modalTitle": "비밀번호 변경",
+      "currentPasswordLabel": "현재 비밀번호",
+      "currentPasswordPlaceholder": "현재 비밀번호를 입력하세요",
+      "newPasswordLabel": "새 비밀번호",
+      "newPasswordPlaceholder": "새 비밀번호를 입력하세요",
+      "confirmPasswordLabel": "새 비밀번호 확인",
+      "confirmPasswordPlaceholder": "새 비밀번호를 다시 입력하세요",
+      "submit": "비밀번호 업데이트",
+      "successTitle": "비밀번호가 업데이트되었습니다",
+      "successMessage": "비밀번호가 성공적으로 변경되었습니다.",
+      "errors": {
+        "somethingWentWrong": "문제가 발생했습니다. 다시 시도해 주세요."
+      }
+    }
   }
 }

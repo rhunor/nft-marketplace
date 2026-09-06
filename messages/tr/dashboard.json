@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24-48 saat",
       "done": "Tamam"
     }
+  },
+  "security": {
+    "title": "Güvenlik",
+    "changePassword": {
+      "title": "Şifreyi Değiştir",
+      "description": "Hesabınıza giriş yapmak için kullanılan şifreyi güncelleyin.",
+      "button": "Şifreyi Değiştir",
+      "modalTitle": "Şifreyi Değiştir",
+      "currentPasswordLabel": "Mevcut Şifre",
+      "currentPasswordPlaceholder": "Mevcut şifrenizi girin",
+      "newPasswordLabel": "Yeni Şifre",
+      "newPasswordPlaceholder": "Yeni bir şifre girin",
+      "confirmPasswordLabel": "Yeni Şifreyi Onayla",
+      "confirmPasswordPlaceholder": "Yeni şifrenizi tekrar girin",
+      "submit": "Şifreyi Güncelle",
+      "successTitle": "Şifre güncellendi",
+      "successMessage": "Şifreniz başarıyla değiştirildi.",
+      "errors": {
+        "somethingWentWrong": "Bir şeyler ters gitti. Lütfen tekrar deneyin."
+      }
+    }
   }
 }

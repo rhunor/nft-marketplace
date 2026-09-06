@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24-48 小时",
       "done": "完成"
     }
+  },
+  "security": {
+    "title": "安全",
+    "changePassword": {
+      "title": "修改密码",
+      "description": "更新用于登录您账户的密码。",
+      "button": "修改密码",
+      "modalTitle": "修改密码",
+      "currentPasswordLabel": "当前密码",
+      "currentPasswordPlaceholder": "输入您的当前密码",
+      "newPasswordLabel": "新密码",
+      "newPasswordPlaceholder": "输入新密码",
+      "confirmPasswordLabel": "确认新密码",
+      "confirmPasswordPlaceholder": "再次输入新密码",
+      "submit": "更新密码",
+      "successTitle": "密码已更新",
+      "successMessage": "您的密码已成功修改。",
+      "errors": {
+        "somethingWentWrong": "出了点问题。请重试。"
+      }
+    }
   }
 }

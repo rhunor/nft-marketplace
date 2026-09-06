@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24–48 часов",
       "done": "Готово"
     }
+  },
+  "security": {
+    "title": "Безопасность",
+    "changePassword": {
+      "title": "Сменить пароль",
+      "description": "Обновите пароль, используемый для входа в ваш аккаунт.",
+      "button": "Сменить пароль",
+      "modalTitle": "Сменить пароль",
+      "currentPasswordLabel": "Текущий пароль",
+      "currentPasswordPlaceholder": "Введите текущий пароль",
+      "newPasswordLabel": "Новый пароль",
+      "newPasswordPlaceholder": "Введите новый пароль",
+      "confirmPasswordLabel": "Подтвердите новый пароль",
+      "confirmPasswordPlaceholder": "Введите новый пароль еще раз",
+      "submit": "Обновить пароль",
+      "successTitle": "Пароль обновлен",
+      "successMessage": "Ваш пароль был успешно изменен.",
+      "errors": {
+        "somethingWentWrong": "Что-то пошло не так. Попробуйте еще раз."
+      }
+    }
   }
 }

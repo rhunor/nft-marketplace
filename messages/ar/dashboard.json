@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24 إلى 48 ساعة",
       "done": "تم"
     }
+  },
+  "security": {
+    "title": "الأمان",
+    "changePassword": {
+      "title": "تغيير كلمة المرور",
+      "description": "حدّث كلمة المرور المستخدمة لتسجيل الدخول إلى حسابك.",
+      "button": "تغيير كلمة المرور",
+      "modalTitle": "تغيير كلمة المرور",
+      "currentPasswordLabel": "كلمة المرور الحالية",
+      "currentPasswordPlaceholder": "أدخل كلمة المرور الحالية",
+      "newPasswordLabel": "كلمة المرور الجديدة",
+      "newPasswordPlaceholder": "أدخل كلمة مرور جديدة",
+      "confirmPasswordLabel": "تأكيد كلمة المرور الجديدة",
+      "confirmPasswordPlaceholder": "أعد إدخال كلمة المرور الجديدة",
+      "submit": "تحديث كلمة المرور",
+      "successTitle": "تم تحديث كلمة المرور",
+      "successMessage": "تم تغيير كلمة المرور الخاصة بك بنجاح.",
+      "errors": {
+        "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+      }
+    }
   }
 }

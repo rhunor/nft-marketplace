@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24〜48時間",
       "done": "完了"
     }
+  },
+  "security": {
+    "title": "セキュリティ",
+    "changePassword": {
+      "title": "パスワードの変更",
+      "description": "アカウントへのサインインに使用するパスワードを更新します。",
+      "button": "パスワードを変更",
+      "modalTitle": "パスワードの変更",
+      "currentPasswordLabel": "現在のパスワード",
+      "currentPasswordPlaceholder": "現在のパスワードを入力",
+      "newPasswordLabel": "新しいパスワード",
+      "newPasswordPlaceholder": "新しいパスワードを入力",
+      "confirmPasswordLabel": "新しいパスワード（確認）",
+      "confirmPasswordPlaceholder": "新しいパスワードを再入力",
+      "submit": "パスワードを更新",
+      "successTitle": "パスワードを更新しました",
+      "successMessage": "パスワードが正常に変更されました。",
+      "errors": {
+        "somethingWentWrong": "問題が発生しました。もう一度お試しください。"
+      }
+    }
   }
 }

@@ -1,5 +1,5 @@
 import { getResendClient, getFromAddress } from './resend';
-import { buildWelcomeEmail } from './templates';
+import { buildWelcomeEmail, buildPasswordResetEmail } from './templates';
 
 export async function sendWelcomeEmail(to: string, name: string): Promise<void> {
   const resend = getResendClient();
@@ -17,6 +17,25 @@ export async function sendWelcomeEmail(to: string, name: string): Promise<void> 
     });
   } catch (error) {
     console.error('Failed to send welcome email:', error);
+  }
+}
+
+export async function sendPasswordResetEmail(to: string, name: string, resetUrl: string): Promise<void> {
+  const resend = getResendClient();
+  if (!resend) {
+    console.warn('RESEND_API_KEY not configured — skipping password reset email');
+    return;
+  }
+  const { subject, html } = buildPasswordResetEmail(name, resetUrl);
+  try {
+    await resend.emails.send({
+      from: getFromAddress(),
+      to,
+      subject,
+      html,
+    });
+  } catch (error) {
+    console.error('Failed to send password reset email:', error);
   }
 }
 

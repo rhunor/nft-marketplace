@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24-48 horas",
       "done": "Listo"
     }
+  },
+  "security": {
+    "title": "Seguridad",
+    "changePassword": {
+      "title": "Cambiar Contraseña",
+      "description": "Actualiza la contraseña que usas para iniciar sesión en tu cuenta.",
+      "button": "Cambiar Contraseña",
+      "modalTitle": "Cambiar Contraseña",
+      "currentPasswordLabel": "Contraseña Actual",
+      "currentPasswordPlaceholder": "Introduce tu contraseña actual",
+      "newPasswordLabel": "Nueva Contraseña",
+      "newPasswordPlaceholder": "Introduce una nueva contraseña",
+      "confirmPasswordLabel": "Confirmar Nueva Contraseña",
+      "confirmPasswordPlaceholder": "Vuelve a introducir tu nueva contraseña",
+      "submit": "Actualizar Contraseña",
+      "successTitle": "Contraseña actualizada",
+      "successMessage": "Tu contraseña se ha cambiado correctamente.",
+      "errors": {
+        "somethingWentWrong": "Algo salió mal. Inténtalo de nuevo."
+      }
+    }
   }
 }

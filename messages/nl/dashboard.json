@@ -122,5 +122,26 @@
       "estimatedTimeValue": "24-48 uur",
       "done": "Klaar"
     }
+  },
+  "security": {
+    "title": "Beveiliging",
+    "changePassword": {
+      "title": "Wachtwoord Wijzigen",
+      "description": "Werk het wachtwoord bij waarmee je inlogt op je account.",
+      "button": "Wachtwoord Wijzigen",
+      "modalTitle": "Wachtwoord Wijzigen",
+      "currentPasswordLabel": "Huidig Wachtwoord",
+      "currentPasswordPlaceholder": "Voer je huidige wachtwoord in",
+      "newPasswordLabel": "Nieuw Wachtwoord",
+      "newPasswordPlaceholder": "Voer een nieuw wachtwoord in",
+      "confirmPasswordLabel": "Bevestig Nieuw Wachtwoord",
+      "confirmPasswordPlaceholder": "Voer je nieuwe wachtwoord opnieuw in",
+      "submit": "Wachtwoord Bijwerken",
+      "successTitle": "Wachtwoord bijgewerkt",
+      "successMessage": "Je wachtwoord is succesvol gewijzigd.",
+      "errors": {
+        "somethingWentWrong": "Er is iets misgegaan. Probeer het opnieuw."
+      }
+    }
   }
 }
