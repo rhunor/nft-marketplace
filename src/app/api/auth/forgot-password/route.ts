@@ -10,6 +10,19 @@ export const runtime = 'nodejs';
 
 const RESET_TOKEN_TTL_MS = 60 * 60 * 1000; // 1 hour
 
+// Derive the domain the request actually came in on, so the emailed link
+// always matches the real site even if NEXT_PUBLIC_APP_URL is unset or stale
+// (e.g. still pointing at localhost) in the deployment environment.
+function getAppUrl(request: Request): string {
+  const host = request.headers.get('x-forwarded-host') || request.headers.get('host');
+  if (host) {
+    const isLocal = host.startsWith('localhost') || host.startsWith('127.0.0.1');
+    const protocol = request.headers.get('x-forwarded-proto') || (isLocal ? 'http' : 'https');
+    return `${protocol}://${host}`;
+  }
+  return process.env.NEXT_PUBLIC_APP_URL || 'https://foundationexclusive.app';
+}
+
 // POST - Request a password reset link
 export async function POST(request: Request) {
   try {
@@ -43,11 +56,11 @@ export async function POST(request: Request) {
     );
 
     if (user) {
-      const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+      const appUrl = getAppUrl(request);
       const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
       const resetUrl = `${appUrl}${localePrefix}/reset-password?token=${rawToken}`;
 
-      sendPasswordResetEmail(user.email, user.name, resetUrl).catch(() => {});
+      sendPasswordResetEmail(user.email, user.name, resetUrl, appUrl).catch(() => {});
     }
 
     return NextResponse.json({

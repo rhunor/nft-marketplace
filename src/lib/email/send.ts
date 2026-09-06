@@ -20,13 +20,13 @@ export async function sendWelcomeEmail(to: string, name: string): Promise<void> 
   }
 }
 
-export async function sendPasswordResetEmail(to: string, name: string, resetUrl: string): Promise<void> {
+export async function sendPasswordResetEmail(to: string, name: string, resetUrl: string, appUrl?: string): Promise<void> {
   const resend = getResendClient();
   if (!resend) {
     console.warn('RESEND_API_KEY not configured — skipping password reset email');
     return;
   }
-  const { subject, html } = buildPasswordResetEmail(name, resetUrl);
+  const { subject, html } = buildPasswordResetEmail(name, resetUrl, appUrl);
   try {
     await resend.emails.send({
       from: getFromAddress(),

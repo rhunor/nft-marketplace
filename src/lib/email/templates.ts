@@ -14,9 +14,10 @@ export function buildEmailLayout(opts: {
   bodyHtml: string;
   ctaLabel?: string;
   ctaUrl?: string;
+  appUrl?: string;
 }): string {
   const { preheader, heading, bodyHtml, ctaLabel, ctaUrl } = opts;
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://foundationexclusive.app';
+  const appUrl = opts.appUrl || process.env.NEXT_PUBLIC_APP_URL || 'https://foundationexclusive.app';
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -89,7 +90,7 @@ export function buildWelcomeEmail(name: string): { subject: string; html: string
   return { subject, html };
 }
 
-export function buildPasswordResetEmail(name: string, resetUrl: string): { subject: string; html: string } {
+export function buildPasswordResetEmail(name: string, resetUrl: string, appUrl?: string): { subject: string; html: string } {
   const subject = 'Reset your Foundation Exclusive password';
   const html = buildEmailLayout({
     preheader: 'Use this link to reset your password. It expires in 1 hour.',
@@ -101,6 +102,7 @@ export function buildPasswordResetEmail(name: string, resetUrl: string): { subje
     `,
     ctaLabel: 'Reset Password',
     ctaUrl: resetUrl,
+    appUrl,
   });
   return { subject, html };
 }
