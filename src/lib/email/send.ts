@@ -9,12 +9,15 @@ export async function sendWelcomeEmail(to: string, name: string): Promise<void> 
   }
   const { subject, html } = buildWelcomeEmail(name);
   try {
-    await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: getFromAddress(),
       to,
       subject,
       html,
     });
+    if (error) {
+      console.error('Resend rejected welcome email:', error);
+    }
   } catch (error) {
     console.error('Failed to send welcome email:', error);
   }
@@ -28,12 +31,15 @@ export async function sendPasswordResetEmail(to: string, name: string, resetUrl:
   }
   const { subject, html } = buildPasswordResetEmail(name, resetUrl, appUrl);
   try {
-    await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: getFromAddress(),
       to,
       subject,
       html,
     });
+    if (error) {
+      console.error('Resend rejected password reset email:', error);
+    }
   } catch (error) {
     console.error('Failed to send password reset email:', error);
   }

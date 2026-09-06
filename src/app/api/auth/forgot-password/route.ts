@@ -60,7 +60,9 @@ export async function POST(request: Request) {
       const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
       const resetUrl = `${appUrl}${localePrefix}/reset-password?token=${rawToken}`;
 
-      sendPasswordResetEmail(user.email, user.name, resetUrl, appUrl).catch(() => {});
+      // Awaited (not fire-and-forget) so the send completes before the
+      // serverless function's response is flushed and the instance frozen.
+      await sendPasswordResetEmail(user.email, user.name, resetUrl, appUrl);
     }
 
     return NextResponse.json({
